@@ -9,20 +9,29 @@ import { RefreshCw } from 'lucide-react';
 import type { Holding, PortfolioSummary } from '@/types';
 
 interface RecommendationsWidgetProps {
-  holdings: Holding[];
-  summary: PortfolioSummary;
+  holdings?: Holding[];
+  summary?: PortfolioSummary;
 }
 
 export function RecommendationsWidget({
-  holdings,
+  holdings = [],
   summary,
 }: RecommendationsWidgetProps) {
+  const safeHoldings = Array.isArray(holdings) ? holdings : [];
+  const safeSummary = summary || {
+    totalValue: 0,
+    totalInvested: 0,
+    totalGain: 0,
+    totalGainPercent: 0,
+    holdingsCount: 0,
+  };
+
   const { data, isLoading, error, refetch } = useRecommendations({
-    holdings,
-    summary,
+    holdings: safeHoldings,
+    summary: safeSummary,
   });
 
-  if (holdings.length === 0) {
+  if (safeHoldings.length === 0) {
     return (
       <Card className="p-6">
         <h3 className="text-lg font-semibold mb-4">AI 투자 추천</h3>

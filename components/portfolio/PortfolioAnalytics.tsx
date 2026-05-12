@@ -11,29 +11,32 @@ import { RecommendationsWidget } from './RecommendationsWidget';
 import type { Holding, Transaction } from '@/types';
 
 interface PortfolioAnalyticsProps {
-  holdingsWithPrices: Holding[];
-  transactions: Transaction[];
+  holdingsWithPrices?: Holding[];
+  transactions?: Transaction[];
 }
 
 export function PortfolioAnalytics({
-  holdingsWithPrices,
-  transactions,
+  holdingsWithPrices = [],
+  transactions = [],
 }: PortfolioAnalyticsProps) {
+  const safeHoldings = holdingsWithPrices || [];
+  const safeTransactions = transactions || [];
+
   const priceMap = new Map(
-    holdingsWithPrices.map((h) => [h.symbol, h.currentPrice || 0])
+    safeHoldings.map((h) => [h.symbol, h.currentPrice || 0])
   );
 
-  const assetHistory = calculatePortfolioValueHistory(transactions, priceMap);
+  const assetHistory = calculatePortfolioValueHistory(safeTransactions, priceMap);
   const rebalancingSuggestions =
-    calculateRebalancingSuggestions(holdingsWithPrices);
-  const summary = calculatePortfolioSummary(holdingsWithPrices);
+    calculateRebalancingSuggestions(safeHoldings);
+  const summary = calculatePortfolioSummary(safeHoldings);
 
   return (
     <div className="space-y-6">
       <AssetHistoryChart data={assetHistory} />
       <RebalancingWidget suggestions={rebalancingSuggestions} />
       <RecommendationsWidget
-        holdings={holdingsWithPrices}
+        holdings={safeHoldings}
         summary={summary}
       />
     </div>
