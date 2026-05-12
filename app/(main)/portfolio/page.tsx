@@ -15,7 +15,7 @@ import { DeleteConfirmDialog } from '@/components/portfolio/DeleteConfirmDialog'
 import type { Holding } from '@/types';
 
 export default function PortfolioPage() {
-  const { holdings, removeHolding } = usePortfolio();
+  const { holdings, removeHolding, addHolding } = usePortfolio();
   const [addModalOpen, setAddModalOpen] = useState(false);
   const [deleteConfirmOpen, setDeleteConfirmOpen] = useState(false);
   const [deleteTargetId, setDeleteTargetId] = useState<string | null>(null);
@@ -103,6 +103,7 @@ export default function PortfolioPage() {
       <AddHoldingModal
         open={addModalOpen}
         onOpenChange={setAddModalOpen}
+        onAddHolding={addHolding}
       />
 
       <DeleteConfirmDialog

@@ -18,21 +18,21 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { Label } from '@/components/ui/label';
-import { usePortfolio } from '@/hooks/usePortfolio';
 import type { Holding } from '@/types';
 
 interface AddHoldingModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
+  onAddHolding: (holding: Omit<Holding, 'id'>) => void;
   onSuccess?: () => void;
 }
 
 export function AddHoldingModal({
   open,
   onOpenChange,
+  onAddHolding,
   onSuccess,
 }: AddHoldingModalProps) {
-  const { addHolding } = usePortfolio();
 
   const [formData, setFormData] = useState({
     symbol: '',
@@ -89,8 +89,7 @@ export function AddHoldingModal({
       return;
     }
 
-    const newHolding: Holding = {
-      id: `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+    const newHolding: Omit<Holding, 'id'> = {
       symbol: formData.symbol.toUpperCase(),
       name: formData.name,
       quantity: parseFloat(formData.quantity),
@@ -99,7 +98,7 @@ export function AddHoldingModal({
       type: formData.type,
     };
 
-    addHolding(newHolding);
+    onAddHolding(newHolding);
 
     setFormData({
       symbol: '',
