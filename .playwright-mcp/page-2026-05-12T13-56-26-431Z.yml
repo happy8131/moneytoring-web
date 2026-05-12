@@ -1,0 +1,38 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "Moneytoring" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - img [ref=e6]
+          - generic [ref=e9]: Moneytoring
+        - navigation [ref=e11]:
+          - link "대시보드" [ref=e12] [cursor=pointer]:
+            - /url: /dashboard
+          - link "포트폴리오" [ref=e13] [cursor=pointer]:
+            - /url: /portfolio
+          - link "뉴스" [ref=e14] [cursor=pointer]:
+            - /url: /news
+    - generic [ref=e15]:
+      - complementary [ref=e16]:
+        - navigation [ref=e17]:
+          - link "대시보드" [ref=e18] [cursor=pointer]:
+            - /url: /dashboard
+            - img [ref=e19]
+            - text: 대시보드
+          - link "포트폴리오" [ref=e24] [cursor=pointer]:
+            - /url: /portfolio
+            - img [ref=e25]
+            - text: 포트폴리오
+          - link "뉴스" [ref=e28] [cursor=pointer]:
+            - /url: /news
+            - img [ref=e29]
+            - text: 뉴스
+      - main [ref=e32]:
+        - generic [ref=e34]:
+          - generic [ref=e35]:
+            - heading "대시보드" [level=1] [ref=e36]
+            - paragraph [ref=e37]: 실시간 주식 및 암호화폐 가격을 확인하세요.
+          - paragraph [ref=e39]: Task 1-3에서 검색 및 가격 표시 기능이 추가됩니다.
+  - button "Open Next.js Dev Tools" [ref=e45] [cursor=pointer]:
+    - img [ref=e46]

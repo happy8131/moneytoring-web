@@ -1,0 +1,1 @@
+- [Moneytoring 레이아웃 구조 결정](project_layout_decision.md) — 라우트 그룹 (main) 방식 채택, components/layout/ 분리, 서버/클라이언트 경계 정의
