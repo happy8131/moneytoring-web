@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useCallback, useEffect } from 'react';
-import type { Holding, Favorite, NewsItem, PortfolioStore } from '@/types';
+import type { Holding, Favorite, NewsItem, PortfolioStore, Transaction } from '@/types';
 
 const STORAGE_KEY = 'moneytoring_portfolio';
 
@@ -10,6 +10,7 @@ const defaultStore: PortfolioStore = {
   holdings: [],
   favorites: [],
   readNews: [],
+  transactions: [],
   lastUpdated: new Date().toISOString(),
 };
 
@@ -152,11 +153,53 @@ export function usePortfolio() {
     [store.readNews]
   );
 
+  // 거래 기록 추가
+  const addTransaction = useCallback(
+    (tx: Omit<Transaction, 'id'>) => {
+      const newTransaction: Transaction = {
+        ...tx,
+        id: `${tx.symbol}-${tx.type}-${Date.now()}`,
+      };
+
+      const newStore: PortfolioStore = {
+        ...store,
+        transactions: [...store.transactions, newTransaction],
+        lastUpdated: new Date().toISOString(),
+      };
+
+      saveStore(newStore);
+      return newTransaction;
+    },
+    [store, saveStore]
+  );
+
+  // 거래 기록 삭제
+  const removeTransaction = useCallback(
+    (id: string) => {
+      const newStore: PortfolioStore = {
+        ...store,
+        transactions: store.transactions.filter((t) => t.id !== id),
+        lastUpdated: new Date().toISOString(),
+      };
+
+      saveStore(newStore);
+    },
+    [store, saveStore]
+  );
+
+  // 특정 심볼의 거래 기록 조회
+  const getTransactionsBySymbol = useCallback(
+    (symbol: string) =>
+      store.transactions.filter((t) => t.symbol === symbol),
+    [store.transactions]
+  );
+
   return {
     // 상태
     holdings: store.holdings,
     favorites: store.favorites,
     readNews: store.readNews,
+    transactions: store.transactions,
     isHydrated,
 
     // 메서드
@@ -167,5 +210,8 @@ export function usePortfolio() {
     markNewsAsRead,
     isFavorited,
     isNewsRead,
+    addTransaction,
+    removeTransaction,
+    getTransactionsBySymbol,
   };
 }

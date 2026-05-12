@@ -60,11 +60,23 @@ export interface NewsItem {
   related: string;
 }
 
+// 거래 기록 (매수/매도)
+export interface Transaction {
+  id: string;
+  symbol: string;
+  type: 'buy' | 'sell';
+  quantity: number;
+  price: number;
+  date: string; // YYYY-MM-DD
+  memo?: string;
+}
+
 // 포트폴리오 저장소 (localStorage)
 export interface PortfolioStore {
   holdings: Holding[];
   favorites: Favorite[];
   readNews: string[];
+  transactions: Transaction[];
   lastUpdated: string;
 }
 

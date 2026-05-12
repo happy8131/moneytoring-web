@@ -1,4 +1,4 @@
-import type { Holding, PortfolioSummary } from '@/types';
+import type { Holding, PortfolioSummary, Transaction } from '@/types';
 
 // 보유 종목의 현재 가치 계산
 export function calculateHoldingValue(holding: Holding): number {
@@ -82,4 +82,116 @@ export function formatCurrency(value: number, currency: string = 'USD'): string 
 // 형식화된 백분율 표시
 export function formatPercent(value: number, decimals: number = 2): string {
   return `${value > 0 ? '+' : ''}${value.toFixed(decimals)}%`;
+}
+
+// 거래 기록 기반 평균 매수 단가 계산
+export function calculateAverageCost(
+  transactions: Transaction[],
+  symbol: string
+): number {
+  const buyTxs = transactions.filter(
+    (tx) => tx.symbol === symbol && tx.type === 'buy'
+  );
+
+  if (buyTxs.length === 0) return 0;
+
+  const totalCost = buyTxs.reduce((sum, tx) => sum + tx.price * tx.quantity, 0);
+  const totalQuantity = buyTxs.reduce((sum, tx) => sum + tx.quantity, 0);
+
+  return totalQuantity === 0 ? 0 : totalCost / totalQuantity;
+}
+
+// 거래 기록 기반 순 보유 수량 계산
+export function calculateNetQuantity(
+  transactions: Transaction[],
+  symbol: string
+): number {
+  return transactions
+    .filter((tx) => tx.symbol === symbol)
+    .reduce((sum, tx) => sum + (tx.type === 'buy' ? tx.quantity : -tx.quantity), 0);
+}
+
+// 거래 기록 기반 자산 추이 계산 (시계열 데이터)
+export function calculatePortfolioValueHistory(
+  transactions: Transaction[],
+  currentPriceMap: Map<string, number>
+): { date: string; value: number }[] {
+  if (transactions.length === 0) return [];
+
+  const sortedTxs = [...transactions].sort(
+    (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
+  );
+
+  const symbolQuantityByDate = new Map<string, Map<string, number>>();
+  const uniqueDates = new Set<string>();
+
+  sortedTxs.forEach((tx) => {
+    uniqueDates.add(tx.date);
+
+    if (!symbolQuantityByDate.has(tx.date)) {
+      symbolQuantityByDate.set(tx.date, new Map());
+    }
+
+    const dateMap = symbolQuantityByDate.get(tx.date)!;
+    const currentQty = dateMap.get(tx.symbol) || 0;
+    const delta = tx.type === 'buy' ? tx.quantity : -tx.quantity;
+    dateMap.set(tx.symbol, currentQty + delta);
+  });
+
+  const cumulativeQuantity = new Map<string, number>();
+  const result: { date: string; value: number }[] = [];
+
+  [...uniqueDates].sort().forEach((date) => {
+    const txForDate = sortedTxs.filter((tx) => tx.date === date);
+
+    txForDate.forEach((tx) => {
+      const currentQty = cumulativeQuantity.get(tx.symbol) || 0;
+      const delta = tx.type === 'buy' ? tx.quantity : -tx.quantity;
+      cumulativeQuantity.set(tx.symbol, currentQty + delta);
+    });
+
+    const portfolioValue = Array.from(cumulativeQuantity.entries()).reduce(
+      (sum, [symbol, quantity]) => {
+        const price = currentPriceMap.get(symbol) || 0;
+        return sum + price * quantity;
+      },
+      0
+    );
+
+    result.push({ date, value: portfolioValue });
+  });
+
+  return result;
+}
+
+// 리밸런싱 제안 (균등 분배)
+export function calculateRebalancingSuggestions(
+  holdingsWithPrices: Holding[]
+): {
+  symbol: string;
+  currentPercent: number;
+  targetPercent: number;
+  diff: number;
+}[] {
+  const totalValue = holdingsWithPrices.reduce(
+    (sum, h) => sum + (h.totalValue || 0),
+    0
+  );
+
+  if (totalValue === 0) return [];
+
+  const targetPercent = 100 / holdingsWithPrices.length;
+
+  return holdingsWithPrices.map((holding) => {
+    const currentPercent =
+      ((holding.totalValue || 0) / totalValue) * 100;
+    const diff = currentPercent - targetPercent;
+
+    return {
+      symbol: holding.symbol,
+      currentPercent,
+      targetPercent,
+      diff,
+    };
+  });
 }
