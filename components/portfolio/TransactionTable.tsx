@@ -13,15 +13,15 @@ import { Trash2 } from 'lucide-react';
 import type { Transaction } from '@/types';
 
 interface TransactionTableProps {
-  transactions: Transaction[];
+  transactions?: Transaction[];
   onDelete?: (transactionId: string) => void;
 }
 
 export function TransactionTable({
-  transactions,
+  transactions = [],
   onDelete,
 }: TransactionTableProps) {
-  if (transactions.length === 0) {
+  if (!transactions || transactions.length === 0) {
     return (
       <div className="rounded-lg border border-border bg-card p-8 text-center">
         <p className="text-muted-foreground">거래 기록이 없습니다.</p>

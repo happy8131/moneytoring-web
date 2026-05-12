@@ -22,7 +22,18 @@ function loadStore(): PortfolioStore {
 
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    return raw ? JSON.parse(raw) : defaultStore;
+    if (!raw) return defaultStore;
+
+    const parsed = JSON.parse(raw);
+
+    // 데이터 마이그레이션: 이전 버전의 데이터에 누락된 필드 추가
+    return {
+      holdings: parsed.holdings ?? [],
+      favorites: parsed.favorites ?? [],
+      readNews: parsed.readNews ?? [],
+      transactions: parsed.transactions ?? [],
+      lastUpdated: parsed.lastUpdated ?? new Date().toISOString(),
+    };
   } catch (error) {
     console.error('Failed to load portfolio:', error);
     return defaultStore;
