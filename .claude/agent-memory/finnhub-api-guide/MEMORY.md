@@ -1,0 +1,2 @@
+- [사용자 프로필](user_profile.md) — Next.js/TypeScript Moneytoring Web 개발자, finnhub v2 + React Query v5 설치 완료
+- [주식 기능 구현 계획](project_stock_feature.md) — 대시보드 실시간 시세 + 심볼 검색, API 라우트 기반, 서버 전용 API 키 패턴

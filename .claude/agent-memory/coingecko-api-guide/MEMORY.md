@@ -1,0 +1,2 @@
+- [사용자 프로파일](user_profile.md) — Next.js + React Query 개발자, Finnhub/CoinGecko 통합 아키텍처 선호
+- [암호화폐 통합 패턴](project_crypto_integration.md) — /coins/markets 선택 이유, MarketItem 통합 타입, 이중 캐싱 전략

@@ -1,7 +1,19 @@
+import dynamic from 'next/dynamic';
+
 export const metadata = {
   title: '대시보드 - Moneytoring',
   description: '실시간 주식 및 암호화폐 가격 조회',
 };
+
+const StockWatchlist = dynamic(
+  () => import('@/components/dashboard/StockWatchlist').then((m) => m.StockWatchlist),
+  { loading: () => <div className="animate-pulse p-4">로딩 중...</div> }
+);
+
+const CryptoWatchlist = dynamic(
+  () => import('@/components/dashboard/CryptoWatchlist').then((m) => m.CryptoWatchlist),
+  { loading: () => <div className="animate-pulse p-4">로딩 중...</div> }
+);
 
 export default function DashboardPage() {
   return (
@@ -13,11 +25,15 @@ export default function DashboardPage() {
         </p>
       </div>
 
-      {/* 검색 바 및 컴포넌트는 Task 1-3에서 추가 */}
-      <div className="rounded-lg border border-border bg-card p-8 text-center">
-        <p className="text-muted-foreground">
-          Task 1-3에서 검색 및 가격 표시 기능이 추가됩니다.
-        </p>
+      <div className="grid gap-6 lg:grid-cols-2">
+        <div>
+          <h2 className="text-xl font-semibold mb-4">주식</h2>
+          <StockWatchlist />
+        </div>
+        <div>
+          <h2 className="text-xl font-semibold mb-4">암호화폐</h2>
+          <CryptoWatchlist />
+        </div>
       </div>
     </div>
   );
