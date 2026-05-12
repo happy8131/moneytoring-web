@@ -1,0 +1,225 @@
+# Moneytoring Web - Project Rules
+
+## 📌 프로젝트 개요
+
+**프로젝트명**: Moneytoring Web
+**목표**: 자산 관리 및 투자 모니터링 플랫폼
+**기술 스택**: Next.js 16 (App Router) + TypeScript + React 19 + Tailwind CSS 4 + shadcn/ui
+**상태**: Phase 2 진행 중 (AI 투자 추천 완료, 한국 주식 지원 시작)
+
+## 🎯 핵심 원칙
+
+### 1. 데이터 관리 이원화
+- **로컬 상태** (localStorage): 포트폴리오 데이터 (종목, 거래, 즐겨찾기)
+- **서버 상태** (React Query): 외부 API 데이터 (주식가, 암호화폐, 뉴스, AI 추천)
+
+### 2. SSR 안전성
+- localStorage 접근 전에 반드시 `typeof window === 'undefined'` 체크
+- 데이터 마이그레이션: 기존 데이터에 누락된 필드는 기본값으로 채우기
+
+### 3. 타입 안전성
+- strict 모드 활성화 → 모든 타입 명시
+- 함수 입출력 타입 항상 정의
+- undefined/null 처리 명확하게
+
+### 4. API 통합 패턴
+```
+외부 API → API 라우트 (/api/*) → React Query 훅 → UI 컴포넌트
+```
+- API 라우트: 서버 사이드 로직 (키 관리, 변환)
+- 훅: 캐싱, 리트라이, 상태 관리
+- 컴포넌트: 데이터 렌더링만
+
+## 📝 코드 스타일
+
+### 파일명과 컴포넌트명
+- **컴포넌트**: PascalCase (예: `PortfolioTable.tsx`)
+- **훅**: camelCase로 `use` 접두사 (예: `usePortfolio.ts`)
+- **유틸리티**: camelCase (예: `calculations.ts`)
+
+### 컴포넌트 구조
+```typescript
+'use client'; // 필요한 경우에만
+
+import { useState } from 'react';
+import type { Props } from '@/types';
+
+interface ComponentProps {
+  data: Data;
+  onAction?: () => void;
+}
+
+export function MyComponent({ data, onAction }: ComponentProps) {
+  // 로직
+  return <div>렌더링</div>;
+}
+```
+
+### 훅 패턴 (React Query 기반)
+```typescript
+export function useMyData(params: Params) {
+  return useQuery({
+    queryKey: ['myData', params.id], // 변수 포함
+    queryFn: () => fetchAPI(`/api/my-data?id=${params.id}`),
+    enabled: !!params.id, // 조건부 쿼리
+    staleTime: 5 * 60 * 1000, // 캐시 시간
+  });
+}
+```
+
+### 스타일링
+- Tailwind CSS 유틸리티 클래스 우선
+- CSS 변수 활용: `bg-background`, `text-foreground` 등
+- shadcn/ui 컴포넌트 재사용
+
+## 🚀 개발 워크플로우
+
+### 새 기능 추가 단계
+1. **타입 정의** (`types/index.ts`)
+2. **API 라우트** 필요시 (`app/api/*/route.ts`)
+3. **훅 구현** (`hooks/*.ts`)
+4. **컴포넌트** (`components/**/*.tsx`)
+5. **페이지 통합** (`app/(main)/*/page.tsx`)
+
+### 버그 수정 워크플로우
+1. 원인 파악 (어느 계층인가?)
+2. 방어적 프로그래밍 (null/undefined 체크)
+3. 테스트 (로컬 데이터로 확인)
+4. 커밋 (명확한 메시지)
+
+## 🛡️ 주요 제약사항
+
+### 금지사항
+- ❌ API 키를 `.env.local`이 아닌 곳에 저장
+- ❌ 컴포넌트에서 직접 `localStorage` 접근 (훅 통해서만)
+- ❌ React Query 없이 raw `fetch` (필요시 훅으로 감싸기)
+- ❌ 클라이언트에서 Finnhub/CoinGecko 직접 호출 (API 라우트 통해서만)
+- ❌ 스타일: 인라인 스타일보다 Tailwind 클래스
+- ❌ 타입: `any` 타입 사용 금지
+
+### 주의사항
+- ⚠️ 포트폴리오 페이지에서 undefined 데이터 처리 (최근 버그)
+- ⚠️ 새 필드 추가시 데이터 마이그레이션 로직 확인
+- ⚠️ API 라우트는 항상 에러 핸들링 포함
+- ⚠️ 컴포넌트 props는 optional이면 기본값 제공
+
+## 📊 포트폴리오 시스템
+
+### 핵심 데이터 구조
+```typescript
+Holding {
+  id, symbol, name, quantity, buyPrice, buyDate, type,
+  currentPrice?, gain?, gainPercent?, totalValue?
+}
+
+Transaction {
+  id, symbol, type ('buy'|'sell'), quantity, price, date, memo?
+}
+
+PortfolioStore {
+  holdings[], transactions[], favorites[], readNews[], lastUpdated
+}
+```
+
+### 계산 함수 위치
+`lib/calculations.ts`:
+- `mergeHoldingsWithPrices()`: 실시간 가격 반영
+- `calculatePortfolioSummary()`: 전체 요약
+- `calculatePortfolioValueHistory()`: 시계열 자산 추이
+- `calculateRebalancingSuggestions()`: 리밸런싱 제안
+
+### 포트폴리오 페이지 구조
+```
+Portfolio Page (app/(main)/portfolio/page.tsx)
+├── Tabs (보유종목 / 거래기록 / 분석)
+│   ├── Holdings Tab
+│   │   └── PortfolioSummary + PortfolioTable + AssetChart
+│   ├── Transactions Tab
+│   │   └── TransactionTable + TransactionModal
+│   └── Analytics Tab
+│       └── PortfolioAnalytics
+│           ├── AssetHistoryChart (시계열)
+│           ├── RebalancingWidget (제안)
+│           └── RecommendationsWidget (AI)
+```
+
+## 🔌 외부 API 통합
+
+### Finnhub (미국 주식)
+- API 라우트: `/api/stocks/quotes`, `/api/stocks/search`
+- 훅: `useStockQuotes()`
+- 환경변수: `FINNHUB_API_KEY`
+
+### CoinGecko (암호화폐)
+- API 라우트: `/api/crypto/prices`, `/api/crypto/search`
+- 훅: `useCryptoPrices()`
+- 환경변수: `COINGECKO_API_KEY`
+
+### Claude API (AI 투자 추천)
+- API 라우트: `/api/recommendations`
+- 훅: `useRecommendations()`
+- 환경변수: `CLAUDE_API_KEY`
+
+### Kiwoom (한국 주식)
+- API 라우트: `/api/korean-stocks/*`
+- 클라이언트: `lib/kiwoom-client.ts`
+- 환경변수: `KIWOOM_API_KEY`
+
+## ✅ 체크리스트
+
+### 새 기능 추가 후 확인
+- [ ] TypeScript 빌드 성공 (`npm run build`)
+- [ ] 타입 에러 없음 (`npm run lint`)
+- [ ] undefined 처리 확인
+- [ ] localStorage 마이그레이션 필요시 `usePortfolio` 수정
+- [ ] 에러 상태 처리 (React Query 쿼리의 error state)
+- [ ] 로딩 상태 표시 (Skeleton, Spinner)
+
+### 버그 수정 후 확인
+- [ ] 동일한 패턴의 버그가 다른 곳에 없는지 확인
+- [ ] 방어적 코드 추가 (null/undefined 체크)
+- [ ] 기존 기능 회귀 테스트
+- [ ] git history 명확한가?
+
+## 📚 자주 참고할 파일
+
+| 파일 | 목적 |
+|------|------|
+| `types/index.ts` | 모든 도메인 타입 정의 |
+| `lib/calculations.ts` | 포트폴리오 계산 로직 |
+| `lib/api.ts` | API 래퍼 함수 |
+| `hooks/usePortfolio.ts` | 로컬 포트폴리오 상태 |
+| `app/providers.tsx` | React Query 설정 |
+| `app/(main)/portfolio/page.tsx` | 포트폴리오 페이지 구조 |
+
+## 🔄 현재 진행 상황
+
+### ✅ 완료된 Phase
+- **Phase 1**: 기초 기능 (대시보드, 포트폴리오, 뉴스)
+- **Phase 2-1**: 포트폴리오 고급 기능 (거래기록, 자산 추이, 리밸런싱)
+- **Phase 2-2**: AI 투자 추천 (Claude API)
+- **Phase 2-3**: 한국 주식 지원 기초
+
+### ⏳ 진행 중
+- **Task 2-3**: 한국 주식 검색/추가 UI
+- **Task 2-4**: 고급 차트 및 분석
+- **Task 2-5**: 사용자 설정 및 개인화
+
+## 💡 팁
+
+### 포트폴리오 확장
+새 자산 타입 추가시:
+1. `type: 'stock' | 'crypto' | 'newType'`으로 타입 확장
+2. API 라우트 추가
+3. 훅 추가
+4. 가격 맵 통합
+
+### 계산 함수 추가
+- 엣지 케이스 처리 (0, undefined, 빈 배열)
+- 명확한 함수명과 JSDoc 주석
+- 단위 명시 (예: `percentage` vs `decimal`)
+
+### 성능
+- React Query의 캐싱 활용 (불필요한 API 호출 감소)
+- `enabled` 옵션으로 조건부 쿼리
+- 계산량 많은 함수는 `useMemo` 고려
