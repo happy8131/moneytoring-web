@@ -92,6 +92,19 @@ npm run lint
   - `Geist`: 일반 폰트 (`--font-geist-sans`)
   - `Geist_Mono`: 고정폭 폰트 (`--font-geist-mono`)
 
+### 데이터 페칭 및 상태 관리
+- **React Query (@tanstack/react-query)**: 서버 상태 관리 및 데이터 캐싱
+  - 자동 캐싱, 백그라운드 동기화, 리트라이 로직 포함
+  - 복잡한 데이터 페칭은 React Query 사용 권장
+- **클라이언트 상태**: `useState`, `useReducer` 사용
+
+### 외부 API 통합
+- **Finnhub**: 주식 시장 데이터 API
+  - `finnhub` 패키지로 API 호출
+  - 환경변수 `NEXT_PUBLIC_FINNHUB_API_KEY` 설정 필요
+- **CoinGecko**: 암호화폐 데이터 API (에이전트 가이드 참고)
+- **Kiwoom Securities**: 한국 증권 API (에이전트 가이드 참고)
+
 ## 개발 가이드
 
 ### 페이지 추가
@@ -255,6 +268,58 @@ export default function ThemedComponent() {
 - 모든 페이지는 루트 레이아웃으로 래핑됨
 - 중첩 레이아웃은 각 디렉토리 내에 `layout.tsx` 추가
 
+### API 라우트 패턴
+API 라우트는 `app/api/` 디렉토리에 생성:
+```typescript
+// app/api/stocks/route.ts
+export async function GET(request: Request) {
+  try {
+    // 외부 API 호출 또는 데이터 처리
+    const data = await fetchStockData();
+    return Response.json(data);
+  } catch (error) {
+    return Response.json({ error: 'Failed to fetch data' }, { status: 500 });
+  }
+}
+```
+
+### React Query 사용 예시
+클라이언트에서 데이터 페칭:
+```typescript
+'use client';
+
+import { useQuery } from '@tanstack/react-query';
+
+export default function StockChart() {
+  const { data, isLoading, error } = useQuery({
+    queryKey: ['stocks'],
+    queryFn: async () => {
+      const response = await fetch('/api/stocks');
+      if (!response.ok) throw new Error('Failed to fetch');
+      return response.json();
+    },
+  });
+
+  if (isLoading) return <div>로딩 중...</div>;
+  if (error) return <div>오류 발생: {error.message}</div>;
+
+  return <div>{/* 데이터 렌더링 */}</div>;
+}
+```
+
+React Query 초기화 (필요시 app/layout.tsx에 QueryClientProvider 추가)
+
+## 에이전트 및 MCP 시스템
+
+이 프로젝트는 다음 Claude Code 에이전트를 포함합니다:
+
+### API 가이드 에이전트
+- **coingecko-api-guide**: CoinGecko API 통합 및 암호화폐 데이터 처리
+- **finnhub-api-guide**: Finnhub API를 통한 주식 데이터 실시간 처리
+- **kiwoom-api-guide**: 한국 증권 API (Kiwoom) OAuth 및 REST 엔드포인트 가이드
+
+외부 API를 구현할 때 해당 에이전트를 활용하면 최신 문서와 모범 사례를 참고할 수 있습니다.
+
 ## ESLint 설정
 
 ESLint는 다음 설정을 포함:
@@ -269,6 +334,22 @@ ESLint 무시 대상:
 
 ## 자주 사용하는 명령어
 
+### 개발 & 빌드
+```bash
+# 개발 서버 시작
+npm run dev
+
+# 프로덕션 빌드
+npm run build
+
+# 프로덕션 서버 시작
+npm start
+
+# 코드 린팅 및 검사
+npm run lint
+```
+
+### UI 컴포넌트
 ```bash
 # 새로운 shadcn 컴포넌트 추가
 npx shadcn@latest add <component-name>
@@ -278,6 +359,18 @@ npx shadcn@latest remove <component-name>
 
 # 모든 설치된 컴포넌트 확인
 ls components/ui
+```
+
+### 의존성 관리
+```bash
+# 새 패키지 추가
+npm install <package-name>
+
+# 의존성 업데이트
+npm update
+
+# 의존성 체크
+npm ls
 ```
 
 ## 메타데이터 및 SEO
@@ -309,6 +402,8 @@ export default function DashboardPage() {
 2. **타입 안정성**: strict 모드가 활성화되어 있으므로 모든 타입을 명시적으로 지정해야 합니다.
 3. **Tailwind CSS 4**: PostCSS v4 문법을 사용합니다. 이전 버전의 문법과는 다릅니다.
 4. **shadcn/ui 컴포넌트**: `npx shadcn@latest add`로 추가된 컴포넌트는 `components/ui/` 디렉토리에 저장됩니다.
+5. **React Query 설정**: 아직 QueryClientProvider 설정이 필요합니다. app/layout.tsx에 추가하세요.
+6. **API 키 보안**: `.env.local` 파일은 .gitignore에 포함되어 있습니다. 절대 커밋하지 마세요.
 
 ## 주요 파일 수정 시 주의
 
@@ -348,11 +443,22 @@ app/
 
 `.env.local` 파일을 생성하여 환경 변수 설정:
 ```
+# 외부 API 키
+NEXT_PUBLIC_FINNHUB_API_KEY=your_finnhub_api_key
+
 # API 엔드포인트
 NEXT_PUBLIC_API_URL=http://localhost:8000
 
 # 비공개 환경 변수 (서버 전용)
 DATABASE_URL=postgresql://...
+COINGECKO_API_KEY=your_coingecko_api_key
+KIWOOM_API_KEY=your_kiwoom_api_key
 ```
 
-공개 변수는 `NEXT_PUBLIC_` 접두사 필수. 클라이언트에서 사용 가능한 변수에만 이 접두사 사용.
+### 공개 vs 비공개 환경 변수
+- **NEXT_PUBLIC_** 접두사: 클라이언트 사이드에서 접근 가능 (브라우저에 노출됨)
+  - API 키가 필요 없거나 공개 API인 경우만 사용
+  - 예: Finnhub 공개 엔드포인트
+- **접두사 없음**: 서버 사이드만 접근 가능
+  - 민감한 정보는 반드시 접두사 없이 설정
+  - 예: 데이터베이스 연결, 비공개 API 키
