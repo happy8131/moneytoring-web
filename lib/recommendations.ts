@@ -55,11 +55,11 @@ export function generateRecommendations(
   // 규칙 4: 큰 손실 종목 (수익률 < -20%)
   for (const holding of holdingsWithPrices) {
     const gainPercent = holding.gainPercent || 0;
-    if (gainPercent < -0.2) {
+    if (gainPercent < -20) {
       recommendations.push({
         id: `risk-large-loss-${holding.symbol}`,
         title: `${holding.symbol} 손실 경고`,
-        description: `${holding.symbol}의 수익률이 ${(gainPercent * 100).toFixed(1)}%로 큰 손실을 기록 중입니다. 손실 한정 또는 재평가가 필요합니다.`,
+        description: `${holding.symbol}의 수익률이 ${gainPercent.toFixed(1)}%로 큰 손실을 기록 중입니다. 손실 한정 또는 재평가가 필요합니다.`,
         priority: 'medium',
         category: 'risk',
         action: `${holding.symbol}의 투자 근거를 재검토하고 손절 또는 추가 매수 여부를 판단하세요.`,
@@ -70,11 +70,11 @@ export function generateRecommendations(
   // 규칙 5: 고수익 수익 실현 (수익률 > +50%)
   for (const holding of holdingsWithPrices) {
     const gainPercent = holding.gainPercent || 0;
-    if (gainPercent > 0.5) {
+    if (gainPercent > 50) {
       recommendations.push({
         id: `opportunity-high-gain-${holding.symbol}`,
         title: `${holding.symbol} 수익 실현 기회`,
-        description: `${holding.symbol}의 수익률이 ${(gainPercent * 100).toFixed(1)}%로 높은 수익을 기록 중입니다. 일부 수익 실현을 고려하세요.`,
+        description: `${holding.symbol}의 수익률이 ${gainPercent.toFixed(1)}%로 높은 수익을 기록 중입니다. 일부 수익 실현을 고려하세요.`,
         priority: 'low',
         category: 'opportunity',
         action: `${holding.symbol}의 일부를 매도하여 수익을 실현하고, 실현 이익을 다른 종목에 재투자하세요.`,
