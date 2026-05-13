@@ -1,37 +1,31 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts';
-import { usePortfolio } from '@/hooks/usePortfolio';
-import { useStockQuotes } from '@/hooks/useStockQuotes';
-import { useCryptoPrices } from '@/hooks/useCryptoPrices';
+import type { Holding } from '@/types';
 
 const COLORS = ['#3b82f6', '#8b5cf6', '#10b981', '#f59e0b', '#ef4444'];
 
-export function AssetChart() {
-  const { holdings } = usePortfolio();
+interface AssetChartProps {
+  holdings: Holding[];
+  isHydrated?: boolean;
+  stockPriceMap?: Map<string, number>;
+  cryptoPriceMap?: Map<string, number>;
+  isLoading?: boolean;
+}
 
-  const stockSymbols = holdings
-    .filter((h) => h.type === 'stock')
-    .map((h) => h.symbol);
-  const cryptoIds = holdings
-    .filter((h) => h.type === 'crypto')
-    .map((h) => h.symbol.toLowerCase());
+export function AssetChart({
+  holdings,
+  isHydrated = true,
+  stockPriceMap = new Map(),
+  cryptoPriceMap = new Map(),
+  isLoading = false,
+}: AssetChartProps) {
+  const [isMounted, setIsMounted] = useState(false);
 
-  const { data: stockData } = useStockQuotes({
-    symbols: stockSymbols,
-    enabled: stockSymbols.length > 0,
-  });
-  const { data: cryptoData } = useCryptoPrices({
-    ids: cryptoIds,
-    enabled: cryptoIds.length > 0,
-  });
-
-  const stockPriceMap = new Map(
-    (stockData?.data || []).map((quote) => [quote.symbol, quote.currentPrice])
-  );
-  const cryptoPriceMap = new Map(
-    (cryptoData?.data || []).map((crypto) => [crypto.symbol, crypto.currentPrice])
-  );
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const chartData = holdings
     .map((holding) => {
@@ -44,6 +38,14 @@ export function AssetChart() {
       };
     })
     .filter((item) => item.value > 0);
+
+  if (!isHydrated || !isMounted || isLoading) {
+    return (
+      <div className="rounded-lg border border-border bg-card p-8 h-80 flex items-center justify-center">
+        <div className="h-40 bg-muted animate-pulse rounded-lg w-full" />
+      </div>
+    );
+  }
 
   if (holdings.length === 0) {
     return (

@@ -7,6 +7,7 @@ import { Plus } from 'lucide-react';
 import { usePortfolio } from '@/hooks/usePortfolio';
 import { useStockQuotes } from '@/hooks/useStockQuotes';
 import { useCryptoPrices } from '@/hooks/useCryptoPrices';
+import { symbolsToCoinGeckoIds } from '@/lib/crypto-symbols';
 import {
   calculatePortfolioSummary,
   mergeHoldingsWithPrices,
@@ -20,10 +21,17 @@ import { TransactionTable } from '@/components/portfolio/TransactionTable';
 import { TransactionModal } from '@/components/portfolio/TransactionModal';
 import { PortfolioAnalytics } from '@/components/portfolio/PortfolioAnalytics';
 import type { Holding } from '@/types';
+import type { QuotesResponse } from '@/app/api/stocks/quotes/route';
+import type { CryptoPricesResponse } from '@/app/api/crypto/prices/route';
 
 export default function PortfolioPage() {
-  const { holdings, removeHolding, addHolding, transactions, addTransaction, removeTransaction } =
+  const { holdings, isHydrated, removeHolding, addHolding, transactions, addTransaction, removeTransaction } =
     usePortfolio();
+
+  // 디버그 로그
+  if (typeof window !== 'undefined') {
+    console.log('PortfolioPage holdings:', holdings.length, holdings.map(h => h.symbol).join(','));
+  }
 
   const [addHoldingModalOpen, setAddHoldingModalOpen] = useState(false);
   const [addTransactionModalOpen, setAddTransactionModalOpen] = useState(false);
@@ -35,18 +43,22 @@ export default function PortfolioPage() {
   const stockSymbols = holdings
     .filter((h) => h.type === 'stock')
     .map((h) => h.symbol);
-  const cryptoIds = holdings
+  const cryptoSymbols = holdings
     .filter((h) => h.type === 'crypto')
-    .map((h) => h.symbol.toLowerCase());
+    .map((h) => h.symbol);
+  const cryptoIds = symbolsToCoinGeckoIds(cryptoSymbols);
 
-  const { data: stockData } = useStockQuotes({
+  const stockQueryResult = useStockQuotes({
     symbols: stockSymbols,
     enabled: stockSymbols.length > 0,
   });
-  const { data: cryptoData } = useCryptoPrices({
+  const cryptoQueryResult = useCryptoPrices({
     ids: cryptoIds,
     enabled: cryptoIds.length > 0,
   });
+
+  const stockData = stockQueryResult.data as QuotesResponse | undefined;
+  const cryptoData = cryptoQueryResult.data as CryptoPricesResponse | undefined;
 
   const stockPriceMap = new Map(
     (stockData?.data || []).map((quote) => [quote.symbol, quote.currentPrice])
@@ -92,6 +104,22 @@ export default function PortfolioPage() {
     }
   };
 
+  if (!isHydrated) {
+    return (
+      <div className="space-y-6">
+        <div className="flex items-center justify-between">
+          <div>
+            <h1 className="text-3xl font-bold tracking-tight">포트폴리오</h1>
+            <p className="text-muted-foreground mt-1">
+              보유 중인 자산을 관리하고 수익률을 분석하세요.
+            </p>
+          </div>
+        </div>
+        <div className="h-40 bg-muted animate-pulse rounded-lg" />
+      </div>
+    );
+  }
+
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
@@ -129,7 +157,13 @@ export default function PortfolioPage() {
             </div>
 
             <div>
-              <AssetChart />
+              <AssetChart
+                holdings={holdings}
+                isHydrated={isHydrated}
+                stockPriceMap={stockPriceMap}
+                cryptoPriceMap={cryptoPriceMap}
+                isLoading={stockQueryResult.isLoading || cryptoQueryResult.isLoading}
+              />
             </div>
           </div>
         </TabsContent>
