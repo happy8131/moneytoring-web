@@ -4,6 +4,7 @@ import { useState } from 'react';
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogFooter,
@@ -134,6 +135,9 @@ export function AddHoldingModal({
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle>종목 추가</DialogTitle>
+          <DialogDescription>
+            새로운 주식 또는 암호화폐 종목을 포트폴리오에 추가합니다.
+          </DialogDescription>
         </DialogHeader>
 
         <div className="grid gap-4 py-4">

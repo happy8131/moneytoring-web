@@ -59,23 +59,8 @@ export function RecommendationsWidget({
       </div>
 
       <p className="text-sm text-muted-foreground mb-4">
-        AI가 포트폴리오를 분석하여 맞춤형 투자 추천을 제공합니다.
+        포트폴리오를 분석하여 맞춤형 투자 추천을 제공합니다.
       </p>
-
-      {isLoading && (
-        <div className="space-y-3">
-          {[...Array(3)].map((_, i) => (
-            <Skeleton key={i} className="h-24 w-full rounded-lg" />
-          ))}
-        </div>
-      )}
-
-      {error && (
-        <div className="p-4 bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200 rounded-lg text-sm">
-          <p className="font-semibold mb-1">추천 생성 실패</p>
-          <p>{error.message}</p>
-        </div>
-      )}
 
       {data && data.recommendations.length > 0 && (
         <div className="space-y-3">
@@ -85,7 +70,7 @@ export function RecommendationsWidget({
         </div>
       )}
 
-      {data && data.recommendations.length === 0 && !isLoading && !error && (
+      {data && data.recommendations.length === 0 && (
         <p className="text-muted-foreground text-sm">
           현재 추천할 항목이 없습니다.
         </p>

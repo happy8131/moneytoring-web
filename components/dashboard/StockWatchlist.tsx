@@ -2,14 +2,18 @@
 
 import { useStockQuotes } from '@/hooks/useStockQuotes';
 import { formatCurrency, formatPercent } from '@/lib/calculations';
+import type { QuotesResponse } from '@/app/api/stocks/quotes/route';
 
 const DEFAULT_SYMBOLS = ['AAPL', 'GOOGL', 'MSFT', 'AMZN', 'TSLA'];
 
 export function StockWatchlist() {
-  const { data, isLoading, isError, error, dataUpdatedAt } = useStockQuotes({
+  const queryResult = useStockQuotes({
     symbols: DEFAULT_SYMBOLS,
     refetchInterval: 30_000,
   });
+
+  const data = queryResult.data as QuotesResponse | undefined;
+  const { isLoading, isError, error, dataUpdatedAt } = queryResult;
 
   if (isLoading) {
     return (

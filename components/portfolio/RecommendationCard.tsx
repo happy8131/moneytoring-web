@@ -8,7 +8,7 @@ import {
   AlertCircle,
   Lightbulb,
 } from 'lucide-react';
-import type { AIRecommendation } from '@/app/api/recommendations/route';
+import type { AIRecommendation } from '@/types';
 
 interface RecommendationCardProps {
   recommendation: AIRecommendation;

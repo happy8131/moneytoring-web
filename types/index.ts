@@ -71,6 +71,16 @@ export interface Transaction {
   memo?: string;
 }
 
+// AI 투자 추천
+export interface AIRecommendation {
+  id: string;
+  title: string;
+  description: string;
+  priority: 'high' | 'medium' | 'low';
+  category: 'diversification' | 'risk' | 'opportunity' | 'rebalancing';
+  action: string;
+}
+
 // 포트폴리오 저장소 (localStorage)
 export interface PortfolioStore {
   holdings: Holding[];

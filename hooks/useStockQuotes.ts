@@ -31,13 +31,16 @@ export function useStockQuotes({
   enabled = true,
   refetchInterval = 30_000,
 }: UseStockQuotesOptions) {
-  return useQuery({
+  return useQuery<QuotesResponse>({
     queryKey: ['stocks', 'quotes', [...symbols].sort()],
     queryFn: () => fetchQuotes(symbols),
     enabled: enabled && symbols.length > 0,
     refetchInterval,
-    staleTime: 30_000,
+    staleTime: 0,
+    gcTime: 0,
     retry: 1,
     refetchOnWindowFocus: true,
+    refetchOnMount: 'always',
+    placeholderData: (previousData) => previousData,
   });
 }

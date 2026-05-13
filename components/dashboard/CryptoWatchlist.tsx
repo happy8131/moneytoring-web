@@ -2,14 +2,18 @@
 
 import { useCryptoPrices } from '@/hooks/useCryptoPrices';
 import { formatCurrency, formatPercent } from '@/lib/calculations';
+import type { CryptoPricesResponse } from '@/app/api/crypto/prices/route';
 
 const DEFAULT_IDS = ['bitcoin', 'ethereum', 'solana', 'cardano', 'ripple'];
 
 export function CryptoWatchlist() {
-  const { data, isLoading, isError, error, dataUpdatedAt } = useCryptoPrices({
+  const queryResult = useCryptoPrices({
     ids: DEFAULT_IDS,
     refetchInterval: 60_000,
   });
+
+  const data = queryResult.data as CryptoPricesResponse | undefined;
+  const { isLoading, isError, error, dataUpdatedAt } = queryResult;
 
   if (isLoading) {
     return (

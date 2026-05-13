@@ -29,14 +29,16 @@ export function useCryptoPrices({
   enabled = true,
   refetchInterval = 60_000,
 }: UseCryptoPricesOptions) {
-  return useQuery({
+  return useQuery<CryptoPricesResponse>({
     queryKey: ['crypto', 'prices', [...ids].sort()],
     queryFn: () => fetchPrices(ids),
     enabled: enabled && ids.length > 0,
     refetchInterval,
-    staleTime: 60_000,
+    staleTime: 0,
+    gcTime: 0,
     retry: 1,
-    refetchOnWindowFocus: false,
-    refetchIntervalInBackground: false,
+    refetchOnWindowFocus: true,
+    refetchOnMount: 'always',
+    placeholderData: (previousData) => previousData,
   });
 }

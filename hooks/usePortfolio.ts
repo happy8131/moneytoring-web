@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useCallback, useEffect } from 'react';
+import { useQueryClient } from '@tanstack/react-query';
 import type { Holding, Favorite, NewsItem, PortfolioStore, Transaction } from '@/types';
 
 const STORAGE_KEY = 'moneytoring_portfolio';
@@ -43,21 +44,32 @@ function loadStore(): PortfolioStore {
 export function usePortfolio() {
   const [store, setStore] = useState<PortfolioStore>(() => loadStore());
   const [isHydrated, setIsHydrated] = useState(false);
+  const queryClient = useQueryClient();
 
   // 클라이언트 마운트 후 hydration 완료
   useEffect(() => {
     setIsHydrated(true);
   }, []);
 
-  // localStorage에 저장
+  // localStorage에 저장하고 React Query 캐시 무효화
   const saveStore = useCallback((newStore: PortfolioStore) => {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(newStore));
       setStore(newStore);
+
+      // holdings이 변경되면 주식/암호화폐 가격 캐시 무효화 및 즉시 리페칭
+      queryClient.invalidateQueries({
+        queryKey: ['stocks'],
+        refetchType: 'active',
+      });
+      queryClient.invalidateQueries({
+        queryKey: ['crypto'],
+        refetchType: 'active',
+      });
     } catch (error) {
       console.error('Failed to save portfolio:', error);
     }
-  }, []);
+  }, [queryClient]);
 
   // 보유 종목 추가
   const addHolding = useCallback(

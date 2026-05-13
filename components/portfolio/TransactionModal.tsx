@@ -4,6 +4,7 @@ import { useState } from 'react';
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogFooter,
@@ -124,6 +125,9 @@ export function TransactionModal({
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle>거래 기록 추가</DialogTitle>
+          <DialogDescription>
+            매수 또는 매도 거래 기록을 포트폴리오에 추가합니다.
+          </DialogDescription>
         </DialogHeader>
 
         <div className="grid gap-4 py-4">
