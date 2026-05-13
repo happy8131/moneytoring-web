@@ -3,11 +3,18 @@
 import { useQuery } from '@tanstack/react-query';
 
 export interface KoreanIndex {
-  symbol: string;
+  code: string;
+  indexCode: string;
   name: string;
   currentValue: number;
   change: number;
   percentChange: number;
+  volume: number;
+  tradingValue: number;
+  openValue: number;
+  highValue: number;
+  lowValue: number;
+  updatedAt: string;
 }
 
 interface KoreanIndicesResponse {

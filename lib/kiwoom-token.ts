@@ -109,7 +109,7 @@ async function issueToken(appkey: string, secretkey: string): Promise<CachedToke
 
   const data: TokenResponse = await res.json();
 
-  if (data.return_code !== '0') {
+  if (String(data.return_code) !== '0') {
     throw new Error(
       `키움 토큰 오류 [${data.return_code}]: ${data.return_msg}`
     );

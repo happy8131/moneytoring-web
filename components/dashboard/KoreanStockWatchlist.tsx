@@ -14,7 +14,7 @@ const POPULAR_STOCKS = [
 ];
 
 export function KoreanStockWatchlist() {
-  const { data, isLoading } = useKoreanStockQuotes({
+  const { data, isLoading, error } = useKoreanStockQuotes({
     symbols: POPULAR_STOCKS.map((s) => s.symbol),
   });
 
@@ -41,6 +41,29 @@ export function KoreanStockWatchlist() {
           </Card>
         ))}
       </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <Card className="p-4 bg-red-50 dark:bg-red-950 border-red-200 dark:border-red-800">
+        <p className="text-sm text-red-700 dark:text-red-200">
+          인기 종목을 불러올 수 없습니다. (Kiwoom API 오류)
+        </p>
+        <p className="text-xs text-red-600 dark:text-red-300 mt-1">
+          .env.local의 KIWOOM_APP_KEY, KIWOOM_SECRET_KEY를 확인하세요.
+        </p>
+      </Card>
+    );
+  }
+
+  if (stocks.length === 0) {
+    return (
+      <Card className="p-4 bg-amber-50 dark:bg-amber-950 border-amber-200 dark:border-amber-800">
+        <p className="text-sm text-amber-700 dark:text-amber-200">
+          한국 주식 데이터가 없습니다.
+        </p>
+      </Card>
     );
   }
 

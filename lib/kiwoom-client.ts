@@ -56,8 +56,34 @@ function getBaseUrl(): string {
 }
 
 /**
+ * TR 코드별 엔드포인트 경로 매핑
+ * 키움 REST API는 카테고리별로 엔드포인트가 구분됩니다.
+ */
+const TR_ENDPOINT_MAP: Record<string, string> = {
+  // 주식 현재가 / 시세 관련
+  ka10001: '/api/dostk/stkinfo',   // 주식 현재가
+  ka10002: '/api/dostk/stkinfo',   // 주식 일봉 데이터
+  ka10003: '/api/dostk/stkinfo',   // 주식 주봉 데이터
+  ka10004: '/api/dostk/stkinfo',   // 주식 월봉 데이터
+  ka10005: '/api/dostk/stkinfo',   // 주식 분봉 데이터
+  // 지수 관련
+  ka20001: '/api/dostk/sect',      // 업종 현재가
+  // 계좌 관련 (Production 전용)
+  kt10001: '/api/dostk/acnt',      // 주식 잔고 조회
+  kt10002: '/api/dostk/acnt',      // 주식 체결 내역
+};
+
+/**
+ * TR 코드로 엔드포인트 경로를 반환합니다.
+ * 매핑에 없는 경우 기본값 /api/dostk/stkinfo 를 사용합니다.
+ */
+function getEndpointPath(trCode: string): string {
+  return TR_ENDPOINT_MAP[trCode] ?? '/api/dostk/stkinfo';
+}
+
+/**
  * 키움 API 공통 요청 함수
- * 모든 REST 엔드포인트는 POST /api/dostk/v1 에 TR 코드로 구분됩니다.
+ * TR 코드에 따라 적절한 엔드포인트로 요청합니다.
  */
 export async function kiwoomRequest<T>(
   options: KiwoomRequestOptions
@@ -65,8 +91,9 @@ export async function kiwoomRequest<T>(
   const token = await getKiwoomToken();
   const baseUrl = getBaseUrl();
 
-  // 키움 REST API 공통 엔드포인트
-  const url = `${baseUrl}/api/dostk/v1`;
+  // TR 코드별 엔드포인트 경로 결정
+  const endpointPath = getEndpointPath(options.trCode);
+  const url = `${baseUrl}${endpointPath}`;
 
   const headers: Record<string, string> = {
     'Content-Type': 'application/json;charset=UTF-8',
@@ -80,6 +107,8 @@ export async function kiwoomRequest<T>(
     headers['cont-yn'] = 'Y';
   }
 
+  console.log(`[Kiwoom] ${options.trCode} 요청 → ${url}`, JSON.stringify(options.body));
+
   const res = await fetch(url, {
     method: 'POST',
     headers,
@@ -88,6 +117,9 @@ export async function kiwoomRequest<T>(
   });
 
   if (!res.ok) {
+    // HTTP 오류 응답 바디도 로깅 (오류 원인 파악용)
+    const errorBody = await res.text().catch(() => '');
+    console.error(`[Kiwoom] HTTP ${res.status} 오류:`, errorBody);
     throw new KiwoomAPIError(
       `HTTP_${res.status}`,
       `키움 API HTTP 오류: ${res.status} ${res.statusText}`,
@@ -102,10 +134,18 @@ export async function kiwoomRequest<T>(
 
   const json = await res.json();
 
+  console.log(`[Kiwoom] ${options.trCode} 응답:`, JSON.stringify(json));
+
   // return_code 검증 (키움 API 비즈니스 에러)
-  if (json.return_code && json.return_code !== '0' && json.return_code !== 0) {
+  // 0 또는 "0" 이면 정상, 그 외 오류
+  const returnCode = json.return_code;
+  const isError = returnCode !== undefined
+    && returnCode !== null
+    && String(returnCode) !== '0';
+
+  if (isError) {
     throw new KiwoomAPIError(
-      String(json.return_code),
+      String(returnCode),
       json.return_msg ?? '알 수 없는 키움 API 오류'
     );
   }

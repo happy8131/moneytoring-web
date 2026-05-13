@@ -25,6 +25,16 @@ const KoreanStockWatchlist = dynamic(
   { loading: () => <div className="animate-pulse p-4">로딩 중...</div> }
 );
 
+const USMarketIndices = dynamic(
+  () => import('@/components/dashboard/USMarketIndices').then((m) => m.USMarketIndices),
+  { loading: () => <div className="animate-pulse p-4">로딩 중...</div> }
+);
+
+const CryptoMarketStatus = dynamic(
+  () => import('@/components/dashboard/CryptoMarketStatus').then((m) => m.CryptoMarketStatus),
+  { loading: () => <div className="animate-pulse p-4">로딩 중...</div> }
+);
+
 export default function DashboardPage() {
   return (
     <div className="space-y-6">
@@ -35,9 +45,27 @@ export default function DashboardPage() {
         </p>
       </div>
 
+      {/* 미국 증시 */}
+      <section className="space-y-4">
+        <h2 className="text-xl font-semibold">미국 증시</h2>
+        <USMarketIndices />
+      </section>
+
+      {/* 암호화폐 시장 현황 */}
+      <section className="space-y-4">
+        <h2 className="text-xl font-semibold">암호화폐 시장</h2>
+        <CryptoMarketStatus />
+      </section>
+
+      {/* 한국 증시 지수만 */}
+      <section className="space-y-4">
+        <h2 className="text-xl font-semibold">한국 증시</h2>
+        <MarketIndices />
+      </section>
+
       <div className="grid gap-6 lg:grid-cols-2">
         <div>
-          <h2 className="text-xl font-semibold mb-4">주식</h2>
+          <h2 className="text-xl font-semibold mb-4">미국 주식</h2>
           <StockWatchlist />
         </div>
         <div>
@@ -46,9 +74,9 @@ export default function DashboardPage() {
         </div>
       </div>
 
+      {/* 한국 개별 주식 종목 */}
       <section className="space-y-4">
-        <h2 className="text-xl font-semibold">한국 증시</h2>
-        <MarketIndices />
+        <h2 className="text-xl font-semibold">한국 주식</h2>
         <KoreanStockWatchlist />
       </section>
     </div>

@@ -17,9 +17,14 @@ import { kiwoomRequest, kiwoomBatchRequest, KiwoomAPIError } from '@/lib/kiwoom-
 
 /**
  * 키움 ka10001 응답 구조 (주식 현재가)
- * 실제 필드명은 키움 API 문서 기준 (한글 필드명)
+ * 키움 API는 응답 바디 자체가 단일 객체 (배열 없음)
+ * 실제 필드명은 키움 API 문서 기준 (영문 약어 필드명)
  */
 interface KiwoomStockPriceRaw {
+  // 공통 응답 필드
+  return_code: number | string;  // 0: 정상
+  return_msg: string;            // 응답 메시지
+  // 시세 데이터 필드
   stk_cd: string;         // 종목코드
   stk_nm: string;         // 종목명
   cur_prc: string;        // 현재가 (부호 포함, 예: "+82000", "-1500")

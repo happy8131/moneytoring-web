@@ -15,12 +15,12 @@ import { kiwoomRequest, kiwoomBatchRequest, KiwoomAPIError } from '@/lib/kiwoom-
 // 지수 코드 매핑
 // ────────────────────────────────────────────────────────────────────────────
 
-const INDEX_CODE_MAP: Record<string, { upjongCode: string; name: string }> = {
-  kospi: { upjongCode: '001', name: '코스피' },
-  kosdaq: { upjongCode: '101', name: '코스닥' },
-  kospi200: { upjongCode: '200', name: '코스피200' },
-  kospi100: { upjongCode: '207', name: '코스피100' },
-  kospi50: { upjongCode: '208', name: '코스피50' },
+const INDEX_CODE_MAP: Record<string, { mrktTp: string; indsCd: string; name: string }> = {
+  kospi: { mrktTp: '0', indsCd: '001', name: '코스피' },
+  kosdaq: { mrktTp: '1', indsCd: '101', name: '코스닥' },
+  kospi200: { mrktTp: '2', indsCd: '201', name: '코스피200' },
+  kospi100: { mrktTp: '0', indsCd: '208', name: '코스피100' },
+  kospi50: { mrktTp: '0', indsCd: '208', name: '코스피50' },
 };
 
 const DEFAULT_INDICES = ['kospi', 'kosdaq', 'kospi200'];
@@ -31,19 +31,26 @@ const DEFAULT_INDICES = ['kospi', 'kosdaq', 'kospi200'];
 
 /**
  * 키움 업종 현재가 응답 (ka20001)
+ * Kiwoom REST API 공식 명세 기준
  */
 interface KiwoomIndexRaw {
-  upjong_cd: string;      // 업종코드
-  upjong_nm: string;      // 업종명
-  cur_prc: string;        // 현재가 (지수값)
-  pred_pre_sig: string;   // 전일대비부호
+  // 공통 응답 필드
+  return_code: number | string;  // 0=정상
+  return_msg: string;
+  // 지수 데이터 필드
+  cur_prc: string;        // 현재가
+  pred_pre_sig: string;   // 전일대비부호 (1=상한, 2=상승, 3=보합, 4=하락, 5=하한)
   pred_pre: string;       // 전일대비
   flu_rt: string;         // 등락율
-  acc_trde_qty: string;   // 누적거래량
-  acc_trde_prc: string;   // 누적거래대금
-  open_prc: string;       // 시가
-  high_prc: string;       // 고가
-  low_prc: string;        // 저가
+  trde_qty: string;       // 거래량
+  trde_prica: string;     // 거래대금
+  open_pric: string;      // 시가
+  high_pric: string;      // 고가
+  low_pric: string;       // 저가
+  upl: string;            // 상한
+  rising: string;         // 상승
+  stdns: string;          // 보합
+  fall: string;           // 하락
 }
 
 export interface KoreanIndexQuote {
@@ -81,8 +88,8 @@ async function fetchSingleIndex(
   const response = await kiwoomRequest<KiwoomIndexRaw>({
     trCode: 'ka20001',
     body: {
-      upjong_tp: '0',             // 업종구분: 0=코스피, 1=코스닥
-      upjong_cd: indexInfo.upjongCode,
+      mrkt_tp: indexInfo.mrktTp,    // 시장구분: 0=코스피, 1=코스닥, 2=코스피200
+      inds_cd: indexInfo.indsCd,    // 업종코드
     },
   });
 
@@ -95,16 +102,16 @@ async function fetchSingleIndex(
 
   return {
     code,
-    indexCode: indexInfo.upjongCode,
-    name: raw.upjong_nm || indexInfo.name,
+    indexCode: indexInfo.indsCd,
+    name: indexInfo.name,
     currentValue: parseIndexValue(raw.cur_prc),
     change: signedChange,
     percentChange: parseIndexValue(raw.flu_rt),
-    volume: parseIndexValue(raw.acc_trde_qty),
-    tradingValue: parseIndexValue(raw.acc_trde_prc),
-    openValue: parseIndexValue(raw.open_prc),
-    highValue: parseIndexValue(raw.high_prc),
-    lowValue: parseIndexValue(raw.low_prc),
+    volume: parseIndexValue(raw.trde_qty),
+    tradingValue: parseIndexValue(raw.trde_prica),
+    openValue: parseIndexValue(raw.open_pric),
+    highValue: parseIndexValue(raw.high_pric),
+    lowValue: parseIndexValue(raw.low_pric),
     updatedAt: new Date().toISOString(),
   };
 }
