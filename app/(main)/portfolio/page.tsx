@@ -7,6 +7,8 @@ import { Plus } from 'lucide-react';
 import { usePortfolio } from '@/hooks/usePortfolio';
 import { useStockQuotes } from '@/hooks/useStockQuotes';
 import { useCryptoPrices } from '@/hooks/useCryptoPrices';
+import { useKoreanStockQuotes } from '@/hooks/useKoreanStockQuotes';
+import { useExchangeRate } from '@/hooks/useExchangeRate';
 import { symbolsToCoinGeckoIds } from '@/lib/crypto-symbols';
 import {
   calculatePortfolioSummary,
@@ -46,6 +48,9 @@ export default function PortfolioPage() {
   const cryptoSymbols = holdings
     .filter((h) => h.type === 'crypto')
     .map((h) => h.symbol);
+  const koreanStockSymbols = holdings
+    .filter((h) => h.type === 'korean-stock')
+    .map((h) => h.symbol);
   const cryptoIds = symbolsToCoinGeckoIds(cryptoSymbols);
 
   const stockQueryResult = useStockQuotes({
@@ -56,6 +61,11 @@ export default function PortfolioPage() {
     ids: cryptoIds,
     enabled: cryptoIds.length > 0,
   });
+  const koreanStockQueryResult = useKoreanStockQuotes({
+    symbols: koreanStockSymbols,
+    enabled: koreanStockSymbols.length > 0,
+  });
+  const exchangeRateResult = useExchangeRate();
 
   const stockData = stockQueryResult.data as QuotesResponse | undefined;
   const cryptoData = cryptoQueryResult.data as CryptoPricesResponse | undefined;
@@ -66,11 +76,17 @@ export default function PortfolioPage() {
   const cryptoPriceMap = new Map(
     (cryptoData?.data || []).map((crypto) => [crypto.symbol, crypto.currentPrice])
   );
+  const koreanStockPriceMap = new Map(
+    (koreanStockQueryResult.data?.data || []).map((q) => [q.symbol, q.currentPrice])
+  );
+  const krwToUsd = exchangeRateResult.data?.krwToUsd ?? 0;
 
   const holdingsWithPrices = mergeHoldingsWithPrices(
     holdings,
     stockPriceMap,
-    cryptoPriceMap
+    cryptoPriceMap,
+    koreanStockPriceMap,
+    krwToUsd
   );
 
   const summary = calculatePortfolioSummary(holdingsWithPrices);

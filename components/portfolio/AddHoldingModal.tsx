@@ -41,7 +41,7 @@ export function AddHoldingModal({
     quantity: '',
     buyPrice: '',
     buyDate: new Date().toISOString().split('T')[0],
-    type: 'stock' as const,
+    type: 'stock' as 'stock' | 'crypto' | 'korean-stock',
   });
 
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -91,12 +91,12 @@ export function AddHoldingModal({
     }
 
     const newHolding: Omit<Holding, 'id'> = {
-      symbol: formData.symbol.toUpperCase(),
+      symbol: formData.type === 'korean-stock' ? formData.symbol : formData.symbol.toUpperCase(),
       name: formData.name,
       quantity: parseFloat(formData.quantity),
       buyPrice: parseFloat(formData.buyPrice),
       buyDate: formData.buyDate,
-      type: formData.type,
+      type: formData.type as 'stock' | 'crypto' | 'korean-stock',
     };
 
     onAddHolding(newHolding);
@@ -146,11 +146,14 @@ export function AddHoldingModal({
               <Label htmlFor="symbol">종목 코드 *</Label>
               <Input
                 id="symbol"
-                placeholder="AAPL"
+                placeholder={formData.type === 'korean-stock' ? '005930' : 'AAPL'}
                 value={formData.symbol}
                 onChange={(e) => handleChange('symbol', e.target.value)}
                 className={errors.symbol ? 'border-destructive' : ''}
               />
+              {formData.type === 'korean-stock' && (
+                <p className="text-xs text-muted-foreground">6자리 종목코드 입력 (예: 005930)</p>
+              )}
               {errors.symbol && (
                 <p className="text-xs text-destructive">{errors.symbol}</p>
               )}
@@ -167,6 +170,7 @@ export function AddHoldingModal({
                 <SelectContent>
                   <SelectItem value="stock">주식</SelectItem>
                   <SelectItem value="crypto">암호화폐</SelectItem>
+                  <SelectItem value="korean-stock">한국 주식</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -203,11 +207,13 @@ export function AddHoldingModal({
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="buyPrice">매입가 *</Label>
+              <Label htmlFor="buyPrice">
+                매입가 {formData.type === 'korean-stock' ? '(KRW)' : ''} *
+              </Label>
               <Input
                 id="buyPrice"
                 type="number"
-                placeholder="150.50"
+                placeholder={formData.type === 'korean-stock' ? '50000' : '150.50'}
                 step="0.01"
                 value={formData.buyPrice}
                 onChange={(e) => handleChange('buyPrice', e.target.value)}

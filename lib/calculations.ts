@@ -23,11 +23,20 @@ export function calculateGainPercent(holding: Holding): number {
 export function mergeHoldingsWithPrices(
   holdings: Holding[],
   stockPrices: Map<string, number>,
-  cryptoPrices: Map<string, number>
+  cryptoPrices: Map<string, number>,
+  koreanStockPrices?: Map<string, number>,
+  krwToUsd?: number
 ): Holding[] {
   return holdings.map((holding) => {
-    const priceMap = holding.type === 'stock' ? stockPrices : cryptoPrices;
-    const currentPrice = priceMap.get(holding.symbol) || 0;
+    let currentPrice = 0;
+
+    if (holding.type === 'korean-stock') {
+      const krwPrice = koreanStockPrices?.get(holding.symbol) || 0;
+      currentPrice = krwPrice * (krwToUsd ?? 0);
+    } else {
+      const priceMap = holding.type === 'stock' ? stockPrices : cryptoPrices;
+      currentPrice = priceMap.get(holding.symbol) || 0;
+    }
 
     return {
       ...holding,

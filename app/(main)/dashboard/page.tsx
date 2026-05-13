@@ -15,6 +15,16 @@ const CryptoWatchlist = dynamic(
   { loading: () => <div className="animate-pulse p-4">로딩 중...</div> }
 );
 
+const MarketIndices = dynamic(
+  () => import('@/components/dashboard/MarketIndices').then((m) => m.MarketIndices),
+  { loading: () => <div className="animate-pulse p-4">로딩 중...</div> }
+);
+
+const KoreanStockWatchlist = dynamic(
+  () => import('@/components/dashboard/KoreanStockWatchlist').then((m) => m.KoreanStockWatchlist),
+  { loading: () => <div className="animate-pulse p-4">로딩 중...</div> }
+);
+
 export default function DashboardPage() {
   return (
     <div className="space-y-6">
@@ -35,6 +45,12 @@ export default function DashboardPage() {
           <CryptoWatchlist />
         </div>
       </div>
+
+      <section className="space-y-4">
+        <h2 className="text-xl font-semibold">한국 증시</h2>
+        <MarketIndices />
+        <KoreanStockWatchlist />
+      </section>
     </div>
   );
 }

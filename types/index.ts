@@ -32,7 +32,7 @@ export interface Holding {
   quantity: number;
   buyPrice: number;
   buyDate: string; // ISO string
-  type: 'stock' | 'crypto';
+  type: 'stock' | 'crypto' | 'korean-stock';
   currentPrice?: number;
   gain?: number;
   gainPercent?: number;
@@ -43,7 +43,7 @@ export interface Holding {
 export interface Favorite {
   symbol: string;
   name: string;
-  type: 'stock' | 'crypto';
+  type: 'stock' | 'crypto' | 'korean-stock';
   addedAt: string;
 }
 
