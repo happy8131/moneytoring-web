@@ -33,10 +33,16 @@ const PERIOD_LABELS: Record<Period, string> = {
 
 interface StockPriceChartProps {
   symbol: string;
+  onPeriodChange?: (period: Period) => void;
 }
 
-export function StockPriceChart({ symbol }: StockPriceChartProps) {
+export function StockPriceChart({ symbol, onPeriodChange }: StockPriceChartProps) {
   const [selectedPeriod, setSelectedPeriod] = useState<Period>('1M');
+
+  const handlePeriodChange = (period: Period) => {
+    setSelectedPeriod(period);
+    onPeriodChange?.(period);
+  };
   const periodRange = getPeriodRange(selectedPeriod);
 
   const { data: candleData, isLoading } = useStockCandle({
@@ -83,7 +89,7 @@ export function StockPriceChart({ symbol }: StockPriceChartProps) {
         {PERIODS.map((period) => (
           <button
             key={period}
-            onClick={() => setSelectedPeriod(period)}
+            onClick={() => handlePeriodChange(period)}
             className={`px-3 py-2 rounded-md text-sm font-medium whitespace-nowrap transition-colors ${
               selectedPeriod === period
                 ? 'bg-primary text-primary-foreground'
