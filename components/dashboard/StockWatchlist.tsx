@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useStockQuotes } from '@/hooks/useStockQuotes';
 import { formatCurrency, formatPercent } from '@/lib/calculations';
 import type { QuotesResponse } from '@/app/api/stocks/quotes/route';
@@ -40,26 +41,28 @@ export function StockWatchlist() {
       </p>
 
       {data?.data.map((quote) => (
-        <div
+        <Link
           key={quote.symbol}
-          className="flex items-center justify-between rounded-lg border border-border bg-card p-3 hover:bg-accent/50 transition-colors"
+          href={`/stocks/${quote.symbol}`}
         >
-          <div>
-            <p className="font-semibold text-sm">{quote.symbol}</p>
+          <div className="flex items-center justify-between rounded-lg border border-border bg-card p-3 hover:bg-accent/50 transition-colors">
+            <div>
+              <p className="font-semibold text-sm">{quote.symbol}</p>
+            </div>
+            <div className="text-right">
+              <p className="font-mono text-sm font-semibold">
+                {formatCurrency(quote.currentPrice)}
+              </p>
+              <p
+                className={`text-xs font-medium ${
+                  quote.change >= 0 ? 'text-green-600' : 'text-red-600'
+                }`}
+              >
+                {formatPercent(quote.percentChange)}
+              </p>
+            </div>
           </div>
-          <div className="text-right">
-            <p className="font-mono text-sm font-semibold">
-              {formatCurrency(quote.currentPrice)}
-            </p>
-            <p
-              className={`text-xs font-medium ${
-                quote.change >= 0 ? 'text-green-600' : 'text-red-600'
-              }`}
-            >
-              {formatPercent(quote.percentChange)}
-            </p>
-          </div>
-        </div>
+        </Link>
       ))}
 
       {(data?.errors.length ?? 0) > 0 && (
