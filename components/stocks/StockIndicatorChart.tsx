@@ -21,7 +21,14 @@ export function StockIndicatorChart({ symbol, period }: StockIndicatorChartProps
     timeperiod: 14,
   });
 
-  // SMA (Simple Moving Average) - 20일, 50일
+  // SMA (Simple Moving Average) - 5일, 20일, 60일, 120일, 210일
+  const { data: sma5Data, isLoading: sma5Loading } = useStockIndicator({
+    symbol,
+    period: periodRange,
+    indicator: 'sma',
+    timeperiod: 5,
+  });
+
   const { data: sma20Data, isLoading: sma20Loading } = useStockIndicator({
     symbol,
     period: periodRange,
@@ -29,14 +36,28 @@ export function StockIndicatorChart({ symbol, period }: StockIndicatorChartProps
     timeperiod: 20,
   });
 
-  const { data: sma50Data, isLoading: sma50Loading } = useStockIndicator({
+  const { data: sma60Data, isLoading: sma60Loading } = useStockIndicator({
     symbol,
     period: periodRange,
     indicator: 'sma',
-    timeperiod: 50,
+    timeperiod: 60,
   });
 
-  if (rsiLoading || sma20Loading || sma50Loading) {
+  const { data: sma120Data, isLoading: sma120Loading } = useStockIndicator({
+    symbol,
+    period: periodRange,
+    indicator: 'sma',
+    timeperiod: 120,
+  });
+
+  const { data: sma210Data, isLoading: sma210Loading } = useStockIndicator({
+    symbol,
+    period: periodRange,
+    indicator: 'sma',
+    timeperiod: 210,
+  });
+
+  if (rsiLoading || sma5Loading || sma20Loading || sma60Loading || sma120Loading || sma210Loading) {
     return (
       <div className="space-y-6">
         <Skeleton className="h-80 w-full" />
@@ -63,22 +84,35 @@ export function StockIndicatorChart({ symbol, period }: StockIndicatorChartProps
     .filter((d) => d.rsi !== null && d.rsi !== undefined);
 
   // SMA 차트 데이터 (null 값 필터링)
-  const smaChartData = (sma20Data?.t || [])
+  const smaChartData = (sma5Data?.t || [])
     .map((timestamp, index) => {
       const date = new Date(timestamp * 1000);
+      const sma5Val = sma5Data?.values[index];
       const sma20Val = sma20Data?.values[index];
-      const sma50Val = sma50Data?.values[index];
+      const sma60Val = sma60Data?.values[index];
+      const sma120Val = sma120Data?.values[index];
+      const sma210Val = sma210Data?.values[index];
       return {
         date: is5YearChart
           ? date.toLocaleDateString('en-US', { year: 'numeric' })
           : date
               .toLocaleDateString('en-US', { month: '2-digit', day: '2-digit' })
               .replace(/\//g, '/'),
+        sma5: sma5Val,
         sma20: sma20Val,
-        sma50: sma50Val,
+        sma60: sma60Val,
+        sma120: sma120Val,
+        sma210: sma210Val,
       };
     })
-    .filter((d) => (d.sma20 !== null && d.sma20 !== undefined) || (d.sma50 !== null && d.sma50 !== undefined));
+    .filter(
+      (d) =>
+        (d.sma5 !== null && d.sma5 !== undefined) ||
+        (d.sma20 !== null && d.sma20 !== undefined) ||
+        (d.sma60 !== null && d.sma60 !== undefined) ||
+        (d.sma120 !== null && d.sma120 !== undefined) ||
+        (d.sma210 !== null && d.sma210 !== undefined)
+    );
 
   return (
     <div className="space-y-6">
@@ -130,7 +164,7 @@ export function StockIndicatorChart({ symbol, period }: StockIndicatorChartProps
 
       {/* SMA Chart */}
       <div className="rounded-lg border border-border bg-card p-6">
-        <h3 className="text-lg font-semibold mb-4">이동평균선 (20일 / 50일)</h3>
+        <h3 className="text-lg font-semibold mb-4">이동평균선 (5일 / 20일 / 60일 / 120일 / 210일)</h3>
         {smaChartData.length > 0 ? (
           <div className="h-80">
             <ResponsiveContainer width="100%" height="100%">
@@ -156,8 +190,17 @@ export function StockIndicatorChart({ symbol, period }: StockIndicatorChartProps
                 />
                 <Line
                   type="monotone"
-                  dataKey="sma20"
+                  dataKey="sma5"
                   stroke="#3b82f6"
+                  strokeWidth={2}
+                  dot={false}
+                  isAnimationActive={false}
+                  name="5일"
+                />
+                <Line
+                  type="monotone"
+                  dataKey="sma20"
+                  stroke="#ef4444"
                   strokeWidth={2}
                   dot={false}
                   isAnimationActive={false}
@@ -165,12 +208,30 @@ export function StockIndicatorChart({ symbol, period }: StockIndicatorChartProps
                 />
                 <Line
                   type="monotone"
-                  dataKey="sma50"
-                  stroke="#ef4444"
+                  dataKey="sma60"
+                  stroke="#10b981"
                   strokeWidth={2}
                   dot={false}
                   isAnimationActive={false}
-                  name="50일"
+                  name="60일"
+                />
+                <Line
+                  type="monotone"
+                  dataKey="sma120"
+                  stroke="#f59e0b"
+                  strokeWidth={2}
+                  dot={false}
+                  isAnimationActive={false}
+                  name="120일"
+                />
+                <Line
+                  type="monotone"
+                  dataKey="sma210"
+                  stroke="#8b5cf6"
+                  strokeWidth={2}
+                  dot={false}
+                  isAnimationActive={false}
+                  name="210일"
                 />
               </LineChart>
             </ResponsiveContainer>
