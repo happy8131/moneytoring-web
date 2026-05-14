@@ -1,5 +1,4 @@
 import { Header } from '@/components/layout/Header';
-import { Sidebar } from '@/components/layout/Sidebar';
 
 export const metadata = {
   title: 'Moneytoring - 자산 관리 서비스',
@@ -10,9 +9,7 @@ export default function Home() {
   return (
     <div className="flex h-screen flex-col overflow-hidden">
       <Header />
-      <div className="flex flex-1 overflow-hidden">
-        <Sidebar />
-        <main className="flex-1 overflow-auto">
+      <main className="flex-1 overflow-auto">
           <div className="p-4 sm:p-6 space-y-6">
             <div>
               <h1 className="text-3xl font-bold tracking-tight">Moneytoring</h1>
@@ -109,7 +106,6 @@ export default function Home() {
             </div>
           </div>
         </main>
-      </div>
     </div>
   );
 }
