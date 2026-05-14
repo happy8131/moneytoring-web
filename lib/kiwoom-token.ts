@@ -87,6 +87,8 @@ async function issueToken(appkey: string, secretkey: string): Promise<CachedToke
   const baseUrl = getBaseUrl();
   const url = `${baseUrl}/oauth2/token`;
 
+  console.log(`[Kiwoom] 토큰 발급 요청: ${url}, appkey=${appkey.slice(0, 10)}...`);
+
   const res = await fetch(url, {
     method: 'POST',
     headers: {
@@ -102,12 +104,20 @@ async function issueToken(appkey: string, secretkey: string): Promise<CachedToke
   });
 
   if (!res.ok) {
+    const errorText = await res.text();
+    console.error(`[Kiwoom] 토큰 발급 HTTP 오류: ${res.status}`, errorText);
     throw new Error(
-      `키움 토큰 발급 실패: HTTP ${res.status} ${res.statusText}`
+      `키움 토큰 발급 실패: HTTP ${res.status} ${res.statusText}\n${errorText}`
     );
   }
 
   const data: TokenResponse = await res.json();
+  console.log(`[Kiwoom] 토큰 발급 응답:`, {
+    return_code: data.return_code,
+    return_msg: data.return_msg,
+    token: data.token ? `${data.token.slice(0, 20)}...` : 'null',
+    expires_dt: data.expires_dt,
+  });
 
   if (String(data.return_code) !== '0') {
     throw new Error(
