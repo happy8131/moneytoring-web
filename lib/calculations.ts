@@ -69,8 +69,9 @@ export function mergeHoldingsWithPrices(
 // 포트폴리오 요약 계산
 export function calculatePortfolioSummary(holdings: Holding[]): PortfolioSummary {
   const totalValue = holdings.reduce((sum, h) => sum + (h.totalValue || 0), 0);
-  const totalInvested = holdings.reduce((sum, h) => sum + (h.buyPrice * h.quantity), 0);
-  const totalGain = totalValue - totalInvested;
+  // 손익과 현재가로부터 투자금을 역산 (한국 주식의 KRW/USD 단위 불일치 방지)
+  const totalGain = holdings.reduce((sum, h) => sum + (h.gain || 0), 0);
+  const totalInvested = totalValue - totalGain;
   const totalGainPercent = totalInvested === 0 ? 0 : (totalGain / totalInvested) * 100;
 
   return {
