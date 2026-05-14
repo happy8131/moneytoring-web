@@ -74,18 +74,19 @@ export function StockIndicatorChart({ symbol, period }: StockIndicatorChartProps
     { dataKey: 'sma210', stroke: '#8b5cf6', name: '210일' },
   ];
 
-  const is5YearChart = period === '5Y';
+  const isLongPeriod = ['5Y', '10Y', 'All'].includes(period);
 
   // RSI 차트 데이터 (null 값 필터링)
   const rsiChartData = (rsiData?.t || [])
     .map((timestamp, index) => {
       const date = new Date(timestamp * 1000);
+      const dateLabel = isLongPeriod
+        ? date.toLocaleDateString('en-US', { year: 'numeric' })
+        : date
+            .toLocaleDateString('en-US', { month: '2-digit', day: '2-digit' })
+            .replace(/\//g, '/');
       return {
-        date: is5YearChart
-          ? date.toLocaleDateString('en-US', { year: 'numeric' })
-          : date
-              .toLocaleDateString('en-US', { month: '2-digit', day: '2-digit' })
-              .replace(/\//g, '/'),
+        date: dateLabel,
         rsi: rsiData?.values[index],
       };
     })
@@ -95,17 +96,18 @@ export function StockIndicatorChart({ symbol, period }: StockIndicatorChartProps
   const smaChartData = (sma5Data?.t || [])
     .map((timestamp, index) => {
       const date = new Date(timestamp * 1000);
+      const dateLabel = isLongPeriod
+        ? date.toLocaleDateString('en-US', { year: 'numeric' })
+        : date
+            .toLocaleDateString('en-US', { month: '2-digit', day: '2-digit' })
+            .replace(/\//g, '/');
       const sma5Val = sma5Data?.values[index];
       const sma20Val = sma20Data?.values[index];
       const sma60Val = sma60Data?.values[index];
       const sma120Val = sma120Data?.values[index];
       const sma210Val = sma210Data?.values[index];
       return {
-        date: is5YearChart
-          ? date.toLocaleDateString('en-US', { year: 'numeric' })
-          : date
-              .toLocaleDateString('en-US', { month: '2-digit', day: '2-digit' })
-              .replace(/\//g, '/'),
+        date: dateLabel,
         sma5: sma5Val,
         sma20: sma20Val,
         sma60: sma60Val,
