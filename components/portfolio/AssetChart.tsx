@@ -11,6 +11,8 @@ interface AssetChartProps {
   isHydrated?: boolean;
   stockPriceMap?: Map<string, number>;
   cryptoPriceMap?: Map<string, number>;
+  koreanStockPriceMap?: Map<string, number>;
+  krwToUsd?: number;
   isLoading?: boolean;
 }
 
@@ -19,6 +21,8 @@ export function AssetChart({
   isHydrated = true,
   stockPriceMap = new Map(),
   cryptoPriceMap = new Map(),
+  koreanStockPriceMap = new Map(),
+  krwToUsd = 0,
   isLoading = false,
 }: AssetChartProps) {
   const [isMounted, setIsMounted] = useState(false);
@@ -29,12 +33,20 @@ export function AssetChart({
 
   const chartData = holdings
     .map((holding) => {
-      const priceMap = holding.type === 'stock' ? stockPriceMap : cryptoPriceMap;
-      const currentPrice = priceMap.get(holding.symbol) || 0;
+      let value = 0;
+
+      if (holding.type === 'korean-stock') {
+        const krwPrice = koreanStockPriceMap.get(holding.symbol) || 0;
+        value = krwPrice * (krwToUsd || 0) * holding.quantity;
+      } else {
+        const priceMap = holding.type === 'stock' ? stockPriceMap : cryptoPriceMap;
+        const currentPrice = priceMap.get(holding.symbol) || 0;
+        value = currentPrice * holding.quantity;
+      }
 
       return {
         symbol: holding.symbol,
-        value: currentPrice * holding.quantity,
+        value,
       };
     })
     .filter((item) => item.value > 0);

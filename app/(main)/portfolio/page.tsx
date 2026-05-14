@@ -178,6 +178,8 @@ export default function PortfolioPage() {
                 isHydrated={isHydrated}
                 stockPriceMap={stockPriceMap}
                 cryptoPriceMap={cryptoPriceMap}
+                koreanStockPriceMap={koreanStockPriceMap}
+                krwToUsd={krwToUsd}
                 isLoading={stockQueryResult.isLoading || cryptoQueryResult.isLoading}
               />
             </div>

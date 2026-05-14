@@ -54,7 +54,19 @@ export function PortfolioTable({
             <TableRow key={holding.id}>
               <TableCell className="font-semibold">
                 <div>
-                  <p>{holding.symbol}</p>
+                  <div className="flex items-center gap-2">
+                    <p>{holding.symbol}</p>
+                    {holding.type === 'crypto' && (
+                      <span className="inline-flex items-center rounded-full bg-blue-100 px-2 py-1 text-xs font-semibold text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+                        CRYPTO
+                      </span>
+                    )}
+                    {holding.type === 'korean-stock' && (
+                      <span className="inline-flex items-center rounded-full bg-amber-100 px-2 py-1 text-xs font-semibold text-amber-800 dark:bg-amber-900 dark:text-amber-200">
+                        KR
+                      </span>
+                    )}
+                  </div>
                   <p className="text-xs text-muted-foreground">
                     {holding.name}
                   </p>
@@ -62,7 +74,11 @@ export function PortfolioTable({
               </TableCell>
               <TableCell className="text-right">{holding.quantity}</TableCell>
               <TableCell className="text-right">
-                {formatCurrency(holding.buyPrice)}
+                {holding.type === 'korean-stock'
+                  ? `₩${holding.buyPrice.toLocaleString('ko-KR', {
+                      maximumFractionDigits: 0,
+                    })}`
+                  : formatCurrency(holding.buyPrice)}
               </TableCell>
               <TableCell className="text-right">
                 {formatCurrency(holding.currentPrice || 0)}
