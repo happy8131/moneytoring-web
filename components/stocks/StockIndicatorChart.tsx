@@ -45,22 +45,30 @@ export function StockIndicatorChart({ symbol, period }: StockIndicatorChartProps
     );
   }
 
-  // RSI 차트 데이터
-  const rsiChartData = (rsiData?.t || []).map((timestamp, index) => ({
-    date: new Date(timestamp * 1000)
-      .toLocaleDateString('en-US', { month: '2-digit', day: '2-digit' })
-      .replace(/\//g, '/'),
-    rsi: rsiData?.values[index] ?? null,
-  }));
+  // RSI 차트 데이터 (null 값 필터링)
+  const rsiChartData = (rsiData?.t || [])
+    .map((timestamp, index) => ({
+      date: new Date(timestamp * 1000)
+        .toLocaleDateString('en-US', { month: '2-digit', day: '2-digit' })
+        .replace(/\//g, '/'),
+      rsi: rsiData?.values[index],
+    }))
+    .filter((d) => d.rsi !== null && d.rsi !== undefined);
 
-  // SMA 차트 데이터
-  const smaChartData = (sma20Data?.t || []).map((timestamp, index) => ({
-    date: new Date(timestamp * 1000)
-      .toLocaleDateString('en-US', { month: '2-digit', day: '2-digit' })
-      .replace(/\//g, '/'),
-    sma20: sma20Data?.values[index] ?? null,
-    sma50: sma50Data?.values[index] ?? null,
-  }));
+  // SMA 차트 데이터 (null 값 필터링)
+  const smaChartData = (sma20Data?.t || [])
+    .map((timestamp, index) => {
+      const sma20Val = sma20Data?.values[index];
+      const sma50Val = sma50Data?.values[index];
+      return {
+        date: new Date(timestamp * 1000)
+          .toLocaleDateString('en-US', { month: '2-digit', day: '2-digit' })
+          .replace(/\//g, '/'),
+        sma20: sma20Val,
+        sma50: sma50Val,
+      };
+    })
+    .filter((d) => (d.sma20 !== null && d.sma20 !== undefined) || (d.sma50 !== null && d.sma50 !== undefined));
 
   return (
     <div className="space-y-6">
@@ -71,7 +79,7 @@ export function StockIndicatorChart({ symbol, period }: StockIndicatorChartProps
           <div className="h-80">
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={rsiChartData} margin={{ top: 5, right: 30, left: 0, bottom: 5 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
                 <XAxis
                   dataKey="date"
                   tick={{ fontSize: 12 }}
@@ -80,8 +88,8 @@ export function StockIndicatorChart({ symbol, period }: StockIndicatorChartProps
                 <YAxis domain={[0, 100]} tick={{ fontSize: 12 }} />
                 <Tooltip
                   contentStyle={{
-                    backgroundColor: 'hsl(var(--card))',
-                    border: '1px solid hsl(var(--border))',
+                    backgroundColor: '#ffffff',
+                    border: '1px solid #e5e7eb',
                   }}
                   formatter={(value) => {
                     if (typeof value === 'number') {
@@ -90,12 +98,13 @@ export function StockIndicatorChart({ symbol, period }: StockIndicatorChartProps
                     return ['-', 'RSI'];
                   }}
                 />
-                <ReferenceLine y={70} stroke="hsl(var(--destructive))" strokeDasharray="3 3" label="과매수" />
-                <ReferenceLine y={30} stroke="hsl(var(--primary))" strokeDasharray="3 3" label="과매도" />
+                <ReferenceLine y={70} stroke="#ef4444" strokeDasharray="3 3" label="과매수" />
+                <ReferenceLine y={30} stroke="#3b82f6" strokeDasharray="3 3" label="과매도" />
                 <Line
                   type="monotone"
                   dataKey="rsi"
-                  stroke="hsl(var(--primary))"
+                  stroke="#3b82f6"
+                  strokeWidth={2}
                   dot={false}
                   isAnimationActive={false}
                 />
@@ -116,7 +125,7 @@ export function StockIndicatorChart({ symbol, period }: StockIndicatorChartProps
           <div className="h-80">
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={smaChartData} margin={{ top: 5, right: 30, left: 0, bottom: 5 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
                 <XAxis
                   dataKey="date"
                   tick={{ fontSize: 12 }}
@@ -125,8 +134,8 @@ export function StockIndicatorChart({ symbol, period }: StockIndicatorChartProps
                 <YAxis tick={{ fontSize: 12 }} />
                 <Tooltip
                   contentStyle={{
-                    backgroundColor: 'hsl(var(--card))',
-                    border: '1px solid hsl(var(--border))',
+                    backgroundColor: '#ffffff',
+                    border: '1px solid #e5e7eb',
                   }}
                   formatter={(value) => {
                     if (typeof value === 'number') {
@@ -138,7 +147,8 @@ export function StockIndicatorChart({ symbol, period }: StockIndicatorChartProps
                 <Line
                   type="monotone"
                   dataKey="sma20"
-                  stroke="hsl(var(--primary))"
+                  stroke="#3b82f6"
+                  strokeWidth={2}
                   dot={false}
                   isAnimationActive={false}
                   name="20일"
@@ -146,7 +156,8 @@ export function StockIndicatorChart({ symbol, period }: StockIndicatorChartProps
                 <Line
                   type="monotone"
                   dataKey="sma50"
-                  stroke="hsl(var(--destructive))"
+                  stroke="#ef4444"
+                  strokeWidth={2}
                   dot={false}
                   isAnimationActive={false}
                   name="50일"

@@ -97,7 +97,7 @@ export function StockPriceChart({ symbol }: StockPriceChartProps) {
       <div className="h-80">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={chartData} margin={{ top: 5, right: 30, left: 0, bottom: 5 }}>
-            <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+            <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
             <XAxis
               dataKey="date"
               tick={{ fontSize: 12 }}
@@ -113,8 +113,8 @@ export function StockPriceChart({ symbol }: StockPriceChartProps) {
             />
             <Tooltip
               contentStyle={{
-                backgroundColor: 'hsl(var(--card))',
-                border: '1px solid hsl(var(--border))',
+                backgroundColor: '#ffffff',
+                border: '1px solid #e5e7eb',
               }}
               formatter={(value) => {
                 if (typeof value === 'number') {
@@ -126,7 +126,8 @@ export function StockPriceChart({ symbol }: StockPriceChartProps) {
             <Line
               type="monotone"
               dataKey="price"
-              stroke="hsl(var(--primary))"
+              stroke="#3b82f6"
+              strokeWidth={2}
               dot={false}
               isAnimationActive={false}
             />
@@ -138,13 +139,13 @@ export function StockPriceChart({ symbol }: StockPriceChartProps) {
       <div className="h-24">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data={chartData} margin={{ top: 5, right: 30, left: 0, bottom: 5 }}>
-            <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+            <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
             <XAxis dataKey="date" hide />
             <YAxis tick={{ fontSize: 12 }} tickFormatter={(value) => `${(value / 1000000).toFixed(0)}M`} />
             <Tooltip
               contentStyle={{
-                backgroundColor: 'hsl(var(--card))',
-                border: '1px solid hsl(var(--border))',
+                backgroundColor: '#ffffff',
+                border: '1px solid #e5e7eb',
               }}
               formatter={(value) => {
                 if (typeof value === 'number') {
