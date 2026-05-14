@@ -2,11 +2,11 @@ import { StockMetric } from '@/lib/stockUtils';
 
 interface FinnhubMetricResponse {
   metric: {
-    peBasicExclExtraTTM?: number;
-    epsBasicExclExtraTTM?: number;
-    high52Week?: number;
-    low52Week?: number;
-    averageVolume10D?: number;
+    peBasicExcludingExtraordinaryItemsTTM?: number;
+    epsBasicExcludingExtraordinaryItemsTTM?: number;
+    '52WeekHigh'?: number;
+    '52WeekLow'?: number;
+    '10DayAverageTradingVolume'?: number;
     dividendYieldIndicatedAnnual?: number;
     marketCapitalization?: number;
     [key: string]: number | undefined;
@@ -49,12 +49,14 @@ export async function GET(request: Request) {
 
     const metric: StockMetric = {
       peBasicExclExtraTTM: data.metric?.peBasicExclExtraTTM,
-      epsBasicExclExtraTTM: data.metric?.epsBasicExclExtraTTM,
-      high52Week: data.metric?.high52Week,
-      low52Week: data.metric?.low52Week,
-      averageVolume10D: data.metric?.averageVolume10D,
+      epsBasicExclExtraTTM: data.metric?.epsBasicExclExtraItemsTTM,
+      high52Week: data.metric?.['52WeekHigh'],
+      low52Week: data.metric?.['52WeekLow'],
+      averageVolume10D: data.metric?.['10DayAverageTradingVolume'],
       dividendYieldIndicatedAnnual: data.metric?.dividendYieldIndicatedAnnual,
-      marketCapitalization: data.metric?.marketCapitalization,
+      marketCapitalization: data.metric?.marketCapitalization != null
+        ? data.metric.marketCapitalization * 1_000_000
+        : undefined,
     };
 
     return Response.json(metric);

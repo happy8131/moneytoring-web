@@ -1,19 +1,37 @@
 import { FinancialPeriod } from '@/lib/stockUtils';
 
+interface FinnhubReportItem {
+  concept: string;
+  label: string;
+  unit: string;
+  value: number;
+}
+
 interface FinnhubFinancialReport {
-  period: string; // 2024-01-01 형식
+  period: string;
   quarter: number;
   year: number;
-  revenue?: number;
-  netIncome?: number;
-  operatingIncome?: number;
-  totalAssets?: number;
-  totalLiabilities?: number;
-  freeCashFlow?: number;
+  report: {
+    ic: FinnhubReportItem[];
+    bs: FinnhubReportItem[];
+    cf: FinnhubReportItem[];
+  };
 }
 
 interface FinnhubFinancialsResponse {
   data: FinnhubFinancialReport[];
+}
+
+function findConceptValue(
+  items: FinnhubReportItem[],
+  ...concepts: string[]
+): number | undefined {
+  for (const concept of concepts) {
+    const withPrefix = `us-gaap_${concept}`;
+    const item = items.find((i) => i.concept === concept || i.concept === withPrefix);
+    if (item?.value != null) return item.value;
+  }
+  return undefined;
 }
 
 export async function GET(request: Request) {
@@ -54,12 +72,22 @@ export async function GET(request: Request) {
     const financials: FinancialPeriod[] = (data.data || []).map((report) => ({
       year: report.year,
       quarter: report.quarter,
-      revenue: report.revenue,
-      netIncome: report.netIncome,
-      operatingIncome: report.operatingIncome,
-      totalAssets: report.totalAssets,
-      totalLiabilities: report.totalLiabilities,
-      freeCashFlow: report.freeCashFlow,
+      revenue: findConceptValue(
+        report.report?.ic ?? [],
+        'Revenues',
+        'RevenueFromContractWithCustomerExcludingAssessedTax'
+      ),
+      netIncome: findConceptValue(report.report?.ic ?? [], 'NetIncomeLoss'),
+      operatingIncome: findConceptValue(
+        report.report?.ic ?? [],
+        'OperatingIncomeLoss'
+      ),
+      totalAssets: findConceptValue(report.report?.bs ?? [], 'Assets'),
+      totalLiabilities: findConceptValue(report.report?.bs ?? [], 'Liabilities'),
+      freeCashFlow: findConceptValue(
+        report.report?.cf ?? [],
+        'NetCashProvidedByUsedInOperatingActivities'
+      ),
     }));
 
     return Response.json({
