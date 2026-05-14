@@ -1,0 +1,1551 @@
+- generic:
+  - generic:
+    - banner:
+      - generic:
+        - link:
+          - /url: /
+          - img
+          - generic: Moneytoring
+        - generic:
+          - navigation:
+            - link:
+              - /url: /dashboard
+              - text: 대시보드
+            - link:
+              - /url: /portfolio
+              - text: 포트폴리오
+            - link:
+              - /url: /news
+              - text: 뉴스
+          - button:
+            - img
+    - main:
+      - generic:
+        - generic:
+          - generic:
+            - heading [level=1]: 뉴스
+            - paragraph: 금융 시장 관련 최신 뉴스를 확인하세요.
+          - generic:
+            - generic:
+              - generic: "카테고리:"
+              - combobox [expanded]:
+                - generic: 일반
+                - img
+            - generic:
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMiqAFBVV95cUxQbFd0ejg3MHE1NzY3MmdESTZ4bkxtNGtpQkFxZnhTSlVmLWVXSTZRRkRXbVBRNVlmS3FtbEk2NS1uaGFIX3Mxazc0UzFFbkJkbHdtQm9BS2NzSTFWTEVYQkxidUFZWE1MSEFiRlB0M3hYUFNRQm10eWN1dGhIei1URkYtRE5rS05pMFo5dmpZN3d6azVES2NiaWswZGMzZUl1SzVLejlWRzg?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Iran war overshadows Trump's China visit as peace talks stall - Reuters
+                          - paragraph: Iran war overshadows Trump's China visit as peace talks stall Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 14일 오후 12:56
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMiqgFBVV95cUxQS3lkbXo1Qi03THB1M3ZabG5xUFNTNzloZl96QTUyTGItdm5WMWd4eVhWTEtDd0plRHBmYTVYUU94bXAtN3AxYzQ1aUdUR203NmM5YjFfZGNaT3F5a01BcnJxTTVRUUsyU1d5b01zRU9nNDNNLU54ZkNkckxDS0J2NTI0MGU1OGp0X3VVRFlxNHJkU3ZvMkF2Y1lrdEE2TDhUX3VoS2cxdWZ5Zw?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: China's Xi hails trade progress in Trump summit, sends Taiwan warning - Reuters
+                          - paragraph: China's Xi hails trade progress in Trump summit, sends Taiwan warning Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 14일 오전 07:32
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMinwFBVV95cUxNUUFYYkxUMy1tNnZnUGhHUDBCeHlTcFBVT05QN3JEMDVYRG1yakRXVHYwZHdNWmRRdG9JbVVsNXpZdG4xOFRCUVVjYTFoMXNERVdadlh0eW53YXdDXzA1Yzk4N0xPT2tnQ0dnRm9lbGJlalNTb2dQME9vRFJtQzNIbkZJMGVqNUNkdWtRdVktYnF6N2lQWE10Uy1KdVJ3VmM?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: "Rubio: U.S. wants China to press Iran to change course in Gulf - Reuters"
+                          - paragraph: "Rubio: U.S. wants China to press Iran to change course in Gulf Reuters"
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 14일 오전 06:30
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMiygFBVV95cUxNbHNleDhULVFsVGI1UU1BdTh5OXRTYkZvenZPLUhrNUlEM1FRUWZubXlLc1pfTmt4bkZ6eWFEZDVFRTgtVGhwcjQwSnBkUDIzRmg4VXNCZlNXRnFUcFRMXzRqT1VpWXF2Q3V1elMxbWR2ZjVlWEdSMUhzTld5ZlZpTHVqQUEzOTdnNlpUOGd3U3prWmlnb04xN1Frd2FRZENUVENVY0JISjdSRzdBZlAxWWtmNXNEVGwtYVNaU283eF9wam44OGhpdEZB?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: UAE denies Netanyahu held secret meeting with Emirati president in the UAE during Iran war - Reuters
+                          - paragraph: UAE denies Netanyahu held secret meeting with Emirati president in the UAE during Iran war Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 14일 오전 06:28
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMiigFBVV95cUxNSjRYS19wcklKU2RPZGYzTlNoaDRHM2tPYnEzSHNzYlFEb2hPbkM0UkZyVVhzcGY0VW1ZYXJwQ0lrbklLcjhqWVhMaUd0OS1XQWJJcEdZaEpId0hFeG02LXBpMEhILUZKbnVXRFFUZTdQVTBUSzRicWRVTFUzV0c4NTBITmE4Tm1mbHc?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Vance says US making progress in Iran talks - Reuters
+                          - paragraph: Vance says US making progress in Iran talks Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 14일 오전 05:23
+              - generic:
+                - link:
+                  - /url: https://www.cnbc.com/2026/05/13/cisco-csco-q3-earnings-report-2026.html
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Cisco's stock pops 11% on earnings beat, strong guidance
+                          - paragraph: Cisco's AI story has finally started resonating with Wall Street, with the stock hitting a record late last year and continuing to rally in 2026.
+                        - img
+                      - generic:
+                        - generic: CNBC
+                        - generic: 5월 14일 오전 05:13
+              - generic:
+                - link:
+                  - /url: https://www.cnbc.com/2026/05/13/allegiant-sun-country-acquisition-ceo.html
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Allegiant CEO makes case for low-cost airline model as Sun Country acquisition closes
+                          - paragraph: Allegiant CEO Greg Anderson said leisure travel demand is still strong despite higher fuel prices.
+                        - img
+                      - generic:
+                        - generic: CNBC
+                        - generic: 5월 14일 오전 05:04
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMizwFBVV95cUxOVGlCbWppdkNkZEhsTDNvVUN6YzBXczAwekg2N08yb200dVVRbTBOd0cxWVVpVWZ4VE55aUNiMjhlMllWcjVqLXNhNXhHeWZXNEo3WnNjUkp2b1p3NDFPR0RxczdIaURKY1BUY0l4UU9FQUdGVFhRU0lSbE9NNEZiamM2N09fbk94NDA0VTlIZWdlLUs2SENxRnhWcW9ZeUllZkNvRWpIRC13UVhPTjFRbnBPRGl3OGZFUlNJT2p3T2pZMnZSZXkwejY2NWdGdTA?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Drone strike hits Iranian opposition camp north of Iraq’s Erbil, security sources say - Reuters
+                          - paragraph: Drone strike hits Iranian opposition camp north of Iraq’s Erbil, security sources say Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 14일 오전 04:52
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMirwFBVV95cUxQOVdFbUVNU1BxYVZKd1ktaWpWWVp0X2dSbmg3OWZpOHBFcG8yNURXWDZJZ3RlZEw4ODFlUHQ3OXFZZkxnclJ4Qi0yMXh6QjYwaGJLQkZnOTU3SzBJNGVmQ0tRYy1hbVBlcXVEMU1qTjR3dHpkQW04d1ZkV2ttU09oTVRjRVdsMkt0Z1RBUG5pRU1WRUVjQ3pxdUxfNnQ4c0dna1B1SGZXajMwSGNCWjVB?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Global oil shock from Iran war may require ECB hikes, Lane says - Reuters
+                          - paragraph: Global oil shock from Iran war may require ECB hikes, Lane says Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 14일 오전 04:41
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMiqAFBVV95cUxQb2RnNjN4ck5KRVNBV1FNQUVJUTB0M2lIT0VkdUNWU0MtOWVQbFBHT190eUxqTTdtUVdzcnZQV0xNX2g4MmM5VUxqU25UemxVOHpMdEpQVTBCbURGVnJxRm94cS1vX2dzb2xfSzNJM0pRQ09hRnlkMGdvWWtkal8xYkxMNW55NmZmY2FaNHQta2lWRWdpYUkyaFQtbW0zMDgyQkZ6NjA5N2Q?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Trump wants China's help on Iran. Beijing may have other ideas - Reuters
+                          - paragraph: Trump wants China's help on Iran. Beijing may have other ideas Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 14일 오전 04:10
+              - generic:
+                - link:
+                  - /url: https://www.cnbc.com/2026/05/13/beer-demand-stumbles-as-gas-prices-surge-data-show.html
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Beer demand stumbles as gas prices surge, data show
+                          - paragraph: U.S. beer sales slump as higher gas prices squeeze consumers, with convenience stores and high-fuel-cost states seeing the sharpest declines.
+                        - img
+                      - generic:
+                        - generic: CNBC
+                        - generic: 5월 14일 오전 04:04
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMivgFBVV95cUxNdnI0cUJhSmpJU0FZQ3ZWNDA5X1RmZURVRmExNlBfQkJTb05PdTVOWjJyYlpld2FXbXVhYnJfTXpCckZ0Nk1RRUZSd1VVLUpCcTlqUTc2ekhYY3BJaE1oZUxpY29odzhzLXk3M2ZEM3hsU1FuZmVBcjFncC1vbEVRakdSWnRaRXBMRllxSVNwVGI5NDJWb3ZQd3dZeEY2RnUyY2RETHRaNXRFSWNPSV9rSGhvVmdEWHFzSTBsX1BB?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: US Senate blocks latest bid to rein in Trump Iran war powers, support grows - Reuters
+                          - paragraph: US Senate blocks latest bid to rein in Trump Iran war powers, support grows Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 14일 오전 03:39
+              - generic:
+                - link:
+                  - /url: https://www.cnbc.com/2026/05/13/this-stock-is-our-favorite-way-to-hedge-against-the-pickup-in-inflation.html
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: This stock is our favorite way to hedge against the pickup in inflation
+                          - paragraph: Every weekday, the Investing Club releases the Homestretch; an actionable afternoon update just in time for the last hour of trading.
+                        - img
+                      - generic:
+                        - generic: CNBC
+                        - generic: 5월 14일 오전 03:13
+              - generic:
+                - link:
+                  - /url: https://www.cnbc.com/2026/05/13/an-unloved-health-care-stock-gets-welcome-nod-in-ai-obsessed-market.html
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: An unloved health-care stock gets a welcome nod in this AI-obsessed market
+                          - paragraph: Leerink analysts lifted J&J shares to a buy equivalent from hold on Wednesday, citing the company's slate of new drugs.
+                        - img
+                      - generic:
+                        - generic: CNBC
+                        - generic: 5월 14일 오전 02:26
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMijAFBVV95cUxNX3Y2OGU3WmFFMVktLWNnQlFDMkdYdGY0cHlEdzVtSFJjV1pxRWNjNWV1YzBFcnhSeUxMaEt5Ul9GMkJLNk1rUnFUNDVDeHk0SDhXUWRkMDlYbEtPTndEb1hVX0lMa2diX2IxT01vMzVLQUZRS2lILXVoVHZNLUZWUlZpQ2Npb1BIRTFwSw?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: The Gulf's lifeline is Iran's weapon - Reuters
+                          - paragraph: The Gulf's lifeline is Iran's weapon Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 14일 오전 02:00
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMiswFBVV95cUxOdm83YUM0dlJzbS1aT2Z0SHg2NUdKMDgyempPa3NKNEpMaXRiQjlhZXktY3IyM0pxTFhyMmtlLVhfZzVZMG8yTTZjZl9nM2tEbHdpWXFNZHJKUHA4LXpsZmJUUWZxSFJlcmttUmY2ZWdOdGZnUzhQQjNJcVhuS1BYVkdwSEJPR0VZd3NlX0JSNHFjYW5wNHBlUE04aFJPVGxWWmhESWZXOU5KRVBudmVXY3ZWVQ?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: "Exclusive: Saudi warplanes struck militias in Iraq during war, sources say - Reuters"
+                          - paragraph: "Exclusive: Saudi warplanes struck militias in Iraq during war, sources say Reuters"
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 14일 오전 01:40
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMinwFBVV95cUxQVWM5N3puQUliMmVyYUZEaUN1U0RSb1BKbDlNRm5UNUxObEVtbWZSLWFBcWFfaGxJU0Vld2ZBM0w4Y1J5bnpJekE4WF9GWm1zekNmbUpSVGVKTDFKSElpS1hCSU0zNDJfc3FGOTJRZjhaS1hCUXRmQW9GMHg3UGk4UmdMcWZzUFBCdGp4eU9DXzg0cDhKSWMwMks5NkMtWW8?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: How has the Iran war affected Middle East states? - Reuters
+                          - paragraph: How has the Iran war affected Middle East states? Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 14일 오전 12:55
+              - generic:
+                - link:
+                  - /url: https://www.cnbc.com/2026/05/13/treasury-yields-fall-as-investors-digest-hotter-than-expected-cpi-data.html
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: 10-year Treasury yield hits new high for the year after very hot producer prices reading
+                          - paragraph: Treasury yields climbed after a hotter-than-expected reading on the producer price index.
+                        - img
+                      - generic:
+                        - generic: CNBC
+                        - generic: 5월 14일 오전 12:54
+              - generic:
+                - link:
+                  - /url: https://www.cnbc.com/2026/05/13/jim-cramer-this-unheralded-stock-qnity-has-become-one-of-the-investing-clubs-top-performers.html
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Why this unheralded AI stock can go higher despite its recent massive rally
+                          - paragraph: The Investing Club holds its "Morning Meeting" every weekday at 10:20 a.m. ET.
+                        - img
+                      - generic:
+                        - generic: CNBC
+                        - generic: 5월 14일 오전 12:53
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMiswFBVV95cUxPUlF2anR3RFgtMkdYdEFWNzByUkVIU1M2aHdzZ3E1VVg3d3dkWFRZUHpzbEt2NXNBWWdaLXhZYXNBRlVVSk8yaUxyTVNJMTVrVEg4VEJqb2s1ZEdqR2VBTmNtcExPVWFIbnV5QjBtenEzbVBHcjFFUlNZMGZ3eWc5cjdLY3ctX0ItSmlJVjRXWWNiWTR6c3VZTVNDUy11bVZlNnFFcS1ManQySENZdXN0NG1iYw?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Iran, Ukraine wars deliver worst hit in years to oil refining output - Reuters
+                          - paragraph: Iran, Ukraine wars deliver worst hit in years to oil refining output Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 14일 오전 12:46
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMipwFBVV95cUxNYlJvZ21PZWkyQzIzRUhmUDJKcEQ0dGxRdTExdHBoSVJXYk9tZFR1SnhfcGtab1RUai1GQVBFNExyVk5remprVno1ZGc3RS1ZRVJtMTNEdTZLTURrdFM4UklLVVJSNng1OXpld2dIQS1iVWpHQ2pwU2R3bDBzcklsOGR3WFJialVKYmxnVzdZREY5UFl0dHFFMHloMEZqTzFiRWtJeWFPUQ?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: India's Tata Motors warns of costs from Iran war after profit surge - Reuters
+                          - paragraph: India's Tata Motors warns of costs from Iran war after profit surge Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 14일 오전 12:22
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMiuAFBVV95cUxPNC1Gdm14dUp6NWJBVXBHT1BpOFdOX0Fkclo4cE1BS1E3eWZ5UVJmLVA0QzZFLWFDT0RjbEhEN2VYOExfSllfUHNWbW1ZcUUtSGowTmZGSUQ0enJuNmRWNk1pcHdzS0RqRmdpeHN3SEd6NEdjMGRRUjBkbFR5UFB0YXF0TUtiNjVoQ0FfZjVRSzNEOXg4NTdBc0daUDNHdjNaWWkwdjVCWmwyYkxnNW50V1BZQ0RJcmhU?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Global oil supply to plunge below demand this year due to Iran war, IEA says - Reuters
+                          - paragraph: Global oil supply to plunge below demand this year due to Iran war, IEA says Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 14일 오전 12:06
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMitAFBVV95cUxNNEdLZHdKbE5MQV9IMmtSdEx4TGlZU2pFQ3VSdnJHSTB2a1lrUkhIRmlFMVVDYnlpc09UbXhrOC11S2djMUh2RU41MUN1RE9HYWdaZm1Pc0ktSndnUE1xdFRQQk1WZ3pOaFk0T3NxRTM4MFFfeHIwZVRadFFkSHZuSHZlajV1eXVXc0JpV1MydkppWVhTY0NYZHd3ZUM0NmZpamZjR1FPZGhkbGRFa1gzY3RoTzM?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Latvian government loses majority in parliament over handling of Ukraine drone incidents - Reuters
+                          - paragraph: Latvian government loses majority in parliament over handling of Ukraine drone incidents Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 13일 오후 11:47
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMiogFBVV95cUxQWGhpdENxOVcyMExfTWs0aTZyREJxX01vaEF0NkxyMVBqZ3hzdU12NGpPREhzYXhfcnRiLXpkekNzS1NLTXYySWZuRzlTNlBWeFJ4dVZRUVlMaVVIbnJjYkttTXA3SERmLVJ4bWJmUGp3VVJoSXZ1VVRFTlVOSEVjRHltZ2tTcWMxTWNRNkMtLV81QXM4eFpoajNFazF1RFBPLWc?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Nissan predicts profit above $1 billion this fiscal year, modest Iran war hit - Reuters
+                          - paragraph: Nissan predicts profit above $1 billion this fiscal year, modest Iran war hit Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 13일 오후 11:33
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMixwFBVV95cUxNX3dnX0wtWFJNMHk3STdHX0hFaXJOYkFHVEhWamxaWnNwbUd6UVROd21xX3ZkZjB0VVlESDc4NlVuZUtiRXVFdnVXUlhwdE5HcTZGNG5VdnUzOF90UjlIR1MzeGhvU2d2c2pTOVpzZDc3WnpsX1luYTJjRGdRNVhHT1FjS2U4SDV0UjJoVWI2UkZnOE9LVFY0VFM0VEdkN3FyNTJSbHJVZ3FtQTJoblVPRmRWSDJsYk5kMlZ2Y0Z3MGV2LUx5eC1n?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Israel steps up attacks on Gaza since Iran truce, as military says Hamas rearming - Reuters
+                          - paragraph: Israel steps up attacks on Gaza since Iran truce, as military says Hamas rearming Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 13일 오후 11:28
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMitgFBVV95cUxNSDFCSzV0MzhMWFo2Z1dQTTJqYzVVQmk1S1VDR1AweTJLRzRiTHpvbi1rdTV6azd4TEc3emRrZ3Q4enFMT0VrTUl1VWhfOXdraFRQNFljOWRMVWc0cWZldU8tcUZSRXpyOTAwaFg1XzQ0VVZOeXdxSGFQdk42TmdkTnJlXzJYbmt6TzNPZUtMWW5TaUJzOGNsTDZDeTJ0RGFVbVJ4bE1LUC1XT0lxNTc3MkQ5a1FOUQ?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Iran war brings Turkey-PKK peace process to near standstill - Reuters
+                          - paragraph: Iran war brings Turkey-PKK peace process to near standstill Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 13일 오후 10:54
+              - generic:
+                - link:
+                  - /url: https://www.cnbc.com/2026/05/13/how-to-answer-tell-me-about-a-time-you-disagreed-with-your-boss-in-a-job-interview.html
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: "How to answer this tricky interview question, says career expert: It shows you have skills that 'cannot be replaced' by AI"
+                          - paragraph: In today's job market, interpersonal skills are a top priority for hirers, according to career expert Erin McGoff.
+                        - img
+                      - generic:
+                        - generic: CNBC
+                        - generic: 5월 13일 오후 10:54
+              - generic:
+                - link:
+                  - /url: https://www.cnbc.com/2026/05/13/whipsaw-market-actions-leaves-traders-looking-for-direction-the-fear-gauge-might-offer-a-clue.html
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Whipsaw market actions leaves traders looking for direction. The 'fear gauge' might offer a clue
+                          - paragraph: Volatility in the S&P 500 as measured by the Cboe VIX Index ended down on Tuesday, despite a brief pop to 19.01, the highest since April 28.
+                        - img
+                      - generic:
+                        - generic: CNBC
+                        - generic: 5월 13일 오후 10:25
+              - generic:
+                - link:
+                  - /url: https://www.cnbc.com/2026/05/13/the-clubs-top-10-things-to-watch-in-the-stock-market-wednesday.html
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: The Club's top 10 things to watch in the stock market Wednesday
+                          - paragraph: AI stocks like Micron and Club name Corning after coming right back after one day of selling.
+                        - img
+                      - generic:
+                        - generic: CNBC
+                        - generic: 5월 13일 오후 10:10
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMirwFBVV95cUxNbGdQUG1hTUliWnIzbE5lMF9QS1AtQk01S3hINlpuV2RnVTMxRXoxZ1JMZ0hOMTN2ZVJxSGFZRGxhcDZOR0NZQ2h0cEROZDdwWHJIRDJTZjRiV2tZSTcweHRDdDBuN1hsMDJYQ1VjN0tEMVRvR2RzWDI1ZlZheWFHU3Y2WWdnd090WUFneTlQNm9EZEF1Rjc0Ri1XWnk3d0FRc0pfcDZCdlA5c0dlQVNZ?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Swiss considering rival air defences after Washington delays Patriots over Iran war - Reuters
+                          - paragraph: Swiss considering rival air defences after Washington delays Patriots over Iran war Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 13일 오후 09:27
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMivAFBVV95cUxQaHVXdXd2azZYMkF4azRGNG5aamJCc2xkSWtEWW9YUmc2UVdacXVRektZdGZxX2psbW5sU0FtckdBMURqOFhKTjNUc3dBTU9FR1EwVG8yckkxd3FXMldtaURCZEJDRTMxNUNVVHZBZFJkOVh5RHIwcGlBQlVLbE9NNEIzbzltNTdKRnVkTUplb0RmX08xX0U3OXVQZ0g2dE5fZkFjdWtQaXo5U0dyTjBBcUo2bTIzUXZXWlVBcg?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: UAE-owned tanker leaks some fuel off Oman following Iranian strike - Reuters
+                          - paragraph: UAE-owned tanker leaks some fuel off Oman following Iranian strike Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 13일 오후 09:01
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMioAFBVV95cUxPT2diYVJZQVByYmFXajlNcnlNUHVZZEx5NjhlbWRZVUJZcHlsaV8zMG53RnVIUjRQUldqcFN0aXllSDRic1BEbnhVMndGNHhwT19LODlZeGV6SkNUXzJENEY3eHktX3dDMzNoRkJObXMxSlE4b1VDMW5mMUhiS2R4ZTRRYmMyWEVvUnE1TlZsRGhKWWZELVcyNzIyNVlpakwz?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Britain to legislate to tackle threats from hostile state proxies - Reuters
+                          - paragraph: Britain to legislate to tackle threats from hostile state proxies Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 13일 오후 08:23
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMirAFBVV95cUxNWXJoaFY0MUR6eVlvalkxTlBhMC0zeUdTR1JyZk41TnRLeFZFMFZyclZUS3ZlZEw3N1VFOThIWnRhRm9SSExid25MYU91X3N4Q2hqMG0wMnV2NVFTQWxVLUdmX09laWN6anE4SGFBRFpPRTd4WXVzTC1fQWxQQi1TVzI0Y1EtQnhROEhYRzNicFRGUFVKV0JDYTdyNWpsSmdXZWxsS1RmMk1obGRj?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Stung by Iran war, Trump heads to China in need of wins - Reuters
+                          - paragraph: Stung by Iran war, Trump heads to China in need of wins Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 13일 오후 07:14
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMinAFBVV95cUxNVHhHazZ0YktlNTZJSWRFUjNtSXR1ZHp6SE9RYWJndFlyT3VoV1p5RDZQU3ppMWtDX1h4MzRvZGtfOUttSG5xWnNvT1dXUDBlZExFUWYyaDYyRWxoWUh0Tmx4SFVoMThxTEtweUplX0t6d1hjVi1Kb0YzQklwbTU4cUIzSGppeHk1akpINFNxVkJIR3BuT01GbXNjX2s?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Iran war looms over Trump's China visit, shifts alliances - Reuters
+                          - paragraph: Iran war looms over Trump's China visit, shifts alliances Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 13일 오후 06:19
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMiqAFBVV95cUxPcGdhZmtfdThVeUJHVTBTU1NDNnNxc3VNVVRvcWw0aDFrNmEwT3psOG5VSUhmTWl1QnJhWkJRM0FjeTVRd0JpWTI1VmVEMkZIT21SSVRJUUdtdVVzYzJYNXZkY0UzRWdVc2JfbU02dUR6dVJOVU5ldDVETkQyM3p5X09raW0ybEZvU196M2ZKVmtmRS0xZHVhcExtRGZqSUlicTUwaDdOVUs?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Chinese oil tanker exits Strait of Hormuz, heads for Zhoushan, data shows - Reuters
+                          - paragraph: Chinese oil tanker exits Strait of Hormuz, heads for Zhoushan, data shows Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 13일 오후 04:52
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMiqgFBVV95cUxORXFrZ2t6dDRlOGFiVC16WGtjN0Voal8tZlg5NWVFTlJpV3M5OXUxMjV1Z3lCc0ZxUVRUZVZKSElObVpadGYyejFvNmVxUXZqUW93TU51VXJEV0tnUm56dXg5V0pwRnVfbjFDVnhwZ3lWTGE2OWVEcUF6YVE1bjJ4OW4tX0lTaVBhVlc2MjBuX1AyUGJkTFZ2aktGd3F5Y2MtVGlIMG10V25BQQ?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Iran war to cast a shadow on BRICS foreign ministers meeting in Delhi - Reuters
+                          - paragraph: Iran war to cast a shadow on BRICS foreign ministers meeting in Delhi Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 13일 오후 03:52
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMiuwFBVV95cUxNd0RUMzROYmN4N2VlNGZoRzIyVjhFNFlPN213UWFjdGoyNU5MMGt4bjhEa3ZSV2ljTm9YMktISUtIR2ZJb3FwaUdYXzlWcG0tX3E1S19UcGZJNjZ5Y2VUb1hoYmNrXzRMRmFDYnZZNjJpSE5zamZzNXBkMW1fY2NHRkU3eldFWE1teUpVQzhId1hNZGZnR0RDeEFnbkhCWE1fYVp3ajFSZURpeFJtamU3RTFpaFA5UW1XTVVN?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: India races to shield economy from Iran war-driven oil shock, capital stress - Reuters
+                          - paragraph: India races to shield economy from Iran war-driven oil shock, capital stress Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 13일 오후 02:58
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMif0FVX3lxTE5Yam5wSTFZeVNuZFdobTU1VGRvX3JCX1NoVk9MclhVazBLd2RRS2pKcWdEc3QtLThlZU9xU09NX29KcWlCTy0yNTM0a3lFTk12ZTBmbWlYcFJXdFpFRnJGczh3djBpMjRuTkZfem12WVNhb3ZiOV9OeWhxY1ZaWDA?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Hapag-Lloyd posts Q1 net loss on severe weather, Iran war disruptions - Reuters
+                          - paragraph: Hapag-Lloyd posts Q1 net loss on severe weather, Iran war disruptions Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 13일 오후 02:39
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMilwFBVV95cUxPZEl4OEFBWU9UMlVDcnRZd3A4N1E1cGllbHN4cmhrcVAydWx3SWRtaFBOTFZsYi1OUXA1WUlCUDFOWktiN1VUV3lHckNMNnZnMlRXZDU1eXJieXdpYkhheHlKc016UjVkMldkejd6UllSYzRLLWpudXBiTXdyTDVYa0wwWGtiQ1JGZEFVWk5WQ0poWVVqVXMw?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Siemens orders rise more than expected despite Iranian war tension - Reuters
+                          - paragraph: Siemens orders rise more than expected despite Iranian war tension Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 13일 오후 02:08
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMiqwFBVV95cUxOcnBGNzZBa1pWNzNoVU82SW1YY1pQRVR4Q0RVSWlFX2gyWjlNb25nSTk0NUdvM3V2bHZYVHd5S1VHM0tzdVVMUXBNXzN3REo2MzZFN3lVbFIzSlg5Qi1YamVYNWtQa1h2Z0pCVGlEZlRPMHVXenlfRHY4QnNqNE80blU2QWZLR0J3T2MxOWdPTUpERlZSaGl6dDRfZm4xV3pPWFFxenhvUzBHak0?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Iran executes man accused of spying for Israel, Mizan reports - Reuters
+                          - paragraph: Iran executes man accused of spying for Israel, Mizan reports Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 13일 오후 02:07
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMiwAFBVV95cUxNMXJwMDBKRmVzQ0Z6a1JhTzRBYWdzTnEzVFpBMW8zamcyWkV1Z2J6a2dZMVU4WVU3MlZUZWoyZ0otcXlMSUZZQVVfWjFWQmdfSF9tY3ZWcWhDZW56QzhOQUMtdFlNM2h1Si1PTUg4ZzZ6aWw2WVc3aTU4Wk9FU1RMYUh2djBPNnJCU3B6X09sUGQ0dHg1UDA3S2FvZzFPb2VfVUwxX1N2ZTUzS3AzVnpTSWF6VmhlR3p2eXZYWk9sZ3Y?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Vietnam imports more fuel to offset oil shortfall amid Iran war, data shows - Reuters
+                          - paragraph: Vietnam imports more fuel to offset oil shortfall amid Iran war, data shows Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 13일 오후 01:47
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMihgFBVV95cUxQWGxYUWdtRXUyS0wzemV0R0o2QXF0WUVWUzFRTTdWRTNIeFU4NVA5dS1iYm5SWkpNSG9EVW9PZks2UUEzck83UDlRYjJhYTdtWnVKbnQ4aGM4WFZ1b00tX2cxRE5RNTdVZTZUWTJEem5faWtaZDZmUnNNZGtRZllWUERZbnRadw?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: "Morning Bid: Locked in a stalemate with Iran, Trump heads to China - Reuters"
+                          - paragraph: "Morning Bid: Locked in a stalemate with Iran, Trump heads to China Reuters"
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 13일 오후 01:39
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMie0FVX3lxTE9WQ2g4TE51V0FmWDBZOFVjQVhDbVphVXVWQzVmV1RLY01taHBramJiaVNPTUdHZVZTQWtwWExtM2NUSW9fVkVLN2p4UzRMWUNla01KWnNYQVdLR3hlMUhxWlZqZEhQQnIxaThhVXQxNk44Sks1VXZHSkhEVQ?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Global equities rise modestly with the dollar, bond yields as US inflation soars - Reuters
+                          - paragraph: Global equities rise modestly with the dollar, bond yields as US inflation soars Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 13일 오전 10:27
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMirwFBVV95cUxQeExfc3FwV0NDeVZKSzBqVy02QlcwWklBbkRJaDRhbkprQTBtLWZTektlSVV5a2NMLWoyX1ozeVdKTEVSTVFSbWw5SWdzTlBGd2JKWTg4S3ZYREtnaXRPNG8xOUZTel80Nm1POTNSY254Xy1FR2h2U0JiRGRBZDFacFNYemx4SVpEd1d4SHNRUU13LXFKMXVUUnRuanhkRnF5RFJrS0llZU1idnlxQ0pr?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Oil settles lower on US rate hike fears; investors watch Trump-Xi meeting - Reuters
+                          - paragraph: Oil settles lower on US rate hike fears; investors watch Trump-Xi meeting Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 13일 오전 10:00
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMivAFBVV95cUxOMzloZTd4X0wyYnN2V01VaVhodG56OHd0TGFlVnhoXzREdkFLdGUwb3E5bm90anVtT2N5UUZvaG9FaFdmQlNMX2pXdlV3UTJpTjc4VldpOHR2MlpVTlMyRFN2bVVOSTMtOWtobUhtbHNBaW82VzZHNTRTZ3NmTkdKU1F4LVhrTTJlQ2Znb3ZIXzNwZXo4WVdvTXRqYnV6RnpvZUJEWVhOWmxzTDR0bDM0cndmdW5GUWtFSVg0WA?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Trump says stopping Iran's nuclear program outweighs Americans' economic pain - Reuters
+                          - paragraph: Trump says stopping Iran's nuclear program outweighs Americans' economic pain Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 13일 오전 09:16
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMiowFBVV95cUxQeDRSdFhfX2dwTkYzSGtmMkZZSzY3enF2bjVVdEhkdm9DbnBIZVJ3V3ZhM1g1VzQwc1E1NGRxa2ZFMkphR01EYTJjLWhPcFFSZWhkT21Qa1VIckpYOUtoN1NudTdvMXVENUs5SzhlUkV0dkZRcElYcEdjLUR5ODJ6b3p1Rzc4Uk5RZU5RSElxLTlUWS1BazZHUEowUzd5TUFwVFJj?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: S&P 500, Nasdaq end lower as inflation, Iran tensions weigh - Reuters
+                          - paragraph: S&P 500, Nasdaq end lower as inflation, Iran tensions weigh Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 13일 오전 08:09
+              - generic:
+                - link:
+                  - /url: https://www.cnbc.com/2026/05/12/fed-ex-ceo-jim-cramer-amazon-logistics.html
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: FedEx CEO brushes off Amazon's new logistics service that recently sent shares tumbling
+                          - paragraph: FedEx CEO Raj Subramaniam argued that Amazon's recent supply chain services announcement does not pose a threat to Fedex.
+                        - img
+                      - generic:
+                        - generic: CNBC
+                        - generic: 5월 13일 오전 07:58
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMisgFBVV95cUxPeHhwaGkxMUwtRTJmcFhZU2puNzFud0M2WkJlNTFYeHRReFRFb0ZJMUdTLUhxTXBJMGxyOEc0MXJzX2pHWDdQMGZjNmhxc19yOVRWMHlPTXVzQS1VdmNsSTNraGlTMzZQanMzOGd3S2pVb2lGUElxUXNXQWd6MGpvMVh1SHFZYnh3TmJiSm1MSlU2eUxWWU05Zld4SmRfekh4WmNXOEVxUUJUUThqMnY2NVdn?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Oil settles higher as hopes of peace in the Middle East dwindle - Reuters
+                          - paragraph: Oil settles higher as hopes of peace in the Middle East dwindle Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 13일 오전 06:48
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMipAFBVV95cUxQNWo2Vmp5bHlOVnI4dmprdDk5Rk03NTNuOTNabnptUjZIdkZUeVlES1ZIQzNZb3pTOFZ0N2tEOE5PSTdyYXdXOWg0QWJONG0wdG05OUpwWFhaUFR5NjdMajVMZmdNSzAweGNtY3g3YkpWOTlkZF9GRW82QmVTYVdzUTRKdEgzUTRyenAyeDhwR3VRcG1OcHNqbXhmcUVHTVBuMWFrbw?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Earthquake of magnitude 4.6 hits Tehran, no casualties reported - Reuters
+                          - paragraph: Earthquake of magnitude 4.6 hits Tehran, no casualties reported Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 13일 오전 06:02
+              - generic:
+                - link:
+                  - /url: https://www.cnbc.com/2026/05/12/trump-congress-china-evs-byd.html
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Auto-state lawmakers seek to keep Chinese EV parts out of U.S. as Trump heads to Beijing
+                          - paragraph: Michigan lawmakers introduced a bipartisan bill to ban Chinese-connected vehicles and technology from the U.S. market over security concerns.
+                        - img
+                      - generic:
+                        - generic: CNBC
+                        - generic: 5월 13일 오전 05:11
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMioAFBVV95cUxQU2EtR0tSX2d2UjN4SmlxWnVKRzllTkFjdHRiV3B4VDVOQ3U0WmN5ZHpodk8yS05SR0cxWW5idjhFd2drVk1STENFaENRZk5LRmhZdmxwX2RaRlUzMDd2NHFtRkVSM3hsQi1lNzlGbDRqeXBjX1JCalZDa2ZnczBIODFwRHZNcHZfX2FsTnBaZkYtZ28wRVVpRjhGM2V5bTNB?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: US war in Iran has cost $29 billion so far, Pentagon says - Reuters
+                          - paragraph: US war in Iran has cost $29 billion so far, Pentagon says Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 13일 오전 05:06
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMiuwFBVV95cUxOeHp2dEczMFFkM0VUdm82TWdkM3ZILUphT1ZyaFpNT2VSZDFRVXJ2RHBBeW96cURONHM2Q1UzX3NwNGIyYU1LZ2ZRY3hPZEp3RGtldVpISHZmZFc5LTR5dExaVGctRFZCVW1mc1JLZjVBVXVHcF9MXy15Z0lDdko4WUhhRHVKOXNxSVd1UjB0ZU5qcmNMbVdwelcxU2R4YWJvYlJmdWxic0lTdDBfdi15SlhldmcyLVJSekJB?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Oil spill in Gulf likely caused by tanker dump, Iranian official says - Reuters
+                          - paragraph: Oil spill in Gulf likely caused by tanker dump, Iranian official says Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 13일 오전 04:20
+              - generic:
+                - link:
+                  - /url: https://www.cnbc.com/2026/05/12/heres-what-the-latest-pickup-in-boeing-deliveries-means-for-investors-.html
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Here's what the latest pickup in Boeing deliveries means for investors
+                          - paragraph: New data offers a promising sign for the metric Wall Street cares most about for a Boeing turnaround.
+                        - img
+                      - generic:
+                        - generic: CNBC
+                        - generic: 5월 13일 오전 04:17
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMiqgFBVV95cUxPazFmY0d5dHM4NVdkYW56UzFGd1lBUFVrVXQ5Rkx0NlJ4LWlHYkxISFYyRUNwcFBTTVBWamJyTjRoV1U4ZDJlS09MOC11dHdwQmxuSVdBSzBDbjlFeWY4Rk1lMEpGVXpRSDNvbnFTaDFnY0JGYUJyYkt0dkRKaG1jd1hJZTJhT01SLXNGRVJDWGl1WllXMjJ5djVZOGloNUNla1hnUEl4MjAzQQ?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: China and US agree on opposing Hormuz tolls, State Department says - Reuters
+                          - paragraph: China and US agree on opposing Hormuz tolls, State Department says Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 13일 오전 03:57
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMikAFBVV95cUxOM3BOVTNEenFfNTh0QnRxV0VKSUZObVc2RVZnVGd2N0MzV05OWnEzQW9RcVZvMWpXeEtKQU5ZZk01bVJ3T0RwcGVkeE1ZVE5lZ3pwRmpsZ2RrZGo1ckFwcDBKdzF5V2o0RGRBM0wyOFRHNG1RYkhONHVUOHhiTmM2Sm9hNEpRTXpvcENvS0I3MlU?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Trump says he doesn't need Xi's help on Iran - Reuters
+                          - paragraph: Trump says he doesn't need Xi's help on Iran Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 13일 오전 03:24
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMiwwFBVV95cUxPZDVqZjdxVDZDeDdnNjd1RndvV0NwNTF4U1Y2cFpVRFMyMzI2WG9mQVFUTnM4YlI3NmVRcGozODRLUUhGbU5wVURWU2dBa0hvNFBxQUc5T0hOUmJENHNBWDg0ZTR2ZWZham5IYVJOY3djZmJia0J6cFg5OWV3ZzluenhIRkVXeW1HRWhYREh0Q181NG1Ncl9aV3FPZU8yQVVTT1VTblpjVjE4bW94bWhVWXpWblpMTDdGeEJVZkxzaW1ZRFU?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: "Exclusive: Saudi Arabia launched covert attacks on Iran as regional war widened, sources say - Reuters"
+                          - paragraph: "Exclusive: Saudi Arabia launched covert attacks on Iran as regional war widened, sources say Reuters"
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 13일 오전 03:08
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMiwgFBVV95cUxPeEV0N2V1QmJhSWFBeG9JZE5EV3I1RFpoY3hicVNfeG1BVWdwcDFXSUEwRzQ0SDJLVk5wQnhCSWc3MWJNcnFkNGRoTERUT0d4ZXJVU05iTHgtU3RwbW5SUHZRbXdUbERCclpXRDV6WHpnaERHM2cyX2ZmVlg1cDJTUHlNMmozVVVkeVcxdm5WSzNHQ0s3Nkx4dndEaUlfUHNzcVVYZDFtYWhZVWp4ajZuemQtdnMxWDVkNFRDSEo4ZHFHQQ?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: "Exclusive: Iraq, Pakistan strike energy deals with Iran as Tehran flexes Hormuz control - Reuters"
+                          - paragraph: "Exclusive: Iraq, Pakistan strike energy deals with Iran as Tehran flexes Hormuz control Reuters"
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 13일 오전 03:07
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMiyAFBVV95cUxPLS1Na054WG9YNmN5ZExKOU5vckxsUHZVUGRZemU1TXRmTGpsYmlTak1IWHV0WVU2S2RBU3VFOUZYbGNMTFFDazNNb2t0bVkxSDJrVFNPQ0tmaDFjUFh1enRQMmI0MGZXZ2JYcjY1Z25hZFpUMERwMmQxOGRSS0o0ZmpzLVlpU3BQeC1sT1JxdzB6SlJFVlUtSklqal82Q2Nqa1V2WTdnT1lHc1QxaGJtNDdsd1JwMEp1akFTS0NMOVdWOU9FXy0wdw?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Vietnam state oil company urges US Navy to allow tanker through blockade, document shows - Reuters
+                          - paragraph: Vietnam state oil company urges US Navy to allow tanker through blockade, document shows Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 13일 오전 02:51
+              - generic:
+                - link:
+                  - /url: https://www.cnbc.com/2026/05/12/the-market-rally-takes-a-breather-here-are-3-reasons-why-and-1-silver-lining.html
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: The market rally takes a breather. Here are 3 reasons why — and 1 silver lining
+                          - paragraph: Every weekday, the Investing Club releases the Homestretch; an actionable afternoon update just in time for the last hour of trading.
+                        - img
+                      - generic:
+                        - generic: CNBC
+                        - generic: 5월 13일 오전 02:49
+              - generic:
+                - link:
+                  - /url: https://www.cnbc.com/2026/05/12/the-stock-market-isnt-ignoring-iran-its-rising-for-these-three-very-real-reasons.html
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: The stock market isn't ignoring Iran. It's rising for these three very real reasons
+                          - paragraph: It's time to take a closer look with stocks rallying into the third month of the U.S.-Iran conflict.
+                        - img
+                      - generic:
+                        - generic: CNBC
+                        - generic: 5월 13일 오전 02:40
+              - generic:
+                - link:
+                  - /url: https://www.cnbc.com/2026/05/12/the-case-for-owning-cybersecurity-stocks-in-the-age-of-ai-just-got-stronger.html
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: The case for owning cybersecurity stocks in the age of AI just got stronger
+                          - paragraph: New evidence showed that hackers are using AI to accelerate more sophisticated cyberattacks.
+                        - img
+                      - generic:
+                        - generic: CNBC
+                        - generic: 5월 13일 오전 02:32
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMitgFBVV95cUxNQURnQnFHMGFKaGlQdTRkY05SaVB2X0tMX2pITlllTW5ZdmRId0xBamRRSHJQTE13MzdVMklNUEl2Z3NNYzNnb2dqSXpDTFpPTTh0aHZ0czUtYXVTbGZmZlpGX01ldlFERkVMTzd5bnlvMVZtcGlMcGg0TjE0LTFrMHpsWXNwOGdURjZxUEs1UnFJUG15YUNaelRIMzc3eU41NnA2V2k1MnR4WTVvaXRfRU1iY0gtUQ?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: UK to send drones, jets and warship to join defensive mission securing Strait of Hormuz - Reuters
+                          - paragraph: UK to send drones, jets and warship to join defensive mission securing Strait of Hormuz Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 13일 오전 02:30
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMiqwFBVV95cUxOM3JOYmhabldNTDg3bUhiZG91aVM0WWp3R21fNTFTU3hfMEZwaTZnUThiZlZtYWhsNm95VURyT2o0SFNwanp0SkVnWFpONUxYcEN4NUpVN0EyaU4wT2Q5RGhGYzgzeTU3cEdReFRIRlY2ekxnN21yVmliclMzVEt1cmhXZ0lkU2pGLVQ3S0kycVJzTEZ3d3UtVncxVW9mTFVhN2U5U0VLbDBmSEE?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Eurovision Song Contest gets off to a tense start, overshadowed by Gaza - Reuters
+                          - paragraph: Eurovision Song Contest gets off to a tense start, overshadowed by Gaza Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 13일 오전 02:24
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMizwFBVV95cUxOQVAyS0pYTlF2ajBoa1NTakNnZlBNbkJxdEVKNjZ5NFNGcnlsOXJ5aDFKSDJSLV91V3RtUWZXZjA4THFsbm5QWlpMeXVsemZHSzRLRzdFcWhic24wb2x4N25CZGR3c2NTRDRKQmo3ZjBfWW52ejlESnNndUNKQ1NLRVVSRUNnaWluYzBrVE1HbXAyTm9lVVVNVkZOcTEzUmJkMF9GWV9hMXQ4cWpMR0RCbGpxRGpxN2xFZHdWUjJiajhXQVlYT19jN09GNlVqTlU?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Second Qatari LNG tanker successfully crosses Hormuz to Pakistan as Iran war continues, data shows - Reuters
+                          - paragraph: Second Qatari LNG tanker successfully crosses Hormuz to Pakistan as Iran war continues, data shows Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 13일 오전 01:59
+              - generic:
+                - link:
+                  - /url: https://www.cnbc.com/2026/05/12/united-airlines-flight-attendants-contract.html
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: United Airlines flight attendants ratify new contract with 31% raises this summer
+                          - paragraph: United Airlines flight attendants ratify labor deal that would provide first raises in nearly 6 years.
+                        - img
+                      - generic:
+                        - generic: CNBC
+                        - generic: 5월 13일 오전 01:58
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMixAFBVV95cUxOMk5JQUtOZS1jY1FzOVN6SXIzeGJubVVyTEhDd3VtV0dJVjJNcUxVMkFCMTBGenhtY2RfMFNZaEZDcDhCd0pVdmJLcXRoejNhUVpQZFpBblNIREN6MDRWcHVTaWZvczg1NG5yVi1nUHhtRUNEUENURXNwa3FOeXZmNnQycVVGbndjYl84TG1OY2pBbV9zN1U4TVkzblBoOW96QjVmVXY3R2hlSWhZb3p0djFOVFF5YXl1MW13ZTRtWHBvVjY5?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Freight costs threaten Zimbabwe farmers' livelihoods as Iran war disrupts exports - Reuters
+                          - paragraph: Freight costs threaten Zimbabwe farmers' livelihoods as Iran war disrupts exports Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 13일 오전 01:39
+              - generic:
+                - link:
+                  - /url: https://www.cnbc.com/2026/05/12/jim-cramer-dont-dump-this-ai-leader-after-its-stock-slipped-from-a-new-high.html
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: "Jim Cramer: Don't dump this AI leader after its stock slipped from a new high"
+                          - paragraph: The Investing Club holds its "Morning Meeting" every weekday at 10:20 a.m. ET.
+                        - img
+                      - generic:
+                        - generic: CNBC
+                        - generic: 5월 13일 오전 01:25
+              - generic:
+                - link:
+                  - /url: https://www.cnbc.com/2026/05/12/summer-box-office-weekend-ticket-sales.html
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: The summer box office is off to a hot start as weekend ticket sales top $160 million
+                          - paragraph: The summer box office is off to a sizzling start, thanks in part to strong week-after-week performance from returning titles.
+                        - img
+                      - generic:
+                        - generic: CNBC
+                        - generic: 5월 13일 오전 12:36
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMizgFBVV95cUxNNlBuN19pTFlNTlBMVExNa0I5eG5XS2hlYlJNRUIzT092LTdqQzk4R0p3TmtuaXpkVHZjMkdxQS1FNDl5T1JWQzhsbWZtYUJ2c2JpMDRjMDZwbFZ4MklzdDg3all0Tjd0SFlqeVNkcmVVc0hfcjVVbXBWQnlKN3dFc2drMVZZaFZ4aThuWlJyemwtZW5hQ3k2R1VmM3JMRUNDeFc3b0VCdlhOSmVCNjJleDREM0hibVR5QW5PY3pIaHpXY0QzeHBma3hWc1RuZw?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Kuwait says four people affiliated with Iran's IRGC arrested trying to enter by sea - Reuters
+                          - paragraph: Kuwait says four people affiliated with Iran's IRGC arrested trying to enter by sea Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 13일 오전 12:09
+              - generic:
+                - link:
+                  - /url: https://www.cnbc.com/2026/05/12/stanford-professor-teaches-tech-free-classesthe-skill-he-wants-students-to-build.html
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Stanford professor teaches his classes ‘tech-free’—here’s the skill he wants his students to build
+                          - paragraph: "\"Just as we must be responsible for our bodies in an era of office work, we must now keep our minds active,\" says Jamil Zaki, director of the Stanford Social Neuroscience Lab."
+                        - img
+                      - generic:
+                        - generic: CNBC
+                        - generic: 5월 12일 오후 11:00
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMiuAFBVV95cUxQcVVyaElQQXltV0NzUDhueUxxTU9Zd2JNNDlJOEtRSlAzY3dGaU1jTTRMUlBNaEJNemFacnZkbEJPUWpNUmhpd2ppN2xncVVQeXE5TUNBS2hMU0xhNjBaZzVjZzJTOHJEYndpRTVJaWpHQmMwdHF5SUNjckttdWxwb0dvZ0hIMm1FRUdpaEFTSEFXMzVnZ1BRMnJJZjFJeDFCMWFqUUlieFBNMVVySzgzWnlWRF9KdlRW?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Evolving drone war in southern Lebanon clouds Iran peace prospects - Reuters
+                          - paragraph: Evolving drone war in southern Lebanon clouds Iran peace prospects Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 12일 오후 10:40
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMisAFBVV95cUxNMVJFSFNmd3d0Z0VHWVhvZTFkNEFTa0lrZ2N0cHU0OS12MlVlYjRoRHQ1bV9wSjM2eHRaNC1oOVUwZlN2ZEoyWmlKWklFWEVDSTJKdkp3ZzRVNXkzT3hld1BuZzlVWXFoUmtELVZXZEJlSHUzOE9kcVhUaVVkS3ZmMVpSdEFmQ1JPdXRzRS1pVnROSjRBRGFKU016Yl94N2w2YklfRVp4WkxwUXNnODZ4Rg?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Most Gulf markets retreat on dwindling hopes for quick end to Iran war - Reuters
+                          - paragraph: Most Gulf markets retreat on dwindling hopes for quick end to Iran war Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 12일 오후 10:25
+              - generic:
+                - link:
+                  - /url: https://www.cnbc.com/2026/05/12/trump-china-iran-war-xi-jinping-analysis.html
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: "Analysis: Iran war hangs over Trump's China trip — and his presidency"
+                          - paragraph: There is no quick fix to the economic and political damage from the war.
+                        - img
+                      - generic:
+                        - generic: CNBC
+                        - generic: 5월 12일 오후 10:20
+              - generic:
+                - link:
+                  - /url: https://www.cnbc.com/2026/05/12/jim-cramers-top-10-things-to-watch-in-the-stock-market-tuesday.html
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Jim Cramer's top 10 things to watch in the stock market Tuesday
+                          - paragraph: The market was on track for a weak open even before this morning's April consumer price index came in hotter than expected.
+                        - img
+                      - generic:
+                        - generic: CNBC
+                        - generic: 5월 12일 오후 10:03
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMitAFBVV95cUxNMV8xdXh1d1g2cWJUY3NfcmxFYzZRR2lXSTc1cE1xeWNPZ2lNcVRReXZzU2Q5RnFPQnEzT0lXaFBOaWlDNFZoUWszNFd1bjRLUEtCdVF0M2pmUW5ra3c2V0tXanVVRjd5eUE4QjYyVWFWSEFfTkhnZU51THgwOXhsV3VUeEszaVlqdy1sUkl2TURWZm1xcmNrVnlsMHBwdUdXa2x5RWtpZS1Rc0xGejMtanVlNG0?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Indian shares post worst drop in six weeks; $115 bln wiped out as Mideast hopes fade - Reuters
+                          - paragraph: Indian shares post worst drop in six weeks; $115 bln wiped out as Mideast hopes fade Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 12일 오후 09:34
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMiwAFBVV95cUxQTGhJNG9rcWFYRENfeDFkVXA4a2VaeDNMbjc4SDF5Uy1uMHpmLUxwMjI3Vk5fRExlU0Q1WkdmREtiTWZuLTU2UmN5bkVsNW8zNWNtQ3g1eHNsZ2NleXMtakpDUG4wbGZibmhQTFl3ckw4WGE0VXUyUlJ1enVPd3BTSjlXRE1sTUhPZGJsZmxfQlpFSWg1dWNOZ2I0Z09zanl4T09HemVtdUY5TUdWbVpxRU01ZEt3WjhvR3E0bVZ3c0g?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: China's US ethane imports hit record as Iran war cut rival feedstock supply - Reuters
+                          - paragraph: China's US ethane imports hit record as Iran war cut rival feedstock supply Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 12일 오후 07:56
+              - generic:
+                - link:
+                  - /url: https://www.bloomberg.com/news/articles/2026-05-12/netflix-spent-135-billion-on-films-tv-shows-in-past-10-years
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Netflix spent $135 billion on films, TV shows in past 10 years
+                          - paragraph: The streaming TV pioneer has been on a bit of a charm offensive lately after receiving criticism from the Hollywood community over its attempt to buy Warner Bros. Discovery Inc
+                        - img
+                      - generic:
+                        - generic: Bloomberg
+                        - generic: 5월 12일 오후 07:44
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMilwFBVV95cUxOR1hBd203QXozZGh2WS10ajFWN29zMWpKREhNaGZjNER1c3J3aS1kVlVyTlJZT0NVRzQ5WkgtQXRTaDJGQkhxb3NVZkVRQm5NQnZqenVWdjhFSkVHX1RDTWJ6Y1dneFdsWWZoZnRxT0VVeU1ILVZ2T1d1MmhDSW41MjRpem93d3Bldkh1X295X3hYRjg0NVVN?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: "Morning Bid: Ceasefire on life support - Reuters"
+                          - paragraph: "Morning Bid: Ceasefire on life support Reuters"
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 12일 오후 07:42
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMiugFBVV95cUxONG9zdW1tRWZScUdVelBneWZwNUk2UlJ1ZGMzc2lZUXZaT19Ea1Y0Q1ZscjBKNUhSaXpfZEJ0YWxoWEkzQncxWlFWcllJdGFrajhsTFY0TVVsRWJyZDF2dC1oMzRvM3pXenIweFBqbGxveVFjSm1udVBMVHZqWUVCMFp4bXBCbkNqZnRXZ1AweTVNZUZiR3JscXNsTUtnY3J2SW1mQlA0cmRUSGh4aHdubmpyZEFxazRUcmc?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Iran now defines Strait of Hormuz as far larger zone, IRGC officer says - Reuters
+                          - paragraph: Iran now defines Strait of Hormuz as far larger zone, IRGC officer says Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 12일 오후 07:10
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMisAFBVV95cUxOZXd2S1RBR25QZ1RmcGtlYjlmOWhvOTRUaWF3ZXYwUGdTc0hrOXNwZGYyeVZNYWJKRnFfTE0xSkZNQnZGLWFTcTJhaWhleFA2NC1wNGI2Sl9XNUl6X0R6cDN3NkY0VXpJX29VekY1ME9vYS1raEtuQkZnN2RxOU85dEptamUwZDNBUnBaSUJNcDE5YXgyb3dIR3hrNE1RWl96REo1bHQwT3J1Y0gyY21tTg?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Israel sent Iron Dome air defense systems to UAE, US envoy says - Reuters
+                          - paragraph: Israel sent Iron Dome air defense systems to UAE, US envoy says Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 12일 오후 07:09
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMivAFBVV95cUxQdHgxWndxenFOTWNkNGptZ2ZMUThMREN5YXpDV1kyNEt3cTRkb2hHQjRldjFUZXNJLXFUZXdmOEdTWThDNEk1cUhfTVhBZkhiZzhoUS12dzBoZTE3QlhnbmtmbkRHME03bnpwTFJSUWJVemQzS1ZnMVJrRl93dV9zZ2h6dm85Y0hsNnhEZDNpazlvZVRBT2lLallzSzZvWlI5MnRzUEttWEVKb2tEUXpZTzlEVkNHOUdiWi1uZg?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Iran could enrich uranium to weapons grade if attacked, lawmaker warns - Reuters
+                          - paragraph: Iran could enrich uranium to weapons grade if attacked, lawmaker warns Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 12일 오후 06:28
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMisAFBVV95cUxNLWt6amNJVjhBUXFXbXl5ZFNJdV9wUkJHOElscTl5eGJlaHhQODgydXpSN0tXRTVsd1VWcDhvS1VUb1BFd1JHcnBXR1IwcVRpR2IyZnZmcjhvY3VOOVp2a2stODBXUVlNUEJjU2k3NkY2RmtrRjkycS10aXlxbUpUV1NPSTNRZGxzbEMwTS1DWXY3Y0hjMzczaVFBb3dNRV9vVTZfWEhPalNCOU9xQ0RGeA?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Top Asian LNG markets boost coal use as Iran war limits supply - Reuters
+                          - paragraph: Top Asian LNG markets boost coal use as Iran war limits supply Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 12일 오후 05:36
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMiuAFBVV95cUxPd0xvUlNtejlVYUMtdWMtYkowcmdIOVJkT2pBTlE5UnBMLURGRXZPcEVnaGNha0RoWDBnaXVvS2t0aVlGaEM1MTdqTi0zTHRFY0l3RXdRV2FYS3FIWjZobF9vNERsMFZuVW9DRE9vRzA2Uk85OE1NX1p3TGpLTnVBMUQ4YkR3Q0hOUTRWbkdVQnpmMmViaV9xeUx3dHpoemF2WUlVckpKVzc5d1Nmam9ROUJjWlFGOHF6?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Rupee's rough patch worsens on oil, outflow strain; central bank likely steps in - Reuters
+                          - paragraph: Rupee's rough patch worsens on oil, outflow strain; central bank likely steps in Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 12일 오후 05:18
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMimAFBVV95cUxOQV9ndXFlNGExSXRaay1vRURsRU16SWZNcXpjNTk3dVJwRE9uR3BlSU11LTRjaWVSTTdvN2pxRlBjY2N3dmRTQm1abElWY1phTkhrdHhJbzJucV9BTDRiRDJVTW5sa0tzSFZEYU9uWEMxV0t4MHduNEYzUGt3Y3pFRkk3amIyOVo0Y25kam9nQXR3b0FUVlBpNw?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: World markets feel the strain as US–Iran war grinds on - Reuters
+                          - paragraph: World markets feel the strain as US–Iran war grinds on Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 12일 오후 03:58
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMiswFBVV95cUxNWW9ZbndFVWMwc0FrNHJkbm9TS3B2YVFwRjROVzI4enZRajl6alR3T3R1R1FMRXlsaVV3QnM5d0xpQjdta0tONTRBalVQRXY3a3pKajZHYTN2MHNfQ2NpZUdTUGh2VmJEa3M2ZHE0U1BUc1hCU2E3cGdtUnR4WWQydVZ6d3RpNjUtMW1fT0VQT2ZzVUItdUZoRzlHVXBtS2hITE9BQWRfMlpkTi1HQ0UwNW14aw?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: The battle for Hormuz risks sparking the next Iran clash - Reuters
+                          - paragraph: The battle for Hormuz risks sparking the next Iran clash Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 12일 오후 03:10
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMinwFBVV95cUxNci1NdlNTcFRfZElQRVNsalBlSFdGbllwWmZfRjFUbFNnV1lGVmYxdm50bE42YnpRRHR1VnRHVGNTVGY0d0NKM1loR3pZcDg4clc5aWo3UWlwU1A3bHNYVlJjNG5WOE5Td2VvZkFkVEdqM0hPT1d0NF9rWXVPU2hPNEgzcXgwN2hrTW5objRzbGlQU3VnSmxmU005Y1BiOVU?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: "Iran war creates new must-have for summer holidays: the plan B - Reuters"
+                          - paragraph: "Iran war creates new must-have for summer holidays: the plan B Reuters"
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 12일 오후 03:06
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMiiAFBVV95cUxQMV9DYUJldGFpaFVEczJiSGRvY05xRUwyWm9xZm9BV0VXVXdxZFUzM3c0YmpETzJ6V2lsaWFyRmFWdHhsZHp6dmNTaGRUM2J6dGRiZDc3Yk1KSmRadU9GbG5BNjhlZTVXUWlUZ3RSYmd1a3Q2REkybUdXMElXcFptZnpsZlZ0X0Y0?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Stocks edge up ahead of US-China meeting; oil rallies on US-Iran stalemate - Reuters
+                          - paragraph: Stocks edge up ahead of US-China meeting; oil rallies on US-Iran stalemate Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 12일 오후 02:17
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMitAFBVV95cUxNdVhiVXEwaEFKdlMwaFdMdVNXSUhQNzVUMHJDY2JVdl9Ta2twSDdON29NYUV0ZjBkRkxweTZJSDY1LU5ra2VxSkF6RXloU2oxWUZuYUQzcFNBMEY1MEVwSXpMSUhFN2pycDNJejRkV1ZYZW5kSThpUWF5U1NRMzBDUzc0ODlwNk4wYjBYZWVvUUxYLWd4R2toNTVwRE5QOXlLLWl6WHJuN0liaVJJUUdzTUh2WHA?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Europe's chemical makers catch a break as Iran war hits Asian rivals - Reuters
+                          - paragraph: Europe's chemical makers catch a break as Iran war hits Asian rivals Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 12일 오후 02:02
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMiugFBVV95cUxNazJLUlB0MFZIdGRtOTJtcXZEVTJfOEFqcDVUWWJBSjdudTZCLXNZSGNRWFFRU1pFZlYxUTc2SXpJOXEzMHpYX2syMUZJYTZ2S1hIUDBIdkluaDhna0RfQldJWWFRYVg5UVN6MjNfUXRkXzhOQ25UQ2JBeFpkTF9TUDAtMklZT1lnWFhtLW9CMmxCSjR1UXFPOENKU3R2VkJHM2dReGtnQ1ZjLTkxX2RncV9HcmhxMnI2Q0E?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: US consumer inflation expected to have increased further in April amid Iran war - Reuters
+                          - paragraph: US consumer inflation expected to have increased further in April amid Iran war Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 12일 오후 01:05
+              - generic:
+                - link:
+                  - /url: https://www.bloomberg.com/news/articles/2026-05-12/ambani-s-cola-war-with-coke-pepsi-spurs-fridge-bonanza-in-india
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Cola wars in India fuel booming demand for visi-coolers and retail fridges
+                          - paragraph: Beverage companies are aggressively expanding distribution by installing fridges in mom-and-pop shops across the country, turning cold storage units into key marketing and sales tools.
+                        - img
+                      - generic:
+                        - generic: Bloomberg
+                        - generic: 5월 12일 오후 01:00
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMiqwFBVV95cUxNTTFIeHh6enp1TW1pNmRpVy1pZ1ZtaVFvNTF2emxOOUg3VXV1RWE3SkFqb3pwY28yS0pBTDF3MjRFSVNRclFhTWtCZlN0SmQ1MDV2YUZJSXJhdXRUdldyM3VZbEkzYnIxUXlvSk1JREJwVURVVGJhcV9vcEU2WnlLcVZKaXZQX0Fac1VEWW1VZjlwdDNNWHp5ZENCNTROaEhsVFRuQ2ZUd0gwTmc?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Trump says Iran ceasefire is 'on life support' as hopes for a deal fade - Reuters
+                          - paragraph: Trump says Iran ceasefire is 'on life support' as hopes for a deal fade Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 12일 오후 12:49
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMiygFBVV95cUxNNmxJRXB6OXRtN1NRdmlFQVZ0OUg1WXRPM2FIc1VBN1J5RjQwVmNJNEg5aWw0ZVh0cWRSankxY2JBUFZ0RmNKaFQzejh0SmxQSGI4WVhVQkVyQ2tnXy1pNmZPa1g0emJaMGhQemxTSHhnaV9tUVZlbzluZmY4UnNiaU9QclB6UFhuUGpHcDhkakdER1NNQ2ZxUlJOZFVrZ0RiTS00MV9oUHBvN0c5NWVLQmJYcV9JQ05OOVlobzZtUFY3cXBlOXE1NU1B?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Iran war takes colour out of Japanese snack maker Calbee's chips packaging - Reuters
+                          - paragraph: Iran war takes colour out of Japanese snack maker Calbee's chips packaging Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 12일 오후 12:46
+              - generic:
+                - link:
+                  - /url: https://www.bloomberg.com/news/articles/2026-05-12/franklin-templeton-turns-to-fixed-income-to-fuel-india-growth
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Franklin Templeton bets on fixed income growth to rebuild India business
+                          - paragraph: Franklin Templeton is shifting focus to fixed income in India, aiming to reduce equity exposure and expand debt funds amid rising investor interest and competition.
+                        - img
+                      - generic:
+                        - generic: Bloomberg
+                        - generic: 5월 12일 오후 12:43
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMiuAFBVV95cUxPWHdTckV5RzMwSjhydndNeEotaThVSXMyX1NCUnV2ZEZGcE9KWnd6bU5Xd2tCZW5vNnN5SnJORDdjTUF3aFpFSjFER3RGcjF3V2U0Z1R1UkY3NHYxNGJfNjJYb2laVWVZV2lxZTdkNzN0M3NPUGZReVBUSXBPQlJiaXlzbUd6bE05SDRHYjNtSllwR0huQXRUaHFfQW5ab01LWHNCOHZUcXhleFlQTjVrcEFyb0RnYUx4?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: US top diplomat discusses Iran, Strait of Hormuz with UK and Australia - Reuters
+                          - paragraph: US top diplomat discusses Iran, Strait of Hormuz with UK and Australia Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 12일 오후 12:33
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMisAFBVV95cUxQYjI0ek5ZYzN4WXRWbDlpVERUd1VlZ3BfVlo3RkpKYTZKRy0zelR1VTc4NUZxc3RVenFGdFJ2QUMxekFuOEM4TkllY1JvQ3dfdEx6Z0lYY1N6Z0VGSWJGdHBiNWVFVDF5YTZlRGdwdzdta2dteDZsZW16Tnh4TExPRXZBZFFTLXFJX1ZydXhqX0RVaVpnS0oxLTR3RDF5dGpvZHgwbkQzbkdtNjJjRTd1aQ?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Trump says he does not need China's help to end Iran war, Tehran tightens grip on Hormuz - Reuters
+                          - paragraph: Trump says he does not need China's help to end Iran war, Tehran tightens grip on Hormuz Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 12일 오후 12:32
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMitgFBVV95cUxOdldDclpFU0tqOUg1V1kxVDJXV1hFdzF6LThHVWdJY1kwczRWUFNzUWhRRERKcnJTOXhMNXQzSGY5cWNyeTJKaTc2NElRNmR3Wmp6N0lvdW9GTVZ4N1lhWG9UWUVJc2pFZWdrRGFYSHRTYmFCZS14c01PRld3YWFGVXNjUDhjaXhsT3lDNHVmSUxxYVp3MG1xRlBUekx6QWlSOFViZGZ3VU93VFlUV1J4d1NGQW1mZw?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Rupee at risk of slipping to all-time low on worries US-Iran truce may collapse - Reuters
+                          - paragraph: Rupee at risk of slipping to all-time low on worries US-Iran truce may collapse Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 12일 오전 11:55
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMidEFVX3lxTFBMT0dPUVlJM1Jjb0xQMFo5UmpMc1cxWEhJaWZBSzB6d0xhWTBxTmpYMmZSenFLWWxzTTZEcV81WFVzWTZJNXd2ektINU1zV2YtYTBxbjVscFJvN255SGk4RkdHS2tnNlJUZGVRcTNKRWltSHND?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Stocks fall, oil rallies as Middle East peace hopes fade - Reuters
+                          - paragraph: Stocks fall, oil rallies as Middle East peace hopes fade Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 12일 오전 11:23
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMi0AFBVV95cUxQbWVsMjc1UnFvcEhpcXNJNWVmdWtkbTVhc2RLSEVjRXRzN3JTb19FdWRBcnhoWWJraGxXRGItbjl5Mlg5bllnN2NkaEtDT2x0NnV5U0VxeTVHSUFqQnl0QmQtS0F2RUVWWGI0b0VzY291ZldWcVA4dV93Zk1UVTFJMXNFZWExWW02bnFUMjc0SmJnTksxOG1HZFp0Y3V6UWk2WGh6ZTZWS0lpNi00OWllLXpLbnpWeTZFWHBjbm5TTXh0X01weEtHYVE0RUdTWTQy?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: China's commodity imports show Hormuz impact as oil slides, metals rise - Reuters
+                          - paragraph: China's commodity imports show Hormuz impact as oil slides, metals rise Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 12일 오전 10:48
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMioAFBVV95cUxPUUdfQ29oZEtWVGNSMEtlc0dQX1lDUTJsbEMxWk5iYlppWE1WcDRzWWF3SWhCQ1k4d3ZvY1V5bDc0RE9OM1pCSGJNYlptM2o4d2wtUkFOTUM5WFRXQVJwcUVKenNJNWszUElINmxiRDFSV1laaHNlclp2cDg2d09ERlMyWmZNT1BSS2lRVl9hU2hVaXVvcFZpQ290Unl1LUpD?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Dollar rises after hot inflation data, Iran ceasefire eyed - Reuters
+                          - paragraph: Dollar rises after hot inflation data, Iran ceasefire eyed Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 12일 오전 10:36
+              - generic:
+                - link:
+                  - /url: https://news.google.com/rss/articles/CBMiogFBVV95cUxPQnhPNWJVbm1JU1pqZExkQ05UcWxobXdCbVlUOFZNWGJxU1VkNU5tS3hXTVVfT0dzei00c0FPNUp4cDZuY0JOYmNpMjM4RkZlSENrRmZEWVhPeG1sMVRUXzMtT1l1YkRNSkxjNXVBZkRiWnJCXzFxUTZsTWxFUVI1LVk0WW9jSG5sVnpnai1VY09lNDkyeGlDOWZTV0NVMUpOd0E?oc=5
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: Gold falls as fading Middle East peace hopes lift dollar, oil - Reuters
+                          - paragraph: Gold falls as fading Middle East peace hopes lift dollar, oil Reuters
+                        - img
+                      - generic:
+                        - generic: Reuters
+                        - generic: 5월 12일 오전 10:17
+  - button "Open Next.js Dev Tools" [ref=e33] [cursor=pointer]:
+    - img [ref=e34]
+  - alert
+  - listbox [ref=e1742]:
+    - option "일반" [active] [selected] [ref=e1743]:
+      - generic:
+        - generic:
+          - img
+      - generic [ref=e1744]: 일반
+    - option "외환" [ref=e1745]:
+      - generic [ref=e1746]: 외환
+    - option "암호화폐" [ref=e1747]:
+      - generic [ref=e1748]: 암호화폐
+    - option "인수합병" [ref=e1749]:
+      - generic [ref=e1750]: 인수합병
+    - option "한국 뉴스" [ref=e1751]:
+      - generic [ref=e1752]: 한국 뉴스

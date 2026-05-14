@@ -1,1 +1,2 @@
 - [키움 REST API 엔드포인트 매핑](kiwoom-endpoints.md) — /api/dostk/v1은 존재하지 않음; TR 코드별 경로(/api/dostk/stkinfo 등) 사용
+- [키움 REST API 뉴스 기능 부재](kiwoom-news-api.md) — 뉴스 TR 코드 없음; 뉴스는 Finnhub 등 별도 소스 사용 필요

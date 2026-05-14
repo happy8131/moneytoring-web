@@ -43,7 +43,9 @@ export function NewsListClient() {
       {newsItems.length === 0 ? (
         <div className="rounded-lg border border-border bg-card p-8 text-center">
           <p className="text-muted-foreground">
-            현재 "{category}" 카테고리의 뉴스가 없습니다.
+            {category === 'korea'
+              ? '현재 한국 뉴스 데이터가 없습니다. (Finnhub API의 한국 회사 뉴스가 제한적입니다)'
+              : `현재 "${category}" 카테고리의 뉴스가 없습니다.`}
           </p>
         </div>
       ) : (

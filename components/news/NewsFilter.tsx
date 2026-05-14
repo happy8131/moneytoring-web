@@ -18,6 +18,7 @@ const CATEGORIES = [
   { value: 'forex', label: '외환' },
   { value: 'crypto', label: '암호화폐' },
   { value: 'merger', label: '인수합병' },
+  { value: 'korea', label: '한국 뉴스' },
 ] as const;
 
 export function NewsFilter({
