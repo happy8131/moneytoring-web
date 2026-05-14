@@ -29,21 +29,39 @@ export function mergeHoldingsWithPrices(
 ): Holding[] {
   return holdings.map((holding) => {
     let currentPrice = 0;
+    let gain = 0;
+    let gainPercent = 0;
 
     if (holding.type === 'korean-stock') {
       const krwPrice = koreanStockPrices?.get(holding.symbol) || 0;
+      const krwBuyPrice = holding.buyPrice;
+
+      // KRW 기준으로 먼저 손익 계산
+      const krwGain = (krwPrice - krwBuyPrice) * holding.quantity;
+
+      // USD로 환산
       currentPrice = krwPrice * (krwToUsd ?? 0);
+      gain = krwGain * (krwToUsd ?? 0);
+
+      // 수익률: KRW 기준으로 계산
+      const totalInvested = krwBuyPrice * holding.quantity;
+      gainPercent = totalInvested === 0 ? 0 : (krwGain / totalInvested) * 100;
     } else {
       const priceMap = holding.type === 'stock' ? stockPrices : cryptoPrices;
       currentPrice = priceMap.get(holding.symbol) || 0;
+
+      const totalValue = currentPrice * holding.quantity;
+      const totalInvested = holding.buyPrice * holding.quantity;
+      gain = totalValue - totalInvested;
+      gainPercent = calculateGainPercent({ ...holding, currentPrice });
     }
 
     return {
       ...holding,
       currentPrice,
       totalValue: currentPrice * holding.quantity,
-      gain: (currentPrice * holding.quantity) - (holding.buyPrice * holding.quantity),
-      gainPercent: calculateGainPercent({ ...holding, currentPrice }),
+      gain,
+      gainPercent,
     };
   });
 }
