@@ -2,7 +2,7 @@
 
 import { useStockIndicator } from '@/hooks/useStockIndicator';
 import { getPeriodRange, Period } from '@/lib/stockUtils';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ReferenceLine } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ReferenceLine, Legend } from 'recharts';
 import { Skeleton } from '@/components/ui/skeleton';
 
 interface StockIndicatorChartProps {
@@ -168,7 +168,7 @@ export function StockIndicatorChart({ symbol, period }: StockIndicatorChartProps
         {smaChartData.length > 0 ? (
           <div className="h-80">
             <ResponsiveContainer width="100%" height="100%">
-              <LineChart data={smaChartData} margin={{ top: 5, right: 30, left: 0, bottom: 5 }}>
+              <LineChart data={smaChartData} margin={{ top: 5, right: 30, left: 0, bottom: 30 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
                 <XAxis
                   dataKey="date"
@@ -187,6 +187,12 @@ export function StockIndicatorChart({ symbol, period }: StockIndicatorChartProps
                     }
                     return ['-', 'SMA'];
                   }}
+                />
+                <Legend
+                  wrapperStyle={{ paddingTop: '20px' }}
+                  iconType="line"
+                  verticalAlign="bottom"
+                  height={36}
                 />
                 <Line
                   type="monotone"
