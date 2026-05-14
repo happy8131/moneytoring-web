@@ -154,7 +154,7 @@ export function StockPriceChart({ symbol }: StockPriceChartProps) {
                 return ['-', '거래량'];
               }}
             />
-            <Bar dataKey="volume" fill="hsl(var(--primary) / 0.3)" radius={[4, 4, 0, 0]} />
+            <Bar dataKey="volume" fill="#60a5fa" opacity={0.7} radius={[4, 4, 0, 0]} />
           </BarChart>
         </ResponsiveContainer>
       </div>
