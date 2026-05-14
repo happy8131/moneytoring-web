@@ -45,25 +45,35 @@ export function StockIndicatorChart({ symbol, period }: StockIndicatorChartProps
     );
   }
 
+  const is5YearChart = period === '5Y';
+
   // RSI 차트 데이터 (null 값 필터링)
   const rsiChartData = (rsiData?.t || [])
-    .map((timestamp, index) => ({
-      date: new Date(timestamp * 1000)
-        .toLocaleDateString('en-US', { month: '2-digit', day: '2-digit' })
-        .replace(/\//g, '/'),
-      rsi: rsiData?.values[index],
-    }))
+    .map((timestamp, index) => {
+      const date = new Date(timestamp * 1000);
+      return {
+        date: is5YearChart
+          ? date.toLocaleDateString('en-US', { year: 'numeric' })
+          : date
+              .toLocaleDateString('en-US', { month: '2-digit', day: '2-digit' })
+              .replace(/\//g, '/'),
+        rsi: rsiData?.values[index],
+      };
+    })
     .filter((d) => d.rsi !== null && d.rsi !== undefined);
 
   // SMA 차트 데이터 (null 값 필터링)
   const smaChartData = (sma20Data?.t || [])
     .map((timestamp, index) => {
+      const date = new Date(timestamp * 1000);
       const sma20Val = sma20Data?.values[index];
       const sma50Val = sma50Data?.values[index];
       return {
-        date: new Date(timestamp * 1000)
-          .toLocaleDateString('en-US', { month: '2-digit', day: '2-digit' })
-          .replace(/\//g, '/'),
+        date: is5YearChart
+          ? date.toLocaleDateString('en-US', { year: 'numeric' })
+          : date
+              .toLocaleDateString('en-US', { month: '2-digit', day: '2-digit' })
+              .replace(/\//g, '/'),
         sma20: sma20Val,
         sma50: sma50Val,
       };

@@ -27,7 +27,7 @@ export default async function StockDetailPage({ params }: Props) {
         <StockDetailHeader symbol={symbol} />
         <StockPriceChart symbol={symbol} />
         <StockMetricsGrid symbol={symbol} />
-        <StockIndicatorChart symbol={symbol} period="1Y" />
+        <StockIndicatorChart symbol={symbol} period="5Y" />
         <StockFinancialsTable symbol={symbol} />
         <StockNewsSection symbol={symbol} />
       </div>
