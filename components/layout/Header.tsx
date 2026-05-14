@@ -1,7 +1,33 @@
+'use client';
+
 import Link from 'next/link';
-import { TrendingUp } from 'lucide-react';
+import { TrendingUp, Moon, Sun } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Button } from '@/components/ui/button';
 
 export function Header() {
+  const [isDark, setIsDark] = useState(true);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    const isDarkMode = document.documentElement.classList.contains('dark');
+    setIsDark(isDarkMode);
+  }, []);
+
+  const toggleDarkMode = () => {
+    const html = document.documentElement;
+    if (html.classList.contains('dark')) {
+      html.classList.remove('dark');
+      setIsDark(false);
+      localStorage.setItem('theme', 'light');
+    } else {
+      html.classList.add('dark');
+      setIsDark(true);
+      localStorage.setItem('theme', 'dark');
+    }
+  };
+
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="flex h-14 items-center justify-between px-4 sm:px-6">
@@ -31,6 +57,21 @@ export function Header() {
               뉴스
             </Link>
           </nav>
+
+          {mounted && (
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleDarkMode}
+              aria-label="다크 모드 토글"
+            >
+              {isDark ? (
+                <Sun className="h-5 w-5" />
+              ) : (
+                <Moon className="h-5 w-5" />
+              )}
+            </Button>
+          )}
         </div>
       </div>
     </header>

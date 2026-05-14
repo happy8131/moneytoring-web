@@ -1,0 +1,54 @@
+[     115ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     499ms] [LOG] [Fast Refresh] done in 490ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     601ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     637ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     714ms] [LOG] PortfolioPage holdings: 2 BTC,MSFT @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     715ms] [LOG] PortfolioPage holdings: 2 BTC,MSFT @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     723ms] [LOG] PortfolioPage holdings: 2 BTC,MSFT @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     725ms] [LOG] PortfolioPage holdings: 2 BTC,MSFT @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     749ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: undefined, cryptoData: undefined, isStockLoading: true} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     750ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: undefined, cryptoData: undefined, isStockLoading: true} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     773ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: undefined, cryptoData: undefined, isStockLoading: true} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     773ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: undefined, cryptoData: undefined, isStockLoading: true} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     785ms] [LOG] PortfolioPage holdings: 2 BTC,MSFT @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     787ms] [LOG] PortfolioPage holdings: 2 BTC,MSFT @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     803ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 1, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     805ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 1, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   15692ms] [LOG] PortfolioPage holdings: 2 BTC,MSFT @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   15692ms] [LOG] PortfolioPage holdings: 2 BTC,MSFT @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   15702ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 1, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   15703ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 1, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   30799ms] [LOG] PortfolioPage holdings: 2 BTC,MSFT @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   30799ms] [LOG] PortfolioPage holdings: 2 BTC,MSFT @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   30812ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 1, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   30813ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 1, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   35724ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   35726ms] [LOG] [Fast Refresh] done in 103ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   44692ms] [LOG] PortfolioPage holdings: 3 BTC,MSFT,ETH @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   44693ms] [LOG] PortfolioPage holdings: 3 BTC,MSFT,ETH @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   44707ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 1, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   44708ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 1, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   44765ms] [LOG] PortfolioPage holdings: 3 BTC,MSFT,ETH @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   44766ms] [LOG] PortfolioPage holdings: 3 BTC,MSFT,ETH @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   44780ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 1, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   44780ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 1, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   45086ms] [LOG] PortfolioPage holdings: 3 BTC,MSFT,ETH @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   45087ms] [LOG] PortfolioPage holdings: 3 BTC,MSFT,ETH @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   45100ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 1, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   45100ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 1, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   72938ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   72954ms] [LOG] [Fast Refresh] done in 123ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   74767ms] [LOG] PortfolioPage holdings: 3 BTC,MSFT,ETH @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   74768ms] [LOG] PortfolioPage holdings: 3 BTC,MSFT,ETH @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   74783ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 1, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   74784ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 1, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  104773ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 1, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  104773ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 1, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  104797ms] [LOG] PortfolioPage holdings: 3 BTC,MSFT,ETH @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  104798ms] [LOG] PortfolioPage holdings: 3 BTC,MSFT,ETH @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  104810ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 1, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  104811ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 1, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  134783ms] [LOG] PortfolioPage holdings: 3 BTC,MSFT,ETH @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  134784ms] [LOG] PortfolioPage holdings: 3 BTC,MSFT,ETH @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  134796ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 1, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  134796ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 1, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431

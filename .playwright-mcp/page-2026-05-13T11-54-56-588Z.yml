@@ -1,0 +1,148 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "Moneytoring" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - img [ref=e6]
+          - generic [ref=e9]: Moneytoring
+        - navigation [ref=e11]:
+          - link "대시보드" [ref=e12] [cursor=pointer]:
+            - /url: /dashboard
+          - link "포트폴리오" [ref=e13] [cursor=pointer]:
+            - /url: /portfolio
+          - link "뉴스" [ref=e14] [cursor=pointer]:
+            - /url: /news
+    - generic [ref=e15]:
+      - complementary [ref=e16]:
+        - navigation [ref=e17]:
+          - link "대시보드" [ref=e18] [cursor=pointer]:
+            - /url: /dashboard
+            - img [ref=e19]
+            - text: 대시보드
+          - link "포트폴리오" [ref=e24] [cursor=pointer]:
+            - /url: /portfolio
+            - img [ref=e25]
+            - text: 포트폴리오
+          - link "뉴스" [ref=e28] [cursor=pointer]:
+            - /url: /news
+            - img [ref=e29]
+            - text: 뉴스
+      - main [ref=e32]:
+        - generic [ref=e34]:
+          - generic [ref=e36]:
+            - heading "포트폴리오" [level=1] [ref=e37]
+            - paragraph [ref=e38]: 보유 중인 자산을 관리하고 수익률을 분석하세요.
+          - generic [ref=e49]:
+            - tablist [ref=e50]:
+              - tab "보유종목" [active] [selected] [ref=e51]
+              - tab "거래기록" [ref=e52]
+              - tab "분석" [ref=e53]
+            - tabpanel "보유종목" [ref=e54]:
+              - button "종목 추가" [ref=e295]:
+                - img
+                - text: 종목 추가
+              - generic [ref=e296]:
+                - generic [ref=e297]:
+                  - paragraph [ref=e298]: 총 자산
+                  - paragraph [ref=e299]: $46,150.59
+                - generic [ref=e300]:
+                  - paragraph [ref=e301]: 총 투자금
+                  - paragraph [ref=e302]: $40,090.00
+                - generic [ref=e303]:
+                  - paragraph [ref=e304]: 총 손익
+                  - paragraph [ref=e305]: +$6,060.59
+                - generic [ref=e306]:
+                  - paragraph [ref=e307]: 수익률
+                  - paragraph [ref=e308]: +15.12%
+                - generic [ref=e309]:
+                  - paragraph [ref=e310]: 보유 종목
+                  - paragraph [ref=e311]: "4"
+              - generic [ref=e312]:
+                - table [ref=e316]:
+                  - rowgroup [ref=e317]:
+                    - row "종목 수량 매입가 현재가 손익 수익률 총가치 액션" [ref=e318]:
+                      - columnheader "종목" [ref=e319]
+                      - columnheader "수량" [ref=e320]
+                      - columnheader "매입가" [ref=e321]
+                      - columnheader "현재가" [ref=e322]
+                      - columnheader "손익" [ref=e323]
+                      - columnheader "수익률" [ref=e324]
+                      - columnheader "총가치" [ref=e325]
+                      - columnheader "액션" [ref=e326]
+                  - rowgroup [ref=e327]:
+                    - row "BTC Bitcoin 0.5 $65,000.00 $80,526.00 +$7,763.00 +23.89% $40,263.00" [ref=e328]:
+                      - cell "BTC Bitcoin" [ref=e329]:
+                        - generic [ref=e330]:
+                          - paragraph [ref=e331]: BTC
+                          - paragraph [ref=e332]: Bitcoin
+                      - cell "0.5" [ref=e333]
+                      - cell "$65,000.00" [ref=e334]
+                      - cell "$80,526.00" [ref=e335]
+                      - cell "+$7,763.00" [ref=e336]:
+                        - generic [ref=e337]: +$7,763.00
+                      - cell "+23.89%" [ref=e338]
+                      - cell "$40,263.00" [ref=e339]
+                      - cell [ref=e340]:
+                        - generic [ref=e341]:
+                          - button [ref=e342]:
+                            - img
+                          - button [ref=e343]:
+                            - img
+                    - row "MSFT Microsoft 2 $420.00 $407.77 -$24.46 -2.91% $815.54" [ref=e344]:
+                      - cell "MSFT Microsoft" [ref=e345]:
+                        - generic [ref=e346]:
+                          - paragraph [ref=e347]: MSFT
+                          - paragraph [ref=e348]: Microsoft
+                      - cell "2" [ref=e349]
+                      - cell "$420.00" [ref=e350]
+                      - cell "$407.77" [ref=e351]
+                      - cell "-$24.46" [ref=e352]
+                      - cell "-2.91%" [ref=e353]
+                      - cell "$815.54" [ref=e354]
+                      - cell [ref=e355]:
+                        - generic [ref=e356]:
+                          - button [ref=e357]:
+                            - img
+                          - button [ref=e358]:
+                            - img
+                    - row "ETH Ethereum 2 $3,000.00 $2,300.20 -$1,399.60 -23.33% $4,600.40" [ref=e359]:
+                      - cell "ETH Ethereum" [ref=e360]:
+                        - generic [ref=e361]:
+                          - paragraph [ref=e362]: ETH
+                          - paragraph [ref=e363]: Ethereum
+                      - cell "2" [ref=e364]
+                      - cell "$3,000.00" [ref=e365]
+                      - cell "$2,300.20" [ref=e366]
+                      - cell "-$1,399.60" [ref=e367]
+                      - cell "-23.33%" [ref=e368]
+                      - cell "$4,600.40" [ref=e369]
+                      - cell [ref=e370]:
+                        - generic [ref=e371]:
+                          - button [ref=e372]:
+                            - img
+                          - button [ref=e373]:
+                            - img
+                    - row "SOL Solana 5 $150.00 $94.33 -$278.35 -37.11% $471.65" [ref=e374]:
+                      - cell "SOL Solana" [ref=e375]:
+                        - generic [ref=e376]:
+                          - paragraph [ref=e377]: SOL
+                          - paragraph [ref=e378]: Solana
+                      - cell "5" [ref=e379]
+                      - cell "$150.00" [ref=e380]
+                      - cell "$94.33" [ref=e381]
+                      - cell "-$278.35" [ref=e382]
+                      - cell "-37.11%" [ref=e383]
+                      - cell "$471.65" [ref=e384]
+                      - cell [ref=e385]:
+                        - generic [ref=e386]:
+                          - button [ref=e387]:
+                            - img
+                          - button [ref=e388]:
+                            - img
+                - generic [ref=e390]:
+                  - heading "자산 분배" [level=3] [ref=e391]
+                  - application [ref=e394]
+  - button "Open Next.js Dev Tools" [ref=e45] [cursor=pointer]:
+    - img [ref=e46]
+  - alert [ref=e171]

@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash",
+      "Bash(curl -s http://localhost:3001/api/korean-stocks/indices)",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright",
+      "mcp__playwright__browser_evaluate"
+    ]
+  }
+}

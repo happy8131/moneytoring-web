@@ -1,0 +1,76 @@
+[     125ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     545ms] [LOG] [Fast Refresh] done in 524ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     671ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     705ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     774ms] [LOG] PortfolioPage holdings: 4 BTC,MSFT,ETH,SOL @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     775ms] [LOG] PortfolioPage holdings: 4 BTC,MSFT,ETH,SOL @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     791ms] [LOG] PortfolioPage holdings: 4 BTC,MSFT,ETH,SOL @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     794ms] [LOG] PortfolioPage holdings: 4 BTC,MSFT,ETH,SOL @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     862ms] [LOG] PortfolioPage holdings: 4 BTC,MSFT,ETH,SOL @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     864ms] [LOG] PortfolioPage holdings: 4 BTC,MSFT,ETH,SOL @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   16752ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   16753ms] [LOG] [Fast Refresh] done in 102ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   19964ms] [LOG] PortfolioPage holdings: 4 BTC,MSFT,ETH,SOL @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   19965ms] [LOG] PortfolioPage holdings: 4 BTC,MSFT,ETH,SOL @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   30871ms] [LOG] PortfolioPage holdings: 4 BTC,MSFT,ETH,SOL @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   30872ms] [LOG] PortfolioPage holdings: 4 BTC,MSFT,ETH,SOL @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   54330ms] [LOG] PortfolioPage holdings: 5 BTC,MSFT,ETH,SOL,BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   54331ms] [LOG] PortfolioPage holdings: 5 BTC,MSFT,ETH,SOL,BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   54416ms] [LOG] PortfolioPage holdings: 5 BTC,MSFT,ETH,SOL,BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   54417ms] [LOG] PortfolioPage holdings: 5 BTC,MSFT,ETH,SOL,BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   54726ms] [LOG] PortfolioPage holdings: 5 BTC,MSFT,ETH,SOL,BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   54727ms] [LOG] PortfolioPage holdings: 5 BTC,MSFT,ETH,SOL,BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   58403ms] [ERROR] Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[   60637ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   60637ms] [LOG] [Fast Refresh] done in 104ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   84427ms] [LOG] PortfolioPage holdings: 5 BTC,MSFT,ETH,SOL,BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   84427ms] [LOG] PortfolioPage holdings: 5 BTC,MSFT,ETH,SOL,BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   84433ms] [ERROR] Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  114435ms] [LOG] PortfolioPage holdings: 5 BTC,MSFT,ETH,SOL,BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  114435ms] [LOG] PortfolioPage holdings: 5 BTC,MSFT,ETH,SOL,BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  114442ms] [ERROR] Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  144439ms] [LOG] PortfolioPage holdings: 5 BTC,MSFT,ETH,SOL,BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  144440ms] [LOG] PortfolioPage holdings: 5 BTC,MSFT,ETH,SOL,BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  144446ms] [ERROR] Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  174455ms] [LOG] PortfolioPage holdings: 5 BTC,MSFT,ETH,SOL,BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  174456ms] [LOG] PortfolioPage holdings: 5 BTC,MSFT,ETH,SOL,BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  174463ms] [ERROR] Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  174744ms] [LOG] PortfolioPage holdings: 5 BTC,MSFT,ETH,SOL,BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  174745ms] [LOG] PortfolioPage holdings: 5 BTC,MSFT,ETH,SOL,BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  174751ms] [ERROR] Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  204472ms] [LOG] PortfolioPage holdings: 5 BTC,MSFT,ETH,SOL,BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  204473ms] [LOG] PortfolioPage holdings: 5 BTC,MSFT,ETH,SOL,BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  204480ms] [ERROR] Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  234485ms] [LOG] PortfolioPage holdings: 5 BTC,MSFT,ETH,SOL,BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  234486ms] [LOG] PortfolioPage holdings: 5 BTC,MSFT,ETH,SOL,BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  234492ms] [ERROR] Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  234758ms] [LOG] PortfolioPage holdings: 5 BTC,MSFT,ETH,SOL,BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  234760ms] [LOG] PortfolioPage holdings: 5 BTC,MSFT,ETH,SOL,BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  234771ms] [ERROR] Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  264491ms] [LOG] PortfolioPage holdings: 5 BTC,MSFT,ETH,SOL,BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  264492ms] [LOG] PortfolioPage holdings: 5 BTC,MSFT,ETH,SOL,BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  264498ms] [ERROR] Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  294498ms] [LOG] PortfolioPage holdings: 5 BTC,MSFT,ETH,SOL,BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  294499ms] [LOG] PortfolioPage holdings: 5 BTC,MSFT,ETH,SOL,BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  294505ms] [ERROR] Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  294770ms] [LOG] PortfolioPage holdings: 5 BTC,MSFT,ETH,SOL,BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  294771ms] [LOG] PortfolioPage holdings: 5 BTC,MSFT,ETH,SOL,BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  294777ms] [ERROR] Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  317257ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  317288ms] [LOG] [Fast Refresh] done in 134ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  317377ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  317401ms] [LOG] [Fast Refresh] done in 98ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  317513ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  317787ms] [LOG] [Fast Refresh] done in 381ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  317817ms] [LOG] PortfolioPage holdings: 5 BTC,MSFT,ETH,SOL,BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  317821ms] [LOG] PortfolioPage holdings: 5 BTC,MSFT,ETH,SOL,BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  317836ms] [ERROR] Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  317992ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  318104ms] [LOG] [Fast Refresh] done in 215ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  323694ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  323907ms] [LOG] [Fast Refresh] done in 314ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  324255ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  324318ms] [LOG] [Fast Refresh] done in 178ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  324512ms] [LOG] PortfolioPage holdings: 5 BTC,MSFT,ETH,SOL,BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  324513ms] [LOG] PortfolioPage holdings: 5 BTC,MSFT,ETH,SOL,BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  324520ms] [ERROR] Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272

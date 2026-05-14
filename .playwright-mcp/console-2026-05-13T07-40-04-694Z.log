@@ -1,0 +1,112 @@
+[     136ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     173ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     243ms] [LOG] PortfolioPage holdings: 3 AAPL,BTC,MSFT @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     245ms] [LOG] PortfolioPage holdings: 3 AAPL,BTC,MSFT @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     254ms] [LOG] PortfolioPage holdings: 3 AAPL,BTC,MSFT @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     256ms] [LOG] PortfolioPage holdings: 3 AAPL,BTC,MSFT @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     286ms] [LOG] AssetChart Debug: {stockSymbols: Array(2), cryptoIds: Array(1), stockData: undefined, cryptoData: undefined, isStockLoading: true} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     286ms] [LOG] AssetChart Debug: {stockSymbols: Array(2), cryptoIds: Array(1), stockData: undefined, cryptoData: undefined, isStockLoading: true} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     305ms] [LOG] AssetChart Debug: {stockSymbols: Array(2), cryptoIds: Array(1), stockData: undefined, cryptoData: undefined, isStockLoading: true} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     306ms] [LOG] AssetChart Debug: {stockSymbols: Array(2), cryptoIds: Array(1), stockData: undefined, cryptoData: undefined, isStockLoading: true} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     322ms] [LOG] PortfolioPage holdings: 3 AAPL,BTC,MSFT @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     324ms] [LOG] PortfolioPage holdings: 3 AAPL,BTC,MSFT @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     339ms] [LOG] AssetChart Debug: {stockSymbols: Array(2), cryptoIds: Array(1), stockData: 2, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     340ms] [LOG] AssetChart Debug: {stockSymbols: Array(2), cryptoIds: Array(1), stockData: 2, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   12246ms] [LOG] PortfolioPage holdings: 3 AAPL,BTC,MSFT @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   12247ms] [LOG] PortfolioPage holdings: 3 AAPL,BTC,MSFT @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   12260ms] [LOG] AssetChart Debug: {stockSymbols: Array(2), cryptoIds: Array(1), stockData: 2, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   12260ms] [LOG] AssetChart Debug: {stockSymbols: Array(2), cryptoIds: Array(1), stockData: 2, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   13478ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   13479ms] [LOG] [Fast Refresh] done in 102ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   24355ms] [LOG] Input 0: {type: text, placeholder: AAPL, value: , name: } @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   24355ms] [LOG] Input 1: {type: text, placeholder: Apple Inc., value: , name: } @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   24356ms] [LOG] Input 2: {type: number, placeholder: 10, value: , name: } @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   24356ms] [LOG] Input 3: {type: number, placeholder: 150.50, value: , name: } @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   24356ms] [LOG] Input 4: {type: date, placeholder: , value: 2026-05-13, name: } @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   28898ms] [LOG] 폼 필드 채우기 완료 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   30334ms] [LOG] PortfolioPage holdings: 3 AAPL,BTC,MSFT @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   30335ms] [LOG] PortfolioPage holdings: 3 AAPL,BTC,MSFT @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   30347ms] [LOG] AssetChart Debug: {stockSymbols: Array(2), cryptoIds: Array(1), stockData: 2, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   30348ms] [LOG] AssetChart Debug: {stockSymbols: Array(2), cryptoIds: Array(1), stockData: 2, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   36648ms] [LOG] 추가 버튼 클릭됨 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   49391ms] [LOG] Current holdings count: 3 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   49391ms] [LOG] Holdings: AAPL,BTC,MSFT @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   49391ms] [LOG] Full store keys: [holdings, favorites, readNews, transactions, lastUpdated] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   55285ms] [LOG] PortfolioPage holdings: 3 AAPL,BTC,MSFT @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   55287ms] [LOG] PortfolioPage holdings: 3 AAPL,BTC,MSFT @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   55300ms] [LOG] AssetChart Debug: {stockSymbols: Array(2), cryptoIds: Array(1), stockData: 2, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   55300ms] [LOG] AssetChart Debug: {stockSymbols: Array(2), cryptoIds: Array(1), stockData: 2, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   60331ms] [LOG] PortfolioPage holdings: 3 AAPL,BTC,MSFT @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   60332ms] [LOG] PortfolioPage holdings: 3 AAPL,BTC,MSFT @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   60343ms] [LOG] AssetChart Debug: {stockSymbols: Array(2), cryptoIds: Array(1), stockData: 2, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   60344ms] [LOG] AssetChart Debug: {stockSymbols: Array(2), cryptoIds: Array(1), stockData: 2, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   84040ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   84086ms] [LOG] [Fast Refresh] done in 134ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   84190ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   84294ms] [LOG] [Fast Refresh] done in 207ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   84327ms] ReferenceError: useState is not defined
+    at AssetChart (http://localhost:3000/_next/static/chunks/_0zkjm60._.js?id=%255Bproject%255D%252Fcomponents%252Fportfolio%252FAssetChart.tsx+%255Bapp-client%255D+%2528ecmascript%2529:34:39)
+    at Object.react_stack_bottom_frame (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:15037:24)
+    at renderWithHooks (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:4620:24)
+    at updateFunctionComponent (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6081:21)
+    at beginWork (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6691:24)
+    at runWithFiberInDEV (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at performUnitOfWork (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9555:97)
+    at workLoopSync (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9449:40)
+    at renderRootSync (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9433:13)
+    at performWorkOnRoot (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9061:186)
+    at performSyncWorkOnRoot (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10263:9)
+    at flushSyncWorkAcrossRoots_impl (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10179:316)
+    at processRootScheduleInMicrotask (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10200:106)
+    at http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10274:158
+[   84494ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   84555ms] [LOG] [Fast Refresh] done in 172ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   86059ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   86144ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   86166ms] [LOG] PortfolioPage holdings: 3 AAPL,BTC,MSFT @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   86167ms] [LOG] PortfolioPage holdings: 3 AAPL,BTC,MSFT @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   86177ms] [LOG] PortfolioPage holdings: 3 AAPL,BTC,MSFT @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   86182ms] [LOG] PortfolioPage holdings: 3 AAPL,BTC,MSFT @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   86222ms] [LOG] AssetChart Debug: {stockSymbols: Array(2), cryptoIds: Array(1), stockData: undefined, cryptoData: undefined, isStockLoading: true} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   86222ms] [LOG] AssetChart Debug: {stockSymbols: Array(2), cryptoIds: Array(1), stockData: undefined, cryptoData: undefined, isStockLoading: true} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   86248ms] [LOG] AssetChart Debug: {stockSymbols: Array(2), cryptoIds: Array(1), stockData: undefined, cryptoData: undefined, isStockLoading: true} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   86249ms] [LOG] AssetChart Debug: {stockSymbols: Array(2), cryptoIds: Array(1), stockData: undefined, cryptoData: undefined, isStockLoading: true} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   86264ms] [LOG] [Fast Refresh] done in 186ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   86281ms] [LOG] PortfolioPage holdings: 3 AAPL,BTC,MSFT @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   86283ms] [LOG] PortfolioPage holdings: 3 AAPL,BTC,MSFT @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   86313ms] [LOG] AssetChart Debug: {stockSymbols: Array(2), cryptoIds: Array(1), stockData: undefined, cryptoData: 0, isStockLoading: true} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   86317ms] [LOG] AssetChart Debug: {stockSymbols: Array(2), cryptoIds: Array(1), stockData: undefined, cryptoData: 0, isStockLoading: true} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   86378ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   86896ms] [LOG] [Fast Refresh] done in 623ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   87225ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   87296ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   87454ms] [LOG] PortfolioPage holdings: 3 AAPL,BTC,MSFT @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   87457ms] [LOG] PortfolioPage holdings: 3 AAPL,BTC,MSFT @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   87484ms] [LOG] PortfolioPage holdings: 3 AAPL,BTC,MSFT @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   87489ms] [LOG] PortfolioPage holdings: 3 AAPL,BTC,MSFT @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   87553ms] [LOG] AssetChart Debug: {stockSymbols: Array(2), cryptoIds: Array(1), stockData: undefined, cryptoData: undefined, isStockLoading: true} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   87555ms] [LOG] AssetChart Debug: {stockSymbols: Array(2), cryptoIds: Array(1), stockData: undefined, cryptoData: undefined, isStockLoading: true} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   87608ms] [LOG] AssetChart Debug: {stockSymbols: Array(2), cryptoIds: Array(1), stockData: undefined, cryptoData: undefined, isStockLoading: true} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   87609ms] [LOG] AssetChart Debug: {stockSymbols: Array(2), cryptoIds: Array(1), stockData: undefined, cryptoData: undefined, isStockLoading: true} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   87632ms] [LOG] PortfolioPage holdings: 3 AAPL,BTC,MSFT @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   87634ms] [LOG] PortfolioPage holdings: 3 AAPL,BTC,MSFT @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   87654ms] [LOG] AssetChart Debug: {stockSymbols: Array(2), cryptoIds: Array(1), stockData: 2, cryptoData: undefined, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   87655ms] [LOG] AssetChart Debug: {stockSymbols: Array(2), cryptoIds: Array(1), stockData: 2, cryptoData: undefined, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   87797ms] [LOG] PortfolioPage holdings: 3 AAPL,BTC,MSFT @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   87798ms] [LOG] PortfolioPage holdings: 3 AAPL,BTC,MSFT @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   87827ms] [LOG] AssetChart Debug: {stockSymbols: Array(2), cryptoIds: Array(1), stockData: 2, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   87828ms] [LOG] AssetChart Debug: {stockSymbols: Array(2), cryptoIds: Array(1), stockData: 2, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   90383ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   90457ms] [LOG] AssetChart Debug: {stockSymbols: Array(2), cryptoIds: Array(1), stockData: 2, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   90458ms] [LOG] AssetChart Debug: {stockSymbols: Array(2), cryptoIds: Array(1), stockData: 2, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   90473ms] [LOG] AssetChart Debug: {stockSymbols: Array(2), cryptoIds: Array(1), stockData: 2, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   90474ms] [LOG] AssetChart Debug: {stockSymbols: Array(2), cryptoIds: Array(1), stockData: 2, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   90499ms] [LOG] [Fast Refresh] done in 169ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   90600ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   90676ms] [LOG] [Fast Refresh] done in 177ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   90787ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   90817ms] [LOG] [Fast Refresh] done in 135ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   90861ms] [LOG] PortfolioPage holdings: 3 AAPL,BTC,MSFT @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   90863ms] [LOG] PortfolioPage holdings: 3 AAPL,BTC,MSFT @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   90894ms] [LOG] AssetChart Debug: {stockSymbols: Array(2), cryptoIds: Array(1), stockData: 2, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   90895ms] [LOG] AssetChart Debug: {stockSymbols: Array(2), cryptoIds: Array(1), stockData: 2, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431

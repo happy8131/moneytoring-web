@@ -1,0 +1,178 @@
+- generic:
+  - generic:
+    - banner:
+      - generic:
+        - link:
+          - /url: /
+          - img
+          - generic: Moneytoring
+        - generic:
+          - navigation:
+            - link:
+              - /url: /dashboard
+              - text: 대시보드
+            - link:
+              - /url: /portfolio
+              - text: 포트폴리오
+            - link:
+              - /url: /news
+              - text: 뉴스
+    - generic:
+      - complementary:
+        - navigation:
+          - link:
+            - /url: /dashboard
+            - img
+            - text: 대시보드
+          - link:
+            - /url: /portfolio
+            - img
+            - text: 포트폴리오
+          - link:
+            - /url: /news
+            - img
+            - text: 뉴스
+      - main:
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - heading [level=1]: 포트폴리오
+                - paragraph: 보유 중인 자산을 관리하고 수익률을 분석하세요.
+            - generic:
+              - tablist:
+                - tab [selected]: 보유종목
+                - tab: 거래기록
+                - tab: 분석
+              - tabpanel "보유종목":
+                - generic:
+                  - button:
+                    - img
+                    - text: 종목 추가
+                - generic:
+                  - generic:
+                    - paragraph: 총 자산
+                    - paragraph: $41,283.04
+                  - generic:
+                    - paragraph: 총 투자금
+                    - paragraph: $33,340.00
+                  - generic:
+                    - paragraph: 총 손익
+                    - paragraph: +$7,943.04
+                  - generic:
+                    - paragraph: 수익률
+                    - paragraph: +23.82%
+                  - generic:
+                    - paragraph: 보유 종목
+                    - paragraph: "2"
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - table:
+                          - rowgroup:
+                            - row:
+                              - columnheader: 종목
+                              - columnheader: 수량
+                              - columnheader: 매입가
+                              - columnheader: 현재가
+                              - columnheader: 손익
+                              - columnheader: 수익률
+                              - columnheader: 총가치
+                              - columnheader: 액션
+                          - rowgroup:
+                            - row:
+                              - cell:
+                                - generic:
+                                  - paragraph: BTC
+                                  - paragraph: Bitcoin
+                              - cell: "0.5"
+                              - cell: $65,000.00
+                              - cell: $80,935.00
+                              - cell:
+                                - generic: +$7,967.50
+                              - cell: +24.52%
+                              - cell: $40,467.50
+                              - cell:
+                                - generic:
+                                  - button:
+                                    - img
+                                  - button:
+                                    - img
+                            - row:
+                              - cell:
+                                - generic:
+                                  - paragraph: MSFT
+                                  - paragraph: Microsoft
+                              - cell: "2"
+                              - cell: $420.00
+                              - cell: $407.77
+                              - cell: "-$24.46"
+                              - cell: "-2.91%"
+                              - cell: $815.54
+                              - cell:
+                                - generic:
+                                  - button:
+                                    - img
+                                  - button:
+                                    - img
+                  - generic:
+                    - generic:
+                      - heading [level=3]: 자산 분배
+                      - generic:
+                        - generic:
+                          - generic:
+                            - application:
+                              - generic:
+                                - generic:
+                                  - generic: "40467.5"
+                                - generic:
+                                  - generic: "815.54"
+  - button "Open Next.js Dev Tools" [ref=e45] [cursor=pointer]:
+    - img [ref=e46]
+  - alert
+  - dialog:
+    - generic:
+      - heading [level=2]: 종목 추가
+      - paragraph: 새로운 주식 또는 암호화폐 종목을 포트폴리오에 추가합니다.
+    - generic:
+      - generic:
+        - generic:
+          - generic: 종목 코드 *
+          - textbox:
+            - /placeholder: AAPL
+            - text: ETH
+        - generic:
+          - generic: 유형 *
+          - combobox [expanded]:
+            - generic: 주식
+            - img
+      - generic:
+        - generic: 종목명 *
+        - textbox:
+          - /placeholder: Apple Inc.
+          - text: Ethereum
+      - generic:
+        - generic:
+          - generic: 수량 *
+          - spinbutton: "2"
+        - generic:
+          - generic: 매입가 *
+          - spinbutton
+      - generic:
+        - generic: 매입일 *
+        - textbox: 2026-05-13
+    - generic:
+      - button: 취소
+      - button: 추가
+    - button:
+      - img
+      - generic: Close
+  - listbox [ref=e174]:
+    - option "주식" [active] [selected] [ref=e175]:
+      - generic:
+        - generic:
+          - img
+      - generic [ref=e176]: 주식
+    - option "암호화폐" [ref=e177]:
+      - generic [ref=e178]: 암호화폐

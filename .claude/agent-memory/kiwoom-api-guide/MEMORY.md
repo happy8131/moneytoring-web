@@ -1,0 +1,1 @@
+- [키움 REST API 엔드포인트 매핑](kiwoom-endpoints.md) — /api/dostk/v1은 존재하지 않음; TR 코드별 경로(/api/dostk/stkinfo 등) 사용

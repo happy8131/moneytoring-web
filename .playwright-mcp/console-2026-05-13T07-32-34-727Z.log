@@ -1,0 +1,66 @@
+[     187ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     220ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     326ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: undefined, cryptoData: undefined, isStockLoading: true} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     327ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: undefined, cryptoData: undefined, isStockLoading: true} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     347ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: undefined, cryptoData: undefined, isStockLoading: true} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     348ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: undefined, cryptoData: undefined, isStockLoading: true} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     398ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     399ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   10931ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   11081ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   11081ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   11115ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   11116ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   11138ms] [LOG] [Fast Refresh] done in 240ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   11157ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   11158ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   11247ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   11522ms] [LOG] [Fast Refresh] done in 380ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   11632ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   11632ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   11655ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   11699ms] [LOG] [Fast Refresh] done in 164ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   11807ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   11808ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   18249ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   18348ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   18349ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   18394ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   18395ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   18420ms] [LOG] [Fast Refresh] done in 184ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   18439ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   18440ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   18525ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   18629ms] [LOG] [Fast Refresh] done in 204ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   18890ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   18890ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   48447ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   48448ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   78447ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   78448ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   78478ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   78479ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  108491ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  108493ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  118803ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  119071ms] [LOG] [Fast Refresh] done in 379ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  134507ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  134576ms] [LOG] [Fast Refresh] done in 177ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  138453ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  138453ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  138497ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  138498ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  168506ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  168506ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  198457ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  198457ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  198507ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  198507ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  228514ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  228515ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  258460ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  258461ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  258515ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  258516ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  288531ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  288532ms] [LOG] AssetChart Debug: {stockSymbols: Array(1), cryptoIds: Array(1), stockData: 1, cryptoData: 0, isStockLoading: false} @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431

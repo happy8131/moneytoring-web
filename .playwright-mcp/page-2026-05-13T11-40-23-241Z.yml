@@ -1,0 +1,99 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "Moneytoring" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - img [ref=e6]
+          - generic [ref=e9]: Moneytoring
+        - navigation [ref=e11]:
+          - link "대시보드" [ref=e12] [cursor=pointer]:
+            - /url: /dashboard
+          - link "포트폴리오" [ref=e13] [cursor=pointer]:
+            - /url: /portfolio
+          - link "뉴스" [ref=e14] [cursor=pointer]:
+            - /url: /news
+    - generic [ref=e15]:
+      - complementary [ref=e16]:
+        - navigation [ref=e17]:
+          - link "대시보드" [ref=e18] [cursor=pointer]:
+            - /url: /dashboard
+            - img [ref=e19]
+            - text: 대시보드
+          - link "포트폴리오" [ref=e24] [cursor=pointer]:
+            - /url: /portfolio
+            - img [ref=e25]
+            - text: 포트폴리오
+          - link "뉴스" [ref=e28] [cursor=pointer]:
+            - /url: /news
+            - img [ref=e29]
+            - text: 뉴스
+      - main [ref=e32]:
+        - generic [ref=e34]:
+          - generic [ref=e36]:
+            - heading "포트폴리오" [level=1] [ref=e37]
+            - paragraph [ref=e38]: 보유 중인 자산을 관리하고 수익률을 분석하세요.
+          - generic [ref=e39]:
+            - tablist [ref=e40]:
+              - tab "보유종목" [ref=e41]
+              - tab "거래기록" [ref=e42]
+              - tab "분석" [active] [selected] [ref=e43]
+            - tabpanel "분석" [ref=e152]:
+              - generic [ref=e153]:
+                - generic [ref=e154]:
+                  - heading "자산 추이" [level=3] [ref=e155]
+                  - generic [ref=e156]: 자산 추이 데이터가 없습니다.
+                - generic [ref=e157]:
+                  - heading "리밸런싱 제안" [level=3] [ref=e158]
+                  - paragraph [ref=e159]: 균등 분배 기준으로 현재 비중과 목표 비중의 차이를 표시합니다.
+                  - table [ref=e162]:
+                    - rowgroup [ref=e163]:
+                      - row "종목 현재 비중 목표 비중 차이" [ref=e164]:
+                        - columnheader "종목" [ref=e165]
+                        - columnheader "현재 비중" [ref=e166]
+                        - columnheader "목표 비중" [ref=e167]
+                        - columnheader "차이" [ref=e168]
+                    - rowgroup [ref=e169]:
+                      - row "BTC 87.3% 25.0% +62.3% 62.3% 초과" [ref=e170]:
+                        - cell "BTC" [ref=e171]
+                        - cell "87.3%" [ref=e172]
+                        - cell "25.0%" [ref=e173]
+                        - cell "+62.3% 62.3% 초과" [ref=e174]:
+                          - generic [ref=e175]: +62.3%
+                          - paragraph [ref=e176]: 62.3% 초과
+                      - row "SOL 1.0% 25.0% -24.0% 24.0% 부족" [ref=e177]:
+                        - cell "SOL" [ref=e178]
+                        - cell "1.0%" [ref=e179]
+                        - cell "25.0%" [ref=e180]
+                        - cell "-24.0% 24.0% 부족" [ref=e181]:
+                          - generic [ref=e182]: "-24.0%"
+                          - paragraph [ref=e183]: 24.0% 부족
+                      - row "MSFT 1.8% 25.0% -23.2% 23.2% 부족" [ref=e184]:
+                        - cell "MSFT" [ref=e185]
+                        - cell "1.8%" [ref=e186]
+                        - cell "25.0%" [ref=e187]
+                        - cell "-23.2% 23.2% 부족" [ref=e188]:
+                          - generic [ref=e189]: "-23.2%"
+                          - paragraph [ref=e190]: 23.2% 부족
+                      - row "ETH 9.9% 25.0% -15.1% 15.1% 부족" [ref=e191]:
+                        - cell "ETH" [ref=e192]
+                        - cell "9.9%" [ref=e193]
+                        - cell "25.0%" [ref=e194]
+                        - cell "-15.1% 15.1% 부족" [ref=e195]:
+                          - generic [ref=e196]: "-15.1%"
+                          - paragraph [ref=e197]: 15.1% 부족
+                  - generic [ref=e198]:
+                    - paragraph [ref=e199]: 💡 리밸런싱 팁
+                    - list [ref=e200]:
+                      - listitem [ref=e201]: "빨강(초과): 비중이 높으니 일부 매도 고려"
+                      - listitem [ref=e202]: "파랑(부족): 비중이 낮으니 추가 매수 고려"
+                - generic [ref=e203]:
+                  - generic [ref=e204]:
+                    - heading "AI 투자 추천" [level=3] [ref=e205]
+                    - button "새로고침" [disabled]:
+                      - img
+                      - text: 새로고침
+                  - paragraph [ref=e206]: AI가 포트폴리오를 분석하여 맞춤형 투자 추천을 제공합니다.
+  - button "Open Next.js Dev Tools" [ref=e147] [cursor=pointer]:
+    - img [ref=e148]
+  - alert [ref=e151]

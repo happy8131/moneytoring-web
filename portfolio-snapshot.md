@@ -1,0 +1,66 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "Moneytoring" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - img [ref=e6]
+          - generic [ref=e9]: Moneytoring
+        - navigation [ref=e11]:
+          - link "대시보드" [ref=e12] [cursor=pointer]:
+            - /url: /dashboard
+          - link "포트폴리오" [ref=e13] [cursor=pointer]:
+            - /url: /portfolio
+          - link "뉴스" [ref=e14] [cursor=pointer]:
+            - /url: /news
+    - generic [ref=e15]:
+      - complementary [ref=e16]:
+        - navigation [ref=e17]:
+          - link "대시보드" [ref=e18] [cursor=pointer]:
+            - /url: /dashboard
+            - img [ref=e19]
+            - text: 대시보드
+          - link "포트폴리오" [ref=e24] [cursor=pointer]:
+            - /url: /portfolio
+            - img [ref=e25]
+            - text: 포트폴리오
+          - link "뉴스" [ref=e28] [cursor=pointer]:
+            - /url: /news
+            - img [ref=e29]
+            - text: 뉴스
+      - main [ref=e32]:
+        - generic [ref=e34]:
+          - generic [ref=e36]:
+            - heading "포트폴리오" [level=1] [ref=e37]
+            - paragraph [ref=e38]: 보유 중인 자산을 관리하고 수익률을 분석하세요.
+          - generic [ref=e49]:
+            - tablist [ref=e50]:
+              - tab "보유종목" [selected] [ref=e51]
+              - tab "거래기록" [ref=e52]
+              - tab "분석" [ref=e53]
+            - tabpanel "보유종목" [ref=e54]:
+              - button "종목 추가" [ref=e56]:
+                - img
+                - text: 종목 추가
+              - generic [ref=e57]:
+                - generic [ref=e58]:
+                  - paragraph [ref=e59]: 총 자산
+                  - paragraph [ref=e60]: $0.00
+                - generic [ref=e61]:
+                  - paragraph [ref=e62]: 총 투자금
+                  - paragraph [ref=e63]: $0.00
+                - generic [ref=e64]:
+                  - paragraph [ref=e65]: 총 손익
+                  - paragraph [ref=e66]: +$0.00
+                - generic [ref=e67]:
+                  - paragraph [ref=e68]: 수익률
+                  - paragraph [ref=e69]: 0.00%
+                - generic [ref=e70]:
+                  - paragraph [ref=e71]: 보유 종목
+                  - paragraph [ref=e72]: "0"
+              - generic [ref=e73]:
+                - paragraph [ref=e76]: 보유한 종목이 없습니다. 종목을 추가해주세요.
+                - paragraph [ref=e79]: 자산 분배를 표시할 종목이 없습니다.
+  - button "Open Next.js Dev Tools" [ref=e45] [cursor=pointer]:
+    - img [ref=e46]
+  - alert [ref=e80]

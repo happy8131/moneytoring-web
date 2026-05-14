@@ -1,0 +1,156 @@
+- generic:
+  - generic:
+    - banner:
+      - generic:
+        - link:
+          - /url: /
+          - img
+          - generic: Moneytoring
+        - generic:
+          - navigation:
+            - link:
+              - /url: /dashboard
+              - text: 대시보드
+            - link:
+              - /url: /portfolio
+              - text: 포트폴리오
+            - link:
+              - /url: /news
+              - text: 뉴스
+    - generic:
+      - complementary:
+        - navigation:
+          - link:
+            - /url: /dashboard
+            - img
+            - text: 대시보드
+          - link:
+            - /url: /portfolio
+            - img
+            - text: 포트폴리오
+          - link:
+            - /url: /news
+            - img
+            - text: 뉴스
+      - main:
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - heading [level=1]: 포트폴리오
+                - paragraph: 보유 중인 자산을 관리하고 수익률을 분석하세요.
+            - generic:
+              - tablist:
+                - tab [selected]: 보유종목
+                - tab: 거래기록
+                - tab: 분석
+              - tabpanel "보유종목":
+                - generic:
+                  - button:
+                    - img
+                    - text: 종목 추가
+                - generic:
+                  - generic:
+                    - paragraph: 총 자산
+                    - paragraph: $1,110.34
+                  - generic:
+                    - paragraph: 총 투자금
+                    - paragraph: $33,490.00
+                  - generic:
+                    - paragraph: 총 손익
+                    - paragraph: "-$32,379.66"
+                  - generic:
+                    - paragraph: 수익률
+                    - paragraph: "-96.68%"
+                  - generic:
+                    - paragraph: 보유 종목
+                    - paragraph: "3"
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - table:
+                          - rowgroup:
+                            - row:
+                              - columnheader: 종목
+                              - columnheader: 수량
+                              - columnheader: 매입가
+                              - columnheader: 현재가
+                              - columnheader: 손익
+                              - columnheader: 수익률
+                              - columnheader: 총가치
+                              - columnheader: 액션
+                          - rowgroup:
+                            - row:
+                              - cell:
+                                - generic:
+                                  - paragraph: AAPL
+                                  - paragraph: Apple Inc
+                              - cell: "1"
+                              - cell: $150.00
+                              - cell: $294.80
+                              - cell:
+                                - generic: +$144.80
+                              - cell: +96.53%
+                              - cell: $294.80
+                              - cell:
+                                - generic:
+                                  - button:
+                                    - img
+                                  - button:
+                                    - img
+                            - row:
+                              - cell:
+                                - generic:
+                                  - paragraph: BTC
+                                  - paragraph: Bitcoin
+                              - cell: "0.5"
+                              - cell: $65,000.00
+                              - cell: $0.00
+                              - cell: "-$32,500.00"
+                              - cell: "-100.00%"
+                              - cell: $0.00
+                              - cell:
+                                - generic:
+                                  - button:
+                                    - img
+                                  - button:
+                                    - img
+                            - row:
+                              - cell:
+                                - generic:
+                                  - paragraph: MSFT
+                                  - paragraph: Microsoft
+                              - cell: "2"
+                              - cell: $420.00
+                              - cell: $407.77
+                              - cell: "-$24.46"
+                              - cell: "-2.91%"
+                              - cell: $815.54
+                              - cell:
+                                - generic:
+                                  - button:
+                                    - img
+                                  - button:
+                                    - img
+                  - generic:
+                    - generic:
+                      - heading [level=3]: 자산 분배
+                      - generic:
+                        - generic:
+                          - generic:
+                            - application:
+                              - generic:
+                                - generic:
+                                  - generic: "294.8"
+                                - generic:
+                                  - generic: "815.54"
+  - button "Open Next.js Dev Tools" [ref=e132] [cursor=pointer]:
+    - img [ref=e133]
+  - alert
+  - alertdialog "종목 삭제" [ref=e210]:
+    - generic [ref=e211]:
+      - heading "종목 삭제" [level=2] [ref=e212]
+      - paragraph [ref=e213]: AAPL 종목을 정말 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.
+    - button "취소" [active] [ref=e214]
+    - button "삭제" [ref=e215]

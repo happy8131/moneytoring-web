@@ -1,0 +1,74 @@
+[     155ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     191ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     260ms] [LOG] PortfolioPage holdings: 6 BTC,MSFT,ETH,SOL,BTC,005930 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     261ms] [LOG] PortfolioPage holdings: 6 BTC,MSFT,ETH,SOL,BTC,005930 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     280ms] [LOG] PortfolioPage holdings: 6 BTC,MSFT,ETH,SOL,BTC,005930 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     284ms] [LOG] PortfolioPage holdings: 6 BTC,MSFT,ETH,SOL,BTC,005930 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     363ms] [LOG] PortfolioPage holdings: 6 BTC,MSFT,ETH,SOL,BTC,005930 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     365ms] [LOG] PortfolioPage holdings: 6 BTC,MSFT,ETH,SOL,BTC,005930 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   22108ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   22117ms] [LOG] [Fast Refresh] done in 110ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   30377ms] [LOG] PortfolioPage holdings: 6 BTC,MSFT,ETH,SOL,BTC,005930 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   30378ms] [LOG] PortfolioPage holdings: 6 BTC,MSFT,ETH,SOL,BTC,005930 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   60385ms] [LOG] PortfolioPage holdings: 6 BTC,MSFT,ETH,SOL,BTC,005930 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   60386ms] [LOG] PortfolioPage holdings: 6 BTC,MSFT,ETH,SOL,BTC,005930 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   60434ms] [LOG] PortfolioPage holdings: 6 BTC,MSFT,ETH,SOL,BTC,005930 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   60435ms] [LOG] PortfolioPage holdings: 6 BTC,MSFT,ETH,SOL,BTC,005930 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   90449ms] [LOG] PortfolioPage holdings: 6 BTC,MSFT,ETH,SOL,BTC,005930 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   90450ms] [LOG] PortfolioPage holdings: 6 BTC,MSFT,ETH,SOL,BTC,005930 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  109361ms] [ERROR] Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  120466ms] [LOG] PortfolioPage holdings: 6 BTC,MSFT,ETH,SOL,BTC,005930 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  120467ms] [LOG] PortfolioPage holdings: 6 BTC,MSFT,ETH,SOL,BTC,005930 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  120474ms] [ERROR] Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. BTC @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  150481ms] [LOG] PortfolioPage holdings: 6 BTC,MSFT,ETH,SOL,BTC,005930 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  150482ms] [LOG] PortfolioPage holdings: 6 BTC,MSFT,ETH,SOL,BTC,005930 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  180393ms] [LOG] PortfolioPage holdings: 6 BTC,MSFT,ETH,SOL,BTC,005930 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  180394ms] [LOG] PortfolioPage holdings: 6 BTC,MSFT,ETH,SOL,BTC,005930 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  180485ms] [LOG] PortfolioPage holdings: 6 BTC,MSFT,ETH,SOL,BTC,005930 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  180486ms] [LOG] PortfolioPage holdings: 6 BTC,MSFT,ETH,SOL,BTC,005930 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  210495ms] [LOG] PortfolioPage holdings: 6 BTC,MSFT,ETH,SOL,BTC,005930 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  210496ms] [LOG] PortfolioPage holdings: 6 BTC,MSFT,ETH,SOL,BTC,005930 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  240398ms] [LOG] PortfolioPage holdings: 6 BTC,MSFT,ETH,SOL,BTC,005930 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  240399ms] [LOG] PortfolioPage holdings: 6 BTC,MSFT,ETH,SOL,BTC,005930 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  240503ms] [LOG] PortfolioPage holdings: 6 BTC,MSFT,ETH,SOL,BTC,005930 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  240504ms] [LOG] PortfolioPage holdings: 6 BTC,MSFT,ETH,SOL,BTC,005930 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  270507ms] [LOG] PortfolioPage holdings: 6 BTC,MSFT,ETH,SOL,BTC,005930 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  270508ms] [LOG] PortfolioPage holdings: 6 BTC,MSFT,ETH,SOL,BTC,005930 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  300414ms] [LOG] PortfolioPage holdings: 6 BTC,MSFT,ETH,SOL,BTC,005930 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  300415ms] [LOG] PortfolioPage holdings: 6 BTC,MSFT,ETH,SOL,BTC,005930 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  300509ms] [LOG] PortfolioPage holdings: 6 BTC,MSFT,ETH,SOL,BTC,005930 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  300510ms] [LOG] PortfolioPage holdings: 6 BTC,MSFT,ETH,SOL,BTC,005930 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  323607ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  326391ms] [WARNING] [HMR] Invalid message: {"isTrusted":true}
+TypeError: Cannot convert undefined or null to object
+    at Object.keys (<anonymous>)
+    at extractModulesFromTurbopackMessage (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13631:39)
+    at TurbopackHmr.onTurbopackMessage (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13578:32)
+    at processMessage (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13936:30)
+    at WebSocket.handleMessage (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13335:52) @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  327098ms] [LOG] [Fast Refresh] done in 3590ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  327230ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  327253ms] [LOG] [Fast Refresh] done in 130ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  327366ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  327890ms] [LOG] [Fast Refresh] done in 635ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  328154ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  328194ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  328451ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  328547ms] [LOG] [Fast Refresh] done in 201ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  328598ms] [LOG] PortfolioPage holdings: 6 BTC,MSFT,ETH,SOL,BTC,005930 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  328605ms] [LOG] PortfolioPage holdings: 6 BTC,MSFT,ETH,SOL,BTC,005930 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  328641ms] [LOG] PortfolioPage holdings: 6 BTC,MSFT,ETH,SOL,BTC,005930 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  328643ms] [LOG] PortfolioPage holdings: 6 BTC,MSFT,ETH,SOL,BTC,005930 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  328745ms] [LOG] PortfolioPage holdings: 6 BTC,MSFT,ETH,SOL,BTC,005930 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  328748ms] [LOG] PortfolioPage holdings: 6 BTC,MSFT,ETH,SOL,BTC,005930 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  328923ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  328984ms] [LOG] [Fast Refresh] done in 244ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  329110ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  329376ms] [LOG] [Fast Refresh] done in 374ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  332450ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  336289ms] [LOG] [Fast Refresh] done in 3676ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  336417ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  336438ms] [LOG] [Fast Refresh] done in 122ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  336535ms] [LOG] PortfolioPage holdings: 6 BTC,MSFT,ETH,SOL,BTC,005930 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  336537ms] [LOG] PortfolioPage holdings: 6 BTC,MSFT,ETH,SOL,BTC,005930 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  341853ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431

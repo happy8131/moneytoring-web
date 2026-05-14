@@ -1,0 +1,112 @@
+- generic:
+  - generic:
+    - banner:
+      - generic:
+        - link:
+          - /url: /
+          - img
+          - generic: Moneytoring
+        - generic:
+          - navigation:
+            - link:
+              - /url: /dashboard
+              - text: 대시보드
+            - link:
+              - /url: /portfolio
+              - text: 포트폴리오
+            - link:
+              - /url: /news
+              - text: 뉴스
+    - generic:
+      - complementary:
+        - navigation:
+          - link:
+            - /url: /dashboard
+            - img
+            - text: 대시보드
+          - link:
+            - /url: /portfolio
+            - img
+            - text: 포트폴리오
+          - link:
+            - /url: /news
+            - img
+            - text: 뉴스
+      - main:
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - heading [level=1]: 포트폴리오
+                - paragraph: 보유 중인 자산을 관리하고 수익률을 분석하세요.
+            - generic:
+              - tablist:
+                - tab [selected]: 보유종목
+                - tab: 거래기록
+                - tab: 분석
+              - tabpanel:
+                - generic:
+                  - button:
+                    - img
+                    - text: 종목 추가
+                - generic:
+                  - generic:
+                    - paragraph: 총 자산
+                    - paragraph: $0.00
+                  - generic:
+                    - paragraph: 총 투자금
+                    - paragraph: $0.00
+                  - generic:
+                    - paragraph: 총 손익
+                    - paragraph: +$0.00
+                  - generic:
+                    - paragraph: 수익률
+                    - paragraph: 0.00%
+                  - generic:
+                    - paragraph: 보유 종목
+                    - paragraph: "0"
+                - generic:
+                  - generic:
+                    - generic:
+                      - paragraph: 보유한 종목이 없습니다. 종목을 추가해주세요.
+                  - generic:
+                    - generic:
+                      - paragraph: 자산 분배를 표시할 종목이 없습니다.
+  - button "Open Next.js Dev Tools" [ref=e45] [cursor=pointer]:
+    - img [ref=e46]
+  - alert
+  - dialog "종목 추가" [ref=e82]:
+    - generic [ref=e83]:
+      - heading "종목 추가" [level=2] [ref=e84]
+      - paragraph [ref=e85]: 새로운 주식 또는 암호화폐 종목을 포트폴리오에 추가합니다.
+    - generic [ref=e86]:
+      - generic [ref=e87]:
+        - generic [ref=e88]:
+          - generic [ref=e89]: 종목 코드 *
+          - textbox "종목 코드 *" [active] [ref=e90]:
+            - /placeholder: AAPL
+        - generic [ref=e91]:
+          - generic [ref=e92]: 유형 *
+          - combobox [ref=e93]:
+            - generic: 주식
+            - img
+      - generic [ref=e94]:
+        - generic [ref=e95]: 종목명 *
+        - textbox "종목명 *" [ref=e96]:
+          - /placeholder: Apple Inc.
+      - generic [ref=e97]:
+        - generic [ref=e98]:
+          - generic [ref=e99]: 수량 *
+          - spinbutton "수량 *" [ref=e100]
+        - generic [ref=e101]:
+          - generic [ref=e102]: 매입가 *
+          - spinbutton "매입가 *" [ref=e103]
+      - generic [ref=e104]:
+        - generic [ref=e105]: 매입일 *
+        - textbox "매입일 *" [ref=e106]: 2026-05-13
+    - generic [ref=e107]:
+      - button "취소" [ref=e108]
+      - button "추가" [ref=e109]
+    - button "Close" [ref=e110]:
+      - img
+      - generic [ref=e111]: Close
