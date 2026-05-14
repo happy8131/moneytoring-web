@@ -12,8 +12,8 @@ function getEnvVariable(key: string, optional: boolean = false): string {
 }
 
 export const env = {
-  // Finnhub API
-  finnhubApiKey: getEnvVariable('FINNHUB_API_KEY'),
+  // Finnhub API (선택사항 - 주식 데이터는 Yahoo Finance로 대체)
+  finnhubApiKey: getEnvVariable('FINNHUB_API_KEY', true),
 
   // CoinGecko API
   coinGeckoApiKey: getEnvVariable('COINGECKO_API_KEY', true),
@@ -28,11 +28,6 @@ export const env = {
 
 // 환경변수 초기 검증
 export function validateEnv(): void {
-  try {
-    // 필수 환경변수 체크
-    getEnvVariable('FINNHUB_API_KEY');
-  } catch (error) {
-    console.error('Environment validation failed:', error);
-    throw error;
-  }
+  // Finnhub API는 선택사항 (Yahoo Finance로 대체됨)
+  // 다른 필수 환경변수는 필요 시 추가
 }
