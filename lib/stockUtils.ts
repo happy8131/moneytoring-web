@@ -1,6 +1,6 @@
 // 종목 상세 페이지 관련 유틸 함수
 
-export type Period = '1W' | '1M' | '3M' | '6M' | 'YTD' | '1Y' | '2Y' | '5Y';
+export type Period = '1W' | '1M' | '3M' | '6M' | 'YTD' | '1Y' | '2Y' | '5Y' | '10Y' | 'All';
 
 export interface PeriodRange {
   from: number;
@@ -30,6 +30,10 @@ export function getPeriodRange(period: Period): PeriodRange {
       return { from: to - 730 * 86400, to, resolution: 'W' };
     case '5Y':
       return { from: to - 1825 * 86400, to, resolution: 'M' };
+    case '10Y':
+      return { from: to - 3650 * 86400, to, resolution: 'M' };
+    case 'All':
+      return { from: to - 36500 * 86400, to, resolution: 'M' };
   }
 }
 

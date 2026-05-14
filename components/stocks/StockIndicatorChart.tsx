@@ -66,7 +66,11 @@ export function StockIndicatorChart({ symbol, period }: StockIndicatorChartProps
     );
   }
 
-  const smaLines = [
+  const isShortPeriod = ['1W', '1M', '3M'].includes(period);
+  const isMediumPeriod = ['6M', 'YTD', '1Y', '2Y'].includes(period);
+  const isLongPeriod = ['5Y', '10Y', 'All'].includes(period);
+
+  const allSmaLines = [
     { dataKey: 'sma5', stroke: '#3b82f6', name: '5일' },
     { dataKey: 'sma20', stroke: '#ef4444', name: '20일' },
     { dataKey: 'sma60', stroke: '#10b981', name: '60일' },
@@ -74,7 +78,12 @@ export function StockIndicatorChart({ symbol, period }: StockIndicatorChartProps
     { dataKey: 'sma210', stroke: '#8b5cf6', name: '210일' },
   ];
 
-  const isLongPeriod = ['5Y', '10Y', 'All'].includes(period);
+  let smaLines = allSmaLines;
+  if (isShortPeriod) {
+    smaLines = allSmaLines.slice(0, 2);
+  } else if (isMediumPeriod) {
+    smaLines = allSmaLines.slice(0, 3);
+  }
 
   // RSI 차트 데이터 (null 값 필터링)
   const rsiChartData = (rsiData?.t || [])
