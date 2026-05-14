@@ -66,6 +66,14 @@ export function StockIndicatorChart({ symbol, period }: StockIndicatorChartProps
     );
   }
 
+  const smaLines = [
+    { dataKey: 'sma5', stroke: '#3b82f6', name: '5일' },
+    { dataKey: 'sma20', stroke: '#ef4444', name: '20일' },
+    { dataKey: 'sma60', stroke: '#10b981', name: '60일' },
+    { dataKey: 'sma120', stroke: '#f59e0b', name: '120일' },
+    { dataKey: 'sma210', stroke: '#8b5cf6', name: '210일' },
+  ];
+
   const is5YearChart = period === '5Y';
 
   // RSI 차트 데이터 (null 값 필터링)
@@ -166,9 +174,10 @@ export function StockIndicatorChart({ symbol, period }: StockIndicatorChartProps
       <div className="rounded-lg border border-border bg-card p-6">
         <h3 className="text-lg font-semibold mb-4">이동평균선 (5일 / 20일 / 60일 / 120일 / 210일)</h3>
         {smaChartData.length > 0 ? (
-          <div className="h-80">
-            <ResponsiveContainer width="100%" height="100%">
-              <LineChart data={smaChartData} margin={{ top: 5, right: 30, left: 0, bottom: 30 }}>
+          <div className="space-y-4">
+            <div className="h-80">
+              <ResponsiveContainer width="100%" height="100%">
+                <LineChart data={smaChartData} margin={{ top: 5, right: 30, left: 0, bottom: 5 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
                 <XAxis
                   dataKey="date"
@@ -188,59 +197,30 @@ export function StockIndicatorChart({ symbol, period }: StockIndicatorChartProps
                     return ['-', 'SMA'];
                   }}
                 />
-                <Legend
-                  wrapperStyle={{ paddingTop: '20px' }}
-                  iconType="line"
-                  verticalAlign="bottom"
-                  height={36}
-                />
-                <Line
-                  type="monotone"
-                  dataKey="sma5"
-                  stroke="#3b82f6"
-                  strokeWidth={2}
-                  dot={false}
-                  isAnimationActive={false}
-                  name="5일"
-                />
-                <Line
-                  type="monotone"
-                  dataKey="sma20"
-                  stroke="#ef4444"
-                  strokeWidth={2}
-                  dot={false}
-                  isAnimationActive={false}
-                  name="20일"
-                />
-                <Line
-                  type="monotone"
-                  dataKey="sma60"
-                  stroke="#10b981"
-                  strokeWidth={2}
-                  dot={false}
-                  isAnimationActive={false}
-                  name="60일"
-                />
-                <Line
-                  type="monotone"
-                  dataKey="sma120"
-                  stroke="#f59e0b"
-                  strokeWidth={2}
-                  dot={false}
-                  isAnimationActive={false}
-                  name="120일"
-                />
-                <Line
-                  type="monotone"
-                  dataKey="sma210"
-                  stroke="#8b5cf6"
-                  strokeWidth={2}
-                  dot={false}
-                  isAnimationActive={false}
-                  name="210일"
-                />
+                {smaLines.map((line) => (
+                  <Line
+                    key={line.dataKey}
+                    type="monotone"
+                    dataKey={line.dataKey}
+                    stroke={line.stroke}
+                    strokeWidth={2}
+                    dot={false}
+                    isAnimationActive={false}
+                    name={line.name}
+                  />
+                ))}
               </LineChart>
             </ResponsiveContainer>
+            </div>
+
+            <div className="flex flex-wrap gap-4 justify-center text-sm">
+              {smaLines.map((line) => (
+                <div key={line.dataKey} className="flex items-center gap-2">
+                  <div className="w-4 h-1" style={{ backgroundColor: line.stroke }}></div>
+                  <span>{line.name}</span>
+                </div>
+              ))}
+            </div>
           </div>
         ) : (
           <div className="h-80 flex items-center justify-center text-muted-foreground">
