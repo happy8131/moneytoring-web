@@ -17,7 +17,7 @@ import {
 } from 'recharts';
 import { Skeleton } from '@/components/ui/skeleton';
 
-const PERIODS: Period[] = ['1W', '1M', '3M', '6M', 'YTD', '1Y', '2Y', '5Y'];
+const PERIODS: Period[] = ['1W', '1M', '3M', '6M', 'YTD', '1Y', '2Y', '5Y', '10Y', 'All'];
 const PERIOD_LABELS: Record<Period, string> = {
   '1W': '1주',
   '1M': '1개월',
@@ -27,6 +27,8 @@ const PERIOD_LABELS: Record<Period, string> = {
   '1Y': '1년',
   '2Y': '2년',
   '5Y': '5년',
+  '10Y': '10년',
+  'All': '모두',
 };
 
 interface StockPriceChartProps {
@@ -103,6 +105,10 @@ export function StockPriceChart({ symbol }: StockPriceChartProps) {
               tick={{ fontSize: 12 }}
               tickFormatter={(value) => {
                 const parts = value.split('-');
+                const isLongPeriod = ['5Y', '10Y', 'All'].includes(selectedPeriod);
+                if (isLongPeriod) {
+                  return parts[0];
+                }
                 return `${parts[1]}/${parts[2]}`;
               }}
             />
