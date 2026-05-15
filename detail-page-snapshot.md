@@ -1,0 +1,3523 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "Moneytoring" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - img [ref=e6]
+          - generic [ref=e9]: Moneytoring
+        - generic [ref=e10]:
+          - navigation [ref=e11]:
+            - link "대시보드" [ref=e12] [cursor=pointer]:
+              - /url: /dashboard
+            - link "포트폴리오" [ref=e13] [cursor=pointer]:
+              - /url: /portfolio
+            - link "뉴스" [ref=e14] [cursor=pointer]:
+              - /url: /news
+          - button "다크 모드 토글" [ref=e57]:
+            - img
+    - main [ref=e15]:
+      - generic [ref=e18]:
+        - generic [ref=e58]:
+          - generic [ref=e59]:
+            - generic [ref=e60]:
+              - heading "Apple Inc" [level=1] [ref=e61]
+              - paragraph [ref=e62]: AAPL · NASDAQ NMS - GLOBAL MARKET
+            - generic [ref=e63]:
+              - paragraph [ref=e64]: $298.87
+              - generic [ref=e65]:
+                - img [ref=e66]
+                - generic [ref=e68]: "+4.07"
+                - generic [ref=e69]: +1.38%
+          - link "회사 웹사이트 방문" [ref=e71] [cursor=pointer]:
+            - /url: https://www.apple.com/
+            - img [ref=e72]
+            - text: 회사 웹사이트 방문
+        - generic [ref=e26]:
+          - heading "주요 지표" [level=3] [ref=e75]
+          - generic [ref=e76]:
+            - generic [ref=e77]:
+              - paragraph [ref=e78]: 개장가
+              - paragraph [ref=e79]: $293.50
+            - generic [ref=e80]:
+              - paragraph [ref=e81]: 최고가
+              - paragraph [ref=e82]: $300.92
+            - generic [ref=e83]:
+              - paragraph [ref=e84]: 최저가
+              - paragraph [ref=e85]: $293.50
+            - generic [ref=e86]:
+              - paragraph [ref=e87]: 이전종가
+              - paragraph [ref=e88]: $294.80
+            - generic [ref=e89]:
+              - paragraph [ref=e90]: PER
+              - paragraph [ref=e91]: "36.02"
+            - generic [ref=e92]:
+              - paragraph [ref=e93]: EPS
+              - paragraph [ref=e94]: "-"
+            - generic [ref=e95]:
+              - paragraph [ref=e96]: 시가총액
+              - paragraph [ref=e97]: $4.41M
+            - generic [ref=e98]:
+              - paragraph [ref=e99]: 52주 최고
+              - paragraph [ref=e100]: "-"
+            - generic [ref=e101]:
+              - paragraph [ref=e102]: 52주 최저
+              - paragraph [ref=e103]: "-"
+            - generic [ref=e104]:
+              - paragraph [ref=e105]: 평균거래량
+              - paragraph [ref=e106]: "-"
+        - generic [ref=e41]:
+          - generic [ref=e107]:
+            - heading "재무제표" [level=3] [ref=e108]
+            - generic [ref=e109]:
+              - button "연간" [ref=e110]
+              - button "분기" [ref=e111]
+          - table [ref=e113]:
+            - rowgroup [ref=e114]:
+              - row "기간 매출액 순이익 영업이익 총자산 총부채" [ref=e115]:
+                - columnheader "기간" [ref=e116]
+                - columnheader "매출액" [ref=e117]
+                - columnheader "순이익" [ref=e118]
+                - columnheader "영업이익" [ref=e119]
+                - columnheader "총자산" [ref=e120]
+                - columnheader "총부채" [ref=e121]
+            - rowgroup [ref=e122]:
+              - row "2025년 - - - - -" [ref=e123]:
+                - cell "2025년" [ref=e124]
+                - cell "-" [ref=e125]
+                - cell "-" [ref=e126]
+                - cell "-" [ref=e127]
+                - cell "-" [ref=e128]
+                - cell "-" [ref=e129]
+              - row "2024년 - - - - -" [ref=e130]:
+                - cell "2024년" [ref=e131]
+                - cell "-" [ref=e132]
+                - cell "-" [ref=e133]
+                - cell "-" [ref=e134]
+                - cell "-" [ref=e135]
+                - cell "-" [ref=e136]
+              - row "2023년 - - - - -" [ref=e137]:
+                - cell "2023년" [ref=e138]
+                - cell "-" [ref=e139]
+                - cell "-" [ref=e140]
+                - cell "-" [ref=e141]
+                - cell "-" [ref=e142]
+                - cell "-" [ref=e143]
+              - row "2022년 - - - - -" [ref=e144]:
+                - cell "2022년" [ref=e145]
+                - cell "-" [ref=e146]
+                - cell "-" [ref=e147]
+                - cell "-" [ref=e148]
+                - cell "-" [ref=e149]
+                - cell "-" [ref=e150]
+              - row "2021년 - - - - -" [ref=e151]:
+                - cell "2021년" [ref=e152]
+                - cell "-" [ref=e153]
+                - cell "-" [ref=e154]
+                - cell "-" [ref=e155]
+                - cell "-" [ref=e156]
+                - cell "-" [ref=e157]
+              - row "2020년 - - - - -" [ref=e158]:
+                - cell "2020년" [ref=e159]
+                - cell "-" [ref=e160]
+                - cell "-" [ref=e161]
+                - cell "-" [ref=e162]
+                - cell "-" [ref=e163]
+                - cell "-" [ref=e164]
+              - row "2019년 - - - - -" [ref=e165]:
+                - cell "2019년" [ref=e166]
+                - cell "-" [ref=e167]
+                - cell "-" [ref=e168]
+                - cell "-" [ref=e169]
+                - cell "-" [ref=e170]
+                - cell "-" [ref=e171]
+              - row "2018년 - - - - -" [ref=e172]:
+                - cell "2018년" [ref=e173]
+                - cell "-" [ref=e174]
+                - cell "-" [ref=e175]
+                - cell "-" [ref=e176]
+                - cell "-" [ref=e177]
+                - cell "-" [ref=e178]
+              - row "2017년 - - - - -" [ref=e179]:
+                - cell "2017년" [ref=e180]
+                - cell "-" [ref=e181]
+                - cell "-" [ref=e182]
+                - cell "-" [ref=e183]
+                - cell "-" [ref=e184]
+                - cell "-" [ref=e185]
+              - row "2016년 - - - - -" [ref=e186]:
+                - cell "2016년" [ref=e187]
+                - cell "-" [ref=e188]
+                - cell "-" [ref=e189]
+                - cell "-" [ref=e190]
+                - cell "-" [ref=e191]
+                - cell "-" [ref=e192]
+              - row "2015년 - - - - -" [ref=e193]:
+                - cell "2015년" [ref=e194]
+                - cell "-" [ref=e195]
+                - cell "-" [ref=e196]
+                - cell "-" [ref=e197]
+                - cell "-" [ref=e198]
+                - cell "-" [ref=e199]
+              - row "2014년 - - - - -" [ref=e200]:
+                - cell "2014년" [ref=e201]
+                - cell "-" [ref=e202]
+                - cell "-" [ref=e203]
+                - cell "-" [ref=e204]
+                - cell "-" [ref=e205]
+                - cell "-" [ref=e206]
+              - row "2013년 - - - - -" [ref=e207]:
+                - cell "2013년" [ref=e208]
+                - cell "-" [ref=e209]
+                - cell "-" [ref=e210]
+                - cell "-" [ref=e211]
+                - cell "-" [ref=e212]
+                - cell "-" [ref=e213]
+              - row "2012년 - - - - -" [ref=e214]:
+                - cell "2012년" [ref=e215]
+                - cell "-" [ref=e216]
+                - cell "-" [ref=e217]
+                - cell "-" [ref=e218]
+                - cell "-" [ref=e219]
+                - cell "-" [ref=e220]
+              - row "2011년 - - - - -" [ref=e221]:
+                - cell "2011년" [ref=e222]
+                - cell "-" [ref=e223]
+                - cell "-" [ref=e224]
+                - cell "-" [ref=e225]
+                - cell "-" [ref=e226]
+                - cell "-" [ref=e227]
+              - row "2010년 - - - - -" [ref=e228]:
+                - cell "2010년" [ref=e229]
+                - cell "-" [ref=e230]
+                - cell "-" [ref=e231]
+                - cell "-" [ref=e232]
+                - cell "-" [ref=e233]
+                - cell "-" [ref=e234]
+          - paragraph [ref=e235]: "* 모든 금액은 백만 달러(M) 단위입니다."
+        - generic [ref=e44]:
+          - heading "관련 뉴스" [level=3] [ref=e236]
+          - generic [ref=e237]:
+            - link "China's view on Elon Musk? Visionary, occasional villain China's view on Elon Musk? Visionary, occasional villain In China, Elon Musk has been the object of love - and occasional loathing. The Tesla boss has been both lauded as a visionary and criticised by Chinese regulators and the public for the alleged bungling of customer complaints. In addition, the dominance of SpaceX and its Starlink satellite unit has raised the ire of the People's Liberation Army. ‌And as the gap between Tesla and its Chinese EV rivals narrows, Musk is at risk of losing prestige and influence. Yahoo AAPL 5월 14일 오후 02:43" [ref=e239] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=747365e469016818345d091856bcbad9483dbd06ad3caa306a30f5f7f2dfe435
+              - generic [ref=e240]:
+                - img "China's view on Elon Musk? Visionary, occasional villain" [ref=e242]
+                - generic [ref=e243]:
+                  - generic [ref=e244]:
+                    - generic [ref=e245]:
+                      - heading "China's view on Elon Musk? Visionary, occasional villain" [level=3] [ref=e246]
+                      - paragraph [ref=e247]: In China, Elon Musk has been the object of love - and occasional loathing. The Tesla boss has been both lauded as a visionary and criticised by Chinese regulators and the public for the alleged bungling of customer complaints. In addition, the dominance of SpaceX and its Starlink satellite unit has raised the ire of the People's Liberation Army. ‌And as the gap between Tesla and its Chinese EV rivals narrows, Musk is at risk of losing prestige and influence.
+                    - img [ref=e248]
+                  - generic [ref=e252]:
+                    - generic [ref=e253]: Yahoo
+                    - generic [ref=e254]: AAPL
+                    - generic [ref=e255]: 5월 14일 오후 02:43
+            - link "Apple China Talks Put Valuation And Growth Expectations In Sharper Focus Apple China Talks Put Valuation And Growth Expectations In Sharper Focus Apple (NasdaqGS:AAPL) CEO Tim Cook is joining President Trump and other top U.S. tech leaders on a business delegation to China. The group is meeting Chinese officials to discuss technology, trade, and regulatory issues that directly affect Apple's position in the country. The summit focuses on market access, product approvals, and longer term cooperation in areas such as hardware and AI. For Apple, China is a key market for iPhone, iPad, Mac, and wearables, as well as a core hub for its... Yahoo AAPL 5월 14일 오후 01:37" [ref=e257] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=4bfe5b6dd25f278ffd5dacf3d4d9dc1b5815c9b9e62d3f140a5a8b89feabcec9
+              - generic [ref=e258]:
+                - img "Apple China Talks Put Valuation And Growth Expectations In Sharper Focus" [ref=e260]
+                - generic [ref=e261]:
+                  - generic [ref=e262]:
+                    - generic [ref=e263]:
+                      - heading "Apple China Talks Put Valuation And Growth Expectations In Sharper Focus" [level=3] [ref=e264]
+                      - paragraph [ref=e265]: Apple (NasdaqGS:AAPL) CEO Tim Cook is joining President Trump and other top U.S. tech leaders on a business delegation to China. The group is meeting Chinese officials to discuss technology, trade, and regulatory issues that directly affect Apple's position in the country. The summit focuses on market access, product approvals, and longer term cooperation in areas such as hardware and AI. For Apple, China is a key market for iPhone, iPad, Mac, and wearables, as well as a core hub for its...
+                    - img [ref=e266]
+                  - generic [ref=e270]:
+                    - generic [ref=e271]: Yahoo
+                    - generic [ref=e272]: AAPL
+                    - generic [ref=e273]: 5월 14일 오후 01:37
+            - link "3 Reasons This Warren Buffett Favorite AI Stock Could Soar Over the Next 10 Years 3 Reasons This Warren Buffett Favorite AI Stock Could Soar Over the Next 10 Years Trading near record highs, this tech giant's stock may still have plenty of upside over the next decade. Yahoo AAPL 5월 14일 오후 01:18" [ref=e275] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=a52d38b7818ae26a1f0b24ef320137f6ba1f1fc3838b4df8e92720be0eb66101
+              - generic [ref=e276]:
+                - img "3 Reasons This Warren Buffett Favorite AI Stock Could Soar Over the Next 10 Years" [ref=e278]
+                - generic [ref=e279]:
+                  - generic [ref=e280]:
+                    - generic [ref=e281]:
+                      - heading "3 Reasons This Warren Buffett Favorite AI Stock Could Soar Over the Next 10 Years" [level=3] [ref=e282]
+                      - paragraph [ref=e283]: Trading near record highs, this tech giant's stock may still have plenty of upside over the next decade.
+                    - img [ref=e284]
+                  - generic [ref=e288]:
+                    - generic [ref=e289]: Yahoo
+                    - generic [ref=e290]: AAPL
+                    - generic [ref=e291]: 5월 14일 오후 01:18
+            - link "Trump-Xi Summit Puts Nvidia, Boeing And 500-Jet Deal In Focus Trump-Xi Summit Puts Nvidia, Boeing And 500-Jet Deal In Focus Investors are watching chips, aerospace, agriculture and rare earths as Trump and Xi head into high-stakes talks. Yahoo AAPL 5월 14일 오후 01:01" [ref=e293] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=03f834039dc983303d057692ba75524cdc94483b1d0197721ab3a9cdae8a2c53
+              - generic [ref=e294]:
+                - img "Trump-Xi Summit Puts Nvidia, Boeing And 500-Jet Deal In Focus" [ref=e296]
+                - generic [ref=e297]:
+                  - generic [ref=e298]:
+                    - generic [ref=e299]:
+                      - heading "Trump-Xi Summit Puts Nvidia, Boeing And 500-Jet Deal In Focus" [level=3] [ref=e300]
+                      - paragraph [ref=e301]: Investors are watching chips, aerospace, agriculture and rare earths as Trump and Xi head into high-stakes talks.
+                    - img [ref=e302]
+                  - generic [ref=e306]:
+                    - generic [ref=e307]: Yahoo
+                    - generic [ref=e308]: AAPL
+                    - generic [ref=e309]: 5월 14일 오후 01:01
+            - link "Taiwan's Foxconn reports 18.5% rise in Q1 profit, beats forecast Taiwan's Foxconn, the world's largest contract electronics maker, reported on Thursday an 18.5% rise in first-quarter profit, beating analyst forecasts.Net profit for January-March for Nvidia's... Finnhub AAPL 5월 14일 오전 11:24" [ref=e311] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=18202401d7e54433894ede73307bc78e90454d69986707f2abb0213f861c7f5d
+              - generic [ref=e313]:
+                - generic [ref=e314]:
+                  - generic [ref=e315]:
+                    - heading "Taiwan's Foxconn reports 18.5% rise in Q1 profit, beats forecast" [level=3] [ref=e316]
+                    - paragraph [ref=e317]: Taiwan's Foxconn, the world's largest contract electronics maker, reported on Thursday an 18.5% rise in first-quarter profit, beating analyst forecasts.Net profit for January-March for Nvidia's...
+                  - img [ref=e318]
+                - generic [ref=e322]:
+                  - generic [ref=e323]: Finnhub
+                  - generic [ref=e324]: AAPL
+                  - generic [ref=e325]: 5월 14일 오전 11:24
+            - 'link "The Magnificent Seven Fell 40% While the S&P Dropped 18%: Here’s How Much Tech Concentration You Can Actually Afford The Magnificent Seven Fell 40% While the S&P Dropped 18%: Here’s How Much Tech Concentration You Can Actually Afford I’ve been studying portfolio concentration for years, and one stat from Schwab’s On Investing podcast keeps echoing in my head. In 2022, the Magnificent Seven fell roughly 40% while the S&P 500 dropped 18%. Our data confirms the pain: SPY shed 20% that calendar year, while Meta Platforms (NASDAQ:META) collapsed 64%, NVIDIA (NASDAQ:NVDA) fell 51%, ... The Magnificent Seven Fell 40% While the S&P Dropped 18%: Here’s How Much Tech Concentration You Can Actually Afford Yahoo AAPL 5월 14일 오전 10:55" [ref=e327] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=cc693646f1e157b55ee9848d82f7bb1c66eaff956aacf3f70c07b215bbe72130
+              - generic [ref=e328]:
+                - 'img "The Magnificent Seven Fell 40% While the S&P Dropped 18%: Here’s How Much Tech Concentration You Can Actually Afford" [ref=e330]'
+                - generic [ref=e331]:
+                  - generic [ref=e332]:
+                    - generic [ref=e333]:
+                      - 'heading "The Magnificent Seven Fell 40% While the S&P Dropped 18%: Here’s How Much Tech Concentration You Can Actually Afford" [level=3] [ref=e334]'
+                      - paragraph [ref=e335]: "I’ve been studying portfolio concentration for years, and one stat from Schwab’s On Investing podcast keeps echoing in my head. In 2022, the Magnificent Seven fell roughly 40% while the S&P 500 dropped 18%. Our data confirms the pain: SPY shed 20% that calendar year, while Meta Platforms (NASDAQ:META) collapsed 64%, NVIDIA (NASDAQ:NVDA) fell 51%, ... The Magnificent Seven Fell 40% While the S&P Dropped 18%: Here’s How Much Tech Concentration You Can Actually Afford"
+                    - img [ref=e336]
+                  - generic [ref=e340]:
+                    - generic [ref=e341]: Yahoo
+                    - generic [ref=e342]: AAPL
+                    - generic [ref=e343]: 5월 14일 오전 10:55
+            - link "Dow Jones Futures Rise As Cisco Soars On AI Orders; Trump-Xi Summit About To Start Dow Jones Futures Rise As Cisco Soars On AI Orders; Trump-Xi Summit About To Start Futures rose as Cisco soared on earnings. AI chip IPO Cerebras priced high. The Trump-Xi summit is about to start. Yahoo AAPL 5월 14일 오전 10:39" [ref=e345] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=ec0cbcc3c7a0ecdc39bfecc641fff279843a02dc9778165045a09b18e4041fd3
+              - generic [ref=e346]:
+                - img "Dow Jones Futures Rise As Cisco Soars On AI Orders; Trump-Xi Summit About To Start" [ref=e348]
+                - generic [ref=e349]:
+                  - generic [ref=e350]:
+                    - generic [ref=e351]:
+                      - heading "Dow Jones Futures Rise As Cisco Soars On AI Orders; Trump-Xi Summit About To Start" [level=3] [ref=e352]
+                      - paragraph [ref=e353]: Futures rose as Cisco soared on earnings. AI chip IPO Cerebras priced high. The Trump-Xi summit is about to start.
+                    - img [ref=e354]
+                  - generic [ref=e358]:
+                    - generic [ref=e359]: Yahoo
+                    - generic [ref=e360]: AAPL
+                    - generic [ref=e361]: 5월 14일 오전 10:39
+            - link "Trump Lands in China for Xi Trade Summit With Iran War in Limbo Trump Lands in China for Xi Trade Summit With Iran War in Limbo (Bloomberg) -- President Donald Trump arrived in Beijing for the first state visit to China by a US leader in nine years, as the world’s two largest economies look to stabilize ties with a summit playing out against the backdrop of the Iran war.Most Read from BloombergIran’s Kharg Island Oil Jetties Empty Again Yesterday, Satellite ShowsAmbani’s Cola War With Coke, Pepsi Spurs Fridge Bonanza in IndiaNvidia’s CEO Joins Trump in China With AI in the SpotlightTrump Lands in China for Xi Trade Summi Yahoo AAPL 5월 14일 오전 09:46" [ref=e363] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=a4a559477eddbf22470c7623185cd6dd8e26ccae8b3cdf8baf86a5ee4515a36e
+              - generic [ref=e364]:
+                - img "Trump Lands in China for Xi Trade Summit With Iran War in Limbo" [ref=e366]
+                - generic [ref=e367]:
+                  - generic [ref=e368]:
+                    - generic [ref=e369]:
+                      - heading "Trump Lands in China for Xi Trade Summit With Iran War in Limbo" [level=3] [ref=e370]
+                      - paragraph [ref=e371]: (Bloomberg) -- President Donald Trump arrived in Beijing for the first state visit to China by a US leader in nine years, as the world’s two largest economies look to stabilize ties with a summit playing out against the backdrop of the Iran war.Most Read from BloombergIran’s Kharg Island Oil Jetties Empty Again Yesterday, Satellite ShowsAmbani’s Cola War With Coke, Pepsi Spurs Fridge Bonanza in IndiaNvidia’s CEO Joins Trump in China With AI in the SpotlightTrump Lands in China for Xi Trade Summi
+                    - img [ref=e372]
+                  - generic [ref=e376]:
+                    - generic [ref=e377]: Yahoo
+                    - generic [ref=e378]: AAPL
+                    - generic [ref=e379]: 5월 14일 오전 09:46
+            - link "Veteran analyst resets Apple stock price target for 2026 Veteran analyst resets Apple stock price target for 2026 Apple’s (AAPL) AI strategy has been quiet for a while, but things could change quickly. Wedbush analyst Dan Ives raised his 12-month price target on Apple to $400 from $350, making it the most bullish call among major Wall Street analysts, according to TheFly. The move shows a broader ... Yahoo AAPL 5월 14일 오전 08:37" [ref=e381] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=4e3651907ab19bb9ebdd9b65abed989307f0b7303c1f354480184cb8a31b4b5f
+              - generic [ref=e382]:
+                - img "Veteran analyst resets Apple stock price target for 2026" [ref=e384]
+                - generic [ref=e385]:
+                  - generic [ref=e386]:
+                    - generic [ref=e387]:
+                      - heading "Veteran analyst resets Apple stock price target for 2026" [level=3] [ref=e388]
+                      - paragraph [ref=e389]: Apple’s (AAPL) AI strategy has been quiet for a while, but things could change quickly. Wedbush analyst Dan Ives raised his 12-month price target on Apple to $400 from $350, making it the most bullish call among major Wall Street analysts, according to TheFly. The move shows a broader ...
+                    - img [ref=e390]
+                  - generic [ref=e394]:
+                    - generic [ref=e395]: Yahoo
+                    - generic [ref=e396]: AAPL
+                    - generic [ref=e397]: 5월 14일 오전 08:37
+            - link "Trump–Xi meeting, rarnings and Retail Sales in focus Thursday Trump–Xi meeting, rarnings and Retail Sales in focus Thursday Market Domination Overtime host Josh Lipton takes a look at the top stories for investors to watch on Thursday, May 15, including updates from President Trump’s meeting with Chinese President Xi Jinping, earnings reports from Viking Holdings (VIK), Klarna (KLAR), Applied Materials (AMAT), and Figma (FIG), and a check-in on the consumer as new U.S. retail sales data is released. Yahoo AAPL 5월 14일 오전 08:00" [ref=e399] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=3a8bee620a2cdf005d2513e38f3cca479dff0da9782f63b1d6c00e3a0a00a621
+              - generic [ref=e400]:
+                - img "Trump–Xi meeting, rarnings and Retail Sales in focus Thursday" [ref=e402]
+                - generic [ref=e403]:
+                  - generic [ref=e404]:
+                    - generic [ref=e405]:
+                      - heading "Trump–Xi meeting, rarnings and Retail Sales in focus Thursday" [level=3] [ref=e406]
+                      - paragraph [ref=e407]: Market Domination Overtime host Josh Lipton takes a look at the top stories for investors to watch on Thursday, May 15, including updates from President Trump’s meeting with Chinese President Xi Jinping, earnings reports from Viking Holdings (VIK), Klarna (KLAR), Applied Materials (AMAT), and Figma (FIG), and a check-in on the consumer as new U.S. retail sales data is released.
+                    - img [ref=e408]
+                  - generic [ref=e412]:
+                    - generic [ref=e413]: Yahoo
+                    - generic [ref=e414]: AAPL
+                    - generic [ref=e415]: 5월 14일 오전 08:00
+            - 'link "Stock market today: Dow, S&P 500, Nasdaq futures edge up ahead of Trump-Xi summit Stock market today: Dow, S&P 500, Nasdaq futures edge up ahead of Trump-Xi summit US stock futures edged higher as Wall Street awaited President Trump''s meeting with Chinese President Xi Jinping. Yahoo AAPL 5월 14일 오전 07:32" [ref=e417] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=28fb1d6f87e2ebb692f09dd25a7f990d2cfaf2e8b454a5edfe29597e65a0c422
+              - generic [ref=e418]:
+                - 'img "Stock market today: Dow, S&P 500, Nasdaq futures edge up ahead of Trump-Xi summit" [ref=e420]'
+                - generic [ref=e421]:
+                  - generic [ref=e422]:
+                    - generic [ref=e423]:
+                      - 'heading "Stock market today: Dow, S&P 500, Nasdaq futures edge up ahead of Trump-Xi summit" [level=3] [ref=e424]'
+                      - paragraph [ref=e425]: US stock futures edged higher as Wall Street awaited President Trump's meeting with Chinese President Xi Jinping.
+                    - img [ref=e426]
+                  - generic [ref=e430]:
+                    - generic [ref=e431]: Yahoo
+                    - generic [ref=e432]: AAPL
+                    - generic [ref=e433]: 5월 14일 오전 07:32
+            - link "Nasdaq, S&P 500 Hit Fresh Highs as Tech Stocks Rise Nasdaq, S&P 500 Hit Fresh Highs as Tech Stocks Rise The Nasdaq Composite and the S&P 500 reached fresh peaks on Wednesday, buoyed by a rally in technolo Yahoo AAPL 5월 14일 오전 06:42" [ref=e435] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=b431d05fcc421d7c58e879c5d728fa3ffb4e8dcfdc46a2617b2d979d8985f87c
+              - generic [ref=e436]:
+                - img "Nasdaq, S&P 500 Hit Fresh Highs as Tech Stocks Rise" [ref=e438]
+                - generic [ref=e439]:
+                  - generic [ref=e440]:
+                    - generic [ref=e441]:
+                      - heading "Nasdaq, S&P 500 Hit Fresh Highs as Tech Stocks Rise" [level=3] [ref=e442]
+                      - paragraph [ref=e443]: The Nasdaq Composite and the S&P 500 reached fresh peaks on Wednesday, buoyed by a rally in technolo
+                    - img [ref=e444]
+                  - generic [ref=e448]:
+                    - generic [ref=e449]: Yahoo
+                    - generic [ref=e450]: AAPL
+                    - generic [ref=e451]: 5월 14일 오전 06:42
+            - link "Micron Tops $900 Billion Market Cap. How the Samsung Strike Could Help the Chip Maker. Micron Tops $900 Billion Market Cap. How the Samsung Strike Could Help the Chip Maker. A walkout at rival Samsung could hit about 3% of global memory-chip production, according to estimates. Yahoo AAPL 5월 14일 오전 06:36" [ref=e453] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=5040cd4f60bcfa823c098ffcc250cc1304ced9a670e50bbe376da720a855a307
+              - generic [ref=e454]:
+                - img "Micron Tops $900 Billion Market Cap. How the Samsung Strike Could Help the Chip Maker." [ref=e456]
+                - generic [ref=e457]:
+                  - generic [ref=e458]:
+                    - generic [ref=e459]:
+                      - heading "Micron Tops $900 Billion Market Cap. How the Samsung Strike Could Help the Chip Maker." [level=3] [ref=e460]
+                      - paragraph [ref=e461]: A walkout at rival Samsung could hit about 3% of global memory-chip production, according to estimates.
+                    - img [ref=e462]
+                  - generic [ref=e466]:
+                    - generic [ref=e467]: Yahoo
+                    - generic [ref=e468]: AAPL
+                    - generic [ref=e469]: 5월 14일 오전 06:36
+            - link "Dow Jones Futures Rise, Cisco Soars On AI Orders, Cerebras IPO Prices High; Google, Nvidia, Tesla Lead S&P 500, Nasdaq To Highs Dow Jones Futures Rise, Cisco Soars On AI Orders, Cerebras IPO Prices High; Google, Nvidia, Tesla Lead S&P 500, Nasdaq To Highs The S&P 500 and Nasdaq ran higher, led by Google, Nvidia, Tesla and other titans. Cisco earnings beat while AI chipmaker Cerebras will price its IPO. Yahoo AAPL 5월 14일 오전 06:33" [ref=e471] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=8d8242575b0f1a6e1efe57f11dc85ed2d53088debae38360d966240d6b673bc6
+              - generic [ref=e472]:
+                - img "Dow Jones Futures Rise, Cisco Soars On AI Orders, Cerebras IPO Prices High; Google, Nvidia, Tesla Lead S&P 500, Nasdaq To Highs" [ref=e474]
+                - generic [ref=e475]:
+                  - generic [ref=e476]:
+                    - generic [ref=e477]:
+                      - heading "Dow Jones Futures Rise, Cisco Soars On AI Orders, Cerebras IPO Prices High; Google, Nvidia, Tesla Lead S&P 500, Nasdaq To Highs" [level=3] [ref=e478]
+                      - paragraph [ref=e479]: The S&P 500 and Nasdaq ran higher, led by Google, Nvidia, Tesla and other titans. Cisco earnings beat while AI chipmaker Cerebras will price its IPO.
+                    - img [ref=e480]
+                  - generic [ref=e484]:
+                    - generic [ref=e485]: Yahoo
+                    - generic [ref=e486]: AAPL
+                    - generic [ref=e487]: 5월 14일 오전 06:33
+            - 'link "Wall Street’s Top Chartist Warns US Tech Stocks Now At Highest Concentration Since the 2000 Bubble Wall Street’s Top Chartist Warns US Tech Stocks Now At Highest Concentration Since the 2000 Bubble Craig Johnson, Chief Market Technician at Piper Sandler, used his CNBC Morning Call Sheet appearance to flag concerns for self-directed investors riding the AI trade. Introducing Piper Sandler’s report The Bull Market That Few Trust, Johnson said: “The technology sector is now 41% of the investable assets here in the US. Semiconductors are 50% of ... Wall Street’s Top Chartist Warns US Tech Stocks Now At Highest Concentration Since the 2000 Bubble Yahoo AAPL 5월 14일 오전 05:50" [ref=e489] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=e5c271bda3d832c83344e22d39dd078982265f706f14df282b314ec31f242c46
+              - generic [ref=e490]:
+                - img "Wall Street’s Top Chartist Warns US Tech Stocks Now At Highest Concentration Since the 2000 Bubble" [ref=e492]
+                - generic [ref=e493]:
+                  - generic [ref=e494]:
+                    - generic [ref=e495]:
+                      - heading "Wall Street’s Top Chartist Warns US Tech Stocks Now At Highest Concentration Since the 2000 Bubble" [level=3] [ref=e496]
+                      - paragraph [ref=e497]: "Craig Johnson, Chief Market Technician at Piper Sandler, used his CNBC Morning Call Sheet appearance to flag concerns for self-directed investors riding the AI trade. Introducing Piper Sandler’s report The Bull Market That Few Trust, Johnson said: “The technology sector is now 41% of the investable assets here in the US. Semiconductors are 50% of ... Wall Street’s Top Chartist Warns US Tech Stocks Now At Highest Concentration Since the 2000 Bubble"
+                    - img [ref=e498]
+                  - generic [ref=e502]:
+                    - generic [ref=e503]: Yahoo
+                    - generic [ref=e504]: AAPL
+                    - generic [ref=e505]: 5월 14일 오전 05:50
+            - 'link "Final Panel Agenda and Closing Registration: 2nd Princeton CorpGov Forum May 21 – Endowments, Activism and Entertainment Final Panel Agenda and Closing Registration: 2nd Princeton CorpGov Forum May 21 – Endowments, Activism and Entertainment Watch Video Highlights from 1st Princeton CorpGov Forum Below, or Click HERE: CorpGov is pleased to announce the agenda for the second Princeton CorpGov Forum to be held Thursday, May 21, 2026 at The Nassau Inn in Princeton, New Jersey. Our roster of speakers features industry leaders and alumni spanning five decades at Princeton, with […] Yahoo AAPL 5월 14일 오전 05:39" [ref=e507] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=2b415ab792c8c732bd6f6fdabdd0a9f0a4239d7db32a855f3d38c549e58e9835
+              - generic [ref=e508]:
+                - 'img "Final Panel Agenda and Closing Registration: 2nd Princeton CorpGov Forum May 21 – Endowments, Activism and Entertainment" [ref=e510]'
+                - generic [ref=e511]:
+                  - generic [ref=e512]:
+                    - generic [ref=e513]:
+                      - 'heading "Final Panel Agenda and Closing Registration: 2nd Princeton CorpGov Forum May 21 – Endowments, Activism and Entertainment" [level=3] [ref=e514]'
+                      - paragraph [ref=e515]: "Watch Video Highlights from 1st Princeton CorpGov Forum Below, or Click HERE: CorpGov is pleased to announce the agenda for the second Princeton CorpGov Forum to be held Thursday, May 21, 2026 at The Nassau Inn in Princeton, New Jersey. Our roster of speakers features industry leaders and alumni spanning five decades at Princeton, with […]"
+                    - img [ref=e516]
+                  - generic [ref=e520]:
+                    - generic [ref=e521]: Yahoo
+                    - generic [ref=e522]: AAPL
+                    - generic [ref=e523]: 5월 14일 오전 05:39
+            - link "Big Growth. 'Undemanding' Prices. Are Big Tech Stocks Value Plays These Days? Big Growth. 'Undemanding' Prices. Are Big Tech Stocks Value Plays These Days? Morgan Stanley analysts on Wednesday reiterated their endorsement of hyperscaler stocks, which they argue offer investors exceptional earnings growth at \"undemanding\" prices. Yahoo AAPL 5월 14일 오전 05:38" [ref=e525] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=14723abcbb93efc3689cb98a0bac32295d717092a6644b811f3f531d971200db
+              - generic [ref=e526]:
+                - img "Big Growth. 'Undemanding' Prices. Are Big Tech Stocks Value Plays These Days?" [ref=e528]
+                - generic [ref=e529]:
+                  - generic [ref=e530]:
+                    - generic [ref=e531]:
+                      - heading "Big Growth. 'Undemanding' Prices. Are Big Tech Stocks Value Plays These Days?" [level=3] [ref=e532]
+                      - paragraph [ref=e533]: Morgan Stanley analysts on Wednesday reiterated their endorsement of hyperscaler stocks, which they argue offer investors exceptional earnings growth at "undemanding" prices.
+                    - img [ref=e534]
+                  - generic [ref=e538]:
+                    - generic [ref=e539]: Yahoo
+                    - generic [ref=e540]: AAPL
+                    - generic [ref=e541]: 5월 14일 오전 05:38
+            - link "S&P 500 and Nasdaq 100 Post New Record Highs on Chip Stock Strength S&P 500 and Nasdaq 100 Post New Record Highs on Chip Stock Strength The S&P 500 Index ($SPX ) (SPY ) on Wednesday closed up +0.58%, the Dow Jones Industrial Average ($DOWI ) (DIA ) closed down -0.14%, and the Nasdaq 100 Index ($IUXX ) (QQQ ) closed up +1.04%. June E-mini S&P futures (ESM26 ) rose +0.62%, and June E-mini Nasdaq futures... Yahoo AAPL 5월 14일 오전 05:37" [ref=e543] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=16aea46517c1eba10ef324e71dba2923534a5c81e4782aff2787432c0b55313d
+              - generic [ref=e544]:
+                - img "S&P 500 and Nasdaq 100 Post New Record Highs on Chip Stock Strength" [ref=e546]
+                - generic [ref=e547]:
+                  - generic [ref=e548]:
+                    - generic [ref=e549]:
+                      - heading "S&P 500 and Nasdaq 100 Post New Record Highs on Chip Stock Strength" [level=3] [ref=e550]
+                      - paragraph [ref=e551]: The S&P 500 Index ($SPX ) (SPY ) on Wednesday closed up +0.58%, the Dow Jones Industrial Average ($DOWI ) (DIA ) closed down -0.14%, and the Nasdaq 100 Index ($IUXX ) (QQQ ) closed up +1.04%. June E-mini S&P futures (ESM26 ) rose +0.62%, and June E-mini Nasdaq futures...
+                    - img [ref=e552]
+                  - generic [ref=e556]:
+                    - generic [ref=e557]: Yahoo
+                    - generic [ref=e558]: AAPL
+                    - generic [ref=e559]: 5월 14일 오전 05:37
+            - link "Qnity Electronics (Q) Is Up 14.9% After Raising 2026 Sales Outlook On AI Packaging Demand Qnity Electronics (Q) Is Up 14.9% After Raising 2026 Sales Outlook On AI Packaging Demand Qnity Electronics, Inc. reported past first‑quarter 2026 results with sales of US$1.32 billion, net income of US$151 million, and basic earnings per share from continuing operations of US$0.72, while also raising its full‑year net sales outlook to between US$5.23 billion and US$5.38 billion. The company tied its stronger outlook to demand for materials and packaging used in artificial intelligence and advanced computing, underpinned by collaborations with NVIDIA and participation in Apple’s... Yahoo AAPL 5월 14일 오전 05:23" [ref=e561] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=a2b1a86303fdd08f348d7750e63b998d5b25b0734b66b3d97ee1d8507ed80574
+              - generic [ref=e562]:
+                - img "Qnity Electronics (Q) Is Up 14.9% After Raising 2026 Sales Outlook On AI Packaging Demand" [ref=e564]
+                - generic [ref=e565]:
+                  - generic [ref=e566]:
+                    - generic [ref=e567]:
+                      - heading "Qnity Electronics (Q) Is Up 14.9% After Raising 2026 Sales Outlook On AI Packaging Demand" [level=3] [ref=e568]
+                      - paragraph [ref=e569]: Qnity Electronics, Inc. reported past first‑quarter 2026 results with sales of US$1.32 billion, net income of US$151 million, and basic earnings per share from continuing operations of US$0.72, while also raising its full‑year net sales outlook to between US$5.23 billion and US$5.38 billion. The company tied its stronger outlook to demand for materials and packaging used in artificial intelligence and advanced computing, underpinned by collaborations with NVIDIA and participation in Apple’s...
+                    - img [ref=e570]
+                  - generic [ref=e574]:
+                    - generic [ref=e575]: Yahoo
+                    - generic [ref=e576]: AAPL
+                    - generic [ref=e577]: 5월 14일 오전 05:23
+            - link "Micron Stock Pops. A Samsung Strike Could Raise Demand for Its Memory Chips. Micron Stock Pops. A Samsung Strike Could Raise Demand for Its Memory Chips. A walkout at rival Samsung could hit about 3% of global memory-chip production, according to estimates. Yahoo AAPL 5월 14일 오전 04:40" [ref=e579] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=e2e5238f3aabcda753e60aefb7e06155e0dbfeaf809020ef7c62ec25660aafd4
+              - generic [ref=e580]:
+                - img "Micron Stock Pops. A Samsung Strike Could Raise Demand for Its Memory Chips." [ref=e582]
+                - generic [ref=e583]:
+                  - generic [ref=e584]:
+                    - generic [ref=e585]:
+                      - heading "Micron Stock Pops. A Samsung Strike Could Raise Demand for Its Memory Chips." [level=3] [ref=e586]
+                      - paragraph [ref=e587]: A walkout at rival Samsung could hit about 3% of global memory-chip production, according to estimates.
+                    - img [ref=e588]
+                  - generic [ref=e592]:
+                    - generic [ref=e593]: Yahoo
+                    - generic [ref=e594]: AAPL
+                    - generic [ref=e595]: 5월 14일 오전 04:40
+            - 'link "Apple Inc. (AAPL): Chris Rokos Likes This Tech Stock Apple Inc. (AAPL): Chris Rokos Likes This Tech Stock We just covered the Chris Rokos Stock Portfolio: Top 10 Stock Picks and Apple Inc. (NASDAQ:AAPL) ranks 6th on this list. Apple Inc. (NASDAQ:AAPL) first appeared in the 13F portfolio of Rokos Capital Management in the fourth quarter of 2020. Back then, this position comprised close to 1.3 million shares. By the second quarter of […] Yahoo AAPL 5월 14일 오전 04:32" [ref=e597] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=f75d38adeffe2c64d97c6b5c68258327394fc394b78d1f23444cd8b1c9fbfdbe
+              - generic [ref=e598]:
+                - 'img "Apple Inc. (AAPL): Chris Rokos Likes This Tech Stock" [ref=e600]'
+                - generic [ref=e601]:
+                  - generic [ref=e602]:
+                    - generic [ref=e603]:
+                      - 'heading "Apple Inc. (AAPL): Chris Rokos Likes This Tech Stock" [level=3] [ref=e604]'
+                      - paragraph [ref=e605]: "We just covered the Chris Rokos Stock Portfolio: Top 10 Stock Picks and Apple Inc. (NASDAQ:AAPL) ranks 6th on this list. Apple Inc. (NASDAQ:AAPL) first appeared in the 13F portfolio of Rokos Capital Management in the fourth quarter of 2020. Back then, this position comprised close to 1.3 million shares. By the second quarter of […]"
+                    - img [ref=e606]
+                  - generic [ref=e610]:
+                    - generic [ref=e611]: Yahoo
+                    - generic [ref=e612]: AAPL
+                    - generic [ref=e613]: 5월 14일 오전 04:32
+            - link "AI In Focus As Top CEOs Head To China For Trade Summit AI In Focus As Top CEOs Head To China For Trade Summit US business leaders including Apple Inc.'s Tim Cook and Tesla Inc.'s Elon Musk on Trump's first overseas trip since waging war in the Middle East a 36-hour visit with Xi Jinping that's expected to encompass the war, tariffs and the self-ruled island of Taiwan. The list of attendees until Tuesday had not included Huang, whose company makes the chips at the heart of the AI boom and has been pushing for greater leeway in a market he's identified as a $50 billion opportunity. Bloomberg's Ed Ludlow joins Bloomberg Businessweek Daily to discuss. Yahoo AAPL 5월 14일 오전 04:15" [ref=e615] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=50c51b0c278f6aba3708000856fc9cb9a1207649af220eda23fddf27b143a5ad
+              - generic [ref=e616]:
+                - img "AI In Focus As Top CEOs Head To China For Trade Summit" [ref=e618]
+                - generic [ref=e619]:
+                  - generic [ref=e620]:
+                    - generic [ref=e621]:
+                      - heading "AI In Focus As Top CEOs Head To China For Trade Summit" [level=3] [ref=e622]
+                      - paragraph [ref=e623]: US business leaders including Apple Inc.'s Tim Cook and Tesla Inc.'s Elon Musk on Trump's first overseas trip since waging war in the Middle East a 36-hour visit with Xi Jinping that's expected to encompass the war, tariffs and the self-ruled island of Taiwan. The list of attendees until Tuesday had not included Huang, whose company makes the chips at the heart of the AI boom and has been pushing for greater leeway in a market he's identified as a $50 billion opportunity. Bloomberg's Ed Ludlow joins Bloomberg Businessweek Daily to discuss.
+                    - img [ref=e624]
+                  - generic [ref=e628]:
+                    - generic [ref=e629]: Yahoo
+                    - generic [ref=e630]: AAPL
+                    - generic [ref=e631]: 5월 14일 오전 04:15
+            - link "Trump Once Said He’d Never Heard of NVIDIA CEO Jensen Huang. Now Air Force One Stopped in Alaska to Pick Him Up. Trump Once Said He’d Never Heard of NVIDIA CEO Jensen Huang. Now Air Force One Stopped in Alaska to Pick Him Up. Air Force One touched down at Ted Stevens Airport outside Anchorage last night on a refueling stop on its way to an important summit in Beijing. During the stop, a man in a black leather jacket stepped onto the plane. The final seat on Air Force One was claimed by NVIDIA (NASDAQ:NVDA) founder and CEO Jensen ... Trump Once Said He’d Never Heard of NVIDIA CEO Jensen Huang. Now Air Force One Stopped in Alaska to Pick Him Up. Yahoo AAPL 5월 14일 오전 03:47" [ref=e633] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=d5d7b5916149ac2510fb49e419c79e2eede0ff5b098f11b179bdebdd37319f2b
+              - generic [ref=e634]:
+                - img "Trump Once Said He’d Never Heard of NVIDIA CEO Jensen Huang. Now Air Force One Stopped in Alaska to Pick Him Up." [ref=e636]
+                - generic [ref=e637]:
+                  - generic [ref=e638]:
+                    - generic [ref=e639]:
+                      - heading "Trump Once Said He’d Never Heard of NVIDIA CEO Jensen Huang. Now Air Force One Stopped in Alaska to Pick Him Up." [level=3] [ref=e640]
+                      - paragraph [ref=e641]: Air Force One touched down at Ted Stevens Airport outside Anchorage last night on a refueling stop on its way to an important summit in Beijing. During the stop, a man in a black leather jacket stepped onto the plane. The final seat on Air Force One was claimed by NVIDIA (NASDAQ:NVDA) founder and CEO Jensen ... Trump Once Said He’d Never Heard of NVIDIA CEO Jensen Huang. Now Air Force One Stopped in Alaska to Pick Him Up.
+                    - img [ref=e642]
+                  - generic [ref=e646]:
+                    - generic [ref=e647]: Yahoo
+                    - generic [ref=e648]: AAPL
+                    - generic [ref=e649]: 5월 14일 오전 03:47
+            - link "Berkshire's Cash Pile Might Go To Data Centers, But On Its Own Terms Berkshire's Cash Pile Might Go To Data Centers, But On Its Own Terms In some quiet corner of Omaha, Nebraska, there sits the largest private collection of Treasury bills ever assembled in the history of capitalism. If it were physical, and in the highest denomination ever made to the public ($10,000 bill), it would weigh nearly 84,000 pounds – requiring a logistic operation on par with the national mint. However, for the last four decades, T-bills have been stored in a book-entry system, which is lucky for Greg Abel, Berkshire Hathaway's (NYSE:BRK) new CEO. They' Yahoo AAPL 5월 14일 오전 03:29" [ref=e651] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=3d59a0a18aeaa36e1c147275c2fb974bea956594115fc94c3a9f75dc80cc0a8c
+              - generic [ref=e652]:
+                - img "Berkshire's Cash Pile Might Go To Data Centers, But On Its Own Terms" [ref=e654]
+                - generic [ref=e655]:
+                  - generic [ref=e656]:
+                    - generic [ref=e657]:
+                      - heading "Berkshire's Cash Pile Might Go To Data Centers, But On Its Own Terms" [level=3] [ref=e658]
+                      - paragraph [ref=e659]: In some quiet corner of Omaha, Nebraska, there sits the largest private collection of Treasury bills ever assembled in the history of capitalism. If it were physical, and in the highest denomination ever made to the public ($10,000 bill), it would weigh nearly 84,000 pounds – requiring a logistic operation on par with the national mint. However, for the last four decades, T-bills have been stored in a book-entry system, which is lucky for Greg Abel, Berkshire Hathaway's (NYSE:BRK) new CEO. They'
+                    - img [ref=e660]
+                  - generic [ref=e664]:
+                    - generic [ref=e665]: Yahoo
+                    - generic [ref=e666]: AAPL
+                    - generic [ref=e667]: 5월 14일 오전 03:29
+            - 'link "Apple Stock Is Gaining Today: What''s Happening Behind The Scenes? Apple Stock Is Gaining Today: What''s Happening Behind The Scenes? Apple Inc (NASDAQ:AAPL) shares are moving up on Wednesday. The company plans to update its iPhone software, including a fully customizable Camera app, a rebuilt Siri and broader user interface changes across core apps. Here’s what you should know. Apple stock is challenging resistance. Why are AAPL shares at highs? Apple is redesigning its Camera app, letting users choose their own layout and controls, a shift that appeals to both everyday users and professionals, Bloomberg reported. Key Feature Yahoo AAPL 5월 14일 오전 03:17" [ref=e669] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=7917b6ab613a670a5ca7b2271a28988b78356882aad0e605d4237075052fb99d
+              - generic [ref=e670]:
+                - 'img "Apple Stock Is Gaining Today: What''s Happening Behind The Scenes?" [ref=e672]'
+                - generic [ref=e673]:
+                  - generic [ref=e674]:
+                    - generic [ref=e675]:
+                      - 'heading "Apple Stock Is Gaining Today: What''s Happening Behind The Scenes?" [level=3] [ref=e676]'
+                      - paragraph [ref=e677]: Apple Inc (NASDAQ:AAPL) shares are moving up on Wednesday. The company plans to update its iPhone software, including a fully customizable Camera app, a rebuilt Siri and broader user interface changes across core apps. Here’s what you should know. Apple stock is challenging resistance. Why are AAPL shares at highs? Apple is redesigning its Camera app, letting users choose their own layout and controls, a shift that appeals to both everyday users and professionals, Bloomberg reported. Key Feature
+                    - img [ref=e678]
+                  - generic [ref=e682]:
+                    - generic [ref=e683]: Yahoo
+                    - generic [ref=e684]: AAPL
+                    - generic [ref=e685]: 5월 14일 오전 03:17
+            - link "Equities Mostly Rise Intraday Amid Tech Boost, With Trump's China Visit in Focus Equities Mostly Rise Intraday Amid Tech Boost, With Trump's China Visit in Focus US benchmark equity indexes were mostly higher intraday as several key technology stocks advanced, w Yahoo AAPL 5월 14일 오전 03:15" [ref=e687] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=892c387dd33872046244f19f211a43ca87048343e6c1c23e4a32a19462d2b1a9
+              - generic [ref=e688]:
+                - img "Equities Mostly Rise Intraday Amid Tech Boost, With Trump's China Visit in Focus" [ref=e690]
+                - generic [ref=e691]:
+                  - generic [ref=e692]:
+                    - generic [ref=e693]:
+                      - heading "Equities Mostly Rise Intraday Amid Tech Boost, With Trump's China Visit in Focus" [level=3] [ref=e694]
+                      - paragraph [ref=e695]: US benchmark equity indexes were mostly higher intraday as several key technology stocks advanced, w
+                    - img [ref=e696]
+                  - generic [ref=e700]:
+                    - generic [ref=e701]: Yahoo
+                    - generic [ref=e702]: AAPL
+                    - generic [ref=e703]: 5월 14일 오전 03:15
+            - link "These S&P500 stocks are the most active in today's session These S&P500 stocks are the most active in today's session Curious about the most active S&P500 stocks in today's session? Get insights into the stocks that are leading the way in terms of trading volume and market attention. ChartMill AAPL 5월 14일 오전 03:05" [ref=e705] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=cf985bb9079075dda3a309de987b8a1dc3ea74b8d2a06f9694dfcdc4c4e6ea62
+              - generic [ref=e706]:
+                - img "These S&P500 stocks are the most active in today's session" [ref=e708]
+                - generic [ref=e709]:
+                  - generic [ref=e710]:
+                    - generic [ref=e711]:
+                      - heading "These S&P500 stocks are the most active in today's session" [level=3] [ref=e712]
+                      - paragraph [ref=e713]: Curious about the most active S&P500 stocks in today's session? Get insights into the stocks that are leading the way in terms of trading volume and market attention.
+                    - img [ref=e714]
+                  - generic [ref=e718]:
+                    - generic [ref=e719]: ChartMill
+                    - generic [ref=e720]: AAPL
+                    - generic [ref=e721]: 5월 14일 오전 03:05
+            - link "Trump-Xi summit puts AI supply chains front and center, Wedbush’s Ives says Trump-Xi summit puts AI supply chains front and center, Wedbush’s Ives says Wedbush Securities analyst Dan Ives is calling President Donald Trump's summit with Chinese President Xi Jinping a defining inflection point for the artificial intelligence revolution, as the two leaders prepare for two days of high-stakes talks in Beijing on Thursday and Friday. Trump... Yahoo AAPL 5월 14일 오전 03:00" [ref=e723] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=ecabdeb935bdd60b90c02acdb0ade1cfadf13d6278fa6f7d047b212c1e16a4e3
+              - generic [ref=e724]:
+                - img "Trump-Xi summit puts AI supply chains front and center, Wedbush’s Ives says" [ref=e726]
+                - generic [ref=e727]:
+                  - generic [ref=e728]:
+                    - generic [ref=e729]:
+                      - heading "Trump-Xi summit puts AI supply chains front and center, Wedbush’s Ives says" [level=3] [ref=e730]
+                      - paragraph [ref=e731]: Wedbush Securities analyst Dan Ives is calling President Donald Trump's summit with Chinese President Xi Jinping a defining inflection point for the artificial intelligence revolution, as the two leaders prepare for two days of high-stakes talks in Beijing on Thursday and Friday. Trump...
+                    - img [ref=e732]
+                  - generic [ref=e736]:
+                    - generic [ref=e737]: Yahoo
+                    - generic [ref=e738]: AAPL
+                    - generic [ref=e739]: 5월 14일 오전 03:00
+            - link "Apple stock notches fresh record as tech rebounds Apple stock notches fresh record as tech rebounds Apple stock was on pace for a record close on Wednesday, up nearly 2% to just under $300 per share as tech stocks rebounded from a selloff the previous day. Yahoo AAPL 5월 14일 오전 02:51" [ref=e741] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=9b13fb6726a217c9b7d608305332f07841b60fdf8f37a420cd39d9eb56846604
+              - generic [ref=e742]:
+                - img "Apple stock notches fresh record as tech rebounds" [ref=e744]
+                - generic [ref=e745]:
+                  - generic [ref=e746]:
+                    - generic [ref=e747]:
+                      - heading "Apple stock notches fresh record as tech rebounds" [level=3] [ref=e748]
+                      - paragraph [ref=e749]: Apple stock was on pace for a record close on Wednesday, up nearly 2% to just under $300 per share as tech stocks rebounded from a selloff the previous day.
+                    - img [ref=e750]
+                  - generic [ref=e754]:
+                    - generic [ref=e755]: Yahoo
+                    - generic [ref=e756]: AAPL
+                    - generic [ref=e757]: 5월 14일 오전 02:51
+            - link "Apple stock on track for record close as tech rebounds Apple stock on track for record close as tech rebounds Apple stock was on pace for a record close on Wednesday, up nearly 2% to just under $300 per share as tech stocks rebounded from a sell-off the previous day. Yahoo AAPL 5월 14일 오전 02:51" [ref=e759] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=6966792d91363b0bcc9dc44785b15a995aca03142b1b1ec08204ae10d1a499a0
+              - generic [ref=e760]:
+                - img "Apple stock on track for record close as tech rebounds" [ref=e762]
+                - generic [ref=e763]:
+                  - generic [ref=e764]:
+                    - generic [ref=e765]:
+                      - heading "Apple stock on track for record close as tech rebounds" [level=3] [ref=e766]
+                      - paragraph [ref=e767]: Apple stock was on pace for a record close on Wednesday, up nearly 2% to just under $300 per share as tech stocks rebounded from a sell-off the previous day.
+                    - img [ref=e768]
+                  - generic [ref=e772]:
+                    - generic [ref=e773]: Yahoo
+                    - generic [ref=e774]: AAPL
+                    - generic [ref=e775]: 5월 14일 오전 02:51
+            - link "Fundamentals Over Everything Fundamentals Over Everything Sara Awad from Tech ContrariansÂ discusses semi momentum. Nvidia earnings; Marvell and Broadcom; Micron, Credo, AMD, Intel, Arm, Apple and Nebius. SeekingAlpha AAPL 5월 14일 오전 02:45" [ref=e777] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=a81b8fe593a82a3f6a9e1a748ba6a204a881ce101428733b2e1d850871eb0075
+              - generic [ref=e778]:
+                - img "Fundamentals Over Everything" [ref=e780]
+                - generic [ref=e781]:
+                  - generic [ref=e782]:
+                    - generic [ref=e783]:
+                      - heading "Fundamentals Over Everything" [level=3] [ref=e784]
+                      - paragraph [ref=e785]: Sara Awad from Tech ContrariansÂ discusses semi momentum. Nvidia earnings; Marvell and Broadcom; Micron, Credo, AMD, Intel, Arm, Apple and Nebius.
+                    - img [ref=e786]
+                  - generic [ref=e790]:
+                    - generic [ref=e791]: SeekingAlpha
+                    - generic [ref=e792]: AAPL
+                    - generic [ref=e793]: 5월 14일 오전 02:45
+            - 'link "Stock Market Today: Nasdaq 100 Rises Despite Hot PPI, Nvidia Hits Record High Stock Market Today: Nasdaq 100 Rises Despite Hot PPI, Nvidia Hits Record High Tech stocks ripped higher on Wednesday despite a sharply hotter-than-expected April Producer Price Index reading that rekindled inflation anxieties and rate-hike fears, as strength in semiconductors fueled investor sentiment. Nvidia Corp. (NASDAQ:NVDA) rallied for the sixth straight session to above $226 per share, with the company’s market cap soaring above $5.5 trillion ahead of next week’s highly awaited earnings report. Speaking via Truth Social shortly before landing in Beijing, Trump told Yahoo AAPL 5월 14일 오전 02:38" [ref=e795] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=9608d4a1593fb0debf0d65fd566a075ebf9d0894c2c1c64cce7fc429a35e8717
+              - generic [ref=e796]:
+                - 'img "Stock Market Today: Nasdaq 100 Rises Despite Hot PPI, Nvidia Hits Record High" [ref=e798]'
+                - generic [ref=e799]:
+                  - generic [ref=e800]:
+                    - generic [ref=e801]:
+                      - 'heading "Stock Market Today: Nasdaq 100 Rises Despite Hot PPI, Nvidia Hits Record High" [level=3] [ref=e802]'
+                      - paragraph [ref=e803]: Tech stocks ripped higher on Wednesday despite a sharply hotter-than-expected April Producer Price Index reading that rekindled inflation anxieties and rate-hike fears, as strength in semiconductors fueled investor sentiment. Nvidia Corp. (NASDAQ:NVDA) rallied for the sixth straight session to above $226 per share, with the company’s market cap soaring above $5.5 trillion ahead of next week’s highly awaited earnings report. Speaking via Truth Social shortly before landing in Beijing, Trump told
+                    - img [ref=e804]
+                  - generic [ref=e808]:
+                    - generic [ref=e809]: Yahoo
+                    - generic [ref=e810]: AAPL
+                    - generic [ref=e811]: 5월 14일 오전 02:38
+            - link "10 Information Technology Stocks Whale Activity In Today's Session 10 Information Technology Stocks Whale Activity In Today's Session This whale alert can help traders discover the next big trading opportunities. Whales are entities with large sums of money and we track their transactions here at Benzinga on our options activity scanner. Traders often look for circumstances when the market estimation of an option diverges away from its normal worth. Abnormal amounts of trading activity could push option prices to hyperbolic or underperforming levels. Below are some instances of options activity happening in the Information Tec Yahoo AAPL 5월 14일 오전 02:35" [ref=e813] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=755beb759bf24a4aebf657f610da97e9d7f0451f7ca85815f2bc584f1faf9f31
+              - generic [ref=e814]:
+                - img "10 Information Technology Stocks Whale Activity In Today's Session" [ref=e816]
+                - generic [ref=e817]:
+                  - generic [ref=e818]:
+                    - generic [ref=e819]:
+                      - heading "10 Information Technology Stocks Whale Activity In Today's Session" [level=3] [ref=e820]
+                      - paragraph [ref=e821]: This whale alert can help traders discover the next big trading opportunities. Whales are entities with large sums of money and we track their transactions here at Benzinga on our options activity scanner. Traders often look for circumstances when the market estimation of an option diverges away from its normal worth. Abnormal amounts of trading activity could push option prices to hyperbolic or underperforming levels. Below are some instances of options activity happening in the Information Tec
+                    - img [ref=e822]
+                  - generic [ref=e826]:
+                    - generic [ref=e827]: Yahoo
+                    - generic [ref=e828]: AAPL
+                    - generic [ref=e829]: 5월 14일 오전 02:35
+            - link "Soaring iPhone Sales Have Supercharged This Under-the-Radar Stock That's Outperforming Apple. Buy It Before It Soars Another 59% Soaring iPhone Sales Have Supercharged This Under-the-Radar Stock That's Outperforming Apple. Buy It Before It Soars Another 59% Cirrus Logic stock has been in fine form on the market in 2026, driven by the company's close relationship with Apple. Yahoo AAPL 5월 14일 오전 01:43" [ref=e831] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=f5442015eea3c23480a38f500ec903b417c730038795c7e50eb6863dd56da9c5
+              - generic [ref=e832]:
+                - img "Soaring iPhone Sales Have Supercharged This Under-the-Radar Stock That's Outperforming Apple. Buy It Before It Soars Another 59%" [ref=e834]
+                - generic [ref=e835]:
+                  - generic [ref=e836]:
+                    - generic [ref=e837]:
+                      - heading "Soaring iPhone Sales Have Supercharged This Under-the-Radar Stock That's Outperforming Apple. Buy It Before It Soars Another 59%" [level=3] [ref=e838]
+                      - paragraph [ref=e839]: Cirrus Logic stock has been in fine form on the market in 2026, driven by the company's close relationship with Apple.
+                    - img [ref=e840]
+                  - generic [ref=e844]:
+                    - generic [ref=e845]: Yahoo
+                    - generic [ref=e846]: AAPL
+                    - generic [ref=e847]: 5월 14일 오전 01:43
+            - link "Trump Lands In China With $16 Trillion Of CEO Power — And One Big Ask For Xi Trump Lands In China With $16 Trillion Of CEO Power — And One Big Ask For Xi President Donald Trump landed in China Wednesday for a high-stakes meeting with President Xi Jinping, bringing with him a roster of corporate heavyweights that underscores the market stakes behind the diplomacy. NVDA stock is trading at all-time highs. See the chart and price action here. Trump previewed the trip on Truth Social by saying he would ask Xi to \"open up China\" so U.S. business leaders could \"work their magic,\" adding, \"I will make that my very first request.\" The comment points to a Yahoo AAPL 5월 14일 오전 01:14" [ref=e849] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=91bfb7514734d7349a7bc14f3eac0c3b02e54d671a473827c7d0ecc40b8dc321
+              - generic [ref=e850]:
+                - img "Trump Lands In China With $16 Trillion Of CEO Power — And One Big Ask For Xi" [ref=e852]
+                - generic [ref=e853]:
+                  - generic [ref=e854]:
+                    - generic [ref=e855]:
+                      - heading "Trump Lands In China With $16 Trillion Of CEO Power — And One Big Ask For Xi" [level=3] [ref=e856]
+                      - paragraph [ref=e857]: President Donald Trump landed in China Wednesday for a high-stakes meeting with President Xi Jinping, bringing with him a roster of corporate heavyweights that underscores the market stakes behind the diplomacy. NVDA stock is trading at all-time highs. See the chart and price action here. Trump previewed the trip on Truth Social by saying he would ask Xi to "open up China" so U.S. business leaders could "work their magic," adding, "I will make that my very first request." The comment points to a
+                    - img [ref=e858]
+                  - generic [ref=e862]:
+                    - generic [ref=e863]: Yahoo
+                    - generic [ref=e864]: AAPL
+                    - generic [ref=e865]: 5월 14일 오전 01:14
+            - link "Is Himax Technologies, Inc. (HIMX) A Good Stock To Buy Now? Is Himax Technologies, Inc. (HIMX) A Good Stock To Buy Now? Is HIMX a good stock to buy? We came across a bullish thesis on Himax Technologies, Inc. on Hunterbrook’s Substack. In this article, we will summarize the bulls’ thesis on HIMX. Himax Technologies, Inc.’s share was trading at $11.56 as of May 4th. HIMX’s trailing and forward P/E were 47.31 and 9.84 respectively according to Yahoo Finance. […] Yahoo AAPL 5월 14일 오전 01:04" [ref=e867] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=fcbaba0e8e7d58eb0921f6768650790bb33f568f9a21eea228f687a2f048a1d9
+              - generic [ref=e868]:
+                - img "Is Himax Technologies, Inc. (HIMX) A Good Stock To Buy Now?" [ref=e870]
+                - generic [ref=e871]:
+                  - generic [ref=e872]:
+                    - generic [ref=e873]:
+                      - heading "Is Himax Technologies, Inc. (HIMX) A Good Stock To Buy Now?" [level=3] [ref=e874]
+                      - paragraph [ref=e875]: Is HIMX a good stock to buy? We came across a bullish thesis on Himax Technologies, Inc. on Hunterbrook’s Substack. In this article, we will summarize the bulls’ thesis on HIMX. Himax Technologies, Inc.’s share was trading at $11.56 as of May 4th. HIMX’s trailing and forward P/E were 47.31 and 9.84 respectively according to Yahoo Finance. […]
+                    - img [ref=e876]
+                  - generic [ref=e880]:
+                    - generic [ref=e881]: Yahoo
+                    - generic [ref=e882]: AAPL
+                    - generic [ref=e883]: 5월 14일 오전 01:04
+            - link "Apple opposes EU plans to open Google services to rival AI Apple has joined Google in criticizing measures under consideration by the European Commission that would force the US giant to further open its services to artificial intelligence competitors. The... Finnhub AAPL 5월 14일 오전 01:03" [ref=e885] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=6297b88740b2dee4776c8b758642546cca1d35cd2956724931b62fe5669b2c3a
+              - generic [ref=e887]:
+                - generic [ref=e888]:
+                  - generic [ref=e889]:
+                    - heading "Apple opposes EU plans to open Google services to rival AI" [level=3] [ref=e890]
+                    - paragraph [ref=e891]: Apple has joined Google in criticizing measures under consideration by the European Commission that would force the US giant to further open its services to artificial intelligence competitors. The...
+                  - img [ref=e892]
+                - generic [ref=e896]:
+                  - generic [ref=e897]: Finnhub
+                  - generic [ref=e898]: AAPL
+                  - generic [ref=e899]: 5월 14일 오전 01:03
+            - link "Nvidia Hits $5.5 Trillion — It’s Now Worth More Than the GDP of Every Country but the U.S. and China Nvidia Hits $5.5 Trillion — It’s Now Worth More Than the GDP of Every Country but the U.S. and China The stock market has produced some astonishing winners over the years, but what’s happening with Nvidia (NASDAQ:NVDA) feels different. Five years ago, Nvidia was still largely viewed as a high-end gaming graphics card maker with growing data center ambitions. Today, it sits at the center of the artificial intelligence economy — and increasingly, at the ... Nvidia Hits $5.5 Trillion — It’s Now Worth More Than the GDP of Every Country but the U.S. and China Yahoo AAPL 5월 14일 오전 12:52" [ref=e901] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=08cef67e3ec4c2dfc3e2178a5a9e19142712ed2a38d43b45899ab2abaf5cd83f
+              - generic [ref=e902]:
+                - img "Nvidia Hits $5.5 Trillion — It’s Now Worth More Than the GDP of Every Country but the U.S. and China" [ref=e904]
+                - generic [ref=e905]:
+                  - generic [ref=e906]:
+                    - generic [ref=e907]:
+                      - heading "Nvidia Hits $5.5 Trillion — It’s Now Worth More Than the GDP of Every Country but the U.S. and China" [level=3] [ref=e908]
+                      - paragraph [ref=e909]: The stock market has produced some astonishing winners over the years, but what’s happening with Nvidia (NASDAQ:NVDA) feels different. Five years ago, Nvidia was still largely viewed as a high-end gaming graphics card maker with growing data center ambitions. Today, it sits at the center of the artificial intelligence economy — and increasingly, at the ... Nvidia Hits $5.5 Trillion — It’s Now Worth More Than the GDP of Every Country but the U.S. and China
+                    - img [ref=e910]
+                  - generic [ref=e914]:
+                    - generic [ref=e915]: Yahoo
+                    - generic [ref=e916]: AAPL
+                    - generic [ref=e917]: 5월 14일 오전 12:52
+            - 'link "Intel: Trade The Apple Rally, Don''t Marry It Intel: Trade The Apple Rally, Don''t Marry It Intel Corporation stock is up +200% since late March on the CPU renaissance and Apple foundry rumors. Click here to read this latest analysis of INTC. SeekingAlpha AAPL 5월 14일 오전 12:47" [ref=e919] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=96201f390a606679693cef4f53b5d7d47423e7ca58a6cb1841c4992a5c4ff3fd
+              - generic [ref=e920]:
+                - 'img "Intel: Trade The Apple Rally, Don''t Marry It" [ref=e922]'
+                - generic [ref=e923]:
+                  - generic [ref=e924]:
+                    - generic [ref=e925]:
+                      - 'heading "Intel: Trade The Apple Rally, Don''t Marry It" [level=3] [ref=e926]'
+                      - paragraph [ref=e927]: Intel Corporation stock is up +200% since late March on the CPU renaissance and Apple foundry rumors. Click here to read this latest analysis of INTC.
+                    - img [ref=e928]
+                  - generic [ref=e932]:
+                    - generic [ref=e933]: SeekingAlpha
+                    - generic [ref=e934]: AAPL
+                    - generic [ref=e935]: 5월 14일 오전 12:47
+            - 'link "Qualcomm: The Cheapest AI Winner (Rating Upgrade) Qualcomm: The Cheapest AI Winner (Rating Upgrade) Qualcomm is a Buy, reflecting smartphone headwinds priced in, China handset bottoming, and AI/hyperscaler custom silicon wins. Click for this QCOM stock update. SeekingAlpha AAPL 5월 14일 오전 12:24" [ref=e937] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=0f5b4399365369c696745b2b5487c6b77c5b2a41d59474147d3d8cb18b1aee1c
+              - generic [ref=e938]:
+                - 'img "Qualcomm: The Cheapest AI Winner (Rating Upgrade)" [ref=e940]'
+                - generic [ref=e941]:
+                  - generic [ref=e942]:
+                    - generic [ref=e943]:
+                      - 'heading "Qualcomm: The Cheapest AI Winner (Rating Upgrade)" [level=3] [ref=e944]'
+                      - paragraph [ref=e945]: Qualcomm is a Buy, reflecting smartphone headwinds priced in, China handset bottoming, and AI/hyperscaler custom silicon wins. Click for this QCOM stock update.
+                    - img [ref=e946]
+                  - generic [ref=e950]:
+                    - generic [ref=e951]: SeekingAlpha
+                    - generic [ref=e952]: AAPL
+                    - generic [ref=e953]: 5월 14일 오전 12:24
+            - link "Alphabet Puts Gemini at the Heart of Android Alphabet Puts Gemini at the Heart of Android Google is racing to make AI part of everyday phone use before Apple's next AI push. Yahoo AAPL 5월 14일 오전 12:10" [ref=e955] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=9d9fff42b19a946509470f69618d4aec3961d3155f4ac708e885e1b02fa49110
+              - generic [ref=e956]:
+                - img "Alphabet Puts Gemini at the Heart of Android" [ref=e958]
+                - generic [ref=e959]:
+                  - generic [ref=e960]:
+                    - generic [ref=e961]:
+                      - heading "Alphabet Puts Gemini at the Heart of Android" [level=3] [ref=e962]
+                      - paragraph [ref=e963]: Google is racing to make AI part of everyday phone use before Apple's next AI push.
+                    - img [ref=e964]
+                  - generic [ref=e968]:
+                    - generic [ref=e969]: Yahoo
+                    - generic [ref=e970]: AAPL
+                    - generic [ref=e971]: 5월 14일 오전 12:10
+            - link "Which of These 5 Companies Benefits Most From Easing China Tariffs? Which of These 5 Companies Benefits Most From Easing China Tariffs? Washington is signaling renewed engagement with Beijing, and investors are trying to figure out which stocks would benefit if tariffs ease, export controls loosen, and Chinese consumer demand stabilizes. Prediction markets currently put the odds of a tariff reduction announcement at 53% and AI export restriction relief at roughly 51%. Here we look at five ... Which of These 5 Companies Benefits Most From Easing China Tariffs? Yahoo AAPL 5월 14일 오전 12:05" [ref=e973] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=1a33379c64730dd5605a792871cd85fb8242ed6d2d7dce70cc73f58d12906967
+              - generic [ref=e974]:
+                - img "Which of These 5 Companies Benefits Most From Easing China Tariffs?" [ref=e976]
+                - generic [ref=e977]:
+                  - generic [ref=e978]:
+                    - generic [ref=e979]:
+                      - heading "Which of These 5 Companies Benefits Most From Easing China Tariffs?" [level=3] [ref=e980]
+                      - paragraph [ref=e981]: Washington is signaling renewed engagement with Beijing, and investors are trying to figure out which stocks would benefit if tariffs ease, export controls loosen, and Chinese consumer demand stabilizes. Prediction markets currently put the odds of a tariff reduction announcement at 53% and AI export restriction relief at roughly 51%. Here we look at five ... Which of These 5 Companies Benefits Most From Easing China Tariffs?
+                    - img [ref=e982]
+                  - generic [ref=e986]:
+                    - generic [ref=e987]: Yahoo
+                    - generic [ref=e988]: AAPL
+                    - generic [ref=e989]: 5월 14일 오전 12:05
+            - link "The Elite Group of CEOs Joining Trump in China The Elite Group of CEOs Joining Trump in China President Donald Trump has put together an exclusive group of CEOs, representing the best the U.S. has to offer, to join his key summit with China’s Xi Jinping. Yahoo AAPL 5월 14일 오전 12:04" [ref=e991] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=122953e26c804053f9789d55fd059ce9d2ee7a346915411d3d316fff92a97b2d
+              - generic [ref=e992]:
+                - img "The Elite Group of CEOs Joining Trump in China" [ref=e994]
+                - generic [ref=e995]:
+                  - generic [ref=e996]:
+                    - generic [ref=e997]:
+                      - heading "The Elite Group of CEOs Joining Trump in China" [level=3] [ref=e998]
+                      - paragraph [ref=e999]: President Donald Trump has put together an exclusive group of CEOs, representing the best the U.S. has to offer, to join his key summit with China’s Xi Jinping.
+                    - img [ref=e1000]
+                  - generic [ref=e1004]:
+                    - generic [ref=e1005]: Yahoo
+                    - generic [ref=e1006]: AAPL
+                    - generic [ref=e1007]: 5월 14일 오전 12:04
+            - link "How Musk’s Visit to China Could Unlock Tesla’s Next Big Growth Driver How Musk’s Visit to China Could Unlock Tesla’s Next Big Growth Driver President Trump is trying to drum up business for Tesla, and other American companies, in China this week. Yahoo AAPL 5월 13일 오후 11:58" [ref=e1009] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=78181859b969780e36dd3359030ff6e3836135797b86ffda90272c325dc052bc
+              - generic [ref=e1010]:
+                - img "How Musk’s Visit to China Could Unlock Tesla’s Next Big Growth Driver" [ref=e1012]
+                - generic [ref=e1013]:
+                  - generic [ref=e1014]:
+                    - generic [ref=e1015]:
+                      - heading "How Musk’s Visit to China Could Unlock Tesla’s Next Big Growth Driver" [level=3] [ref=e1016]
+                      - paragraph [ref=e1017]: President Trump is trying to drum up business for Tesla, and other American companies, in China this week.
+                    - img [ref=e1018]
+                  - generic [ref=e1022]:
+                    - generic [ref=e1023]: Yahoo
+                    - generic [ref=e1024]: AAPL
+                    - generic [ref=e1025]: 5월 13일 오후 11:58
+            - 'link "Market Chatter: Apple Backs Alphabet''s Google Concerns on EU Antitrust Measures Market Chatter: Apple Backs Alphabet''s Google Concerns on EU Antitrust Measures Apple (AAPL) has backed Alphabet''s (GOOG, GOOGL) concerns on risks to privacy, security and safety d Yahoo AAPL 5월 13일 오후 11:03" [ref=e1027] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=40a63d3a1a351b6a7e95649f3613681894e841e4a902b6b33d9f6a9b46084639
+              - generic [ref=e1028]:
+                - 'img "Market Chatter: Apple Backs Alphabet''s Google Concerns on EU Antitrust Measures" [ref=e1030]'
+                - generic [ref=e1031]:
+                  - generic [ref=e1032]:
+                    - generic [ref=e1033]:
+                      - 'heading "Market Chatter: Apple Backs Alphabet''s Google Concerns on EU Antitrust Measures" [level=3] [ref=e1034]'
+                      - paragraph [ref=e1035]: Apple (AAPL) has backed Alphabet's (GOOG, GOOGL) concerns on risks to privacy, security and safety d
+                    - img [ref=e1036]
+                  - generic [ref=e1040]:
+                    - generic [ref=e1041]: Yahoo
+                    - generic [ref=e1042]: AAPL
+                    - generic [ref=e1043]: 5월 13일 오후 11:03
+            - link "Intel Foundry's $1 Trillion Upside Intel Foundry's $1 Trillion Upside Intel (INTC) foundry business has finally hit its stride after years of setbacks. Intel's 18A process node, its most advanced yet, is in commercial production. The company has secured business from marquee external customers. Its U.S.-based manufacturing assets are increasingly treated as strategically irreplaceable. The markets have taken notice, with the stock up roughly 3x year-to-date and nearly doubling in the past month alone. Yahoo AAPL 5월 13일 오후 10:56" [ref=e1045] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=af0ae167f87dfdde2c42cd918f4ed4bab3bf4f512f9ae8a73b3849ff5ad2e08a
+              - generic [ref=e1046]:
+                - img "Intel Foundry's $1 Trillion Upside" [ref=e1048]
+                - generic [ref=e1049]:
+                  - generic [ref=e1050]:
+                    - generic [ref=e1051]:
+                      - heading "Intel Foundry's $1 Trillion Upside" [level=3] [ref=e1052]
+                      - paragraph [ref=e1053]: Intel (INTC) foundry business has finally hit its stride after years of setbacks. Intel's 18A process node, its most advanced yet, is in commercial production. The company has secured business from marquee external customers. Its U.S.-based manufacturing assets are increasingly treated as strategically irreplaceable. The markets have taken notice, with the stock up roughly 3x year-to-date and nearly doubling in the past month alone.
+                    - img [ref=e1054]
+                  - generic [ref=e1058]:
+                    - generic [ref=e1059]: Yahoo
+                    - generic [ref=e1060]: AAPL
+                    - generic [ref=e1061]: 5월 13일 오후 10:56
+            - link "Intel Surges 214% As Short Sellers Face $12 Billion Losses Intel Surges 214% As Short Sellers Face $12 Billion Losses Intel's rally added more than $440 billion in market value as AI optimism and Nvidia backing lifted semiconductor shares. Yahoo AAPL 5월 13일 오후 10:30" [ref=e1063] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=fa8210c2868bf4525f478c8199c91991dbf712651369ced8d6dde58b1fca8ae7
+              - generic [ref=e1064]:
+                - img "Intel Surges 214% As Short Sellers Face $12 Billion Losses" [ref=e1066]
+                - generic [ref=e1067]:
+                  - generic [ref=e1068]:
+                    - generic [ref=e1069]:
+                      - heading "Intel Surges 214% As Short Sellers Face $12 Billion Losses" [level=3] [ref=e1070]
+                      - paragraph [ref=e1071]: Intel's rally added more than $440 billion in market value as AI optimism and Nvidia backing lifted semiconductor shares.
+                    - img [ref=e1072]
+                  - generic [ref=e1076]:
+                    - generic [ref=e1077]: Yahoo
+                    - generic [ref=e1078]: AAPL
+                    - generic [ref=e1079]: 5월 13일 오후 10:30
+            - link "Tim Cook Just Sold Apple Stock Near All Time Highs. Here Is Why One Analyst Says Alphabet Is the Smarter Trade Tim Cook Just Sold Apple Stock Near All Time Highs. Here Is Why One Analyst Says Alphabet Is the Smarter Trade Apple is back at the top of every watchlist after the latest quarter showed iPhone revenue rebounding and CEO Tim Cook touting “extraordinary demand for iPhone 17 lineup”. The setup beneath the headline numbers is more interesting. Nintendo just raised hardware prices to offset rising memory chip costs, and memory can constitute 10% to 15% ... Tim Cook Just Sold Apple Stock Near All Time Highs. Here Is Why One Analyst Says Alphabet Is the Smarter Trade Yahoo AAPL 5월 13일 오후 10:23" [ref=e1081] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=8584bc56f2306af836ed3a90a45b3fd83ecabf780dbf692f47181563d59b56c6
+              - generic [ref=e1082]:
+                - img "Tim Cook Just Sold Apple Stock Near All Time Highs. Here Is Why One Analyst Says Alphabet Is the Smarter Trade" [ref=e1084]
+                - generic [ref=e1085]:
+                  - generic [ref=e1086]:
+                    - generic [ref=e1087]:
+                      - heading "Tim Cook Just Sold Apple Stock Near All Time Highs. Here Is Why One Analyst Says Alphabet Is the Smarter Trade" [level=3] [ref=e1088]
+                      - paragraph [ref=e1089]: Apple is back at the top of every watchlist after the latest quarter showed iPhone revenue rebounding and CEO Tim Cook touting “extraordinary demand for iPhone 17 lineup”. The setup beneath the headline numbers is more interesting. Nintendo just raised hardware prices to offset rising memory chip costs, and memory can constitute 10% to 15% ... Tim Cook Just Sold Apple Stock Near All Time Highs. Here Is Why One Analyst Says Alphabet Is the Smarter Trade
+                    - img [ref=e1090]
+                  - generic [ref=e1094]:
+                    - generic [ref=e1095]: Yahoo
+                    - generic [ref=e1096]: AAPL
+                    - generic [ref=e1097]: 5월 13일 오후 10:23
+            - link "Apple explores ways to welcome AI agents in the app store - The Information May 13 - Apple explores ways to welcome AI agents in the app store - The Information... Finnhub AAPL 5월 13일 오후 10:21" [ref=e1099] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=3fb77deb707ada3e2822eaf6d7701ecd3ea2f0515e7dcfafc7b58cfba3180a83
+              - generic [ref=e1101]:
+                - generic [ref=e1102]:
+                  - generic [ref=e1103]:
+                    - heading "Apple explores ways to welcome AI agents in the app store - The Information" [level=3] [ref=e1104]
+                    - paragraph [ref=e1105]: May 13 - Apple explores ways to welcome AI agents in the app store - The Information...
+                  - img [ref=e1106]
+                - generic [ref=e1110]:
+                  - generic [ref=e1111]: Finnhub
+                  - generic [ref=e1112]: AAPL
+                  - generic [ref=e1113]: 5월 13일 오후 10:21
+            - link "Apple criticises EU measures to help AI rivals access Google services Apple criticises EU measures to help AI rivals access Google services Apple on Wednesday echoed Google's criticism of EU antitrust regulators' efforts to force ‌the search giant to help AI rivals access its services, warning ‌the proposed measures pose risks to privacy, security and safety. Apple was responding to the European Commission's call last month for feedback on draft measures to help Google comply with the Digital Markets Act, aimed at curbing Big Tech's power. Alphabet-owned Google has said the proposals, which would let competing AI services interact ‌with Android apps to ⁠send emails, order food or share photos, would undermine key privacy and security safeguards for European users. Yahoo AAPL 5월 13일 오후 10:14" [ref=e1115] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=c75d7d4bc0c8e046643f3022370e30a9ca430930247d5ac13b6a0d713250880d
+              - generic [ref=e1116]:
+                - img "Apple criticises EU measures to help AI rivals access Google services" [ref=e1118]
+                - generic [ref=e1119]:
+                  - generic [ref=e1120]:
+                    - generic [ref=e1121]:
+                      - heading "Apple criticises EU measures to help AI rivals access Google services" [level=3] [ref=e1122]
+                      - paragraph [ref=e1123]: Apple on Wednesday echoed Google's criticism of EU antitrust regulators' efforts to force ‌the search giant to help AI rivals access its services, warning ‌the proposed measures pose risks to privacy, security and safety. Apple was responding to the European Commission's call last month for feedback on draft measures to help Google comply with the Digital Markets Act, aimed at curbing Big Tech's power. Alphabet-owned Google has said the proposals, which would let competing AI services interact ‌with Android apps to ⁠send emails, order food or share photos, would undermine key privacy and security safeguards for European users.
+                    - img [ref=e1124]
+                  - generic [ref=e1128]:
+                    - generic [ref=e1129]: Yahoo
+                    - generic [ref=e1130]: AAPL
+                    - generic [ref=e1131]: 5월 13일 오후 10:14
+            - 'link "Final Trades: Boeing, UnitedHealth, Apple and the KWEB Final Trades: Boeing, UnitedHealth, Apple and the KWEB The Investment Committee gives you their top stocks to watch for the second half. CNBC AAPL 5월 13일 오후 10:10" [ref=e1133] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=820b82e6c18399417fc7042de46a5d524bb6376fdb89283dd579f8c1728f0547
+              - generic [ref=e1134]:
+                - 'img "Final Trades: Boeing, UnitedHealth, Apple and the KWEB" [ref=e1136]'
+                - generic [ref=e1137]:
+                  - generic [ref=e1138]:
+                    - generic [ref=e1139]:
+                      - 'heading "Final Trades: Boeing, UnitedHealth, Apple and the KWEB" [level=3] [ref=e1140]'
+                      - paragraph [ref=e1141]: The Investment Committee gives you their top stocks to watch for the second half.
+                    - img [ref=e1142]
+                  - generic [ref=e1146]:
+                    - generic [ref=e1147]: CNBC
+                    - generic [ref=e1148]: AAPL
+                    - generic [ref=e1149]: 5월 13일 오후 10:10
+            - link "Shares of health insurance companies are trading higher after the Centers for Medicare & Medicaid Services announced a 2.48% rate hike for 2027 Medicare Advantage and Part D programs. Benzinga AAPL 4월 7일 오전 01:32" [ref=e1151] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=da9922bba73e386e1d53894fc8d8a1c7e98054195bceef23adcccf13ddf81188
+              - generic [ref=e1153]:
+                - generic [ref=e1154]:
+                  - generic [ref=e1155]:
+                    - heading "Shares of health insurance companies are trading higher after the Centers for Medicare & Medicaid Services announced a 2.48% rate hike for 2027 Medicare Advantage and Part D programs." [level=3] [ref=e1156]
+                    - paragraph
+                  - img [ref=e1157]
+                - generic [ref=e1161]:
+                  - generic [ref=e1162]: Benzinga
+                  - generic [ref=e1163]: AAPL
+                  - generic [ref=e1164]: 4월 7일 오전 01:32
+            - link "US Equity Futures Mixed Pre-Bell as Nvidia Stock Rises Ahead of Crucial US-China Meeting US Equity Futures Mixed Pre-Bell as Nvidia Stock Rises Ahead of Crucial US-China Meeting US equity futures were mixed pre-bell Wednesday as Nvidia (NVDA) stock rose ahead of a globally sign Yahoo AAPL 5월 13일 오후 09:55" [ref=e1166] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=7600b86792b1831b8681fe57969c7835f32fa6c8cbf59ab99ee202c233a6bba9
+              - generic [ref=e1167]:
+                - img "US Equity Futures Mixed Pre-Bell as Nvidia Stock Rises Ahead of Crucial US-China Meeting" [ref=e1169]
+                - generic [ref=e1170]:
+                  - generic [ref=e1171]:
+                    - generic [ref=e1172]:
+                      - heading "US Equity Futures Mixed Pre-Bell as Nvidia Stock Rises Ahead of Crucial US-China Meeting" [level=3] [ref=e1173]
+                      - paragraph [ref=e1174]: US equity futures were mixed pre-bell Wednesday as Nvidia (NVDA) stock rose ahead of a globally sign
+                    - img [ref=e1175]
+                  - generic [ref=e1179]:
+                    - generic [ref=e1180]: Yahoo
+                    - generic [ref=e1181]: AAPL
+                    - generic [ref=e1182]: 5월 13일 오후 09:55
+            - link [ref=e1184] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=4fe1f5636d64da43af0144d248ad4e895cfbe261d3549e8728ab1d8b52f2e938
+              - generic [ref=e1185]:
+                - 'img "Australia Telehealth Market Trends and Forecasts Report 2026-2035: Growth Fueled by Digital Innovation, Government Policy Support, and Investment from Tech Leaders Like Apple, Google, and IBM" [ref=e1187]'
+                - generic [ref=e1188]:
+                  - generic [ref=e1189]:
+                    - generic [ref=e1190]:
+                      - 'heading "Australia Telehealth Market Trends and Forecasts Report 2026-2035: Growth Fueled by Digital Innovation, Government Policy Support, and Investment from Tech Leaders Like Apple, Google, and IBM" [level=3] [ref=e1191]'
+                      - paragraph [ref=e1192]: The Australia telehealth market is driven by increased smartphone use, better broadband, and investments from major tech companies. Growth areas include remote care solutions addressing rural access issues, chronic disease management, and mental health services. Challenges include limited rural internet infrastructure and digital literacy. The web-based segment currently dominates, while cloud-based solutions and telepsychiatry show future growth potential.Dublin, May 13, 2026 (GLOBE NEWSWIRE) -
+                    - img [ref=e1193]
+                  - generic [ref=e1197]:
+                    - generic [ref=e1198]: Yahoo
+                    - generic [ref=e1199]: AAPL
+                    - generic [ref=e1200]: 5월 13일 오후 09:53
+            - 'link "Inflation and Iran vs. earnings and AI: Your next move Inflation and Iran vs. earnings and AI: Your next move The Investment Committee debates the state of the markets with inflation, Iran, earnings and AI all bearing down on stocks. CNBC AAPL 5월 13일 오후 09:52" [ref=e1202] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=b159a51744fe67d24e43e2e2312e159174ab050504987dd479bd58c1ade22ca6
+              - generic [ref=e1203]:
+                - 'img "Inflation and Iran vs. earnings and AI: Your next move" [ref=e1205]'
+                - generic [ref=e1206]:
+                  - generic [ref=e1207]:
+                    - generic [ref=e1208]:
+                      - 'heading "Inflation and Iran vs. earnings and AI: Your next move" [level=3] [ref=e1209]'
+                      - paragraph [ref=e1210]: The Investment Committee debates the state of the markets with inflation, Iran, earnings and AI all bearing down on stocks.
+                    - img [ref=e1211]
+                  - generic [ref=e1215]:
+                    - generic [ref=e1216]: CNBC
+                    - generic [ref=e1217]: AAPL
+                    - generic [ref=e1218]: 5월 13일 오후 09:52
+            - link "Nvidia Will Soon Make More than Apple and Microsoft Combined Nvidia Will Soon Make More than Apple and Microsoft Combined Artificial intelligence has become the market’s version of an industrial revolution. Every corner of the economy — cloud computing, utilities, networking hardware, data centers, and even power generation — is being reshaped by AI spending. At the center of that spending spree sits Nvidia (NASDAQ:NVDA). Its graphics processing units, or GPUs, have become the picks ... Nvidia Will Soon Make More than Apple and Microsoft Combined Yahoo AAPL 5월 13일 오후 09:48" [ref=e1220] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=0b04da791607d40aecf7194fe0fc4a5b9007015e8d46c4ffd667bffca51879ba
+              - generic [ref=e1221]:
+                - img "Nvidia Will Soon Make More than Apple and Microsoft Combined" [ref=e1223]
+                - generic [ref=e1224]:
+                  - generic [ref=e1225]:
+                    - generic [ref=e1226]:
+                      - heading "Nvidia Will Soon Make More than Apple and Microsoft Combined" [level=3] [ref=e1227]
+                      - paragraph [ref=e1228]: Artificial intelligence has become the market’s version of an industrial revolution. Every corner of the economy — cloud computing, utilities, networking hardware, data centers, and even power generation — is being reshaped by AI spending. At the center of that spending spree sits Nvidia (NASDAQ:NVDA). Its graphics processing units, or GPUs, have become the picks ... Nvidia Will Soon Make More than Apple and Microsoft Combined
+                    - img [ref=e1229]
+                  - generic [ref=e1233]:
+                    - generic [ref=e1234]: Yahoo
+                    - generic [ref=e1235]: AAPL
+                    - generic [ref=e1236]: 5월 13일 오후 09:48
+            - 'link "The $10 Trillion Summit: Trump, CEO Delegation to Land in Beijing The $10 Trillion Summit: Trump, CEO Delegation to Land in Beijing Wall Street will be closely watching the high-stakes negotiations unfold in Beijing over the next 48 hours. Yahoo AAPL 5월 13일 오후 09:48" [ref=e1238] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=4dd790c4fbf9a98db544bc652e2b9696a51401036ca1978c094ca3f9afbd4312
+              - generic [ref=e1239]:
+                - 'img "The $10 Trillion Summit: Trump, CEO Delegation to Land in Beijing" [ref=e1241]'
+                - generic [ref=e1242]:
+                  - generic [ref=e1243]:
+                    - generic [ref=e1244]:
+                      - 'heading "The $10 Trillion Summit: Trump, CEO Delegation to Land in Beijing" [level=3] [ref=e1245]'
+                      - paragraph [ref=e1246]: Wall Street will be closely watching the high-stakes negotiations unfold in Beijing over the next 48 hours.
+                    - img [ref=e1247]
+                  - generic [ref=e1251]:
+                    - generic [ref=e1252]: Yahoo
+                    - generic [ref=e1253]: AAPL
+                    - generic [ref=e1254]: 5월 13일 오후 09:48
+            - link "'The Entire Economy Is Going To Be Tokenized,' Consensys CEO Joseph Lubin Says, Positioning Ethereum As The Winner 'The Entire Economy Is Going To Be Tokenized,' Consensys CEO Joseph Lubin Says, Positioning Ethereum As The Winner Global economies will run on blockchain technology and Ethereum will be the big winner, Consensys CEO Joseph Lubin has reportedly said. \"We're moving into a world where essentially the entire economy is going to be tokenized,\" Lubin said on May... Yahoo AAPL 5월 13일 오후 09:46" [ref=e1256] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=692f64af9175b0ae0007263fc743b86a79cee692dd38993aaa378f3de1b65d63
+              - generic [ref=e1257]:
+                - img "'The Entire Economy Is Going To Be Tokenized,' Consensys CEO Joseph Lubin Says, Positioning Ethereum As The Winner" [ref=e1259]
+                - generic [ref=e1260]:
+                  - generic [ref=e1261]:
+                    - generic [ref=e1262]:
+                      - heading "'The Entire Economy Is Going To Be Tokenized,' Consensys CEO Joseph Lubin Says, Positioning Ethereum As The Winner" [level=3] [ref=e1263]
+                      - paragraph [ref=e1264]: Global economies will run on blockchain technology and Ethereum will be the big winner, Consensys CEO Joseph Lubin has reportedly said. "We're moving into a world where essentially the entire economy is going to be tokenized," Lubin said on May...
+                    - img [ref=e1265]
+                  - generic [ref=e1269]:
+                    - generic [ref=e1270]: Yahoo
+                    - generic [ref=e1271]: AAPL
+                    - generic [ref=e1272]: 5월 13일 오후 09:46
+            - 'link "From Bill Gates to Tim Cook: 7 Iconic CEOs Who Chose Executive Chair Over Retirement From Bill Gates to Tim Cook: 7 Iconic CEOs Who Chose Executive Chair Over Retirement Iconic founders and long-tenured CEOs rarely walk away entirely. They migrate to the executive chairperson seat, retaining board voting power, equity alignment, and strategic influence. The pattern signals whether a handoff is clean and time-boxed or whether it carries shadow-CEO risk and strategic drift. Here is how seven landmark transitions compare. 7. Bill Gates, Microsoft ... From Bill Gates to Tim Cook: 7 Iconic CEOs Who Chose Executive Chair Over Retirement Yahoo AAPL 5월 13일 오후 09:45" [ref=e1274] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=3bc5045efe5ea6866700da1b12f1e4f8cd047561f071a33271f537e39a00a4b0
+              - generic [ref=e1275]:
+                - 'img "From Bill Gates to Tim Cook: 7 Iconic CEOs Who Chose Executive Chair Over Retirement" [ref=e1277]'
+                - generic [ref=e1278]:
+                  - generic [ref=e1279]:
+                    - generic [ref=e1280]:
+                      - 'heading "From Bill Gates to Tim Cook: 7 Iconic CEOs Who Chose Executive Chair Over Retirement" [level=3] [ref=e1281]'
+                      - paragraph [ref=e1282]: "Iconic founders and long-tenured CEOs rarely walk away entirely. They migrate to the executive chairperson seat, retaining board voting power, equity alignment, and strategic influence. The pattern signals whether a handoff is clean and time-boxed or whether it carries shadow-CEO risk and strategic drift. Here is how seven landmark transitions compare. 7. Bill Gates, Microsoft ... From Bill Gates to Tim Cook: 7 Iconic CEOs Who Chose Executive Chair Over Retirement"
+                    - img [ref=e1283]
+                  - generic [ref=e1287]:
+                    - generic [ref=e1288]: Yahoo
+                    - generic [ref=e1289]: AAPL
+                    - generic [ref=e1290]: 5월 13일 오후 09:45
+            - 'link "Apple’s CEO Cook Made 533 Times More Than Workers Apple’s CEO Cook Made 533 Times More Than Workers The SEC requires companies to disclose the ratio of CEO pay to the median worker pay. According to the Apple (NASDAQ: AAPL) proxy, “2025 annual total compensation of our CEO was $74,294,811, the 2025 annual total compensation of our median compensated employee was $139,483, and the ratio of these amounts is 533 to 1. “ ... Apple’s CEO Cook Made 533 Times More Than Workers Yahoo AAPL 5월 13일 오후 09:45" [ref=e1292] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=e3a3ca79e51a1bb814ff6720975e063f9d179ccf2230a4f795c7df6b25ad6898
+              - generic [ref=e1293]:
+                - img "Apple’s CEO Cook Made 533 Times More Than Workers" [ref=e1295]
+                - generic [ref=e1296]:
+                  - generic [ref=e1297]:
+                    - generic [ref=e1298]:
+                      - heading "Apple’s CEO Cook Made 533 Times More Than Workers" [level=3] [ref=e1299]
+                      - paragraph [ref=e1300]: "The SEC requires companies to disclose the ratio of CEO pay to the median worker pay. According to the Apple (NASDAQ: AAPL) proxy, “2025 annual total compensation of our CEO was $74,294,811, the 2025 annual total compensation of our median compensated employee was $139,483, and the ratio of these amounts is 533 to 1. “ ... Apple’s CEO Cook Made 533 Times More Than Workers"
+                    - img [ref=e1301]
+                  - generic [ref=e1305]:
+                    - generic [ref=e1306]: Yahoo
+                    - generic [ref=e1307]: AAPL
+                    - generic [ref=e1308]: 5월 13일 오후 09:45
+            - 'link "A Closer Look At ''Stock Slices'' For The S&P 500 A Closer Look At ''Stock Slices'' For The S&P 500 Fractional share investing at Schwab lets you buy S&P 500 stocks with little capital for precise allocations, dividends and quant strategiesâlearn benefits... SeekingAlpha AAPL 5월 13일 오후 09:34" [ref=e1310] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=74e504bf72d23b927f0a9cb01a44f0f6b9f0f5991e332351f43099b658d8622f
+              - generic [ref=e1311]:
+                - img "A Closer Look At 'Stock Slices' For The S&P 500" [ref=e1313]
+                - generic [ref=e1314]:
+                  - generic [ref=e1315]:
+                    - generic [ref=e1316]:
+                      - heading "A Closer Look At 'Stock Slices' For The S&P 500" [level=3] [ref=e1317]
+                      - paragraph [ref=e1318]: "Fractional share investing at Schwab lets you buy S&P 500 stocks with little capital for precise allocations, dividends and quant strategiesâ\x80\x94learn benefits..."
+                    - img [ref=e1319]
+                  - generic [ref=e1323]:
+                    - generic [ref=e1324]: SeekingAlpha
+                    - generic [ref=e1325]: AAPL
+                    - generic [ref=e1326]: 5월 13일 오후 09:34
+            - link "Hot PPI; Semis Gain On Jensen Huang's China Visit Benzinga AAPL 5월 13일 오후 09:25" [ref=e1328] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=7c6b82d29d14119149216dc61c52a16c3758d619349e3188f4bcb58f2cc8c7aa
+              - generic [ref=e1330]:
+                - generic [ref=e1331]:
+                  - generic [ref=e1332]:
+                    - heading "Hot PPI; Semis Gain On Jensen Huang's China Visit" [level=3] [ref=e1333]
+                    - paragraph
+                  - img [ref=e1334]
+                - generic [ref=e1338]:
+                  - generic [ref=e1339]: Benzinga
+                  - generic [ref=e1340]: AAPL
+                  - generic [ref=e1341]: 5월 13일 오후 09:25
+            - link "Trade Strategy For SPY, QQQ, AAPL, MSFT, NVDA, GOOGL, META, And TSLA Trade Strategy For SPY, QQQ, AAPL, MSFT, NVDA, GOOGL, META, And TSLA Good Morning Traders! Today's economic calendar for Wednesday is lighter overall, but markets will still be closely watching inflation related data and Treasury activity. The key release comes at 8:30AM ET with Producer Price Index data, including headline and core PPI figures, which will provide additional insight into inflation pressures following yesterday's CPI report. Markets may react sharply if producer inflation comes in materially above or below expectations. Additional events include c Yahoo AAPL 5월 13일 오후 09:15" [ref=e1343] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=e1a9f7623198520706b1f1305ee38ec6de9abcbd83d7cbe202a37c4ec9afe7ca
+              - generic [ref=e1344]:
+                - img "Trade Strategy For SPY, QQQ, AAPL, MSFT, NVDA, GOOGL, META, And TSLA" [ref=e1346]
+                - generic [ref=e1347]:
+                  - generic [ref=e1348]:
+                    - generic [ref=e1349]:
+                      - heading "Trade Strategy For SPY, QQQ, AAPL, MSFT, NVDA, GOOGL, META, And TSLA" [level=3] [ref=e1350]
+                      - paragraph [ref=e1351]: Good Morning Traders! Today's economic calendar for Wednesday is lighter overall, but markets will still be closely watching inflation related data and Treasury activity. The key release comes at 8:30AM ET with Producer Price Index data, including headline and core PPI figures, which will provide additional insight into inflation pressures following yesterday's CPI report. Markets may react sharply if producer inflation comes in materially above or below expectations. Additional events include c
+                    - img [ref=e1352]
+                  - generic [ref=e1356]:
+                    - generic [ref=e1357]: Yahoo
+                    - generic [ref=e1358]: AAPL
+                    - generic [ref=e1359]: 5월 13일 오후 09:15
+            - link "Apple, ServiceNow, Netflix And An Energy Stock On CNBC's 'Final Trades' Apple, ServiceNow, Netflix And An Energy Stock On CNBC's 'Final Trades' On CNBC's “Halftime Report Final Trades,” Jim Lebenthal, partner at Cerity Partners, said Exxon Mobil Corporation (NYSE:XOM) continues to bring money while energy prices are high. Lending support to his choice, Exxon Mobil, on May 1, reported better-than-expected results for the first quarter. Adjusted earnings were $4.9 billion, or $1.16 per share, while earnings excluding identified items and estimated timing effects were $8.8 billion, or $2.09 per share. Jason Snipe, founder and chief investm Yahoo AAPL 5월 13일 오후 09:14" [ref=e1361] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=a45deeb5dc99ef33d2da626766e8f582a2ae9f64d785f1a77ab86c6fc78fa71c
+              - generic [ref=e1362]:
+                - img "Apple, ServiceNow, Netflix And An Energy Stock On CNBC's 'Final Trades'" [ref=e1364]
+                - generic [ref=e1365]:
+                  - generic [ref=e1366]:
+                    - generic [ref=e1367]:
+                      - heading "Apple, ServiceNow, Netflix And An Energy Stock On CNBC's 'Final Trades'" [level=3] [ref=e1368]
+                      - paragraph [ref=e1369]: On CNBC's “Halftime Report Final Trades,” Jim Lebenthal, partner at Cerity Partners, said Exxon Mobil Corporation (NYSE:XOM) continues to bring money while energy prices are high. Lending support to his choice, Exxon Mobil, on May 1, reported better-than-expected results for the first quarter. Adjusted earnings were $4.9 billion, or $1.16 per share, while earnings excluding identified items and estimated timing effects were $8.8 billion, or $2.09 per share. Jason Snipe, founder and chief investm
+                    - img [ref=e1370]
+                  - generic [ref=e1374]:
+                    - generic [ref=e1375]: Yahoo
+                    - generic [ref=e1376]: AAPL
+                    - generic [ref=e1377]: 5월 13일 오후 09:14
+            - link "Here's what to expect from Cerebras IPO Here's what to expect from Cerebras IPO CNBC's Kristina Partsinevelos joins 'Money Movers' to report on Cerebras' upcoming IPO. CNBC AAPL 5월 13일 오후 09:13" [ref=e1379] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=3688abdd73c840029b0bc01089b65f47ea920f0153052688aed2f450a4ae6ca9
+              - generic [ref=e1380]:
+                - img "Here's what to expect from Cerebras IPO" [ref=e1382]
+                - generic [ref=e1383]:
+                  - generic [ref=e1384]:
+                    - generic [ref=e1385]:
+                      - heading "Here's what to expect from Cerebras IPO" [level=3] [ref=e1386]
+                      - paragraph [ref=e1387]: CNBC's Kristina Partsinevelos joins 'Money Movers' to report on Cerebras' upcoming IPO.
+                    - img [ref=e1388]
+                  - generic [ref=e1392]:
+                    - generic [ref=e1393]: CNBC
+                    - generic [ref=e1394]: AAPL
+                    - generic [ref=e1395]: 5월 13일 오후 09:13
+            - link "US Equity Futures Mixed as Nvidia Stock Rises Ahead of Crucial US-China Meeting US Equity Futures Mixed as Nvidia Stock Rises Ahead of Crucial US-China Meeting US equity futures were mixed pre-bell Wednesday as Nvidia (NVDA) stock rose ahead of a globally sign Yahoo AAPL 5월 13일 오후 09:11" [ref=e1397] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=3fdf04d05645566f1544b621b14a151a795a243eec29803f4013e338c2d8f0b7
+              - generic [ref=e1398]:
+                - img "US Equity Futures Mixed as Nvidia Stock Rises Ahead of Crucial US-China Meeting" [ref=e1400]
+                - generic [ref=e1401]:
+                  - generic [ref=e1402]:
+                    - generic [ref=e1403]:
+                      - heading "US Equity Futures Mixed as Nvidia Stock Rises Ahead of Crucial US-China Meeting" [level=3] [ref=e1404]
+                      - paragraph [ref=e1405]: US equity futures were mixed pre-bell Wednesday as Nvidia (NVDA) stock rose ahead of a globally sign
+                    - img [ref=e1406]
+                  - generic [ref=e1410]:
+                    - generic [ref=e1411]: Yahoo
+                    - generic [ref=e1412]: AAPL
+                    - generic [ref=e1413]: 5월 13일 오후 09:11
+            - link "What's Going On With Arm Stock Wednesday? What's Going On With Arm Stock Wednesday? Arm Holdings (ARM) jumps 5% as chip stocks rally. Investors eye US-China AI policy and Jensen Huang&#39;s Beijing visit. Read the latest. Benzinga AAPL 5월 13일 오후 09:06" [ref=e1415] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=94edaabe50e266a4af48ff6ac5a034265314ad17d9358345633b82105a74ce59
+              - generic [ref=e1416]:
+                - img "What's Going On With Arm Stock Wednesday?" [ref=e1418]
+                - generic [ref=e1419]:
+                  - generic [ref=e1420]:
+                    - generic [ref=e1421]:
+                      - heading "What's Going On With Arm Stock Wednesday?" [level=3] [ref=e1422]
+                      - paragraph [ref=e1423]: Arm Holdings (ARM) jumps 5% as chip stocks rally. Investors eye US-China AI policy and Jensen Huang&#39;s Beijing visit. Read the latest.
+                    - img [ref=e1424]
+                  - generic [ref=e1428]:
+                    - generic [ref=e1429]: Benzinga
+                    - generic [ref=e1430]: AAPL
+                    - generic [ref=e1431]: 5월 13일 오후 09:06
+            - link "Truly Unique AI Powerhouse Etches Buy Zone. Now Comes This Test. Truly Unique AI Powerhouse Etches Buy Zone. Now Comes This Test. ASML is the sole provider of EUV lithography machines vital to advanced AI chips from Nvidia and more. ASML stock is testing a breakout to a record high. Yahoo AAPL 5월 13일 오후 08:25" [ref=e1433] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=f8d2d6602688f3d5346ebcd6214debe885e97bf85b595e20be327d2ddbe25317
+              - generic [ref=e1434]:
+                - img "Truly Unique AI Powerhouse Etches Buy Zone. Now Comes This Test." [ref=e1436]
+                - generic [ref=e1437]:
+                  - generic [ref=e1438]:
+                    - generic [ref=e1439]:
+                      - heading "Truly Unique AI Powerhouse Etches Buy Zone. Now Comes This Test." [level=3] [ref=e1440]
+                      - paragraph [ref=e1441]: ASML is the sole provider of EUV lithography machines vital to advanced AI chips from Nvidia and more. ASML stock is testing a breakout to a record high.
+                    - img [ref=e1442]
+                  - generic [ref=e1446]:
+                    - generic [ref=e1447]: Yahoo
+                    - generic [ref=e1448]: AAPL
+                    - generic [ref=e1449]: 5월 13일 오후 08:25
+            - link "Tesla CEO Is Heading to China. What Musk Hopes to Accomplish. Tesla CEO Is Heading to China. What Musk Hopes to Accomplish. President Trump is trying to drum up business for Tesla, and other American companies, in China this week. Yahoo AAPL 5월 13일 오후 08:11" [ref=e1451] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=df2e9b40b61fd6239b46298dac87672a2626eb998cbc84ee8b87dfec99cb33bb
+              - generic [ref=e1452]:
+                - img "Tesla CEO Is Heading to China. What Musk Hopes to Accomplish." [ref=e1454]
+                - generic [ref=e1455]:
+                  - generic [ref=e1456]:
+                    - generic [ref=e1457]:
+                      - heading "Tesla CEO Is Heading to China. What Musk Hopes to Accomplish." [level=3] [ref=e1458]
+                      - paragraph [ref=e1459]: President Trump is trying to drum up business for Tesla, and other American companies, in China this week.
+                    - img [ref=e1460]
+                  - generic [ref=e1464]:
+                    - generic [ref=e1465]: Yahoo
+                    - generic [ref=e1466]: AAPL
+                    - generic [ref=e1467]: 5월 13일 오후 08:11
+            - link "What the Elite Group of CEOs Joining Trump in China Says About the U.S. Economy What the Elite Group of CEOs Joining Trump in China Says About the U.S. Economy President Donald Trump has put together an exclusive group of CEOs, representing the best the U.S. has to offer, to join his key summit with China’s Xi Jinping. Yahoo AAPL 5월 13일 오후 07:45" [ref=e1469] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=3661f0c293c7da2a699731db4a99c4f5e38f167bb4ba87bfdd8810a54ea99842
+              - generic [ref=e1470]:
+                - img "What the Elite Group of CEOs Joining Trump in China Says About the U.S. Economy" [ref=e1472]
+                - generic [ref=e1473]:
+                  - generic [ref=e1474]:
+                    - generic [ref=e1475]:
+                      - heading "What the Elite Group of CEOs Joining Trump in China Says About the U.S. Economy" [level=3] [ref=e1476]
+                      - paragraph [ref=e1477]: President Donald Trump has put together an exclusive group of CEOs, representing the best the U.S. has to offer, to join his key summit with China’s Xi Jinping.
+                    - img [ref=e1478]
+                  - generic [ref=e1482]:
+                    - generic [ref=e1483]: Yahoo
+                    - generic [ref=e1484]: AAPL
+                    - generic [ref=e1485]: 5월 13일 오후 07:45
+            - link "The S&P 500 May Not Be Diversified Anymore The S&P 500 May Not Be Diversified Anymore Apollo warns mega cap dominance is reshaping the market Yahoo AAPL 5월 13일 오후 07:38" [ref=e1487] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=1b548dd729d6053142c12368a9d28e04ea86cf64b35268ccde84a2c3af41010a
+              - generic [ref=e1488]:
+                - img "The S&P 500 May Not Be Diversified Anymore" [ref=e1490]
+                - generic [ref=e1491]:
+                  - generic [ref=e1492]:
+                    - generic [ref=e1493]:
+                      - heading "The S&P 500 May Not Be Diversified Anymore" [level=3] [ref=e1494]
+                      - paragraph [ref=e1495]: Apollo warns mega cap dominance is reshaping the market
+                    - img [ref=e1496]
+                  - generic [ref=e1500]:
+                    - generic [ref=e1501]: Yahoo
+                    - generic [ref=e1502]: AAPL
+                    - generic [ref=e1503]: 5월 13일 오후 07:38
+            - link "Tech Giants Are Hiding the Holes in the Stock Market’s Walls Tech Giants Are Hiding the Holes in the Stock Market’s Walls Tech is the standout perform in a narrowing market, with oil, trade, and inflation issues brewing on the sidelines. Yahoo AAPL 5월 13일 오후 07:35" [ref=e1505] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=609c71b7a1b55fd8d8dfdee36b9948892675ca46211598be70239383353ab448
+              - generic [ref=e1506]:
+                - img "Tech Giants Are Hiding the Holes in the Stock Market’s Walls" [ref=e1508]
+                - generic [ref=e1509]:
+                  - generic [ref=e1510]:
+                    - generic [ref=e1511]:
+                      - heading "Tech Giants Are Hiding the Holes in the Stock Market’s Walls" [level=3] [ref=e1512]
+                      - paragraph [ref=e1513]: Tech is the standout perform in a narrowing market, with oil, trade, and inflation issues brewing on the sidelines.
+                    - img [ref=e1514]
+                  - generic [ref=e1518]:
+                    - generic [ref=e1519]: Yahoo
+                    - generic [ref=e1520]: AAPL
+                    - generic [ref=e1521]: 5월 13일 오후 07:35
+            - link "Is This Surging Semiconductor Stock a Buy After Its Blockbuster Deal With Nvidia? Is This Surging Semiconductor Stock a Buy After Its Blockbuster Deal With Nvidia? Corning stock has quadrupled during the past 12 months, and it probably isn't done yet. Yahoo AAPL 5월 13일 오후 07:30" [ref=e1523] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=143edb6aeacaa10f97825a4d05ca84169688ea16c3f1fd90c6e5076ef0f14377
+              - generic [ref=e1524]:
+                - img "Is This Surging Semiconductor Stock a Buy After Its Blockbuster Deal With Nvidia?" [ref=e1526]
+                - generic [ref=e1527]:
+                  - generic [ref=e1528]:
+                    - generic [ref=e1529]:
+                      - heading "Is This Surging Semiconductor Stock a Buy After Its Blockbuster Deal With Nvidia?" [level=3] [ref=e1530]
+                      - paragraph [ref=e1531]: Corning stock has quadrupled during the past 12 months, and it probably isn't done yet.
+                    - img [ref=e1532]
+                  - generic [ref=e1536]:
+                    - generic [ref=e1537]: Yahoo
+                    - generic [ref=e1538]: AAPL
+                    - generic [ref=e1539]: 5월 13일 오후 07:30
+            - 'link "Update: Market Chatter: Nvidia Chief Executive Jensen Huang Joins Trump China Trip Update: Market Chatter: Nvidia Chief Executive Jensen Huang Joins Trump China Trip (Updates include details of other CEOs in the second paragraph.) Nvidia (NVDA) Chief Executive Je Yahoo AAPL 5월 13일 오후 07:14" [ref=e1541] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=bc2a6a2e3b60abece2f5849fe64a4a7c6309a2ba30cc172111938440938eb020
+              - generic [ref=e1542]:
+                - 'img "Update: Market Chatter: Nvidia Chief Executive Jensen Huang Joins Trump China Trip" [ref=e1544]'
+                - generic [ref=e1545]:
+                  - generic [ref=e1546]:
+                    - generic [ref=e1547]:
+                      - 'heading "Update: Market Chatter: Nvidia Chief Executive Jensen Huang Joins Trump China Trip" [level=3] [ref=e1548]'
+                      - paragraph [ref=e1549]: (Updates include details of other CEOs in the second paragraph.) Nvidia (NVDA) Chief Executive Je
+                    - img [ref=e1550]
+                  - generic [ref=e1554]:
+                    - generic [ref=e1555]: Yahoo
+                    - generic [ref=e1556]: AAPL
+                    - generic [ref=e1557]: 5월 13일 오후 07:14
+            - link "Samsung's Late Galaxy Launch Hands Apple A Massive Advantage Samsung's Late Galaxy Launch Hands Apple A Massive Advantage Apple Inc. (NASDAQ:AAPL) strengthened its position in the U.S. smartphone market during the first quarter of 2026 as analysts at Counterpoint Research said delayed rival launches, stronger carrier performance, and pressure on lower-cost Android brands reshaped industry dynamics. Apple Outperformed A Weak Smartphone Market Counterpoint Research noted on Tuesday that Apple's U.S. iPhone sales volume rose 1.3% year over year in the first-quarter of 2026, while the broader U.S. smartphone market dec Yahoo AAPL 5월 13일 오후 06:51" [ref=e1559] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=54f7d38fc2975a5a63ef01711b0bec57c40f00c1b3813c7a5f1add8665ef4528
+              - generic [ref=e1560]:
+                - img "Samsung's Late Galaxy Launch Hands Apple A Massive Advantage" [ref=e1562]
+                - generic [ref=e1563]:
+                  - generic [ref=e1564]:
+                    - generic [ref=e1565]:
+                      - heading "Samsung's Late Galaxy Launch Hands Apple A Massive Advantage" [level=3] [ref=e1566]
+                      - paragraph [ref=e1567]: Apple Inc. (NASDAQ:AAPL) strengthened its position in the U.S. smartphone market during the first quarter of 2026 as analysts at Counterpoint Research said delayed rival launches, stronger carrier performance, and pressure on lower-cost Android brands reshaped industry dynamics. Apple Outperformed A Weak Smartphone Market Counterpoint Research noted on Tuesday that Apple's U.S. iPhone sales volume rose 1.3% year over year in the first-quarter of 2026, while the broader U.S. smartphone market dec
+                    - img [ref=e1568]
+                  - generic [ref=e1572]:
+                    - generic [ref=e1573]: Yahoo
+                    - generic [ref=e1574]: AAPL
+                    - generic [ref=e1575]: 5월 13일 오후 06:51
+            - link "Intel Slips Despite $80 Billion CPU Market Forecast, Apple Manufacturing Deal Intel Slips Despite $80 Billion CPU Market Forecast, Apple Manufacturing Deal Intel Corp secured a major boost to its foundry business after Apple Inc agreed to a manufacturing deal. Still, Intel shares are down during Tuesday’s premarket session, trading 4.7% lower, as traders digest AI-related commentary highlighting intensifying competition in data-center... Yahoo AAPL 5월 13일 오후 06:46" [ref=e1577] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=5850036d66b954d3aecdbbf01c8c16365a6fd9569fe460d867b1a1321974c68f
+              - generic [ref=e1578]:
+                - img "Intel Slips Despite $80 Billion CPU Market Forecast, Apple Manufacturing Deal" [ref=e1580]
+                - generic [ref=e1581]:
+                  - generic [ref=e1582]:
+                    - generic [ref=e1583]:
+                      - heading "Intel Slips Despite $80 Billion CPU Market Forecast, Apple Manufacturing Deal" [level=3] [ref=e1584]
+                      - paragraph [ref=e1585]: Intel Corp secured a major boost to its foundry business after Apple Inc agreed to a manufacturing deal. Still, Intel shares are down during Tuesday’s premarket session, trading 4.7% lower, as traders digest AI-related commentary highlighting intensifying competition in data-center...
+                    - img [ref=e1586]
+                  - generic [ref=e1590]:
+                    - generic [ref=e1591]: Yahoo
+                    - generic [ref=e1592]: AAPL
+                    - generic [ref=e1593]: 5월 13일 오후 06:46
+            - 'link "Stock Market Today: Dow Jones Futures Fall, S&P 500 Gains As Trump Takes Big Tech Leaders To China—Nvidia, Nextpower, Red Cat In Focus Stock Market Today: Dow Jones Futures Fall, S&P 500 Gains As Trump Takes Big Tech Leaders To China—Nvidia, Nextpower, Red Cat In Focus U.S. stock futures were mixed on Wednesday after Monday’s mostly lower close. Dow Jones futures fell, whereas S&P 500 and Nasdaq 100 indices were rising. This follows President Donald Trump‘s visit to China along with Nvidia Corp. (NASDAQ:NVDA) CEO Jensen Huang, Tesla Inc.‘s (NASDAQ:TSLA) Elon Musk, Apple Inc.’s (NASDAQ:AAPL) Tim Cook, BlackRock Inc.‘s (NYSE:BLK) Larry Fink, and Qualcomm Inc.‘s (NASDAQ:QCOM) Cristiano Amon. Before leaving, Trump said on Tuesday that Americans'' financial struggle Yahoo AAPL 5월 13일 오후 06:42" [ref=e1595] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=51071c4eb65bf7dcd6911a28239e16273bf62a30ff1994b4adb870ddd0698d12
+              - generic [ref=e1596]:
+                - 'img "Stock Market Today: Dow Jones Futures Fall, S&P 500 Gains As Trump Takes Big Tech Leaders To China—Nvidia, Nextpower, Red Cat In Focus" [ref=e1598]'
+                - generic [ref=e1599]:
+                  - generic [ref=e1600]:
+                    - generic [ref=e1601]:
+                      - 'heading "Stock Market Today: Dow Jones Futures Fall, S&P 500 Gains As Trump Takes Big Tech Leaders To China—Nvidia, Nextpower, Red Cat In Focus" [level=3] [ref=e1602]'
+                      - paragraph [ref=e1603]: U.S. stock futures were mixed on Wednesday after Monday’s mostly lower close. Dow Jones futures fell, whereas S&P 500 and Nasdaq 100 indices were rising. This follows President Donald Trump‘s visit to China along with Nvidia Corp. (NASDAQ:NVDA) CEO Jensen Huang, Tesla Inc.‘s (NASDAQ:TSLA) Elon Musk, Apple Inc.’s (NASDAQ:AAPL) Tim Cook, BlackRock Inc.‘s (NYSE:BLK) Larry Fink, and Qualcomm Inc.‘s (NASDAQ:QCOM) Cristiano Amon. Before leaving, Trump said on Tuesday that Americans' financial struggle
+                    - img [ref=e1604]
+                  - generic [ref=e1608]:
+                    - generic [ref=e1609]: Yahoo
+                    - generic [ref=e1610]: AAPL
+                    - generic [ref=e1611]: 5월 13일 오후 06:42
+            - link "Qualcomm, Micron Lead Brutal Chip Selloff -- Nvidia Holds Strong Qualcomm, Micron Lead Brutal Chip Selloff -- Nvidia Holds Strong Qualcomm Tumbles as Inflation Shock Sparks Semiconductor Selloff Yahoo AAPL 5월 13일 오후 06:40" [ref=e1613] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=0aad5c58ad234c639c22e5efe429b71ad6ca5165153a84b9d29523cf7958610a
+              - generic [ref=e1614]:
+                - img "Qualcomm, Micron Lead Brutal Chip Selloff -- Nvidia Holds Strong" [ref=e1616]
+                - generic [ref=e1617]:
+                  - generic [ref=e1618]:
+                    - generic [ref=e1619]:
+                      - heading "Qualcomm, Micron Lead Brutal Chip Selloff -- Nvidia Holds Strong" [level=3] [ref=e1620]
+                      - paragraph [ref=e1621]: Qualcomm Tumbles as Inflation Shock Sparks Semiconductor Selloff
+                    - img [ref=e1622]
+                  - generic [ref=e1626]:
+                    - generic [ref=e1627]: Yahoo
+                    - generic [ref=e1628]: AAPL
+                    - generic [ref=e1629]: 5월 13일 오후 06:40
+            - link "President Trump arrives in Beijing with CEOs ahead of Xi meetings President Trump arrives in Beijing with CEOs ahead of Xi meetings CNBC's Eamon Javers reports on the latest news from Beijing. CNBC AAPL 5월 13일 오후 06:27" [ref=e1631] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=96d17ed9972315b1bb362f0bbeecff451648484e7197cc5ebd2566a2512c9aaf
+              - generic [ref=e1632]:
+                - img "President Trump arrives in Beijing with CEOs ahead of Xi meetings" [ref=e1634]
+                - generic [ref=e1635]:
+                  - generic [ref=e1636]:
+                    - generic [ref=e1637]:
+                      - heading "President Trump arrives in Beijing with CEOs ahead of Xi meetings" [level=3] [ref=e1638]
+                      - paragraph [ref=e1639]: CNBC's Eamon Javers reports on the latest news from Beijing.
+                    - img [ref=e1640]
+                  - generic [ref=e1644]:
+                    - generic [ref=e1645]: CNBC
+                    - generic [ref=e1646]: AAPL
+                    - generic [ref=e1647]: 5월 13일 오후 06:27
+            - link "We have to keep the frontier chips out of the hands of China, says Chris Krebs We have to keep the frontier chips out of the hands of China, says Chris Krebs Chris Krebs, The Krebs Group founder and former CISA director, joins 'Squawk Box' to discuss the Trump-Xi summit, state of the U.S.-China tech race, and more. CNBC AAPL 5월 13일 오후 06:19" [ref=e1649] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=008f1f18b26a3dd98d326b5ce579485c1bb196751805b2686203501af0238bc9
+              - generic [ref=e1650]:
+                - img "We have to keep the frontier chips out of the hands of China, says Chris Krebs" [ref=e1652]
+                - generic [ref=e1653]:
+                  - generic [ref=e1654]:
+                    - generic [ref=e1655]:
+                      - heading "We have to keep the frontier chips out of the hands of China, says Chris Krebs" [level=3] [ref=e1656]
+                      - paragraph [ref=e1657]: Chris Krebs, The Krebs Group founder and former CISA director, joins 'Squawk Box' to discuss the Trump-Xi summit, state of the U.S.-China tech race, and more.
+                    - img [ref=e1658]
+                  - generic [ref=e1662]:
+                    - generic [ref=e1663]: CNBC
+                    - generic [ref=e1664]: AAPL
+                    - generic [ref=e1665]: 5월 13일 오후 06:19
+            - link "Qnity Electronics Q1 2026 Earnings Call Transcript Qnity Electronics Q1 2026 Earnings Call Transcript Qnity Electronics (NYSE:Q) reported first-quarter financial results on Tuesday. The transcript from the company's first-quarter earnings call has been provided below. This transcript is brought to you by Benzinga APIs. For real-time access to our entire catalog, please visit https://www.benzinga.com/apis/ for a consultation. Access the full call at https://event.on24.com/wcc/r/5304863/13B583BE38AAAC829D30E77A12130D1F Summary Qnity Electronics Inc reported an 18% year-over-year increase in net sa Yahoo AAPL 5월 13일 오후 06:05" [ref=e1667] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=872cf84b70400810fd4c1ee317892081912bbc5a5a06617c29e8b7cad29fb532
+              - generic [ref=e1668]:
+                - img "Qnity Electronics Q1 2026 Earnings Call Transcript" [ref=e1670]
+                - generic [ref=e1671]:
+                  - generic [ref=e1672]:
+                    - generic [ref=e1673]:
+                      - heading "Qnity Electronics Q1 2026 Earnings Call Transcript" [level=3] [ref=e1674]
+                      - paragraph [ref=e1675]: Qnity Electronics (NYSE:Q) reported first-quarter financial results on Tuesday. The transcript from the company's first-quarter earnings call has been provided below. This transcript is brought to you by Benzinga APIs. For real-time access to our entire catalog, please visit https://www.benzinga.com/apis/ for a consultation. Access the full call at https://event.on24.com/wcc/r/5304863/13B583BE38AAAC829D30E77A12130D1F Summary Qnity Electronics Inc reported an 18% year-over-year increase in net sa
+                    - img [ref=e1676]
+                  - generic [ref=e1680]:
+                    - generic [ref=e1681]: Yahoo
+                    - generic [ref=e1682]: AAPL
+                    - generic [ref=e1683]: 5월 13일 오후 06:05
+            - 'link "Trump Just Flew to China With Elon Musk, Larry Fink, and Jensen Huang: Is a Trade Deal News About to Send Bitcoin to $90,000? Trump Just Flew to China With Elon Musk, Larry Fink, and Jensen Huang: Is a Trade Deal News About to Send Bitcoin to $90,000? Bitcoin price climbed to a 24-hour high of $81,000 as Trump-China trade news pushed BTC toward its most structurally significant resistance in months. The question now is whether the geopolitical narrative has enough legs to carry BTC through $90,000, or whether the move is front-running an outcome that hasn’t materialized ... Yahoo AAPL 5월 13일 오후 06:03" [ref=e1685] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=a199fbe514b63d08add987a17324c22230d07d2ba3fd10287c51fd238c171215
+              - generic [ref=e1686]:
+                - 'img "Trump Just Flew to China With Elon Musk, Larry Fink, and Jensen Huang: Is a Trade Deal News About to Send Bitcoin to $90,000?" [ref=e1688]'
+                - generic [ref=e1689]:
+                  - generic [ref=e1690]:
+                    - generic [ref=e1691]:
+                      - 'heading "Trump Just Flew to China With Elon Musk, Larry Fink, and Jensen Huang: Is a Trade Deal News About to Send Bitcoin to $90,000?" [level=3] [ref=e1692]'
+                      - paragraph [ref=e1693]: Bitcoin price climbed to a 24-hour high of $81,000 as Trump-China trade news pushed BTC toward its most structurally significant resistance in months. The question now is whether the geopolitical narrative has enough legs to carry BTC through $90,000, or whether the move is front-running an outcome that hasn’t materialized ...
+                    - img [ref=e1694]
+                  - generic [ref=e1698]:
+                    - generic [ref=e1699]: Yahoo
+                    - generic [ref=e1700]: AAPL
+                    - generic [ref=e1701]: 5월 13일 오후 06:03
+            - 'link "Stock Market Today: Dow Jones Futures Fall, Nasdaq Gains As Trump Takes Big Tech Leaders To China— Nvidia, Nextpower, Red Cat In Focus (UPDATED) Stock Market Today: Dow Jones Futures Fall, Nasdaq Gains As Trump Takes Big Tech Leaders To China— Nvidia, Nextpower, Red Cat In Focus (UPDATED) (Editor’s note: The future prices of benchmark tracking ETFs, and the headline, the lede and the economic were updated in the story.) U.S. stock futures were mixed on Wednesday after Monday’s mostly lower close. Dow Jones futures fell, whereas S&amp;P 500 and Nasdaq 100 indices were rising. Benzinga AAPL 5월 13일 오후 05:52" [ref=e1703] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=12fce91c559513dbc5f3ace9a7732bbf44bbbb96186cba86aa3889cd2649f286
+              - generic [ref=e1704]:
+                - 'img "Stock Market Today: Dow Jones Futures Fall, Nasdaq Gains As Trump Takes Big Tech Leaders To China— Nvidia, Nextpower, Red Cat In Focus (UPDATED)" [ref=e1706]'
+                - generic [ref=e1707]:
+                  - generic [ref=e1708]:
+                    - generic [ref=e1709]:
+                      - 'heading "Stock Market Today: Dow Jones Futures Fall, Nasdaq Gains As Trump Takes Big Tech Leaders To China— Nvidia, Nextpower, Red Cat In Focus (UPDATED)" [level=3] [ref=e1710]'
+                      - paragraph [ref=e1711]: "(Editor’s note: The future prices of benchmark tracking ETFs, and the headline, the lede and the economic were updated in the story.) U.S. stock futures were mixed on Wednesday after Monday’s mostly lower close. Dow Jones futures fell, whereas S&amp;P 500 and Nasdaq 100 indices were rising."
+                    - img [ref=e1712]
+                  - generic [ref=e1716]:
+                    - generic [ref=e1717]: Benzinga
+                    - generic [ref=e1718]: AAPL
+                    - generic [ref=e1719]: 5월 13일 오후 05:52
+            - link "Warren Buffett Reveals Why Berkshire's Portfolio Hasn't Changed Much in Recent Years Warren Buffett Reveals Why Berkshire's Portfolio Hasn't Changed Much in Recent Years Just five stocks account for 60% of Berkshire's holdings -- that percentage was even higher in the past. Yahoo AAPL 5월 13일 오후 05:35" [ref=e1721] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=53bc753b177f7d1a718b17110c0e9bb300aa32728c6d68f38296f38859ba6496
+              - generic [ref=e1722]:
+                - img "Warren Buffett Reveals Why Berkshire's Portfolio Hasn't Changed Much in Recent Years" [ref=e1724]
+                - generic [ref=e1725]:
+                  - generic [ref=e1726]:
+                    - generic [ref=e1727]:
+                      - heading "Warren Buffett Reveals Why Berkshire's Portfolio Hasn't Changed Much in Recent Years" [level=3] [ref=e1728]
+                      - paragraph [ref=e1729]: Just five stocks account for 60% of Berkshire's holdings -- that percentage was even higher in the past.
+                    - img [ref=e1730]
+                  - generic [ref=e1734]:
+                    - generic [ref=e1735]: Yahoo
+                    - generic [ref=e1736]: AAPL
+                    - generic [ref=e1737]: 5월 13일 오후 05:35
+            - 'link "For the first time China has leverage over foreign countries: Fmr. Under Secretary of State Hormats For the first time China has leverage over foreign countries: Fmr. Under Secretary of State Hormats Bob Hormats, former Goldman Sachs International vice chairman and former Under Secretary of State, joins ''Squawk Box'' to discuss President Trump''s two-day summit in China with President Xi Jinping, state of U.S.-China relations, and more. CNBC AAPL 5월 13일 오후 05:06" [ref=e1739] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=6b7487577d354df60a344b8e53f481b8dfb397c0834b42ddbe5a15b8df0a6fbe
+              - generic [ref=e1740]:
+                - 'img "For the first time China has leverage over foreign countries: Fmr. Under Secretary of State Hormats" [ref=e1742]'
+                - generic [ref=e1743]:
+                  - generic [ref=e1744]:
+                    - generic [ref=e1745]:
+                      - 'heading "For the first time China has leverage over foreign countries: Fmr. Under Secretary of State Hormats" [level=3] [ref=e1746]'
+                      - paragraph [ref=e1747]: Bob Hormats, former Goldman Sachs International vice chairman and former Under Secretary of State, joins 'Squawk Box' to discuss President Trump's two-day summit in China with President Xi Jinping, state of U.S.-China relations, and more.
+                    - img [ref=e1748]
+                  - generic [ref=e1752]:
+                    - generic [ref=e1753]: CNBC
+                    - generic [ref=e1754]: AAPL
+                    - generic [ref=e1755]: 5월 13일 오후 05:06
+            - 'link "How to Beat the S&P 500 With a Dividend ETF: Give Up the Dividend. How to Beat the S&P 500 With a Dividend ETF: Give Up the Dividend. First Trust Rising Dividend Achievers has returned an annual 15.8% over the past 10 years. But don’t look too closely at its dividend. Yahoo AAPL 5월 13일 오후 04:58" [ref=e1757] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=d92719778e3139b81404ee7276f3bfc6d2f7ec0d7b25b142caf5ad77429469ca
+              - generic [ref=e1758]:
+                - 'img "How to Beat the S&P 500 With a Dividend ETF: Give Up the Dividend." [ref=e1760]'
+                - generic [ref=e1761]:
+                  - generic [ref=e1762]:
+                    - generic [ref=e1763]:
+                      - 'heading "How to Beat the S&P 500 With a Dividend ETF: Give Up the Dividend." [level=3] [ref=e1764]'
+                      - paragraph [ref=e1765]: First Trust Rising Dividend Achievers has returned an annual 15.8% over the past 10 years. But don’t look too closely at its dividend.
+                    - img [ref=e1766]
+                  - generic [ref=e1770]:
+                    - generic [ref=e1771]: Yahoo
+                    - generic [ref=e1772]: AAPL
+                    - generic [ref=e1773]: 5월 13일 오후 04:58
+            - link "1 Unstoppable Stock to Buy Before It Joins Nvidia, Alphabet, Apple, and Microsoft in the $3 Trillion Club 1 Unstoppable Stock to Buy Before It Joins Nvidia, Alphabet, Apple, and Microsoft in the $3 Trillion Club This semiconductor leader has added more than $1 trillion in market cap over the past year. There's likely more to come. Yahoo AAPL 5월 13일 오후 04:22" [ref=e1775] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=02d9df913daa08cf4823fafe3fba7eea8fcf92797717c59563e467f6abc06dc2
+              - generic [ref=e1776]:
+                - img "1 Unstoppable Stock to Buy Before It Joins Nvidia, Alphabet, Apple, and Microsoft in the $3 Trillion Club" [ref=e1778]
+                - generic [ref=e1779]:
+                  - generic [ref=e1780]:
+                    - generic [ref=e1781]:
+                      - heading "1 Unstoppable Stock to Buy Before It Joins Nvidia, Alphabet, Apple, and Microsoft in the $3 Trillion Club" [level=3] [ref=e1782]
+                      - paragraph [ref=e1783]: This semiconductor leader has added more than $1 trillion in market cap over the past year. There's likely more to come.
+                    - img [ref=e1784]
+                  - generic [ref=e1788]:
+                    - generic [ref=e1789]: Yahoo
+                    - generic [ref=e1790]: AAPL
+                    - generic [ref=e1791]: 5월 13일 오후 04:22
+            - link "Why Are Intel (INTC) Shares Soaring Today Why Are Intel (INTC) Shares Soaring Today Shares of computer processor maker Intel (NASDAQ:INTC) jumped 14.1% in the afternoon session after reports surfaced that Apple has engaged in preliminary discussions with the company about manufacturing processors in the United States. Yahoo AAPL 5월 13일 오후 03:28" [ref=e1793] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=480499aeecc8888153a082c9847c8e6e92015c6e0536aa543ba2c52cd59ad079
+              - generic [ref=e1794]:
+                - img "Why Are Intel (INTC) Shares Soaring Today" [ref=e1796]
+                - generic [ref=e1797]:
+                  - generic [ref=e1798]:
+                    - generic [ref=e1799]:
+                      - heading "Why Are Intel (INTC) Shares Soaring Today" [level=3] [ref=e1800]
+                      - paragraph [ref=e1801]: Shares of computer processor maker Intel (NASDAQ:INTC) jumped 14.1% in the afternoon session after reports surfaced that Apple has engaged in preliminary discussions with the company about manufacturing processors in the United States.
+                    - img [ref=e1802]
+                  - generic [ref=e1806]:
+                    - generic [ref=e1807]: Yahoo
+                    - generic [ref=e1808]: AAPL
+                    - generic [ref=e1809]: 5월 13일 오후 03:28
+            - 'link "Howard Marks Warned Me About S&P 500 Valuations: I Ignored Him and My Portfolio Doubled Howard Marks Warned Me About S&P 500 Valuations: I Ignored Him and My Portfolio Doubled On a recent episode of My First Million, Sam Parr told his co-host Shaan Puri that he keeps 80% of his portfolio in the S&P 500, which would not be remarkable except for who told him not to. Howard Marks, the Oaktree co-founder whose memos move money around the world, had sat in that same ... Howard Marks Warned Me About S&P 500 Valuations: I Ignored Him and My Portfolio Doubled Yahoo AAPL 5월 13일 오후 03:24" [ref=e1811] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=b9f9650881ed8ebf5c3f30e2e00d8a734f4507d887c62e09eb475ff02f8466de
+              - generic [ref=e1812]:
+                - 'img "Howard Marks Warned Me About S&P 500 Valuations: I Ignored Him and My Portfolio Doubled" [ref=e1814]'
+                - generic [ref=e1815]:
+                  - generic [ref=e1816]:
+                    - generic [ref=e1817]:
+                      - 'heading "Howard Marks Warned Me About S&P 500 Valuations: I Ignored Him and My Portfolio Doubled" [level=3] [ref=e1818]'
+                      - paragraph [ref=e1819]: "On a recent episode of My First Million, Sam Parr told his co-host Shaan Puri that he keeps 80% of his portfolio in the S&P 500, which would not be remarkable except for who told him not to. Howard Marks, the Oaktree co-founder whose memos move money around the world, had sat in that same ... Howard Marks Warned Me About S&P 500 Valuations: I Ignored Him and My Portfolio Doubled"
+                    - img [ref=e1820]
+                  - generic [ref=e1824]:
+                    - generic [ref=e1825]: Yahoo
+                    - generic [ref=e1826]: AAPL
+                    - generic [ref=e1827]: 5월 13일 오후 03:24
+            - link "Nvidia CEO Jensen Huang Joins Trump's China Delegation Nvidia CEO Jensen Huang Joins Trump's China Delegation Can Jensen Huang bridge the AI divide? Analysis of Trump&#39;s China delegation, NVIDIA&#39;s export hurdles, and the race for chip supremacy. Benzinga AAPL 5월 13일 오후 03:17" [ref=e1829] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=318565bc4be0b29974f0a5e71b35210562b63efe08647161e6561328d2bd9497
+              - generic [ref=e1830]:
+                - img "Nvidia CEO Jensen Huang Joins Trump's China Delegation" [ref=e1832]
+                - generic [ref=e1833]:
+                  - generic [ref=e1834]:
+                    - generic [ref=e1835]:
+                      - heading "Nvidia CEO Jensen Huang Joins Trump's China Delegation" [level=3] [ref=e1836]
+                      - paragraph [ref=e1837]: Can Jensen Huang bridge the AI divide? Analysis of Trump&#39;s China delegation, NVIDIA&#39;s export hurdles, and the race for chip supremacy.
+                    - img [ref=e1838]
+                  - generic [ref=e1842]:
+                    - generic [ref=e1843]: Benzinga
+                    - generic [ref=e1844]: AAPL
+                    - generic [ref=e1845]: 5월 13일 오후 03:17
+            - link "Apple Intel Foundry Talks Put ASML At Center Of Chip Shift Apple Intel Foundry Talks Put ASML At Center Of Chip Shift Apple and Intel are reported to be working on a foundry agreement that could trigger a multi billion euro order for ENXTAM:ASML lithography systems. The potential order focuses on next generation chip manufacturing capacity at a time when TSMC is delaying adoption of ASML's latest High-NA EUV systems. This development reinforces ASML's monopoly position in advanced lithography equipment as Western tech companies diversify their manufacturing partnerships. For readers tracking ENXTAM:ASML,... Yahoo AAPL 5월 13일 오후 03:12" [ref=e1847] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=c4f8474ec8b602dcdbfeb05346483b11e1e4f1023b39b541ab9987a971f666dd
+              - generic [ref=e1848]:
+                - img "Apple Intel Foundry Talks Put ASML At Center Of Chip Shift" [ref=e1850]
+                - generic [ref=e1851]:
+                  - generic [ref=e1852]:
+                    - generic [ref=e1853]:
+                      - heading "Apple Intel Foundry Talks Put ASML At Center Of Chip Shift" [level=3] [ref=e1854]
+                      - paragraph [ref=e1855]: Apple and Intel are reported to be working on a foundry agreement that could trigger a multi billion euro order for ENXTAM:ASML lithography systems. The potential order focuses on next generation chip manufacturing capacity at a time when TSMC is delaying adoption of ASML's latest High-NA EUV systems. This development reinforces ASML's monopoly position in advanced lithography equipment as Western tech companies diversify their manufacturing partnerships. For readers tracking ENXTAM:ASML,...
+                    - img [ref=e1856]
+                  - generic [ref=e1860]:
+                    - generic [ref=e1861]: Yahoo
+                    - generic [ref=e1862]: AAPL
+                    - generic [ref=e1863]: 5월 13일 오후 03:12
+            - link "Flanked by tech billionaires, Trump heads to China holding few cards Flanked by tech billionaires, Trump heads to China holding few cards Scrolling through Donald Trump’s Truth Social feed on Tuesday made for jarring reading. Yahoo AAPL 5월 13일 오후 02:30" [ref=e1865] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=3e6f63b41ebd63f0020fd9826958a7ee45be4542e60a5ee5b7c98991fdac9e07
+              - generic [ref=e1866]:
+                - img "Flanked by tech billionaires, Trump heads to China holding few cards" [ref=e1868]
+                - generic [ref=e1869]:
+                  - generic [ref=e1870]:
+                    - generic [ref=e1871]:
+                      - heading "Flanked by tech billionaires, Trump heads to China holding few cards" [level=3] [ref=e1872]
+                      - paragraph [ref=e1873]: Scrolling through Donald Trump’s Truth Social feed on Tuesday made for jarring reading.
+                    - img [ref=e1874]
+                  - generic [ref=e1878]:
+                    - generic [ref=e1879]: Yahoo
+                    - generic [ref=e1880]: AAPL
+                    - generic [ref=e1881]: 5월 13일 오후 02:30
+            - link "Intel Is 'Still Undervalued:' Why Dan Niles Sees Massive AI Opportunity Beyond Nvidia's GPU Boom Intel Is 'Still Undervalued:' Why Dan Niles Sees Massive AI Opportunity Beyond Nvidia's GPU Boom Discover why hedge fund manager Dan Niles calls Intel &#34;still undervalued&#34; as Agentic AI drives a massive shift from Nvidia GPUs to CPUs. Benzinga AAPL 5월 13일 오후 12:46" [ref=e1883] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=debd30ba0dd60aad96980d8db690e1d61b7f0dd934be866ab26f99aad7f82da9
+              - generic [ref=e1884]:
+                - img "Intel Is 'Still Undervalued:' Why Dan Niles Sees Massive AI Opportunity Beyond Nvidia's GPU Boom" [ref=e1886]
+                - generic [ref=e1887]:
+                  - generic [ref=e1888]:
+                    - generic [ref=e1889]:
+                      - heading "Intel Is 'Still Undervalued:' Why Dan Niles Sees Massive AI Opportunity Beyond Nvidia's GPU Boom" [level=3] [ref=e1890]
+                      - paragraph [ref=e1891]: Discover why hedge fund manager Dan Niles calls Intel &#34;still undervalued&#34; as Agentic AI drives a massive shift from Nvidia GPUs to CPUs.
+                    - img [ref=e1892]
+                  - generic [ref=e1896]:
+                    - generic [ref=e1897]: Benzinga
+                    - generic [ref=e1898]: AAPL
+                    - generic [ref=e1899]: 5월 13일 오후 12:46
+            - 'link "Dow Jones Futures: Nvidia''s Huang Joins Trump''s China Trip; How To Handle Sandisk, Micron, Intel Dow Jones Futures: Nvidia''s Huang Joins Trump''s China Trip; How To Handle Sandisk, Micron, Intel Nvidia CEO Jensen Huang is joining President Trump''s China trip. Investors need sell rules for big AI winners such as Sandisk, Micron and Intel. Yahoo AAPL 5월 13일 오후 12:09" [ref=e1901] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=964da1eaaf72a32caaacf63306beb605def5e1cbe81eb1b87a01a3e58430f7ed
+              - generic [ref=e1902]:
+                - 'img "Dow Jones Futures: Nvidia''s Huang Joins Trump''s China Trip; How To Handle Sandisk, Micron, Intel" [ref=e1904]'
+                - generic [ref=e1905]:
+                  - generic [ref=e1906]:
+                    - generic [ref=e1907]:
+                      - 'heading "Dow Jones Futures: Nvidia''s Huang Joins Trump''s China Trip; How To Handle Sandisk, Micron, Intel" [level=3] [ref=e1908]'
+                      - paragraph [ref=e1909]: Nvidia CEO Jensen Huang is joining President Trump's China trip. Investors need sell rules for big AI winners such as Sandisk, Micron and Intel.
+                    - img [ref=e1910]
+                  - generic [ref=e1914]:
+                    - generic [ref=e1915]: Yahoo
+                    - generic [ref=e1916]: AAPL
+                    - generic [ref=e1917]: 5월 13일 오후 12:09
+            - 'link "CNBC Daily Open: Huang on, Nvidia is on the China trip CNBC Daily Open: Huang on, Nvidia is on the China trip Nvidia CEO Jensen Huang becomes a last-minute addition to the Trump administration''s trip to China, despite restrictions in working with Beijing. CNBC AAPL 5월 13일 오전 10:44" [ref=e1919] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=d8393475a571f3e9e7f633805c02113e5f55906efb1e6cab1da9415053cbf07b
+              - generic [ref=e1920]:
+                - 'img "CNBC Daily Open: Huang on, Nvidia is on the China trip" [ref=e1922]'
+                - generic [ref=e1923]:
+                  - generic [ref=e1924]:
+                    - generic [ref=e1925]:
+                      - 'heading "CNBC Daily Open: Huang on, Nvidia is on the China trip" [level=3] [ref=e1926]'
+                      - paragraph [ref=e1927]: Nvidia CEO Jensen Huang becomes a last-minute addition to the Trump administration's trip to China, despite restrictions in working with Beijing.
+                    - img [ref=e1928]
+                  - generic [ref=e1932]:
+                    - generic [ref=e1933]: CNBC
+                    - generic [ref=e1934]: AAPL
+                    - generic [ref=e1935]: 5월 13일 오전 10:44
+            - 'link "Dow Jones Futures: AI Stocks Pare Big Losses; How To Handle Sandisk, Micron, Intel Dow Jones Futures: AI Stocks Pare Big Losses; How To Handle Sandisk, Micron, Intel The Nasdaq fell as AI and chip stocks retreated, but they came off lows. Investors need sell rules for big AI winners such as Sandisk, Micron and Intel. Yahoo AAPL 5월 13일 오전 06:55" [ref=e1937] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=e0ea23168185f6d74c248f53bbdbccb5587f99ae6cbbae669de33d4745bd4f86
+              - generic [ref=e1938]:
+                - 'img "Dow Jones Futures: AI Stocks Pare Big Losses; How To Handle Sandisk, Micron, Intel" [ref=e1940]'
+                - generic [ref=e1941]:
+                  - generic [ref=e1942]:
+                    - generic [ref=e1943]:
+                      - 'heading "Dow Jones Futures: AI Stocks Pare Big Losses; How To Handle Sandisk, Micron, Intel" [level=3] [ref=e1944]'
+                      - paragraph [ref=e1945]: The Nasdaq fell as AI and chip stocks retreated, but they came off lows. Investors need sell rules for big AI winners such as Sandisk, Micron and Intel.
+                    - img [ref=e1946]
+                  - generic [ref=e1950]:
+                    - generic [ref=e1951]: Yahoo
+                    - generic [ref=e1952]: AAPL
+                    - generic [ref=e1953]: 5월 13일 오전 06:55
+            - 'link "Trump Personally Calls Nvidia CEO Jensen Huang To Join China Trip At Last Minute Amid Backlash Over AI Chip Sales To Beijing: Report Trump Personally Calls Nvidia CEO Jensen Huang To Join China Trip At Last Minute Amid Backlash Over AI Chip Sales To Beijing: Report Trump reportedly personally urged Nvidia CEO Jensen Huang to join his China trip at the last minute amid backlash. Benzinga AAPL 5월 13일 오전 10:35" [ref=e1955] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=a81edf01c673ba3e0d7ec12e78e42b26853a08259292f617ce2545733dc62b27
+              - generic [ref=e1956]:
+                - 'img "Trump Personally Calls Nvidia CEO Jensen Huang To Join China Trip At Last Minute Amid Backlash Over AI Chip Sales To Beijing: Report" [ref=e1958]'
+                - generic [ref=e1959]:
+                  - generic [ref=e1960]:
+                    - generic [ref=e1961]:
+                      - 'heading "Trump Personally Calls Nvidia CEO Jensen Huang To Join China Trip At Last Minute Amid Backlash Over AI Chip Sales To Beijing: Report" [level=3] [ref=e1962]'
+                      - paragraph [ref=e1963]: Trump reportedly personally urged Nvidia CEO Jensen Huang to join his China trip at the last minute amid backlash.
+                    - img [ref=e1964]
+                  - generic [ref=e1968]:
+                    - generic [ref=e1969]: Benzinga
+                    - generic [ref=e1970]: AAPL
+                    - generic [ref=e1971]: 5월 13일 오전 10:35
+            - link "Nvidia's Jensen Huang to join Trump's China visit, sources say Nvidia's Jensen Huang to join Trump's China visit, sources say Nvidia CEO Jensen ‌Huang will join over a dozen U.S. CEOs on President Donald Trump's visit to China this week, two sources familiar ‌with the ⁠matter told Reuters on Wednesday. Huang did not ⁠appear on an initial list of executives provided by the White House earlier this week. Nvidia's powerful H200 chips have not yet been sold to China, a U.S. official said last month, citing ‌difficulties getting permission from the Chinese government. Yahoo AAPL 5월 13일 오전 10:34" [ref=e1973] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=6e51d25d975aabae58f56fad08621e01b0aab27b116ebb7563f76813dd4ea299
+              - generic [ref=e1974]:
+                - img "Nvidia's Jensen Huang to join Trump's China visit, sources say" [ref=e1976]
+                - generic [ref=e1977]:
+                  - generic [ref=e1978]:
+                    - generic [ref=e1979]:
+                      - heading "Nvidia's Jensen Huang to join Trump's China visit, sources say" [level=3] [ref=e1980]
+                      - paragraph [ref=e1981]: Nvidia CEO Jensen ‌Huang will join over a dozen U.S. CEOs on President Donald Trump's visit to China this week, two sources familiar ‌with the ⁠matter told Reuters on Wednesday. Huang did not ⁠appear on an initial list of executives provided by the White House earlier this week. Nvidia's powerful H200 chips have not yet been sold to China, a U.S. official said last month, citing ‌difficulties getting permission from the Chinese government.
+                    - img [ref=e1982]
+                  - generic [ref=e1986]:
+                    - generic [ref=e1987]: Yahoo
+                    - generic [ref=e1988]: AAPL
+                    - generic [ref=e1989]: 5월 13일 오전 10:34
+            - link "Apple’s India Clean Energy Push And AI Plans Test Investor Expectations Apple’s India Clean Energy Push And AI Plans Test Investor Expectations Apple (NasdaqGS:AAPL) has partnered with CleanMax to expand renewable energy capacity in India, directly supporting its 2030 carbon neutrality target. The company is preparing to outline a major AI strategy at its upcoming Worldwide Developers Conference, where new CEO John Ternus is expected to set the tone on AI and services. Both developments focus on India as a key operating base and on how Apple plans to develop its services and AI ecosystem. Apple, trading at $294.8, enters this news... Yahoo AAPL 5월 13일 오전 09:28" [ref=e1991] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=c30d853502d9eb1baac1392dbbf875b5de8a676a6a7d9b309d2763c6da9421f2
+              - generic [ref=e1992]:
+                - img "Apple’s India Clean Energy Push And AI Plans Test Investor Expectations" [ref=e1994]
+                - generic [ref=e1995]:
+                  - generic [ref=e1996]:
+                    - generic [ref=e1997]:
+                      - heading "Apple’s India Clean Energy Push And AI Plans Test Investor Expectations" [level=3] [ref=e1998]
+                      - paragraph [ref=e1999]: Apple (NasdaqGS:AAPL) has partnered with CleanMax to expand renewable energy capacity in India, directly supporting its 2030 carbon neutrality target. The company is preparing to outline a major AI strategy at its upcoming Worldwide Developers Conference, where new CEO John Ternus is expected to set the tone on AI and services. Both developments focus on India as a key operating base and on how Apple plans to develop its services and AI ecosystem. Apple, trading at $294.8, enters this news...
+                    - img [ref=e2000]
+                  - generic [ref=e2004]:
+                    - generic [ref=e2005]: Yahoo
+                    - generic [ref=e2006]: AAPL
+                    - generic [ref=e2007]: 5월 13일 오전 09:28
+            - 'link "Trump''s Meeting With Xi Jinping Gets Crypto Bettors Wagering On His Vocabulary: Iran, AI Or Tariffs — Here''re The Hottest Bets Trump''s Meeting With Xi Jinping Gets Crypto Bettors Wagering On His Vocabulary: Iran, AI Or Tariffs — Here''re The Hottest Bets Cryptocurrency punters are aggressively betting on what President Donald Trump will say when he travels to Beijing for a summit with Chinese President Xi Jinping later this week. Benzinga AAPL 5월 13일 오전 09:23" [ref=e2009] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=3398d17542ebdd7f605e9566a728c4bb18eaf11766e87db16241d9df7ed78aa1
+              - generic [ref=e2010]:
+                - 'img "Trump''s Meeting With Xi Jinping Gets Crypto Bettors Wagering On His Vocabulary: Iran, AI Or Tariffs — Here''re The Hottest Bets" [ref=e2012]'
+                - generic [ref=e2013]:
+                  - generic [ref=e2014]:
+                    - generic [ref=e2015]:
+                      - 'heading "Trump''s Meeting With Xi Jinping Gets Crypto Bettors Wagering On His Vocabulary: Iran, AI Or Tariffs — Here''re The Hottest Bets" [level=3] [ref=e2016]'
+                      - paragraph [ref=e2017]: Cryptocurrency punters are aggressively betting on what President Donald Trump will say when he travels to Beijing for a summit with Chinese President Xi Jinping later this week.
+                    - img [ref=e2018]
+                  - generic [ref=e2022]:
+                    - generic [ref=e2023]: Benzinga
+                    - generic [ref=e2024]: AAPL
+                    - generic [ref=e2025]: 5월 13일 오전 09:23
+            - link "'Trump And Republicans Blew That Up:' Gavin Newsom Warns America Is Losing EV War To China 'Trump And Republicans Blew That Up:' Gavin Newsom Warns America Is Losing EV War To China Gavin Newsom criticized Trump for allowing China to surpass America in the EV sector, citing a decline in manufacturing and jobs. Benzinga AAPL 5월 13일 오전 09:22" [ref=e2027] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=b55c0a8652f52f03fba0ffb8d9c3a662b78bd59c274b3879bd22ef1617a8ac23
+              - generic [ref=e2028]:
+                - img "'Trump And Republicans Blew That Up:' Gavin Newsom Warns America Is Losing EV War To China" [ref=e2030]
+                - generic [ref=e2031]:
+                  - generic [ref=e2032]:
+                    - generic [ref=e2033]:
+                      - heading "'Trump And Republicans Blew That Up:' Gavin Newsom Warns America Is Losing EV War To China" [level=3] [ref=e2034]
+                      - paragraph [ref=e2035]: Gavin Newsom criticized Trump for allowing China to surpass America in the EV sector, citing a decline in manufacturing and jobs.
+                    - img [ref=e2036]
+                  - generic [ref=e2040]:
+                    - generic [ref=e2041]: Benzinga
+                    - generic [ref=e2042]: AAPL
+                    - generic [ref=e2043]: 5월 13일 오전 09:22
+            - 'link "Stock market today: S&P 500, Nasdaq futures rise with fresh PPI inflation data on deck Stock market today: S&P 500, Nasdaq futures rise with fresh PPI inflation data on deck Focus is on the April wholesale inflation report in the wait for pdates on US-Iran talks and Trump''s trip to China. Yahoo AAPL 5월 13일 오전 07:30" [ref=e2045] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=a76e13fa365b420df9feee7de0ae5dcaa6b7d1769668eceffa6f390175d3a57d
+              - generic [ref=e2046]:
+                - 'img "Stock market today: S&P 500, Nasdaq futures rise with fresh PPI inflation data on deck" [ref=e2048]'
+                - generic [ref=e2049]:
+                  - generic [ref=e2050]:
+                    - generic [ref=e2051]:
+                      - 'heading "Stock market today: S&P 500, Nasdaq futures rise with fresh PPI inflation data on deck" [level=3] [ref=e2052]'
+                      - paragraph [ref=e2053]: Focus is on the April wholesale inflation report in the wait for pdates on US-Iran talks and Trump's trip to China.
+                    - img [ref=e2054]
+                  - generic [ref=e2058]:
+                    - generic [ref=e2059]: Yahoo
+                    - generic [ref=e2060]: AAPL
+                    - generic [ref=e2061]: 5월 13일 오전 07:30
+            - link "Melania Trump Reportedly Not Going To China With The President, Daughter-In-Law Shares 'Team CHYYYYYNA' Portrait Melania Trump Reportedly Not Going To China With The President, Daughter-In-Law Shares 'Team CHYYYYYNA' Portrait President Donald Trump visits China without First Lady Melania Trump for a shorter, more business-focused trip. Benzinga AAPL 5월 13일 오전 07:29" [ref=e2063] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=533f134093d75314ec35e87860b8f58974f5c109b4918b114a00becce7674b69
+              - generic [ref=e2064]:
+                - img "Melania Trump Reportedly Not Going To China With The President, Daughter-In-Law Shares 'Team CHYYYYYNA' Portrait" [ref=e2066]
+                - generic [ref=e2067]:
+                  - generic [ref=e2068]:
+                    - generic [ref=e2069]:
+                      - heading "Melania Trump Reportedly Not Going To China With The President, Daughter-In-Law Shares 'Team CHYYYYYNA' Portrait" [level=3] [ref=e2070]
+                      - paragraph [ref=e2071]: President Donald Trump visits China without First Lady Melania Trump for a shorter, more business-focused trip.
+                    - img [ref=e2072]
+                  - generic [ref=e2076]:
+                    - generic [ref=e2077]: Benzinga
+                    - generic [ref=e2078]: AAPL
+                    - generic [ref=e2079]: 5월 13일 오전 07:29
+            - link "Why Intel Corporation (INTC) Was One of the Top “Blue Chip” Stocks Suddenly on Fire in April Why Intel Corporation (INTC) Was One of the Top “Blue Chip” Stocks Suddenly on Fire in April Intel Corporation (NASDAQ:INTC) is one of the top “blue chip” stocks that were suddenly on fire in April. Reuters reported on May 5 that, according to Bloomberg News, Apple Inc held exploratory discussions regarding the use of Intel Corporation (NASDAQ:INTC) and Samsung Electronics for the production of the main processors for its devices. Apple executives […] Yahoo AAPL 5월 13일 오전 06:29" [ref=e2081] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=962f63a6a0dcc804bf35ee2da0ca857b35b63292522bdffdf74f1f0bcf2256e2
+              - generic [ref=e2082]:
+                - img "Why Intel Corporation (INTC) Was One of the Top “Blue Chip” Stocks Suddenly on Fire in April" [ref=e2084]
+                - generic [ref=e2085]:
+                  - generic [ref=e2086]:
+                    - generic [ref=e2087]:
+                      - heading "Why Intel Corporation (INTC) Was One of the Top “Blue Chip” Stocks Suddenly on Fire in April" [level=3] [ref=e2088]
+                      - paragraph [ref=e2089]: Intel Corporation (NASDAQ:INTC) is one of the top “blue chip” stocks that were suddenly on fire in April. Reuters reported on May 5 that, according to Bloomberg News, Apple Inc held exploratory discussions regarding the use of Intel Corporation (NASDAQ:INTC) and Samsung Electronics for the production of the main processors for its devices. Apple executives […]
+                    - img [ref=e2090]
+                  - generic [ref=e2094]:
+                    - generic [ref=e2095]: Yahoo
+                    - generic [ref=e2096]: AAPL
+                    - generic [ref=e2097]: 5월 13일 오전 06:29
+            - 'link "Alibaba earnings, Trump & Xi meet, PPI data: What to Watch Alibaba earnings, Trump & Xi meet, PPI data: What to Watch Market Domination Overtime host Josh Lipton takes a look at the top stories for investors to watch on Wednesday, May 13, including President Trump''s meeting with Chinese President Xi, Alibaba (BABA) and Cisco (CSCO) earnings, April''s Producer Price Index (PPI) data, and commentary from Federal Reserve officials. Yahoo AAPL 5월 13일 오전 05:49" [ref=e2099] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=5a64e3ccd5393cd48ea8afd510429352be136bf709d3169ec2060262b4afc092
+              - generic [ref=e2100]:
+                - 'img "Alibaba earnings, Trump & Xi meet, PPI data: What to Watch" [ref=e2102]'
+                - generic [ref=e2103]:
+                  - generic [ref=e2104]:
+                    - generic [ref=e2105]:
+                      - 'heading "Alibaba earnings, Trump & Xi meet, PPI data: What to Watch" [level=3] [ref=e2106]'
+                      - paragraph [ref=e2107]: Market Domination Overtime host Josh Lipton takes a look at the top stories for investors to watch on Wednesday, May 13, including President Trump's meeting with Chinese President Xi, Alibaba (BABA) and Cisco (CSCO) earnings, April's Producer Price Index (PPI) data, and commentary from Federal Reserve officials.
+                    - img [ref=e2108]
+                  - generic [ref=e2112]:
+                    - generic [ref=e2113]: Yahoo
+                    - generic [ref=e2114]: AAPL
+                    - generic [ref=e2115]: 5월 13일 오전 05:49
+            - link "Why Netflix spent so much money over the past decade Why Netflix spent so much money over the past decade Yahoo Finance Senior Reporter Brooke DiPalma breaks down Netflix's (NFLX) massive spending over the past 10 years. Yahoo AAPL 5월 13일 오전 04:33" [ref=e2117] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=63f2f3da3f3a0f546b7c235e70fdc5c0b25654a991b43885dbaf1b23d6fe06c4
+              - generic [ref=e2118]:
+                - img "Why Netflix spent so much money over the past decade" [ref=e2120]
+                - generic [ref=e2121]:
+                  - generic [ref=e2122]:
+                    - generic [ref=e2123]:
+                      - heading "Why Netflix spent so much money over the past decade" [level=3] [ref=e2124]
+                      - paragraph [ref=e2125]: Yahoo Finance Senior Reporter Brooke DiPalma breaks down Netflix's (NFLX) massive spending over the past 10 years.
+                    - img [ref=e2126]
+                  - generic [ref=e2130]:
+                    - generic [ref=e2131]: Yahoo
+                    - generic [ref=e2132]: AAPL
+                    - generic [ref=e2133]: 5월 13일 오전 04:33
+            - 'link "Tower Semiconductor poised for Q1 earnings beat on strong industry trends: Wedbush Tower Semiconductor poised for Q1 earnings beat on strong industry trends: Wedbush Tower Semiconductor (NASDAQ:TSEM) is set to report first quarter earnings before the market opens Wednesday, with investors expected to focus closely on the company’s long-term growth outlook and management commentary around future capacity expansion. Wedbush analysts wrote that they expect... Yahoo AAPL 5월 13일 오전 04:12" [ref=e2135] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=a7516cc978a32e5cf8de9f48b6fab5a91b2ff45e4f93d5eb9e887f458e16e0fc
+              - generic [ref=e2136]:
+                - 'img "Tower Semiconductor poised for Q1 earnings beat on strong industry trends: Wedbush" [ref=e2138]'
+                - generic [ref=e2139]:
+                  - generic [ref=e2140]:
+                    - generic [ref=e2141]:
+                      - 'heading "Tower Semiconductor poised for Q1 earnings beat on strong industry trends: Wedbush" [level=3] [ref=e2142]'
+                      - paragraph [ref=e2143]: Tower Semiconductor (NASDAQ:TSEM) is set to report first quarter earnings before the market opens Wednesday, with investors expected to focus closely on the company’s long-term growth outlook and management commentary around future capacity expansion. Wedbush analysts wrote that they expect...
+                    - img [ref=e2144]
+                  - generic [ref=e2148]:
+                    - generic [ref=e2149]: Yahoo
+                    - generic [ref=e2150]: AAPL
+                    - generic [ref=e2151]: 5월 13일 오전 04:12
+            - link "Intel’s Big Rally Continues, But Much of the Optimism Is Already Priced In Intel’s Big Rally Continues, But Much of the Optimism Is Already Priced In Intel’s remarkable rally reflects growing investor confidence in the company’s turnaround efforts and its expanding role in the AI infrastructure boom. Yahoo AAPL 5월 13일 오전 04:02" [ref=e2153] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=c6ad33c5cd399c7639d19244487f0cb4faef489d7261f1ea9f04385a6390151a
+              - generic [ref=e2154]:
+                - img "Intel’s Big Rally Continues, But Much of the Optimism Is Already Priced In" [ref=e2156]
+                - generic [ref=e2157]:
+                  - generic [ref=e2158]:
+                    - generic [ref=e2159]:
+                      - heading "Intel’s Big Rally Continues, But Much of the Optimism Is Already Priced In" [level=3] [ref=e2160]
+                      - paragraph [ref=e2161]: Intel’s remarkable rally reflects growing investor confidence in the company’s turnaround efforts and its expanding role in the AI infrastructure boom.
+                    - img [ref=e2162]
+                  - generic [ref=e2166]:
+                    - generic [ref=e2167]: Yahoo
+                    - generic [ref=e2168]: AAPL
+                    - generic [ref=e2169]: 5월 13일 오전 04:02
+            - link [ref=e2171] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=64f3908d96aa3bc7e2230540f99440a2eb39ef11cea20464518521ad6b3d321d
+              - generic [ref=e2172]:
+                - img "U.S. CEOs seek China business gains from Trump-Xi summit" [ref=e2174]
+                - generic [ref=e2175]:
+                  - generic [ref=e2176]:
+                    - generic [ref=e2177]:
+                      - heading "U.S. CEOs seek China business gains from Trump-Xi summit" [level=3] [ref=e2178]
+                      - paragraph [ref=e2179]: "STORY: It’s a who’s who of the business world heading to China with U.S. President Donald Trump this week as he meets with Chinese President Xi Jinping. Elon Musk, Apple’s Tim Cook and others will make the trip, according to a White House official.Sources say the companies hope the summit will generate enough political goodwill to unlock regulatory approvals, market access and investment opportunities.One of the sources said a critical precondition for companies to join the trip was having a (QUOTE) \"tangible ask\" that promised a concrete outcome or handshake deal during or after the summit.None of the companies responded to requests for comment on their goals for outcomes from the summit.In Musk’s case, China is weighing curbs on exports of solar manufacturing equipment to the United States, which could threaten plans by Tesla to build new factories or expand existing ones to boost local production.In March, Reuters reported that Tesla was looking to buy $2.9 billion of equipment for making solar panels from Chinese suppliers.Tesla is also seeking Chinese regulatory clearance to expand the adoption of its Full Self-Driving assistance system in the world's largest auto market.Boeing’s CEO Kelly Ortberg told Reuters last month that the U.S. plane maker was counting on the Trump administration to help unlock a long-awaited major order from China.China and Boeing have been in prolonged talks for a deal that industry sources say could include 500 737 MAX jets, plus dozens of widebody jets powered by GE engines.One CEO not making the trip is Nvidia’s Jensen Huang, a person familiar with the matter said on Monday.Huang was not invited, the source said, with the White House focusing more on agriculture and commercial aviation matters on the current trip. Nvidia has been pushing the administration to allow it to sell some of its AI chips to Beijing.The White House did not immediately respond to a request for comment."
+                    - img [ref=e2180]
+                  - generic [ref=e2184]:
+                    - generic [ref=e2185]: Yahoo
+                    - generic [ref=e2186]: AAPL
+                    - generic [ref=e2187]: 5월 13일 오전 03:16
+            - link "Apple Inc (AAPL) Partners with CleanMax to Enhance Renewable Energy Capacity in India Apple Inc (AAPL) Partners with CleanMax to Enhance Renewable Energy Capacity in India Apple Inc. (NASDAQ:AAPL) is one of the top tech stocks in Louis Navellier’s portfolio. On May 7, Apple unveiled new initiatives aimed at expanding renewable energy infrastructure, reducing plastic pollution, and fostering green entrepreneurship in India. The company has inked a strategic partnership with clean energy developer CleanMax as part of a new effort to […] Yahoo AAPL 5월 13일 오전 03:14" [ref=e2189] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=d831b88f4ac9953ce3770677cedb46cc3ed86fece4fbc4ee9b09c9b8ebe8aad6
+              - generic [ref=e2190]:
+                - img "Apple Inc (AAPL) Partners with CleanMax to Enhance Renewable Energy Capacity in India" [ref=e2192]
+                - generic [ref=e2193]:
+                  - generic [ref=e2194]:
+                    - generic [ref=e2195]:
+                      - heading "Apple Inc (AAPL) Partners with CleanMax to Enhance Renewable Energy Capacity in India" [level=3] [ref=e2196]
+                      - paragraph [ref=e2197]: Apple Inc. (NASDAQ:AAPL) is one of the top tech stocks in Louis Navellier’s portfolio. On May 7, Apple unveiled new initiatives aimed at expanding renewable energy infrastructure, reducing plastic pollution, and fostering green entrepreneurship in India. The company has inked a strategic partnership with clean energy developer CleanMax as part of a new effort to […]
+                    - img [ref=e2198]
+                  - generic [ref=e2202]:
+                    - generic [ref=e2203]: Yahoo
+                    - generic [ref=e2204]: AAPL
+                    - generic [ref=e2205]: 5월 13일 오전 03:14
+            - link "Curious about the most active S&P500 stocks in today's session? Curious about the most active S&P500 stocks in today's session? Stay informed about the most active stocks in the S&P500 index on Tuesday's session. Discover the stocks that are generating the highest trading volume and driving market activity. ChartMill AAPL 5월 13일 오전 03:05" [ref=e2207] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=788882beaf4211666566e4fd75b108bfd7c32f660dcfa7adf67f129917127f4d
+              - generic [ref=e2208]:
+                - img "Curious about the most active S&P500 stocks in today's session?" [ref=e2210]
+                - generic [ref=e2211]:
+                  - generic [ref=e2212]:
+                    - generic [ref=e2213]:
+                      - heading "Curious about the most active S&P500 stocks in today's session?" [level=3] [ref=e2214]
+                      - paragraph [ref=e2215]: Stay informed about the most active stocks in the S&P500 index on Tuesday's session. Discover the stocks that are generating the highest trading volume and driving market activity.
+                    - img [ref=e2216]
+                  - generic [ref=e2220]:
+                    - generic [ref=e2221]: ChartMill
+                    - generic [ref=e2222]: AAPL
+                    - generic [ref=e2223]: 5월 13일 오전 03:05
+            - link "Intel Crashes 10%, AMD Slides 5% as Chip Trade Cools After Parabolic Run Intel Crashes 10%, AMD Slides 5% as Chip Trade Cools After Parabolic Run Shares of Intel (NASDAQ:INTC) are down 10% in Tuesday trading, changing hands near $116 after closing at $129.44 on Monday. Advanced Micro Devices (NASDAQ:AMD) is sliding alongside, off 5% at roughly $436. The selloff lands after both names ripped through a parabolic stretch. Intel stock gained 35% in the week ending May 11, while AMD ... Intel Crashes 10%, AMD Slides 5% as Chip Trade Cools After Parabolic Run Yahoo AAPL 5월 13일 오전 02:58" [ref=e2225] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=7afaf2777e3717117dd9a1a14c96ee514a363c13213d96a004fb1b58ff50f843
+              - generic [ref=e2226]:
+                - img "Intel Crashes 10%, AMD Slides 5% as Chip Trade Cools After Parabolic Run" [ref=e2228]
+                - generic [ref=e2229]:
+                  - generic [ref=e2230]:
+                    - generic [ref=e2231]:
+                      - heading "Intel Crashes 10%, AMD Slides 5% as Chip Trade Cools After Parabolic Run" [level=3] [ref=e2232]
+                      - paragraph [ref=e2233]: Shares of Intel (NASDAQ:INTC) are down 10% in Tuesday trading, changing hands near $116 after closing at $129.44 on Monday. Advanced Micro Devices (NASDAQ:AMD) is sliding alongside, off 5% at roughly $436. The selloff lands after both names ripped through a parabolic stretch. Intel stock gained 35% in the week ending May 11, while AMD ... Intel Crashes 10%, AMD Slides 5% as Chip Trade Cools After Parabolic Run
+                    - img [ref=e2234]
+                  - generic [ref=e2238]:
+                    - generic [ref=e2239]: Yahoo
+                    - generic [ref=e2240]: AAPL
+                    - generic [ref=e2241]: 5월 13일 오전 02:58
+            - link "Nvidia CEO Left Off Trump's China Delegation Despite $50 Billion Opportunity Nvidia CEO Left Off Trump's China Delegation Despite $50 Billion Opportunity Jensen Huang will not join Trump's China trip as Nvidia's AI chip sales remain tied to export controls. Yahoo AAPL 5월 13일 오전 02:32" [ref=e2243] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=204f15228e7599782beebec79fc27ea4cc0b6e6d4d17f0eb443e8848cc7cfe09
+              - generic [ref=e2244]:
+                - img "Nvidia CEO Left Off Trump's China Delegation Despite $50 Billion Opportunity" [ref=e2246]
+                - generic [ref=e2247]:
+                  - generic [ref=e2248]:
+                    - generic [ref=e2249]:
+                      - heading "Nvidia CEO Left Off Trump's China Delegation Despite $50 Billion Opportunity" [level=3] [ref=e2250]
+                      - paragraph [ref=e2251]: Jensen Huang will not join Trump's China trip as Nvidia's AI chip sales remain tied to export controls.
+                    - img [ref=e2252]
+                  - generic [ref=e2256]:
+                    - generic [ref=e2257]: Yahoo
+                    - generic [ref=e2258]: AAPL
+                    - generic [ref=e2259]: 5월 13일 오전 02:32
+            - link "Everybody Wants To Panic Sell. Don't. Everybody Wants To Panic Sell. Don't. Daily Stock Picks'Â Gary Vaughan from Daily Stock Picks tells us 2 truths and a lie. SeekingAlpha AAPL 5월 13일 오전 02:18" [ref=e2261] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=8e43410f729ec7f7d7a16b6187d304b6d508a0c12ed87d3e2b42f77183d15e53
+              - generic [ref=e2262]:
+                - img "Everybody Wants To Panic Sell. Don't." [ref=e2264]
+                - generic [ref=e2265]:
+                  - generic [ref=e2266]:
+                    - generic [ref=e2267]:
+                      - heading "Everybody Wants To Panic Sell. Don't." [level=3] [ref=e2268]
+                      - paragraph [ref=e2269]: Daily Stock Picks'Â Gary Vaughan from Daily Stock Picks tells us 2 truths and a lie.
+                    - img [ref=e2270]
+                  - generic [ref=e2274]:
+                    - generic [ref=e2275]: SeekingAlpha
+                    - generic [ref=e2276]: AAPL
+                    - generic [ref=e2277]: 5월 13일 오전 02:18
+            - link "Here’s What AMD’s 2nm Deal With Samsung Could Mean for Taiwan Semi Stock Here’s What AMD’s 2nm Deal With Samsung Could Mean for Taiwan Semi Stock What looks like a short-term setback for TSMC may prove far more damaging in the long run. Here's what to know about TSM stock today. Yahoo AAPL 5월 13일 오전 02:00" [ref=e2279] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=3d7c2a4f3939464b7cc7fd656dc0d70469a510ab0ccf0798ea48b4f1e3d28ec3
+              - generic [ref=e2280]:
+                - img "Here’s What AMD’s 2nm Deal With Samsung Could Mean for Taiwan Semi Stock" [ref=e2282]
+                - generic [ref=e2283]:
+                  - generic [ref=e2284]:
+                    - generic [ref=e2285]:
+                      - heading "Here’s What AMD’s 2nm Deal With Samsung Could Mean for Taiwan Semi Stock" [level=3] [ref=e2286]
+                      - paragraph [ref=e2287]: What looks like a short-term setback for TSMC may prove far more damaging in the long run. Here's what to know about TSM stock today.
+                    - img [ref=e2288]
+                  - generic [ref=e2292]:
+                    - generic [ref=e2293]: Yahoo
+                    - generic [ref=e2294]: AAPL
+                    - generic [ref=e2295]: 5월 13일 오전 02:00
+            - link "Elon Musk To Join Trump On China State Visit. Tesla Stock Sinks. Elon Musk To Join Trump On China State Visit. Tesla Stock Sinks. Tesla CEO Elon Musk will be among a group of business leaders joining President Donald Trump's state visit to China. Yahoo AAPL 5월 13일 오전 01:48" [ref=e2297] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=abae73ce18e21fdb4ec873bdc6b85be05a045c00fe4bc230db27a75c87230597
+              - generic [ref=e2298]:
+                - img "Elon Musk To Join Trump On China State Visit. Tesla Stock Sinks." [ref=e2300]
+                - generic [ref=e2301]:
+                  - generic [ref=e2302]:
+                    - generic [ref=e2303]:
+                      - heading "Elon Musk To Join Trump On China State Visit. Tesla Stock Sinks." [level=3] [ref=e2304]
+                      - paragraph [ref=e2305]: Tesla CEO Elon Musk will be among a group of business leaders joining President Donald Trump's state visit to China.
+                    - img [ref=e2306]
+                  - generic [ref=e2310]:
+                    - generic [ref=e2311]: Yahoo
+                    - generic [ref=e2312]: AAPL
+                    - generic [ref=e2313]: 5월 13일 오전 01:48
+            - 'link "What Makes Apple (AAPL) a Strong Momentum Stock: Buy Now? What Makes Apple (AAPL) a Strong Momentum Stock: Buy Now? Does Apple (AAPL) have what it takes to be a top stock pick for momentum investors? Let''s find out. Yahoo AAPL 5월 13일 오전 01:00" [ref=e2315] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=1101dc0c2420548c6821bb660c6b5694c6418dffd304e2f9e816a9fc7e974a75
+              - generic [ref=e2316]:
+                - 'img "What Makes Apple (AAPL) a Strong Momentum Stock: Buy Now?" [ref=e2318]'
+                - generic [ref=e2319]:
+                  - generic [ref=e2320]:
+                    - generic [ref=e2321]:
+                      - 'heading "What Makes Apple (AAPL) a Strong Momentum Stock: Buy Now?" [level=3] [ref=e2322]'
+                      - paragraph [ref=e2323]: Does Apple (AAPL) have what it takes to be a top stock pick for momentum investors? Let's find out.
+                    - img [ref=e2324]
+                  - generic [ref=e2328]:
+                    - generic [ref=e2329]: Yahoo
+                    - generic [ref=e2330]: AAPL
+                    - generic [ref=e2331]: 5월 13일 오전 01:00
+            - link [ref=e2333] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=287921cb258f25262624ccc8fd76454c2f039a8ea71b0da9177141b09ce47d3a
+              - generic [ref=e2334]:
+                - 'img "Global Home Automation Systems Market Report 2026-2032: Trends, Revenue Opportunities & Competitive Analysis Featuring Johnson Controls, Schneider Electric, Siemens, Honeywell, ASSA ABLOY, Apple, ABB, and More" [ref=e2336]'
+                - generic [ref=e2337]:
+                  - generic [ref=e2338]:
+                    - generic [ref=e2339]:
+                      - 'heading "Global Home Automation Systems Market Report 2026-2032: Trends, Revenue Opportunities & Competitive Analysis Featuring Johnson Controls, Schneider Electric, Siemens, Honeywell, ASSA ABLOY, Apple, ABB, and More" [level=3] [ref=e2340]'
+                      - paragraph [ref=e2341]: Home Automation System Market Home Automation System Market Dublin, May 12, 2026 (GLOBE NEWSWIRE) -- The "Home Automation System Market by Lighting Controls, Smart Speakers, Entertainment Controls, HVAC Controls, Security & Access Controls, Wired, Wireless, Behavioral, Proactive, Multi-family Residence, Single-family Residence - Global Forecast to 2032" has been added to ResearchAndMarkets.com's offering. The global home automation system market is poised for significant growth, with an estimate
+                    - img [ref=e2342]
+                  - generic [ref=e2346]:
+                    - generic [ref=e2347]: Yahoo
+                    - generic [ref=e2348]: AAPL
+                    - generic [ref=e2349]: 5월 13일 오전 12:59
+            - link "Trump invited only 2 women executives on his first trip to China in nearly a decade — an increase from last time Trump invited only 2 women executives on his first trip to China in nearly a decade — an increase from last time The last time President Trump visited China, he took an even larger delegation, but didn’t invite a single woman. Yahoo AAPL 5월 13일 오전 12:55" [ref=e2351] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=456318566ea3c16ffca4fcf525574a9418505cb8e4ad8f2cebd06e86e7ad7a30
+              - generic [ref=e2352]:
+                - img "Trump invited only 2 women executives on his first trip to China in nearly a decade — an increase from last time" [ref=e2354]
+                - generic [ref=e2355]:
+                  - generic [ref=e2356]:
+                    - generic [ref=e2357]:
+                      - heading "Trump invited only 2 women executives on his first trip to China in nearly a decade — an increase from last time" [level=3] [ref=e2358]
+                      - paragraph [ref=e2359]: The last time President Trump visited China, he took an even larger delegation, but didn’t invite a single woman.
+                    - img [ref=e2360]
+                  - generic [ref=e2364]:
+                    - generic [ref=e2365]: Yahoo
+                    - generic [ref=e2366]: AAPL
+                    - generic [ref=e2367]: 5월 13일 오전 12:55
+            - 'link "David Einhorn: Looking for misunderstood stocks like Victoria''s Secret David Einhorn: Looking for misunderstood stocks like Victoria''s Secret David Einhorn, Greenlight Capital president and founder, joins ''Closing Bell'' to discuss the investment ideas Einhorn has, his main investing theme and much more. CNBC AAPL 5월 13일 오전 12:52" [ref=e2369] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=a202225a663c159fc5a5ea336a7f3541538e91461ca83d94c47846944b8eed50
+              - generic [ref=e2370]:
+                - 'img "David Einhorn: Looking for misunderstood stocks like Victoria''s Secret" [ref=e2372]'
+                - generic [ref=e2373]:
+                  - generic [ref=e2374]:
+                    - generic [ref=e2375]:
+                      - 'heading "David Einhorn: Looking for misunderstood stocks like Victoria''s Secret" [level=3] [ref=e2376]'
+                      - paragraph [ref=e2377]: David Einhorn, Greenlight Capital president and founder, joins 'Closing Bell' to discuss the investment ideas Einhorn has, his main investing theme and much more.
+                    - img [ref=e2378]
+                  - generic [ref=e2382]:
+                    - generic [ref=e2383]: CNBC
+                    - generic [ref=e2384]: AAPL
+                    - generic [ref=e2385]: 5월 13일 오전 12:52
+            - link "'Apple Plans Customizable Camera for Pros, Siri Design Changes in iOS 27' - Bloomberg https://www.bloomberg.com/news/articles/2026-05-12/ios-27-apple-plans-customizable-iphone-camera-app-siri-overhaul Benzinga AAPL 5월 13일 오전 12:51" [ref=e2387] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=622df9abfbf3dc7430d74d631b399a2e7052972f532296f67fa0bea6a659a19d
+              - generic [ref=e2389]:
+                - generic [ref=e2390]:
+                  - generic [ref=e2391]:
+                    - heading "'Apple Plans Customizable Camera for Pros, Siri Design Changes in iOS 27' - Bloomberg" [level=3] [ref=e2392]
+                    - paragraph [ref=e2393]: https://www.bloomberg.com/news/articles/2026-05-12/ios-27-apple-plans-customizable-iphone-camera-app-siri-overhaul
+                  - img [ref=e2394]
+                - generic [ref=e2398]:
+                  - generic [ref=e2399]: Benzinga
+                  - generic [ref=e2400]: AAPL
+                  - generic [ref=e2401]: 5월 13일 오전 12:51
+            - link "Mizuho Hikes Intel Price Target to $124 as Agentic AI Server Demand Validates the Turnaround Mizuho Hikes Intel Price Target to $124 as Agentic AI Server Demand Validates the Turnaround Mizuho raised its price target on Intel (NASDAQ:INTC) stock to $124 from $100 on May 12, keeping a Neutral rating as the firm cited agentic AI continuing to drive server demand. The revision is part of a broader semiconductor and AI infrastructure estimate hike across multiple names. For long-term investors, the move signals that even cautious ... Mizuho Hikes Intel Price Target to $124 as Agentic AI Server Demand Validates the Turnaround Yahoo AAPL 5월 13일 오전 12:47" [ref=e2403] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=0baac4a07e79bc00b0576938bfd9ae86a9e17af6d8f8372a2c649ebdc881a2d3
+              - generic [ref=e2404]:
+                - img "Mizuho Hikes Intel Price Target to $124 as Agentic AI Server Demand Validates the Turnaround" [ref=e2406]
+                - generic [ref=e2407]:
+                  - generic [ref=e2408]:
+                    - generic [ref=e2409]:
+                      - heading "Mizuho Hikes Intel Price Target to $124 as Agentic AI Server Demand Validates the Turnaround" [level=3] [ref=e2410]
+                      - paragraph [ref=e2411]: Mizuho raised its price target on Intel (NASDAQ:INTC) stock to $124 from $100 on May 12, keeping a Neutral rating as the firm cited agentic AI continuing to drive server demand. The revision is part of a broader semiconductor and AI infrastructure estimate hike across multiple names. For long-term investors, the move signals that even cautious ... Mizuho Hikes Intel Price Target to $124 as Agentic AI Server Demand Validates the Turnaround
+                    - img [ref=e2412]
+                  - generic [ref=e2416]:
+                    - generic [ref=e2417]: Yahoo
+                    - generic [ref=e2418]: AAPL
+                    - generic [ref=e2419]: 5월 13일 오전 12:47
+            - link "Hot Inflation Data; Treasury Auction Test Ahead; Trump's Iran Comment Draws Attention Treasury Auction Ahead Benzinga AAPL 5월 13일 오전 12:40" [ref=e2421] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=934188cc2d90a6139b799793aae153be88ab5bcb9b48ad3f1f13130b294e18db
+              - generic [ref=e2423]:
+                - generic [ref=e2424]:
+                  - generic [ref=e2425]:
+                    - heading "Hot Inflation Data; Treasury Auction Test Ahead; Trump's Iran Comment Draws Attention" [level=3] [ref=e2426]
+                    - paragraph [ref=e2427]: Treasury Auction Ahead
+                  - img [ref=e2428]
+                - generic [ref=e2432]:
+                  - generic [ref=e2433]: Benzinga
+                  - generic [ref=e2434]: AAPL
+                  - generic [ref=e2435]: 5월 13일 오전 12:40
+            - link "Tesla stock slips ahead of Musk's trip to China with Trump trade delegation Tesla stock slips ahead of Musk's trip to China with Trump trade delegation After a string of gains, Tesla stock slipped on Tuesday ahead of CEO Elon Musk's trip to China with President Trump. Yahoo AAPL 5월 13일 오전 12:20" [ref=e2437] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=8d41aa91bcc81ec994135b56e2ebf1eb229319d347ec57838c73abffd0b714bc
+              - generic [ref=e2438]:
+                - img "Tesla stock slips ahead of Musk's trip to China with Trump trade delegation" [ref=e2440]
+                - generic [ref=e2441]:
+                  - generic [ref=e2442]:
+                    - generic [ref=e2443]:
+                      - heading "Tesla stock slips ahead of Musk's trip to China with Trump trade delegation" [level=3] [ref=e2444]
+                      - paragraph [ref=e2445]: After a string of gains, Tesla stock slipped on Tuesday ahead of CEO Elon Musk's trip to China with President Trump.
+                    - img [ref=e2446]
+                  - generic [ref=e2450]:
+                    - generic [ref=e2451]: Yahoo
+                    - generic [ref=e2452]: AAPL
+                    - generic [ref=e2453]: 5월 13일 오전 12:20
+            - link "Here's What Elon Musk Could Discuss In China As He Joins Trump's State Visit Here's What Elon Musk Could Discuss In China As He Joins Trump's State Visit Tesla CEO Elon Musk will be among a group of business leaders joining President Donald Trump's state visit to China. Yahoo AAPL 5월 12일 오후 11:41" [ref=e2455] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=aa295e65167835eaf5900e733c928df239474f4b2f55a636971abebe6910a7b4
+              - generic [ref=e2456]:
+                - img "Here's What Elon Musk Could Discuss In China As He Joins Trump's State Visit" [ref=e2458]
+                - generic [ref=e2459]:
+                  - generic [ref=e2460]:
+                    - generic [ref=e2461]:
+                      - heading "Here's What Elon Musk Could Discuss In China As He Joins Trump's State Visit" [level=3] [ref=e2462]
+                      - paragraph [ref=e2463]: Tesla CEO Elon Musk will be among a group of business leaders joining President Donald Trump's state visit to China.
+                    - img [ref=e2464]
+                  - generic [ref=e2468]:
+                    - generic [ref=e2469]: Yahoo
+                    - generic [ref=e2470]: AAPL
+                    - generic [ref=e2471]: 5월 12일 오후 11:41
+            - link "The fast food stocks benefitting from value, premium offerings The fast food stocks benefitting from value, premium offerings Fast food companies reported strong first quarter earnings, their respective chief executives emphasizing the value being offered to consumers amid rising food costs, oil (CL=F, BZ=F) and gas prices (RB=F), and overall costs of living. Yahoo Finance Executive Editor Brian Sozzi brings on Senior Reporters Brooke DiPalma and Ines Ferré and B. Riley Wealth chief market strategist Art Hogan to talk more about the performance of fast food stocks. Yahoo AAPL 5월 12일 오후 11:41" [ref=e2473] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=37178f7ed0d41caa1f7bae37ad602709f5243d8516766ebcf4a599e6e0abb9c7
+              - generic [ref=e2474]:
+                - img "The fast food stocks benefitting from value, premium offerings" [ref=e2476]
+                - generic [ref=e2477]:
+                  - generic [ref=e2478]:
+                    - generic [ref=e2479]:
+                      - heading "The fast food stocks benefitting from value, premium offerings" [level=3] [ref=e2480]
+                      - paragraph [ref=e2481]: Fast food companies reported strong first quarter earnings, their respective chief executives emphasizing the value being offered to consumers amid rising food costs, oil (CL=F, BZ=F) and gas prices (RB=F), and overall costs of living. Yahoo Finance Executive Editor Brian Sozzi brings on Senior Reporters Brooke DiPalma and Ines Ferré and B. Riley Wealth chief market strategist Art Hogan to talk more about the performance of fast food stocks.
+                    - img [ref=e2482]
+                  - generic [ref=e2486]:
+                    - generic [ref=e2487]: Yahoo
+                    - generic [ref=e2488]: AAPL
+                    - generic [ref=e2489]: 5월 12일 오후 11:41
+            - link "Jim Cramer Said 'Smell' — AI Stocks Heard 'Sell' Jim Cramer Said 'Smell' — AI Stocks Heard 'Sell' Jim Cramer said he could &#34;smell the reversal day.&#34; Unfortunately, he was right this time. Benzinga AAPL 5월 12일 오후 11:20" [ref=e2491] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=0afe89a5a5d7f223399a83d6d2ea1c6019c1425b04faf5ae545420b9b5a24de6
+              - generic [ref=e2492]:
+                - img "Jim Cramer Said 'Smell' — AI Stocks Heard 'Sell'" [ref=e2494]
+                - generic [ref=e2495]:
+                  - generic [ref=e2496]:
+                    - generic [ref=e2497]:
+                      - heading "Jim Cramer Said 'Smell' — AI Stocks Heard 'Sell'" [level=3] [ref=e2498]
+                      - paragraph [ref=e2499]: Jim Cramer said he could &#34;smell the reversal day.&#34; Unfortunately, he was right this time.
+                    - img [ref=e2500]
+                  - generic [ref=e2504]:
+                    - generic [ref=e2505]: Benzinga
+                    - generic [ref=e2506]: AAPL
+                    - generic [ref=e2507]: 5월 12일 오후 11:20
+            - link "Intel Rally Faces Reality Check After Triple-Digit Surge Intel Rally Faces Reality Check After Triple-Digit Surge Bank of America says optimism around a potential Apple foundry deal may be outpacing execution reality. Yahoo AAPL 5월 12일 오후 11:06" [ref=e2509] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=759014bb8cc43adabe6af38e9956bb3f9327c366a6e3147aba1ca456fd76d0b7
+              - generic [ref=e2510]:
+                - img "Intel Rally Faces Reality Check After Triple-Digit Surge" [ref=e2512]
+                - generic [ref=e2513]:
+                  - generic [ref=e2514]:
+                    - generic [ref=e2515]:
+                      - heading "Intel Rally Faces Reality Check After Triple-Digit Surge" [level=3] [ref=e2516]
+                      - paragraph [ref=e2517]: Bank of America says optimism around a potential Apple foundry deal may be outpacing execution reality.
+                    - img [ref=e2518]
+                  - generic [ref=e2522]:
+                    - generic [ref=e2523]: Yahoo
+                    - generic [ref=e2524]: AAPL
+                    - generic [ref=e2525]: 5월 12일 오후 11:06
+            - link "SanDisk, Micron Stocks Plummet As Korea Shockwave Batters The Great Memory Boom SanDisk, Micron Stocks Plummet As Korea Shockwave Batters The Great Memory Boom A political curveball from Seoul wiped out double‑digit gains in memory stocks and unleashed a global chip rout in minutes. Benzinga AAPL 5월 12일 오후 10:57" [ref=e2527] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=039590f8d5e71c4e5b8dfbbdf36a7287ea21caf34ada7c053b52e347f663b568
+              - generic [ref=e2528]:
+                - img "SanDisk, Micron Stocks Plummet As Korea Shockwave Batters The Great Memory Boom" [ref=e2530]
+                - generic [ref=e2531]:
+                  - generic [ref=e2532]:
+                    - generic [ref=e2533]:
+                      - heading "SanDisk, Micron Stocks Plummet As Korea Shockwave Batters The Great Memory Boom" [level=3] [ref=e2534]
+                      - paragraph [ref=e2535]: A political curveball from Seoul wiped out double‑digit gains in memory stocks and unleashed a global chip rout in minutes.
+                    - img [ref=e2536]
+                  - generic [ref=e2540]:
+                    - generic [ref=e2541]: Benzinga
+                    - generic [ref=e2542]: AAPL
+                    - generic [ref=e2543]: 5월 12일 오후 10:57
+            - link "Nvidia’s Huang Wants to Sell Chips to China. Trump Has Other Priorities. Nvidia’s Huang Wants to Sell Chips to China. Trump Has Other Priorities. Nvidia CEO Jensen Huang won’t be among the business leaders accompanying President Donald Trump on this week’s visit to China, according to reports. It might be a sign that the White House is giving up on hopes of opening up the Chinese market for U.S. chip companies. The recent strength of the semiconductor sector has been a boon for Nvidia, as investors warm again to the prospects for its artificial-intelligence chips. Yahoo AAPL 5월 12일 오후 10:52" [ref=e2545] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=68a269f84b3b8057a38cbd10b7368fa99fd5931892d16e2d48ad8fbb4fc7698d
+              - generic [ref=e2546]:
+                - img "Nvidia’s Huang Wants to Sell Chips to China. Trump Has Other Priorities." [ref=e2548]
+                - generic [ref=e2549]:
+                  - generic [ref=e2550]:
+                    - generic [ref=e2551]:
+                      - heading "Nvidia’s Huang Wants to Sell Chips to China. Trump Has Other Priorities." [level=3] [ref=e2552]
+                      - paragraph [ref=e2553]: Nvidia CEO Jensen Huang won’t be among the business leaders accompanying President Donald Trump on this week’s visit to China, according to reports. It might be a sign that the White House is giving up on hopes of opening up the Chinese market for U.S. chip companies. The recent strength of the semiconductor sector has been a boon for Nvidia, as investors warm again to the prospects for its artificial-intelligence chips.
+                    - img [ref=e2554]
+                  - generic [ref=e2558]:
+                    - generic [ref=e2559]: Yahoo
+                    - generic [ref=e2560]: AAPL
+                    - generic [ref=e2561]: 5월 12일 오후 10:52
+            - link "Markets Are Not Ready For What Happens Next Markets Are Not Ready For What Happens Next SPY is up 6 straight weeks on AI-led gains, but oil and key inflation data could spark volatility. SeekingAlpha AAPL 5월 12일 오후 10:46" [ref=e2563] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=779095e48395617df42b5bc8911f79afc38ea62a79a5c5e11f7f24c8b5a6244c
+              - generic [ref=e2564]:
+                - img "Markets Are Not Ready For What Happens Next" [ref=e2566]
+                - generic [ref=e2567]:
+                  - generic [ref=e2568]:
+                    - generic [ref=e2569]:
+                      - heading "Markets Are Not Ready For What Happens Next" [level=3] [ref=e2570]
+                      - paragraph [ref=e2571]: SPY is up 6 straight weeks on AI-led gains, but oil and key inflation data could spark volatility.
+                    - img [ref=e2572]
+                  - generic [ref=e2576]:
+                    - generic [ref=e2577]: SeekingAlpha
+                    - generic [ref=e2578]: AAPL
+                    - generic [ref=e2579]: 5월 12일 오후 10:46
+            - link "Nvidia's Jensen Huang left off Trump China trip list Nvidia's Jensen Huang left off Trump China trip list Jensen Huang's absence raises fresh geopolitical questions Yahoo AAPL 5월 12일 오후 10:39" [ref=e2581] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=759abe468df80d4b11638a3f7d660154efab913b42712d1ebc8cda464089874b
+              - generic [ref=e2582]:
+                - img "Nvidia's Jensen Huang left off Trump China trip list" [ref=e2584]
+                - generic [ref=e2585]:
+                  - generic [ref=e2586]:
+                    - generic [ref=e2587]:
+                      - heading "Nvidia's Jensen Huang left off Trump China trip list" [level=3] [ref=e2588]
+                      - paragraph [ref=e2589]: Jensen Huang's absence raises fresh geopolitical questions
+                    - img [ref=e2590]
+                  - generic [ref=e2594]:
+                    - generic [ref=e2595]: Yahoo
+                    - generic [ref=e2596]: AAPL
+                    - generic [ref=e2597]: 5월 12일 오후 10:39
+            - link "Intel’s $440 Billion Six-Week Surge Has Short Sellers Circling Intel’s $440 Billion Six-Week Surge Has Short Sellers Circling (Bloomberg) -- A scorching rally in Intel Corp. shares is threatening huge losses for traders wagering that they’re due to fall. But that isn’t stopping them from placing those bets. Most Read from BloombergIran Makes New Offer on Uranium in Response to US, WSJ SaysInside a Year of Chaos and Conflict at Kevin Hart’s Media CompanyAmbani’s Cola War With Coke, Pepsi Spurs Fridge Bonanza in IndiaNvidia’s CEO to Miss China Trip After Year of Travels With TrumpSince hitting a low on March 30, the chip Yahoo AAPL 5월 12일 오후 10:37" [ref=e2599] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=1cd224e06470ea2eb37a13c1ef00b3ea5e2faa313baee31558771a9f0b1970a0
+              - generic [ref=e2600]:
+                - img "Intel’s $440 Billion Six-Week Surge Has Short Sellers Circling" [ref=e2602]
+                - generic [ref=e2603]:
+                  - generic [ref=e2604]:
+                    - generic [ref=e2605]:
+                      - heading "Intel’s $440 Billion Six-Week Surge Has Short Sellers Circling" [level=3] [ref=e2606]
+                      - paragraph [ref=e2607]: (Bloomberg) -- A scorching rally in Intel Corp. shares is threatening huge losses for traders wagering that they’re due to fall. But that isn’t stopping them from placing those bets. Most Read from BloombergIran Makes New Offer on Uranium in Response to US, WSJ SaysInside a Year of Chaos and Conflict at Kevin Hart’s Media CompanyAmbani’s Cola War With Coke, Pepsi Spurs Fridge Bonanza in IndiaNvidia’s CEO to Miss China Trip After Year of Travels With TrumpSince hitting a low on March 30, the chip
+                    - img [ref=e2608]
+                  - generic [ref=e2612]:
+                    - generic [ref=e2613]: Yahoo
+                    - generic [ref=e2614]: AAPL
+                    - generic [ref=e2615]: 5월 12일 오후 10:37
+            - link "Nvidia Gets Snubbed as Trump China Trip Loads Up on Apple, Tesla Power Nvidia Gets Snubbed as Trump China Trip Loads Up on Apple, Tesla Power Jensen Huang Omitted from Trump China Trip as Apple, Tesla Chiefs Make High-Stakes Cut Yahoo AAPL 5월 12일 오후 09:38" [ref=e2617] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=b2a5e679d56936af080630d483ff856c705383391183a9b20a40c08c8dac5420
+              - generic [ref=e2618]:
+                - img "Nvidia Gets Snubbed as Trump China Trip Loads Up on Apple, Tesla Power" [ref=e2620]
+                - generic [ref=e2621]:
+                  - generic [ref=e2622]:
+                    - generic [ref=e2623]:
+                      - heading "Nvidia Gets Snubbed as Trump China Trip Loads Up on Apple, Tesla Power" [level=3] [ref=e2624]
+                      - paragraph [ref=e2625]: Jensen Huang Omitted from Trump China Trip as Apple, Tesla Chiefs Make High-Stakes Cut
+                    - img [ref=e2626]
+                  - generic [ref=e2630]:
+                    - generic [ref=e2631]: Yahoo
+                    - generic [ref=e2632]: AAPL
+                    - generic [ref=e2633]: 5월 12일 오후 09:38
+            - link "Cloud AI Today - CloudBolt Advances AI-Ready Cloud Management Platform Cloud AI Today - CloudBolt Advances AI-Ready Cloud Management Platform CloudBolt Software has unveiled the latest version of its cloud management platform, emphasizing AI-ready operations, enhanced governance, and broader support for alternatives to VMware. This release highlights innovations that facilitate AI integration into cloud operations, allowing AI-assisted workflows to interact with cloud management functions through a governed framework. It also introduces more precise role-based access control and extends customization capabilities to cover... Yahoo AAPL 5월 12일 오후 09:37" [ref=e2635] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=9a0b68adc602d5308bc102b3449a28fb3d9d90f9455145d468d8ce56b8ce7e75
+              - generic [ref=e2636]:
+                - img "Cloud AI Today - CloudBolt Advances AI-Ready Cloud Management Platform" [ref=e2638]
+                - generic [ref=e2639]:
+                  - generic [ref=e2640]:
+                    - generic [ref=e2641]:
+                      - heading "Cloud AI Today - CloudBolt Advances AI-Ready Cloud Management Platform" [level=3] [ref=e2642]
+                      - paragraph [ref=e2643]: CloudBolt Software has unveiled the latest version of its cloud management platform, emphasizing AI-ready operations, enhanced governance, and broader support for alternatives to VMware. This release highlights innovations that facilitate AI integration into cloud operations, allowing AI-assisted workflows to interact with cloud management functions through a governed framework. It also introduces more precise role-based access control and extends customization capabilities to cover...
+                    - img [ref=e2644]
+                  - generic [ref=e2648]:
+                    - generic [ref=e2649]: Yahoo
+                    - generic [ref=e2650]: AAPL
+                    - generic [ref=e2651]: 5월 12일 오후 09:37
+            - link "A Chicago man lost $69,000 — almost half his life savings — to a scammer with a fake AI-generated U.S. Marshal badge A Chicago man lost $69,000 — almost half his life savings — to a scammer with a fake AI-generated U.S. Marshal badge The FBI warns AI-powered government impersonation scams are surging nationwide, with criminals cloning voices and images to steal millions from Americans. Yahoo AAPL 5월 12일 오후 09:20" [ref=e2653] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=7f77a3cb7362efb3ca1f4d470a2128533254861e33d7f43cdb3fe42d1262dfbd
+              - generic [ref=e2654]:
+                - img "A Chicago man lost $69,000 — almost half his life savings — to a scammer with a fake AI-generated U.S. Marshal badge" [ref=e2656]
+                - generic [ref=e2657]:
+                  - generic [ref=e2658]:
+                    - generic [ref=e2659]:
+                      - heading "A Chicago man lost $69,000 — almost half his life savings — to a scammer with a fake AI-generated U.S. Marshal badge" [level=3] [ref=e2660]
+                      - paragraph [ref=e2661]: The FBI warns AI-powered government impersonation scams are surging nationwide, with criminals cloning voices and images to steal millions from Americans.
+                    - img [ref=e2662]
+                  - generic [ref=e2666]:
+                    - generic [ref=e2667]: Yahoo
+                    - generic [ref=e2668]: AAPL
+                    - generic [ref=e2669]: 5월 12일 오후 09:20
+            - link "Nvidia Stock Drops After Report CEO Huang Is Excluded From Trump’s China Trip Nvidia Stock Drops After Report CEO Huang Is Excluded From Trump’s China Trip Nvidia stock looked set to fall on Tuesday from a record high in the previous session. CEO Jensen Huang won’t be among the business leaders accompanying President Donald Trump on this week’s visit to China, according to reports. The recent strength of the semiconductor sector has been a boon for Nvidia, as investors warm again to the prospects for its artificial-intelligence chips. Yahoo AAPL 5월 12일 오후 09:20" [ref=e2671] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=2a87c4a46fc34b1a9c63744d488753f82e0f50639c1d02f7ad236005340daead
+              - generic [ref=e2672]:
+                - img "Nvidia Stock Drops After Report CEO Huang Is Excluded From Trump’s China Trip" [ref=e2674]
+                - generic [ref=e2675]:
+                  - generic [ref=e2676]:
+                    - generic [ref=e2677]:
+                      - heading "Nvidia Stock Drops After Report CEO Huang Is Excluded From Trump’s China Trip" [level=3] [ref=e2678]
+                      - paragraph [ref=e2679]: Nvidia stock looked set to fall on Tuesday from a record high in the previous session. CEO Jensen Huang won’t be among the business leaders accompanying President Donald Trump on this week’s visit to China, according to reports. The recent strength of the semiconductor sector has been a boon for Nvidia, as investors warm again to the prospects for its artificial-intelligence chips.
+                    - img [ref=e2680]
+                  - generic [ref=e2684]:
+                    - generic [ref=e2685]: Yahoo
+                    - generic [ref=e2686]: AAPL
+                    - generic [ref=e2687]: 5월 12일 오후 09:20
+            - 'link "Cirrus Logic Is Reinvesting In The Future Though Growth May Be Priced In Cirrus Logic Is Reinvesting In The Future Though Growth May Be Priced In Cirrus Logic, Inc. stock analysis: Hold rating and $154 target. Click for this close look at CRUS and see the opportunity and risks. SeekingAlpha AAPL 5월 12일 오후 09:18" [ref=e2689] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=217455f24c48140d58d3a481acbe585814c64b868f4792f074b61222fe829e28
+              - generic [ref=e2690]:
+                - img "Cirrus Logic Is Reinvesting In The Future Though Growth May Be Priced In" [ref=e2692]
+                - generic [ref=e2693]:
+                  - generic [ref=e2694]:
+                    - generic [ref=e2695]:
+                      - heading "Cirrus Logic Is Reinvesting In The Future Though Growth May Be Priced In" [level=3] [ref=e2696]
+                      - paragraph [ref=e2697]: "Cirrus Logic, Inc. stock analysis: Hold rating and $154 target. Click for this close look at CRUS and see the opportunity and risks."
+                    - img [ref=e2698]
+                  - generic [ref=e2702]:
+                    - generic [ref=e2703]: SeekingAlpha
+                    - generic [ref=e2704]: AAPL
+                    - generic [ref=e2705]: 5월 12일 오후 09:18
+            - 'link "CHY: Some AI Exposure And A Better Fund Than Most Bond Funds CHY: Some AI Exposure And A Better Fund Than Most Bond Funds The Calamos Convertible & High Income Fund offers a 9.35% yield, blending convertible bonds and high-yield corporates for both income and capital appreciation. Read the full analysis here. SeekingAlpha AAPL 5월 12일 오후 08:49" [ref=e2707] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=403aef8503ffddf2553c60aa42041c5f07d22e7f82f5958ef4133defda75adb8
+              - generic [ref=e2708]:
+                - 'img "CHY: Some AI Exposure And A Better Fund Than Most Bond Funds" [ref=e2710]'
+                - generic [ref=e2711]:
+                  - generic [ref=e2712]:
+                    - generic [ref=e2713]:
+                      - 'heading "CHY: Some AI Exposure And A Better Fund Than Most Bond Funds" [level=3] [ref=e2714]'
+                      - paragraph [ref=e2715]: The Calamos Convertible & High Income Fund offers a 9.35% yield, blending convertible bonds and high-yield corporates for both income and capital appreciation. Read the full analysis here.
+                    - img [ref=e2716]
+                  - generic [ref=e2720]:
+                    - generic [ref=e2721]: SeekingAlpha
+                    - generic [ref=e2722]: AAPL
+                    - generic [ref=e2723]: 5월 12일 오후 08:49
+            - link "Taiwan's GDP Growth Surges To Highest Since 1987 On AI Boom – What Does This Mean For Big Tech and U.S.-China Relations? Taiwan's GDP Growth Surges To Highest Since 1987 On AI Boom – What Does This Mean For Big Tech and U.S.-China Relations? Benzinga AAPL 5월 12일 오후 08:46" [ref=e2725] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=cbea217fbf419898643f1d1df1da20117bd008b6611be16110e612cbc0933e8a
+              - generic [ref=e2726]:
+                - img "Taiwan's GDP Growth Surges To Highest Since 1987 On AI Boom – What Does This Mean For Big Tech and U.S.-China Relations?" [ref=e2728]
+                - generic [ref=e2729]:
+                  - generic [ref=e2730]:
+                    - generic [ref=e2731]:
+                      - heading "Taiwan's GDP Growth Surges To Highest Since 1987 On AI Boom – What Does This Mean For Big Tech and U.S.-China Relations?" [level=3] [ref=e2732]
+                      - paragraph
+                    - img [ref=e2733]
+                  - generic [ref=e2737]:
+                    - generic [ref=e2738]: Benzinga
+                    - generic [ref=e2739]: AAPL
+                    - generic [ref=e2740]: 5월 12일 오후 08:46
+            - 'link "Integrity Alliance Loads Up on DFGP: A $2.7 Million Bet on Global Fixed Income Integrity Alliance Loads Up on DFGP: A $2.7 Million Bet on Global Fixed Income Dimensional Global Core Plus Fixed Income ETF provides broad access to global debt markets using a systematic, research-driven approach. Yahoo AAPL 5월 12일 오후 08:18" [ref=e2742] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=c241b96453cc0e441ae1d6a4ca94fd214cb6623697b6907a455291f6927fd0c5
+              - generic [ref=e2743]:
+                - 'img "Integrity Alliance Loads Up on DFGP: A $2.7 Million Bet on Global Fixed Income" [ref=e2745]'
+                - generic [ref=e2746]:
+                  - generic [ref=e2747]:
+                    - generic [ref=e2748]:
+                      - 'heading "Integrity Alliance Loads Up on DFGP: A $2.7 Million Bet on Global Fixed Income" [level=3] [ref=e2749]'
+                      - paragraph [ref=e2750]: Dimensional Global Core Plus Fixed Income ETF provides broad access to global debt markets using a systematic, research-driven approach.
+                    - img [ref=e2751]
+                  - generic [ref=e2755]:
+                    - generic [ref=e2756]: Yahoo
+                    - generic [ref=e2757]: AAPL
+                    - generic [ref=e2758]: 5월 12일 오후 08:18
+            - link "VTSAX Returns 300% in a Decade While Most Managed Funds Fall Behind VTSAX Returns 300% in a Decade While Most Managed Funds Fall Behind If your equity sleeve has more than two or three funds, Vanguard Total Stock Market Index Fund Admiral Shares (NASDAQ:VTSAX) is the case for simplifying. VTSAX owns essentially the entire investable U.S. stock market in one wrapper, charges almost nothing, and has compounded at a rate that has embarrassed most actively managed funds over the ... VTSAX Returns 300% in a Decade While Most Managed Funds Fall Behind Yahoo AAPL 5월 12일 오후 08:10" [ref=e2760] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=a34ef41a9fb04d04fef9857b805c85af938a9987d393ba947ce8322aadc9f710
+              - generic [ref=e2761]:
+                - img "VTSAX Returns 300% in a Decade While Most Managed Funds Fall Behind" [ref=e2763]
+                - generic [ref=e2764]:
+                  - generic [ref=e2765]:
+                    - generic [ref=e2766]:
+                      - heading "VTSAX Returns 300% in a Decade While Most Managed Funds Fall Behind" [level=3] [ref=e2767]
+                      - paragraph [ref=e2768]: If your equity sleeve has more than two or three funds, Vanguard Total Stock Market Index Fund Admiral Shares (NASDAQ:VTSAX) is the case for simplifying. VTSAX owns essentially the entire investable U.S. stock market in one wrapper, charges almost nothing, and has compounded at a rate that has embarrassed most actively managed funds over the ... VTSAX Returns 300% in a Decade While Most Managed Funds Fall Behind
+                    - img [ref=e2769]
+                  - generic [ref=e2773]:
+                    - generic [ref=e2774]: Yahoo
+                    - generic [ref=e2775]: AAPL
+                    - generic [ref=e2776]: 5월 12일 오후 08:10
+            - link "Apple Crushed These Rivals In 2007 With The iPhone — Now Nvidia Is Helping Them Win Again Apple Crushed These Rivals In 2007 With The iPhone — Now Nvidia Is Helping Them Win Again Apple buried Nokia and BlackBerry a decade ago. In 2026 they&#39;re up 108% and 64% while Apple gained 8%. BofA just upgraded Nokia. Wall Street still skeptical on BB. Benzinga AAPL 5월 12일 오후 08:01" [ref=e2778] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=f1ff8345385aa2f9f6a1a939609049dc24e3b63fb975ab6ce6cc01bd55674f78
+              - generic [ref=e2779]:
+                - img "Apple Crushed These Rivals In 2007 With The iPhone — Now Nvidia Is Helping Them Win Again" [ref=e2781]
+                - generic [ref=e2782]:
+                  - generic [ref=e2783]:
+                    - generic [ref=e2784]:
+                      - heading "Apple Crushed These Rivals In 2007 With The iPhone — Now Nvidia Is Helping Them Win Again" [level=3] [ref=e2785]
+                      - paragraph [ref=e2786]: Apple buried Nokia and BlackBerry a decade ago. In 2026 they&#39;re up 108% and 64% while Apple gained 8%. BofA just upgraded Nokia. Wall Street still skeptical on BB.
+                    - img [ref=e2787]
+                  - generic [ref=e2791]:
+                    - generic [ref=e2792]: Benzinga
+                    - generic [ref=e2793]: AAPL
+                    - generic [ref=e2794]: 5월 12일 오후 08:01
+            - link "Why High Oil Prices Are a Time Bomb for the Tech-Led Rally Why High Oil Prices Are a Time Bomb for the Tech-Led Rally Stocks are nearing the midday point of a massive second quarter. The rally is starting to look vulnerable. Yahoo AAPL 5월 12일 오후 07:54" [ref=e2796] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=b5c43981dc8873718b56ce32e200aee0a4fdea1abc973e75f6040b51a6efd048
+              - generic [ref=e2797]:
+                - img "Why High Oil Prices Are a Time Bomb for the Tech-Led Rally" [ref=e2799]
+                - generic [ref=e2800]:
+                  - generic [ref=e2801]:
+                    - generic [ref=e2802]:
+                      - heading "Why High Oil Prices Are a Time Bomb for the Tech-Led Rally" [level=3] [ref=e2803]
+                      - paragraph [ref=e2804]: Stocks are nearing the midday point of a massive second quarter. The rally is starting to look vulnerable.
+                    - img [ref=e2805]
+                  - generic [ref=e2809]:
+                    - generic [ref=e2810]: Yahoo
+                    - generic [ref=e2811]: AAPL
+                    - generic [ref=e2812]: 5월 12일 오후 07:54
+            - link "Jensen Huang doesn’t need President Trump to go to China, says D.A. Davidson’s Gil Luria Jensen Huang doesn’t need President Trump to go to China, says D.A. Davidson’s Gil Luria Gil Luria, managing director at D.A. Davidson, joins ‘Squawk on the Street’ to discuss his expectations for Donald Trump’s state visit to China, China’s importance to big tech companies like Apple, the absence of Jensen Huang from the trip, and more. CNBC AAPL 5월 12일 오후 07:38" [ref=e2814] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=b0adc8433a57226afeac9cf67b9fbbc75b0ed35752108a8695bab52baa03054f
+              - generic [ref=e2815]:
+                - img "Jensen Huang doesn’t need President Trump to go to China, says D.A. Davidson’s Gil Luria" [ref=e2817]
+                - generic [ref=e2818]:
+                  - generic [ref=e2819]:
+                    - generic [ref=e2820]:
+                      - heading "Jensen Huang doesn’t need President Trump to go to China, says D.A. Davidson’s Gil Luria" [level=3] [ref=e2821]
+                      - paragraph [ref=e2822]: Gil Luria, managing director at D.A. Davidson, joins ‘Squawk on the Street’ to discuss his expectations for Donald Trump’s state visit to China, China’s importance to big tech companies like Apple, the absence of Jensen Huang from the trip, and more.
+                    - img [ref=e2823]
+                  - generic [ref=e2827]:
+                    - generic [ref=e2828]: CNBC
+                    - generic [ref=e2829]: AAPL
+                    - generic [ref=e2830]: 5월 12일 오후 07:38
+            - link "Nvidia Isn't The Most Overbought Tech Stock Right Now — Alphabet, AMD Are Nvidia Isn't The Most Overbought Tech Stock Right Now — Alphabet, AMD Are Nvidia shares reached a new all-time high on Monday, but Alphabet and AMD top the list of most overbought Big Tech stocks. Benzinga AAPL 5월 12일 오후 07:33" [ref=e2832] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=11d771e965a68b13a805b7d95e901179417e18143e51deb85a56046307b8f2f2
+              - generic [ref=e2833]:
+                - img "Nvidia Isn't The Most Overbought Tech Stock Right Now — Alphabet, AMD Are" [ref=e2835]
+                - generic [ref=e2836]:
+                  - generic [ref=e2837]:
+                    - generic [ref=e2838]:
+                      - heading "Nvidia Isn't The Most Overbought Tech Stock Right Now — Alphabet, AMD Are" [level=3] [ref=e2839]
+                      - paragraph [ref=e2840]: Nvidia shares reached a new all-time high on Monday, but Alphabet and AMD top the list of most overbought Big Tech stocks.
+                    - img [ref=e2841]
+                  - generic [ref=e2845]:
+                    - generic [ref=e2846]: Benzinga
+                    - generic [ref=e2847]: AAPL
+                    - generic [ref=e2848]: 5월 12일 오후 07:33
+            - link "China highlights U.S. business ties in video ahead of President Trump’s trip China highlights U.S. business ties in video ahead of President Trump’s trip Eunice Yoon reports on the latest surrounding President Trump’s planned trip to China as he departs for a state visit on Tuesday. CNBC AAPL 5월 12일 오후 07:23" [ref=e2850] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=ed32f0194ae87719a95a582f63194c0486df38524bf8efcddf56f30d5572ffc5
+              - generic [ref=e2851]:
+                - img "China highlights U.S. business ties in video ahead of President Trump’s trip" [ref=e2853]
+                - generic [ref=e2854]:
+                  - generic [ref=e2855]:
+                    - generic [ref=e2856]:
+                      - heading "China highlights U.S. business ties in video ahead of President Trump’s trip" [level=3] [ref=e2857]
+                      - paragraph [ref=e2858]: Eunice Yoon reports on the latest surrounding President Trump’s planned trip to China as he departs for a state visit on Tuesday.
+                    - img [ref=e2859]
+                  - generic [ref=e2863]:
+                    - generic [ref=e2864]: CNBC
+                    - generic [ref=e2865]: AAPL
+                    - generic [ref=e2866]: 5월 12일 오후 07:23
+            - 'link "Apple : Wackadoo! Join Bluey for the ultimate playdate on Apple Arcade starting May 21 UPDATE May 12, 2026 Join Bluey for an exclusive playdate on Apple Arcade in hit games Crossy Road Castle, stitch., puffies., Suika Game+, and Disney Coloring World+ ... Finnhub AAPL 5월 12일 오후 07:08" [ref=e2868] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=71320de5f8cc145e7976956ad2a5045cb9b89b72a5429895205705474e7519cb
+              - generic [ref=e2870]:
+                - generic [ref=e2871]:
+                  - generic [ref=e2872]:
+                    - 'heading "Apple : Wackadoo! Join Bluey for the ultimate playdate on Apple Arcade starting May 21" [level=3] [ref=e2873]'
+                    - paragraph [ref=e2874]: UPDATE May 12, 2026 Join Bluey for an exclusive playdate on Apple Arcade in hit games Crossy Road Castle, stitch., puffies., Suika Game+, and Disney Coloring World+ ...
+                  - img [ref=e2875]
+                - generic [ref=e2879]:
+                  - generic [ref=e2880]: Finnhub
+                  - generic [ref=e2881]: AAPL
+                  - generic [ref=e2882]: 5월 12일 오후 07:08
+            - link "TikTok challenges EU 'gatekeeper' status at Europe's top court TikTok challenges EU 'gatekeeper' status at Europe's top court Bytedance's social media platform TikTok on Tuesday made a last- ditch attempt at Europe's top court to scrap its ‌designation as a \"gatekeeper\" under EU rules, which require it to meet tougher standards ‌as regulators seek to curb the power of Big Tech. The case--the first EU Digital Markets Act \"gatekeeper\" challenge heard by the EU Court of Justice--could bolster or weaken Europe's attempt to rein in Big Tech to ensure competition and more choice for users. Yahoo AAPL 5월 12일 오후 06:44" [ref=e2884] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=d8fa4f62f31e8b37f30862844962fa075953d943d1904d0331c7ab760b95a312
+              - generic [ref=e2885]:
+                - img "TikTok challenges EU 'gatekeeper' status at Europe's top court" [ref=e2887]
+                - generic [ref=e2888]:
+                  - generic [ref=e2889]:
+                    - generic [ref=e2890]:
+                      - heading "TikTok challenges EU 'gatekeeper' status at Europe's top court" [level=3] [ref=e2891]
+                      - paragraph [ref=e2892]: Bytedance's social media platform TikTok on Tuesday made a last- ditch attempt at Europe's top court to scrap its ‌designation as a "gatekeeper" under EU rules, which require it to meet tougher standards ‌as regulators seek to curb the power of Big Tech. The case--the first EU Digital Markets Act "gatekeeper" challenge heard by the EU Court of Justice--could bolster or weaken Europe's attempt to rein in Big Tech to ensure competition and more choice for users.
+                    - img [ref=e2893]
+                  - generic [ref=e2897]:
+                    - generic [ref=e2898]: Yahoo
+                    - generic [ref=e2899]: AAPL
+                    - generic [ref=e2900]: 5월 12일 오후 06:44
+            - link "Why JPMorgan Equity Premium Income ETF Limits Upside While JPMorgan Nasdaq Equity Premium Income ETF Sacrifices Growth for 11.98% Yields Why JPMorgan Equity Premium Income ETF Limits Upside While JPMorgan Nasdaq Equity Premium Income ETF Sacrifices Growth for 11.98% Yields JPMorgan Equity Premium Income ETF (NYSEARCA:JEPI) and JPMorgan Nasdaq Equity Premium Income ETF (NYSEARCA:JEPQ) pull from very different stock universes. JEPI leans on S&P 500 names with a covered call overlay. JEPQ runs the same income playbook on the Nasdaq-100. The latest fact sheets show why that distinction matters in 2026. Defensive Blue Chips Anchor ... Why JPMorgan Equity Premium Income ETF Limits Upside While JPMorgan Nasdaq Equity Premium Income ETF Sacrifices Growth for 11.98% Yields Yahoo AAPL 5월 12일 오후 06:40" [ref=e2902] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=90333c098379280adbeaf2b1a2324a61ec37270d0e294073a0f8a21bdca4543b
+              - generic [ref=e2903]:
+                - img "Why JPMorgan Equity Premium Income ETF Limits Upside While JPMorgan Nasdaq Equity Premium Income ETF Sacrifices Growth for 11.98% Yields" [ref=e2905]
+                - generic [ref=e2906]:
+                  - generic [ref=e2907]:
+                    - generic [ref=e2908]:
+                      - heading "Why JPMorgan Equity Premium Income ETF Limits Upside While JPMorgan Nasdaq Equity Premium Income ETF Sacrifices Growth for 11.98% Yields" [level=3] [ref=e2909]
+                      - paragraph [ref=e2910]: JPMorgan Equity Premium Income ETF (NYSEARCA:JEPI) and JPMorgan Nasdaq Equity Premium Income ETF (NYSEARCA:JEPQ) pull from very different stock universes. JEPI leans on S&P 500 names with a covered call overlay. JEPQ runs the same income playbook on the Nasdaq-100. The latest fact sheets show why that distinction matters in 2026. Defensive Blue Chips Anchor ... Why JPMorgan Equity Premium Income ETF Limits Upside While JPMorgan Nasdaq Equity Premium Income ETF Sacrifices Growth for 11.98% Yields
+                    - img [ref=e2911]
+                  - generic [ref=e2915]:
+                    - generic [ref=e2916]: Yahoo
+                    - generic [ref=e2917]: AAPL
+                    - generic [ref=e2918]: 5월 12일 오후 06:40
+            - link "Nvidia Stock Falls After Report CEO Huang Is Excluded From Trump’s China Trip Nvidia Stock Falls After Report CEO Huang Is Excluded From Trump’s China Trip Nvidia stock looked set to fall on Tuesday from a record high in the previous session. CEO Jensen Huang won’t be among the business leaders accompanying President Donald Trump on this week’s visit to China, according to reports. The recent strength of the semiconductor sector has been a boon for Nvidia, as investors warm again to the prospects for its artificial-intelligence chips. Yahoo AAPL 5월 12일 오후 06:34" [ref=e2920] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=2d37f14f48b4a502f7c5550823b9e810a4a1f1a1362b675d2eadc8118d57302a
+              - generic [ref=e2921]:
+                - img "Nvidia Stock Falls After Report CEO Huang Is Excluded From Trump’s China Trip" [ref=e2923]
+                - generic [ref=e2924]:
+                  - generic [ref=e2925]:
+                    - generic [ref=e2926]:
+                      - heading "Nvidia Stock Falls After Report CEO Huang Is Excluded From Trump’s China Trip" [level=3] [ref=e2927]
+                      - paragraph [ref=e2928]: Nvidia stock looked set to fall on Tuesday from a record high in the previous session. CEO Jensen Huang won’t be among the business leaders accompanying President Donald Trump on this week’s visit to China, according to reports. The recent strength of the semiconductor sector has been a boon for Nvidia, as investors warm again to the prospects for its artificial-intelligence chips.
+                    - img [ref=e2929]
+                  - generic [ref=e2933]:
+                    - generic [ref=e2934]: Yahoo
+                    - generic [ref=e2935]: AAPL
+                    - generic [ref=e2936]: 5월 12일 오후 06:34
+            - link "Did Apple Just Drop a Big Hint About Its Future Growth Strategy? Did Apple Just Drop a Big Hint About Its Future Growth Strategy? On its recent earnings call, the company suggested it may be more aggressive in pursuing growth opportunities. Yahoo AAPL 5월 12일 오후 05:50" [ref=e2938] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=e358fe0b110dfed1aeb25f63a0a68a2fab3115e2ed9c83e0d9c90d45e77ed985
+              - generic [ref=e2939]:
+                - img "Did Apple Just Drop a Big Hint About Its Future Growth Strategy?" [ref=e2941]
+                - generic [ref=e2942]:
+                  - generic [ref=e2943]:
+                    - generic [ref=e2944]:
+                      - heading "Did Apple Just Drop a Big Hint About Its Future Growth Strategy?" [level=3] [ref=e2945]
+                      - paragraph [ref=e2946]: On its recent earnings call, the company suggested it may be more aggressive in pursuing growth opportunities.
+                    - img [ref=e2947]
+                  - generic [ref=e2951]:
+                    - generic [ref=e2952]: Yahoo
+                    - generic [ref=e2953]: AAPL
+                    - generic [ref=e2954]: 5월 12일 오후 05:50
+            - 'link "Korea Roils Market by Floating ‘Citizen Dividend’ From AI Korea Roils Market by Floating ‘Citizen Dividend’ From AI (Bloomberg) -- A top South Korean policymaker said the nation should pay citizens a “dividend” using taxes on AI profits, underscoring growing pressure to redistribute gains from a boom that’s enriched chipmakers like Samsung Electronics Co. and SK Hynix Inc.Most Read from BloombergIran Makes New Offer on Uranium in Response to US, WSJ SaysInside a Year of Chaos and Conflict at Kevin Hart’s Media CompanyEpstein''s Black Card: How He Moved Women With His AmexModi Asks Indians to Stop Buying Gold, Yahoo AAPL 5월 12일 오후 05:10" [ref=e2956] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=909f4fbd1a5f11930e52374e5089badbeb130d12de8bfd0757af3d2c5743b487
+              - generic [ref=e2957]:
+                - img "Korea Roils Market by Floating ‘Citizen Dividend’ From AI" [ref=e2959]
+                - generic [ref=e2960]:
+                  - generic [ref=e2961]:
+                    - generic [ref=e2962]:
+                      - heading "Korea Roils Market by Floating ‘Citizen Dividend’ From AI" [level=3] [ref=e2963]
+                      - paragraph [ref=e2964]: "(Bloomberg) -- A top South Korean policymaker said the nation should pay citizens a “dividend” using taxes on AI profits, underscoring growing pressure to redistribute gains from a boom that’s enriched chipmakers like Samsung Electronics Co. and SK Hynix Inc.Most Read from BloombergIran Makes New Offer on Uranium in Response to US, WSJ SaysInside a Year of Chaos and Conflict at Kevin Hart’s Media CompanyEpstein's Black Card: How He Moved Women With His AmexModi Asks Indians to Stop Buying Gold,"
+                    - img [ref=e2965]
+                  - generic [ref=e2969]:
+                    - generic [ref=e2970]: Yahoo
+                    - generic [ref=e2971]: AAPL
+                    - generic [ref=e2972]: 5월 12일 오후 05:10
+            - link [ref=e2974] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=e667c1b2ec1ef9ac885518303aabd27a7988e4de20ee39b9f643e2190f1206a2
+              - generic [ref=e2975]:
+                - 'img "Video Games Strategic Intelligence Report 2026: A $352 Billion Market by 2030 with Mobile Gaming Accounting for More Than Half of Revenue - Apple, Alphabet, and Valve Control Key Distribution Channels" [ref=e2977]'
+                - generic [ref=e2978]:
+                  - generic [ref=e2979]:
+                    - generic [ref=e2980]:
+                      - 'heading "Video Games Strategic Intelligence Report 2026: A $352 Billion Market by 2030 with Mobile Gaming Accounting for More Than Half of Revenue - Apple, Alphabet, and Valve Control Key Distribution Channels" [level=3] [ref=e2981]'
+                      - paragraph [ref=e2982]: "Opportunities in the gaming software market include leveraging AI to lower production costs, adopting cross-platform and remake strategies for consistent returns, and aligning with platform operators like Apple and Valve to enhance distribution. Emphasis on attracting users and optimizing monetization will be crucial.Dublin, May 12, 2026 (GLOBE NEWSWIRE) -- The \"Strategic Intelligence: Video Games\" report has been added to ResearchAndMarkets.com's offering.The gaming software market was worth $2"
+                    - img [ref=e2983]
+                  - generic [ref=e2987]:
+                    - generic [ref=e2988]: Yahoo
+                    - generic [ref=e2989]: AAPL
+                    - generic [ref=e2990]: 5월 12일 오후 05:09
+            - link "Trump's China trip, Nadella's testimony, GM layoffs and more in Morning Squawk Trump's China trip, Nadella's testimony, GM layoffs and more in Morning Squawk Here are five key things investors need to know to start the trading day. CNBC AAPL 5월 12일 오후 05:08" [ref=e2992] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=0c71066474de39b274dd3b41acc7475a0423a8cff0356156635d418dc2a778f2
+              - generic [ref=e2993]:
+                - img "Trump's China trip, Nadella's testimony, GM layoffs and more in Morning Squawk" [ref=e2995]
+                - generic [ref=e2996]:
+                  - generic [ref=e2997]:
+                    - generic [ref=e2998]:
+                      - heading "Trump's China trip, Nadella's testimony, GM layoffs and more in Morning Squawk" [level=3] [ref=e2999]
+                      - paragraph [ref=e3000]: Here are five key things investors need to know to start the trading day.
+                    - img [ref=e3001]
+                  - generic [ref=e3005]:
+                    - generic [ref=e3006]: CNBC
+                    - generic [ref=e3007]: AAPL
+                    - generic [ref=e3008]: 5월 12일 오후 05:08
+            - link "Trump is taking more than a dozen U.S. executives to China. Jensen Huang isn't one of them Trump is taking more than a dozen U.S. executives to China. Jensen Huang isn't one of them Nvidia CEO Jensen Huang isn't going on Trump’s China trip, though more than a dozen other U.S. executives are. CNBC AAPL 5월 12일 오후 04:39" [ref=e3010] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=b9fde65a9636523e0281f0050d93b8649390f9df26eee8386efb672675c70c8f
+              - generic [ref=e3011]:
+                - img "Trump is taking more than a dozen U.S. executives to China. Jensen Huang isn't one of them" [ref=e3013]
+                - generic [ref=e3014]:
+                  - generic [ref=e3015]:
+                    - generic [ref=e3016]:
+                      - heading "Trump is taking more than a dozen U.S. executives to China. Jensen Huang isn't one of them" [level=3] [ref=e3017]
+                      - paragraph [ref=e3018]: Nvidia CEO Jensen Huang isn't going on Trump’s China trip, though more than a dozen other U.S. executives are.
+                    - img [ref=e3019]
+                  - generic [ref=e3023]:
+                    - generic [ref=e3024]: CNBC
+                    - generic [ref=e3025]: AAPL
+                    - generic [ref=e3026]: 5월 12일 오후 04:39
+            - 'link "Jim Cramer Warns This Market Is Far More Brutal Than Dot-Com Bubble Era: ''The Difference Between Now And 1999 Is...'' Jim Cramer Warns This Market Is Far More Brutal Than Dot-Com Bubble Era: ''The Difference Between Now And 1999 Is...'' Jim Cramer says investors are aggressively favoring AI stocks while heavily punishing companies that disappoint Wall Street. Benzinga AAPL 5월 12일 오후 04:00" [ref=e3028] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=52954136d4aca059a6ddfe2a742bec5c96867a7bd773a1172f857044bf8546ec
+              - generic [ref=e3029]:
+                - 'img "Jim Cramer Warns This Market Is Far More Brutal Than Dot-Com Bubble Era: ''The Difference Between Now And 1999 Is...''" [ref=e3031]'
+                - generic [ref=e3032]:
+                  - generic [ref=e3033]:
+                    - generic [ref=e3034]:
+                      - 'heading "Jim Cramer Warns This Market Is Far More Brutal Than Dot-Com Bubble Era: ''The Difference Between Now And 1999 Is...''" [level=3] [ref=e3035]'
+                      - paragraph [ref=e3036]: Jim Cramer says investors are aggressively favoring AI stocks while heavily punishing companies that disappoint Wall Street.
+                    - img [ref=e3037]
+                  - generic [ref=e3041]:
+                    - generic [ref=e3042]: Benzinga
+                    - generic [ref=e3043]: AAPL
+                    - generic [ref=e3044]: 5월 12일 오후 04:00
+            - link "Elon Musk, Apple's Tim Cook, BlackRock's Larry Fink among CEOs joining Trump for China trip Elon Musk, Apple's Tim Cook, BlackRock's Larry Fink among CEOs joining Trump for China trip CNBC's Andrew Ross Sorkin reports on the latest news. CNBC AAPL 5월 12일 오후 03:57" [ref=e3046] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=5e5cd870db1c1a8758023f1bb3b5fb4c2da82f9d1a2b98688c1d351c25215e42
+              - generic [ref=e3047]:
+                - img "Elon Musk, Apple's Tim Cook, BlackRock's Larry Fink among CEOs joining Trump for China trip" [ref=e3049]
+                - generic [ref=e3050]:
+                  - generic [ref=e3051]:
+                    - generic [ref=e3052]:
+                      - heading "Elon Musk, Apple's Tim Cook, BlackRock's Larry Fink among CEOs joining Trump for China trip" [level=3] [ref=e3053]
+                      - paragraph [ref=e3054]: CNBC's Andrew Ross Sorkin reports on the latest news.
+                    - img [ref=e3055]
+                  - generic [ref=e3059]:
+                    - generic [ref=e3060]: CNBC
+                    - generic [ref=e3061]: AAPL
+                    - generic [ref=e3062]: 5월 12일 오후 03:57
+            - link "AWS-End-to-end encrypted RCS messaging begins rolling out today in beta Starting today, iPhone users running iOS 26.5 will begin seeing a new lock icon in RCS chats indicating that messages in the chat are end-to-end encrypted.Apple and Google have led a cross-industry... Finnhub AAPL 5월 12일 오후 03:52" [ref=e3064] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=d31a94161759095ad8b4e3073034782e3b4ab03814b8439be687651b8f17938b
+              - generic [ref=e3066]:
+                - generic [ref=e3067]:
+                  - generic [ref=e3068]:
+                    - heading "AWS-End-to-end encrypted RCS messaging begins rolling out today in beta" [level=3] [ref=e3069]
+                    - paragraph [ref=e3070]: Starting today, iPhone users running iOS 26.5 will begin seeing a new lock icon in RCS chats indicating that messages in the chat are end-to-end encrypted.Apple and Google have led a cross-industry...
+                  - img [ref=e3071]
+                - generic [ref=e3075]:
+                  - generic [ref=e3076]: Finnhub
+                  - generic [ref=e3077]: AAPL
+                  - generic [ref=e3078]: 5월 12일 오후 03:52
+            - link "Trump Heads To Beijing For High-Stakes Xi Summit— What's On The Cards As Bessent Sets The Stage? Trump Heads To Beijing For High-Stakes Xi Summit— What's On The Cards As Bessent Sets The Stage? President Donald Trump to visit Beijing for Xi Jinping summit focused on trade, energy and Iran-linked global security tensions. Benzinga AAPL 5월 12일 오후 03:38" [ref=e3080] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=654bc22a3870d2606cafc379d8fe311584951797e1476208700c26de111e5a98
+              - generic [ref=e3081]:
+                - img "Trump Heads To Beijing For High-Stakes Xi Summit— What's On The Cards As Bessent Sets The Stage?" [ref=e3083]
+                - generic [ref=e3084]:
+                  - generic [ref=e3085]:
+                    - generic [ref=e3086]:
+                      - heading "Trump Heads To Beijing For High-Stakes Xi Summit— What's On The Cards As Bessent Sets The Stage?" [level=3] [ref=e3087]
+                      - paragraph [ref=e3088]: President Donald Trump to visit Beijing for Xi Jinping summit focused on trade, energy and Iran-linked global security tensions.
+                    - img [ref=e3089]
+                  - generic [ref=e3093]:
+                    - generic [ref=e3094]: Benzinga
+                    - generic [ref=e3095]: AAPL
+                    - generic [ref=e3096]: 5월 12일 오후 03:38
+            - link "What's at stake for trade, Taiwan and Iran in Trump's high-risk summit with China's Xi What's at stake for trade, Taiwan and Iran in Trump's high-risk summit with China's Xi China experts anticipate Trump and Xi may announce trade deals or other agreements, such as a Chinese purchase of U.S. agricultural products or Boeing aircraft. CNBC AAPL 5월 12일 오후 03:00" [ref=e3098] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=58d96021a0a61fd865fa15fdd862732136be0bc2cf6c0ad0b72452a47826b43e
+              - generic [ref=e3099]:
+                - img "What's at stake for trade, Taiwan and Iran in Trump's high-risk summit with China's Xi" [ref=e3101]
+                - generic [ref=e3102]:
+                  - generic [ref=e3103]:
+                    - generic [ref=e3104]:
+                      - heading "What's at stake for trade, Taiwan and Iran in Trump's high-risk summit with China's Xi" [level=3] [ref=e3105]
+                      - paragraph [ref=e3106]: China experts anticipate Trump and Xi may announce trade deals or other agreements, such as a Chinese purchase of U.S. agricultural products or Boeing aircraft.
+                    - img [ref=e3107]
+                  - generic [ref=e3111]:
+                    - generic [ref=e3112]: CNBC
+                    - generic [ref=e3113]: AAPL
+                    - generic [ref=e3114]: 5월 12일 오후 03:00
+            - link "Taiwan Semiconductor's Arizona Chip Hub Thrives, But Power And Labor Risks Persist Taiwan Semiconductor's Arizona Chip Hub Thrives, But Power And Labor Risks Persist Taiwan Semiconductor Arizona operations beat expectations. Here&#39;s a look at the latest technical analysis and analyst ratings. Benzinga AAPL 5월 12일 오후 02:37" [ref=e3116] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=ac0339ec4023cfff9690cc31b3dc13ad257c535081a71692655efbe837a49e4a
+              - generic [ref=e3117]:
+                - img "Taiwan Semiconductor's Arizona Chip Hub Thrives, But Power And Labor Risks Persist" [ref=e3119]
+                - generic [ref=e3120]:
+                  - generic [ref=e3121]:
+                    - generic [ref=e3122]:
+                      - heading "Taiwan Semiconductor's Arizona Chip Hub Thrives, But Power And Labor Risks Persist" [level=3] [ref=e3123]
+                      - paragraph [ref=e3124]: Taiwan Semiconductor Arizona operations beat expectations. Here&#39;s a look at the latest technical analysis and analyst ratings.
+                    - img [ref=e3125]
+                  - generic [ref=e3129]:
+                    - generic [ref=e3130]: Benzinga
+                    - generic [ref=e3131]: AAPL
+                    - generic [ref=e3132]: 5월 12일 오후 02:37
+            - link "EU to crack down on TikTok, Instagram's ‘addictive design’ targeting kids on social media EU to crack down on TikTok, Instagram's ‘addictive design’ targeting kids on social media \"We are investigating platforms that allow children to go down \"rabbit holes\" of harmful content,\" EU Commission President Ursula von der Leyen said Tuesday. CNBC AAPL 5월 12일 오후 02:20" [ref=e3134] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=28407e53f807b2feb43e4cfec90beb20d9e94f0e3f224fb0c8f883719f51c5a8
+              - generic [ref=e3135]:
+                - img "EU to crack down on TikTok, Instagram's ‘addictive design’ targeting kids on social media" [ref=e3137]
+                - generic [ref=e3138]:
+                  - generic [ref=e3139]:
+                    - generic [ref=e3140]:
+                      - heading "EU to crack down on TikTok, Instagram's ‘addictive design’ targeting kids on social media" [level=3] [ref=e3141]
+                      - paragraph [ref=e3142]: "\"We are investigating platforms that allow children to go down \"rabbit holes\" of harmful content,\" EU Commission President Ursula von der Leyen said Tuesday."
+                    - img [ref=e3143]
+                  - generic [ref=e3147]:
+                    - generic [ref=e3148]: CNBC
+                    - generic [ref=e3149]: AAPL
+                    - generic [ref=e3150]: 5월 12일 오후 02:20
+            - link "Apple And Google Finally Close SMS Security Gap As iOS 26.5 Brings End-To-End Encrypted RCS Messaging For Android And iPhone Conversations Apple And Google Finally Close SMS Security Gap As iOS 26.5 Brings End-To-End Encrypted RCS Messaging For Android And iPhone Conversations Apple and Google are rolling out end-to-end encrypted RCS messaging between iPhone and Android users with iOS 26.5, replacing insecure SMS. Benzinga AAPL 5월 12일 오후 01:58" [ref=e3152] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=c4d77df1c03b2db0422d5701f144f71adf7f202840a23699cffcb23141ab02aa
+              - generic [ref=e3153]:
+                - img "Apple And Google Finally Close SMS Security Gap As iOS 26.5 Brings End-To-End Encrypted RCS Messaging For Android And iPhone Conversations" [ref=e3155]
+                - generic [ref=e3156]:
+                  - generic [ref=e3157]:
+                    - generic [ref=e3158]:
+                      - heading "Apple And Google Finally Close SMS Security Gap As iOS 26.5 Brings End-To-End Encrypted RCS Messaging For Android And iPhone Conversations" [level=3] [ref=e3159]
+                      - paragraph [ref=e3160]: Apple and Google are rolling out end-to-end encrypted RCS messaging between iPhone and Android users with iOS 26.5, replacing insecure SMS.
+                    - img [ref=e3161]
+                  - generic [ref=e3165]:
+                    - generic [ref=e3166]: Benzinga
+                    - generic [ref=e3167]: AAPL
+                    - generic [ref=e3168]: 5월 12일 오후 01:58
+            - 'link "Meta: Reiterating Strong Buy After The Post-Earnings Drawdown Meta: Reiterating Strong Buy After The Post-Earnings Drawdown Meta stock is a Strong Buy: Q1 double beat, AI-driven ad growth, disciplined spend despite higher CapEx, and cheap valuation. See more on META stock. SeekingAlpha AAPL 5월 12일 오후 12:41" [ref=e3170] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=828ed87de588938a71e2be9a81e2ec38357f26a0a1c1e0806f65cdfc08d25dbe
+              - generic [ref=e3171]:
+                - 'img "Meta: Reiterating Strong Buy After The Post-Earnings Drawdown" [ref=e3173]'
+                - generic [ref=e3174]:
+                  - generic [ref=e3175]:
+                    - generic [ref=e3176]:
+                      - 'heading "Meta: Reiterating Strong Buy After The Post-Earnings Drawdown" [level=3] [ref=e3177]'
+                      - paragraph [ref=e3178]: "Meta stock is a Strong Buy: Q1 double beat, AI-driven ad growth, disciplined spend despite higher CapEx, and cheap valuation. See more on META stock."
+                    - img [ref=e3179]
+                  - generic [ref=e3183]:
+                    - generic [ref=e3184]: SeekingAlpha
+                    - generic [ref=e3185]: AAPL
+                    - generic [ref=e3186]: 5월 12일 오후 12:41
+            - link "Qualcomm China Trip Puts AI And Chip Export Risks In Focus Qualcomm China Trip Puts AI And Chip Export Risks In Focus Qualcomm CEO Cristiano Amon is joining a U.S. business delegation on President Donald Trump's upcoming summit trip to China for talks with Xi Jinping. The delegation, which also includes leaders from Tesla and Apple, is focused on pursuing business agreements and discussing U.S. access to the Chinese market. The visit is expected to touch on semiconductor export rules and commercial ties between the U.S. and China. For investors watching NasdaqGS:QCOM, this trip sits at the intersection of... Yahoo AAPL 5월 12일 오후 12:11" [ref=e3188] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=b408d84a05d400847e3195ecb09dee867a5a4a77975cc3b5ee9864c1c3d7b959
+              - generic [ref=e3189]:
+                - img "Qualcomm China Trip Puts AI And Chip Export Risks In Focus" [ref=e3191]
+                - generic [ref=e3192]:
+                  - generic [ref=e3193]:
+                    - generic [ref=e3194]:
+                      - heading "Qualcomm China Trip Puts AI And Chip Export Risks In Focus" [level=3] [ref=e3195]
+                      - paragraph [ref=e3196]: Qualcomm CEO Cristiano Amon is joining a U.S. business delegation on President Donald Trump's upcoming summit trip to China for talks with Xi Jinping. The delegation, which also includes leaders from Tesla and Apple, is focused on pursuing business agreements and discussing U.S. access to the Chinese market. The visit is expected to touch on semiconductor export rules and commercial ties between the U.S. and China. For investors watching NasdaqGS:QCOM, this trip sits at the intersection of...
+                    - img [ref=e3197]
+                  - generic [ref=e3201]:
+                    - generic [ref=e3202]: Yahoo
+                    - generic [ref=e3203]: AAPL
+                    - generic [ref=e3204]: 5월 12일 오후 12:11
+            - 'link "CNBC Daily Open: Can Starmer ‘keep calm and carry on?'' CNBC Daily Open: Can Starmer ‘keep calm and carry on?'' U.K. Prime Minister Keir Starmer faces a crunch cabinet meeting this morning, after failing to quell a growing party rebellion. CNBC AAPL 5월 12일 오전 11:31" [ref=e3206] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=1a195878664efbcaef3c89775a5e412b79232cfe55538e9a29489754c8b1204b
+              - generic [ref=e3207]:
+                - 'img "CNBC Daily Open: Can Starmer ‘keep calm and carry on?''" [ref=e3209]'
+                - generic [ref=e3210]:
+                  - generic [ref=e3211]:
+                    - generic [ref=e3212]:
+                      - 'heading "CNBC Daily Open: Can Starmer ‘keep calm and carry on?''" [level=3] [ref=e3213]'
+                      - paragraph [ref=e3214]: U.K. Prime Minister Keir Starmer faces a crunch cabinet meeting this morning, after failing to quell a growing party rebellion.
+                    - img [ref=e3215]
+                  - generic [ref=e3219]:
+                    - generic [ref=e3220]: CNBC
+                    - generic [ref=e3221]: AAPL
+                    - generic [ref=e3222]: 5월 12일 오전 11:31
+            - 'link "Elizabeth Warren Warns Shows Like ''Severance'' Could Disappear If Paramount Buys Warner Brothers: Can''t Let Trump ''Control'' Our Screens Elizabeth Warren Warns Shows Like ''Severance'' Could Disappear If Paramount Buys Warner Brothers: Can''t Let Trump ''Control'' Our Screens Elizabeth Warren warned the Trump-linked Paramount-Warner merger could hurt creativity and hand Hollywood too much power. Benzinga AAPL 5월 12일 오전 11:29" [ref=e3224] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=4fb54e257e1be58cf457db1789669df976795c67b31fb39c711e5e93c8449af8
+              - generic [ref=e3225]:
+                - 'img "Elizabeth Warren Warns Shows Like ''Severance'' Could Disappear If Paramount Buys Warner Brothers: Can''t Let Trump ''Control'' Our Screens" [ref=e3227]'
+                - generic [ref=e3228]:
+                  - generic [ref=e3229]:
+                    - generic [ref=e3230]:
+                      - 'heading "Elizabeth Warren Warns Shows Like ''Severance'' Could Disappear If Paramount Buys Warner Brothers: Can''t Let Trump ''Control'' Our Screens" [level=3] [ref=e3231]'
+                      - paragraph [ref=e3232]: Elizabeth Warren warned the Trump-linked Paramount-Warner merger could hurt creativity and hand Hollywood too much power.
+                    - img [ref=e3233]
+                  - generic [ref=e3237]:
+                    - generic [ref=e3238]: Benzinga
+                    - generic [ref=e3239]: AAPL
+                    - generic [ref=e3240]: 5월 12일 오전 11:29
+            - 'link "Ro Khanna Warns Trump Against Letting China Build Factories In America Ahead Of Xi Meeting: ''Disaster For American Workers'' Ro Khanna Warns Trump Against Letting China Build Factories In America Ahead Of Xi Meeting: ''Disaster For American Workers'' Ro Khanna warns against Chinese investment in the U.S. as Trump-Xi meeting approaches, spelling disaster for American workers. Benzinga AAPL 5월 12일 오전 11:18" [ref=e3242] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=1641dfdf5be1f0b8bb8ea4556859169cfe2923843e09c1f6f2e187f5a6b01b17
+              - generic [ref=e3243]:
+                - 'img "Ro Khanna Warns Trump Against Letting China Build Factories In America Ahead Of Xi Meeting: ''Disaster For American Workers''" [ref=e3245]'
+                - generic [ref=e3246]:
+                  - generic [ref=e3247]:
+                    - generic [ref=e3248]:
+                      - 'heading "Ro Khanna Warns Trump Against Letting China Build Factories In America Ahead Of Xi Meeting: ''Disaster For American Workers''" [level=3] [ref=e3249]'
+                      - paragraph [ref=e3250]: Ro Khanna warns against Chinese investment in the U.S. as Trump-Xi meeting approaches, spelling disaster for American workers.
+                    - img [ref=e3251]
+                  - generic [ref=e3255]:
+                    - generic [ref=e3256]: Benzinga
+                    - generic [ref=e3257]: AAPL
+                    - generic [ref=e3258]: 5월 12일 오전 11:18
+            - link "Arm Holdings (ARM) Price Target Raised to $300 on AI and Data Center Momentum Arm Holdings (ARM) Price Target Raised to $300 on AI and Data Center Momentum Arm Holdings has drawn renewed interest from KeyBanc as the firm sees robust AI and data center demand accelerating licensing growth. The stock is twelfth on our list of 12 AI Stocks Wall Street Is Watching Now. On May 7, KeyBanc analyst John Vinh raised the price target on Arm Holdings to $300 from $170 and […] Yahoo AAPL 5월 12일 오전 08:58" [ref=e3260] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=ff16a0a08d7589dad2711a7232588a2ab70ab8c63450ca185df5c5178301987a
+              - generic [ref=e3261]:
+                - img "Arm Holdings (ARM) Price Target Raised to $300 on AI and Data Center Momentum" [ref=e3263]
+                - generic [ref=e3264]:
+                  - generic [ref=e3265]:
+                    - generic [ref=e3266]:
+                      - heading "Arm Holdings (ARM) Price Target Raised to $300 on AI and Data Center Momentum" [level=3] [ref=e3267]
+                      - paragraph [ref=e3268]: Arm Holdings has drawn renewed interest from KeyBanc as the firm sees robust AI and data center demand accelerating licensing growth. The stock is twelfth on our list of 12 AI Stocks Wall Street Is Watching Now. On May 7, KeyBanc analyst John Vinh raised the price target on Arm Holdings to $300 from $170 and […]
+                    - img [ref=e3269]
+                  - generic [ref=e3273]:
+                    - generic [ref=e3274]: Yahoo
+                    - generic [ref=e3275]: AAPL
+                    - generic [ref=e3276]: 5월 12일 오전 08:58
+            - link "Apple (AAPL) Gains Wall Street Confidence on Supply Chain Strength and AI Services Potential Apple (AAPL) Gains Wall Street Confidence on Supply Chain Strength and AI Services Potential Apple Inc. (NASDAQ:AAPL) is one of the 12 AI Stocks Wall Street Is Watching Now. On May 7, Evercore ISI reiterated the stock as “Outperform” with a $330 price target. The firm believes that Apple’s supply chain is robust. AAPL’s supply chain playbook remains highly sophisticated, but the AI cycle has meaningfully reduced the relative […] Yahoo AAPL 5월 12일 오전 08:56" [ref=e3278] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=712c399a2bb66af00365bb519d1d7bf90208420481196d1661150ba285ef64ff
+              - generic [ref=e3279]:
+                - img "Apple (AAPL) Gains Wall Street Confidence on Supply Chain Strength and AI Services Potential" [ref=e3281]
+                - generic [ref=e3282]:
+                  - generic [ref=e3283]:
+                    - generic [ref=e3284]:
+                      - heading "Apple (AAPL) Gains Wall Street Confidence on Supply Chain Strength and AI Services Potential" [level=3] [ref=e3285]
+                      - paragraph [ref=e3286]: Apple Inc. (NASDAQ:AAPL) is one of the 12 AI Stocks Wall Street Is Watching Now. On May 7, Evercore ISI reiterated the stock as “Outperform” with a $330 price target. The firm believes that Apple’s supply chain is robust. AAPL’s supply chain playbook remains highly sophisticated, but the AI cycle has meaningfully reduced the relative […]
+                    - img [ref=e3287]
+                  - generic [ref=e3291]:
+                    - generic [ref=e3292]: Yahoo
+                    - generic [ref=e3293]: AAPL
+                    - generic [ref=e3294]: 5월 12일 오전 08:56
+            - link "Applied Materials makes unexpected AI move as demand explodes Applied Materials makes unexpected AI move as demand explodes Days before its fiscal second-quarter earnings report on May 14, Applied Materials (AMAT) unveiled a new co-innovation partnership with TSMC, the world's most important chipmaker, to be conducted inside Applied's new $5 billion EPIC Center in Silicon Valley. It is the largest U.S. investment ever ... Yahoo AAPL 5월 12일 오전 08:37" [ref=e3296] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=1a332407e9c4d8161f7b8e26f1b7423d3c84e540fda9d305546981c4a30057f3
+              - generic [ref=e3297]:
+                - img "Applied Materials makes unexpected AI move as demand explodes" [ref=e3299]
+                - generic [ref=e3300]:
+                  - generic [ref=e3301]:
+                    - generic [ref=e3302]:
+                      - heading "Applied Materials makes unexpected AI move as demand explodes" [level=3] [ref=e3303]
+                      - paragraph [ref=e3304]: Days before its fiscal second-quarter earnings report on May 14, Applied Materials (AMAT) unveiled a new co-innovation partnership with TSMC, the world's most important chipmaker, to be conducted inside Applied's new $5 billion EPIC Center in Silicon Valley. It is the largest U.S. investment ever ...
+                    - img [ref=e3305]
+                  - generic [ref=e3309]:
+                    - generic [ref=e3310]: Yahoo
+                    - generic [ref=e3311]: AAPL
+                    - generic [ref=e3312]: 5월 12일 오전 08:37
+            - link "Five things to watch in Asia as Trump prepares to meet China's Xi this week Five things to watch in Asia as Trump prepares to meet China's Xi this week The U.S. and Chinese presidents are scheduled to gather in Beijing on Thursday and Friday amid a packed week of diplomatic meetings. CNBC AAPL 5월 12일 오전 07:47" [ref=e3314] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=55c24ca7ad31949e4972d691ca905b05834bd02c87d329731eaa17824ecea6e9
+              - generic [ref=e3315]:
+                - img "Five things to watch in Asia as Trump prepares to meet China's Xi this week" [ref=e3317]
+                - generic [ref=e3318]:
+                  - generic [ref=e3319]:
+                    - generic [ref=e3320]:
+                      - heading "Five things to watch in Asia as Trump prepares to meet China's Xi this week" [level=3] [ref=e3321]
+                      - paragraph [ref=e3322]: The U.S. and Chinese presidents are scheduled to gather in Beijing on Thursday and Friday amid a packed week of diplomatic meetings.
+                    - img [ref=e3323]
+                  - generic [ref=e3327]:
+                    - generic [ref=e3328]: CNBC
+                    - generic [ref=e3329]: AAPL
+                    - generic [ref=e3330]: 5월 12일 오전 07:47
+            - link "Apple Intel Chip Pact Adds New Angle To Supply Chain Story Apple Intel Chip Pact Adds New Angle To Supply Chain Story Apple and Intel have reached a preliminary chip manufacturing agreement that would shift part of Apple's processor production to Intel facilities. The arrangement includes active support from the U.S. government, which holds a federal equity stake in Intel. This is Apple’s first major move to diversify chip production beyond TSMC, with potential implications for supply chain resilience and future hardware plans. For investors watching NasdaqGS:AAPL at a current share price of $292.68, this... Yahoo AAPL 5월 12일 오전 07:18" [ref=e3332] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=2a77436cd8159067c0a25969f20850a645a3b0ccf2e0e4b2af2c26a4c319ead0
+              - generic [ref=e3333]:
+                - img "Apple Intel Chip Pact Adds New Angle To Supply Chain Story" [ref=e3335]
+                - generic [ref=e3336]:
+                  - generic [ref=e3337]:
+                    - generic [ref=e3338]:
+                      - heading "Apple Intel Chip Pact Adds New Angle To Supply Chain Story" [level=3] [ref=e3339]
+                      - paragraph [ref=e3340]: Apple and Intel have reached a preliminary chip manufacturing agreement that would shift part of Apple's processor production to Intel facilities. The arrangement includes active support from the U.S. government, which holds a federal equity stake in Intel. This is Apple’s first major move to diversify chip production beyond TSMC, with potential implications for supply chain resilience and future hardware plans. For investors watching NasdaqGS:AAPL at a current share price of $292.68, this...
+                    - img [ref=e3341]
+                  - generic [ref=e3345]:
+                    - generic [ref=e3346]: Yahoo
+                    - generic [ref=e3347]: AAPL
+                    - generic [ref=e3348]: 5월 12일 오전 07:18
+            - link "Stung by Iran war, Trump heads to China in need of wins A year ago, U.S. PresidentDonald Trump predicted that towering trade tariffs would bringAmerica's main economic rival to heel. He heads to China this week with that ambition blunted... Finnhub AAPL 5월 12일 오전 07:05" [ref=e3350] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=b1b3a5e00e09841d92bd6f57777ed133b5f3a845bee7457e95d31ed77f13c596
+              - generic [ref=e3352]:
+                - generic [ref=e3353]:
+                  - generic [ref=e3354]:
+                    - heading "Stung by Iran war, Trump heads to China in need of wins" [level=3] [ref=e3355]
+                    - paragraph [ref=e3356]: A year ago, U.S. PresidentDonald Trump predicted that towering trade tariffs would bringAmerica's main economic rival to heel. He heads to China this week with that ambition blunted...
+                  - img [ref=e3357]
+                - generic [ref=e3361]:
+                  - generic [ref=e3362]: Finnhub
+                  - generic [ref=e3363]: AAPL
+                  - generic [ref=e3364]: 5월 12일 오전 07:05
+            - link "Apple Director Sells $71 Million in Shares Apple Director Sells $71 Million in Shares Arthur Levinson sold 250,000 Apple shares after the company reported record quarterly results. Yahoo AAPL 5월 12일 오전 06:31" [ref=e3366] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=31f71648c9cdd9e02cb33c1b2981051b2f8b89c4f1aa93aa6b0c5a6317c59424
+              - generic [ref=e3367]:
+                - img "Apple Director Sells $71 Million in Shares" [ref=e3369]
+                - generic [ref=e3370]:
+                  - generic [ref=e3371]:
+                    - generic [ref=e3372]:
+                      - heading "Apple Director Sells $71 Million in Shares" [level=3] [ref=e3373]
+                      - paragraph [ref=e3374]: Arthur Levinson sold 250,000 Apple shares after the company reported record quarterly results.
+                    - img [ref=e3375]
+                  - generic [ref=e3379]:
+                    - generic [ref=e3380]: Yahoo
+                    - generic [ref=e3381]: AAPL
+                    - generic [ref=e3382]: 5월 12일 오전 06:31
+            - link "Apple Board Veteran Sells $71 Million in Stock After Record Earnings Apple Board Veteran Sells $71 Million in Stock After Record Earnings Apple Director Sells $71 Million in Shares as Stock Nears Highs Yahoo AAPL 5월 12일 오전 06:27" [ref=e3384] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=3093e2e19377934d541cc76daacaff8de3f47659a8417329ecf5f97fcaacca8e
+              - generic [ref=e3385]:
+                - img "Apple Board Veteran Sells $71 Million in Stock After Record Earnings" [ref=e3387]
+                - generic [ref=e3388]:
+                  - generic [ref=e3389]:
+                    - generic [ref=e3390]:
+                      - heading "Apple Board Veteran Sells $71 Million in Stock After Record Earnings" [level=3] [ref=e3391]
+                      - paragraph [ref=e3392]: Apple Director Sells $71 Million in Shares as Stock Nears Highs
+                    - img [ref=e3393]
+                  - generic [ref=e3397]:
+                    - generic [ref=e3398]: Yahoo
+                    - generic [ref=e3399]: AAPL
+                    - generic [ref=e3400]: 5월 12일 오전 06:27
+            - link "Apple Raises Mac Mini Price As AI Demand Drives 3-Month Back Orders Apple Raises Mac Mini Price As AI Demand Drives 3-Month Back Orders Apple lifted the Mac mini's minimum price to $799 after Mac sales rose 6% to $8.4 billion. Yahoo AAPL 5월 12일 오전 06:11" [ref=e3402] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=19c6acbcfa4ea859fe4a0cba2befd6b345ab10cc1ca3cc7cd7ac550ea1e4ec3c
+              - generic [ref=e3403]:
+                - img "Apple Raises Mac Mini Price As AI Demand Drives 3-Month Back Orders" [ref=e3405]
+                - generic [ref=e3406]:
+                  - generic [ref=e3407]:
+                    - generic [ref=e3408]:
+                      - heading "Apple Raises Mac Mini Price As AI Demand Drives 3-Month Back Orders" [level=3] [ref=e3409]
+                      - paragraph [ref=e3410]: Apple lifted the Mac mini's minimum price to $799 after Mac sales rose 6% to $8.4 billion.
+                    - img [ref=e3411]
+                  - generic [ref=e3415]:
+                    - generic [ref=e3416]: Yahoo
+                    - generic [ref=e3417]: AAPL
+                    - generic [ref=e3418]: 5월 12일 오전 06:11
+            - 'link "A Major Catalyst for AAPL Stock Is Just a Month Away: Apple Is a ‘Sleep Tech Giant’ Says Wedbush A Major Catalyst for AAPL Stock Is Just a Month Away: Apple Is a ‘Sleep Tech Giant’ Says Wedbush Wedbush Securities views Apple as entering a transformative AI chapter, supported by leadership changes and new growth opportunities. Yahoo AAPL 5월 12일 오전 05:25" [ref=e3420] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=b5ba83e7b1293815f65656cf806ee556dafcb89e3566d78b5e8f6eaf3b4db00c
+              - generic [ref=e3421]:
+                - 'img "A Major Catalyst for AAPL Stock Is Just a Month Away: Apple Is a ‘Sleep Tech Giant’ Says Wedbush" [ref=e3423]'
+                - generic [ref=e3424]:
+                  - generic [ref=e3425]:
+                    - generic [ref=e3426]:
+                      - 'heading "A Major Catalyst for AAPL Stock Is Just a Month Away: Apple Is a ‘Sleep Tech Giant’ Says Wedbush" [level=3] [ref=e3427]'
+                      - paragraph [ref=e3428]: Wedbush Securities views Apple as entering a transformative AI chapter, supported by leadership changes and new growth opportunities.
+                    - img [ref=e3429]
+                  - generic [ref=e3433]:
+                    - generic [ref=e3434]: Yahoo
+                    - generic [ref=e3435]: AAPL
+                    - generic [ref=e3436]: 5월 12일 오전 05:25
+            - link "Tesla's Elon Musk, Apple's Tim Cook among CEOs set to join Trump on China trip Tesla's Elon Musk, Apple's Tim Cook among CEOs set to join Trump on China trip Sixteen top business executives are expected to join President Trump on his trip this week to meet with Chinese leader Xi Jinping. Yahoo AAPL 5월 12일 오전 05:11" [ref=e3438] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=d80a15493e405581129adc509607c3db51a41dceb4e9789bfda6f92e58d4394d
+              - generic [ref=e3439]:
+                - img "Tesla's Elon Musk, Apple's Tim Cook among CEOs set to join Trump on China trip" [ref=e3441]
+                - generic [ref=e3442]:
+                  - generic [ref=e3443]:
+                    - generic [ref=e3444]:
+                      - heading "Tesla's Elon Musk, Apple's Tim Cook among CEOs set to join Trump on China trip" [level=3] [ref=e3445]
+                      - paragraph [ref=e3446]: Sixteen top business executives are expected to join President Trump on his trip this week to meet with Chinese leader Xi Jinping.
+                    - img [ref=e3447]
+                  - generic [ref=e3451]:
+                    - generic [ref=e3452]: Yahoo
+                    - generic [ref=e3453]: AAPL
+                    - generic [ref=e3454]: 5월 12일 오전 05:11
+            - link "What to Know About This Fund’s $15 Million International ETF Purchase What to Know About This Fund’s $15 Million International ETF Purchase This ETF provides global equity exposure through an actively managed country rotation strategy targeting diversified international markets. Yahoo AAPL 5월 12일 오전 04:53" [ref=e3456] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=c4984e4da7483512ec7aa07ab30b12fc82b016525a49f4a896f30a7fee5e31d5
+              - generic [ref=e3457]:
+                - img "What to Know About This Fund’s $15 Million International ETF Purchase" [ref=e3459]
+                - generic [ref=e3460]:
+                  - generic [ref=e3461]:
+                    - generic [ref=e3462]:
+                      - heading "What to Know About This Fund’s $15 Million International ETF Purchase" [level=3] [ref=e3463]
+                      - paragraph [ref=e3464]: This ETF provides global equity exposure through an actively managed country rotation strategy targeting diversified international markets.
+                    - img [ref=e3465]
+                  - generic [ref=e3469]:
+                    - generic [ref=e3470]: Yahoo
+                    - generic [ref=e3471]: AAPL
+                    - generic [ref=e3472]: 5월 12일 오전 04:53
+            - 'link "Sector Update: Tech Stocks Rise Late Afternoon Sector Update: Tech Stocks Rise Late Afternoon Tech stocks were higher late Monday afternoon, with the State Street Technology Select Sector SPDR E Yahoo AAPL 5월 12일 오전 04:53" [ref=e3474] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=dccb125dcfb13b8b1309dc2609299d798771fcaa0aeb017dea07e91f205b14fa
+              - generic [ref=e3475]:
+                - 'img "Sector Update: Tech Stocks Rise Late Afternoon" [ref=e3477]'
+                - generic [ref=e3478]:
+                  - generic [ref=e3479]:
+                    - generic [ref=e3480]:
+                      - 'heading "Sector Update: Tech Stocks Rise Late Afternoon" [level=3] [ref=e3481]'
+                      - paragraph [ref=e3482]: Tech stocks were higher late Monday afternoon, with the State Street Technology Select Sector SPDR E
+                    - img [ref=e3483]
+                  - generic [ref=e3487]:
+                    - generic [ref=e3488]: Yahoo
+                    - generic [ref=e3489]: AAPL
+                    - generic [ref=e3490]: 5월 12일 오전 04:53
+            - link "Why One Fund Made a $23 Million Bet on This Addiction-Treatment Stock Amid a Staggering Rally Why One Fund Made a $23 Million Bet on This Addiction-Treatment Stock Amid a Staggering Rally Indivior develops proprietary treatments for opioid dependence, generating revenue from specialty pharmaceuticals across global markets. Yahoo AAPL 5월 12일 오전 03:59" [ref=e3492] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=05c85df7f4413657199c2f983c5e9f0b8121aa79599fa3521bb16c26c78270bf
+              - generic [ref=e3493]:
+                - img "Why One Fund Made a $23 Million Bet on This Addiction-Treatment Stock Amid a Staggering Rally" [ref=e3495]
+                - generic [ref=e3496]:
+                  - generic [ref=e3497]:
+                    - generic [ref=e3498]:
+                      - heading "Why One Fund Made a $23 Million Bet on This Addiction-Treatment Stock Amid a Staggering Rally" [level=3] [ref=e3499]
+                      - paragraph [ref=e3500]: Indivior develops proprietary treatments for opioid dependence, generating revenue from specialty pharmaceuticals across global markets.
+                    - img [ref=e3501]
+                  - generic [ref=e3505]:
+                    - generic [ref=e3506]: Yahoo
+                    - generic [ref=e3507]: AAPL
+                    - generic [ref=e3508]: 5월 12일 오전 03:59
+            - link "Here's How Nvidia Is Quietly Carrying the Entire S&P 500 Rally to Record Highs Here's How Nvidia Is Quietly Carrying the Entire S&P 500 Rally to Record Highs Goldman Sachs data shows unusually narrow market breadth reminiscent of past tech-led cycles. Yet as narrow as it is, the concentration may be more significant than investors realize. Yahoo AAPL 5월 12일 오전 03:20" [ref=e3510] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=0cfc99c8637100b6e18fc64f43038a4b3e54471241da13ae26d684ffe7fcbaa2
+              - generic [ref=e3511]:
+                - img "Here's How Nvidia Is Quietly Carrying the Entire S&P 500 Rally to Record Highs" [ref=e3513]
+                - generic [ref=e3514]:
+                  - generic [ref=e3515]:
+                    - generic [ref=e3516]:
+                      - heading "Here's How Nvidia Is Quietly Carrying the Entire S&P 500 Rally to Record Highs" [level=3] [ref=e3517]
+                      - paragraph [ref=e3518]: Goldman Sachs data shows unusually narrow market breadth reminiscent of past tech-led cycles. Yet as narrow as it is, the concentration may be more significant than investors realize.
+                    - img [ref=e3519]
+                  - generic [ref=e3523]:
+                    - generic [ref=e3524]: Yahoo
+                    - generic [ref=e3525]: AAPL
+                    - generic [ref=e3526]: 5월 12일 오전 03:20
+            - link "Musk, Cook Set to Join Trump for Xi Summit, White House Says Musk, Cook Set to Join Trump for Xi Summit, White House Says (Bloomberg) -- The White House is inviting Tesla Inc.’s Elon Musk, Apple Inc.’s Tim Cook, Boeing Co.’s Kelly Ortberg and executives from other large companies to accompany President Donald Trump on his trip to China this week, according to an official. Most Read from BloombergIran Makes New Offer on Uranium in Response to US, WSJ SaysInside a Year of Chaos and Conflict at Kevin Hart’s Media CompanyTrump Rejects New Iran Peace Offer as ‘Totally Unacceptable’Modi Asks Indians to Stop Buying Gold, Yahoo AAPL 5월 12일 오전 02:38" [ref=e3528] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=f4a852d5c799f615bbcc3fb4cc01207e346b04efd46521ab3006871de1cba37a
+              - generic [ref=e3529]:
+                - img "Musk, Cook Set to Join Trump for Xi Summit, White House Says" [ref=e3531]
+                - generic [ref=e3532]:
+                  - generic [ref=e3533]:
+                    - generic [ref=e3534]:
+                      - heading "Musk, Cook Set to Join Trump for Xi Summit, White House Says" [level=3] [ref=e3535]
+                      - paragraph [ref=e3536]: (Bloomberg) -- The White House is inviting Tesla Inc.’s Elon Musk, Apple Inc.’s Tim Cook, Boeing Co.’s Kelly Ortberg and executives from other large companies to accompany President Donald Trump on his trip to China this week, according to an official. Most Read from BloombergIran Makes New Offer on Uranium in Response to US, WSJ SaysInside a Year of Chaos and Conflict at Kevin Hart’s Media CompanyTrump Rejects New Iran Peace Offer as ‘Totally Unacceptable’Modi Asks Indians to Stop Buying Gold,
+                    - img [ref=e3537]
+                  - generic [ref=e3541]:
+                    - generic [ref=e3542]: Yahoo
+                    - generic [ref=e3543]: AAPL
+                    - generic [ref=e3544]: 5월 12일 오전 02:38
+            - link "Apple delivers surprise win in Big Tech’s AI spending war Apple delivers surprise win in Big Tech’s AI spending war Apple (AAPL) is spending much of the artificial intelligence boom looking like the company that missed the memo. Apple took a more cautious approach as Microsoft (MSFT), Alphabet (GOOGL), Amazon (AMZN), and Meta Platforms (META) rushed to construct larger data centers, purchase more CPUs, and ... Yahoo AAPL 5월 12일 오전 01:21" [ref=e3546] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=853cc621177a4f1deacdb037f7d3b996d95f40301b2c1847b9e36cffa225681b
+              - generic [ref=e3547]:
+                - img "Apple delivers surprise win in Big Tech’s AI spending war" [ref=e3549]
+                - generic [ref=e3550]:
+                  - generic [ref=e3551]:
+                    - generic [ref=e3552]:
+                      - heading "Apple delivers surprise win in Big Tech’s AI spending war" [level=3] [ref=e3553]
+                      - paragraph [ref=e3554]: Apple (AAPL) is spending much of the artificial intelligence boom looking like the company that missed the memo. Apple took a more cautious approach as Microsoft (MSFT), Alphabet (GOOGL), Amazon (AMZN), and Meta Platforms (META) rushed to construct larger data centers, purchase more CPUs, and ...
+                    - img [ref=e3555]
+                  - generic [ref=e3559]:
+                    - generic [ref=e3560]: Yahoo
+                    - generic [ref=e3561]: AAPL
+                    - generic [ref=e3562]: 5월 12일 오전 01:21
+            - link "Apple-Intel preliminary chip deal seen as positive for Intel but raises fab questions, says Wedbush Apple-Intel preliminary chip deal seen as positive for Intel but raises fab questions, says Wedbush Apple Inc (NASDAQ:AAPL, XETRA:APC) and Intel Corp (NASDAQ:INTC, XETRA:INL) have reportedly reached a preliminary chipmaking agreement that Wedbush analysts see as “a clear positive for Intel,” while also raising questions about what it signals for Intel’s next-generation manufacturing... Yahoo AAPL 5월 12일 오전 01:10" [ref=e3564] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=c028850821a59553fcac23f93183d12a28479fbac66499d80ba106c5dd460320
+              - generic [ref=e3565]:
+                - img "Apple-Intel preliminary chip deal seen as positive for Intel but raises fab questions, says Wedbush" [ref=e3567]
+                - generic [ref=e3568]:
+                  - generic [ref=e3569]:
+                    - generic [ref=e3570]:
+                      - heading "Apple-Intel preliminary chip deal seen as positive for Intel but raises fab questions, says Wedbush" [level=3] [ref=e3571]
+                      - paragraph [ref=e3572]: Apple Inc (NASDAQ:AAPL, XETRA:APC) and Intel Corp (NASDAQ:INTC, XETRA:INL) have reportedly reached a preliminary chipmaking agreement that Wedbush analysts see as “a clear positive for Intel,” while also raising questions about what it signals for Intel’s next-generation manufacturing...
+                    - img [ref=e3573]
+                  - generic [ref=e3577]:
+                    - generic [ref=e3578]: Yahoo
+                    - generic [ref=e3579]: AAPL
+                    - generic [ref=e3580]: 5월 12일 오전 01:10
+            - 'link "What Makes Apple (AAPL) a New Buy Stock What Makes Apple (AAPL) a New Buy Stock Apple (AAPL) might move higher on growing optimism about its earnings prospects, which is reflected by its upgrade to a Zacks Rank #2 (Buy). Yahoo AAPL 5월 12일 오전 01:00" [ref=e3582] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=16766638cdc9fcd23e7432d45c7ca374be564e7e05625218760a585f1ba9c707
+              - generic [ref=e3583]:
+                - img "What Makes Apple (AAPL) a New Buy Stock" [ref=e3585]
+                - generic [ref=e3586]:
+                  - generic [ref=e3587]:
+                    - generic [ref=e3588]:
+                      - heading "What Makes Apple (AAPL) a New Buy Stock" [level=3] [ref=e3589]
+                      - paragraph [ref=e3590]: "Apple (AAPL) might move higher on growing optimism about its earnings prospects, which is reflected by its upgrade to a Zacks Rank #2 (Buy)."
+                    - img [ref=e3591]
+                  - generic [ref=e3595]:
+                    - generic [ref=e3596]: Yahoo
+                    - generic [ref=e3597]: AAPL
+                    - generic [ref=e3598]: 5월 12일 오전 01:00
+            - link "Asset Manager Sells 1.2 Million Bond ETF Shares, According to Latest SEC Filing Asset Manager Sells 1.2 Million Bond ETF Shares, According to Latest SEC Filing This ETF tracks a portfolio of U.S. Treasury bonds maturing in December 2026, offering defined-term exposure and a transparent structure. Yahoo AAPL 5월 12일 오전 12:57" [ref=e3600] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=da1ca0b9c8bb5eba68fd7264e9d28b4ebb994fa4acdb90d88dbab14c56da729d
+              - generic [ref=e3601]:
+                - img "Asset Manager Sells 1.2 Million Bond ETF Shares, According to Latest SEC Filing" [ref=e3603]
+                - generic [ref=e3604]:
+                  - generic [ref=e3605]:
+                    - generic [ref=e3606]:
+                      - heading "Asset Manager Sells 1.2 Million Bond ETF Shares, According to Latest SEC Filing" [level=3] [ref=e3607]
+                      - paragraph [ref=e3608]: This ETF tracks a portfolio of U.S. Treasury bonds maturing in December 2026, offering defined-term exposure and a transparent structure.
+                    - img [ref=e3609]
+                  - generic [ref=e3613]:
+                    - generic [ref=e3614]: Yahoo
+                    - generic [ref=e3615]: AAPL
+                    - generic [ref=e3616]: 5월 12일 오전 12:57
+            - link "Trump Says Xi Will Give Him A 'Big, Fat Hug' In China, But What Do Prediction Markets Expect? Trump Says Xi Will Give Him A 'Big, Fat Hug' In China, But What Do Prediction Markets Expect? Trump promises a &#39;big, fat hug&#39; from Xi when he lands in Beijing Thursday. Analysts say to expect Boeings, beans and not much else. Benzinga AAPL 5월 12일 오전 12:41" [ref=e3618] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=a60140d94e24e629fa65db97b934e90986726ffa8c0b7d02cc2557df542f84b1
+              - generic [ref=e3619]:
+                - img "Trump Says Xi Will Give Him A 'Big, Fat Hug' In China, But What Do Prediction Markets Expect?" [ref=e3621]
+                - generic [ref=e3622]:
+                  - generic [ref=e3623]:
+                    - generic [ref=e3624]:
+                      - heading "Trump Says Xi Will Give Him A 'Big, Fat Hug' In China, But What Do Prediction Markets Expect?" [level=3] [ref=e3625]
+                      - paragraph [ref=e3626]: Trump promises a &#39;big, fat hug&#39; from Xi when he lands in Beijing Thursday. Analysts say to expect Boeings, beans and not much else.
+                    - img [ref=e3627]
+                  - generic [ref=e3631]:
+                    - generic [ref=e3632]: Benzinga
+                    - generic [ref=e3633]: AAPL
+                    - generic [ref=e3634]: 5월 12일 오전 12:41
+            - link "Memory chip stocks hit record highs, pharma reacts to hantavirus concerns Memory chip stocks hit record highs, pharma reacts to hantavirus concerns Market Catalysts Host Julie Hyman and Yahoo Finance Senior Reporter Brooke DiPalma track several of the day's top trending stock tickers, including memory chip stocks Micron Technology (MU), Intel (INTC), and Qualcomm (QCOM) opening at record highs; shares of Moderna (MRNA) and Novavax (NVAX) reacting to concerns around the hantavirus; and Constellation Energy (CEG) affirming its full-year guidance after beating first quarter earnings estimates. Yahoo AAPL 5월 11일 오후 11:54" [ref=e3636] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=066b6da739258eb7879380f6d831e9f814cae0e9ed16a587d6bd76f03a9c4b66
+              - generic [ref=e3637]:
+                - img "Memory chip stocks hit record highs, pharma reacts to hantavirus concerns" [ref=e3639]
+                - generic [ref=e3640]:
+                  - generic [ref=e3641]:
+                    - generic [ref=e3642]:
+                      - heading "Memory chip stocks hit record highs, pharma reacts to hantavirus concerns" [level=3] [ref=e3643]
+                      - paragraph [ref=e3644]: Market Catalysts Host Julie Hyman and Yahoo Finance Senior Reporter Brooke DiPalma track several of the day's top trending stock tickers, including memory chip stocks Micron Technology (MU), Intel (INTC), and Qualcomm (QCOM) opening at record highs; shares of Moderna (MRNA) and Novavax (NVAX) reacting to concerns around the hantavirus; and Constellation Energy (CEG) affirming its full-year guidance after beating first quarter earnings estimates.
+                    - img [ref=e3645]
+                  - generic [ref=e3649]:
+                    - generic [ref=e3650]: Yahoo
+                    - generic [ref=e3651]: AAPL
+                    - generic [ref=e3652]: 5월 11일 오후 11:54
+            - link "Nvidia CEO Huang not going to China during Trump visit, source says Nvidia CEO Huang not going to China during Trump visit, source says Nvidia CEO Jensen Huang is not going to Beijing ‌during President Donald Trump's trip to China ‌this week, a person familiar with the matter said on Monday. Huang was not invited, the source said, with the White House focusing more on agriculture and commercial aviation matters, such as orders for Boeing planes, on the ‌current trip. A number of CEOs ⁠were expected to travel with Trump to help drum up business for U.S. companies, a top priority for his administration. Yahoo AAPL 5월 11일 오후 11:53" [ref=e3654] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=6cd90a5defc593b6e1415d3949dfb8976d65e22328204bbc0b959139be76467b
+              - generic [ref=e3655]:
+                - img "Nvidia CEO Huang not going to China during Trump visit, source says" [ref=e3657]
+                - generic [ref=e3658]:
+                  - generic [ref=e3659]:
+                    - generic [ref=e3660]:
+                      - heading "Nvidia CEO Huang not going to China during Trump visit, source says" [level=3] [ref=e3661]
+                      - paragraph [ref=e3662]: Nvidia CEO Jensen Huang is not going to Beijing ‌during President Donald Trump's trip to China ‌this week, a person familiar with the matter said on Monday. Huang was not invited, the source said, with the White House focusing more on agriculture and commercial aviation matters, such as orders for Boeing planes, on the ‌current trip. A number of CEOs ⁠were expected to travel with Trump to help drum up business for U.S. companies, a top priority for his administration.
+                    - img [ref=e3663]
+                  - generic [ref=e3667]:
+                    - generic [ref=e3668]: Yahoo
+                    - generic [ref=e3669]: AAPL
+                    - generic [ref=e3670]: 5월 11일 오후 11:53
+            - link "FTC Sends Warning to Big Tech About Compliance With Take It Down Act By Christopher Kuo The Federal Trade Commission sent letters to more than a dozen major technology companies advising them to comply with federal legislation about the removal of nonconsensual... Finnhub AAPL 5월 11일 오후 11:44" [ref=e3672] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=6587758f618a214444b89679d97cbb10610588e9036b7e05c2461da16cb456fa
+              - generic [ref=e3674]:
+                - generic [ref=e3675]:
+                  - generic [ref=e3676]:
+                    - heading "FTC Sends Warning to Big Tech About Compliance With Take It Down Act" [level=3] [ref=e3677]
+                    - paragraph [ref=e3678]: By Christopher Kuo The Federal Trade Commission sent letters to more than a dozen major technology companies advising them to comply with federal legislation about the removal of nonconsensual...
+                  - img [ref=e3679]
+                - generic [ref=e3683]:
+                  - generic [ref=e3684]: Finnhub
+                  - generic [ref=e3685]: AAPL
+                  - generic [ref=e3686]: 5월 11일 오후 11:44
+            - link "Google, Apple roll out encryption for RCS to secure chats between Android, iPhone users Google:Google, co, Apple rolling out end-to-end encryption for RCS, securing chats between Android and iPhone users by default - website... Finnhub AAPL 5월 11일 오후 11:39" [ref=e3688] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=c2cc1320b8b8bc08e93b42eb4633646470e0eedc7b8f665df86e223213e44c60
+              - generic [ref=e3690]:
+                - generic [ref=e3691]:
+                  - generic [ref=e3692]:
+                    - heading "Google, Apple roll out encryption for RCS to secure chats between Android, iPhone users" [level=3] [ref=e3693]
+                    - paragraph [ref=e3694]: Google:Google, co, Apple rolling out end-to-end encryption for RCS, securing chats between Android and iPhone users by default - website...
+                  - img [ref=e3695]
+                - generic [ref=e3699]:
+                  - generic [ref=e3700]: Finnhub
+                  - generic [ref=e3701]: AAPL
+                  - generic [ref=e3702]: 5월 11일 오후 11:39
+            - 'link "Apple rolls out end-to-end encrypted RCS messaging in beta Apple Inc: Apple: End-to-end encrypted RCS messaging begins rolling out today in beta Apple: launches end-to-end encrypted RCS messaging in beta Apple: enables encrypted RCS chats for iOS 26.5... Finnhub AAPL 5월 11일 오후 11:36" [ref=e3704] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=57dbeebc1a26c867cee03c54c108b1a56ce708a2c30f87bb26c3dc7157ccdfb4
+              - generic [ref=e3706]:
+                - generic [ref=e3707]:
+                  - generic [ref=e3708]:
+                    - heading "Apple rolls out end-to-end encrypted RCS messaging in beta" [level=3] [ref=e3709]
+                    - paragraph [ref=e3710]: "Apple Inc: Apple: End-to-end encrypted RCS messaging begins rolling out today in beta Apple: launches end-to-end encrypted RCS messaging in beta Apple: enables encrypted RCS chats for iOS 26.5..."
+                  - img [ref=e3711]
+                - generic [ref=e3715]:
+                  - generic [ref=e3716]: Finnhub
+                  - generic [ref=e3717]: AAPL
+                  - generic [ref=e3718]: 5월 11일 오후 11:36
+            - link "Elon Musk Joins Trump's China Trip — Nvidia CEO Jensen Huang Not Invited Elon Musk Joins Trump's China Trip — Nvidia CEO Jensen Huang Not Invited Reuters reports Elon Musk and Tim Cook will join Trump on his China trip, while Nvidia&#39;s Jensen Huang was not invited. Benzinga AAPL 5월 11일 오후 11:34" [ref=e3720] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=e7811271fe04e76456232ac6ff5f207569efab2dc38afa8a1b5a37181adbf7cf
+              - generic [ref=e3721]:
+                - img "Elon Musk Joins Trump's China Trip — Nvidia CEO Jensen Huang Not Invited" [ref=e3723]
+                - generic [ref=e3724]:
+                  - generic [ref=e3725]:
+                    - generic [ref=e3726]:
+                      - heading "Elon Musk Joins Trump's China Trip — Nvidia CEO Jensen Huang Not Invited" [level=3] [ref=e3727]
+                      - paragraph [ref=e3728]: Reuters reports Elon Musk and Tim Cook will join Trump on his China trip, while Nvidia&#39;s Jensen Huang was not invited.
+                    - img [ref=e3729]
+                  - generic [ref=e3733]:
+                    - generic [ref=e3734]: Benzinga
+                    - generic [ref=e3735]: AAPL
+                    - generic [ref=e3736]: 5월 11일 오후 11:34
+            - 'link "The Hidden Drag of SPY’s Outdated UIT Structure: Why VOO’s 6.45 Basis Point Fee Advantage Matters Over a Decade The Hidden Drag of SPY’s Outdated UIT Structure: Why VOO’s 6.45 Basis Point Fee Advantage Matters Over a Decade SPDR S&P 500 ETF Trust (NYSEARCA:SPY) and Vanguard 500 Index Fund ETF (NYSEARCA:VOO) track the same S&P 500 index. The real contest is structure, cost, and cash flow. With the VIX at 17.39, this is a clean moment to compare them. Same Index, Same Names at the Top Both funds own identical holdings. SPY’s largest ... The Hidden Drag of SPY’s Outdated UIT Structure: Why VOO’s 6.45 Basis Point Fee Advantage Matters Over a Decade Yahoo AAPL 5월 11일 오후 11:30" [ref=e3738] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=2d750537e2df1121ac9d7c92e3bdea0fafa361c14f4a16ee3a5c66a4ec1c6224
+              - generic [ref=e3739]:
+                - 'img "The Hidden Drag of SPY’s Outdated UIT Structure: Why VOO’s 6.45 Basis Point Fee Advantage Matters Over a Decade" [ref=e3741]'
+                - generic [ref=e3742]:
+                  - generic [ref=e3743]:
+                    - generic [ref=e3744]:
+                      - 'heading "The Hidden Drag of SPY’s Outdated UIT Structure: Why VOO’s 6.45 Basis Point Fee Advantage Matters Over a Decade" [level=3] [ref=e3745]'
+                      - paragraph [ref=e3746]: "SPDR S&P 500 ETF Trust (NYSEARCA:SPY) and Vanguard 500 Index Fund ETF (NYSEARCA:VOO) track the same S&P 500 index. The real contest is structure, cost, and cash flow. With the VIX at 17.39, this is a clean moment to compare them. Same Index, Same Names at the Top Both funds own identical holdings. SPY’s largest ... The Hidden Drag of SPY’s Outdated UIT Structure: Why VOO’s 6.45 Basis Point Fee Advantage Matters Over a Decade"
+                    - img [ref=e3747]
+                  - generic [ref=e3751]:
+                    - generic [ref=e3752]: Yahoo
+                    - generic [ref=e3753]: AAPL
+                    - generic [ref=e3754]: 5월 11일 오후 11:30
+            - link "Should You Buy Apple Stock Before June 8? Should You Buy Apple Stock Before June 8? The company's annual Worldwide Developers Conference is taking place in less than a month. Yahoo AAPL 5월 11일 오후 11:05" [ref=e3756] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=368287cdd5ef2355b3c4ccc68e231ace42637db07b4601c9478beaa5519e3379
+              - generic [ref=e3757]:
+                - img "Should You Buy Apple Stock Before June 8?" [ref=e3759]
+                - generic [ref=e3760]:
+                  - generic [ref=e3761]:
+                    - generic [ref=e3762]:
+                      - heading "Should You Buy Apple Stock Before June 8?" [level=3] [ref=e3763]
+                      - paragraph [ref=e3764]: The company's annual Worldwide Developers Conference is taking place in less than a month.
+                    - img [ref=e3765]
+                  - generic [ref=e3769]:
+                    - generic [ref=e3770]: Yahoo
+                    - generic [ref=e3771]: AAPL
+                    - generic [ref=e3772]: 5월 11일 오후 11:05
+            - 'link "US FTC reminds tech cos to comply with Take It Down Act by May 19 The U.S. Federal Trade Commission: U.S. FTC: Sent letters today to more than a dozen prominent technology companies seeking compliance with Take It Down Act U.S. FTC: Letter on Take It Down Act... Finnhub AAPL 5월 11일 오후 11:02" [ref=e3774] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=3b6d3cc6236a5e726f686d174283ec3647256767f3694c05cd2d8742bec264bd
+              - generic [ref=e3776]:
+                - generic [ref=e3777]:
+                  - generic [ref=e3778]:
+                    - heading "US FTC reminds tech cos to comply with Take It Down Act by May 19" [level=3] [ref=e3779]
+                    - paragraph [ref=e3780]: "The U.S. Federal Trade Commission: U.S. FTC: Sent letters today to more than a dozen prominent technology companies seeking compliance with Take It Down Act U.S. FTC: Letter on Take It Down Act..."
+                  - img [ref=e3781]
+                - generic [ref=e3785]:
+                  - generic [ref=e3786]: Finnhub
+                  - generic [ref=e3787]: AAPL
+                  - generic [ref=e3788]: 5월 11일 오후 11:02
+            - link "Is Apple (AAPL) a Buy as Wall Street Analysts Look Optimistic? Is Apple (AAPL) a Buy as Wall Street Analysts Look Optimistic? According to the average brokerage recommendation (ABR), one should invest in Apple (AAPL). It is debatable whether this highly sought-after metric is effective because Wall Street analysts' recommendations tend to be overly optimistic. Would it be worth investing in the stock? Yahoo AAPL 5월 11일 오후 10:30" [ref=e3790] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=8213c31cbd252dcc5dd61b29f12164561a1f10eca0f9fd6e9e297f3ad9891223
+              - generic [ref=e3791]:
+                - img "Is Apple (AAPL) a Buy as Wall Street Analysts Look Optimistic?" [ref=e3793]
+                - generic [ref=e3794]:
+                  - generic [ref=e3795]:
+                    - generic [ref=e3796]:
+                      - heading "Is Apple (AAPL) a Buy as Wall Street Analysts Look Optimistic?" [level=3] [ref=e3797]
+                      - paragraph [ref=e3798]: According to the average brokerage recommendation (ABR), one should invest in Apple (AAPL). It is debatable whether this highly sought-after metric is effective because Wall Street analysts' recommendations tend to be overly optimistic. Would it be worth investing in the stock?
+                    - img [ref=e3799]
+                  - generic [ref=e3803]:
+                    - generic [ref=e3804]: Yahoo
+                    - generic [ref=e3805]: AAPL
+                    - generic [ref=e3806]: 5월 11일 오후 10:30
+            - 'link "For the first time in 19 years, Apple’s flagship isn’t a phone For the first time in 19 years, Apple’s flagship isn’t a phone Since January 2007, Apple (NASDAQ:AAPL)’s flagship has been one product: the iPhone. For 19 years it defined the company, the cash flows, and the strategic narrative. In 2026, that center of gravity is shifting. The flagship is now a head-mounted ambient computing platform built around the Vision series and the upcoming Ray-Ban-style smart glasses, with ... For the first time in 19 years, Apple’s flagship isn’t a phone Yahoo AAPL 5월 11일 오후 10:27" [ref=e3808] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=d50d09b414e9536ae73733649b47b9c3b7e8d31781513b91e76c25e43d7fe75f
+              - generic [ref=e3809]:
+                - img "For the first time in 19 years, Apple’s flagship isn’t a phone" [ref=e3811]
+                - generic [ref=e3812]:
+                  - generic [ref=e3813]:
+                    - generic [ref=e3814]:
+                      - heading "For the first time in 19 years, Apple’s flagship isn’t a phone" [level=3] [ref=e3815]
+                      - paragraph [ref=e3816]: "Since January 2007, Apple (NASDAQ:AAPL)’s flagship has been one product: the iPhone. For 19 years it defined the company, the cash flows, and the strategic narrative. In 2026, that center of gravity is shifting. The flagship is now a head-mounted ambient computing platform built around the Vision series and the upcoming Ray-Ban-style smart glasses, with ... For the first time in 19 years, Apple’s flagship isn’t a phone"
+                    - img [ref=e3817]
+                  - generic [ref=e3821]:
+                    - generic [ref=e3822]: Yahoo
+                    - generic [ref=e3823]: AAPL
+                    - generic [ref=e3824]: 5월 11일 오후 10:27
+            - link "Apple Gets a Warning From Nintendo Memory-Chip Crisis. Why the Stock May Suffer. Apple Gets a Warning From Nintendo Memory-Chip Crisis. Why the Stock May Suffer. Nintendo stock dropped after it warned it would need to raise prices of its Switch 2 console to cover memory costs. It's a warning for Apple. Yahoo AAPL 5월 11일 오후 10:23" [ref=e3826] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=8c50d72fd666dbc5bfe7498068ff9f3a7af7889b32deda2fdea8fc03e2fecc73
+              - generic [ref=e3827]:
+                - img "Apple Gets a Warning From Nintendo Memory-Chip Crisis. Why the Stock May Suffer." [ref=e3829]
+                - generic [ref=e3830]:
+                  - generic [ref=e3831]:
+                    - generic [ref=e3832]:
+                      - heading "Apple Gets a Warning From Nintendo Memory-Chip Crisis. Why the Stock May Suffer." [level=3] [ref=e3833]
+                      - paragraph [ref=e3834]: Nintendo stock dropped after it warned it would need to raise prices of its Switch 2 console to cover memory costs. It's a warning for Apple.
+                    - img [ref=e3835]
+                  - generic [ref=e3839]:
+                    - generic [ref=e3840]: Yahoo
+                    - generic [ref=e3841]: AAPL
+                    - generic [ref=e3842]: 5월 11일 오후 10:23
+            - 'link "CORRECTION: Google Announces End-To-End encrypted RCS Messaging Begins Rolling Out Today For Android And iPhone Users https://blog.google/products-and-platforms/platforms/android/android-ios-end-to-end-encrypted-rcs-messaging/ Benzinga AAPL 5월 11일 오후 10:22" [ref=e3844] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=4637b60b64b8319e7c19654b64454e98a61fe73e92fbe08e26c105423712ca57
+              - generic [ref=e3846]:
+                - generic [ref=e3847]:
+                  - generic [ref=e3848]:
+                    - 'heading "CORRECTION: Google Announces End-To-End encrypted RCS Messaging Begins Rolling Out Today For Android And iPhone Users" [level=3] [ref=e3849]'
+                    - paragraph [ref=e3850]: https://blog.google/products-and-platforms/platforms/android/android-ios-end-to-end-encrypted-rcs-messaging/
+                  - img [ref=e3851]
+                - generic [ref=e3855]:
+                  - generic [ref=e3856]: Benzinga
+                  - generic [ref=e3857]: AAPL
+                  - generic [ref=e3858]: 5월 11일 오후 10:22
+            - link "Apple Announces End-To-End Encrypted RCS Messaging Begins Rolling Out Today In Beta https://www.apple.com/newsroom/2026/05/end-to-end-encrypted-rcs-messaging-begins-rolling-out-today-in-beta/ Benzinga AAPL 5월 11일 오후 10:17" [ref=e3860] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=9e088f07bc3814c98edee49f0164031d02296c4d62be7b6b000ea8e1de5ed31a
+              - generic [ref=e3862]:
+                - generic [ref=e3863]:
+                  - generic [ref=e3864]:
+                    - heading "Apple Announces End-To-End Encrypted RCS Messaging Begins Rolling Out Today In Beta" [level=3] [ref=e3865]
+                    - paragraph [ref=e3866]: https://www.apple.com/newsroom/2026/05/end-to-end-encrypted-rcs-messaging-begins-rolling-out-today-in-beta/
+                  - img [ref=e3867]
+                - generic [ref=e3871]:
+                  - generic [ref=e3872]: Benzinga
+                  - generic [ref=e3873]: AAPL
+                  - generic [ref=e3874]: 5월 11일 오후 10:17
+            - 'link "Apple Stock: Alpha Engine Or Portfolio Diversifier? Apple Stock: Alpha Engine Or Portfolio Diversifier? Apple (AAPL) stock has climbed 5% over the past five trading sessions and is now up 13% over the last month, driven by a broader rally in the Nasdaq-100, strong Q2 earnings, a fresh $100 billion share repurchase authorization, and growing optimism around generative AI integration across its devices. Yahoo AAPL 5월 11일 오후 10:17" [ref=e3876] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=b7df1043c16fcaec7e30536572fde30718850f24266c3e8d75cf1761ed91806b
+              - generic [ref=e3877]:
+                - 'img "Apple Stock: Alpha Engine Or Portfolio Diversifier?" [ref=e3879]'
+                - generic [ref=e3880]:
+                  - generic [ref=e3881]:
+                    - generic [ref=e3882]:
+                      - 'heading "Apple Stock: Alpha Engine Or Portfolio Diversifier?" [level=3] [ref=e3883]'
+                      - paragraph [ref=e3884]: Apple (AAPL) stock has climbed 5% over the past five trading sessions and is now up 13% over the last month, driven by a broader rally in the Nasdaq-100, strong Q2 earnings, a fresh $100 billion share repurchase authorization, and growing optimism around generative AI integration across its devices.
+                    - img [ref=e3885]
+                  - generic [ref=e3889]:
+                    - generic [ref=e3890]: Yahoo
+                    - generic [ref=e3891]: AAPL
+                    - generic [ref=e3892]: 5월 11일 오후 10:17
+            - 'link "Apple : End-to-end encrypted RCS messaging begins rolling out today in beta May 11, 2026 UPDATE End-to-end encrypted RCS messaging begins rolling out today in beta Apple and Google have led a cross-industry... Finnhub AAPL 5월 11일 오후 10:13" [ref=e3894] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=c5e3a6e0eba8458cb92086b36f127752335de0c427bebffc2976e633a191c6ac
+              - generic [ref=e3896]:
+                - generic [ref=e3897]:
+                  - generic [ref=e3898]:
+                    - 'heading "Apple : End-to-end encrypted RCS messaging begins rolling out today in beta" [level=3] [ref=e3899]'
+                    - paragraph [ref=e3900]: May 11, 2026 UPDATE End-to-end encrypted RCS messaging begins rolling out today in beta Apple and Google have led a cross-industry...
+                  - img [ref=e3901]
+                - generic [ref=e3905]:
+                  - generic [ref=e3906]: Finnhub
+                  - generic [ref=e3907]: AAPL
+                  - generic [ref=e3908]: 5월 11일 오후 10:13
+            - link "Micron Benefits From Samsung Trouble; Buying Mania Hampered by Rising Oil Semi Mania Please click here for an enlarged chart of Micron Technology Inc Benzinga AAPL 5월 11일 오후 10:06" [ref=e3910] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=0bfdbf166e7828726b3ec8a6837df76a671ad9517603d0d955239ea61fb26321
+              - generic [ref=e3912]:
+                - generic [ref=e3913]:
+                  - generic [ref=e3914]:
+                    - heading "Micron Benefits From Samsung Trouble; Buying Mania Hampered by Rising Oil" [level=3] [ref=e3915]
+                    - paragraph [ref=e3916]: Semi Mania Please click here for an enlarged chart of Micron Technology Inc
+                  - img [ref=e3917]
+                - generic [ref=e3921]:
+                  - generic [ref=e3922]: Benzinga
+                  - generic [ref=e3923]: AAPL
+                  - generic [ref=e3924]: 5월 11일 오후 10:06
+            - link "What Happens To Your Investment Accounts When You Die, And Why Your Beneficiary Form Matters More Than Your Will What Happens To Your Investment Accounts When You Die, And Why Your Beneficiary Form Matters More Than Your Will A will tells your family who gets the dining room table. A beneficiary form tells your IRA custodian who gets the seven-figure retirement account. The two documents are not equivalent. Benzinga AAPL 5월 11일 오후 10:02" [ref=e3926] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=f8839a67aa777c9d4769dee41c7cee44551664707f4cd4cb35da287472b0a068
+              - generic [ref=e3927]:
+                - img "What Happens To Your Investment Accounts When You Die, And Why Your Beneficiary Form Matters More Than Your Will" [ref=e3929]
+                - generic [ref=e3930]:
+                  - generic [ref=e3931]:
+                    - generic [ref=e3932]:
+                      - heading "What Happens To Your Investment Accounts When You Die, And Why Your Beneficiary Form Matters More Than Your Will" [level=3] [ref=e3933]
+                      - paragraph [ref=e3934]: A will tells your family who gets the dining room table. A beneficiary form tells your IRA custodian who gets the seven-figure retirement account. The two documents are not equivalent.
+                    - img [ref=e3935]
+                  - generic [ref=e3939]:
+                    - generic [ref=e3940]: Benzinga
+                    - generic [ref=e3941]: AAPL
+                    - generic [ref=e3942]: 5월 11일 오후 10:02
+            - link "US Equity Futures Slightly Lower Pre-Bell as Trump Rejects Iran's Response to Peace Proposal, Oil Prices Rise US Equity Futures Slightly Lower Pre-Bell as Trump Rejects Iran's Response to Peace Proposal, Oil Prices Rise US equity futures were marginally lower pre-bell Monday as President Donald Trump rejected Iran's re Yahoo AAPL 5월 11일 오후 10:01" [ref=e3944] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=321af76da1accb85e88aac9cea048429c42f75769e9fc3953424c20996b24d12
+              - generic [ref=e3945]:
+                - img "US Equity Futures Slightly Lower Pre-Bell as Trump Rejects Iran's Response to Peace Proposal, Oil Prices Rise" [ref=e3947]
+                - generic [ref=e3948]:
+                  - generic [ref=e3949]:
+                    - generic [ref=e3950]:
+                      - heading "US Equity Futures Slightly Lower Pre-Bell as Trump Rejects Iran's Response to Peace Proposal, Oil Prices Rise" [level=3] [ref=e3951]
+                      - paragraph [ref=e3952]: US equity futures were marginally lower pre-bell Monday as President Donald Trump rejected Iran's re
+                    - img [ref=e3953]
+                  - generic [ref=e3957]:
+                    - generic [ref=e3958]: Yahoo
+                    - generic [ref=e3959]: AAPL
+                    - generic [ref=e3960]: 5월 11일 오후 10:01
+            - link "Apple and Andreessen Horowitz alums raise $20 million to bring AI to ‘real economy’ businesses Apple and Andreessen Horowitz alums raise $20 million to bring AI to ‘real economy’ businesses Ciridae’s seed round was led by Accel, with participation from a16z and General Catalyst Yahoo AAPL 5월 11일 오후 10:00" [ref=e3962] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=937e8105ef61de690635dbb7714fa6ece16f7197275044552746451f05e263c4
+              - generic [ref=e3963]:
+                - img "Apple and Andreessen Horowitz alums raise $20 million to bring AI to ‘real economy’ businesses" [ref=e3965]
+                - generic [ref=e3966]:
+                  - generic [ref=e3967]:
+                    - generic [ref=e3968]:
+                      - heading "Apple and Andreessen Horowitz alums raise $20 million to bring AI to ‘real economy’ businesses" [level=3] [ref=e3969]
+                      - paragraph [ref=e3970]: Ciridae’s seed round was led by Accel, with participation from a16z and General Catalyst
+                    - img [ref=e3971]
+                  - generic [ref=e3975]:
+                    - generic [ref=e3976]: Yahoo
+                    - generic [ref=e3977]: AAPL
+                    - generic [ref=e3978]: 5월 11일 오후 10:00
+            - link "The record-setting rally's next move The record-setting rally's next move The Investment Committee debate where the market is headed after hitting record highs. CNBC AAPL 5월 11일 오후 09:53" [ref=e3980] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=dc6e2ca0bf06aead33c96017f0afb8dab023026904174a842f969620de484568
+              - generic [ref=e3981]:
+                - img "The record-setting rally's next move" [ref=e3983]
+                - generic [ref=e3984]:
+                  - generic [ref=e3985]:
+                    - generic [ref=e3986]:
+                      - heading "The record-setting rally's next move" [level=3] [ref=e3987]
+                      - paragraph [ref=e3988]: The Investment Committee debate where the market is headed after hitting record highs.
+                    - img [ref=e3989]
+                  - generic [ref=e3993]:
+                    - generic [ref=e3994]: CNBC
+                    - generic [ref=e3995]: AAPL
+                    - generic [ref=e3996]: 5월 11일 오후 09:53
+            - link "Apple's AI strategy may finally be taking shape Apple's AI strategy may finally be taking shape Wedbush sees WWDC as major turning point Yahoo AAPL 5월 11일 오후 09:52" [ref=e3998] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=cb83d8aa74feba4ea75019b980ff4e97dd0ac8c69334743c532a89d70b64a82a
+              - generic [ref=e3999]:
+                - img "Apple's AI strategy may finally be taking shape" [ref=e4001]
+                - generic [ref=e4002]:
+                  - generic [ref=e4003]:
+                    - generic [ref=e4004]:
+                      - heading "Apple's AI strategy may finally be taking shape" [level=3] [ref=e4005]
+                      - paragraph [ref=e4006]: Wedbush sees WWDC as major turning point
+                    - img [ref=e4007]
+                  - generic [ref=e4011]:
+                    - generic [ref=e4012]: Yahoo
+                    - generic [ref=e4013]: AAPL
+                    - generic [ref=e4014]: 5월 11일 오후 09:52
+            - link "Intel Stock Rises on Report of Second Huge Chip Customer Intel Stock Rises on Report of Second Huge Chip Customer Intel stock was gaining on a report it could be lining up another major customer for its chip-manufacturing unit. Yahoo AAPL 5월 11일 오후 09:50" [ref=e4016] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=2916e47fc4dc7095ff62bbe481084894da07827a0e742b527e912042a67fec37
+              - generic [ref=e4017]:
+                - img "Intel Stock Rises on Report of Second Huge Chip Customer" [ref=e4019]
+                - generic [ref=e4020]:
+                  - generic [ref=e4021]:
+                    - generic [ref=e4022]:
+                      - heading "Intel Stock Rises on Report of Second Huge Chip Customer" [level=3] [ref=e4023]
+                      - paragraph [ref=e4024]: Intel stock was gaining on a report it could be lining up another major customer for its chip-manufacturing unit.
+                    - img [ref=e4025]
+                  - generic [ref=e4029]:
+                    - generic [ref=e4030]: Yahoo
+                    - generic [ref=e4031]: AAPL
+                    - generic [ref=e4032]: 5월 11일 오후 09:50
+            - 'link "Got $25,000? Apple vs Microsoft- Only One Tech Titan is Winning The AI Race Got $25,000? Apple vs Microsoft- Only One Tech Titan is Winning The AI Race Apple (NASDAQ: AAPL) and Microsoft (NASDAQ: MSFT) reported earnings less than 24 hours apart in late April. Apple delivered a record March quarter powered by the iPhone 17 cycle. Microsoft posted an AI annual revenue run rate of $37 billion, up 123%. Both beat. Only one is monetizing generative AI at scale today. iPhone 17 ... Got $25,000? Apple vs Microsoft- Only One Tech Titan is Winning The AI Race Yahoo AAPL 5월 11일 오후 09:41" [ref=e4034] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=8d78964b7bda58c23dffc15c20b7e9a06b257a4b5c3ac151f99b7a73df37205f
+              - generic [ref=e4035]:
+                - img "Got $25,000? Apple vs Microsoft- Only One Tech Titan is Winning The AI Race" [ref=e4037]
+                - generic [ref=e4038]:
+                  - generic [ref=e4039]:
+                    - generic [ref=e4040]:
+                      - heading "Got $25,000? Apple vs Microsoft- Only One Tech Titan is Winning The AI Race" [level=3] [ref=e4041]
+                      - paragraph [ref=e4042]: "Apple (NASDAQ: AAPL) and Microsoft (NASDAQ: MSFT) reported earnings less than 24 hours apart in late April. Apple delivered a record March quarter powered by the iPhone 17 cycle. Microsoft posted an AI annual revenue run rate of $37 billion, up 123%. Both beat. Only one is monetizing generative AI at scale today. iPhone 17 ... Got $25,000? Apple vs Microsoft- Only One Tech Titan is Winning The AI Race"
+                    - img [ref=e4043]
+                  - generic [ref=e4047]:
+                    - generic [ref=e4048]: Yahoo
+                    - generic [ref=e4049]: AAPL
+                    - generic [ref=e4050]: 5월 11일 오후 09:41
+            - link "Intel Rally Faces Skepticism From BofA Intel Rally Faces Skepticism From BofA BofA stays cautious despite Intel's Apple deal buzz. Yahoo AAPL 5월 11일 오후 09:36" [ref=e4052] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=5deb53b444dd2e9d0507e7f67c65bc3b9efc12e4487e5212f8fad529cbf5bab7
+              - generic [ref=e4053]:
+                - img "Intel Rally Faces Skepticism From BofA" [ref=e4055]
+                - generic [ref=e4056]:
+                  - generic [ref=e4057]:
+                    - generic [ref=e4058]:
+                      - heading "Intel Rally Faces Skepticism From BofA" [level=3] [ref=e4059]
+                      - paragraph [ref=e4060]: BofA stays cautious despite Intel's Apple deal buzz.
+                    - img [ref=e4061]
+                  - generic [ref=e4065]:
+                    - generic [ref=e4066]: Yahoo
+                    - generic [ref=e4067]: AAPL
+                    - generic [ref=e4068]: 5월 11일 오후 09:36
+            - 'link "The Late Morning Rundown: May 11, 2026 The Late Morning Rundown: May 11, 2026 CNBC brings you fast, accurate, and actionable business news and market updates. CNBC AAPL 5월 11일 오후 09:34" [ref=e4070] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=efabae073b3499c659a4464601344717420c457da8d362d808d297d9fee0e958
+              - generic [ref=e4071]:
+                - 'img "The Late Morning Rundown: May 11, 2026" [ref=e4073]'
+                - generic [ref=e4074]:
+                  - generic [ref=e4075]:
+                    - generic [ref=e4076]:
+                      - 'heading "The Late Morning Rundown: May 11, 2026" [level=3] [ref=e4077]'
+                      - paragraph [ref=e4078]: CNBC brings you fast, accurate, and actionable business news and market updates.
+                    - img [ref=e4079]
+                  - generic [ref=e4083]:
+                    - generic [ref=e4084]: CNBC
+                    - generic [ref=e4085]: AAPL
+                    - generic [ref=e4086]: 5월 11일 오후 09:34
+            - 'link "London Mayor: Election result a rejection of Labour''s record London Mayor: Election result a rejection of Labour''s record Sadiq Khan sits down with CNBC’s Ritika Gupta to discuss his ten-year tenure as Mayor of London, the recent results of the U.K. local elections, U.K.-U.S. relations, and London as an investment destination. CNBC AAPL 5월 11일 오후 09:23" [ref=e4088] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=2b58b2483a9467d91a16819888e3a9b713eca889ee21a4f07a687345aba63d2b
+              - generic [ref=e4089]:
+                - 'img "London Mayor: Election result a rejection of Labour''s record" [ref=e4091]'
+                - generic [ref=e4092]:
+                  - generic [ref=e4093]:
+                    - generic [ref=e4094]:
+                      - 'heading "London Mayor: Election result a rejection of Labour''s record" [level=3] [ref=e4095]'
+                      - paragraph [ref=e4096]: Sadiq Khan sits down with CNBC’s Ritika Gupta to discuss his ten-year tenure as Mayor of London, the recent results of the U.K. local elections, U.K.-U.S. relations, and London as an investment destination.
+                    - img [ref=e4097]
+                  - generic [ref=e4101]:
+                    - generic [ref=e4102]: CNBC
+                    - generic [ref=e4103]: AAPL
+                    - generic [ref=e4104]: 5월 11일 오후 09:23
+            - 'link "London Mayor: Treasury policies ''anti-aspiration'' and ''anti-ambition'' London Mayor: Treasury policies ''anti-aspiration'' and ''anti-ambition'' Sadiq Khan, Mayor of London, discusses the city’s reputation as a financial capital and explains why he has been lobbying the government to reconsider policies that may hinder talent attraction and investment. CNBC AAPL 5월 11일 오후 09:06" [ref=e4106] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=56963d27adce74668ccb42f0bfa3cab76e332a7876155ed1abfb6a95f2b9b171
+              - generic [ref=e4107]:
+                - 'img "London Mayor: Treasury policies ''anti-aspiration'' and ''anti-ambition''" [ref=e4109]'
+                - generic [ref=e4110]:
+                  - generic [ref=e4111]:
+                    - generic [ref=e4112]:
+                      - 'heading "London Mayor: Treasury policies ''anti-aspiration'' and ''anti-ambition''" [level=3] [ref=e4113]'
+                      - paragraph [ref=e4114]: Sadiq Khan, Mayor of London, discusses the city’s reputation as a financial capital and explains why he has been lobbying the government to reconsider policies that may hinder talent attraction and investment.
+                    - img [ref=e4115]
+                  - generic [ref=e4119]:
+                    - generic [ref=e4120]: CNBC
+                    - generic [ref=e4121]: AAPL
+                    - generic [ref=e4122]: 5월 11일 오후 09:06
+            - link "Intel stock extends rally as potential Apple chip deal fuels recent gains Intel stock extends rally as potential Apple chip deal fuels recent gains Investing.com -- Intel shares have risen a further 6.6% in premarket trading on Monday, extending a remarkable run that has seen the chipmaker gain 125.6% over the past month and 230.7% year-to-date. Yahoo AAPL 5월 11일 오후 09:05" [ref=e4124] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=7dc5b23fab8b7f71316d4d2520542dbfe69bbab8eb2059ce2ad250bb8c512785
+              - generic [ref=e4125]:
+                - img "Intel stock extends rally as potential Apple chip deal fuels recent gains" [ref=e4127]
+                - generic [ref=e4128]:
+                  - generic [ref=e4129]:
+                    - generic [ref=e4130]:
+                      - heading "Intel stock extends rally as potential Apple chip deal fuels recent gains" [level=3] [ref=e4131]
+                      - paragraph [ref=e4132]: Investing.com -- Intel shares have risen a further 6.6% in premarket trading on Monday, extending a remarkable run that has seen the chipmaker gain 125.6% over the past month and 230.7% year-to-date.
+                    - img [ref=e4133]
+                  - generic [ref=e4137]:
+                    - generic [ref=e4138]: Yahoo
+                    - generic [ref=e4139]: AAPL
+                    - generic [ref=e4140]: 5월 11일 오후 09:05
+            - link "Trump invites Elon Musk, Tim Cook, Larry Fink and other CEOs to join China trip for Xi summit Trump invites Elon Musk, Tim Cook, Larry Fink and other CEOs to join China trip for Xi summit Trump invited Tesla's Elon Musk, Apple's Tim Cook and Blackrock's Larry Fink to join his China trip for talks with Xi Jinping on trade, AI and geopolitics. CNBC AAPL 5월 11일 오후 08:54" [ref=e4142] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=b0e2fd208e2cd44f1c2aa2823205931f029a0bb0a599ad25e7791f8bcc20bfe3
+              - generic [ref=e4143]:
+                - img "Trump invites Elon Musk, Tim Cook, Larry Fink and other CEOs to join China trip for Xi summit" [ref=e4145]
+                - generic [ref=e4146]:
+                  - generic [ref=e4147]:
+                    - generic [ref=e4148]:
+                      - heading "Trump invites Elon Musk, Tim Cook, Larry Fink and other CEOs to join China trip for Xi summit" [level=3] [ref=e4149]
+                      - paragraph [ref=e4150]: Trump invited Tesla's Elon Musk, Apple's Tim Cook and Blackrock's Larry Fink to join his China trip for talks with Xi Jinping on trade, AI and geopolitics.
+                    - img [ref=e4151]
+                  - generic [ref=e4155]:
+                    - generic [ref=e4156]: CNBC
+                    - generic [ref=e4157]: AAPL
+                    - generic [ref=e4158]: 5월 11일 오후 08:54
+            - link "Apple Stock Is at Risk From Nintendo’s Memory-Chip Crisis Apple Stock Is at Risk From Nintendo’s Memory-Chip Crisis Nintendo stock dropped after it warned it would need to raise prices of its Switch 2 console to cover memory costs. It's a warning for Apple. Yahoo AAPL 5월 11일 오후 08:38" [ref=e4160] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=d5f3773c7ba066bec3d7c9aa38437f9d687c82d093ba28c29c52485e62a6c94f
+              - generic [ref=e4161]:
+                - img "Apple Stock Is at Risk From Nintendo’s Memory-Chip Crisis" [ref=e4163]
+                - generic [ref=e4164]:
+                  - generic [ref=e4165]:
+                    - generic [ref=e4166]:
+                      - heading "Apple Stock Is at Risk From Nintendo’s Memory-Chip Crisis" [level=3] [ref=e4167]
+                      - paragraph [ref=e4168]: Nintendo stock dropped after it warned it would need to raise prices of its Switch 2 console to cover memory costs. It's a warning for Apple.
+                    - img [ref=e4169]
+                  - generic [ref=e4173]:
+                    - generic [ref=e4174]: Yahoo
+                    - generic [ref=e4175]: AAPL
+                    - generic [ref=e4176]: 5월 11일 오후 08:38
+            - link [ref=e4178] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=1491132d701b29647606de187e060705ad93e0d9c675f9a0d29018f51a3006ac
+              - generic [ref=e4179]:
+                - img "United States Autonomous Vehicles Market Forecast and Company Analysis Report 2026-2034 Featuring BMW, Alphabet, Ford, Amazon, Apple, Mercedes-Benz, Aptiv, Baidu, DidiChuxing, General Motor" [ref=e4181]
+                - generic [ref=e4182]:
+                  - generic [ref=e4183]:
+                    - generic [ref=e4184]:
+                      - heading "United States Autonomous Vehicles Market Forecast and Company Analysis Report 2026-2034 Featuring BMW, Alphabet, Ford, Amazon, Apple, Mercedes-Benz, Aptiv, Baidu, DidiChuxing, General Motor" [level=3] [ref=e4185]
+                      - paragraph [ref=e4186]: The United States Autonomous Vehicles Market, projected to surge from USD 28.63 billion in 2025 to USD 103.19 billion by 2034, is set for growth driven by technological advancements in AI, connectivity, and sensors. This market explores the potential for enhanced road safety and transport efficiency through applications like ride-sharing and logistics. Industry collaboration fuels innovation, illustrated by key projects from Minus Zero and partnerships like General Motors and NVIDIA. Challenges
+                    - img [ref=e4187]
+                  - generic [ref=e4191]:
+                    - generic [ref=e4192]: Yahoo
+                    - generic [ref=e4193]: AAPL
+                    - generic [ref=e4194]: 5월 11일 오후 08:37
+            - 'link "The ''Buzz Lightyear'' Market: Why Wall Street Thinks S&P 500 Earnings Will Grow ''To Infinity And Beyond'' The ''Buzz Lightyear'' Market: Why Wall Street Thinks S&P 500 Earnings Will Grow ''To Infinity And Beyond'' Ed Yardeni&#39;s &#34;Buzz Lightyear&#34; theory says AI capex will pull S&amp;P 500 earnings &#34;to infinity and beyond.&#34; Polymarket traders mostly agree. Benzinga AAPL 5월 11일 오후 08:19" [ref=e4196] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=493b393de104bbe54a6ae0470d83b566eac13728be5b14d01f038e4c15a7d2da
+              - generic [ref=e4197]:
+                - 'img "The ''Buzz Lightyear'' Market: Why Wall Street Thinks S&P 500 Earnings Will Grow ''To Infinity And Beyond''" [ref=e4199]'
+                - generic [ref=e4200]:
+                  - generic [ref=e4201]:
+                    - generic [ref=e4202]:
+                      - 'heading "The ''Buzz Lightyear'' Market: Why Wall Street Thinks S&P 500 Earnings Will Grow ''To Infinity And Beyond''" [level=3] [ref=e4203]'
+                      - paragraph [ref=e4204]: Ed Yardeni&#39;s &#34;Buzz Lightyear&#34; theory says AI capex will pull S&amp;P 500 earnings &#34;to infinity and beyond.&#34; Polymarket traders mostly agree.
+                    - img [ref=e4205]
+                  - generic [ref=e4209]:
+                    - generic [ref=e4210]: Benzinga
+                    - generic [ref=e4211]: AAPL
+                    - generic [ref=e4212]: 5월 11일 오후 08:19
+            - link "'Musk, Cook Set to Join Trump for Xi Summit, White House Says' - Bloomberg News https://www.bloomberg.com/news/articles/2026-05-11/musk-cook-set-to-join-trump-for-xi-summit-white-house-says Benzinga AAPL 5월 11일 오후 08:18" [ref=e4214] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=e00953f4334982591afaceb097d6a94b1eacbe47637a429998fc8d500f3f02de
+              - generic [ref=e4216]:
+                - generic [ref=e4217]:
+                  - generic [ref=e4218]:
+                    - heading "'Musk, Cook Set to Join Trump for Xi Summit, White House Says' - Bloomberg News" [level=3] [ref=e4219]
+                    - paragraph [ref=e4220]: https://www.bloomberg.com/news/articles/2026-05-11/musk-cook-set-to-join-trump-for-xi-summit-white-house-says
+                  - img [ref=e4221]
+                - generic [ref=e4225]:
+                  - generic [ref=e4226]: Benzinga
+                  - generic [ref=e4227]: AAPL
+                  - generic [ref=e4228]: 5월 11일 오후 08:18
+            - 'link "Melius’ Ben Reitzes on chip stocks momentum: ''I don''t see it stopping for multiple years'' Melius’ Ben Reitzes on chip stocks momentum: ''I don''t see it stopping for multiple years'' Ben Reitzes, Melius Research head of technology research, joins ''Squawk on the Street'' to discuss his outlook on chip stocks. CNBC AAPL 5월 11일 오후 07:49" [ref=e4230] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=844be1253046f2476ca2b2174fe7f12f9636b18168d32d946cd31a50ccfea634
+              - generic [ref=e4231]:
+                - 'img "Melius’ Ben Reitzes on chip stocks momentum: ''I don''t see it stopping for multiple years''" [ref=e4233]'
+                - generic [ref=e4234]:
+                  - generic [ref=e4235]:
+                    - generic [ref=e4236]:
+                      - 'heading "Melius’ Ben Reitzes on chip stocks momentum: ''I don''t see it stopping for multiple years''" [level=3] [ref=e4237]'
+                      - paragraph [ref=e4238]: Ben Reitzes, Melius Research head of technology research, joins 'Squawk on the Street' to discuss his outlook on chip stocks.
+                    - img [ref=e4239]
+                  - generic [ref=e4243]:
+                    - generic [ref=e4244]: CNBC
+                    - generic [ref=e4245]: AAPL
+                    - generic [ref=e4246]: 5월 11일 오후 07:49
+            - 'link "Tech stocks today: AI chipmaker Cerebras to stage blockbuster IPO, Nvidia''s Jensen Huang goes to China Tech stocks today: AI chipmaker Cerebras to stage blockbuster IPO, Nvidia''s Jensen Huang goes to China The tech sector helped US stocks cruise to all-time highs last week, as the artificial intelligence boom broadened. Yahoo AAPL 5월 11일 오후 07:00" [ref=e4248] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=d2979cf2eb1f04178d5c2c51a2e0216f1d515d53aa6dd53e6760a82542c30c1b
+              - generic [ref=e4249]:
+                - 'img "Tech stocks today: AI chipmaker Cerebras to stage blockbuster IPO, Nvidia''s Jensen Huang goes to China" [ref=e4251]'
+                - generic [ref=e4252]:
+                  - generic [ref=e4253]:
+                    - generic [ref=e4254]:
+                      - 'heading "Tech stocks today: AI chipmaker Cerebras to stage blockbuster IPO, Nvidia''s Jensen Huang goes to China" [level=3] [ref=e4255]'
+                      - paragraph [ref=e4256]: The tech sector helped US stocks cruise to all-time highs last week, as the artificial intelligence boom broadened.
+                    - img [ref=e4257]
+                  - generic [ref=e4261]:
+                    - generic [ref=e4262]: Yahoo
+                    - generic [ref=e4263]: AAPL
+                    - generic [ref=e4264]: 5월 11일 오후 07:00
+            - 'link "Apple Q2 2026 Earnings Review: Nothing Here Not To Like Apple Q2 2026 Earnings Review: Nothing Here Not To Like Apple Inc. stock update: record margins, faster growth and $62B net cash. Click for this look at AAPL following the latest earnings release. SeekingAlpha AAPL 5월 11일 오후 06:06" [ref=e4266] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=25ad29d9c748d9ae2bca57f9ddb6eefc984593c9ee06d45ee0db42883d76f9dc
+              - generic [ref=e4267]:
+                - 'img "Apple Q2 2026 Earnings Review: Nothing Here Not To Like" [ref=e4269]'
+                - generic [ref=e4270]:
+                  - generic [ref=e4271]:
+                    - generic [ref=e4272]:
+                      - 'heading "Apple Q2 2026 Earnings Review: Nothing Here Not To Like" [level=3] [ref=e4273]'
+                      - paragraph [ref=e4274]: "Apple Inc. stock update: record margins, faster growth and $62B net cash. Click for this look at AAPL following the latest earnings release."
+                    - img [ref=e4275]
+                  - generic [ref=e4279]:
+                    - generic [ref=e4280]: SeekingAlpha
+                    - generic [ref=e4281]: AAPL
+                    - generic [ref=e4282]: 5월 11일 오후 06:06
+            - link "Apple is about to seal a chip deal with Intel Copyright © BusinessAMBE 2023Key takeawaysApple is on the verge of bringing Intel on board as an alternative chip manufacturer for devices such as iPhones and iPads.The deal could... Finnhub AAPL 5월 11일 오후 06:01" [ref=e4284] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=5d213153514f080444835628bcda38584d76d2668171aa8db3672c424b147a7b
+              - generic [ref=e4286]:
+                - generic [ref=e4287]:
+                  - generic [ref=e4288]:
+                    - heading "Apple is about to seal a chip deal with Intel" [level=3] [ref=e4289]
+                    - paragraph [ref=e4290]: Copyright © BusinessAMBE 2023Key takeawaysApple is on the verge of bringing Intel on board as an alternative chip manufacturer for devices such as iPhones and iPads.The deal could...
+                  - img [ref=e4291]
+                - generic [ref=e4295]:
+                  - generic [ref=e4296]: Finnhub
+                  - generic [ref=e4297]: AAPL
+                  - generic [ref=e4298]: 5월 11일 오후 06:01
+            - link "Intel Is Up 232% This Year. Apple Just Made It Bigger. Intel Is Up 232% This Year. Apple Just Made It Bigger. Q1 earnings growth tracking +28%, the strongest since 2021. Berkshire&#39;s Q1 without Buffett ended at $397B in cash. Apple-Intel chip deal capped a 232% Intel year. Benzinga AAPL 5월 11일 오후 05:59" [ref=e4300] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=869790f890074158ba4ccc061a26f045cb6b1f795df1ec47e868a198b1457a74
+              - generic [ref=e4301]:
+                - img "Intel Is Up 232% This Year. Apple Just Made It Bigger." [ref=e4303]
+                - generic [ref=e4304]:
+                  - generic [ref=e4305]:
+                    - generic [ref=e4306]:
+                      - heading "Intel Is Up 232% This Year. Apple Just Made It Bigger." [level=3] [ref=e4307]
+                      - paragraph [ref=e4308]: Q1 earnings growth tracking +28%, the strongest since 2021. Berkshire&#39;s Q1 without Buffett ended at $397B in cash. Apple-Intel chip deal capped a 232% Intel year.
+                    - img [ref=e4309]
+                  - generic [ref=e4313]:
+                    - generic [ref=e4314]: Benzinga
+                    - generic [ref=e4315]: AAPL
+                    - generic [ref=e4316]: 5월 11일 오후 05:59
+            - 'link "‘The haters will hate’: Dan Ives predicts Nasdaq 30,000 as AI rally expands ‘The haters will hate’: Dan Ives predicts Nasdaq 30,000 as AI rally expands A solid tech earnings season has seen investor jitters earlier this year evaporate CNBC AAPL 5월 11일 오후 05:53" [ref=e4318] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=af616a5a794337c9f1a98e9edb2472eed372a2988952b80cd3cb60956435ff05
+              - generic [ref=e4319]:
+                - 'img "‘The haters will hate’: Dan Ives predicts Nasdaq 30,000 as AI rally expands" [ref=e4321]'
+                - generic [ref=e4322]:
+                  - generic [ref=e4323]:
+                    - generic [ref=e4324]:
+                      - 'heading "‘The haters will hate’: Dan Ives predicts Nasdaq 30,000 as AI rally expands" [level=3] [ref=e4325]'
+                      - paragraph [ref=e4326]: A solid tech earnings season has seen investor jitters earlier this year evaporate
+                    - img [ref=e4327]
+                  - generic [ref=e4331]:
+                    - generic [ref=e4332]: CNBC
+                    - generic [ref=e4333]: AAPL
+                    - generic [ref=e4334]: 5월 11일 오후 05:53
+            - 'link "Smart Home Global Forecast Report 2026-2032: $95+ Billion Market Driven by Ongoing Advancements in AI- and Voice-Enabled Smart Home Solutions Smart Home Global Forecast Report 2026-2032: $95+ Billion Market Driven by Ongoing Advancements in AI- and Voice-Enabled Smart Home Solutions The global smart home market is set to reach USD 139.24 billion by 2032, growing at a CAGR of 6.4% from USD 95.83 billion in 2026. This growth is driven by rising internet penetration, adoption of connected devices, and energy-efficient home systems. Smart kitchens are poised for the fastest growth, fueled by connected appliances and convenience demands. Direct sales channels are expected to dominate, providing better customer engagement and support. North America leads the market due to advance Yahoo AAPL 5월 11일 오후 05:43" [ref=e4336] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=9655aa1ae8e6cc8b15774a77a0de2fa7daa50770cc4d16e3b3f6276e699c5fe2
+              - generic [ref=e4337]:
+                - 'img "Smart Home Global Forecast Report 2026-2032: $95+ Billion Market Driven by Ongoing Advancements in AI- and Voice-Enabled Smart Home Solutions" [ref=e4339]'
+                - generic [ref=e4340]:
+                  - generic [ref=e4341]:
+                    - generic [ref=e4342]:
+                      - 'heading "Smart Home Global Forecast Report 2026-2032: $95+ Billion Market Driven by Ongoing Advancements in AI- and Voice-Enabled Smart Home Solutions" [level=3] [ref=e4343]'
+                      - paragraph [ref=e4344]: The global smart home market is set to reach USD 139.24 billion by 2032, growing at a CAGR of 6.4% from USD 95.83 billion in 2026. This growth is driven by rising internet penetration, adoption of connected devices, and energy-efficient home systems. Smart kitchens are poised for the fastest growth, fueled by connected appliances and convenience demands. Direct sales channels are expected to dominate, providing better customer engagement and support. North America leads the market due to advance
+                    - img [ref=e4345]
+                  - generic [ref=e4349]:
+                    - generic [ref=e4350]: Yahoo
+                    - generic [ref=e4351]: AAPL
+                    - generic [ref=e4352]: 5월 11일 오후 05:43
+            - link "Why BofA remains cautious on Intel stock despite ongoing rally Why BofA remains cautious on Intel stock despite ongoing rally Investing.com -- Bank of America raised its Intel stock price target to $96 from $56 but maintained its Underperform rating, arguing that a potential foundry deal with Apple, while significant, is already reflected in the stock’s current valuation. Yahoo AAPL 5월 11일 오후 05:02" [ref=e4354] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=5410e6263b442aeb2e8f602c852dbeb5ca881a22dbfae5c087f50d1f31d049f3
+              - generic [ref=e4355]:
+                - img "Why BofA remains cautious on Intel stock despite ongoing rally" [ref=e4357]
+                - generic [ref=e4358]:
+                  - generic [ref=e4359]:
+                    - generic [ref=e4360]:
+                      - heading "Why BofA remains cautious on Intel stock despite ongoing rally" [level=3] [ref=e4361]
+                      - paragraph [ref=e4362]: Investing.com -- Bank of America raised its Intel stock price target to $96 from $56 but maintained its Underperform rating, arguing that a potential foundry deal with Apple, while significant, is already reflected in the stock’s current valuation.
+                    - img [ref=e4363]
+                  - generic [ref=e4367]:
+                    - generic [ref=e4368]: Yahoo
+                    - generic [ref=e4369]: AAPL
+                    - generic [ref=e4370]: 5월 11일 오후 05:02
+            - 'link "Apple''s Supply Headache Forces Surprise Intel Partnership: Report Apple''s Supply Headache Forces Surprise Intel Partnership: Report Apple and Intel reach a preliminary chip deal to diversify supply. Intel stock jumps as Apple looks to reduce its reliance on TSMC. Benzinga AAPL 5월 11일 오후 03:00" [ref=e4372] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=7f29ad8c18a2bc2264f3c48290b6f2334df3e0244673663a650a351236d444a2
+              - generic [ref=e4373]:
+                - 'img "Apple''s Supply Headache Forces Surprise Intel Partnership: Report" [ref=e4375]'
+                - generic [ref=e4376]:
+                  - generic [ref=e4377]:
+                    - generic [ref=e4378]:
+                      - 'heading "Apple''s Supply Headache Forces Surprise Intel Partnership: Report" [level=3] [ref=e4379]'
+                      - paragraph [ref=e4380]: Apple and Intel reach a preliminary chip deal to diversify supply. Intel stock jumps as Apple looks to reduce its reliance on TSMC.
+                    - img [ref=e4381]
+                  - generic [ref=e4385]:
+                    - generic [ref=e4386]: Benzinga
+                    - generic [ref=e4387]: AAPL
+                    - generic [ref=e4388]: 5월 11일 오후 03:00
+            - 'link "CIO Weekly: The Mag 7 Pulls Apart CIO Weekly: The Mag 7 Pulls Apart The âMagnificent 7â moniker has had a good run. But the basket is beginning to break at the same time more granular AI-related equity stories are gathering momentum. SeekingAlpha AAPL 5월 11일 오후 12:56" [ref=e4390] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=678aba39a840965ceebf6594c9c136505e414c04d669967e1ecde8f34eebf1e3
+              - generic [ref=e4391]:
+                - 'img "CIO Weekly: The Mag 7 Pulls Apart" [ref=e4393]'
+                - generic [ref=e4394]:
+                  - generic [ref=e4395]:
+                    - generic [ref=e4396]:
+                      - 'heading "CIO Weekly: The Mag 7 Pulls Apart" [level=3] [ref=e4397]'
+                      - paragraph [ref=e4398]: "The â\x80\x9cMagnificent 7â\x80\x9d moniker has had a good run. But the basket is beginning to break at the same time more granular AI-related equity stories are gathering momentum."
+                    - img [ref=e4399]
+                  - generic [ref=e4403]:
+                    - generic [ref=e4404]: SeekingAlpha
+                    - generic [ref=e4405]: AAPL
+                    - generic [ref=e4406]: 5월 11일 오후 12:56
+            - 'link "Trump Slams Judges For Tariff Ruling, Says ''Tiny Sentence'' Could Have Saved Billions: ''They Were Appointed By Me'' Trump Slams Judges For Tariff Ruling, Says ''Tiny Sentence'' Could Have Saved Billions: ''They Were Appointed By Me'' President Donald Trump criticized Supreme Court justices over a tariff ruling that could trigger $159 billion in refunds. Benzinga AAPL 5월 11일 오후 12:43" [ref=e4408] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=bb905eace9e4a3ff8c2cc4ca1ac8bb07ecccaa1581133e5f09fd4b74cadbecc7
+              - generic [ref=e4409]:
+                - 'img "Trump Slams Judges For Tariff Ruling, Says ''Tiny Sentence'' Could Have Saved Billions: ''They Were Appointed By Me''" [ref=e4411]'
+                - generic [ref=e4412]:
+                  - generic [ref=e4413]:
+                    - generic [ref=e4414]:
+                      - 'heading "Trump Slams Judges For Tariff Ruling, Says ''Tiny Sentence'' Could Have Saved Billions: ''They Were Appointed By Me''" [level=3] [ref=e4415]'
+                      - paragraph [ref=e4416]: President Donald Trump criticized Supreme Court justices over a tariff ruling that could trigger $159 billion in refunds.
+                    - img [ref=e4417]
+                  - generic [ref=e4421]:
+                    - generic [ref=e4422]: Benzinga
+                    - generic [ref=e4423]: AAPL
+                    - generic [ref=e4424]: 5월 11일 오후 12:43
+            - link "Apple Is Firing On All Cylinders, Yet I Still Wouldn't Buy The Stock Today Apple Is Firing On All Cylinders, Yet I Still Wouldn't Buy The Stock Today Apple's Q2 FY2026 results show strong growth and margin expansion, but tariffs and costs loom. Read why I rate AAPL stock a Hold at this point. SeekingAlpha AAPL 5월 11일 오전 11:30" [ref=e4426] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=772567e0595eaf66798dfdbec33cec64b49145fd10d6acd728fcde84dbec1cf6
+              - generic [ref=e4427]:
+                - img "Apple Is Firing On All Cylinders, Yet I Still Wouldn't Buy The Stock Today" [ref=e4429]
+                - generic [ref=e4430]:
+                  - generic [ref=e4431]:
+                    - generic [ref=e4432]:
+                      - heading "Apple Is Firing On All Cylinders, Yet I Still Wouldn't Buy The Stock Today" [level=3] [ref=e4433]
+                      - paragraph [ref=e4434]: Apple's Q2 FY2026 results show strong growth and margin expansion, but tariffs and costs loom. Read why I rate AAPL stock a Hold at this point.
+                    - img [ref=e4435]
+                  - generic [ref=e4439]:
+                    - generic [ref=e4440]: SeekingAlpha
+                    - generic [ref=e4441]: AAPL
+                    - generic [ref=e4442]: 5월 11일 오전 11:30
+            - link "Dow Jones Futures Fall, Oil Prices Rise; Trump Says Iran Response To U.S. Offer 'Totally Unacceptable' Dow Jones Futures Fall, Oil Prices Rise; Trump Says Iran Response To U.S. Offer 'Totally Unacceptable' President Donald Trump said Iran's response to a U.S. peace offer is \"totally unacceptable.\" The Xi summit is on tap.. Yahoo AAPL 5월 11일 오전 08:50" [ref=e4444] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=88243437fab0bcd5239a329a1f787090fe9c844eda551706d888cb4fb5f73b2b
+              - generic [ref=e4445]:
+                - img "Dow Jones Futures Fall, Oil Prices Rise; Trump Says Iran Response To U.S. Offer 'Totally Unacceptable'" [ref=e4447]
+                - generic [ref=e4448]:
+                  - generic [ref=e4449]:
+                    - generic [ref=e4450]:
+                      - heading "Dow Jones Futures Fall, Oil Prices Rise; Trump Says Iran Response To U.S. Offer 'Totally Unacceptable'" [level=3] [ref=e4451]
+                      - paragraph [ref=e4452]: President Donald Trump said Iran's response to a U.S. peace offer is "totally unacceptable." The Xi summit is on tap..
+                    - img [ref=e4453]
+                  - generic [ref=e4457]:
+                    - generic [ref=e4458]: Yahoo
+                    - generic [ref=e4459]: AAPL
+                    - generic [ref=e4460]: 5월 11일 오전 08:50
+            - 'link "Warren Buffett Took Over Berkshire 61 Years Ago Today And This Investor Put A $485 Million Number On His Legacy: Can Greg Abel Spin A Similar Success? Warren Buffett Took Over Berkshire 61 Years Ago Today And This Investor Put A $485 Million Number On His Legacy: Can Greg Abel Spin A Similar Success? A $10,000 investment in Berkshire Hathaway made during Warren Buffett&#39;s early takeover years would be worth an estimated $485 million today, underscoring the conglomerate&#39;s legendary long-term returns. With Greg Abel now leading the company after Buffett&#39;s departure, investors are watching closely to see whether Berkshire can sustain its historic performance in a new era. Benzinga AAPL 5월 11일 오전 08:20" [ref=e4462] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=2780f438c68e0443f7e6f978b2adadd0df2ddc9897d1d87c3ad0a97835471cd1
+              - generic [ref=e4463]:
+                - 'img "Warren Buffett Took Over Berkshire 61 Years Ago Today And This Investor Put A $485 Million Number On His Legacy: Can Greg Abel Spin A Similar Success?" [ref=e4465]'
+                - generic [ref=e4466]:
+                  - generic [ref=e4467]:
+                    - generic [ref=e4468]:
+                      - 'heading "Warren Buffett Took Over Berkshire 61 Years Ago Today And This Investor Put A $485 Million Number On His Legacy: Can Greg Abel Spin A Similar Success?" [level=3] [ref=e4469]'
+                      - paragraph [ref=e4470]: A $10,000 investment in Berkshire Hathaway made during Warren Buffett&#39;s early takeover years would be worth an estimated $485 million today, underscoring the conglomerate&#39;s legendary long-term returns. With Greg Abel now leading the company after Buffett&#39;s departure, investors are watching closely to see whether Berkshire can sustain its historic performance in a new era.
+                    - img [ref=e4471]
+                  - generic [ref=e4475]:
+                    - generic [ref=e4476]: Benzinga
+                    - generic [ref=e4477]: AAPL
+                    - generic [ref=e4478]: 5월 11일 오전 08:20
+            - link "590,000 buyers paid $59 million for Trump's gold phone — not 1 has shipped and refunds look unlikely 590,000 buyers paid $59 million for Trump's gold phone — not 1 has shipped and refunds look unlikely Customers paid a collective $59 million toward a gold smartphone that Trump Mobile promised would be “Made in the USA” — but that doesn’t seem to have actually been made. Yahoo AAPL 5월 11일 오전 07:35" [ref=e4480] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=0e3dc5bce94b49bb02b9fcc448a37c2911704194c838bc5ee5e036314d7d4b6d
+              - generic [ref=e4481]:
+                - img "590,000 buyers paid $59 million for Trump's gold phone — not 1 has shipped and refunds look unlikely" [ref=e4483]
+                - generic [ref=e4484]:
+                  - generic [ref=e4485]:
+                    - generic [ref=e4486]:
+                      - heading "590,000 buyers paid $59 million for Trump's gold phone — not 1 has shipped and refunds look unlikely" [level=3] [ref=e4487]
+                      - paragraph [ref=e4488]: Customers paid a collective $59 million toward a gold smartphone that Trump Mobile promised would be “Made in the USA” — but that doesn’t seem to have actually been made.
+                    - img [ref=e4489]
+                  - generic [ref=e4493]:
+                    - generic [ref=e4494]: Yahoo
+                    - generic [ref=e4495]: AAPL
+                    - generic [ref=e4496]: 5월 11일 오전 07:35
+            - 'link "Dow Jones Futures: Trump Says Iran Response To U.S. Offer ''Totally Unacceptable''; Apple, Nvidia, Boeing In Buy Areas Dow Jones Futures: Trump Says Iran Response To U.S. Offer ''Totally Unacceptable''; Apple, Nvidia, Boeing In Buy Areas President Donald Trump said Iran''s response to a U.S. peace offer is \"totally unacceptable.\" The Xi summit is on tap.. Yahoo AAPL 5월 11일 오전 06:38" [ref=e4498] [cursor=pointer]':
+              - /url: https://finnhub.io/api/news?id=11964028c138f38f491bf41f5062d66bcee7e328c0ec9e6c29c03ff2fd369103
+              - generic [ref=e4499]:
+                - 'img "Dow Jones Futures: Trump Says Iran Response To U.S. Offer ''Totally Unacceptable''; Apple, Nvidia, Boeing In Buy Areas" [ref=e4501]'
+                - generic [ref=e4502]:
+                  - generic [ref=e4503]:
+                    - generic [ref=e4504]:
+                      - 'heading "Dow Jones Futures: Trump Says Iran Response To U.S. Offer ''Totally Unacceptable''; Apple, Nvidia, Boeing In Buy Areas" [level=3] [ref=e4505]'
+                      - paragraph [ref=e4506]: President Donald Trump said Iran's response to a U.S. peace offer is "totally unacceptable." The Xi summit is on tap..
+                    - img [ref=e4507]
+                  - generic [ref=e4511]:
+                    - generic [ref=e4512]: Yahoo
+                    - generic [ref=e4513]: AAPL
+                    - generic [ref=e4514]: 5월 11일 오전 06:38
+  - button "Open Next.js Dev Tools" [ref=e53] [cursor=pointer]:
+    - img [ref=e54]
+  - alert [ref=e4515]

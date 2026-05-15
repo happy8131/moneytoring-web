@@ -1,0 +1,12 @@
+
+> moneytoring-web@0.1.0 dev
+> next dev
+
+▲ Next.js 16.2.4 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.219.118:3000
+- Environments: .env.local
+✓ Ready in 598ms
+
+[browser] ⨯ unhandledRejection: ChunkLoadError: Failed to load chunk /_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_0yjw1oe._.js from module [turbopack]/browser/dev/hmr-client/hmr-client.ts [app-client] (ecmascript, async loader)
+ GET / 200 in 1003ms (next.js: 714ms, application-code: 289ms)

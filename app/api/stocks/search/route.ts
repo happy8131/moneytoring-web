@@ -51,8 +51,9 @@ export async function GET(request: NextRequest) {
 
   const raw: FinnhubSearchResult = await res.json();
 
+  const ALLOWED_TYPES = ['Common Stock', 'ETP'];
   const filtered = raw.result
-    .filter((item) => item.type === 'Common Stock')
+    .filter((item) => ALLOWED_TYPES.includes(item.type))
     .slice(0, 10)
     .map(
       (item): StockSearchResult => ({

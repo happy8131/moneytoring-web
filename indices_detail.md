@@ -1,0 +1,87 @@
+- generic [active] [ref=e1]:
+  - button "Open Next.js Dev Tools" [ref=e53] [cursor=pointer]:
+    - img [ref=e54]
+  - alert [ref=e58]: Moneytoring - 자산 관리 서비스
+  - generic [ref=e59]:
+    - banner [ref=e60]:
+      - generic [ref=e61]:
+        - link "Moneytoring" [ref=e62] [cursor=pointer]:
+          - /url: /
+          - img [ref=e63]
+          - generic [ref=e66]: Moneytoring
+        - generic [ref=e67]:
+          - navigation [ref=e68]:
+            - link "대시보드" [ref=e69] [cursor=pointer]:
+              - /url: /dashboard
+            - link "포트폴리오" [ref=e70] [cursor=pointer]:
+              - /url: /portfolio
+            - link "뉴스" [ref=e71] [cursor=pointer]:
+              - /url: /news
+          - button "다크 모드 토글" [ref=e72]:
+            - img
+    - main [ref=e73]:
+      - generic [ref=e315]:
+        - link "돌아가기" [ref=e316] [cursor=pointer]:
+          - /url: /
+          - img [ref=e317]
+          - text: 돌아가기
+        - generic [ref=e320]:
+          - generic [ref=e321]:
+            - heading "S&P 500" [level=1] [ref=e322]
+            - paragraph [ref=e323]: SPDR S&P 500 ETF Trust
+          - generic [ref=e324]:
+            - paragraph [ref=e326]: $739.69
+            - generic [ref=e327]:
+              - generic [ref=e328]:
+                - img [ref=e329]
+                - generic [ref=e332]: "-1.13%"
+              - generic [ref=e334]: $-8.48
+            - paragraph [ref=e335]: 2026. 5. 15. 오후 10:53:01
+        - generic [ref=e336]:
+          - generic [ref=e337]:
+            - button "1주" [ref=e338]
+            - button "1개월" [ref=e339]
+            - button "3개월" [ref=e340]
+            - button "6개월" [ref=e341]
+            - button "YTD" [ref=e342]
+            - button "1년" [ref=e343]
+            - button "2년" [ref=e344]
+            - button "5년" [ref=e345]
+            - button "10년" [ref=e346]
+            - button "모두" [ref=e347]
+          - application [ref=e351]:
+            - generic [ref=e367]:
+              - generic [ref=e368]:
+                - generic [ref=e370]: 04/15
+                - generic [ref=e372]: 04/16
+                - generic [ref=e374]: 04/17
+                - generic [ref=e376]: 04/20
+                - generic [ref=e378]: 04/21
+                - generic [ref=e380]: 04/22
+                - generic [ref=e382]: 04/23
+                - generic [ref=e384]: 04/24
+                - generic [ref=e386]: 04/27
+                - generic [ref=e388]: 04/28
+                - generic [ref=e390]: 04/29
+                - generic [ref=e392]: 04/30
+                - generic [ref=e394]: 05/01
+                - generic [ref=e396]: 05/04
+                - generic [ref=e398]: 05/05
+                - generic [ref=e400]: 05/06
+                - generic [ref=e402]: 05/07
+                - generic [ref=e404]: 05/08
+                - generic [ref=e406]: 05/11
+                - generic [ref=e408]: 05/12
+                - generic [ref=e410]: 05/13
+                - generic [ref=e412]: 05/14
+                - generic [ref=e414]: 05/15
+              - generic [ref=e415]:
+                - generic [ref=e417]: $689
+                - generic [ref=e419]: $709
+                - generic [ref=e421]: $729
+                - generic [ref=e423]: $755
+          - application [ref=e427]:
+            - generic [ref=e510]:
+              - generic [ref=e512]: 40M
+              - generic [ref=e514]: 80M
+  - generic [ref=e515]: 0M

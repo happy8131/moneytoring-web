@@ -1,0 +1,389 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "Moneytoring" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - img [ref=e6]
+          - generic [ref=e9]: Moneytoring
+        - generic [ref=e10]:
+          - navigation [ref=e11]:
+            - link "대시보드" [ref=e12] [cursor=pointer]:
+              - /url: /dashboard
+            - link "포트폴리오" [ref=e13] [cursor=pointer]:
+              - /url: /portfolio
+            - link "뉴스" [ref=e14] [cursor=pointer]:
+              - /url: /news
+          - button "다크 모드 토글" [ref=e57]:
+            - img
+    - main [ref=e15]:
+      - generic [ref=e18]:
+        - generic [ref=e58]:
+          - generic [ref=e59]:
+            - generic [ref=e60]:
+              - heading "Apple Inc" [level=1] [ref=e61]
+              - paragraph [ref=e62]: AAPL · NASDAQ NMS - GLOBAL MARKET
+            - generic [ref=e63]:
+              - paragraph [ref=e64]: $298.87
+              - generic [ref=e65]:
+                - img [ref=e66]
+                - generic [ref=e68]: "+4.07"
+                - generic [ref=e69]: +1.38%
+          - link "회사 웹사이트 방문" [ref=e71] [cursor=pointer]:
+            - /url: https://www.apple.com/
+            - img [ref=e72]
+            - text: 회사 웹사이트 방문
+        - generic [ref=e22]:
+          - generic [ref=e75]:
+            - button "1주" [ref=e76]
+            - button "1개월" [ref=e77]
+            - button "3개월" [ref=e78]
+            - button "6개월" [ref=e79]
+            - button "YTD" [ref=e80]
+            - button "1년" [ref=e81]
+            - button "2년" [ref=e82]
+            - button "5년" [ref=e83]
+          - application [ref=e87]:
+            - generic [ref=e103]:
+              - generic [ref=e104]:
+                - generic [ref=e106]: 04/14
+                - generic [ref=e108]: 04/15
+                - generic [ref=e110]: 04/16
+                - generic [ref=e112]: 04/17
+                - generic [ref=e114]: 04/20
+                - generic [ref=e116]: 04/21
+                - generic [ref=e118]: 04/22
+                - generic [ref=e120]: 04/23
+                - generic [ref=e122]: 04/24
+                - generic [ref=e124]: 04/27
+                - generic [ref=e126]: 04/28
+                - generic [ref=e128]: 04/29
+                - generic [ref=e130]: 04/30
+                - generic [ref=e132]: 05/01
+                - generic [ref=e134]: 05/04
+                - generic [ref=e136]: 05/05
+                - generic [ref=e138]: 05/06
+                - generic [ref=e140]: 05/07
+                - generic [ref=e142]: 05/08
+                - generic [ref=e144]: 05/11
+                - generic [ref=e146]: 05/12
+                - generic [ref=e148]: 05/13
+              - generic [ref=e149]:
+                - generic [ref=e151]: $253
+                - generic [ref=e153]: $268
+                - generic [ref=e155]: $283
+                - generic [ref=e157]: $298
+                - generic [ref=e159]: $305
+          - application [ref=e163]:
+            - generic [ref=e243]:
+              - generic [ref=e245]: 50M
+              - generic [ref=e247]: 100M
+        - generic [ref=e26]:
+          - heading "주요 지표" [level=3] [ref=e248]
+          - generic [ref=e249]:
+            - generic [ref=e250]:
+              - paragraph [ref=e251]: 개장가
+              - paragraph [ref=e252]: $293.50
+            - generic [ref=e253]:
+              - paragraph [ref=e254]: 최고가
+              - paragraph [ref=e255]: $300.92
+            - generic [ref=e256]:
+              - paragraph [ref=e257]: 최저가
+              - paragraph [ref=e258]: $293.50
+            - generic [ref=e259]:
+              - paragraph [ref=e260]: 이전종가
+              - paragraph [ref=e261]: $294.80
+            - generic [ref=e262]:
+              - paragraph [ref=e263]: PER
+              - paragraph [ref=e264]: "36.02"
+            - generic [ref=e265]:
+              - paragraph [ref=e266]: EPS
+              - paragraph [ref=e267]: "-"
+            - generic [ref=e268]:
+              - paragraph [ref=e269]: 시가총액
+              - paragraph [ref=e270]: $4.41M
+            - generic [ref=e271]:
+              - paragraph [ref=e272]: 52주 최고
+              - paragraph [ref=e273]: "-"
+            - generic [ref=e274]:
+              - paragraph [ref=e275]: 52주 최저
+              - paragraph [ref=e276]: "-"
+            - generic [ref=e277]:
+              - paragraph [ref=e278]: 평균거래량
+              - paragraph [ref=e279]: "-"
+        - generic [ref=e38]:
+          - generic [ref=e280]:
+            - heading "RSI (14)" [level=3] [ref=e281]
+            - application [ref=e285]:
+              - generic [ref=e301]:
+                - generic [ref=e302]:
+                  - generic [ref=e304]: "2022"
+                  - generic [ref=e306]: "2023"
+                  - generic [ref=e308]: "2023"
+                  - generic [ref=e310]: "2023"
+                  - generic [ref=e312]: "2024"
+                  - generic [ref=e314]: "2024"
+                  - generic [ref=e316]: "2025"
+                  - generic [ref=e318]: "2025"
+                  - generic [ref=e320]: "2025"
+                  - generic [ref=e322]: "2026"
+                - generic [ref=e323]:
+                  - generic [ref=e325]: "0"
+                  - generic [ref=e327]: "25"
+                  - generic [ref=e329]: "50"
+                  - generic [ref=e331]: "75"
+                  - generic [ref=e333]: "100"
+                - generic [ref=e334]: 과매수
+                - generic [ref=e335]: 과매도
+          - generic [ref=e336]:
+            - heading "이동평균선 (5일 / 20일 / 60일 / 120일 / 210일)" [level=3] [ref=e337]
+            - generic [ref=e340]:
+              - list [ref=e342]:
+                - listitem [ref=e343]:
+                  - img "120일 legend icon" [ref=e344]
+                  - text: 120일
+                - listitem [ref=e346]:
+                  - img "20일 legend icon" [ref=e347]
+                  - text: 20일
+                - listitem [ref=e349]:
+                  - img "210일 legend icon" [ref=e350]
+                  - text: 210일
+                - listitem [ref=e352]:
+                  - img "5일 legend icon" [ref=e353]
+                  - text: 5일
+                - listitem [ref=e355]:
+                  - img "60일 legend icon" [ref=e356]
+                  - text: 60일
+              - application [ref=e358]:
+                - generic [ref=e380]:
+                  - generic [ref=e381]:
+                    - generic [ref=e383]: "2021"
+                    - generic [ref=e385]: "2022"
+                    - generic [ref=e387]: "2022"
+                    - generic [ref=e389]: "2023"
+                    - generic [ref=e391]: "2023"
+                    - generic [ref=e393]: "2024"
+                    - generic [ref=e395]: "2024"
+                    - generic [ref=e397]: "2025"
+                    - generic [ref=e399]: "2025"
+                    - generic [ref=e401]: "2026"
+                  - generic [ref=e402]:
+                    - generic [ref=e404]: "0"
+                    - generic [ref=e406]: "70"
+                    - generic [ref=e408]: "140"
+                    - generic [ref=e410]: "210"
+                    - generic [ref=e412]: "280"
+        - generic [ref=e41]:
+          - generic [ref=e413]:
+            - heading "재무제표" [level=3] [ref=e414]
+            - generic [ref=e415]:
+              - button "연간" [ref=e416]
+              - button "분기" [ref=e417]
+          - table [ref=e419]:
+            - rowgroup [ref=e420]:
+              - row "기간 매출액 순이익 영업이익 총자산 총부채" [ref=e421]:
+                - columnheader "기간" [ref=e422]
+                - columnheader "매출액" [ref=e423]
+                - columnheader "순이익" [ref=e424]
+                - columnheader "영업이익" [ref=e425]
+                - columnheader "총자산" [ref=e426]
+                - columnheader "총부채" [ref=e427]
+            - rowgroup [ref=e428]:
+              - row "2025년 - - - - -" [ref=e429]:
+                - cell "2025년" [ref=e430]
+                - cell "-" [ref=e431]
+                - cell "-" [ref=e432]
+                - cell "-" [ref=e433]
+                - cell "-" [ref=e434]
+                - cell "-" [ref=e435]
+              - row "2024년 - - - - -" [ref=e436]:
+                - cell "2024년" [ref=e437]
+                - cell "-" [ref=e438]
+                - cell "-" [ref=e439]
+                - cell "-" [ref=e440]
+                - cell "-" [ref=e441]
+                - cell "-" [ref=e442]
+              - row "2023년 - - - - -" [ref=e443]:
+                - cell "2023년" [ref=e444]
+                - cell "-" [ref=e445]
+                - cell "-" [ref=e446]
+                - cell "-" [ref=e447]
+                - cell "-" [ref=e448]
+                - cell "-" [ref=e449]
+              - row "2022년 - - - - -" [ref=e450]:
+                - cell "2022년" [ref=e451]
+                - cell "-" [ref=e452]
+                - cell "-" [ref=e453]
+                - cell "-" [ref=e454]
+                - cell "-" [ref=e455]
+                - cell "-" [ref=e456]
+              - row "2021년 - - - - -" [ref=e457]:
+                - cell "2021년" [ref=e458]
+                - cell "-" [ref=e459]
+                - cell "-" [ref=e460]
+                - cell "-" [ref=e461]
+                - cell "-" [ref=e462]
+                - cell "-" [ref=e463]
+              - row "2020년 - - - - -" [ref=e464]:
+                - cell "2020년" [ref=e465]
+                - cell "-" [ref=e466]
+                - cell "-" [ref=e467]
+                - cell "-" [ref=e468]
+                - cell "-" [ref=e469]
+                - cell "-" [ref=e470]
+              - row "2019년 - - - - -" [ref=e471]:
+                - cell "2019년" [ref=e472]
+                - cell "-" [ref=e473]
+                - cell "-" [ref=e474]
+                - cell "-" [ref=e475]
+                - cell "-" [ref=e476]
+                - cell "-" [ref=e477]
+              - row "2018년 - - - - -" [ref=e478]:
+                - cell "2018년" [ref=e479]
+                - cell "-" [ref=e480]
+                - cell "-" [ref=e481]
+                - cell "-" [ref=e482]
+                - cell "-" [ref=e483]
+                - cell "-" [ref=e484]
+              - row "2017년 - - - - -" [ref=e485]:
+                - cell "2017년" [ref=e486]
+                - cell "-" [ref=e487]
+                - cell "-" [ref=e488]
+                - cell "-" [ref=e489]
+                - cell "-" [ref=e490]
+                - cell "-" [ref=e491]
+              - row "2016년 - - - - -" [ref=e492]:
+                - cell "2016년" [ref=e493]
+                - cell "-" [ref=e494]
+                - cell "-" [ref=e495]
+                - cell "-" [ref=e496]
+                - cell "-" [ref=e497]
+                - cell "-" [ref=e498]
+              - row "2015년 - - - - -" [ref=e499]:
+                - cell "2015년" [ref=e500]
+                - cell "-" [ref=e501]
+                - cell "-" [ref=e502]
+                - cell "-" [ref=e503]
+                - cell "-" [ref=e504]
+                - cell "-" [ref=e505]
+              - row "2014년 - - - - -" [ref=e506]:
+                - cell "2014년" [ref=e507]
+                - cell "-" [ref=e508]
+                - cell "-" [ref=e509]
+                - cell "-" [ref=e510]
+                - cell "-" [ref=e511]
+                - cell "-" [ref=e512]
+              - row "2013년 - - - - -" [ref=e513]:
+                - cell "2013년" [ref=e514]
+                - cell "-" [ref=e515]
+                - cell "-" [ref=e516]
+                - cell "-" [ref=e517]
+                - cell "-" [ref=e518]
+                - cell "-" [ref=e519]
+              - row "2012년 - - - - -" [ref=e520]:
+                - cell "2012년" [ref=e521]
+                - cell "-" [ref=e522]
+                - cell "-" [ref=e523]
+                - cell "-" [ref=e524]
+                - cell "-" [ref=e525]
+                - cell "-" [ref=e526]
+              - row "2011년 - - - - -" [ref=e527]:
+                - cell "2011년" [ref=e528]
+                - cell "-" [ref=e529]
+                - cell "-" [ref=e530]
+                - cell "-" [ref=e531]
+                - cell "-" [ref=e532]
+                - cell "-" [ref=e533]
+              - row "2010년 - - - - -" [ref=e534]:
+                - cell "2010년" [ref=e535]
+                - cell "-" [ref=e536]
+                - cell "-" [ref=e537]
+                - cell "-" [ref=e538]
+                - cell "-" [ref=e539]
+                - cell "-" [ref=e540]
+          - paragraph [ref=e541]: "* 모든 금액은 백만 달러(M) 단위입니다."
+        - generic [ref=e44]:
+          - heading "관련 뉴스" [level=3] [ref=e542]
+          - generic [ref=e543]:
+            - link "AI Gold Rush Goes Public - Cerebras Storms Nasdaq as Cisco Rewrites the Rulebook AI Gold Rush Goes Public - Cerebras Storms Nasdaq as Cisco Rewrites the Rulebook Twenty times oversubscribed. That's what happened when investors got the chance to buy into Cerebras Systems before it hit Nasdaq. ChartMill AAPL 5월 14일 오후 07:47" [ref=e545] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=47da1ad3937af7bf70c16de15f15b9ec8fa8368078de83db01142044fa2857c3
+              - generic [ref=e546]:
+                - img "AI Gold Rush Goes Public - Cerebras Storms Nasdaq as Cisco Rewrites the Rulebook" [ref=e548]
+                - generic [ref=e549]:
+                  - generic [ref=e550]:
+                    - generic [ref=e551]:
+                      - heading "AI Gold Rush Goes Public - Cerebras Storms Nasdaq as Cisco Rewrites the Rulebook" [level=3] [ref=e552]
+                      - paragraph [ref=e553]: Twenty times oversubscribed. That's what happened when investors got the chance to buy into Cerebras Systems before it hit Nasdaq.
+                    - img [ref=e554]
+                  - generic [ref=e558]:
+                    - generic [ref=e559]: ChartMill
+                    - generic [ref=e560]: AAPL
+                    - generic [ref=e561]: 5월 14일 오후 07:47
+            - link "Xi Tells US CEOs Accompanying Trump That China Will Open Up More Xi Tells US CEOs Accompanying Trump That China Will Open Up More (Bloomberg) -- Xi Jinping signaled China is moving toward greater openness, striking an upbeat note during his meeting with US business leaders accompanying Donald Trump as the two presidents wrapped up morning talks that featured more divisive issues like trade and Taiwan.Most Read from BloombergIran’s Kharg Island Oil Jetties Empty Again Yesterday, Satellite ShowsAmbani’s Cola War With Coke, Pepsi Spurs Fridge Bonanza in IndiaNvidia’s CEO Joins Trump in China With AI in the SpotlightTrump Land Yahoo AAPL 5월 14일 오후 04:02" [ref=e563] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=b8c553cc47b8a5756db79334da8202b1199e62db56de5597fe5fe9b5a91869c0
+              - generic [ref=e564]:
+                - img "Xi Tells US CEOs Accompanying Trump That China Will Open Up More" [ref=e566]
+                - generic [ref=e567]:
+                  - generic [ref=e568]:
+                    - generic [ref=e569]:
+                      - heading "Xi Tells US CEOs Accompanying Trump That China Will Open Up More" [level=3] [ref=e570]
+                      - paragraph [ref=e571]: (Bloomberg) -- Xi Jinping signaled China is moving toward greater openness, striking an upbeat note during his meeting with US business leaders accompanying Donald Trump as the two presidents wrapped up morning talks that featured more divisive issues like trade and Taiwan.Most Read from BloombergIran’s Kharg Island Oil Jetties Empty Again Yesterday, Satellite ShowsAmbani’s Cola War With Coke, Pepsi Spurs Fridge Bonanza in IndiaNvidia’s CEO Joins Trump in China With AI in the SpotlightTrump Land
+                    - img [ref=e572]
+                  - generic [ref=e576]:
+                    - generic [ref=e577]: Yahoo
+                    - generic [ref=e578]: AAPL
+                    - generic [ref=e579]: 5월 14일 오후 04:02
+            - link "Taiwan's Foxconn reports forecast-beating 19% jump in Q1 profit on AI demand Taiwan's Foxconn reports forecast-beating 19% jump in Q1 profit on AI demand Net profit for January-March for Nvidia's biggest server maker and Apple's top iPhone assembler was T$49.92 billion ($1.58 billion), versus a LSEG consensus estimate of T$48.88 billion. In an earnings release, it stuck to its previous forecast of \"strong\" growth for revenue this year ‌and said it also ⁠saw strong demand for AI servers. Foxconn, formally called Hon Hai Precision ⁠Industry, in April reported a 30% on-year jump in first-quarter revenue. Yahoo AAPL 5월 14일 오후 03:26" [ref=e581] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=3aef2426b9fe570072ef21a5356eaca214363285cf809dde6557c7bf39771f8c
+              - generic [ref=e582]:
+                - img "Taiwan's Foxconn reports forecast-beating 19% jump in Q1 profit on AI demand" [ref=e584]
+                - generic [ref=e585]:
+                  - generic [ref=e586]:
+                    - generic [ref=e587]:
+                      - heading "Taiwan's Foxconn reports forecast-beating 19% jump in Q1 profit on AI demand" [level=3] [ref=e588]
+                      - paragraph [ref=e589]: Net profit for January-March for Nvidia's biggest server maker and Apple's top iPhone assembler was T$49.92 billion ($1.58 billion), versus a LSEG consensus estimate of T$48.88 billion. In an earnings release, it stuck to its previous forecast of "strong" growth for revenue this year ‌and said it also ⁠saw strong demand for AI servers. Foxconn, formally called Hon Hai Precision ⁠Industry, in April reported a 30% on-year jump in first-quarter revenue.
+                    - img [ref=e590]
+                  - generic [ref=e594]:
+                    - generic [ref=e595]: Yahoo
+                    - generic [ref=e596]: AAPL
+                    - generic [ref=e597]: 5월 14일 오후 03:26
+            - link "What Xi Jinping and Donald Trump want from their Beijing summit What Xi Jinping and Donald Trump want from their Beijing summit Donald Trump’s state visit to China gives the US president an opportunity to distract attention from his war with Iran and troubles at home,... Yahoo AAPL 5월 14일 오후 02:47" [ref=e599] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=4025fd9779e276649cc6afd5f46692961f37fdfb873ff8a63c1a8468ea4a00fe
+              - generic [ref=e600]:
+                - img "What Xi Jinping and Donald Trump want from their Beijing summit" [ref=e602]
+                - generic [ref=e603]:
+                  - generic [ref=e604]:
+                    - generic [ref=e605]:
+                      - heading "What Xi Jinping and Donald Trump want from their Beijing summit" [level=3] [ref=e606]
+                      - paragraph [ref=e607]: Donald Trump’s state visit to China gives the US president an opportunity to distract attention from his war with Iran and troubles at home,...
+                    - img [ref=e608]
+                  - generic [ref=e612]:
+                    - generic [ref=e613]: Yahoo
+                    - generic [ref=e614]: AAPL
+                    - generic [ref=e615]: 5월 14일 오후 02:47
+            - link "China's view on Elon Musk? Visionary, occasional villain China's view on Elon Musk? Visionary, occasional villain In China, Elon Musk has been the object of love - and occasional loathing. The Tesla boss has been both lauded as a visionary and criticised by Chinese regulators and the public for the alleged bungling of customer complaints. In addition, the dominance of SpaceX and its Starlink satellite unit has raised the ire of the People's Liberation Army. ‌And as the gap between Tesla and its Chinese EV rivals narrows, Musk is at risk of losing prestige and influence. Yahoo AAPL 5월 14일 오후 02:43" [ref=e617] [cursor=pointer]:
+              - /url: https://finnhub.io/api/news?id=747365e469016818345d091856bcbad9483dbd06ad3caa306a30f5f7f2dfe435
+              - generic [ref=e618]:
+                - img "China's view on Elon Musk? Visionary, occasional villain" [ref=e620]
+                - generic [ref=e621]:
+                  - generic [ref=e622]:
+                    - generic [ref=e623]:
+                      - heading "China's view on Elon Musk? Visionary, occasional villain" [level=3] [ref=e624]
+                      - paragraph [ref=e625]: In China, Elon Musk has been the object of love - and occasional loathing. The Tesla boss has been both lauded as a visionary and criticised by Chinese regulators and the public for the alleged bungling of customer complaints. In addition, the dominance of SpaceX and its Starlink satellite unit has raised the ire of the People's Liberation Army. ‌And as the gap between Tesla and its Chinese EV rivals narrows, Musk is at risk of losing prestige and influence.
+                    - img [ref=e626]
+                  - generic [ref=e630]:
+                    - generic [ref=e631]: Yahoo
+                    - generic [ref=e632]: AAPL
+                    - generic [ref=e633]: 5월 14일 오후 02:43
+          - generic [ref=e634]:
+            - button "이전" [disabled]:
+              - img
+              - text: 이전
+            - generic [ref=e635]: 페이지 1 / 48
+            - button "다음" [ref=e636]:
+              - text: 다음
+              - img
+  - button "Open Next.js Dev Tools" [ref=e53] [cursor=pointer]:
+    - img [ref=e54]
+  - alert [ref=e637]
+  - generic [ref=e638]: "70"

@@ -107,7 +107,7 @@ export function StockFinancialsTable({ symbol }: StockFinancialsTableProps) {
       </div>
 
       <p className="text-xs text-muted-foreground">
-        * 모든 금액은 백만 달러(M) 단위입니다.
+        * B = Billion(10억), M = Million(100만) 달러 단위
       </p>
     </div>
   );

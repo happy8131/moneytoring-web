@@ -79,7 +79,13 @@ export function StockSearchBar() {
                       <p className="font-semibold">{result.displaySymbol}</p>
                       <p className="text-sm text-muted-foreground">{result.description}</p>
                     </div>
-                    <span className="ml-2 text-xs text-muted-foreground">{result.type}</span>
+                    <span className={`ml-2 text-xs px-1.5 py-0.5 rounded ${
+                      result.type === 'ETP'
+                        ? 'bg-blue-500/20 text-blue-400'
+                        : 'text-muted-foreground'
+                    }`}>
+                      {result.type === 'ETP' ? 'ETF' : result.type}
+                    </span>
                   </button>
                 </li>
               ))}

@@ -1,0 +1,92 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "Moneytoring" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - img [ref=e6]
+          - generic [ref=e9]: Moneytoring
+        - generic [ref=e10]:
+          - navigation [ref=e11]:
+            - link "대시보드" [ref=e12] [cursor=pointer]:
+              - /url: /dashboard
+            - link "포트폴리오" [ref=e13] [cursor=pointer]:
+              - /url: /portfolio
+            - link "뉴스" [ref=e14] [cursor=pointer]:
+              - /url: /news
+          - button "다크 모드 토글" [ref=e106]:
+            - img
+    - main [ref=e15]:
+      - generic [ref=e319]:
+        - link "돌아가기" [ref=e320] [cursor=pointer]:
+          - /url: /
+          - img [ref=e321]
+          - text: 돌아가기
+        - generic [ref=e324]:
+          - generic [ref=e325]:
+            - heading "NASDAQ 100" [level=1] [ref=e326]
+            - paragraph [ref=e327]: Invesco QQQ Trust
+          - generic [ref=e328]:
+            - paragraph [ref=e330]: $708.65
+            - generic [ref=e331]:
+              - generic [ref=e332]:
+                - img [ref=e333]
+                - generic [ref=e336]: "-1.55%"
+              - generic [ref=e338]: $-11.14
+            - paragraph [ref=e339]: 2026. 5. 15. 오후 10:53:26
+        - generic [ref=e340]:
+          - generic [ref=e522]:
+            - button "1주" [ref=e523]
+            - button "1개월" [ref=e524]
+            - button "3개월" [ref=e525]
+            - button "6개월" [ref=e526]
+            - button "YTD" [ref=e527]
+            - button "1년" [ref=e528]
+            - button "2년" [ref=e529]
+            - button "5년" [ref=e530]
+            - button "10년" [ref=e531]
+            - button "모두" [ref=e532]
+          - application [ref=e536]:
+            - generic [ref=e552]:
+              - generic [ref=e553]:
+                - generic [ref=e555]: 11/17
+                - generic [ref=e557]: 11/24
+                - generic [ref=e559]: 12/01
+                - generic [ref=e561]: 12/08
+                - generic [ref=e563]: 12/15
+                - generic [ref=e565]: 12/22
+                - generic [ref=e567]: 12/29
+                - generic [ref=e569]: 01/05
+                - generic [ref=e571]: 01/12
+                - generic [ref=e573]: 01/19
+                - generic [ref=e575]: 01/26
+                - generic [ref=e577]: 02/02
+                - generic [ref=e579]: 02/09
+                - generic [ref=e581]: 02/16
+                - generic [ref=e583]: 02/23
+                - generic [ref=e585]: 03/02
+                - generic [ref=e587]: 03/09
+                - generic [ref=e589]: 03/16
+                - generic [ref=e591]: 03/23
+                - generic [ref=e593]: 03/30
+                - generic [ref=e595]: 04/06
+                - generic [ref=e597]: 04/13
+                - generic [ref=e599]: 04/20
+                - generic [ref=e601]: 04/27
+                - generic [ref=e603]: 05/04
+                - generic [ref=e605]: 05/11
+                - generic [ref=e607]: 05/15
+              - generic [ref=e608]:
+                - generic [ref=e610]: $539
+                - generic [ref=e612]: $589
+                - generic [ref=e614]: $639
+                - generic [ref=e616]: $689
+                - generic [ref=e618]: $739
+          - application [ref=e622]:
+            - generic [ref=e717]:
+              - generic [ref=e719]: 300M
+              - generic [ref=e721]: 600M
+  - button "Open Next.js Dev Tools" [ref=e102] [cursor=pointer]:
+    - img [ref=e103]
+  - alert [ref=e317]: Moneytoring - 자산 관리 서비스
+  - generic [ref=e521]: 150M

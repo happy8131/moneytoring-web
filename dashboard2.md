@@ -1,0 +1,222 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "Moneytoring" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - img [ref=e6]
+          - generic [ref=e9]: Moneytoring
+        - generic [ref=e10]:
+          - navigation [ref=e11]:
+            - link "대시보드" [ref=e12] [cursor=pointer]:
+              - /url: /dashboard
+            - link "포트폴리오" [ref=e13] [cursor=pointer]:
+              - /url: /portfolio
+            - link "뉴스" [ref=e14] [cursor=pointer]:
+              - /url: /news
+          - button "다크 모드 토글" [ref=e106]:
+            - img
+    - main [ref=e15]:
+      - generic [ref=e17]:
+        - generic [ref=e18]:
+          - heading "대시보드" [level=1] [ref=e19]
+          - paragraph [ref=e20]: 실시간 주식 및 암호화폐 가격을 확인하세요.
+        - generic [ref=e23]:
+          - img [ref=e24]
+          - 'textbox "종목 검색 (예: Apple, AAPL)" [ref=e27]'
+        - generic [ref=e28]:
+          - heading "미국 증시" [level=2] [ref=e29]
+          - generic [ref=e30]:
+            - link "S&P 500 $739.69 -1.13% $-8.48" [ref=e107] [cursor=pointer]:
+              - /url: /indices/sp500
+              - generic [ref=e108]:
+                - paragraph [ref=e109]: S&P 500
+                - paragraph [ref=e110]: $739.69
+                - generic [ref=e111]:
+                  - img [ref=e112]
+                  - generic [ref=e115]: "-1.13%"
+                  - generic [ref=e116]: $-8.48
+            - link "NASDAQ 100 $708.65 -1.55% $-11.14" [ref=e117] [cursor=pointer]:
+              - /url: /indices/nasdaq
+              - generic [ref=e118]:
+                - paragraph [ref=e119]: NASDAQ 100
+                - paragraph [ref=e120]: $708.65
+                - generic [ref=e121]:
+                  - img [ref=e122]
+                  - generic [ref=e125]: "-1.55%"
+                  - generic [ref=e126]: $-11.14
+            - link "Dow Jones $496.20 -0.92% $-4.60" [ref=e127] [cursor=pointer]:
+              - /url: /indices/dow
+              - generic [ref=e128]:
+                - paragraph [ref=e129]: Dow Jones
+                - paragraph [ref=e130]: $496.20
+                - generic [ref=e131]:
+                  - img [ref=e132]
+                  - generic [ref=e135]: "-0.92%"
+                  - generic [ref=e136]: $-4.60
+        - generic [ref=e43]:
+          - heading "암호화폐 시장" [level=2] [ref=e44]
+          - generic [ref=e45]:
+            - generic [ref=e137]:
+              - paragraph [ref=e138]: 전체 시가총액
+              - paragraph [ref=e139]: $2.76T
+              - generic [ref=e140]:
+                - img [ref=e141]
+                - generic [ref=e144]: +0.60%
+                - generic [ref=e145]: 24h
+            - generic [ref=e146]:
+              - paragraph [ref=e147]: BTC 도미넌스
+              - paragraph [ref=e148]: 0.00%
+              - paragraph [ref=e149]: 비트코인 시장 점유율
+            - generic [ref=e150]:
+              - paragraph [ref=e151]: ETH 도미넌스
+              - paragraph [ref=e152]: 9.86%
+              - paragraph [ref=e153]: 이더리움 시장 점유율
+            - generic [ref=e154]:
+              - paragraph [ref=e155]: 공포/탐욕 지수
+              - paragraph [ref=e156]: 43/100
+              - paragraph
+        - generic [ref=e62]:
+          - heading "한국 증시" [level=2] [ref=e63]
+          - generic [ref=e64]:
+            - generic [ref=e157]:
+              - paragraph [ref=e158]: 코스피
+              - paragraph [ref=e159]: "-7,493.18"
+              - generic [ref=e160]:
+                - img [ref=e161]
+                - generic [ref=e164]: "-6.12%"
+                - generic [ref=e165]: "-488.23"
+            - generic [ref=e166]:
+              - paragraph [ref=e167]: 코스닥
+              - paragraph [ref=e168]: "-1,129.82"
+              - generic [ref=e169]:
+                - img [ref=e170]
+                - generic [ref=e173]: "-5.14%"
+                - generic [ref=e174]: "-61.27"
+            - generic [ref=e175]:
+              - paragraph [ref=e176]: 코스피200
+              - paragraph [ref=e177]: "-1,162.39"
+              - generic [ref=e178]:
+                - img [ref=e179]
+                - generic [ref=e182]: "-6.50%"
+                - generic [ref=e183]: "-80.78"
+        - generic [ref=e77]:
+          - generic [ref=e78]:
+            - heading "미국 주식" [level=2] [ref=e79]
+            - generic [ref=e80]:
+              - paragraph [ref=e184]: "마지막 업데이트: 오후 10:53:56"
+              - link "AAPL $297.49 -0.24%" [ref=e185] [cursor=pointer]:
+                - /url: /stocks/AAPL
+                - generic [ref=e186]:
+                  - paragraph [ref=e188]: AAPL
+                  - generic [ref=e189]:
+                    - paragraph [ref=e190]: $297.49
+                    - paragraph [ref=e191]: "-0.24%"
+              - link "GOOGL $397.52 -0.89%" [ref=e192] [cursor=pointer]:
+                - /url: /stocks/GOOGL
+                - generic [ref=e193]:
+                  - paragraph [ref=e195]: GOOGL
+                  - generic [ref=e196]:
+                    - paragraph [ref=e197]: $397.52
+                    - paragraph [ref=e198]: "-0.89%"
+              - link "MSFT $415.33 +1.44%" [ref=e199] [cursor=pointer]:
+                - /url: /stocks/MSFT
+                - generic [ref=e200]:
+                  - paragraph [ref=e202]: MSFT
+                  - generic [ref=e203]:
+                    - paragraph [ref=e204]: $415.33
+                    - paragraph [ref=e205]: +1.44%
+              - link "AMZN $262.83 -1.64%" [ref=e206] [cursor=pointer]:
+                - /url: /stocks/AMZN
+                - generic [ref=e207]:
+                  - paragraph [ref=e209]: AMZN
+                  - generic [ref=e210]:
+                    - paragraph [ref=e211]: $262.83
+                    - paragraph [ref=e212]: "-1.64%"
+              - link "TSLA $428.39 -3.36%" [ref=e213] [cursor=pointer]:
+                - /url: /stocks/TSLA
+                - generic [ref=e214]:
+                  - paragraph [ref=e216]: TSLA
+                  - generic [ref=e217]:
+                    - paragraph [ref=e218]: $428.39
+                    - paragraph [ref=e219]: "-3.36%"
+          - generic [ref=e86]:
+            - heading "암호화폐" [level=2] [ref=e87]
+            - generic [ref=e88]:
+              - paragraph [ref=e220]: "마지막 업데이트: 오후 10:53:56"
+              - generic [ref=e221]:
+                - paragraph [ref=e224]: BTC
+                - generic [ref=e225]:
+                  - paragraph [ref=e226]: $78,984.00
+                  - paragraph [ref=e227]: "-1.15%"
+              - generic [ref=e228]:
+                - paragraph [ref=e231]: ETH
+                - generic [ref=e232]:
+                  - paragraph [ref=e233]: $2,225.65
+                  - paragraph [ref=e234]: "-1.34%"
+              - generic [ref=e235]:
+                - paragraph [ref=e238]: XRP
+                - generic [ref=e239]:
+                  - paragraph [ref=e240]: $1.44
+                  - paragraph [ref=e241]: "-0.51%"
+              - generic [ref=e242]:
+                - paragraph [ref=e245]: SOL
+                - generic [ref=e246]:
+                  - paragraph [ref=e247]: $89.34
+                  - paragraph [ref=e248]: "-1.95%"
+              - generic [ref=e249]:
+                - paragraph [ref=e252]: ADA
+                - generic [ref=e253]:
+                  - paragraph [ref=e254]: $0.26
+                  - paragraph [ref=e255]: "-2.43%"
+        - generic [ref=e94]:
+          - heading "한국 주식" [level=2] [ref=e95]
+          - generic [ref=e256]:
+            - generic [ref=e258]:
+              - generic [ref=e259]:
+                - paragraph [ref=e260]: 삼성전자
+                - paragraph [ref=e261]: "005930"
+              - generic [ref=e262]:
+                - paragraph [ref=e263]: ₩-270,500
+                - generic [ref=e264]:
+                  - img [ref=e265]
+                  - generic [ref=e268]: "-8.61%"
+            - generic [ref=e270]:
+              - generic [ref=e271]:
+                - paragraph [ref=e272]: SK하이닉스
+                - paragraph [ref=e273]: "000660"
+              - generic [ref=e274]:
+                - paragraph [ref=e275]: ₩-1,819,000
+                - generic [ref=e276]:
+                  - img [ref=e277]
+                  - generic [ref=e280]: "-7.66%"
+            - generic [ref=e282]:
+              - generic [ref=e283]:
+                - paragraph [ref=e284]: 현대차
+                - paragraph [ref=e285]: "005380"
+              - generic [ref=e286]:
+                - paragraph [ref=e287]: ₩-700,000
+                - generic [ref=e288]:
+                  - img [ref=e289]
+                  - generic [ref=e292]: "-1.69%"
+            - generic [ref=e294]:
+              - generic [ref=e295]:
+                - paragraph [ref=e296]: LG화학
+                - paragraph [ref=e297]: "051910"
+              - generic [ref=e298]:
+                - paragraph [ref=e299]: ₩-374,000
+                - generic [ref=e300]:
+                  - img [ref=e301]
+                  - generic [ref=e304]: "-4.71%"
+            - generic [ref=e306]:
+              - generic [ref=e307]:
+                - paragraph [ref=e308]: 카카오
+                - paragraph [ref=e309]: "035720"
+              - generic [ref=e310]:
+                - paragraph [ref=e311]: ₩-44,000
+                - generic [ref=e312]:
+                  - img [ref=e313]
+                  - generic [ref=e316]: "-4.24%"
+  - button "Open Next.js Dev Tools" [ref=e102] [cursor=pointer]:
+    - img [ref=e103]
+  - alert [ref=e317]

@@ -109,3 +109,16 @@ export function formatPercentage(value: number | undefined): string {
   if (value === undefined || value === null) return '-';
   return `${value > 0 ? '+' : ''}${value.toFixed(2)}%`;
 }
+
+export interface ETFHolding {
+  symbol: string;
+  name: string;
+  share: number;
+  value: number;
+  pct: number;
+}
+
+export interface ETFSectorExposure {
+  sector: string;
+  exposure: number;
+}

@@ -10,7 +10,14 @@
       "WebSearch",
       "WebFetch(domain:openapi.kiwoom.com)",
       "WebFetch(domain:www.scribd.com)",
-      "WebFetch(domain:github.com)"
+      "WebFetch(domain:github.com)",
+      "Bash(curl -s http://localhost:3000)",
+      "PowerShell(try { $response = Invoke-WebRequest -Uri \"http://localhost:3001\" -UseBasicParsing -ErrorAction Stop; \"Server is responding: $\\($response.StatusCode\\)\" } catch { \"Server not responding: $_\" })",
+      "PowerShell(taskkill *)",
+      "PowerShell(npm run *)",
+      "PowerShell(Get-Process *)",
+      "PowerShell(Get-ChildItem -Path \"C:\\\\users\\\\user\\\\workspaces\\\\courses\\\\moneytoring-web\\\\app\" | Where-Object {$_.PSIsContainer})",
+      "PowerShell(Stop-Process *)"
     ]
   }
 }

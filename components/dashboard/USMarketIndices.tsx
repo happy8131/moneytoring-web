@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { Card } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useUSIndices } from '@/hooks/useUSIndices';
@@ -50,36 +51,38 @@ export function USMarketIndices() {
   return (
     <div className="grid grid-cols-3 gap-4">
       {indices.map((index) => (
-        <Card key={index.id} className="p-4">
-          <p className="text-sm font-medium text-muted-foreground mb-2">
-            {index.name}
-          </p>
-          <p className="text-2xl font-bold text-foreground mb-2">
-            ${index.currentPrice.toLocaleString('en-US', {
-              minimumFractionDigits: 2,
-              maximumFractionDigits: 2,
-            })}
-          </p>
-          <div className="flex items-center gap-2">
-            {index.percentChange >= 0 ? (
-              <TrendingUp className="w-4 h-4 text-green-500" />
-            ) : (
-              <TrendingDown className="w-4 h-4 text-red-500" />
-            )}
-            <span
-              className={`text-sm font-medium ${
-                index.percentChange >= 0 ? 'text-green-600' : 'text-red-600'
-              }`}
-            >
-              {index.percentChange >= 0 ? '+' : ''}
-              {index.percentChange.toFixed(2)}%
-            </span>
-            <span className="text-xs text-muted-foreground">
-              {index.change >= 0 ? '+' : ''}
-              ${index.change.toFixed(2)}
-            </span>
-          </div>
-        </Card>
+        <Link key={index.id} href={`/indices/${index.id}`}>
+          <Card className="p-4 cursor-pointer transition-colors hover:bg-muted/50">
+            <p className="text-sm font-medium text-muted-foreground mb-2">
+              {index.name}
+            </p>
+            <p className="text-2xl font-bold text-foreground mb-2">
+              ${index.currentPrice.toLocaleString('en-US', {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2,
+              })}
+            </p>
+            <div className="flex items-center gap-2">
+              {index.percentChange >= 0 ? (
+                <TrendingUp className="w-4 h-4 text-green-500" />
+              ) : (
+                <TrendingDown className="w-4 h-4 text-red-500" />
+              )}
+              <span
+                className={`text-sm font-medium ${
+                  index.percentChange >= 0 ? 'text-green-600' : 'text-red-600'
+                }`}
+              >
+                {index.percentChange >= 0 ? '+' : ''}
+                {index.percentChange.toFixed(2)}%
+              </span>
+              <span className="text-xs text-muted-foreground">
+                {index.change >= 0 ? '+' : ''}
+                ${index.change.toFixed(2)}
+              </span>
+            </div>
+          </Card>
+        </Link>
       ))}
     </div>
   );
