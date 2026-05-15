@@ -75,18 +75,38 @@ export async function GET(request: Request) {
       revenue: findConceptValue(
         report.report?.ic ?? [],
         'Revenues',
-        'RevenueFromContractWithCustomerExcludingAssessedTax'
+        'RevenueFromContractWithCustomerExcludingAssessedTax',
+        'RevenueFromContractWithCustomerIncludingAssessedTax',
+        'SalesRevenueNet',
+        'SalesRevenueGoodsNet',
+        'SalesRevenueServicesNet',
+        'RevenuesNetOfInterestExpense',
+        'InterestAndDividendIncomeOperating',
+        'BankingInterestIncome',
+        'RevenueFromContractWithCustomerExcludingAssessedTaxAndOtherRevenue'
       ),
-      netIncome: findConceptValue(report.report?.ic ?? [], 'NetIncomeLoss'),
+      netIncome: findConceptValue(
+        report.report?.ic ?? [],
+        'NetIncomeLoss',
+        'NetIncome',
+        'ProfitLoss',
+        'NetIncomeLossAvailableToCommonStockholdersBasic',
+        'NetIncomeLossAttributableToParent',
+        'IncomeLossFromContinuingOperations'
+      ),
       operatingIncome: findConceptValue(
         report.report?.ic ?? [],
-        'OperatingIncomeLoss'
+        'OperatingIncomeLoss',
+        'OperatingIncome',
+        'IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest',
+        'IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments'
       ),
       totalAssets: findConceptValue(report.report?.bs ?? [], 'Assets'),
-      totalLiabilities: findConceptValue(report.report?.bs ?? [], 'Liabilities'),
+      totalLiabilities: findConceptValue(report.report?.bs ?? [], 'Liabilities', 'LiabilitiesAndRedeemableNoncontrollingInterest'),
       freeCashFlow: findConceptValue(
         report.report?.cf ?? [],
-        'NetCashProvidedByUsedInOperatingActivities'
+        'NetCashProvidedByUsedInOperatingActivities',
+        'NetCashProvidedByUsedInOperatingActivitiesContinuingOperations'
       ),
     }));
 
