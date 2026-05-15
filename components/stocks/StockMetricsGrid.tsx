@@ -73,7 +73,7 @@ export function StockMetricsGrid({ symbol }: StockMetricsGridProps) {
     },
     {
       label: '평균거래량',
-      value: formatVolume(metrics?.averageVolume10D),
+      value: metrics?.averageVolume10D ? `${metrics.averageVolume10D.toFixed(2)}M` : '-',
     },
   ];
 
