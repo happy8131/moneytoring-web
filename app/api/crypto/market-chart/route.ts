@@ -41,7 +41,7 @@ export async function GET(request: NextRequest) {
     url.searchParams.append('days', daysParam);
 
     const response = await fetch(url.toString(), {
-      next: { revalidate: 300 },
+      next: { revalidate: 3600 },
     });
 
     if (!response.ok) {
@@ -49,6 +49,12 @@ export async function GET(request: NextRequest) {
         return NextResponse.json(
           { error: '코인을 찾을 수 없습니다.', data: [] },
           { status: 404 }
+        );
+      }
+      if (response.status === 429) {
+        return NextResponse.json(
+          { error: 'API 요청 제한됨. 잠시 후 다시 시도해주세요.', data: [] },
+          { status: 503, headers: { 'Retry-After': '300' } }
         );
       }
       return NextResponse.json(
