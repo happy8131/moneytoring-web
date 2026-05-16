@@ -19,6 +19,8 @@ export interface CryptoSearchResult {
   name: string;
   symbol: string;
   image: string;
+  marketCapRank: number | null;
+  isEtf: boolean;
 }
 
 export async function GET(request: NextRequest) {
@@ -56,6 +58,8 @@ export async function GET(request: NextRequest) {
           name: coin.name,
           symbol: coin.symbol.toUpperCase(),
           image: coin.large,
+          marketCapRank: coin.market_cap_rank,
+          isEtf: /etf|index fund|basket/i.test(coin.name),
         })
       );
 

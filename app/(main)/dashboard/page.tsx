@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic';
-import { StockSearchBar } from '@/components/dashboard/StockSearchBar';
+import { UnifiedSearchBar } from '@/components/dashboard/UnifiedSearchBar';
 
 export const metadata = {
   title: '대시보드 - Moneytoring',
@@ -48,7 +48,7 @@ export default function DashboardPage() {
 
       {/* 종목 검색 */}
       <div className="max-w-xl">
-        <StockSearchBar />
+        <UnifiedSearchBar />
       </div>
 
       {/* 미국 증시 */}
