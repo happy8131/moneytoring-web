@@ -39,7 +39,6 @@ export async function GET(request: NextRequest) {
     const url = new URL(`https://api.coingecko.com/api/v3/coins/${encodeURIComponent(id)}/market_chart`);
     url.searchParams.append('vs_currency', 'usd');
     url.searchParams.append('days', daysParam);
-    url.searchParams.append('interval', daysParam === '1' ? '5m' : 'auto');
 
     const response = await fetch(url.toString(), {
       next: { revalidate: 300 },
