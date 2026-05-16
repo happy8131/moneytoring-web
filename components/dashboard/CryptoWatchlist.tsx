@@ -1,5 +1,6 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import { useCryptoPrices } from '@/hooks/useCryptoPrices';
 import { formatCurrency, formatPercent } from '@/lib/calculations';
 import type { CryptoPricesResponse } from '@/app/api/crypto/prices/route';
@@ -7,6 +8,7 @@ import type { CryptoPricesResponse } from '@/app/api/crypto/prices/route';
 const DEFAULT_IDS = ['bitcoin', 'ethereum', 'solana', 'cardano', 'ripple'];
 
 export function CryptoWatchlist() {
+  const router = useRouter();
   const queryResult = useCryptoPrices({
     ids: DEFAULT_IDS,
     refetchInterval: 60_000,
@@ -42,7 +44,8 @@ export function CryptoWatchlist() {
       {data?.data.map((crypto) => (
         <div
           key={crypto.id}
-          className="flex items-center justify-between rounded-lg border border-border bg-card p-3 hover:bg-accent/50 transition-colors"
+          onClick={() => router.push(`/crypto/${crypto.id}`)}
+          className="flex items-center justify-between rounded-lg border border-border bg-card p-3 hover:bg-accent/50 transition-colors cursor-pointer"
         >
           <div className="flex items-center gap-2">
             <div className="w-6 h-6 rounded-full bg-muted flex-shrink-0" />
