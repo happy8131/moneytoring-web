@@ -18,7 +18,7 @@ export function cryptoPeriodToDays(period: CryptoPeriod): string {
     '1M': '30',
     '3M': '90',
     '1Y': '365',
-    'All': 'max',
+    'All': '365',
   };
   return map[period];
 }
