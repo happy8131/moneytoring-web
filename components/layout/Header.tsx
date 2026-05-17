@@ -60,6 +60,7 @@ export function Header() {
 
           {mounted && (
             <Button
+              className="hover:text-primary cursor-pointer"
               variant="ghost"
               size="icon"
               onClick={toggleDarkMode}
