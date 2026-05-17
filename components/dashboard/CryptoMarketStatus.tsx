@@ -1,11 +1,13 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import { Card } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useCryptoMarket } from '@/hooks/useCryptoMarket';
 import { TrendingUp, TrendingDown } from 'lucide-react';
 
 export function CryptoMarketStatus() {
+  const router = useRouter();
   const { data, isLoading, error } = useCryptoMarket();
 
   const market = data?.data;
@@ -65,7 +67,10 @@ export function CryptoMarketStatus() {
       </Card>
 
       {/* BTC 도미넌스 */}
-      <Card className="p-4">
+      <Card
+        className="p-4 cursor-pointer hover:bg-accent transition-colors"
+        onClick={() => router.push('/crypto/bitcoin')}
+      >
         <p className="text-sm font-medium text-muted-foreground mb-2">
           BTC 도미넌스
         </p>
@@ -78,7 +83,10 @@ export function CryptoMarketStatus() {
       </Card>
 
       {/* ETH 도미넌스 */}
-      <Card className="p-4">
+      <Card
+        className="p-4 cursor-pointer hover:bg-accent transition-colors"
+        onClick={() => router.push('/crypto/ethereum')}
+      >
         <p className="text-sm font-medium text-muted-foreground mb-2">
           ETH 도미넌스
         </p>
