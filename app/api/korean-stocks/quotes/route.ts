@@ -73,11 +73,13 @@ export interface KoreanStockQuotesResponse {
 /**
  * 키움 가격 문자열을 숫자로 변환
  * "+82000", "-1500", "82000" 모두 처리
+ * Kiwoom API의 특수문자(–, −, +, ,) 모두 제거
  */
 function parseKiwoomPrice(value: string): number {
   if (!value) return 0;
-  // 부호와 쉼표 제거 후 파싱
-  return parseFloat(value.replace(/[+,]/g, '')) || 0;
+  // 부호(+, -, –, −)와 쉼표 제거 후 파싱
+  const cleaned = value.replace(/[+,–−\-]/g, '').trim();
+  return parseFloat(cleaned) || 0;
 }
 
 /**

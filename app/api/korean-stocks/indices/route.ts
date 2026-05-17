@@ -74,7 +74,10 @@ export interface KoreanIndexQuote {
 
 function parseIndexValue(value: string): number {
   if (!value) return 0;
-  return parseFloat(value.replace(/[+,]/g, '')) || 0;
+  // Kiwoom API가 반환하는 가격에서 특수문자(–, +, 쉼표) 제거
+  // 특수문자: EN DASH(–), MINUS(−), 등
+  const cleaned = value.replace(/[+,–−\-]/g, '').trim();
+  return parseFloat(cleaned) || 0;
 }
 
 async function fetchSingleIndex(
