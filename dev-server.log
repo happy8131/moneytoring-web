@@ -2,18 +2,18 @@
 > moneytoring-web@0.1.0 dev
 > next dev
 
-⚠ Port 3000 is in use by process 19772, using available port 3001 instead.
+⚠ Port 3000 is in use by process 22932, using available port 3001 instead.
 ▲ Next.js 16.2.4 (Turbopack)
 - Local:         http://localhost:3001
 - Network:       http://192.168.219.118:3001
 - Environments: .env.local
-✓ Ready in 1227ms
+✓ Ready in 859ms
 ⨯ Another next dev server is already running.
 
 - Local:        http://localhost:3000
-- PID:          19772
+- PID:          22932
 - Dir:          C:\Users\user\workspaces\courses\moneytoring-web
 - Log:          .next\dev\logs\next-development.log
 
-Run taskkill /PID 19772 /F to stop it.
+Run taskkill /PID 22932 /F to stop it.
 [?25h

@@ -8,14 +8,15 @@ interface CryptoDeveloperActivityProps {
   id: string;
 }
 
-function DeveloperMetric({ icon: Icon, label, value }: { icon: React.ReactNode; label: string; value: number }) {
+function DeveloperMetric({ icon: Icon, label, value }: { icon: React.ReactNode; label: string; value: number | null | undefined }) {
+  const displayValue = (value ?? 0).toLocaleString();
   return (
     <div className="rounded-lg border border-border bg-muted/30 p-4">
       <div className="flex items-center gap-2 mb-2">
         <div className="flex-shrink-0">{Icon}</div>
         <p className="text-xs text-muted-foreground">{label}</p>
       </div>
-      <p className="text-lg font-semibold text-foreground">{value.toLocaleString()}</p>
+      <p className="text-lg font-semibold text-foreground">{displayValue}</p>
     </div>
   );
 }
@@ -80,10 +81,10 @@ export function CryptoDeveloperActivity({ id }: CryptoDeveloperActivityProps) {
       </div>
       <div className="border-t border-border pt-4 space-y-2 text-xs text-muted-foreground">
         <p>
-          <span className="font-medium">코드 추가:</span> {developerData.codeAdditions4Weeks.toLocaleString()} 줄
+          <span className="font-medium">코드 추가:</span> {(developerData.codeAdditions4Weeks ?? 0).toLocaleString()} 줄
         </p>
         <p>
-          <span className="font-medium">코드 삭제:</span> {developerData.codeDeletions4Weeks.toLocaleString()} 줄
+          <span className="font-medium">코드 삭제:</span> {(developerData.codeDeletions4Weeks ?? 0).toLocaleString()} 줄
         </p>
       </div>
     </div>

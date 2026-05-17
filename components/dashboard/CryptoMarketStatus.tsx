@@ -12,8 +12,8 @@ export function CryptoMarketStatus() {
 
   if (isLoading) {
     return (
-      <div className="grid grid-cols-2 gap-4">
-        {[1, 2, 3, 4].map((i) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {[1, 2].map((i) => (
           <Card key={i} className="p-4">
             <Skeleton className="h-5 w-24 mb-2" />
             <Skeleton className="h-7 w-32 mb-2" />
@@ -35,8 +35,8 @@ export function CryptoMarketStatus() {
   }
 
   return (
-    <div className="grid grid-cols-2 gap-4">
-      {/* 시가총액 */}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {/* 전체 시가총액 */}
       <Card className="p-4">
         <p className="text-sm font-medium text-muted-foreground mb-2">
           전체 시가총액
@@ -64,33 +64,7 @@ export function CryptoMarketStatus() {
         </div>
       </Card>
 
-      {/* BTC 도미넌스 */}
-      <Card className="p-4">
-        <p className="text-sm font-medium text-muted-foreground mb-2">
-          BTC 도미넌스
-        </p>
-        <p className="text-2xl font-bold text-foreground mb-2">
-          {market.btcDominance.toFixed(2)}%
-        </p>
-        <p className="text-xs text-muted-foreground">
-          비트코인 시장 점유율
-        </p>
-      </Card>
-
-      {/* ETH 도미넌스 */}
-      <Card className="p-4">
-        <p className="text-sm font-medium text-muted-foreground mb-2">
-          ETH 도미넌스
-        </p>
-        <p className="text-2xl font-bold text-foreground mb-2">
-          {market.ethDominance.toFixed(2)}%
-        </p>
-        <p className="text-xs text-muted-foreground">
-          이더리움 시장 점유율
-        </p>
-      </Card>
-
-      {/* Fear & Greed Index */}
+      {/* 공포/탐욕 지수 */}
       <Card className="p-4">
         <p className="text-sm font-medium text-muted-foreground mb-2">
           공포/탐욕 지수

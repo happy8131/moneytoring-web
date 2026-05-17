@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useCryptoPrices } from '@/hooks/useCryptoPrices';
 import { formatCurrency, formatPercent } from '@/lib/calculations';
@@ -48,7 +49,17 @@ export function CryptoWatchlist() {
           className="flex items-center justify-between rounded-lg border border-border bg-card p-3 hover:bg-accent/50 transition-colors cursor-pointer"
         >
           <div className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-full bg-muted flex-shrink-0" />
+            {crypto.image ? (
+              <Image
+                src={crypto.image}
+                alt={crypto.name}
+                width={24}
+                height={24}
+                className="w-6 h-6 rounded-full flex-shrink-0"
+              />
+            ) : (
+              <div className="w-6 h-6 rounded-full bg-muted flex-shrink-0" />
+            )}
             <p className="font-semibold text-sm">{crypto.symbol}</p>
           </div>
           <div className="text-right">

@@ -60,10 +60,16 @@ function parseKiwoomExpiry(expiresDt: string): Date {
 declare global {
   // eslint-disable-next-line no-var
   var __kiwoomTokenCache: CachedToken | null;
+  // eslint-disable-next-line no-var
+  var __kiwoomTokenPromise: Promise<CachedToken> | null;
 }
 
 if (!global.__kiwoomTokenCache) {
   global.__kiwoomTokenCache = null;
+}
+
+if (!global.__kiwoomTokenPromise) {
+  global.__kiwoomTokenPromise = null;
 }
 
 // 만료 전 갱신 여유 시간 (5분)
@@ -111,7 +117,18 @@ async function issueToken(appkey: string, secretkey: string): Promise<CachedToke
     );
   }
 
-  const data: TokenResponse = await res.json();
+  const rawText = await res.text();
+  console.log(`[Kiwoom] 토큰 발급 raw 응답:`, rawText);
+
+  let data: TokenResponse;
+  try {
+    data = JSON.parse(rawText);
+  } catch (error) {
+    throw new Error(
+      `키움 토큰 응답 JSON 파싱 실패: ${rawText.slice(0, 200)}`
+    );
+  }
+
   console.log(`[Kiwoom] 토큰 발급 응답:`, {
     return_code: data.return_code,
     return_msg: data.return_msg,
@@ -159,15 +176,28 @@ export async function getKiwoomToken(): Promise<string> {
     return global.__kiwoomTokenCache.token;
   }
 
-  // 새 토큰 발급
-  const cached = await issueToken(appkey, secretkey);
-  global.__kiwoomTokenCache = cached;
+  // 이미 토큰 발급 중이면 동일한 Promise 대기 (중복 발급 방지)
+  if (global.__kiwoomTokenPromise) {
+    const cached = await global.__kiwoomTokenPromise;
+    return cached.token;
+  }
 
-  const remainMin = Math.floor(
-    (cached.expiresAt.getTime() - Date.now()) / 60000
-  );
-  console.log(`[Kiwoom] 토큰 발급 완료. 만료까지 약 ${remainMin}분`);
+  // 새 토큰 발급 시작 (Promise를 global에 저장)
+  global.__kiwoomTokenPromise = issueToken(appkey, secretkey)
+    .then((cached) => {
+      global.__kiwoomTokenCache = cached;
+      const remainMin = Math.floor(
+        (cached.expiresAt.getTime() - Date.now()) / 60000
+      );
+      console.log(`[Kiwoom] 토큰 발급 완료. 만료까지 약 ${remainMin}분`);
+      return cached;
+    })
+    .finally(() => {
+      // 발급 완료 후 Promise 참조 제거
+      global.__kiwoomTokenPromise = null;
+    });
 
+  const cached = await global.__kiwoomTokenPromise;
   return cached.token;
 }
 

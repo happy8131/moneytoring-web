@@ -74,7 +74,10 @@ export interface KoreanIndexQuote {
 
 function parseIndexValue(value: string): number {
   if (!value) return 0;
-  return parseFloat(value.replace(/[+,]/g, '')) || 0;
+  // Kiwoom API가 반환하는 가격에서 특수문자(–, +, 쉼표) 제거
+  // 특수문자: EN DASH(–), MINUS(−), 등
+  const cleaned = value.replace(/[+,–−\-]/g, '').trim();
+  return parseFloat(cleaned) || 0;
 }
 
 async function fetchSingleIndex(
@@ -120,8 +123,42 @@ async function fetchSingleIndex(
 // GET /api/korean-stocks/indices
 // ────────────────────────────────────────────────────────────────────────────
 
+// 더미 데이터 생성 함수 (테스트 목적)
+function generateMockIndex(code: string): KoreanIndexQuote {
+  const baseValues: Record<string, number> = {
+    kospi: 2500,
+    kosdaq: 850,
+    kospi200: 385,
+    kospi100: 425,
+    kospi50: 490,
+  };
+
+  const baseValue = baseValues[code] || 1000;
+  const change = Math.floor((Math.random() - 0.5) * 200);
+  const percentChange = parseFloat((change / baseValue * 100).toFixed(2));
+  const indexInfo = INDEX_CODE_MAP[code];
+
+  return {
+    code,
+    indexCode: indexInfo.indsCd,
+    name: indexInfo.name,
+    currentValue: baseValue + change,
+    change,
+    percentChange,
+    volume: Math.floor(Math.random() * 1000000000),
+    tradingValue: Math.floor(Math.random() * 5000000000),
+    openValue: baseValue + Math.floor((Math.random() - 0.5) * 100),
+    highValue: baseValue + Math.floor(Math.random() * 150),
+    lowValue: baseValue - Math.floor(Math.random() * 150),
+    updatedAt: new Date().toISOString(),
+  };
+}
+
 export async function GET(request: NextRequest) {
-  if (!process.env.KIWOOM_APP_KEY || !process.env.KIWOOM_SECRET_KEY) {
+  // Mock 모드 체크
+  const isMock = process.env.KIWOOM_USE_MOCK === 'true';
+
+  if (!isMock && (!process.env.KIWOOM_APP_KEY || !process.env.KIWOOM_SECRET_KEY)) {
     return NextResponse.json(
       { error: 'Kiwoom API 키가 서버에 설정되지 않았습니다.' },
       { status: 500 }
@@ -149,6 +186,21 @@ export async function GET(request: NextRequest) {
     );
   }
 
+  // Mock 모드: 더미 데이터 반환
+  if (isMock) {
+    const data = requestedCodes.map((code) => generateMockIndex(code));
+
+    return NextResponse.json(
+      { data, errors: [], fetchedAt: new Date().toISOString() },
+      {
+        headers: {
+          'Cache-Control': 'public, s-maxage=30, stale-while-revalidate=60',
+        },
+      }
+    );
+  }
+
+  // 실제 API 호출
   const batchResults = await kiwoomBatchRequest(
     requestedCodes,
     fetchSingleIndex,
