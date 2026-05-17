@@ -17,7 +17,10 @@
       "PowerShell(npm run *)",
       "PowerShell(Get-Process *)",
       "PowerShell(Get-ChildItem -Path \"C:\\\\users\\\\user\\\\workspaces\\\\courses\\\\moneytoring-web\\\\app\" | Where-Object {$_.PSIsContainer})",
-      "PowerShell(Stop-Process *)"
+      "PowerShell(Stop-Process *)",
+      "WebFetch(domain:localhost)",
+      "PowerShell(Invoke-WebRequest -Uri \"https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=30&interval=auto\" -Method Get -ErrorAction SilentlyContinue | Select-Object -ExpandProperty StatusCode)",
+      "PowerShell(Invoke-WebRequest -Uri \"https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=30\" -Method Get -ErrorAction SilentlyContinue | Select-Object -ExpandProperty StatusCode)"
     ]
   }
 }

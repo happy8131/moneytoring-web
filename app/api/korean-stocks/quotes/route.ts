@@ -140,6 +140,31 @@ async function fetchSingleKoreanStock(symbol: string): Promise<KoreanStockQuote>
 // GET /api/korean-stocks/quotes
 // ────────────────────────────────────────────────────────────────────────────
 
+// 더미 데이터 생성 함수 (테스트 목적)
+function generateMockQuote(symbol: string, name: string): KoreanStockQuote {
+  const basePrice = Math.floor(Math.random() * 100000) + 10000;
+  const change = Math.floor((Math.random() - 0.5) * 5000);
+  const percentChange = parseFloat((change / basePrice * 100).toFixed(2));
+
+  return {
+    symbol,
+    name,
+    currentPrice: basePrice,
+    previousClose: basePrice - change,
+    change,
+    percentChange,
+    volume: Math.floor(Math.random() * 10000000),
+    tradingValue: Math.floor(basePrice * Math.random() * 10000000),
+    openPrice: basePrice + Math.floor((Math.random() - 0.5) * 2000),
+    highPrice: basePrice + Math.floor(Math.random() * 5000),
+    lowPrice: basePrice - Math.floor(Math.random() * 5000),
+    upperLimit: basePrice + Math.floor(basePrice * 0.3),
+    lowerLimit: basePrice - Math.floor(basePrice * 0.3),
+    market: symbol.startsWith('0') ? 'KOSPI' : 'KOSDAQ',
+    updatedAt: new Date().toISOString(),
+  };
+}
+
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const symbolsParam = searchParams.get('symbols');
@@ -165,7 +190,37 @@ export async function GET(request: NextRequest) {
     );
   }
 
-  // 환경 변수 사전 검증
+  // Mock 모드: Kiwoom API 키 없이도 작동
+  const isMock = process.env.KIWOOM_USE_MOCK === 'true';
+
+  if (isMock) {
+    // Mock 데이터 반환
+    const mockStockNames: Record<string, string> = {
+      '005930': '삼성전자',
+      '000660': 'SK하이닉스',
+      '005380': '현대차',
+      '051910': 'LG화학',
+      '035720': '카카오',
+    };
+
+    const data = symbols.map((symbol) =>
+      generateMockQuote(symbol, mockStockNames[symbol] || `종목${symbol}`)
+    );
+
+    const responseBody: KoreanStockQuotesResponse = {
+      data,
+      errors: [],
+      fetchedAt: new Date().toISOString(),
+    };
+
+    return NextResponse.json(responseBody, {
+      headers: {
+        'Cache-Control': 'public, s-maxage=30, stale-while-revalidate=60',
+      },
+    });
+  }
+
+  // 환경 변수 사전 검증 (실제 API 사용 시)
   if (!process.env.KIWOOM_APP_KEY || !process.env.KIWOOM_SECRET_KEY) {
     return NextResponse.json(
       { error: 'Kiwoom API 키가 서버에 설정되지 않았습니다.' },
