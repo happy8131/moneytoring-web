@@ -66,11 +66,11 @@ const TR_ENDPOINT_MAP: Record<string, string> = {
   ka10003: '/api/dostk/stkinfo',   // 주식 주봉 데이터
   ka10004: '/api/dostk/stkinfo',   // 주식 월봉 데이터
   ka10005: '/api/dostk/stkinfo',   // 주식 분봉 데이터
-  // 지수 관련
-  ka20001: '/api/dostk/sect',      // 업종 현재가
-  ka20002: '/api/dostk/sect',      // 업종 일봉 데이터
-  ka20003: '/api/dostk/sect',      // 업종 주봉 데이터
-  ka20004: '/api/dostk/sect',      // 업종 월봉 데이터
+  // 지수 관련 (sect 경로는 8005 오류 발생 확인 — mrkcond 사용)
+  ka20001: '/api/dostk/mrkcond',   // 업종 현재가
+  ka20002: '/api/dostk/mrkcond',   // 업종 일봉 데이터
+  ka20003: '/api/dostk/mrkcond',   // 업종 주봉 데이터
+  ka20004: '/api/dostk/mrkcond',   // 업종 월봉 데이터
   // 계좌 관련 (Production 전용)
   kt10001: '/api/dostk/acnt',      // 주식 잔고 조회
   kt10002: '/api/dostk/acnt',      // 주식 체결 내역
@@ -98,6 +98,11 @@ export async function kiwoomRequest<T>(
   const endpointPath = getEndpointPath(options.trCode);
   const url = `${baseUrl}${endpointPath}`;
 
+  // 요청 바디 (TR 코드는 api-id 헤더로 전달 — 바디에 포함 금지)
+  const body = {
+    ...options.body,
+  };
+
   const headers: Record<string, string> = {
     'Content-Type': 'application/json;charset=UTF-8',
     Authorization: `Bearer ${token}`,
@@ -110,12 +115,12 @@ export async function kiwoomRequest<T>(
     headers['cont-yn'] = 'Y';
   }
 
-  console.log(`[Kiwoom] ${options.trCode} 요청 → ${url}`, JSON.stringify(options.body));
+  console.log(`[Kiwoom] ${options.trCode} 요청 → ${url}`, JSON.stringify(body));
 
   const res = await fetch(url, {
     method: 'POST',
     headers,
-    body: JSON.stringify(options.body),
+    body: JSON.stringify(body),
     cache: 'no-store',
   });
 
