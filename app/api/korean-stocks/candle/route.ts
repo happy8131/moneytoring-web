@@ -99,20 +99,29 @@ async function generateCandlesFromQuotes(symbol: string, period: Period): Promis
       intervalMs = 30 * 24 * 60 * 60 * 1000; // 월봉
     }
 
-    // 현재가 근처에서 변동하는 캔들 생성
-    let lastPrice = prevClose;
+    // 현재가를 종가로 보장하는 candle 생성
+    // (마지막 candle의 종가는 반드시 현재가와 같아야 함)
+    const volatility = currentPrice * 0.03;
+
+    // 역순으로 candle 생성하되, 마지막(가장 최근) candle은 현재가로 고정
+    let lastClosePrice = currentPrice; // 현재가부터 시작
+
     for (let i = dataPoints - 1; i >= 0; i--) {
       const timestamp = now - i * intervalMs;
       const date = new Date(timestamp);
       const dateStr = date.toISOString().split('T')[0];
 
-      // 변동성 (현재가 기준 ±3%)
-      const volatility = currentPrice * 0.03;
-      const change = (Math.random() - 0.5) * volatility * 2;
-      lastPrice = Math.max(currentPrice * 0.7, lastPrice + change);
+      // 가장 최근 candle (i=0)은 현재가를 종가로 사용
+      let close: number;
+      if (i === 0) {
+        close = currentPrice; // 현재가로 고정
+      } else {
+        // 이전(더 최근) candle의 종가를 기반으로 역순 변동 생성
+        const change = (Math.random() - 0.5) * volatility * 2;
+        close = Math.max(currentPrice * 0.7, lastClosePrice + change);
+      }
 
-      const open = lastPrice + (Math.random() - 0.5) * volatility * 0.5;
-      const close = lastPrice;
+      const open = close + (Math.random() - 0.5) * volatility * 0.5;
       const high = Math.max(open, close) + Math.random() * volatility * 0.3;
       const low = Math.min(open, close) - Math.random() * volatility * 0.3;
       const periodVolume = Math.floor(volume * (0.3 + Math.random() * 0.7)); // volume의 30-100%
@@ -126,6 +135,8 @@ async function generateCandlesFromQuotes(symbol: string, period: Period): Promis
         v: periodVolume,
         date: dateStr,
       });
+
+      lastClosePrice = close;
     }
 
     return candles;

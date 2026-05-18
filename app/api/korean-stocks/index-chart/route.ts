@@ -85,19 +85,26 @@ async function generateCandlesFromCurrentIndex(code: string, period: Period): Pr
 
     // 변동성 (지수는 개별 종목보다 낮음, 현재값 기준 ±2%)
     const volatility = currentValue * 0.02;
-    let lastPrice = openValue;
+
+    // 현재값을 종가로 보장하는 candle 생성
+    let lastCloseValue = currentValue; // 현재값부터 시작
 
     for (let i = dataPoints - 1; i >= 0; i--) {
       const timestamp = now - i * intervalMs;
       const date = new Date(timestamp);
       const dateStr = date.toISOString().split('T')[0];
 
-      // 랜덤 워크로 지수 변동 생성
-      const change = (Math.random() - 0.5) * volatility * 2;
-      lastPrice = Math.max(currentValue * 0.8, lastPrice + change);
+      // 가장 최근 candle (i=0)은 현재값을 종가로 사용
+      let close: number;
+      if (i === 0) {
+        close = currentValue; // 현재값으로 고정
+      } else {
+        // 이전(더 최근) candle의 종가를 기반으로 역순 변동 생성
+        const change = (Math.random() - 0.5) * volatility * 2;
+        close = Math.max(currentValue * 0.8, lastCloseValue + change);
+      }
 
-      const open = lastPrice + (Math.random() - 0.5) * volatility * 0.5;
-      const close = lastPrice;
+      const open = close + (Math.random() - 0.5) * volatility * 0.5;
       const high = Math.max(open, close) + Math.random() * volatility * 0.3;
       const low = Math.min(open, close) - Math.random() * volatility * 0.3;
       const periodVolume = Math.floor(volume * (0.3 + Math.random() * 0.7)); // volume의 30-100%
@@ -111,6 +118,8 @@ async function generateCandlesFromCurrentIndex(code: string, period: Period): Pr
         v: periodVolume,
         date: dateStr,
       });
+
+      lastCloseValue = close;
     }
 
     return candles;
