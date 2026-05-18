@@ -27,6 +27,7 @@ interface KoreanStockSearchResult {
   symbol: string;
   name: string;
   market: string;
+  type: 'stock' | 'etf';
 }
 
 async function searchCrypto(query: string): Promise<CryptoSearchResult[]> {
@@ -45,10 +46,6 @@ async function searchKoreanStocks(query: string): Promise<KoreanStockSearchResul
   }
   const json = await res.json();
   return json.data || [];
-}
-
-function isKoreanQuery(query: string): boolean {
-  return /^[가-힣]{2,}/.test(query) || /^\d{6}$/.test(query);
 }
 
 export function UnifiedSearchBar() {
@@ -80,11 +77,11 @@ export function UnifiedSearchBar() {
     staleTime: 5 * 60_000,
   });
 
-  // 한국 주식 검색
+  // 한국 주식 검색 - 2자 이상이면 모두 검색 (한글, 영어, 숫자)
   const { data: koreanStockResults } = useQuery({
     queryKey: ['kr-stocks', 'search', debouncedQuery],
     queryFn: () => searchKoreanStocks(debouncedQuery),
-    enabled: isKoreanQuery(debouncedQuery),
+    enabled: debouncedQuery.length >= 2,
     staleTime: 5 * 60_000,
   });
 
@@ -133,7 +130,7 @@ export function UnifiedSearchBar() {
         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
         <Input
           type="text"
-          placeholder="주식 · 암호화폐 검색 (예: Apple, BTC, DPI)"
+          placeholder="주식 · 암호화폐 · 한국주식 검색 (예: Apple, BTC, 삼성전자, Samsung)"
           value={query}
           onChange={(e) => {
             setQuery(e.target.value);
@@ -211,8 +208,12 @@ export function UnifiedSearchBar() {
                               {result.name}
                             </p>
                           </div>
-                          <span className="ml-2 text-xs px-2 py-1 rounded flex-shrink-0 bg-green-500/20 text-green-400">
-                            {result.market}
+                          <span className={`ml-2 text-xs px-2 py-1 rounded flex-shrink-0 ${
+                            result.type === 'etf'
+                              ? 'bg-blue-500/20 text-blue-400'
+                              : 'bg-green-500/20 text-green-400'
+                          }`}>
+                            {result.type === 'etf' ? 'ETF' : result.market}
                           </span>
                         </button>
                       </li>

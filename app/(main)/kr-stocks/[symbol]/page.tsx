@@ -1,25 +1,28 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+import { Period } from '@/lib/stockUtils';
 import { KrStockDetailHeader } from '@/components/kr-stocks/KrStockDetailHeader';
 import { KrStockPriceChart } from '@/components/kr-stocks/KrStockPriceChart';
 import { KrStockMetricsGrid } from '@/components/kr-stocks/KrStockMetricsGrid';
 import { KrStockIndicatorChart } from '@/components/kr-stocks/KrStockIndicatorChart';
 import { KrStockFinancialsTable } from '@/components/kr-stocks/KrStockFinancialsTable';
 
-interface KrStockDetailPageProps {
-  params: {
-    symbol: string;
-  };
-}
+type Props = {
+  params: Promise<{ symbol: string }>;
+};
 
-export async function generateMetadata({ params }: KrStockDetailPageProps) {
-  const { symbol } = await params;
-  return {
-    title: `${symbol} - 한국 주식 상세`,
-    description: `${symbol}의 실시간 가격, 차트, 기술지표 정보`,
-  };
-}
+export default function KrStockDetailPage({ params }: Props) {
+  const [symbol, setSymbol] = useState<string>('');
+  const [selectedPeriod, setSelectedPeriod] = useState<Period>('1M');
 
-export default async function KrStockDetailPage({ params }: KrStockDetailPageProps) {
-  const { symbol } = await params;
+  useEffect(() => {
+    params.then((p) => setSymbol(p.symbol));
+  }, [params]);
+
+  if (!symbol) {
+    return null;
+  }
 
   return (
     <div className="space-y-6 pb-12">
@@ -27,13 +30,13 @@ export default async function KrStockDetailPage({ params }: KrStockDetailPagePro
       <KrStockDetailHeader symbol={symbol} />
 
       {/* 차트 */}
-      <KrStockPriceChart symbol={symbol} />
+      <KrStockPriceChart symbol={symbol} onPeriodChange={setSelectedPeriod} />
 
       {/* 주요 지표 */}
       <KrStockMetricsGrid symbol={symbol} />
 
       {/* 기술지표 */}
-      <KrStockIndicatorChart symbol={symbol} period="1M" />
+      <KrStockIndicatorChart symbol={symbol} period={selectedPeriod} />
 
       {/* 거래 현황 */}
       <KrStockFinancialsTable symbol={symbol} />
