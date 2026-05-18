@@ -11,22 +11,23 @@ export interface KoreanStockData {
   nameEn: string;   // 영어 이름
   market: 'KOSPI' | 'KOSDAQ';
   type: 'stock' | 'etf';
+  listedDate?: string; // 상장일 (YYYY-MM-DD, 선택사항)
 }
 
 export const KOREAN_STOCKS: KoreanStockData[] = [
   // ────────────────────────────────────────────────────────────────────
   // KOSPI 주요 종목
   // ────────────────────────────────────────────────────────────────────
-  { symbol: '005930', name: '삼성전자', nameEn: 'Samsung Electronics', market: 'KOSPI', type: 'stock' },
-  { symbol: '000660', name: 'SK하이닉스', nameEn: 'SK Hynix', market: 'KOSPI', type: 'stock' },
-  { symbol: '005380', name: '현대차', nameEn: 'Hyundai Motor', market: 'KOSPI', type: 'stock' },
-  { symbol: '000270', name: '기아', nameEn: 'Kia Corporation', market: 'KOSPI', type: 'stock' },
-  { symbol: '051910', name: 'LG화학', nameEn: 'LG Chem', market: 'KOSPI', type: 'stock' },
-  { symbol: '005490', name: 'POSCO홀딩스', nameEn: 'POSCO Holdings', market: 'KOSPI', type: 'stock' },
-  { symbol: '068270', name: '셀트리온', nameEn: 'Celltrion', market: 'KOSPI', type: 'stock' },
-  { symbol: '207940', name: '삼성바이오로직스', nameEn: 'Samsung Biologics', market: 'KOSPI', type: 'stock' },
-  { symbol: '035720', name: '카카오', nameEn: 'Kakao', market: 'KOSPI', type: 'stock' },
-  { symbol: '035420', name: 'NAVER', nameEn: 'NAVER', market: 'KOSPI', type: 'stock' },
+  { symbol: '005930', name: '삼성전자', nameEn: 'Samsung Electronics', market: 'KOSPI', type: 'stock', listedDate: '1975-06-11' },
+  { symbol: '000660', name: 'SK하이닉스', nameEn: 'SK Hynix', market: 'KOSPI', type: 'stock', listedDate: '1995-06-30' },
+  { symbol: '005380', name: '현대차', nameEn: 'Hyundai Motor', market: 'KOSPI', type: 'stock', listedDate: '1974-12-03' },
+  { symbol: '000270', name: '기아', nameEn: 'Kia Corporation', market: 'KOSPI', type: 'stock', listedDate: '2000-04-14' },
+  { symbol: '051910', name: 'LG화학', nameEn: 'LG Chem', market: 'KOSPI', type: 'stock', listedDate: '1973-10-01' },
+  { symbol: '005490', name: 'POSCO홀딩스', nameEn: 'POSCO Holdings', market: 'KOSPI', type: 'stock', listedDate: '1988-06-29' },
+  { symbol: '068270', name: '셀트리온', nameEn: 'Celltrion', market: 'KOSPI', type: 'stock', listedDate: '2010-12-16' },
+  { symbol: '207940', name: '삼성바이오로직스', nameEn: 'Samsung Biologics', market: 'KOSPI', type: 'stock', listedDate: '2020-05-29' },
+  { symbol: '035720', name: '카카오', nameEn: 'Kakao', market: 'KOSPI', type: 'stock', listedDate: '2010-06-24' },
+  { symbol: '035420', name: 'NAVER', nameEn: 'NAVER', market: 'KOSPI', type: 'stock', listedDate: '2010-06-24' },
   { symbol: '055550', name: '신한지주', nameEn: 'Shinhan Financial Group', market: 'KOSPI', type: 'stock' },
   { symbol: '086790', name: '하나금융지주', nameEn: 'Hana Financial Group', market: 'KOSPI', type: 'stock' },
   { symbol: '105560', name: 'KB금융', nameEn: 'KB Financial Group', market: 'KOSPI', type: 'stock' },
@@ -86,19 +87,19 @@ export const KOREAN_STOCKS: KoreanStockData[] = [
   // ────────────────────────────────────────────────────────────────────
   // KOSDAQ 주요 종목
   // ────────────────────────────────────────────────────────────────────
-  { symbol: '247540', name: '에코프로비엠', nameEn: 'EcoPro BM', market: 'KOSDAQ', type: 'stock' },
-  { symbol: '086520', name: '에코프로', nameEn: 'EcoPro', market: 'KOSDAQ', type: 'stock' },
-  { symbol: '196170', name: '알테오젠', nameEn: 'Alteogen', market: 'KOSDAQ', type: 'stock' },
-  { symbol: '041510', name: '에스엠', nameEn: 'SM Entertainment', market: 'KOSDAQ', type: 'stock' },
-  { symbol: '137950', name: '클리오', nameEn: 'Clio Cosmetics', market: 'KOSDAQ', type: 'stock' },
-  { symbol: '145020', name: '휴젤', nameEn: 'Hugel', market: 'KOSDAQ', type: 'stock' },
-  { symbol: '302440', name: 'SK바이오사이언스', nameEn: 'SK Bioscience', market: 'KOSDAQ', type: 'stock' },
-  { symbol: '323410', name: '카카오뱅크', nameEn: 'KakaoBank', market: 'KOSDAQ', type: 'stock' },
-  { symbol: '263750', name: '펄어비스', nameEn: 'Pearl Abyss', market: 'KOSDAQ', type: 'stock' },
-  { symbol: '112040', name: '위메이드', nameEn: 'Wemade', market: 'KOSDAQ', type: 'stock' },
-  { symbol: '028300', name: 'HLB', nameEn: 'HLB', market: 'KOSDAQ', type: 'stock' },
-  { symbol: '183420', name: '삼성메디슨', nameEn: 'Samsung Medison', market: 'KOSDAQ', type: 'stock' },
-  { symbol: '214150', name: '클래시스', nameEn: 'Classys', market: 'KOSDAQ', type: 'stock' },
+  { symbol: '247540', name: '에코프로비엠', nameEn: 'EcoPro BM', market: 'KOSDAQ', type: 'stock', listedDate: '2020-12-16' },
+  { symbol: '086520', name: '에코프로', nameEn: 'EcoPro', market: 'KOSDAQ', type: 'stock', listedDate: '2015-06-26' },
+  { symbol: '196170', name: '알테오젠', nameEn: 'Alteogen', market: 'KOSDAQ', type: 'stock', listedDate: '2019-12-20' },
+  { symbol: '041510', name: '에스엠', nameEn: 'SM Entertainment', market: 'KOSDAQ', type: 'stock', listedDate: '2000-10-02' },
+  { symbol: '137950', name: '클리오', nameEn: 'Clio Cosmetics', market: 'KOSDAQ', type: 'stock', listedDate: '2009-05-29' },
+  { symbol: '145020', name: '휴젤', nameEn: 'Hugel', market: 'KOSDAQ', type: 'stock', listedDate: '2018-08-09' },
+  { symbol: '302440', name: 'SK바이오사이언스', nameEn: 'SK Bioscience', market: 'KOSDAQ', type: 'stock', listedDate: '2021-10-14' },
+  { symbol: '323410', name: '카카오뱅크', nameEn: 'KakaoBank', market: 'KOSDAQ', type: 'stock', listedDate: '2017-07-27' },
+  { symbol: '263750', name: '펄어비스', nameEn: 'Pearl Abyss', market: 'KOSDAQ', type: 'stock', listedDate: '2020-11-12' },
+  { symbol: '112040', name: '위메이드', nameEn: 'Wemade', market: 'KOSDAQ', type: 'stock', listedDate: '2018-07-27' },
+  { symbol: '028300', name: 'HLB', nameEn: 'HLB', market: 'KOSDAQ', type: 'stock', listedDate: '1995-08-25' },
+  { symbol: '183420', name: '삼성메디슨', nameEn: 'Samsung Medison', market: 'KOSDAQ', type: 'stock', listedDate: '2000-05-08' },
+  { symbol: '214150', name: '클래시스', nameEn: 'Classys', market: 'KOSDAQ', type: 'stock', listedDate: '2021-03-10' },
   { symbol: '357780', name: '솔브레인', nameEn: 'Soulbrain', market: 'KOSDAQ', type: 'stock' },
   { symbol: '353200', name: '대덕', nameEn: 'Daeduk Electronics', market: 'KOSDAQ', type: 'stock' },
   { symbol: '257720', name: '실리콘투', nameEn: 'Silicon2', market: 'KOSDAQ', type: 'stock' },

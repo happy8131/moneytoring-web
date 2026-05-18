@@ -18,6 +18,7 @@ import {
   isValidKoreanStockSymbol,
 } from '@/lib/krStockUtils';
 import { Period } from '@/lib/stockUtils';
+import { KOREAN_STOCKS } from '@/data/korean-stocks';
 
 // ────────────────────────────────────────────────────────────────────────────
 // 타입 정의
@@ -151,7 +152,7 @@ async function generateCandlesFromQuotes(symbol: string, period: Period): Promis
 // ────────────────────────────────────────────────────────────────────────────
 
 function generateMockCandles(symbol: string, period: Period): CandleData[] {
-  const dataPoints = MOCK_DATA_POINTS[period];
+  let dataPoints = MOCK_DATA_POINTS[period];
   const baseValues: Record<string, number> = {
     '005930': 70000, // 삼성전자
     '000660': 125000, // SK하이닉스
@@ -169,10 +170,26 @@ function generateMockCandles(symbol: string, period: Period): CandleData[] {
 
   // Period에 따라 시간 간격 결정 (밀리초)
   let intervalMs = 24 * 60 * 60 * 1000; // 기본 일봉
+  let startDate = new Date(now);
+
   if (['2Y', '5Y'].includes(period)) {
     intervalMs = 7 * 24 * 60 * 60 * 1000; // 주봉
   } else if (['10Y', 'All'].includes(period)) {
     intervalMs = 30 * 24 * 60 * 60 * 1000; // 월봉
+
+    // "All" 기간: 실제 상장일부터 데이터 생성
+    if (period === 'All') {
+      const stockData = KOREAN_STOCKS.find((s) => s.symbol === symbol);
+      if (stockData?.listedDate) {
+        // 상장일부터 현재까지의 개월 수 계산
+        const listedDate = new Date(stockData.listedDate);
+        const monthsDiff = Math.floor((now - listedDate.getTime()) / intervalMs);
+        dataPoints = Math.max(1, monthsDiff); // 최소 1개월, 상장일부터 현재까지
+      } else {
+        // 상장일 정보 없으면 최근 10년
+        dataPoints = 120; // 10년 = 120개월
+      }
+    }
   }
 
   for (let i = dataPoints - 1; i >= 0; i--) {
@@ -313,7 +330,7 @@ export async function GET(request: NextRequest) {
     });
   }
 
-  // 실제 API 모드 (아직 응답 형식 불확실 → mock 데이터 반환)
+  // 실제 API 모드: Kiwoom candle API에서 데이터 조회
   if (!process.env.KIWOOM_APP_KEY || !process.env.KIWOOM_SECRET_KEY) {
     return NextResponse.json(
       { error: 'Kiwoom API 키가 서버에 설정되지 않았습니다.' },
@@ -324,24 +341,38 @@ export async function GET(request: NextRequest) {
   try {
     const trCode = periodToKiwoomTrCode(period);
 
-    console.log(`[KrStock] 실제 API 기반 candle 생성 중: symbol=${symbol}, period=${period}`);
+    console.log(`[KrStock] Kiwoom candle API 조회 중: symbol=${symbol}, period=${period}, trCode=${trCode}`);
 
-    // Kiwoom API의 일봉 데이터가 제공되지 않으므로,
-    // quotes API의 실제 데이터를 기반으로 candle 생성
-    const candles = await generateCandlesFromQuotes(symbol, period);
+    // Kiwoom candle API 호출 (ka10002/ka10003/ka10004)
+    const response = await kiwoomRequest<KiwoomCandleRaw>({
+      trCode: trCode,
+      body: {
+        stk_cd: symbol,
+        gubun: '0', // 0: 일봉, 1: 분봉 등
+      },
+    });
+
+    const candles = transformKiwoomCandles(response.data);
 
     if (candles.length === 0) {
-      console.warn(`[KrStock] ${symbol} - quotes 데이터를 기반으로 candle 생성 실패`);
-      return NextResponse.json(
-        {
-          error: `${symbol}의 데이터를 조회할 수 없습니다.`,
-          data: []
+      console.warn(`[KrStock] ${symbol} - Kiwoom API에서 candle 데이터 없음, mock 데이터로 폴백`);
+      const mockCandles = generateMockCandles(symbol, period);
+      const responseData: KrStockCandleResponse = {
+        symbol,
+        period,
+        trCode,
+        data: mockCandles,
+        fetchedAt: new Date().toISOString(),
+      };
+
+      return NextResponse.json(responseData, {
+        headers: {
+          'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=600',
         },
-        { status: 503 }
-      );
+      });
     }
 
-    console.log(`[KrStock] ${symbol} - ${candles.length}개의 candle 데이터 생성 완료`);
+    console.log(`[KrStock] ${symbol} - ${candles.length}개의 candle 데이터 조회 완료`);
 
     const responseData: KrStockCandleResponse = {
       symbol,
