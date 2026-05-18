@@ -52,8 +52,15 @@ export async function GET(request: NextRequest) {
   const raw: FinnhubSearchResult = await res.json();
 
   const ALLOWED_TYPES = ['Common Stock', 'ETP'];
+  // 중복 심볼 제거 (같은 심볼이 여러 거래소에서 나타날 수 있음)
+  const seen = new Set<string>();
   const filtered = raw.result
-    .filter((item) => ALLOWED_TYPES.includes(item.type))
+    .filter((item) => {
+      if (seen.has(item.symbol)) return false; // 중복된 심볼은 건너뛰기
+      if (!ALLOWED_TYPES.includes(item.type)) return false;
+      seen.add(item.symbol);
+      return true;
+    })
     .slice(0, 10)
     .map(
       (item): StockSearchResult => ({

@@ -29,7 +29,8 @@ export function useKoreanIndices() {
       if (!response.ok) throw new Error('Failed to fetch Korean indices');
       return response.json();
     },
-    refetchInterval: 30_000,
-    staleTime: 0,
+    staleTime: 5 * 60 * 1000, // 5분
+    gcTime: 10 * 60 * 1000, // 10분
+    refetchInterval: 30_000, // 30초마다 백그라운드 갱신
   });
 }

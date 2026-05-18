@@ -1,0 +1,170 @@
+
+> moneytoring-web@0.1.0 dev
+> next dev
+
+▲ Next.js 16.2.4 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.219.118:3000
+- Environments: .env.local
+✓ Ready in 609ms
+
+[Kiwoom] 토큰 발급 요청: https://api.kiwoom.com/oauth2/token, appkey=oOBwRgd-fp...
+[Kiwoom] 토큰 발급 raw 응답: {"expires_dt":"20260519160721","return_msg":"정상적으로 처리되었습니다","token_type":"Bearer","return_code":0,"token":"b-8XyBEXVJdRGYXoGSXsCBY2FeeIRhKiYYTQ8wxxzbyII1xFqiOFSjcxgr8T_tcul8clE44mnz3VEGLPy7jHAg"}
+[Kiwoom] 토큰 발급 응답: {
+  return_code: 0,
+  return_msg: '정상적으로 처리되었습니다',
+  token: 'b-8XyBEXVJdRGYXoGSXs...',
+  expires_dt: '20260519160721'
+}
+[Kiwoom] 토큰 발급 완료. 만료까지 약 1381분
+[Kiwoom] ka10001 요청 → https://api.kiwoom.com/api/dostk/stkinfo {"stk_cd":"005930"}
+[Kiwoom] ka10001 응답: {"stk_cd":"005930","stk_nm":"삼성전자","setl_mm":"12","fav":"100","cap":"7780","flo_stk":"5846279","crd_rt":"+0.37","oyr_hgst":"+299500","oyr_lwst":"-120200","mac":"16428043","mac_wght":"","for_exh_rt":"+48.69","repl_pric":"200170","per":"42.81","eps":"6564","roe":"10.9","pbr":"4.39","ev":"17.04","bps":"63976","sale_amt":"3336059","bus_pro":"436011","cup_nga":"452068","250hgst":"+299500","250lwst":"-53700","open_pric":"-269500","high_pric":"+288500","low_pric":"-262000","upl_pric":"+351500","lst_pric":"-189500","base_pric":"270500","exp_cntr_pric":"-0","exp_cntr_qty":"0","250hgst_pric_dt":"20260514","250hgst_pric_pre_rt":"-6.18","250lwst_pric_dt":"20250526","250lwst_pric_pre_rt":"+423.28","cur_prc":"+281000","pre_sig":"2","pred_pre":"+10500","flu_rt":"+3.88","trde_qty":"33502969","trde_pre":"-87.99","fav_unit":"원","dstr_stk":"4443355","dstr_rt":"76.0","return_code":0,"return_msg":"정상적으로 처리되었습니다"}
+ GET /api/korean-stocks/quotes?symbols=005930 200 in 764ms (next.js: 556ms, application-code: 207ms)
+ GET /kr-stocks/005930 200 in 1450ms (next.js: 1052ms, application-code: 398ms)
+[Kiwoom] ka10001 요청 → https://api.kiwoom.com/api/dostk/stkinfo {"stk_cd":"005930"}
+[KrStock] ka10002 요청: symbol=005930, period=1M
+[Kiwoom] ka10002 요청 → https://api.kiwoom.com/api/dostk/stkinfo {"stk_cd":"005930","base_dt":"20260518"}
+[Kiwoom] ka10001 응답: {"stk_cd":"005930","stk_nm":"삼성전자","setl_mm":"12","fav":"100","cap":"7780","flo_stk":"5846279","crd_rt":"+0.37","oyr_hgst":"+299500","oyr_lwst":"-120200","mac":"16428043","mac_wght":"","for_exh_rt":"+48.69","repl_pric":"200170","per":"42.81","eps":"6564","roe":"10.9","pbr":"4.39","ev":"17.04","bps":"63976","sale_amt":"3336059","bus_pro":"436011","cup_nga":"452068","250hgst":"+299500","250lwst":"-53700","open_pric":"-269500","high_pric":"+288500","low_pric":"-262000","upl_pric":"+351500","lst_pric":"-189500","base_pric":"270500","exp_cntr_pric":"-0","exp_cntr_qty":"0","250hgst_pric_dt":"20260514","250hgst_pric_pre_rt":"-6.18","250lwst_pric_dt":"20250526","250lwst_pric_pre_rt":"+423.28","cur_prc":"+281000","pre_sig":"2","pred_pre":"+10500","flu_rt":"+3.88","trde_qty":"33502969","trde_pre":"-87.99","fav_unit":"원","dstr_stk":"4443355","dstr_rt":"76.0","return_code":0,"return_msg":"정상적으로 처리되었습니다"}
+ GET /api/korean-stocks/quotes?symbols=005930 200 in 64ms (next.js: 5ms, application-code: 59ms)
+[Kiwoom] ka10002 응답: {"stk_cd":"005930","stk_nm":"삼성전자","cur_prc":"+281000","flu_smbol":"2","base_pric":"270500","pred_pre":"+10500","flu_rt":"+3.88","sel_trde_ori_nm_1":"미래에셋","sel_trde_ori_1":"005","sel_trde_qty_1":"-3737078","buy_trde_ori_nm_1":"미래에셋","buy_trde_ori_1":"005","buy_trde_qty_1":"+3897540","sel_trde_ori_nm_2":"키움증권","sel_trde_ori_2":"050","sel_trde_qty_2":"-2569254","buy_trde_ori_nm_2":"키움증권","buy_trde_ori_2":"050","buy_trde_qty_2":"+2881647","sel_trde_ori_nm_3":"삼  성","sel_trde_ori_3":"030","sel_trde_qty_3":"-2458809","buy_trde_ori_nm_3":"한국투자증권","buy_trde_ori_3":"003","buy_trde_qty_3":"+2792629","sel_trde_ori_nm_4":"KB증권","sel_trde_ori_4":"017","sel_trde_qty_4":"-2270569","buy_trde_ori_nm_4":"NH투자증권","buy_trde_ori_4":"012","buy_trde_qty_4":"+2475755","sel_trde_ori_nm_5":"신한투자증권","sel_trde_ori_5":"002","sel_trde_qty_5":"-2037576","buy_trde_ori_nm_5":"KB증권","buy_trde_ori_5":"017","buy_trde_qty_5":"+2415717","return_code":0,"return_msg":"정상적으로 처리되었습니다"}
+[KrStock] 005930 캔들 데이터 없음
+ GET /api/korean-stocks/candle?symbol=005930&period=1M 200 in 71ms (next.js: 50ms, application-code: 21ms)
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+[Kiwoom] ka10001 요청 → https://api.kiwoom.com/api/dostk/stkinfo {"stk_cd":"005930"}
+[Kiwoom] ka10001 응답: {"stk_cd":"005930","stk_nm":"삼성전자","setl_mm":"12","fav":"100","cap":"7780","flo_stk":"5846279","crd_rt":"+0.37","oyr_hgst":"+299500","oyr_lwst":"-120200","mac":"16428043","mac_wght":"","for_exh_rt":"+48.69","repl_pric":"200170","per":"42.81","eps":"6564","roe":"10.9","pbr":"4.39","ev":"17.04","bps":"63976","sale_amt":"3336059","bus_pro":"436011","cup_nga":"452068","250hgst":"+299500","250lwst":"-53700","open_pric":"-269500","high_pric":"+288500","low_pric":"-262000","upl_pric":"+351500","lst_pric":"-189500","base_pric":"270500","exp_cntr_pric":"-0","exp_cntr_qty":"0","250hgst_pric_dt":"20260514","250hgst_pric_pre_rt":"-6.18","250lwst_pric_dt":"20250526","250lwst_pric_pre_rt":"+423.28","cur_prc":"+281000","pre_sig":"2","pred_pre":"+10500","flu_rt":"+3.88","trde_qty":"33502969","trde_pre":"-87.99","fav_unit":"원","dstr_stk":"4443355","dstr_rt":"76.0","return_code":0,"return_msg":"정상적으로 처리되었습니다"}
+ GET /api/korean-stocks/quotes?symbols=005930 200 in 64ms (next.js: 4ms, application-code: 60ms)
+⨯ Error: ENOENT: no such file or directory, open 'C:\Users\user\workspaces\courses\moneytoring-web\.next\dev\server\app\api\korean-stocks\quotes\[__metadata_id__]\route\app-paths-manifest.json'
+    at ignore-listed frames {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\Users\\user\\workspaces\\courses\\moneytoring-web\\.next\\dev\\server\\app\\api\\korean-stocks\\quotes\\[__metadata_id__]\\route\\app-paths-manifest.json'
+}
+
+thread 'tokio-runtime-worker' (15428) panicked at turbopack\crates\turbo-tasks-backend\src\backend\operation\mod.rs:619:14:
+Failed to lookup task ids: Looking up task id for CachedTaskType { native_fn: NativeFunction { name: "get_written_endpoint_with_issues_operation", global_name: "next_napi_bindings::next_api::endpoint::get_written_endpoint_with_issues_operation", .. }, this: None, arg: (OperationVc { node: RawVc::TaskOutput(411) },) } from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000696.meta
+    1: Unable to open static sorted file 00000691.sst
+    2: Failed to open SST file C:\Users\user\workspaces\courses\moneytoring-web\.next\dev\cache/turbopack\2275bd85\00000691.sst
+    3: 지정된 경로를 찾을 수 없습니다. (os error 3)
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+-----
+[1m[31mFATAL[39m[0m: An unexpected Turbopack error occurred. A panic log has been written to C:\Users\user\AppData\Local\Temp\next-panic-51fdd0fb246c544b07a1fb53d2455d3a.log.
+
+To help make Turbopack better, report this error by ]8;;https://bugs.nextjs.org/search?category=turbopack-error-report&title=Turbopack%20Error%3A%20Failed%20to%20lookup%20task%20ids%3A%20Looking%20up%20task%20id%20for%20CachedTaskType%20%7B%20native_fn%3A%20NativeFunction%20%7B%20name%3A%20%22get_written_endpoint_with_issues_operation%22%2C%20global_name%3A%20%22next_napi_bindings%3A%3Anext_api%3A%3Aendpoint%3A%3Aget_written_endpoint_with_issues_operation%22%2C%20..%20%7D%2C%20this%3A%20None%2C%20arg%3A%20%28OperationVc%20%7B%20node%3A%20RawVc%3A%3ATaskOutput%28411%29%20%7D%2C%29%20%7D%20from%20database%20failed&body=Turbopack%20version%3A%20%602275bd85%60%0ANext.js%20version%3A%20%600.0.0%60%0A%0AError%20message%3A%0A%60%60%60%0AFailed%20to%20lookup%20task%20ids%3A%20Looking%20up%20task%20id%20for%20CachedTaskType%20%7B%20native_fn%3A%20NativeFunction%20%7B%20name%3A%20%22get_written_endpoint_with_issues_operation%22%2C%20global_name%3A%20%22next_napi_bindings%3A%3Anext_api%3A%3Aendpoint%3A%3Aget_written_endpoint_with_issues_operation%22%2C%20..%20%7D%2C%20this%3A%20None%2C%20arg%3A%20%28OperationVc%20%7B%20node%3A%20RawVc%3A%3ATaskOutput%28411%29%20%7D%2C%29%20%7D%20from%20database%20failed%0A%0ADebug%20info%3A%0A-%20Failed%20to%20lookup%20task%20ids%3A%20Looking%20up%20task%20id%20for%20CachedTaskType%20%7B%20native_fn%3A%20NativeFunction%20%7B%20name%3A%20%22get_written_endpoint_with_issues_operation%22%2C%20global_name%3A%20%22next_napi_bindings%3A%3Anext_api%3A%3Aendpoint%3A%3Aget_written_endpoint_with_issues_operation%22%2C%20..%20%7D%2C%20this%3A%20None%2C%20arg%3A%20%28OperationVc%20%7B%20node%3A%20RawVc%3A%3ATaskOutput%28411%29%20%7D%2C%29%20%7D%20from%20database%20failed%0A%20%20%0A%20%20Caused%20by%3A%0A%20%20%20%20%20%200%3A%20Unable%20to%20open%20static%20sorted%20file%20referenced%20from%2000000696.meta%0A%20%20%20%20%20%201%3A%20Unable%20to%20open%20static%20sorted%20file%2000000691.sst%0A%20%20%20%20%20%202%3A%20Failed%20to%20open%20SST%20file%20C%3A%5CUsers%5Cuser%5Cworkspaces%5Ccourses%5Cmoneytoring-web%5C.next%5Cdev%5Ccache%2Fturbopack%5C2275bd85%5C00000691.sst%0A%20%20%20%20%20%203%3A%20%EC%A7%80%EC%A0%95%EB%90%9C%20%EA%B2%BD%EB%A1%9C%EB%A5%BC%20%EC%B0%BE%EC%9D%84%20%EC%88%98%20%EC%97%86%EC%8A%B5%EB%8B%88%EB%8B%A4.%20%28os%20error%203%29%0A%60%60%60&labels=Turbopack,Turbopack%20Panic%20Backtrace\clicking here.]8;;\
+-----
+
+⨯ Error [TurbopackInternalError]: Failed to lookup task ids: Looking up task id for CachedTaskType { native_fn: NativeFunction { name: "get_written_endpoint_with_issues_operation", global_name: "next_napi_bindings::next_api::endpoint::get_written_endpoint_with_issues_operation", .. }, this: None, arg: (OperationVc { node: RawVc::TaskOutput(411) },) } from database failed
+
+Debug info:
+- Failed to lookup task ids: Looking up task id for CachedTaskType { native_fn: NativeFunction { name: "get_written_endpoint_with_issues_operation", global_name: "next_napi_bindings::next_api::endpoint::get_written_endpoint_with_issues_operation", .. }, this: None, arg: (OperationVc { node: RawVc::TaskOutput(411) },) } from database failed
+  
+  Caused by:
+      0: Unable to open static sorted file referenced from 00000696.meta
+      1: Unable to open static sorted file 00000691.sst
+      2: Failed to open SST file C:\Users\user\workspaces\courses\moneytoring-web\.next\dev\cache/turbopack\2275bd85\00000691.sst
+      3: 지정된 경로를 찾을 수 없습니다. (os error 3)
+    at <unknown> (TurbopackInternalError: Failed to lookup task ids: Looking up task id for CachedTaskType { native_fn: NativeFunction { name: "get_written_endpoint_with_issues_operation", global_name: "next_napi_bindings::next_api::endpoint::get_written_endpoint_with_issues_operation", .. }, this: None, arg: (OperationVc { node: RawVc::TaskOutput(411) },) } from database failed) {
+  location: 'turbopack\\crates\\turbo-tasks-backend\\src\\backend\\operation\\mod.rs:619:14'
+}
+
+thread 'tokio-runtime-worker' (14536) panicked at turbopack\crates\turbo-tasks-backend\src\backend\operation\mod.rs:619:14:
+Failed to lookup task ids: Looking up task id for CachedTaskType { native_fn: NativeFunction { name: "get_written_endpoint_with_issues_operation", global_name: "next_napi_bindings::next_api::endpoint::get_written_endpoint_with_issues_operation", .. }, this: None, arg: (OperationVc { node: RawVc::TaskOutput(411) },) } from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000696.meta
+    1: Unable to open static sorted file 00000691.sst
+    2: Failed to open SST file C:\Users\user\workspaces\courses\moneytoring-web\.next\dev\cache/turbopack\2275bd85\00000691.sst
+    3: 지정된 경로를 찾을 수 없습니다. (os error 3)
+Error: ENOENT: no such file or directory, open 'C:\Users\user\workspaces\courses\moneytoring-web\.next\dev\server\app\api\korean-stocks\quotes\[__metadata_id__]\route\app-paths-manifest.json'
+    at ignore-listed frames {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\Users\\user\\workspaces\\courses\\moneytoring-web\\.next\\dev\\server\\app\\api\\korean-stocks\\quotes\\[__metadata_id__]\\route\\app-paths-manifest.json'
+}
+
+thread 'tokio-runtime-worker' (15428) panicked at turbopack\crates\turbo-tasks-backend\src\backend\operation\mod.rs:619:14:
+Failed to lookup task ids: Looking up task id for CachedTaskType { native_fn: NativeFunction { name: "get_written_endpoint_with_issues_operation", global_name: "next_napi_bindings::next_api::endpoint::get_written_endpoint_with_issues_operation", .. }, this: None, arg: (OperationVc { node: RawVc::TaskOutput(411) },) } from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000696.meta
+    1: Unable to open static sorted file 00000691.sst
+    2: Failed to open SST file C:\Users\user\workspaces\courses\moneytoring-web\.next\dev\cache/turbopack\2275bd85\00000691.sst
+    3: 지정된 경로를 찾을 수 없습니다. (os error 3)
+⨯ Error [TurbopackInternalError]: Failed to lookup task ids: Looking up task id for CachedTaskType { native_fn: NativeFunction { name: "get_written_endpoint_with_issues_operation", global_name: "next_napi_bindings::next_api::endpoint::get_written_endpoint_with_issues_operation", .. }, this: None, arg: (OperationVc { node: RawVc::TaskOutput(411) },) } from database failed
+
+Debug info:
+- Failed to lookup task ids: Looking up task id for CachedTaskType { native_fn: NativeFunction { name: "get_written_endpoint_with_issues_operation", global_name: "next_napi_bindings::next_api::endpoint::get_written_endpoint_with_issues_operation", .. }, this: None, arg: (OperationVc { node: RawVc::TaskOutput(411) },) } from database failed
+  
+  Caused by:
+      0: Unable to open static sorted file referenced from 00000696.meta
+      1: Unable to open static sorted file 00000691.sst
+      2: Failed to open SST file C:\Users\user\workspaces\courses\moneytoring-web\.next\dev\cache/turbopack\2275bd85\00000691.sst
+      3: 지정된 경로를 찾을 수 없습니다. (os error 3)
+    at <unknown> (TurbopackInternalError: Failed to lookup task ids: Looking up task id for CachedTaskType { native_fn: NativeFunction { name: "get_written_endpoint_with_issues_operation", global_name: "next_napi_bindings::next_api::endpoint::get_written_endpoint_with_issues_operation", .. }, this: None, arg: (OperationVc { node: RawVc::TaskOutput(411) },) } from database failed) {
+  location: 'turbopack\\crates\\turbo-tasks-backend\\src\\backend\\operation\\mod.rs:619:14'
+}
+
+thread 'tokio-runtime-worker' (16088) panicked at turbopack\crates\turbo-tasks-backend\src\backend\operation\mod.rs:619:14:
+Failed to lookup task ids: Looking up task id for CachedTaskType { native_fn: NativeFunction { name: "get_written_endpoint_with_issues_operation", global_name: "next_napi_bindings::next_api::endpoint::get_written_endpoint_with_issues_operation", .. }, this: None, arg: (OperationVc { node: RawVc::TaskOutput(411) },) } from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000696.meta
+    1: Unable to open static sorted file 00000691.sst
+    2: Failed to open SST file C:\Users\user\workspaces\courses\moneytoring-web\.next\dev\cache/turbopack\2275bd85\00000691.sst
+    3: 지정된 경로를 찾을 수 없습니다. (os error 3)
+Error [TurbopackInternalError]: Failed to lookup task ids: Looking up task id for CachedTaskType { native_fn: NativeFunction { name: "get_written_endpoint_with_issues_operation", global_name: "next_napi_bindings::next_api::endpoint::get_written_endpoint_with_issues_operation", .. }, this: None, arg: (OperationVc { node: RawVc::TaskOutput(411) },) } from database failed
+
+Debug info:
+- Failed to lookup task ids: Looking up task id for CachedTaskType { native_fn: NativeFunction { name: "get_written_endpoint_with_issues_operation", global_name: "next_napi_bindings::next_api::endpoint::get_written_endpoint_with_issues_operation", .. }, this: None, arg: (OperationVc { node: RawVc::TaskOutput(411) },) } from database failed
+  
+  Caused by:
+      0: Unable to open static sorted file referenced from 00000696.meta
+      1: Unable to open static sorted file 00000691.sst
+      2: Failed to open SST file C:\Users\user\workspaces\courses\moneytoring-web\.next\dev\cache/turbopack\2275bd85\00000691.sst
+      3: 지정된 경로를 찾을 수 없습니다. (os error 3)
+    at <unknown> (TurbopackInternalError: Failed to lookup task ids: Looking up task id for CachedTaskType { native_fn: NativeFunction { name: "get_written_endpoint_with_issues_operation", global_name: "next_napi_bindings::next_api::endpoint::get_written_endpoint_with_issues_operation", .. }, this: None, arg: (OperationVc { node: RawVc::TaskOutput(411) },) } from database failed) {
+  location: 'turbopack\\crates\\turbo-tasks-backend\\src\\backend\\operation\\mod.rs:619:14'
+}
+Persisting failed: Unable to write SST file 00002394.sst
+
+Caused by:
+    지정된 경로를 찾을 수 없습니다. (os error 3)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)

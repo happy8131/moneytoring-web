@@ -1,5 +1,6 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import { Card } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useKoreanStockQuotes } from '@/hooks/useKoreanStockQuotes';
@@ -14,6 +15,7 @@ const POPULAR_STOCKS = [
 ];
 
 export function KoreanStockWatchlist() {
+  const router = useRouter();
   const { data, isLoading, error } = useKoreanStockQuotes({
     symbols: POPULAR_STOCKS.map((s) => s.symbol),
   });
@@ -70,7 +72,11 @@ export function KoreanStockWatchlist() {
   return (
     <div className="space-y-3">
       {stocks.map((stock) => (
-        <Card key={stock.symbol} className="p-4">
+        <Card
+          key={stock.symbol}
+          className="p-4 cursor-pointer transition-colors hover:bg-muted/50"
+          onClick={() => router.push(`/kr-stocks/${stock.symbol}`)}
+        >
           <div className="flex items-center justify-between">
             <div>
               <p className="font-semibold text-foreground">{stock.name}</p>

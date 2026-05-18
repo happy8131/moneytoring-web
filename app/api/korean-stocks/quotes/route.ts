@@ -10,6 +10,7 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { kiwoomRequest, kiwoomBatchRequest, KiwoomAPIError } from '@/lib/kiwoom-client';
+import { KOREAN_STOCKS } from '@/data/korean-stocks';
 
 // ────────────────────────────────────────────────────────────────────────────
 // 타입 정의
@@ -28,18 +29,23 @@ interface KiwoomStockPriceRaw {
   stk_cd: string;         // 종목코드
   stk_nm: string;         // 종목명
   cur_prc: string;        // 현재가 (부호 포함, 예: "+82000", "-1500")
-  pred_cls_prc: string;   // 전일종가
-  pred_pre_sig: string;   // 전일대비부호 ("1":상한, "2":상승, "3":보합, "4":하락, "5":하한)
-  pred_pre: string;       // 전일대비
+  lst_pric?: string;      // 전일종가 (또는 pred_cls_prc)
+  pred_cls_prc?: string;  // 전일종가 (필드명 불확실)
+  pre_sig?: string;       // 전일대비부호 ("2":상승, "4":하락 등)
+  pred_pre_sig?: string;  // 전일대비부호
+  pred_pre?: string;      // 전일대비
   flu_rt: string;         // 등락율 (예: "+1.23")
   trde_qty: string;       // 거래량
-  trde_prc: string;       // 거래대금
-  open_prc: string;       // 시가
-  high_prc: string;       // 고가
-  low_prc: string;        // 저가
-  up_lmt_prc: string;     // 상한가
-  dn_lmt_prc: string;     // 하한가
-  mrkt_cls_nm: string;    // 시장구분 (코스피/코스닥)
+  trde_prc?: string;      // 거래대금
+  trde_prica?: string;    // 거래대금 (응답에서 사용하는 필드명)
+  open_pric: string;      // 시가
+  high_pric: string;      // 고가
+  low_pric: string;       // 저가
+  upl_pric: string;       // 상한가
+  dn_lmt_prc?: string;    // 하한가 (응답에 없을 수 있음)
+  base_pric?: string;     // 기준가
+  mrkt_cls_nm?: string;   // 시장구분 (코스피/코스닥)
+  [key: string]: any;     // 기타 필드
 }
 
 export interface KoreanStockQuote {
@@ -71,54 +77,86 @@ export interface KoreanStockQuotesResponse {
 // ────────────────────────────────────────────────────────────────────────────
 
 /**
- * 키움 가격 문자열을 숫자로 변환
- * "+82000", "-1500", "82000" 모두 처리
- * Kiwoom API의 특수문자(–, −, +, ,) 모두 제거
+ * 키움 가격 문자열을 숫자로 변환 (부호 유지)
+ * "+82000" → 82000, "-1500" → -1500
+ * Kiwoom API의 특수문자 대시(–, −) 처리, 쉼표 제거
  */
 function parseKiwoomPrice(value: string): number {
   if (!value) return 0;
-  // 부호(+, -, –, −)와 쉼표 제거 후 파싱
-  const cleaned = value.replace(/[+,–−\-]/g, '').trim();
+  // 특수 대시(–, −) 정규화 후, 쉼표만 제거 (부호는 유지)
+  const cleaned = value.replace(/[–−]/g, '-').replace(/,/g, '').trim();
   return parseFloat(cleaned) || 0;
 }
 
 /**
  * 시장구분명을 표준화
+ * 알려진 KOSPI 대형주 목록으로 판단 (더 정확한 방법)
  */
-function normalizeMarket(mrktClsNm: string): string {
-  if (mrktClsNm.includes('코스피') || mrktClsNm.toUpperCase().includes('KOSPI')) {
+const KOSPI_LARGE_CAPS = new Set([
+  '005930', // 삼성전자
+  '000660', // SK하이닉스
+  '005380', // 현대차
+  '051910', // LG화학
+  '035720', // 카카오
+  '005490', // POSCO홀딩스
+  '068270', // 셀트리온
+  '207940', // 삼성바이오로직스
+  '086790', // 하나금융지주
+  '055550', // 신한지주
+  '024110', // LG
+  '017670', // SK텔레콤
+  '030200', // KT
+  '259960', // 크래프톤
+]);
+
+function normalizeMarket(symbol: string): string {
+  // 알려진 KOSPI 종목이면 KOSPI
+  if (KOSPI_LARGE_CAPS.has(symbol)) {
     return 'KOSPI';
   }
-  if (mrktClsNm.includes('코스닥') || mrktClsNm.toUpperCase().includes('KOSDAQ')) {
-    return 'KOSDAQ';
-  }
-  return mrktClsNm;
+  // 기본값: KOSDAQ (실제로는 응답 데이터에서 가져와야 함)
+  return 'KOSDAQ';
 }
 
 function transformQuote(symbol: string, raw: KiwoomStockPriceRaw): KoreanStockQuote {
-  const currentPrice = parseKiwoomPrice(raw.cur_prc);
-  const previousClose = parseKiwoomPrice(raw.pred_cls_prc);
-  const change = parseKiwoomPrice(raw.pred_pre);
-  // 부호 적용: "2"=상승, "4"=하락, "3"=보합
-  const signedChange = raw.pred_pre_sig === '4' || raw.pred_pre_sig === '5'
-    ? -Math.abs(change)
-    : Math.abs(change);
+  // 가격은 항상 양수 (부호 제거)
+  const currentPrice = Math.abs(parseKiwoomPrice(raw.cur_prc));
+
+  // 전일종가: base_pric (기준가) 사용 또는 lst_pric
+  const previousClose = Math.abs(parseKiwoomPrice(raw.base_pric ?? raw.lst_pric ?? raw.pred_cls_prc ?? '0'));
+
+  // 전일대비 (부호 포함) - Kiwoom API에서 이미 정확한 부호 제공
+  const change = parseKiwoomPrice(raw.pred_pre ?? '0');
+
+  // 등락율 (부호 포함) - Kiwoom API에서 이미 정확한 부호 제공
+  const percentChange = parseKiwoomPrice(raw.flu_rt ?? '0');
+
+  // 거래대금 (API 응답에 없으면 거래량 * 현재가로 계산)
+  let tradingValue = parseKiwoomPrice(raw.trde_prica ?? raw.trde_prc ?? '0');
+  if (tradingValue === 0 && currentPrice > 0) {
+    const volume = parseKiwoomPrice(raw.trde_qty);
+    tradingValue = volume * currentPrice;
+  }
+
+  // 데이터셋에서 종목명 조회 (검색과 상세페이지 일관성 유지)
+  const stockData = KOREAN_STOCKS.find((s) => s.symbol === symbol);
+  const name = stockData?.name ?? raw.stk_nm ?? '';
 
   return {
     symbol,
-    name: raw.stk_nm ?? '',
+    name,
     currentPrice,
     previousClose,
-    change: signedChange,
-    percentChange: parseKiwoomPrice(raw.flu_rt),
+    change,
+    percentChange,
     volume: parseKiwoomPrice(raw.trde_qty),
-    tradingValue: parseKiwoomPrice(raw.trde_prc),
-    openPrice: parseKiwoomPrice(raw.open_prc),
-    highPrice: parseKiwoomPrice(raw.high_prc),
-    lowPrice: parseKiwoomPrice(raw.low_prc),
-    upperLimit: parseKiwoomPrice(raw.up_lmt_prc),
-    lowerLimit: parseKiwoomPrice(raw.dn_lmt_prc),
-    market: normalizeMarket(raw.mrkt_cls_nm ?? ''),
+    tradingValue,
+    openPrice: Math.abs(parseKiwoomPrice(raw.open_pric)),
+    highPrice: Math.abs(parseKiwoomPrice(raw.high_pric)),
+    lowPrice: Math.abs(parseKiwoomPrice(raw.low_pric)),
+    upperLimit: Math.abs(parseKiwoomPrice(raw.upl_pric)),
+    lowerLimit: Math.abs(parseKiwoomPrice(raw.dn_lmt_prc ?? raw.base_pric ?? '0')),
+    market: stockData?.market ?? normalizeMarket(symbol),
     updatedAt: new Date().toISOString(),
   };
 }
@@ -141,31 +179,6 @@ async function fetchSingleKoreanStock(symbol: string): Promise<KoreanStockQuote>
 // ────────────────────────────────────────────────────────────────────────────
 // GET /api/korean-stocks/quotes
 // ────────────────────────────────────────────────────────────────────────────
-
-// 더미 데이터 생성 함수 (테스트 목적)
-function generateMockQuote(symbol: string, name: string): KoreanStockQuote {
-  const basePrice = Math.floor(Math.random() * 100000) + 10000;
-  const change = Math.floor((Math.random() - 0.5) * 5000);
-  const percentChange = parseFloat((change / basePrice * 100).toFixed(2));
-
-  return {
-    symbol,
-    name,
-    currentPrice: basePrice,
-    previousClose: basePrice - change,
-    change,
-    percentChange,
-    volume: Math.floor(Math.random() * 10000000),
-    tradingValue: Math.floor(basePrice * Math.random() * 10000000),
-    openPrice: basePrice + Math.floor((Math.random() - 0.5) * 2000),
-    highPrice: basePrice + Math.floor(Math.random() * 5000),
-    lowPrice: basePrice - Math.floor(Math.random() * 5000),
-    upperLimit: basePrice + Math.floor(basePrice * 0.3),
-    lowerLimit: basePrice - Math.floor(basePrice * 0.3),
-    market: symbol.startsWith('0') ? 'KOSPI' : 'KOSDAQ',
-    updatedAt: new Date().toISOString(),
-  };
-}
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
@@ -192,37 +205,7 @@ export async function GET(request: NextRequest) {
     );
   }
 
-  // Mock 모드: Kiwoom API 키 없이도 작동
-  const isMock = process.env.KIWOOM_USE_MOCK === 'true';
-
-  if (isMock) {
-    // Mock 데이터 반환
-    const mockStockNames: Record<string, string> = {
-      '005930': '삼성전자',
-      '000660': 'SK하이닉스',
-      '005380': '현대차',
-      '051910': 'LG화학',
-      '035720': '카카오',
-    };
-
-    const data = symbols.map((symbol) =>
-      generateMockQuote(symbol, mockStockNames[symbol] || `종목${symbol}`)
-    );
-
-    const responseBody: KoreanStockQuotesResponse = {
-      data,
-      errors: [],
-      fetchedAt: new Date().toISOString(),
-    };
-
-    return NextResponse.json(responseBody, {
-      headers: {
-        'Cache-Control': 'public, s-maxage=30, stale-while-revalidate=60',
-      },
-    });
-  }
-
-  // 환경 변수 사전 검증 (실제 API 사용 시)
+  // Kiwoom API만 사용
   if (!process.env.KIWOOM_APP_KEY || !process.env.KIWOOM_SECRET_KEY) {
     return NextResponse.json(
       { error: 'Kiwoom API 키가 서버에 설정되지 않았습니다.' },

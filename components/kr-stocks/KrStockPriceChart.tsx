@@ -1,8 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import { useCryptoMarketChart } from '@/hooks/useCryptoMarketChart';
-import { CRYPTO_PERIODS, CRYPTO_PERIOD_LABELS, formatCryptoPrice, formatVolumeAxis, type CryptoPeriod } from '@/lib/cryptoUtils';
+import { useKrStockCandle } from '@/hooks/useKrStockCandle';
+import { Period } from '@/lib/stockUtils';
+import { buildCandleChartData } from '@/lib/krStockUtils';
 import {
   LineChart,
   Line,
@@ -16,8 +17,22 @@ import {
 } from 'recharts';
 import { Skeleton } from '@/components/ui/skeleton';
 
+const PERIODS: Period[] = ['1W', '1M', '3M', '6M', 'YTD', '1Y', '2Y', '5Y', '10Y', 'All'];
+const PERIOD_LABELS: Record<Period, string> = {
+  '1W': '1주',
+  '1M': '1개월',
+  '3M': '3개월',
+  '6M': '6개월',
+  YTD: 'YTD',
+  '1Y': '1년',
+  '2Y': '2년',
+  '5Y': '5년',
+  '10Y': '10년',
+  'All': '모두',
+};
+
 // X축 라벨 간격 계산 함수
-function getXAxisInterval(dataLength: number, period: CryptoPeriod): number {
+function getXAxisInterval(dataLength: number, period: Period): number {
   // 목표: 10-15개의 라벨만 표시
   const targetTicks = 12;
 
@@ -25,30 +40,37 @@ function getXAxisInterval(dataLength: number, period: CryptoPeriod): number {
     return 0; // 모든 데이터 포인트 표시
   }
 
-  if (['YTD', '1Y', '2Y'].includes(period)) {
-    // 더 촘촘한 라벨
+  if (period === 'YTD' || period === '1Y') {
+    // 일봉이므로 더 많은 라벨 표시
     return Math.ceil(dataLength / 15);
   }
 
-  // 5Y, 10Y, All (월봉 또는 주봉)
+  if (period === '2Y') {
+    // 주봉이므로 적당한 간격
+    return Math.ceil(dataLength / 12);
+  }
+
+  // 5Y, 10Y, All (주봉 또는 월봉)
   return Math.ceil(dataLength / targetTicks);
 }
 
-interface CryptoPriceChartProps {
-  id: string;
-  onPeriodChange?: (period: CryptoPeriod) => void;
+interface KrStockPriceChartProps {
+  symbol: string;
+  onPeriodChange?: (period: Period) => void;
 }
 
-export function CryptoPriceChart({ id, onPeriodChange }: CryptoPriceChartProps) {
-  const [selectedPeriod, setSelectedPeriod] = useState<CryptoPeriod>('1M');
+export function KrStockPriceChart({ symbol, onPeriodChange }: KrStockPriceChartProps) {
+  const [selectedPeriod, setSelectedPeriod] = useState<Period>('1M');
 
-  const handlePeriodChange = (period: CryptoPeriod) => {
+  const handlePeriodChange = (period: Period) => {
     setSelectedPeriod(period);
     onPeriodChange?.(period);
   };
 
-  const { data: chartResponse, isLoading } = useCryptoMarketChart({ id, period: selectedPeriod });
-  const chartData = chartResponse?.data || [];
+  const { data: candleResponse, isLoading, error } = useKrStockCandle({
+    symbol,
+    period: selectedPeriod,
+  });
 
   if (isLoading) {
     return (
@@ -60,16 +82,19 @@ export function CryptoPriceChart({ id, onPeriodChange }: CryptoPriceChartProps) 
     );
   }
 
-  if (!chartData || chartData.length === 0) {
+  if (error || !candleResponse || candleResponse.data.length === 0) {
     return (
       <div className="rounded-lg border border-border bg-card p-6">
         <div className="text-center text-muted-foreground">차트 데이터를 불러올 수 없습니다.</div>
+        {error && <p className="text-xs text-red-500 mt-2 text-center">{error.message}</p>}
       </div>
     );
   }
 
-  const minPrice = Math.min(...chartData.map((d) => d.price));
-  const maxPrice = Math.max(...chartData.map((d) => d.price));
+  const chartData = buildCandleChartData(candleResponse.data);
+
+  const minPrice = Math.min(...chartData.map((d) => d.low));
+  const maxPrice = Math.max(...chartData.map((d) => d.high));
   const priceRange = maxPrice - minPrice;
   const padding = priceRange * 0.1;
 
@@ -77,7 +102,7 @@ export function CryptoPriceChart({ id, onPeriodChange }: CryptoPriceChartProps) 
     <div className="rounded-lg border border-border bg-card p-6 space-y-4">
       {/* Period Tabs */}
       <div className="flex gap-2 overflow-x-auto pb-2">
-        {CRYPTO_PERIODS.map((period) => (
+        {PERIODS.map((period) => (
           <button
             key={period}
             onClick={() => handlePeriodChange(period)}
@@ -87,7 +112,7 @@ export function CryptoPriceChart({ id, onPeriodChange }: CryptoPriceChartProps) 
                 : 'bg-muted text-muted-foreground hover:bg-muted/80'
             }`}
           >
-            {CRYPTO_PERIOD_LABELS[period]}
+            {PERIOD_LABELS[period]}
           </button>
         ))}
       </div>
@@ -102,14 +127,18 @@ export function CryptoPriceChart({ id, onPeriodChange }: CryptoPriceChartProps) 
               tick={{ fontSize: 12 }}
               interval={getXAxisInterval(chartData.length, selectedPeriod)}
               tickFormatter={(value) => {
-                const parts = value.split(/[/:]/);
-                return parts[parts.length - 1]; // 마지막 부분만 표시
+                const parts = value.split('-');
+                const isLongPeriod = ['5Y', '10Y', 'All'].includes(selectedPeriod);
+                if (isLongPeriod) {
+                  return parts[0];
+                }
+                return `${parts[1]}/${parts[2]}`;
               }}
             />
             <YAxis
               domain={[minPrice - padding, maxPrice + padding]}
               tick={{ fontSize: 12 }}
-              tickFormatter={(value) => formatCryptoPrice(value)}
+              tickFormatter={(value) => `₩${value.toLocaleString('ko-KR', { maximumFractionDigits: 0 })}`}
             />
             <Tooltip
               contentStyle={{
@@ -118,7 +147,10 @@ export function CryptoPriceChart({ id, onPeriodChange }: CryptoPriceChartProps) 
               }}
               formatter={(value) => {
                 if (typeof value === 'number') {
-                  return [formatCryptoPrice(value), '가격'];
+                  return [
+                    `₩${value.toLocaleString('ko-KR', { maximumFractionDigits: 0 })}`,
+                    '가격',
+                  ];
                 }
                 return ['-', '가격'];
               }}
@@ -141,7 +173,18 @@ export function CryptoPriceChart({ id, onPeriodChange }: CryptoPriceChartProps) 
           <BarChart data={chartData} margin={{ top: 5, right: 30, left: 0, bottom: 5 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
             <XAxis dataKey="date" hide />
-            <YAxis tick={{ fontSize: 12 }} tickFormatter={formatVolumeAxis} />
+            <YAxis
+              tick={{ fontSize: 12 }}
+              tickFormatter={(value) => {
+                if (value >= 100_000_000) {
+                  return `${(value / 100_000_000).toFixed(0)}억`;
+                }
+                if (value >= 10_000) {
+                  return `${(value / 10_000).toFixed(0)}만`;
+                }
+                return `${value}`;
+              }}
+            />
             <Tooltip
               contentStyle={{
                 backgroundColor: '#ffffff',
@@ -149,7 +192,13 @@ export function CryptoPriceChart({ id, onPeriodChange }: CryptoPriceChartProps) 
               }}
               formatter={(value) => {
                 if (typeof value === 'number') {
-                  return [formatVolumeAxis(value), '거래량'];
+                  if (value >= 100_000_000) {
+                    return [`${(value / 100_000_000).toFixed(1)}억`, '거래량'];
+                  }
+                  if (value >= 10_000) {
+                    return [`${(value / 10_000).toFixed(1)}만`, '거래량'];
+                  }
+                  return [`${value}`, '거래량'];
                 }
                 return ['-', '거래량'];
               }}

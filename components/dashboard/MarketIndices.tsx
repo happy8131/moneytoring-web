@@ -1,11 +1,13 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import { Card } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useKoreanIndices } from '@/hooks/useKoreanIndices';
 import { TrendingUp, TrendingDown } from 'lucide-react';
 
 export function MarketIndices() {
+  const router = useRouter();
   const { data, isLoading, error } = useKoreanIndices();
 
   const indices = data?.data || [];
@@ -47,7 +49,11 @@ export function MarketIndices() {
   return (
     <div className="grid grid-cols-3 gap-4">
       {indices.map((index) => (
-        <Card key={index.code} className="p-4">
+        <Card
+          key={index.code}
+          className="p-4 cursor-pointer transition-colors hover:bg-muted/50"
+          onClick={() => router.push(`/kr-indices/${index.code}`)}
+        >
           <p className="text-sm font-medium text-muted-foreground mb-2">
             {index.name}
           </p>

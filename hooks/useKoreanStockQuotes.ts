@@ -6,8 +6,18 @@ export interface KoreanStockQuote {
   symbol: string;
   name: string;
   currentPrice: number;
+  previousClose: number;
   change: number;
   percentChange: number;
+  volume: number;
+  tradingValue: number;
+  openPrice: number;
+  highPrice: number;
+  lowPrice: number;
+  upperLimit: number;
+  lowerLimit: number;
+  market: string;
+  updatedAt: string;
 }
 
 interface KoreanStockQuotesResponse {
@@ -36,8 +46,8 @@ export function useKoreanStockQuotes({
       return response.json();
     },
     enabled: enabled && symbols.length > 0,
-    refetchInterval: 30_000,
-    staleTime: 0,
-    retry: 1,
+    staleTime: 5 * 60 * 1000, // 5분
+    gcTime: 10 * 60 * 1000, // 10분
+    refetchInterval: 30_000, // 30초마다 백그라운드 갱신
   });
 }

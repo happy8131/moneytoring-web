@@ -98,10 +98,15 @@ async function fetchSingleIndex(
 
   const raw = response.data;
   const change = parseIndexValue(raw.pred_pre);
+  const percentChangeValue = parseIndexValue(raw.flu_rt);
   const signedChange =
     raw.pred_pre_sig === '4' || raw.pred_pre_sig === '5'
       ? -Math.abs(change)
       : Math.abs(change);
+  const signedPercentChange =
+    raw.pred_pre_sig === '4' || raw.pred_pre_sig === '5'
+      ? -Math.abs(percentChangeValue)
+      : Math.abs(percentChangeValue);
 
   return {
     code,
@@ -109,7 +114,7 @@ async function fetchSingleIndex(
     name: indexInfo.name,
     currentValue: parseIndexValue(raw.cur_prc),
     change: signedChange,
-    percentChange: parseIndexValue(raw.flu_rt),
+    percentChange: signedPercentChange,
     volume: parseIndexValue(raw.trde_qty),
     tradingValue: parseIndexValue(raw.trde_prica),
     openValue: parseIndexValue(raw.open_pric),
