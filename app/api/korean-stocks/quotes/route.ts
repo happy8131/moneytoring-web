@@ -10,6 +10,7 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { kiwoomRequest, kiwoomBatchRequest, KiwoomAPIError } from '@/lib/kiwoom-client';
+import { KOREAN_STOCKS } from '@/data/korean-stocks';
 
 // ────────────────────────────────────────────────────────────────────────────
 // 타입 정의
@@ -139,9 +140,13 @@ function transformQuote(symbol: string, raw: KiwoomStockPriceRaw): KoreanStockQu
     tradingValue = volume * currentPrice;
   }
 
+  // 데이터셋에서 종목명 조회 (검색과 상세페이지 일관성 유지)
+  const stockData = KOREAN_STOCKS.find((s) => s.symbol === symbol);
+  const name = stockData?.name ?? raw.stk_nm ?? '';
+
   return {
     symbol,
-    name: raw.stk_nm ?? '',
+    name,
     currentPrice,
     previousClose,
     change: signedChange,
@@ -153,7 +158,7 @@ function transformQuote(symbol: string, raw: KiwoomStockPriceRaw): KoreanStockQu
     lowPrice: parseKiwoomPrice(raw.low_pric),
     upperLimit: parseKiwoomPrice(raw.upl_pric),
     lowerLimit: parseKiwoomPrice(raw.dn_lmt_prc ?? raw.base_pric ?? '0'),
-    market: normalizeMarket(symbol),
+    market: stockData?.market ?? normalizeMarket(symbol),
     updatedAt: new Date().toISOString(),
   };
 }
@@ -245,18 +250,12 @@ export async function GET(request: NextRequest) {
   const isMock = process.env.KIWOOM_USE_MOCK === 'true';
 
   if (isMock) {
-    // Mock 데이터 반환
-    const mockStockNames: Record<string, string> = {
-      '005930': '삼성전자',
-      '000660': 'SK하이닉스',
-      '005380': '현대차',
-      '051910': 'LG화학',
-      '035720': '카카오',
-    };
-
-    const data = symbols.map((symbol) =>
-      generateMockQuote(symbol, mockStockNames[symbol] || `종목${symbol}`)
-    );
+    // Mock 데이터 반환 (데이터셋에서 종목명 조회)
+    const data = symbols.map((symbol) => {
+      const stockData = KOREAN_STOCKS.find((s) => s.symbol === symbol);
+      const name = stockData?.name ?? `종목${symbol}`;
+      return generateMockQuote(symbol, name);
+    });
 
     const responseBody: KoreanStockQuotesResponse = {
       data,
