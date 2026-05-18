@@ -31,6 +31,29 @@ const PERIOD_LABELS: Record<Period, string> = {
   'All': '모두',
 };
 
+// X축 라벨 간격 계산 함수
+function getXAxisInterval(dataLength: number, period: Period): number {
+  // 목표: 10-15개의 라벨만 표시
+  const targetTicks = 12;
+
+  if (['1W', '1M', '3M', '6M'].includes(period)) {
+    return 0; // 모든 데이터 포인트 표시
+  }
+
+  if (period === 'YTD' || period === '1Y') {
+    // 일봉이므로 더 많은 라벨 표시
+    return Math.ceil(dataLength / 15);
+  }
+
+  if (period === '2Y') {
+    // 주봉이므로 적당한 간격
+    return Math.ceil(dataLength / 12);
+  }
+
+  // 5Y, 10Y, All (주봉 또는 월봉)
+  return Math.ceil(dataLength / targetTicks);
+}
+
 interface KrStockPriceChartProps {
   symbol: string;
   onPeriodChange?: (period: Period) => void;
@@ -102,6 +125,7 @@ export function KrStockPriceChart({ symbol, onPeriodChange }: KrStockPriceChartP
             <XAxis
               dataKey="date"
               tick={{ fontSize: 12 }}
+              interval={getXAxisInterval(chartData.length, selectedPeriod)}
               tickFormatter={(value) => {
                 const parts = value.split('-');
                 const isLongPeriod = ['5Y', '10Y', 'All'].includes(selectedPeriod);

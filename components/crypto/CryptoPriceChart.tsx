@@ -16,6 +16,24 @@ import {
 } from 'recharts';
 import { Skeleton } from '@/components/ui/skeleton';
 
+// X축 라벨 간격 계산 함수
+function getXAxisInterval(dataLength: number, period: CryptoPeriod): number {
+  // 목표: 10-15개의 라벨만 표시
+  const targetTicks = 12;
+
+  if (['1W', '1M', '3M', '6M'].includes(period)) {
+    return 0; // 모든 데이터 포인트 표시
+  }
+
+  if (['YTD', '1Y', '2Y'].includes(period)) {
+    // 더 촘촘한 라벨
+    return Math.ceil(dataLength / 15);
+  }
+
+  // 5Y, 10Y, All (월봉 또는 주봉)
+  return Math.ceil(dataLength / targetTicks);
+}
+
 interface CryptoPriceChartProps {
   id: string;
   onPeriodChange?: (period: CryptoPeriod) => void;
@@ -82,6 +100,7 @@ export function CryptoPriceChart({ id, onPeriodChange }: CryptoPriceChartProps) 
             <XAxis
               dataKey="date"
               tick={{ fontSize: 12 }}
+              interval={getXAxisInterval(chartData.length, selectedPeriod)}
               tickFormatter={(value) => {
                 const parts = value.split(/[/:]/);
                 return parts[parts.length - 1]; // 마지막 부분만 표시
