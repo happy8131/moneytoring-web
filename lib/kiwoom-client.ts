@@ -68,6 +68,9 @@ const TR_ENDPOINT_MAP: Record<string, string> = {
   ka10005: '/api/dostk/stkinfo',   // 주식 분봉 데이터
   // 지수 관련
   ka20001: '/api/dostk/sect',      // 업종 현재가
+  ka20002: '/api/dostk/sect',      // 업종 일봉 데이터
+  ka20003: '/api/dostk/sect',      // 업종 주봉 데이터
+  ka20004: '/api/dostk/sect',      // 업종 월봉 데이터
   // 계좌 관련 (Production 전용)
   kt10001: '/api/dostk/acnt',      // 주식 잔고 조회
   kt10002: '/api/dostk/acnt',      // 주식 체결 내역

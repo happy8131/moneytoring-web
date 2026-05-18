@@ -23,6 +23,12 @@ interface CryptoSearchResult {
   isEtf: boolean;
 }
 
+interface KoreanStockSearchResult {
+  symbol: string;
+  name: string;
+  market: string;
+}
+
 async function searchCrypto(query: string): Promise<CryptoSearchResult[]> {
   const res = await fetch(`/api/crypto/search?q=${encodeURIComponent(query)}`);
   if (!res.ok) {
@@ -30,6 +36,19 @@ async function searchCrypto(query: string): Promise<CryptoSearchResult[]> {
   }
   const json = await res.json();
   return json.data || [];
+}
+
+async function searchKoreanStocks(query: string): Promise<KoreanStockSearchResult[]> {
+  const res = await fetch(`/api/korean-stocks/search?q=${encodeURIComponent(query)}`);
+  if (!res.ok) {
+    throw new Error(`검색 실패: ${res.status}`);
+  }
+  const json = await res.json();
+  return json.data || [];
+}
+
+function isKoreanQuery(query: string): boolean {
+  return /^[가-힣]{2,}/.test(query) || /^\d{6}$/.test(query);
 }
 
 export function UnifiedSearchBar() {
@@ -61,6 +80,14 @@ export function UnifiedSearchBar() {
     staleTime: 5 * 60_000,
   });
 
+  // 한국 주식 검색
+  const { data: koreanStockResults } = useQuery({
+    queryKey: ['kr-stocks', 'search', debouncedQuery],
+    queryFn: () => searchKoreanStocks(debouncedQuery),
+    enabled: isKoreanQuery(debouncedQuery),
+    staleTime: 5 * 60_000,
+  });
+
   // 외부 클릭 감지
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -85,13 +112,20 @@ export function UnifiedSearchBar() {
     setIsOpen(false);
   };
 
+  const handleSelectKoreanStock = (symbol: string) => {
+    router.push(`/kr-stocks/${symbol}`);
+    setQuery('');
+    setIsOpen(false);
+  };
+
   const handleClear = () => {
     setQuery('');
   };
 
   const hasResults =
     (stockResults?.data && stockResults.data.length > 0) ||
-    (cryptoResults && cryptoResults.length > 0);
+    (cryptoResults && cryptoResults.length > 0) ||
+    (koreanStockResults && koreanStockResults.length > 0);
 
   return (
     <div ref={ref} className="relative">
@@ -150,6 +184,35 @@ export function UnifiedSearchBar() {
                             }`}
                           >
                             {result.type === 'ETP' ? 'ETF' : '주식'}
+                          </span>
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* 한국 주식 섹션 */}
+              {koreanStockResults && koreanStockResults.length > 0 && (
+                <div>
+                  <div className="px-4 py-2 bg-muted/50 text-xs font-semibold text-muted-foreground">
+                    한국 주식
+                  </div>
+                  <ul className="divide-y divide-border">
+                    {koreanStockResults.map((result: KoreanStockSearchResult) => (
+                      <li key={result.symbol}>
+                        <button
+                          onClick={() => handleSelectKoreanStock(result.symbol)}
+                          className="w-full text-left px-4 py-3 hover:bg-muted/50 transition-colors flex items-start justify-between"
+                        >
+                          <div className="flex-1">
+                            <p className="font-semibold">{result.symbol}</p>
+                            <p className="text-sm text-muted-foreground truncate">
+                              {result.name}
+                            </p>
+                          </div>
+                          <span className="ml-2 text-xs px-2 py-1 rounded flex-shrink-0 bg-green-500/20 text-green-400">
+                            {result.market}
                           </span>
                         </button>
                       </li>
