@@ -184,9 +184,14 @@ async function fetchSingleKoreanStock(symbol: string): Promise<KoreanStockQuote>
 
 // 시드 기반 난수 생성 함수 (날짜+종목에 따라 일관된 값)
 function seededRandom(symbol: string, seed: number): number {
-  const hash = symbol.charCodeAt(0) + seed;
-  const x = Math.sin(hash) * 10000;
-  return x - Math.floor(x);
+  // 심플한 선형합동 생성기
+  let hash = 0;
+  for (let i = 0; i < symbol.length; i++) {
+    hash = ((hash << 5) - hash) + symbol.charCodeAt(i);
+    hash = hash & hash; // 32비트 정수로 변환
+  }
+  const combined = (hash + seed) * 9301 + 49297;
+  return Math.abs((combined % 233280) / 233280);
 }
 
 // 더미 데이터 생성 함수 (테스트 목적, 날짜 기반 일관성)
@@ -203,6 +208,8 @@ function generateMockQuote(symbol: string, name: string): KoreanStockQuote {
     '005380': 55000, // 현대차
     '051910': 68000, // LG화학
     '035720': 28000, // 카카오
+    '214150': 45000, // 클래시스
+    '247540': 190000, // 에코프로비엠
   };
 
   const basePrice = basePrices[symbol] || Math.floor(Math.random() * 100000) + 10000;
