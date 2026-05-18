@@ -92,12 +92,27 @@ async function generateCandlesFromQuotes(symbol: string, period: Period): Promis
 
     // Period에 따라 시간 간격 결정
     let intervalMs = 24 * 60 * 60 * 1000; // 기본 일봉
-    const dataPoints = MOCK_DATA_POINTS[period] || 20;
+    let dataPoints = MOCK_DATA_POINTS[period] || 20;
 
     if (['2Y', '5Y'].includes(period)) {
       intervalMs = 7 * 24 * 60 * 60 * 1000; // 주봉
     } else if (['10Y', 'All'].includes(period)) {
       intervalMs = 30 * 24 * 60 * 60 * 1000; // 월봉
+
+      // "10Y", "All" 기간: 실제 상장일부터 데이터 생성
+      const stockData = KOREAN_STOCKS.find((s) => s.symbol === symbol);
+      if (stockData?.listedDate) {
+        const listedDate = new Date(stockData.listedDate);
+        const monthsDiff = Math.floor((now - listedDate.getTime()) / intervalMs);
+
+        if (period === 'All') {
+          // All: 상장일부터 현재까지
+          dataPoints = Math.max(1, monthsDiff);
+        } else if (period === '10Y') {
+          // 10Y: 상장이 10년 이내면 상장일부터, 10년 이상이면 120개월
+          dataPoints = Math.min(monthsDiff, 120);
+        }
+      }
     }
 
     // 현재가를 종가로 보장하는 candle 생성
@@ -177,18 +192,22 @@ function generateMockCandles(symbol: string, period: Period): CandleData[] {
   } else if (['10Y', 'All'].includes(period)) {
     intervalMs = 30 * 24 * 60 * 60 * 1000; // 월봉
 
-    // "All" 기간: 실제 상장일부터 데이터 생성
-    if (period === 'All') {
-      const stockData = KOREAN_STOCKS.find((s) => s.symbol === symbol);
-      if (stockData?.listedDate) {
-        // 상장일부터 현재까지의 개월 수 계산
-        const listedDate = new Date(stockData.listedDate);
-        const monthsDiff = Math.floor((now - listedDate.getTime()) / intervalMs);
-        dataPoints = Math.max(1, monthsDiff); // 최소 1개월, 상장일부터 현재까지
-      } else {
-        // 상장일 정보 없으면 최근 10년
-        dataPoints = 120; // 10년 = 120개월
+    // "10Y", "All" 기간: 실제 상장일부터 데이터 생성
+    const stockData = KOREAN_STOCKS.find((s) => s.symbol === symbol);
+    if (stockData?.listedDate) {
+      const listedDate = new Date(stockData.listedDate);
+      const monthsDiff = Math.floor((now - listedDate.getTime()) / intervalMs);
+
+      if (period === 'All') {
+        // All: 상장일부터 현재까지
+        dataPoints = Math.max(1, monthsDiff);
+      } else if (period === '10Y') {
+        // 10Y: 상장이 10년 이내면 상장일부터, 10년 이상이면 120개월
+        dataPoints = Math.min(monthsDiff, 120);
       }
+    } else if (period === '10Y') {
+      // 상장일 정보 없으면 10년 기본값
+      dataPoints = 120;
     }
   }
 

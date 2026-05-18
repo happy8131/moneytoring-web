@@ -20,7 +20,30 @@
       "PowerShell(Stop-Process *)",
       "WebFetch(domain:localhost)",
       "PowerShell(Invoke-WebRequest -Uri \"https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=30&interval=auto\" -Method Get -ErrorAction SilentlyContinue | Select-Object -ExpandProperty StatusCode)",
-      "PowerShell(Invoke-WebRequest -Uri \"https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=30\" -Method Get -ErrorAction SilentlyContinue | Select-Object -ExpandProperty StatusCode)"
+      "PowerShell(Invoke-WebRequest -Uri \"https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=30\" -Method Get -ErrorAction SilentlyContinue | Select-Object -ExpandProperty StatusCode)",
+      "PowerShell(ls \"C:\\\\Users\\\\user\\\\workspaces\\\\courses\\\\moneytoring-web\\\\app\" -Recurse | Where-Object { !$_.PSIsContainer } | Select-Object FullName | Format-List)",
+      "PowerShell(ls \"C:\\\\Users\\\\user\\\\workspaces\\\\courses\\\\moneytoring-web\\\\components\" -Recurse | Where-Object { !$_.PSIsContainer } | Select-Object FullName | Format-List)",
+      "Skill(sc:pm)",
+      "Bash(npm run *)",
+      "PowerShell(Start-Sleep -Seconds 3; Invoke-WebRequest -Uri \"http://localhost:3000/api/korean-stocks/quotes?symbols=005930\" -UseBasicParsing | ConvertFrom-Json | ConvertTo-Json -Depth 10)",
+      "PowerShell(Invoke-WebRequest -Uri \"http://localhost:3000/api/korean-stocks/candle?symbol=005930&period=1M\" -UseBasicParsing | ConvertFrom-Json | ConvertTo-Json -Depth 5 | Select-Object -First 100)",
+      "PowerShell(Invoke-WebRequest -Uri \"http://localhost:3000/api/korean-stocks/index-chart?code=kospi&period=1M\" -UseBasicParsing | ConvertFrom-Json | ConvertTo-Json -Depth 5 | Select-Object -First 50)",
+      "PowerShell(\\(Invoke-WebRequest -Uri \"http://localhost:3000/kr-stocks/005930\" -UseBasicParsing\\).Content | Select-String \"h1|h2|h3\" | Select-Object -First 20)",
+      "PowerShell(Start-Sleep -Seconds 3; Invoke-WebRequest -Uri \"http://localhost:3000/api/korean-stocks/quotes?symbols=005930\" -UseBasicParsing | ConvertFrom-Json | ConvertTo-Json -Depth 3 | Select-Object -First 30)",
+      "PowerShell(Invoke-WebRequest -Uri \"http://localhost:3000/api/korean-stocks/indices\" -UseBasicParsing | ConvertFrom-Json | ConvertTo-Json -Depth 3 | Select-Object -First 40)",
+      "PowerShell($response = Invoke-WebRequest -Uri \"http://localhost:3000/kr-stocks/005930\" -UseBasicParsing; $response.StatusCode)",
+      "PowerShell($response = Invoke-WebRequest -Uri \"http://localhost:3000/kr-indices/kospi\" -UseBasicParsing; $response.StatusCode)",
+      "PowerShell(Invoke-WebRequest -Uri \"http://localhost:3000/api/korean-stocks/index-chart?code=kospi&period=1M\" -UseBasicParsing | ConvertFrom-Json | ConvertTo-Json -Depth 3 | Select-Object -First 40)",
+      "Bash(curl -s http://localhost:3000/api/korean-stocks/quotes?symbols=005930)",
+      "PowerShell(Get-ChildItem *)",
+      "PowerShell(Start-Process \"http://localhost:3000/kr-stocks/005930\")",
+      "PowerShell(Start-Process \"http://localhost:3000/kr-indices/kospi\")",
+      "PowerShell(Receive-Job *)",
+      "PowerShell(Get-Job *)",
+      "PowerShell($response = Invoke-WebRequest -Uri \"http://localhost:3000/api/korean-stocks/search?q=삼성\" -UseBasicParsing; $response.Content | ConvertFrom-Json | ConvertTo-Json -Depth 3)",
+      "PowerShell($response = Invoke-WebRequest -Uri \"http://localhost:3000/api/korean-stocks/search?q=samsung\" -UseBasicParsing; $response.Content | ConvertFrom-Json | ConvertTo-Json -Depth 3)",
+      "PowerShell($response = Invoke-WebRequest -Uri \"http://localhost:3000/api/korean-stocks/search?q=kodex\" -UseBasicParsing; $response.Content | ConvertFrom-Json | ConvertTo-Json -Depth 3)",
+      "PowerShell($response = Invoke-WebRequest -Uri \"http://localhost:3000/api/korean-stocks/search?q=%ED%81%B4%EB%9E%98%EC%8B%9C%EC%8A%A4\" -UseBasicParsing; $response.Content | ConvertFrom-Json | ConvertTo-Json -Depth 3)"
     ]
   }
 }
