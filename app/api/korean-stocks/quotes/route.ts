@@ -182,8 +182,20 @@ async function fetchSingleKoreanStock(symbol: string): Promise<KoreanStockQuote>
 // GET /api/korean-stocks/quotes
 // ────────────────────────────────────────────────────────────────────────────
 
-// 더미 데이터 생성 함수 (테스트 목적)
+// 시드 기반 난수 생성 함수 (날짜+종목에 따라 일관된 값)
+function seededRandom(symbol: string, seed: number): number {
+  const hash = symbol.charCodeAt(0) + seed;
+  const x = Math.sin(hash) * 10000;
+  return x - Math.floor(x);
+}
+
+// 더미 데이터 생성 함수 (테스트 목적, 날짜 기반 일관성)
 function generateMockQuote(symbol: string, name: string): KoreanStockQuote {
+  // 날짜 기반 시드 생성 (같은 날짜면 같은 데이터)
+  const today = new Date();
+  const dateStr = today.toISOString().split('T')[0]; // YYYY-MM-DD
+  const dateHash = parseInt(dateStr.replace(/-/g, ''), 10) % 10000;
+
   // 캔들 데이터와 일치하는 기준가 사용
   const basePrices: Record<string, number> = {
     '005930': 70000, // 삼성전자
@@ -194,23 +206,28 @@ function generateMockQuote(symbol: string, name: string): KoreanStockQuote {
   };
 
   const basePrice = basePrices[symbol] || Math.floor(Math.random() * 100000) + 10000;
-  const change = Math.floor((Math.random() - 0.5) * (basePrice * 0.05)); // 기준가의 ±5% 변동
-  const percentChange = parseFloat((change / basePrice * 100).toFixed(2));
 
-  const dailyRange = basePrice * 0.03; // 기준가의 ±3% 일일 변동폭
-  const openPrice = basePrice + Math.floor((Math.random() - 0.5) * dailyRange);
-  const highPrice = Math.max(basePrice, openPrice) + Math.floor(Math.random() * dailyRange * 0.5);
-  const lowPrice = Math.min(basePrice, openPrice) - Math.floor(Math.random() * dailyRange * 0.5);
+  // 시드 기반 일관된 난수 생성
+  const changePercent = (seededRandom(symbol, dateHash) - 0.5) * 0.1; // ±5% 변동
+  const change = Math.floor(basePrice * changePercent);
+  const currentPrice = basePrice + change;
+  const previousClose = basePrice;
+  const percentChange = parseFloat((changePercent * 100).toFixed(2));
+
+  const dailyRange = basePrice * 0.03;
+  const openPrice = basePrice + Math.floor((seededRandom(symbol, dateHash + 1) - 0.5) * dailyRange);
+  const highPrice = Math.max(currentPrice, openPrice) + Math.floor(seededRandom(symbol, dateHash + 2) * dailyRange * 0.5);
+  const lowPrice = Math.min(currentPrice, openPrice) - Math.floor(seededRandom(symbol, dateHash + 3) * dailyRange * 0.5);
 
   return {
     symbol,
     name,
-    currentPrice: basePrice,
-    previousClose: basePrice - change,
+    currentPrice,
+    previousClose,
     change,
     percentChange,
-    volume: Math.floor(Math.random() * 10000000),
-    tradingValue: Math.floor(basePrice * Math.random() * 10000000),
+    volume: Math.floor(seededRandom(symbol, dateHash + 4) * 10000000),
+    tradingValue: Math.floor(currentPrice * seededRandom(symbol, dateHash + 5) * 10000000),
     openPrice,
     highPrice,
     lowPrice,
