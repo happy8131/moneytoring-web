@@ -39,6 +39,19 @@ export async function GET(request: NextRequest) {
   }
 
   try {
+    // 한글 쿼리 감지 (CoinGecko API는 한글을 지원하지 않음)
+    const isKorean = /[가-힯]/.test(query);
+    if (isKorean) {
+      return NextResponse.json(
+        { data: [], total: 0 },
+        {
+          headers: {
+            'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=120',
+          },
+        }
+      );
+    }
+
     const url = `https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}`;
     const res = await fetch(url, {
       next: { revalidate: 60 },
@@ -49,6 +62,18 @@ export async function GET(request: NextRequest) {
     }
 
     const raw: CoinGeckoSearchResponse = await res.json();
+
+    // coins 배열이 없거나 배열이 아닌 경우 처리
+    if (!raw?.coins || !Array.isArray(raw.coins)) {
+      return NextResponse.json(
+        { data: [], total: 0 },
+        {
+          headers: {
+            'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=120',
+          },
+        }
+      );
+    }
 
     const filtered = raw.coins
       .slice(0, 10)
@@ -75,9 +100,15 @@ export async function GET(request: NextRequest) {
     const message =
       error instanceof Error ? error.message : '알 수 없는 오류';
 
+    // 한글 검색이나 네트워크 오류 시 빈 배열 반환
     return NextResponse.json(
-      { error: `CoinGecko API 오류: ${message}` },
-      { status: 500 }
+      { data: [], total: 0, error: message },
+      {
+        status: 200, // 빈 결과를 정상 응답으로 처리
+        headers: {
+          'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=120',
+        },
+      }
     );
   }
 }
