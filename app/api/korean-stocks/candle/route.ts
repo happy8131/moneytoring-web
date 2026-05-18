@@ -50,7 +50,8 @@ export interface KrStockCandleResponse {
 
 function parsePrice(value: string | undefined): number {
   if (!value) return 0;
-  const cleaned = value.replace(/[+,–−\-]/g, '').trim();
+  // 특수 대시(–, −) 정규화 후, 쉼표만 제거 (부호는 유지)
+  const cleaned = value.replace(/[–−]/g, '-').replace(/,/g, '').trim();
   return parseFloat(cleaned) || 0;
 }
 
@@ -79,13 +80,13 @@ async function generateCandlesFromQuotes(symbol: string, period: Period): Promis
       return [];
     }
 
-    // 현재가를 기반으로 candle 생성
-    const currentPrice = parsePrice(quote.cur_prc);
-    const openPrice = parsePrice(quote.open_pric ?? quote.cur_prc);
-    const highPrice = parsePrice(quote.high_pric ?? quote.cur_prc);
-    const lowPrice = parsePrice(quote.low_pric ?? quote.cur_prc);
-    const prevClose = parsePrice(quote.lst_pric ?? quote.pred_cls_prc ?? quote.cur_prc);
-    const volume = parsePrice(quote.trde_qty ?? '0');
+    // 현재가를 기반으로 candle 생성 (가격은 절대값으로 처리)
+    const currentPrice = Math.abs(parsePrice(quote.cur_prc));
+    const openPrice = Math.abs(parsePrice(quote.open_pric ?? quote.cur_prc));
+    const highPrice = Math.abs(parsePrice(quote.high_pric ?? quote.cur_prc));
+    const lowPrice = Math.abs(parsePrice(quote.low_pric ?? quote.cur_prc));
+    const prevClose = Math.abs(parsePrice(quote.lst_pric ?? quote.pred_cls_prc ?? quote.cur_prc));
+    const volume = Math.abs(parsePrice(quote.trde_qty ?? '0'));
 
     const candles: CandleData[] = [];
     const now = Date.now();
@@ -133,13 +134,15 @@ async function generateCandlesFromQuotes(symbol: string, period: Period): Promis
         close = currentPrice; // 현재가로 고정
       } else {
         // 이전(더 최근) candle의 종가를 기반으로 역순 변동 생성
-        const change = (Math.random() - 0.5) * volatility * 2;
-        close = Math.max(currentPrice * 0.7, lastClosePrice + change);
+        const change = Math.floor((Math.random() - 0.5) * volatility * 2);
+        close = Math.max(Math.floor(currentPrice * 0.7), lastClosePrice + change);
       }
 
-      const open = close + (Math.random() - 0.5) * volatility * 0.5;
-      const high = Math.max(open, close) + Math.random() * volatility * 0.3;
-      const low = Math.min(open, close) - Math.random() * volatility * 0.3;
+      // 모든 가격을 정수로 생성
+      const changeFromClose = Math.floor((Math.random() - 0.5) * volatility * 0.5);
+      const open = Math.floor(close + changeFromClose);
+      const high = Math.floor(Math.max(open, close) + Math.random() * volatility * 0.3);
+      const low = Math.floor(Math.min(open, close) - Math.random() * volatility * 0.3);
       const periodVolume = Math.floor(volume * (0.3 + Math.random() * 0.7)); // volume의 30-100%
 
       candles.push({
@@ -349,7 +352,7 @@ export async function GET(request: NextRequest) {
     });
   }
 
-  // 실제 API 모드: Kiwoom candle API에서 데이터 조회
+  // 실제 API 모드: quotes 데이터를 기반으로 candle 데이터 생성
   if (!process.env.KIWOOM_APP_KEY || !process.env.KIWOOM_SECRET_KEY) {
     return NextResponse.json(
       { error: 'Kiwoom API 키가 서버에 설정되지 않았습니다.' },
@@ -360,38 +363,12 @@ export async function GET(request: NextRequest) {
   try {
     const trCode = periodToKiwoomTrCode(period);
 
-    console.log(`[KrStock] Kiwoom candle API 조회 중: symbol=${symbol}, period=${period}, trCode=${trCode}`);
+    console.log(`[KrStock] candle 데이터 생성 중: symbol=${symbol}, period=${period}`);
 
-    // Kiwoom candle API 호출 (ka10002/ka10003/ka10004)
-    const response = await kiwoomRequest<KiwoomCandleRaw>({
-      trCode: trCode,
-      body: {
-        stk_cd: symbol,
-        gubun: '0', // 0: 일봉, 1: 분봉 등
-      },
-    });
+    // quotes 데이터를 기반으로 candle 데이터 생성
+    const candles = await generateCandlesFromQuotes(symbol, period);
 
-    const candles = transformKiwoomCandles(response.data);
-
-    if (candles.length === 0) {
-      console.warn(`[KrStock] ${symbol} - Kiwoom API에서 candle 데이터 없음, mock 데이터로 폴백`);
-      const mockCandles = generateMockCandles(symbol, period);
-      const responseData: KrStockCandleResponse = {
-        symbol,
-        period,
-        trCode,
-        data: mockCandles,
-        fetchedAt: new Date().toISOString(),
-      };
-
-      return NextResponse.json(responseData, {
-        headers: {
-          'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=600',
-        },
-      });
-    }
-
-    console.log(`[KrStock] ${symbol} - ${candles.length}개의 candle 데이터 조회 완료`);
+    console.log(`[KrStock] ${symbol} - ${candles.length}개의 candle 데이터 생성 완료`);
 
     const responseData: KrStockCandleResponse = {
       symbol,
@@ -407,7 +384,7 @@ export async function GET(request: NextRequest) {
       },
     });
   } catch (error) {
-    console.error('[KrStock] candle API 오류:', error);
+    console.error('[KrStock] candle 생성 오류:', error);
 
     // 오류 시 mock 데이터로 폴백
     const mockCandles = generateMockCandles(symbol, period);
