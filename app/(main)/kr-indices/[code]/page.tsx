@@ -1,5 +1,5 @@
 import { KrIndexDetailHeader } from '@/components/kr-indices/KrIndexDetailHeader';
-import { KrStockPriceChart } from '@/components/kr-stocks/KrStockPriceChart';
+import { KrIndexPriceChart } from '@/components/kr-indices/KrIndexPriceChart';
 
 interface KrIndexDetailPageProps {
   params: {
@@ -25,7 +25,7 @@ export default async function KrIndexDetailPage({ params }: KrIndexDetailPagePro
       <KrIndexDetailHeader code={code} />
 
       {/* 차트 & 거래량 */}
-      <KrStockPriceChart symbol={code} />
+      <KrIndexPriceChart code={code} />
     </div>
   );
 }
