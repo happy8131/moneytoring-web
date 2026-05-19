@@ -162,13 +162,7 @@ function generateMockIndex(code: string): KoreanIndexQuote {
 export async function GET(request: NextRequest) {
   // Mock 모드 체크
   const isMock = process.env.KIWOOM_USE_MOCK === 'true';
-
-  if (!isMock && (!process.env.KIWOOM_APP_KEY || !process.env.KIWOOM_SECRET_KEY)) {
-    return NextResponse.json(
-      { error: 'Kiwoom API 키가 서버에 설정되지 않았습니다.' },
-      { status: 500 }
-    );
-  }
+  const hasKiwoomApiKeys = process.env.KIWOOM_APP_KEY && process.env.KIWOOM_SECRET_KEY;
 
   const { searchParams } = new URL(request.url);
   const codesParam = searchParams.get('codes');
@@ -205,30 +199,60 @@ export async function GET(request: NextRequest) {
     );
   }
 
+  // API 키 없음: 경고 로깅 후 mock 데이터로 폴백
+  if (!hasKiwoomApiKeys) {
+    console.warn('[KrIndex] Kiwoom API 키가 설정되지 않았습니다. Mock 데이터로 응답합니다.');
+    const data = requestedCodes.map((code) => generateMockIndex(code));
+
+    return NextResponse.json(
+      { data, errors: [], fetchedAt: new Date().toISOString() },
+      {
+        headers: {
+          'Cache-Control': 'public, s-maxage=30, stale-while-revalidate=60',
+        },
+      }
+    );
+  }
+
   // 실제 API 호출
-  const batchResults = await kiwoomBatchRequest(
-    requestedCodes,
-    fetchSingleIndex,
-    200
-  );
+  try {
+    const batchResults = await kiwoomBatchRequest(
+      requestedCodes,
+      fetchSingleIndex,
+      200
+    );
 
-  const data: KoreanIndexQuote[] = [];
-  const errors: { code: string; message: string }[] = [];
+    const data: KoreanIndexQuote[] = [];
+    const errors: { code: string; message: string }[] = [];
 
-  batchResults.forEach(({ item, result, error }) => {
-    if (result) {
-      data.push(result);
-    } else {
-      errors.push({ code: item, message: error ?? '알 수 없는 오류' });
-    }
-  });
+    batchResults.forEach(({ item, result, error }) => {
+      if (result) {
+        data.push(result);
+      } else {
+        errors.push({ code: item, message: error ?? '알 수 없는 오류' });
+      }
+    });
 
-  return NextResponse.json(
-    { data, errors, fetchedAt: new Date().toISOString() },
-    {
-      headers: {
-        'Cache-Control': 'public, s-maxage=30, stale-while-revalidate=60',
-      },
-    }
-  );
+    return NextResponse.json(
+      { data, errors, fetchedAt: new Date().toISOString() },
+      {
+        headers: {
+          'Cache-Control': 'public, s-maxage=30, stale-while-revalidate=60',
+        },
+      }
+    );
+  } catch (error) {
+    // API 호출 실패: mock 데이터로 폴백
+    console.error('[KrIndex] API 호출 실패:', error);
+    const data = requestedCodes.map((code) => generateMockIndex(code));
+
+    return NextResponse.json(
+      { data, errors: [], fetchedAt: new Date().toISOString() },
+      {
+        headers: {
+          'Cache-Control': 'public, s-maxage=30, stale-while-revalidate=60',
+        },
+      }
+    );
+  }
 }

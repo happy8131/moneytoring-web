@@ -331,6 +331,7 @@ export async function GET(request: NextRequest) {
   }
 
   const isMock = process.env.KIWOOM_USE_MOCK === 'true';
+  const hasKiwoomApiKeys = process.env.KIWOOM_APP_KEY && process.env.KIWOOM_SECRET_KEY;
 
   // Mock 모드
   if (isMock) {
@@ -353,11 +354,25 @@ export async function GET(request: NextRequest) {
   }
 
   // 실제 API 모드: quotes 데이터를 기반으로 candle 데이터 생성
-  if (!process.env.KIWOOM_APP_KEY || !process.env.KIWOOM_SECRET_KEY) {
-    return NextResponse.json(
-      { error: 'Kiwoom API 키가 서버에 설정되지 않았습니다.' },
-      { status: 500 }
-    );
+  if (!hasKiwoomApiKeys) {
+    // API 키 없음: 경고 로깅 후 mock 데이터로 폴백
+    console.warn('[KrStock] Kiwoom API 키가 설정되지 않았습니다. Mock 데이터로 응답합니다.');
+    const mockCandles = generateMockCandles(symbol, period);
+    const trCode = periodToKiwoomTrCode(period);
+
+    const response: KrStockCandleResponse = {
+      symbol,
+      period,
+      trCode,
+      data: mockCandles,
+      fetchedAt: new Date().toISOString(),
+    };
+
+    return NextResponse.json(response, {
+      headers: {
+        'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=600',
+      },
+    });
   }
 
   try {
