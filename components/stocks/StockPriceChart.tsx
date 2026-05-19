@@ -125,8 +125,8 @@ export function StockPriceChart({ symbol, onPeriodChange }: StockPriceChartProps
       </div>
 
       {/* Price Chart */}
-      <div className="h-80">
-        <ResponsiveContainer width="100%" height="100%">
+      <div className="h-80 w-full min-w-0 flex">
+        <ResponsiveContainer width="100%" height="100%" minWidth={0}>
           <LineChart data={chartData} margin={{ top: 5, right: 30, left: 0, bottom: 5 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
             <XAxis
@@ -172,8 +172,8 @@ export function StockPriceChart({ symbol, onPeriodChange }: StockPriceChartProps
       </div>
 
       {/* Volume Chart */}
-      <div className="h-24">
-        <ResponsiveContainer width="100%" height="100%">
+      <div className="h-24 w-full min-w-0 flex">
+        <ResponsiveContainer width="100%" height="100%" minWidth={0}>
           <BarChart data={chartData} margin={{ top: 5, right: 30, left: 0, bottom: 5 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
             <XAxis dataKey="date" hide />

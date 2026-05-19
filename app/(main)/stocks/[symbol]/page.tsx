@@ -19,7 +19,7 @@ type Props = {
 export default function StockDetailPage({ params }: Props) {
   const [symbol, setSymbol] = useState<string>('');
   const [indicatorPeriod, setIndicatorPeriod] = useState<Period>('1M');
-  const { data: etfData, isLoading: etfLoading } = useETFHoldings({ symbol: symbol || '' });
+  const { data: etfData, isLoading: etfLoading } = useETFHoldings({ symbol: symbol || '', enabled: false });
 
   useEffect(() => {
     params.then((p) => setSymbol(p.symbol));

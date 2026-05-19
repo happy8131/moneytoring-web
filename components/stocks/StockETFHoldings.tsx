@@ -8,7 +8,7 @@ interface StockETFHoldingsProps {
 }
 
 export function StockETFHoldings({ symbol }: StockETFHoldingsProps) {
-  const { data: etfData, isLoading } = useETFHoldings({ symbol });
+  const { data: etfData, isLoading, error } = useETFHoldings({ symbol });
 
   if (isLoading) {
     return (
@@ -18,6 +18,16 @@ export function StockETFHoldings({ symbol }: StockETFHoldingsProps) {
           {[...Array(5)].map((_, i) => (
             <Skeleton key={i} className="h-12 w-full" />
           ))}
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="rounded-lg border border-border bg-card p-6">
+        <div className="text-center text-red-500">
+          보유 종목 데이터를 불러올 수 없습니다.
         </div>
       </div>
     );

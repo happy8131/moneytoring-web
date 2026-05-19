@@ -139,8 +139,8 @@ export function StockIndicatorChart({ symbol, period }: StockIndicatorChartProps
       <div className="rounded-lg border border-border bg-card p-6">
         <h3 className="text-lg font-semibold mb-4">RSI (14)</h3>
         {rsiChartData.length > 0 ? (
-          <div className="h-80">
-            <ResponsiveContainer width="100%" height="100%">
+          <div className="h-80 w-full min-w-0 flex">
+            <ResponsiveContainer width="100%" height="100%" minWidth={0}>
               <LineChart data={rsiChartData} margin={{ top: 5, right: 30, left: 0, bottom: 5 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
                 <XAxis
@@ -186,8 +186,8 @@ export function StockIndicatorChart({ symbol, period }: StockIndicatorChartProps
         <h3 className="text-lg font-semibold mb-4">이동평균선 (5일 / 20일 / 60일 / 120일 / 210일)</h3>
         {smaChartData.length > 0 ? (
           <div className="space-y-4">
-            <div className="h-80">
-              <ResponsiveContainer width="100%" height="100%">
+            <div className="h-80 w-full min-w-0 flex">
+              <ResponsiveContainer width="100%" height="100%" minWidth={0}>
                 <LineChart data={smaChartData} margin={{ top: 5, right: 30, left: 0, bottom: 5 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
                 <XAxis
