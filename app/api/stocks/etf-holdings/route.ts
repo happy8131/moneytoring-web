@@ -22,11 +22,13 @@ export async function GET(request: Request) {
   try {
     const apiKey = process.env.FINNHUB_API_KEY;
     if (!apiKey) {
+      console.error('[ETF Holdings API] FINNHUB_API_KEY is not set');
       return Response.json(
         { error: 'API 키가 설정되지 않았습니다.' },
         { status: 500 }
       );
     }
+    console.log('[ETF Holdings API] FINNHUB_API_KEY loaded successfully');
 
     const { searchParams } = new URL(request.url);
     const symbol = searchParams.get('symbol');
@@ -42,15 +44,20 @@ export async function GET(request: Request) {
       symbol
     )}&token=${apiKey}`;
 
-    const res = await fetch(url, {
-      next: { revalidate: 86400 }, // 1일 캐시
-    });
+    console.log('[ETF Holdings API] Fetching from Finnhub:', url.replace(apiKey, '***'));
+
+    const res = await fetch(url);
+
+    console.log('[ETF Holdings API] Finnhub response status:', res.status);
 
     if (!res.ok) {
-      throw new Error(`HTTP ${res.status}`);
+      const errorText = await res.text();
+      console.error('[ETF Holdings API] Finnhub error response:', errorText);
+      throw new Error(`Finnhub HTTP ${res.status}: ${errorText}`);
     }
 
     const data: FinnhubETFHoldingsResponse = await res.json();
+    console.log('[ETF Holdings API] Data received:', data);
 
     const holdings: ETFHolding[] = (data.holdings || [])
       .slice(0, 20)
@@ -62,13 +69,23 @@ export async function GET(request: Request) {
         pct: item.pct,
       }));
 
-    return Response.json({
-      symbol,
-      holdings,
-    });
-  } catch (error) {
     return Response.json(
-      { error: error instanceof Error ? error.message : 'Unknown error' },
+      {
+        symbol,
+        holdings,
+      },
+      {
+        headers: {
+          'Cache-Control': 'public, s-maxage=86400, stale-while-revalidate=604800',
+        },
+      }
+    );
+  } catch (error) {
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+    console.error('[ETF Holdings API] Error:', errorMessage);
+    console.error('[ETF Holdings API] Full error:', error);
+    return Response.json(
+      { error: errorMessage },
       { status: 500 }
     );
   }
