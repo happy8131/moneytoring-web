@@ -205,48 +205,34 @@ export async function GET(request: NextRequest) {
     );
   }
 
+  // Kiwoom API 키 필수
+  if (!process.env.KIWOOM_APP_KEY || !process.env.KIWOOM_SECRET_KEY) {
+    return NextResponse.json(
+      {
+        error: 'Kiwoom API 환경 변수가 설정되지 않았습니다.',
+        details: 'KIWOOM_APP_KEY와 KIWOOM_SECRET_KEY를 설정하세요.'
+      },
+      { status: 500 }
+    );
+  }
+
+  // 배치 요청 (순차, Rate Limit 준수)
+  const batchResults = await kiwoomBatchRequest(
+    symbols,
+    fetchSingleKoreanStock,
+    200 // 200ms 간격
+  );
+
   const data: KoreanStockQuote[] = [];
   const errors: { symbol: string; message: string }[] = [];
 
-  // Kiwoom API 키 확인 (없으면 graceful fallback)
-  const hasKiwoomApiKeys = process.env.KIWOOM_APP_KEY && process.env.KIWOOM_SECRET_KEY;
-
-  if (!hasKiwoomApiKeys) {
-    // API 키 없음: 로깅만 하고 빈 응답 반환 (Vercel 등 프로덕션 환경에서 API 키 미설정 시)
-    console.warn('[Kiwoom API] 환경 변수가 설정되지 않았습니다. KIWOOM_APP_KEY, KIWOOM_SECRET_KEY를 확인하세요.');
-    symbols.forEach((symbol) => {
-      errors.push({
-        symbol,
-        message: 'Kiwoom API 키가 설정되지 않았습니다.',
-      });
-    });
-  } else {
-    // 배치 요청 (순차, Rate Limit 준수)
-    try {
-      const batchResults = await kiwoomBatchRequest(
-        symbols,
-        fetchSingleKoreanStock,
-        200 // 200ms 간격
-      );
-
-      batchResults.forEach(({ item, result, error }) => {
-        if (result) {
-          data.push(result);
-        } else {
-          errors.push({ symbol: item, message: error ?? '알 수 없는 오류' });
-        }
-      });
-    } catch (error) {
-      // API 호출 전체 실패
-      console.error('[Kiwoom API] 배치 요청 실패:', error);
-      symbols.forEach((symbol) => {
-        errors.push({
-          symbol,
-          message: error instanceof Error ? error.message : 'API 호출 실패',
-        });
-      });
+  batchResults.forEach(({ item, result, error }) => {
+    if (result) {
+      data.push(result);
+    } else {
+      errors.push({ symbol: item, message: error ?? '알 수 없는 오류' });
     }
-  }
+  });
 
   const responseBody: KoreanStockQuotesResponse = {
     data,
