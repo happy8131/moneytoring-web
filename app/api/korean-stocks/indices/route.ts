@@ -165,7 +165,10 @@ export async function GET(request: NextRequest) {
 
   if (!isMock && (!process.env.KIWOOM_APP_KEY || !process.env.KIWOOM_SECRET_KEY)) {
     return NextResponse.json(
-      { error: 'Kiwoom API 키가 서버에 설정되지 않았습니다.' },
+      {
+        error: 'Kiwoom API 환경 변수가 설정되지 않았습니다.',
+        details: 'KIWOOM_APP_KEY와 KIWOOM_SECRET_KEY를 설정하세요.'
+      },
       { status: 500 }
     );
   }
