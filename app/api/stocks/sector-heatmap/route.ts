@@ -3,63 +3,23 @@ import { SP500_SECTORS, SectorHeatmapData, getSectorOrder } from '@/lib/sectorHe
 import { env } from '@/lib/env';
 
 interface FinnhubQuote {
-  o: number;      // Open price
-  h: number;      // High price
-  l: number;      // Low price
-  c: number;      // Close price
-  pc: number;     // Previous close price
-  t: number;      // Timestamp
+  o: number;
+  h: number;
+  l: number;
+  c: number;
+  pc: number;
+  t: number;
 }
 
-interface StockCompanyProfile {
-  name: string;
-  ticker: string;
-  exchange: string;
-  currency: string;
-  country: string;
-  logo: string;
-  weburl: string;
-  marketCapitalization: number;
-  shareOutstanding: number;
-  finnhubIndustry: string;
-}
-
-async function fetchQuote(symbol: string): Promise<FinnhubQuote | null> {
+async function fetchSingleQuote(symbol: string, apiKey: string): Promise<FinnhubQuote | null> {
   try {
-    if (!env.finnhubApiKey) {
-      return null;
-    }
+    const url = `https://finnhub.io/api/v1/quote?symbol=${symbol}&token=${apiKey}`;
+    const res = await fetch(url);
 
-    const url = `https://finnhub.io/api/v1/quote?symbol=${symbol}&token=${env.finnhubApiKey}`;
-    const response = await fetch(url);
-    if (!response.ok) return null;
+    if (!res.ok) return null;
 
-    const data = await response.json();
-    return {
-      o: data.o || 0,
-      h: data.h || 0,
-      l: data.l || 0,
-      c: data.c || 0,
-      pc: data.pc || 0,
-      t: data.t || 0,
-    };
-  } catch (error) {
-    return null;
-  }
-}
-
-async function fetchCompanyProfile(symbol: string): Promise<StockCompanyProfile | null> {
-  try {
-    if (!env.finnhubApiKey) {
-      return null;
-    }
-
-    const url = `https://finnhub.io/api/v1/stock/profile2?symbol=${symbol}&token=${env.finnhubApiKey}`;
-    const response = await fetch(url);
-    if (!response.ok) return null;
-
-    const data = await response.json();
-    return data as StockCompanyProfile;
+    const data = await res.json();
+    return data;
   } catch (error) {
     return null;
   }
@@ -67,6 +27,10 @@ async function fetchCompanyProfile(symbol: string): Promise<StockCompanyProfile 
 
 export async function GET(request: NextRequest) {
   try {
+    if (!env.finnhubApiKey) {
+      return NextResponse.json({ data: [], fetchedAt: new Date().toISOString() }, { status: 200 });
+    }
+
     const result: SectorHeatmapData[] = [];
     const sectorOrder = getSectorOrder();
 
@@ -76,21 +40,37 @@ export async function GET(request: NextRequest) {
 
       const stocks = [];
 
-      for (const symbol of symbols) {
-        const quote = await fetchQuote(symbol);
-        const profile = await fetchCompanyProfile(symbol);
+      // 청크 단위로 처리 (최대 5개씩)
+      const CHUNK_SIZE = 5;
+      for (let i = 0; i < symbols.length; i += CHUNK_SIZE) {
+        const chunk = symbols.slice(i, i + CHUNK_SIZE);
 
-        if (quote && profile) {
-          const change = quote.c - quote.pc;
-          const percentChange = quote.pc !== 0 ? (change / quote.pc) * 100 : 0;
+        const quoteResults = await Promise.allSettled(
+          chunk.map((symbol) => fetchSingleQuote(symbol, env.finnhubApiKey))
+        );
 
-          stocks.push({
-            symbol,
-            name: profile.name,
-            currentPrice: quote.c,
-            change,
-            percentChange,
-          });
+        for (let j = 0; j < chunk.length; j++) {
+          const result = quoteResults[j];
+          const symbol = chunk[j];
+
+          if (result.status === 'fulfilled' && result.value) {
+            const quote = result.value;
+            const change = quote.c - quote.pc;
+            const percentChange = quote.pc !== 0 ? (change / quote.pc) * 100 : 0;
+
+            stocks.push({
+              symbol,
+              name: symbol,
+              currentPrice: quote.c,
+              change,
+              percentChange,
+            });
+          }
+        }
+
+        // 다음 청크 전에 지연
+        if (i + CHUNK_SIZE < symbols.length) {
+          await new Promise((resolve) => setTimeout(resolve, 200));
         }
       }
 
@@ -106,7 +86,7 @@ export async function GET(request: NextRequest) {
     return NextResponse.json(
       { data: result, fetchedAt: new Date().toISOString() },
       {
-        headers: { 'Cache-Control': 'public, s-maxage=30, stale-while-revalidate=300' },
+        headers: { 'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=3600' },
       }
     );
   } catch (error) {
