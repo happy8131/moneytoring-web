@@ -36,8 +36,12 @@ function getXAxisInterval(dataLength: number, period: Period): number {
   // 목표: 10-15개의 라벨만 표시
   const targetTicks = 12;
 
-  if (['1W', '1M', '3M', '6M'].includes(period)) {
+  if (['1W', '1M'].includes(period)) {
     return 0; // 모든 데이터 포인트 표시
+  }
+
+  if (['3M', '6M'].includes(period)) {
+    return Math.ceil(dataLength / 15); // 약 10-15개의 라벨만 표시
   }
 
   if (period === 'YTD' || period === '1Y') {

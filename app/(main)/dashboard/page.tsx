@@ -16,16 +16,6 @@ const CryptoWatchlist = dynamic(
   { loading: () => <div className="animate-pulse p-4">로딩 중...</div> }
 );
 
-const MarketIndices = dynamic(
-  () => import('@/components/dashboard/MarketIndices').then((m) => m.MarketIndices),
-  { loading: () => <div className="animate-pulse p-4">로딩 중...</div> }
-);
-
-const KoreanStockWatchlist = dynamic(
-  () => import('@/components/dashboard/KoreanStockWatchlist').then((m) => m.KoreanStockWatchlist),
-  { loading: () => <div className="animate-pulse p-4">로딩 중...</div> }
-);
-
 const USMarketIndices = dynamic(
   () => import('@/components/dashboard/USMarketIndices').then((m) => m.USMarketIndices),
   { loading: () => <div className="animate-pulse p-4">로딩 중...</div> }
@@ -63,11 +53,6 @@ export default function DashboardPage() {
         <CryptoMarketStatus />
       </section>
 
-      {/* 한국 증시 지수만 */}
-      <section className="space-y-4">
-        <h2 className="text-xl font-semibold">한국 증시</h2>
-        <MarketIndices />
-      </section>
 
       <div className="grid gap-6 lg:grid-cols-2">
         <div>
@@ -80,11 +65,6 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      {/* 한국 개별 주식 종목 */}
-      <section className="space-y-4">
-        <h2 className="text-xl font-semibold">한국 주식</h2>
-        <KoreanStockWatchlist />
-      </section>
     </div>
   );
 }
