@@ -11,18 +11,41 @@ interface FinnhubQuote {
   t: number;
 }
 
-async function fetchSingleQuote(symbol: string, apiKey: string): Promise<FinnhubQuote | null> {
-  try {
-    const url = `https://finnhub.io/api/v1/quote?symbol=${symbol}&token=${apiKey}`;
-    const res = await fetch(url);
+async function fetchSingleQuote(symbol: string, apiKey: string, retries: number = 2): Promise<FinnhubQuote | null> {
+  for (let attempt = 0; attempt < retries; attempt++) {
+    try {
+      const url = `https://finnhub.io/api/v1/quote?symbol=${symbol}&token=${apiKey}`;
+      const res = await fetch(url);
 
-    if (!res.ok) return null;
+      // 429 (Too Many Requests) 에러 시 대기 후 재시도
+      if (res.status === 429) {
+        const waitTime = Math.pow(2, attempt) * 2000; // 2s, 4s
+        if (attempt < retries - 1) {
+          await new Promise((resolve) => setTimeout(resolve, waitTime));
+        }
+        continue;
+      }
 
-    const data = await res.json();
-    return data;
-  } catch (error) {
-    return null;
+      if (!res.ok) {
+        return null;
+      }
+
+      const data = await res.json();
+
+      // 유효한 데이터인지 확인
+      if (!data.c || data.c === 0) {
+        return null;
+      }
+
+      return data;
+    } catch (error) {
+      if (attempt < retries - 1) {
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+      }
+    }
   }
+
+  return null;
 }
 
 export async function GET(request: NextRequest) {
@@ -33,6 +56,7 @@ export async function GET(request: NextRequest) {
 
     const result: SectorHeatmapData[] = [];
     const sectorOrder = getSectorOrder();
+    const requestStartTime = Date.now();
 
     for (const sector of sectorOrder) {
       const symbols = SP500_SECTORS[sector];
@@ -40,37 +64,27 @@ export async function GET(request: NextRequest) {
 
       const stocks = [];
 
-      // 청크 단위로 처리 (최대 5개씩)
-      const CHUNK_SIZE = 5;
-      for (let i = 0; i < symbols.length; i += CHUNK_SIZE) {
-        const chunk = symbols.slice(i, i + CHUNK_SIZE);
+      // 순차적 처리 (한 번에 1개씩만 요청) - 레이트 리미트 회피
+      for (let i = 0; i < symbols.length; i++) {
+        const symbol = symbols[i];
+        const quote = await fetchSingleQuote(symbol, env.finnhubApiKey, 2);
 
-        const quoteResults = await Promise.allSettled(
-          chunk.map((symbol) => fetchSingleQuote(symbol, env.finnhubApiKey))
-        );
+        if (quote) {
+          const change = quote.c - quote.pc;
+          const percentChange = quote.pc !== 0 ? (change / quote.pc) * 100 : 0;
 
-        for (let j = 0; j < chunk.length; j++) {
-          const result = quoteResults[j];
-          const symbol = chunk[j];
-
-          if (result.status === 'fulfilled' && result.value) {
-            const quote = result.value;
-            const change = quote.c - quote.pc;
-            const percentChange = quote.pc !== 0 ? (change / quote.pc) * 100 : 0;
-
-            stocks.push({
-              symbol,
-              name: symbol,
-              currentPrice: quote.c,
-              change,
-              percentChange,
-            });
-          }
+          stocks.push({
+            symbol,
+            name: symbol,
+            currentPrice: quote.c,
+            change,
+            percentChange,
+          });
         }
 
-        // 다음 청크 전에 지연
-        if (i + CHUNK_SIZE < symbols.length) {
-          await new Promise((resolve) => setTimeout(resolve, 200));
+        // 매 요청 후 짧은 지연 (레이트 리미트 회피)
+        if (i < symbols.length - 1) {
+          await new Promise((resolve) => setTimeout(resolve, 300));
         }
       }
 
@@ -81,12 +95,17 @@ export async function GET(request: NextRequest) {
           stocks,
         });
       }
+
+      // 섹터 전환 시 추가 지연
+      await new Promise((resolve) => setTimeout(resolve, 500));
     }
+
+    const totalTime = Date.now() - requestStartTime;
 
     return NextResponse.json(
       { data: result, fetchedAt: new Date().toISOString() },
       {
-        headers: { 'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=3600' },
+        headers: { 'Cache-Control': 'public, s-maxage=600, stale-while-revalidate=7200' },
       }
     );
   } catch (error) {
