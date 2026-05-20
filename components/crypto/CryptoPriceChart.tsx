@@ -112,7 +112,6 @@ export function CryptoPriceChart({ id, onPeriodChange }: CryptoPriceChartProps) 
               strokeDasharray="3 3"
               stroke="#e5e7eb"
               vertical={false}
-              horizontalPoints={['1W', '1M', '3M'].includes(selectedPeriod) ? 5 : undefined}
             />
             <XAxis
               dataKey="date"
