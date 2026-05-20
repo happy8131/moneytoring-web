@@ -23,24 +23,8 @@ interface CryptoSearchResult {
   isEtf: boolean;
 }
 
-interface KoreanStockSearchResult {
-  symbol: string;
-  name: string;
-  market: string;
-  type: 'stock' | 'etf';
-}
-
 async function searchCrypto(query: string): Promise<CryptoSearchResult[]> {
   const res = await fetch(`/api/crypto/search?q=${encodeURIComponent(query)}`);
-  if (!res.ok) {
-    throw new Error(`검색 실패: ${res.status}`);
-  }
-  const json = await res.json();
-  return json.data || [];
-}
-
-async function searchKoreanStocks(query: string): Promise<KoreanStockSearchResult[]> {
-  const res = await fetch(`/api/korean-stocks/search?q=${encodeURIComponent(query)}`);
   if (!res.ok) {
     throw new Error(`검색 실패: ${res.status}`);
   }
@@ -77,14 +61,6 @@ export function UnifiedSearchBar() {
     staleTime: 5 * 60_000,
   });
 
-  // 한국 주식 검색 - 2자 이상이면 모두 검색 (한글, 영어, 숫자)
-  const { data: koreanStockResults } = useQuery({
-    queryKey: ['kr-stocks', 'search', debouncedQuery],
-    queryFn: () => searchKoreanStocks(debouncedQuery),
-    enabled: debouncedQuery.length >= 2,
-    staleTime: 5 * 60_000,
-  });
-
   // 외부 클릭 감지
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -109,20 +85,13 @@ export function UnifiedSearchBar() {
     setIsOpen(false);
   };
 
-  const handleSelectKoreanStock = (symbol: string) => {
-    router.push(`/kr-stocks/${symbol}`);
-    setQuery('');
-    setIsOpen(false);
-  };
-
   const handleClear = () => {
     setQuery('');
   };
 
   const hasResults =
     (stockResults?.data && stockResults.data.length > 0) ||
-    (cryptoResults && cryptoResults.length > 0) ||
-    (koreanStockResults && koreanStockResults.length > 0);
+    (cryptoResults && cryptoResults.length > 0);
 
   return (
     <div ref={ref} className="relative">
@@ -130,7 +99,7 @@ export function UnifiedSearchBar() {
         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
         <Input
           type="text"
-          placeholder="주식 · 암호화폐 · 한국주식 검색 (예: Apple, BTC, 삼성전자, Samsung)"
+          placeholder="주식 · 암호화폐 검색 (예: Apple, BTC, Bitcoin)"
           value={query}
           onChange={(e) => {
             setQuery(e.target.value);
@@ -181,39 +150,6 @@ export function UnifiedSearchBar() {
                             }`}
                           >
                             {result.type === 'ETP' ? 'ETF' : '주식'}
-                          </span>
-                        </button>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              {/* 한국 주식 섹션 */}
-              {koreanStockResults && koreanStockResults.length > 0 && (
-                <div>
-                  <div className="px-4 py-2 bg-muted/50 text-xs font-semibold text-muted-foreground">
-                    한국 주식
-                  </div>
-                  <ul className="divide-y divide-border">
-                    {koreanStockResults.map((result: KoreanStockSearchResult) => (
-                      <li key={result.symbol}>
-                        <button
-                          onClick={() => handleSelectKoreanStock(result.symbol)}
-                          className="w-full text-left px-4 py-3 hover:bg-muted/50 transition-colors flex items-start justify-between"
-                        >
-                          <div className="flex-1">
-                            <p className="font-semibold">{result.symbol}</p>
-                            <p className="text-sm text-muted-foreground truncate">
-                              {result.name}
-                            </p>
-                          </div>
-                          <span className={`ml-2 text-xs px-2 py-1 rounded flex-shrink-0 ${
-                            result.type === 'etf'
-                              ? 'bg-blue-500/20 text-blue-400'
-                              : 'bg-green-500/20 text-green-400'
-                          }`}>
-                            {result.type === 'etf' ? 'ETF' : result.market}
                           </span>
                         </button>
                       </li>

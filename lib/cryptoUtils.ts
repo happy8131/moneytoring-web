@@ -1,6 +1,6 @@
-export type CryptoPeriod = '1D' | '1W' | '1M' | '3M' | '1Y' | 'All';
+export type CryptoPeriod = '1D' | '1W' | '1M' | '3M' | '1Y';
 
-export const CRYPTO_PERIODS: CryptoPeriod[] = ['1D', '1W', '1M', '3M', '1Y', 'All'];
+export const CRYPTO_PERIODS: CryptoPeriod[] = ['1D', '1W', '1M', '3M', '1Y'];
 
 export const CRYPTO_PERIOD_LABELS: Record<CryptoPeriod, string> = {
   '1D': '1일',
@@ -8,7 +8,6 @@ export const CRYPTO_PERIOD_LABELS: Record<CryptoPeriod, string> = {
   '1M': '1개월',
   '3M': '3개월',
   '1Y': '1년',
-  'All': '전체',
 };
 
 export function cryptoPeriodToDays(period: CryptoPeriod): string {
@@ -18,7 +17,6 @@ export function cryptoPeriodToDays(period: CryptoPeriod): string {
     '1M': '30',
     '3M': '90',
     '1Y': '365',
-    'All': '365',
   };
   return map[period];
 }

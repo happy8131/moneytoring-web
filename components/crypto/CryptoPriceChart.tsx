@@ -21,8 +21,20 @@ function getXAxisInterval(dataLength: number, period: CryptoPeriod): number {
   // 목표: 10-15개의 라벨만 표시
   const targetTicks = 12;
 
-  if (['1W', '1M', '3M', '6M'].includes(period)) {
-    return 0; // 모든 데이터 포인트 표시
+  if (period === '1D') {
+    return Math.ceil(dataLength / 8); // 1일: 약 8개의 라벨
+  }
+
+  if (period === '1W') {
+    return Math.ceil(dataLength / 10); // 1주: 약 10개의 라벨
+  }
+
+  if (period === '1M') {
+    return Math.ceil(dataLength / 12); // 1개월: 약 12개의 라벨
+  }
+
+  if (['3M', '6M'].includes(period)) {
+    return Math.ceil(dataLength / 15); // 약 10-15개의 라벨만 표시
   }
 
   if (['YTD', '1Y', '2Y'].includes(period)) {
@@ -96,20 +108,42 @@ export function CryptoPriceChart({ id, onPeriodChange }: CryptoPriceChartProps) 
       <div className="h-80">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={chartData} margin={{ top: 5, right: 30, left: 0, bottom: 5 }}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+            <CartesianGrid
+              strokeDasharray="3 3"
+              stroke="#e5e7eb"
+              vertical={false}
+            />
             <XAxis
               dataKey="date"
               tick={{ fontSize: 12 }}
               interval={getXAxisInterval(chartData.length, selectedPeriod)}
               tickFormatter={(value) => {
-                const parts = value.split(/[/:]/);
-                return parts[parts.length - 1]; // 마지막 부분만 표시
+                if (!value) return '';
+
+                const parts = value.split(/[\s/:-]/);
+
+                if (selectedPeriod === '1D') {
+                  // 1일: HH:mm 형식 표시
+                  if (parts.length >= 3) {
+                    return `${parts[1]}:${parts[2]}`;
+                  }
+                }
+
+                // 다른 기간 (1주, 1개월, 3개월 등): MM/DD 또는 M/D 형식
+                if (parts.length >= 2) {
+                  const month = parseInt(parts[0], 10);
+                  const day = parseInt(parts[1], 10);
+                  return `${month}/${day}`;
+                }
+
+                return value;
               }}
             />
             <YAxis
               domain={[minPrice - padding, maxPrice + padding]}
               tick={{ fontSize: 12 }}
               tickFormatter={(value) => formatCryptoPrice(value)}
+              tickCount={['1W', '1M', '3M'].includes(selectedPeriod) ? 5 : undefined}
             />
             <Tooltip
               contentStyle={{
@@ -139,9 +173,13 @@ export function CryptoPriceChart({ id, onPeriodChange }: CryptoPriceChartProps) 
       <div className="h-24">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data={chartData} margin={{ top: 5, right: 30, left: 0, bottom: 5 }}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+            <CartesianGrid
+              strokeDasharray="3 3"
+              stroke="#e5e7eb"
+              vertical={false}
+            />
             <XAxis dataKey="date" hide />
-            <YAxis tick={{ fontSize: 12 }} tickFormatter={formatVolumeAxis} />
+            <YAxis tick={{ fontSize: 12 }} tickFormatter={formatVolumeAxis} tickCount={['1W', '1M', '3M'].includes(selectedPeriod) ? 3 : undefined} />
             <Tooltip
               contentStyle={{
                 backgroundColor: '#ffffff',

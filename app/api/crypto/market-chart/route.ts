@@ -17,7 +17,7 @@ function formatChartDate(timestamp: number, days: number): string {
     // MM/DD 형식
     return `${String(date.getMonth() + 1).padStart(2, '0')}/${String(date.getDate()).padStart(2, '0')}`;
   } else {
-    // YYYY-MM-DD 형식
+    // YYYY-MM-DD 형식 (365일 이상 또는 전체 데이터)
     return date.toISOString().split('T')[0];
   }
 }
@@ -69,6 +69,8 @@ export async function GET(request: NextRequest) {
     const dataLength = Math.min(raw.prices.length, raw.total_volumes.length);
     const data: CryptoChartPoint[] = [];
 
+    const parsedDays = parseInt(daysParam);
+
     for (let i = 0; i < dataLength; i++) {
       const [priceTs, price] = raw.prices[i];
       const [_, volume] = raw.total_volumes[i];
@@ -76,7 +78,7 @@ export async function GET(request: NextRequest) {
 
       data.push({
         t: Math.floor(priceTs / 1000), // 밀리초 → 초
-        date: formatChartDate(priceTs, parseInt(daysParam)),
+        date: formatChartDate(priceTs, parsedDays),
         price,
         volume,
         marketCap,
@@ -85,7 +87,7 @@ export async function GET(request: NextRequest) {
 
     const result: CryptoMarketChartResponse = {
       id,
-      days: parseInt(daysParam),
+      days: parsedDays,
       data,
       fetchedAt: new Date().toISOString(),
     };
