@@ -1,19 +1,40 @@
-'use client';
-
-import { useState } from 'react';
+import { headers } from 'next/headers';
 import { StockSectorHeatmap } from '@/components/stocks/StockSectorHeatmap';
-import { useSectorHeatmap } from '@/hooks/useSectorHeatmap';
-import { RefreshCw } from 'lucide-react';
+import { RefreshHeatmapButton } from '@/components/stocks/RefreshHeatmapButton';
+import { SectorHeatmapData } from '@/lib/sectorHeatmapUtils';
 
-export default function SectorHeatmapPage() {
-  const [isRefreshing, setIsRefreshing] = useState(false);
-  const { refetch } = useSectorHeatmap();
+// 페이지는 동적 렌더링, 캐싱은 fetch 레벨(API의 next: { revalidate: 30 })에서 처리
+export const dynamic = 'force-dynamic';
 
-  const handleRefresh = async () => {
-    setIsRefreshing(true);
-    await refetch();
-    setIsRefreshing(false);
-  };
+export const metadata = {
+  title: 'Sector Heatmap - Moneytoring',
+  description: 'S&P 500 Performance by Sector',
+};
+
+async function fetchSectorHeatmap(): Promise<{ data: SectorHeatmapData[] } | null> {
+  try {
+    const headersList = await headers();
+    const protocol = headersList.get('x-forwarded-proto') || 'http';
+    const host = headersList.get('x-forwarded-host') || headersList.get('host') || 'localhost:3000';
+    const baseUrl = `${protocol}://${host}`;
+
+    const res = await fetch(`${baseUrl}/api/stocks/sector-heatmap`, {
+      next: { revalidate: 60 },
+    });
+
+    if (!res.ok) {
+      return null;
+    }
+
+    return res.json();
+  } catch (error) {
+    console.error('Failed to fetch sector heatmap:', error);
+    return null;
+  }
+}
+
+export default async function SectorHeatmapPage() {
+  const heatmapData = await fetchSectorHeatmap();
 
   return (
     <div className="min-h-screen bg-background p-6">
@@ -25,14 +46,7 @@ export default function SectorHeatmapPage() {
             <p className="text-muted-foreground mt-2">S&P 500 Performance by Sector</p>
           </div>
 
-          <button
-            onClick={handleRefresh}
-            disabled={isRefreshing}
-            className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            <RefreshCw size={20} className={isRefreshing ? 'animate-spin' : ''} />
-            Refresh
-          </button>
+          <RefreshHeatmapButton />
         </div>
 
         {/* Disclaimer */}
@@ -53,7 +67,14 @@ export default function SectorHeatmapPage() {
 
         {/* Heatmap */}
         <div className="rounded-lg border border-border bg-card p-6">
-          <StockSectorHeatmap />
+          {heatmapData?.data ? (
+            <StockSectorHeatmap data={heatmapData.data} />
+          ) : (
+            <div className="text-center py-12">
+              <p className="text-muted-foreground">데이터를 불러올 수 없습니다.</p>
+              <p className="text-sm text-muted-foreground mt-2">잠시 후 다시 시도해주세요.</p>
+            </div>
+          )}
         </div>
 
         {/* Legend */}

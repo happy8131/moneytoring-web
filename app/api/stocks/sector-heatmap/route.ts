@@ -1,118 +1,140 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { SP500_SECTORS, SectorHeatmapData, getSectorOrder } from '@/lib/sectorHeatmapUtils';
-import { env } from '@/lib/env';
+import { SP500_SECTORS, SectorHeatmapData, SectorHeatmapStock, getSectorOrder } from '@/lib/sectorHeatmapUtils';
 
 interface FinnhubQuote {
-  o: number;
+  c: number;
+  d: number;
+  dp: number;
   h: number;
   l: number;
-  c: number;
+  o: number;
   pc: number;
   t: number;
 }
 
-async function fetchSingleQuote(symbol: string, apiKey: string, retries: number = 2): Promise<FinnhubQuote | null> {
-  for (let attempt = 0; attempt < retries; attempt++) {
-    try {
-      const url = `https://finnhub.io/api/v1/quote?symbol=${symbol}&token=${apiKey}`;
-      const res = await fetch(url);
+interface QuoteData {
+  symbol: string;
+  currentPrice: number;
+  change: number;
+  percentChange: number;
+}
 
-      // 429 (Too Many Requests) 에러 시 대기 후 재시도
-      if (res.status === 429) {
-        const waitTime = Math.pow(2, attempt) * 2000; // 2s, 4s
-        if (attempt < retries - 1) {
-          await new Promise((resolve) => setTimeout(resolve, waitTime));
-        }
-        continue;
-      }
+async function fetchSingleQuote(symbol: string, apiKey: string): Promise<QuoteData> {
+  const url = `https://finnhub.io/api/v1/quote?symbol=${symbol}&token=${apiKey}`;
+  // Next.js fetch 캐싱 사용 (30초) - 같은 종목 중복 호출 방지
+  const res = await fetch(url, {
+    next: { revalidate: 30 },
+  });
 
-      if (!res.ok) {
-        return null;
-      }
-
-      const data = await res.json();
-
-      // 유효한 데이터인지 확인
-      if (!data.c || data.c === 0) {
-        return null;
-      }
-
-      return data;
-    } catch (error) {
-      if (attempt < retries - 1) {
-        await new Promise((resolve) => setTimeout(resolve, 1000));
-      }
-    }
+  if (!res.ok) {
+    throw new Error(`HTTP ${res.status}`);
   }
 
-  return null;
+  const raw: FinnhubQuote = await res.json();
+
+  if (raw.c === 0 && raw.t === 0) {
+    throw new Error(`심볼 없음: ${symbol}`);
+  }
+
+  return {
+    symbol: symbol.toUpperCase(),
+    currentPrice: raw.c,
+    change: raw.d,
+    percentChange: raw.dp,
+  };
 }
 
 export async function GET(request: NextRequest) {
+  const startTime = Date.now();
+  const apiKey = process.env.FINNHUB_API_KEY;
+
+  if (!apiKey) {
+    return NextResponse.json(
+      { data: [], fetchedAt: new Date().toISOString(), error: 'API 키 없음' },
+      { status: 200 }
+    );
+  }
+
   try {
-    if (!env.finnhubApiKey) {
-      return NextResponse.json({ data: [], fetchedAt: new Date().toISOString() }, { status: 200 });
-    }
-
-    const result: SectorHeatmapData[] = [];
     const sectorOrder = getSectorOrder();
-    const requestStartTime = Date.now();
 
+    // 1단계: 모든 unique 종목 수집 (중복 제거)
+    const allSymbolsSet = new Set<string>();
     for (const sector of sectorOrder) {
       const symbols = SP500_SECTORS[sector];
-      if (!symbols) continue;
-
-      const stocks = [];
-
-      // 순차적 처리 (한 번에 1개씩만 요청) - 레이트 리미트 회피
-      for (let i = 0; i < symbols.length; i++) {
-        const symbol = symbols[i];
-        const quote = await fetchSingleQuote(symbol, env.finnhubApiKey, 2);
-
-        if (quote) {
-          const change = quote.c - quote.pc;
-          const percentChange = quote.pc !== 0 ? (change / quote.pc) * 100 : 0;
-
-          stocks.push({
-            symbol,
-            name: symbol,
-            currentPrice: quote.c,
-            change,
-            percentChange,
-          });
-        }
-
-        // 매 요청 후 짧은 지연 (레이트 리미트 회피)
-        if (i < symbols.length - 1) {
-          await new Promise((resolve) => setTimeout(resolve, 300));
-        }
+      if (symbols) {
+        symbols.forEach(s => allSymbolsSet.add(s));
       }
+    }
+    const allSymbols = Array.from(allSymbolsSet);
 
-      if (stocks.length > 0) {
-        result.push({
-          sector,
-          count: stocks.length,
-          stocks,
-        });
+    // 2단계: chunk 단위로 병렬 처리 (quotes endpoint와 동일 패턴)
+    const CHUNK_SIZE = 10;
+    const quotesMap = new Map<string, QuoteData>();
+
+    for (let i = 0; i < allSymbols.length; i += CHUNK_SIZE) {
+      const chunk = allSymbols.slice(i, i + CHUNK_SIZE);
+
+      const chunkResults = await Promise.allSettled(
+        chunk.map((symbol) => fetchSingleQuote(symbol, apiKey))
+      );
+
+      chunkResults.forEach((result) => {
+        if (result.status === 'fulfilled') {
+          quotesMap.set(result.value.symbol, result.value);
+        }
+      });
+
+      // chunk 간 400ms 딜레이 (rate limit 회피)
+      if (i + CHUNK_SIZE < allSymbols.length) {
+        await new Promise((resolve) => setTimeout(resolve, 400));
       }
-
-      // 섹터 전환 시 추가 지연
-      await new Promise((resolve) => setTimeout(resolve, 500));
     }
 
-    const totalTime = Date.now() - requestStartTime;
+    // 3단계: 섹터별로 데이터 정리
+    const result: SectorHeatmapData[] = [];
+    for (const sector of sectorOrder) {
+      const symbols = SP500_SECTORS[sector];
+      if (!symbols) {
+        result.push({ sector, stocks: [], count: 0 });
+        continue;
+      }
+
+      const stocks: SectorHeatmapStock[] = [];
+      for (const symbol of symbols) {
+        const quote = quotesMap.get(symbol.toUpperCase());
+        if (quote) {
+          stocks.push({
+            symbol: quote.symbol,
+            name: quote.symbol,
+            currentPrice: quote.currentPrice,
+            change: quote.change,
+            percentChange: quote.percentChange,
+          });
+        }
+      }
+
+      result.push({ sector, stocks, count: stocks.length });
+    }
+
+    const elapsed = Date.now() - startTime;
+    console.log(`[Sector Heatmap] ${quotesMap.size}/${allSymbols.length} quotes in ${elapsed}ms`);
 
     return NextResponse.json(
-      { data: result, fetchedAt: new Date().toISOString() },
+      {
+        data: result,
+        fetchedAt: new Date().toISOString(),
+        meta: { elapsed, fetched: quotesMap.size, total: allSymbols.length },
+      },
       {
         headers: { 'Cache-Control': 'public, s-maxage=600, stale-while-revalidate=7200' },
       }
     );
   } catch (error) {
-    const errorMsg = error instanceof Error ? error.message : '알 수 없는 오류';
+    console.error('Sector heatmap error:', error);
     return NextResponse.json(
-      { error: errorMsg, data: [] },
-      { status: 500 }
+      { data: [], error: 'API 오류' },
+      { status: 200 }
     );
   }
 }

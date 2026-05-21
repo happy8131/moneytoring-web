@@ -1,16 +1,17 @@
-// S&P 500 주요 섹터별 상위 10개 종목
+// S&P 500 주요 섹터별 상위 5개 종목 (Finnhub Free tier 60 calls/min 한도 내 안정)
+// 11 × 5 = 55개 (한도 내 100% 안정성 보장)
 export const SP500_SECTORS: Record<string, string[]> = {
-  Technology: ['AAPL', 'MSFT', 'NVDA', 'META', 'GOOGL', 'AVGO', 'NFLX', 'CRM', 'NOW', 'INTU'],
-  'Healthcare': ['JNJ', 'UNH', 'LLY', 'ABBV', 'MRK', 'PFE', 'AMGN', 'AZN', 'TMO', 'ISRG'],
-  'Financials': ['JPM', 'BAC', 'WFC', 'GS', 'MS', 'BLK', 'AXP', 'BK', 'PNC', 'USB'],
-  'Industrials': ['BA', 'CAT', 'RTX', 'HON', 'ITW', 'DE', 'LMT', 'MMM', 'GE', 'NOC'],
-  'Consumer Discretionary': ['TSLA', 'AMZN', 'HD', 'MCD', 'SBUX', 'NKE', 'APTV', 'RCL', 'MAR', 'ORLY'],
-  'Consumer Staples': ['PG', 'KO', 'WMT', 'MO', 'CL', 'KMB', 'ADM', 'JXN', 'GIS', 'CPB'],
-  'Energy': ['XOM', 'CVX', 'COP', 'SLB', 'EOG', 'MPC', 'PSX', 'VLO', 'HES', 'OXY'],
-  'Utilities': ['NEE', 'DUK', 'SO', 'AEP', 'EXELON', 'SRE', 'PEG', 'EXC', 'AWK', 'LNT'],
-  'Real Estate': ['DLR', 'PLD', 'SPG', 'EQR', 'ARE', 'WELL', 'PSA', 'EQIX', 'KIM', 'AVB'],
-  'Materials': ['LIN', 'NEM', 'MOS', 'FCX', 'SCCO', 'ALB', 'DD', 'APD', 'SHW', 'PPG'],
-  'Communication Services': ['GOOG', 'META', 'NFLX', 'DIS', 'CMCSA', 'VZ', 'T', 'PARA', 'LUMN', 'TMUS'],
+  Technology: ['AAPL', 'MSFT', 'NVDA', 'META', 'GOOGL'],
+  'Healthcare': ['JNJ', 'UNH', 'LLY', 'ABBV', 'MRK'],
+  'Financials': ['JPM', 'BAC', 'WFC', 'GS', 'MS'],
+  'Industrials': ['BA', 'CAT', 'RTX', 'HON', 'LMT'],
+  'Consumer Discretionary': ['TSLA', 'AMZN', 'HD', 'MCD', 'NKE'],
+  'Consumer Staples': ['PG', 'KO', 'WMT', 'COST', 'PEP'],
+  'Energy': ['XOM', 'CVX', 'COP', 'SLB', 'EOG'],
+  'Utilities': ['NEE', 'DUK', 'SO', 'AEP', 'D'],
+  'Real Estate': ['PLD', 'AMT', 'EQIX', 'WELL', 'SPG'],
+  'Materials': ['LIN', 'SHW', 'APD', 'FCX', 'ECL'],
+  'Communication Services': ['NFLX', 'DIS', 'CMCSA', 'VZ', 'T'],
 };
 
 export interface SectorHeatmapStock {
