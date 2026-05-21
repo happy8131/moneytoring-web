@@ -1,5 +1,7 @@
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 import { UnifiedSearchBar } from '@/components/dashboard/UnifiedSearchBar';
+import { TrendingUp } from 'lucide-react';
 
 export const metadata = {
   title: '대시보드 - Moneytoring',
@@ -29,11 +31,21 @@ const CryptoMarketStatus = dynamic(
 export default function DashboardPage() {
   return (
     <div className="space-y-6">
-      <div>
-        <h1 className="text-3xl font-bold tracking-tight">대시보드</h1>
-        <p className="text-muted-foreground">
-          실시간 주식 및 암호화폐 가격을 확인하세요.
-        </p>
+      <div className="flex items-start justify-between">
+        <div>
+          <h1 className="text-3xl font-bold tracking-tight">대시보드</h1>
+          <p className="text-muted-foreground">
+            실시간 주식 및 암호화폐 가격을 확인하세요.
+          </p>
+        </div>
+        <Link
+          href="/indices/sector-heatmap"
+          className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors whitespace-nowrap"
+        >
+          <TrendingUp size={20} />
+          <span className="hidden sm:inline">Sector Heatmap</span>
+          <span className="sm:hidden">Heatmap</span>
+        </Link>
       </div>
 
       {/* 종목 검색 */}
