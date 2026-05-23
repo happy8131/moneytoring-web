@@ -7,6 +7,7 @@ import {
   LayoutDashboard,
   Briefcase,
   Newspaper,
+  Calendar,
   Menu,
   X,
 } from 'lucide-react';
@@ -18,6 +19,7 @@ const navItems = [
   { href: '/dashboard', label: '대시보드', icon: LayoutDashboard },
   { href: '/portfolio', label: '포트폴리오', icon: Briefcase },
   { href: '/news', label: '뉴스', icon: Newspaper },
+  { href: '/economic-calendar', label: '경제지표', icon: Calendar },
 ] as const;
 
 export function Sidebar() {

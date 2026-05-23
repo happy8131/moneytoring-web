@@ -28,6 +28,11 @@ const CryptoMarketStatus = dynamic(
   { loading: () => <div className="animate-pulse p-4">로딩 중...</div> }
 );
 
+const ForexCommoditiesTable = dynamic(
+  () => import('@/components/dashboard/ForexCommoditiesTable').then((m) => m.ForexCommoditiesTable),
+  { loading: () => <div className="animate-pulse p-4">로딩 중...</div> }
+);
+
 export default function DashboardPage() {
   return (
     <div className="space-y-6">
@@ -65,6 +70,11 @@ export default function DashboardPage() {
         <CryptoMarketStatus />
       </section>
 
+      {/* 외환 & 원자재 */}
+      <section className="space-y-4">
+        <h2 className="text-xl font-semibold">외환 & 원자재</h2>
+        <ForexCommoditiesTable />
+      </section>
 
       <div className="grid gap-6 lg:grid-cols-2">
         <div>
