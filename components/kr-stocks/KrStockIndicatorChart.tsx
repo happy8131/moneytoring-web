@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { useKrStockCandle } from '@/hooks/useKrStockCandle';
 import { Period } from '@/lib/stockUtils';
 import { calcIndicatorsFromCandles, buildIndicatorChartData } from '@/lib/krStockUtils';
@@ -16,12 +17,65 @@ import {
 } from 'recharts';
 import { Skeleton } from '@/components/ui/skeleton';
 
+// X축 라벨 간격 계산 함수 (기간별, 반응형)
+function getIndicatorInterval(dataLength: number, period: Period, isMobile: boolean): number {
+  if (['1W'].includes(period)) {
+    return 0; // 1주: 모두 표시
+  }
+
+  if (isMobile) {
+    // 모바일: 레이블 수 줄임
+    if (period === '1M') {
+      return Math.ceil(dataLength / 6); // 1개월: 약 4-5개 레이블
+    }
+    if (period === '3M') {
+      return 15; // 3개월: 간격 15 = 약 4개 레이블
+    }
+    if (period === '6M') {
+      return Math.ceil(dataLength / 8);
+    }
+    if (['YTD', '1Y'].includes(period)) {
+      return Math.ceil(dataLength / 8);
+    }
+    if (period === '2Y') {
+      return Math.ceil(dataLength / 6);
+    }
+    return Math.ceil(dataLength / 5); // 5Y, 10Y, All
+  } else {
+    // 데스크톱: 원래대로
+    if (period === '1M') {
+      return 0; // 1개월: 모두 표시 (원본)
+    }
+    if (['3M', '6M'].includes(period)) {
+      return Math.ceil(dataLength / 15);
+    }
+    if (['YTD', '1Y'].includes(period)) {
+      return Math.ceil(dataLength / 15);
+    }
+    if (period === '2Y') {
+      return Math.ceil(dataLength / 12);
+    }
+    return Math.ceil(dataLength / 12); // 5Y, 10Y, All
+  }
+}
+
 interface KrStockIndicatorChartProps {
   symbol: string;
   period: Period;
 }
 
 export function KrStockIndicatorChart({ symbol, period }: KrStockIndicatorChartProps) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   const { data: candleResponse, isLoading, error } = useKrStockCandle({
     symbol,
     period,
@@ -72,7 +126,7 @@ export function KrStockIndicatorChart({ symbol, period }: KrStockIndicatorChartP
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={chartData} margin={{ top: 5, right: 30, left: 0, bottom: 5 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-              <XAxis dataKey="date" tick={{ fontSize: 12 }} />
+              <XAxis dataKey="date" tick={{ fontSize: 12 }} interval={getIndicatorInterval(chartData.length, period, isMobile)} minTickGap={isMobile ? 30 : 0} />
               <YAxis domain={[0, 100]} tick={{ fontSize: 12 }} />
               <Tooltip
                 contentStyle={{
@@ -108,7 +162,7 @@ export function KrStockIndicatorChart({ symbol, period }: KrStockIndicatorChartP
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={chartData} margin={{ top: 5, right: 30, left: 0, bottom: 5 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-              <XAxis dataKey="date" tick={{ fontSize: 12 }} />
+              <XAxis dataKey="date" tick={{ fontSize: 12 }} interval={getIndicatorInterval(chartData.length, period, isMobile)} minTickGap={isMobile ? 30 : 0} />
               <YAxis tick={{ fontSize: 12 }} />
               <Tooltip
                 contentStyle={{
