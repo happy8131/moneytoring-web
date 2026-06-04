@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useCryptoMarketChart } from '@/hooks/useCryptoMarketChart';
 import { CRYPTO_PERIODS, CRYPTO_PERIOD_LABELS, formatCryptoPrice, formatVolumeAxis, type CryptoPeriod } from '@/lib/cryptoUtils';
 import {
@@ -16,34 +16,41 @@ import {
 } from 'recharts';
 import { Skeleton } from '@/components/ui/skeleton';
 
-// X축 라벨 간격 계산 함수
-function getXAxisInterval(dataLength: number, period: CryptoPeriod): number {
-  // 목표: 10-15개의 라벨만 표시
-  const targetTicks = 12;
-
-  if (period === '1D') {
-    return Math.ceil(dataLength / 8); // 1일: 약 8개의 라벨
+// X축 라벨 간격 계산 함수 (반응형)
+function getXAxisInterval(dataLength: number, period: CryptoPeriod, isMobile: boolean): number {
+  if (isMobile) {
+    // 모바일: 레이블 수 줄임
+    switch (period) {
+      case '1D':
+        return Math.ceil(dataLength / 6); // 1일: 약 4개 레이블
+      case '1W':
+        return Math.ceil(dataLength / 6); // 1주: 약 4-5개 레이블
+      case '1M':
+        return Math.ceil(dataLength / 6); // 1개월: 약 4-5개 레이블
+      case '3M':
+        return 15; // 3개월: 간격 15 = 약 4개 레이블
+      case '1Y':
+        return Math.ceil(dataLength / 8); // 1년
+      default:
+        return Math.ceil(dataLength / 6);
+    }
+  } else {
+    // 데스크톱: 원래대로
+    switch (period) {
+      case '1D':
+        return Math.ceil(dataLength / 8);
+      case '1W':
+        return Math.ceil(dataLength / 10);
+      case '1M':
+        return Math.ceil(dataLength / 12);
+      case '3M':
+        return Math.ceil(dataLength / 15);
+      case '1Y':
+        return Math.ceil(dataLength / 15);
+      default:
+        return Math.ceil(dataLength / 12);
+    }
   }
-
-  if (period === '1W') {
-    return Math.ceil(dataLength / 10); // 1주: 약 10개의 라벨
-  }
-
-  if (period === '1M') {
-    return Math.ceil(dataLength / 12); // 1개월: 약 12개의 라벨
-  }
-
-  if (['3M', '6M'].includes(period)) {
-    return Math.ceil(dataLength / 15); // 약 10-15개의 라벨만 표시
-  }
-
-  if (['YTD', '1Y', '2Y'].includes(period)) {
-    // 더 촘촘한 라벨
-    return Math.ceil(dataLength / 15);
-  }
-
-  // 5Y, 10Y, All (월봉 또는 주봉)
-  return Math.ceil(dataLength / targetTicks);
 }
 
 interface CryptoPriceChartProps {
@@ -53,6 +60,16 @@ interface CryptoPriceChartProps {
 
 export function CryptoPriceChart({ id, onPeriodChange }: CryptoPriceChartProps) {
   const [selectedPeriod, setSelectedPeriod] = useState<CryptoPeriod>('1M');
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const handlePeriodChange = (period: CryptoPeriod) => {
     setSelectedPeriod(period);
@@ -116,7 +133,8 @@ export function CryptoPriceChart({ id, onPeriodChange }: CryptoPriceChartProps) 
             <XAxis
               dataKey="date"
               tick={{ fontSize: 12 }}
-              interval={getXAxisInterval(chartData.length, selectedPeriod)}
+              interval={getXAxisInterval(chartData.length, selectedPeriod, isMobile)}
+              minTickGap={isMobile ? 30 : 0}
               tickFormatter={(value) => {
                 if (!value) return '';
 
