@@ -1,8 +1,15 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { useCryptoDetail } from '@/hooks/useCryptoDetail';
 import { formatCryptoPrice } from '@/lib/cryptoUtils';
 import { Skeleton } from '@/components/ui/skeleton';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
 import { TrendingUp, TrendingDown, Globe, MessageSquare, Code } from 'lucide-react';
 
 interface CryptoDetailHeaderProps {
@@ -10,8 +17,18 @@ interface CryptoDetailHeaderProps {
 }
 
 export function CryptoDetailHeader({ id }: CryptoDetailHeaderProps) {
+  const [isMobile, setIsMobile] = useState(false);
   const { data: response, isLoading } = useCryptoDetail({ id });
   const detail = response?.data;
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   if (isLoading) {
     return (
@@ -47,7 +64,22 @@ export function CryptoDetailHeader({ id }: CryptoDetailHeaderProps) {
               {detail.symbol} · Rank #{marketData.marketCapRank || '-'}
             </span>
           </div>
-          <p className="text-sm text-muted-foreground mb-4">{detail.description}</p>
+          {isMobile && detail.description && detail.description.length > 30 ? (
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <p className="text-sm text-muted-foreground mb-4 cursor-help">
+                    {detail.description.slice(0, 30)}...
+                  </p>
+                </TooltipTrigger>
+                <TooltipContent className="max-w-sm">
+                  <p>{detail.description}</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          ) : (
+            <p className="text-sm text-muted-foreground mb-4">{detail.description}</p>
+          )}
           <div className="flex gap-3">
             {detail.links.homepage && (
               <a

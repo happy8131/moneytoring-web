@@ -19,22 +19,22 @@ import { Skeleton } from '@/components/ui/skeleton';
 // X축 라벨 간격 계산 함수 (반응형)
 function getXAxisInterval(dataLength: number, period: CryptoPeriod, isMobile: boolean): number {
   if (isMobile) {
-    // 모바일: 레이블 수 최소화 (최대 3-4개)
+    // 모바일: 레이블 개수를 최소화 (3-4개만 표시)
     switch (period) {
       case '1D':
-        return Math.ceil(dataLength / 6); // 1일: ~24개 → 약 4개 레이블
+        return Math.max(Math.ceil(dataLength / 8), 3); // 1일: 약 3개
       case '1W':
-        return Math.ceil(dataLength / 5); // 1주: ~7-14개 → 약 3개 레이블
+        return Math.max(Math.ceil(dataLength / 6), 3); // 1주: 약 2-3개
       case '1M':
-        return Math.ceil(dataLength / 8); // 1개월: ~30개 → 약 4개 레이블
+        return Math.max(Math.ceil(dataLength / 8), 4); // 1개월: 약 3-4개
       case '3M':
-        // 3개월: ~90개 데이터 → 약 3-4개 레이블 (90/25 = 3.6)
-        return 25;
+        // 3개월: 극도로 큰 간격 (interval=80)
+        return 80;
       case '1Y':
-        // 1년: ~365개 데이터 → 약 4개 레이블 (365/90 = 4)
-        return 90;
+        // 1년: 매우 큰 간격 (최소 80 이상)
+        return Math.max(Math.ceil(dataLength / 50), 80);
       default:
-        return Math.ceil(dataLength / 6);
+        return Math.ceil(dataLength / 8);
     }
   } else {
     // 데스크톱: 원래대로
@@ -46,6 +46,7 @@ function getXAxisInterval(dataLength: number, period: CryptoPeriod, isMobile: bo
       case '1M':
         return Math.ceil(dataLength / 12);
       case '3M':
+        // 데스크톱 3M: 원래대로 MM/DD 형식으로 많은 레이블
         return Math.ceil(dataLength / 15);
       case '1Y':
         return Math.ceil(dataLength / 15);
@@ -136,7 +137,7 @@ export function CryptoPriceChart({ id, onPeriodChange }: CryptoPriceChartProps) 
               dataKey="date"
               tick={{ fontSize: 12 }}
               interval={getXAxisInterval(chartData.length, selectedPeriod, isMobile)}
-              minTickGap={isMobile ? 30 : 0}
+              minTickGap={isMobile ? (selectedPeriod === '3M' ? 150 : 100) : 0}
               tickFormatter={(value) => {
                 if (!value) return '';
 
@@ -149,7 +150,7 @@ export function CryptoPriceChart({ id, onPeriodChange }: CryptoPriceChartProps) 
                   }
                 }
 
-                // 다른 기간 (1주, 1개월, 3개월 등): MM/DD 또는 M/D 형식
+                // 모든 기간: MM/DD 또는 M/D 형식
                 if (parts.length >= 2) {
                   const month = parseInt(parts[0], 10);
                   const day = parseInt(parts[1], 10);
