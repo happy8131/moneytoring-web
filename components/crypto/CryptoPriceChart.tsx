@@ -19,18 +19,20 @@ import { Skeleton } from '@/components/ui/skeleton';
 // X축 라벨 간격 계산 함수 (반응형)
 function getXAxisInterval(dataLength: number, period: CryptoPeriod, isMobile: boolean): number {
   if (isMobile) {
-    // 모바일: 레이블 수 줄임
+    // 모바일: 레이블 수 줄임 (최대 4-5개)
     switch (period) {
       case '1D':
         return Math.ceil(dataLength / 6); // 1일: 약 4개 레이블
       case '1W':
-        return Math.ceil(dataLength / 6); // 1주: 약 4-5개 레이블
+        return Math.ceil(dataLength / 5); // 1주: 약 3-4개 레이블
       case '1M':
         return Math.ceil(dataLength / 6); // 1개월: 약 4-5개 레이블
       case '3M':
-        return 15; // 3개월: 간격 15 = 약 4개 레이블
+        // 3개월: 데이터 ~90개 → 약 4-5개 레이블 (90/18 = 5)
+        return Math.ceil(dataLength / 18);
       case '1Y':
-        return Math.ceil(dataLength / 8); // 1년
+        // 1년: 데이터 ~365개 → 약 5개 레이블 (365/73 = 5)
+        return Math.ceil(dataLength / 73);
       default:
         return Math.ceil(dataLength / 6);
     }
