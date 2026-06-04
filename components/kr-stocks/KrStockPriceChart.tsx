@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useKrStockCandle } from '@/hooks/useKrStockCandle';
 import { Period } from '@/lib/stockUtils';
 import { buildCandleChartData } from '@/lib/krStockUtils';
@@ -31,27 +31,46 @@ const PERIOD_LABELS: Record<Period, string> = {
   'All': '모두',
 };
 
-// X축 라벨 간격 계산 함수
-function getXAxisInterval(dataLength: number, period: Period): number {
-  // 목표: 10-15개의 라벨만 표시
-  const targetTicks = 12;
-
-  if (['1W', '1M', '3M', '6M'].includes(period)) {
-    return 0; // 모든 데이터 포인트 표시
+// X축 라벨 간격 계산 함수 (반응형)
+function getXAxisInterval(dataLength: number, period: Period, isMobile: boolean): number {
+  if (['1W'].includes(period)) {
+    return 0; // 1주: 모두 표시
   }
 
-  if (period === 'YTD' || period === '1Y') {
-    // 일봉이므로 더 많은 라벨 표시
-    return Math.ceil(dataLength / 15);
+  if (isMobile) {
+    // 모바일: 레이블 수 줄임
+    if (period === '1M') {
+      return Math.ceil(dataLength / 6); // 1개월: 약 4-5개 레이블
+    }
+    if (period === '3M') {
+      return 15; // 3개월: 간격 15 = 약 4개 레이블
+    }
+    if (period === '6M') {
+      return Math.ceil(dataLength / 8);
+    }
+    if (period === 'YTD' || period === '1Y') {
+      return Math.ceil(dataLength / 8);
+    }
+    if (period === '2Y') {
+      return Math.ceil(dataLength / 6);
+    }
+    return Math.ceil(dataLength / 5); // 5Y, 10Y, All
+  } else {
+    // 데스크톱: 원래대로
+    if (period === '1M') {
+      return 0; // 1개월: 모두 표시 (원본)
+    }
+    if (['3M', '6M'].includes(period)) {
+      return Math.ceil(dataLength / 15);
+    }
+    if (period === 'YTD' || period === '1Y') {
+      return Math.ceil(dataLength / 15);
+    }
+    if (period === '2Y') {
+      return Math.ceil(dataLength / 12);
+    }
+    return Math.ceil(dataLength / 12); // 5Y, 10Y, All
   }
-
-  if (period === '2Y') {
-    // 주봉이므로 적당한 간격
-    return Math.ceil(dataLength / 12);
-  }
-
-  // 5Y, 10Y, All (주봉 또는 월봉)
-  return Math.ceil(dataLength / targetTicks);
 }
 
 interface KrStockPriceChartProps {
@@ -61,6 +80,16 @@ interface KrStockPriceChartProps {
 
 export function KrStockPriceChart({ symbol, onPeriodChange }: KrStockPriceChartProps) {
   const [selectedPeriod, setSelectedPeriod] = useState<Period>('1M');
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const handlePeriodChange = (period: Period) => {
     setSelectedPeriod(period);
@@ -125,7 +154,8 @@ export function KrStockPriceChart({ symbol, onPeriodChange }: KrStockPriceChartP
             <XAxis
               dataKey="date"
               tick={{ fontSize: 12 }}
-              interval={getXAxisInterval(chartData.length, selectedPeriod)}
+              interval={getXAxisInterval(chartData.length, selectedPeriod, isMobile)}
+              minTickGap={isMobile ? 30 : 0}
               tickFormatter={(value) => {
                 const parts = value.split('-');
                 const isLongPeriod = ['5Y', '10Y', 'All'].includes(selectedPeriod);
