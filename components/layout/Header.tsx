@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { TrendingUp, Moon, Sun, Menu } from 'lucide-react';
+import { TrendingUp, Moon, Sun, Menu, LogOut } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import {
@@ -12,7 +12,15 @@ import {
   SheetTitle,
   SheetDescription,
 } from '@/components/ui/sheet';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 import { cn } from '@/lib/utils';
+import { createClient } from '@/lib/supabase/client';
 
 const navItems = [
   { href: '/dashboard', label: '대시보드' },
@@ -26,11 +34,34 @@ export function Header() {
   const [isDark, setIsDark] = useState(true);
   const [mounted, setMounted] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [user, setUser] = useState<{ email?: string; username?: string } | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     setMounted(true);
     const isDarkMode = document.documentElement.classList.contains('dark');
     setIsDark(isDarkMode);
+
+    // 현재 사용자 조회 (프로필 조회 제거 - 클라이언트 에러 방지)
+    const fetchUser = async () => {
+      try {
+        const supabase = createClient();
+        const { data: { user: authUser } } = await supabase.auth.getUser();
+
+        if (authUser) {
+          setUser({
+            email: authUser.email,
+            username: authUser.email?.split('@')[0], // 이메일에서 사용자명 추출
+          });
+        }
+      } catch (error) {
+        console.error('사용자 정보 조회 실패:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchUser();
   }, []);
 
   // 라우트 변경 시 모바일 메뉴 자동 닫기 (Link onClick + Sheet close의 타이밍 충돌 회피)
@@ -129,6 +160,55 @@ export function Header() {
                 <Moon className="h-5 w-5" />
               )}
             </Button>
+          )}
+
+          {/* 사용자 메뉴 */}
+          {!isLoading && (
+            <>
+              {user ? (
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="ghost" size="sm" className="gap-2">
+                      <div className="h-8 w-8 rounded-full bg-primary flex items-center justify-center text-xs font-bold text-primary-foreground">
+                        {user.username?.[0]?.toUpperCase() || user.email?.[0]?.toUpperCase()}
+                      </div>
+                      <span className="hidden sm:inline text-sm">
+                        {user.username || user.email}
+                      </span>
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end" className="w-48">
+                    <div className="px-2 py-1.5">
+                      <p className="text-sm font-medium">{user.username}</p>
+                      <p className="text-xs text-muted-foreground">{user.email}</p>
+                    </div>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem asChild>
+                      <form
+                        action={async () => {
+                          const { logout } = await import('@/app/actions/auth');
+                          await logout();
+                        }}
+                      >
+                        <button className="flex w-full items-center gap-2 text-red-600 dark:text-red-400">
+                          <LogOut className="h-4 w-4" />
+                          <span>로그아웃</span>
+                        </button>
+                      </form>
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              ) : (
+                <div className="flex gap-2">
+                  <Button asChild variant="ghost" size="sm">
+                    <Link href="/login">로그인</Link>
+                  </Button>
+                  <Button asChild size="sm">
+                    <Link href="/register">회원가입</Link>
+                  </Button>
+                </div>
+              )}
+            </>
           )}
         </div>
       </div>

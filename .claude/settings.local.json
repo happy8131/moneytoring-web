@@ -4,10 +4,24 @@
       "Read",
       "Bash",
       "mcp__shadcn",
-      "mcp__playwright",   
+      "mcp__playwright",
+      "mcp__supabase",
       "WebSearch",
       "PowerShell",
-      "mcp__shrimp-task-manager"
+      "mcp__shrimp-task-manager",
+      "Bash(timeout 60 bash -c 'until curl -s http://localhost:3000 > /dev/null 2>&1; do echo \"Waiting for server...\"; sleep 2; done; echo \"Server ready\"')",
+      "Bash(timeout 60 bash -c 'until curl -s http://localhost:3000 > /dev/null 2>&1; do sleep 2; done; echo \"Server ready\"')",
+      "Bash(timeout 240 curl -s http://localhost:3000/indices/sector-heatmap)",
+      "Bash(timeout 20 curl -s http://localhost:3001/api/stocks/quotes?symbols=AAPL)",
+      "WebFetch(domain:api.stlouisfed.org)"
     ]
-  }
+  },
+  "enabledMcpjsonServers": [
+    "playwright",
+    "context7",
+    "sequential-thinking",
+    "shadcn",
+    "shrimp-task-manager",
+    "supabase"
+  ]
 }
