@@ -19,56 +19,70 @@ export async function login(email: string, password: string) {
 }
 
 export async function register(email: string, password: string, username: string) {
-  const supabase = await createClient();
+  try {
+    const supabase = await createClient();
 
-  // 1. 닉네임 중복 확인
-  const { data: existingUser } = await supabase
-    .from('profiles')
-    .select('username')
-    .eq('username', username)
-    .single();
+    // 1. 닉네임 중복 확인
+    const { data: existingUser, error: checkError } = await supabase
+      .from('profiles')
+      .select('username')
+      .eq('username', username)
+      .maybeSingle(); // .single() 대신 .maybeSingle() 사용 (0행 또는 1행 반환)
 
-  if (existingUser) {
-    throw new Error('이미 사용 중인 닉네임입니다');
+    if (checkError) {
+      console.error('닉네임 중복 확인 오류:', checkError);
+      throw new Error(`닉네임 확인 실패: ${checkError.message}`);
+    }
+
+    if (existingUser) {
+      throw new Error('이미 사용 중인 닉네임입니다');
+    }
+
+    // 2. 회원가입
+    const { data: authData, error: signUpError } = await supabase.auth.signUp({
+      email,
+      password,
+    });
+
+    if (signUpError) {
+      console.error('회원가입 오류:', signUpError);
+      throw new Error(signUpError.message);
+    }
+
+    if (!authData.user) {
+      throw new Error('회원가입 중 오류가 발생했습니다');
+    }
+
+    // 3. 자동 로그인 (세션 설정)
+    const { error: signInError } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
+
+    if (signInError) {
+      console.error('자동 로그인 오류:', signInError);
+      // 로그인 실패해도 계속 진행 (프로필은 생성하되, 수동 로그인 필요)
+    }
+
+    // 4. 프로필 생성
+    const { error: profileError } = await supabase.from('profiles').insert({
+      id: authData.user.id,
+      username,
+    });
+
+    if (profileError) {
+      console.error('프로필 생성 오류:', profileError);
+      throw new Error(`프로필 생성 중 오류: ${profileError.message}`);
+    }
+
+    redirect('/');
+  } catch (error) {
+    console.error('[Register Error]', {
+      message: error instanceof Error ? error.message : String(error),
+      stack: error instanceof Error ? error.stack : undefined,
+    });
+    throw error;
   }
-
-  // 2. 회원가입
-  const { data: authData, error: signUpError } = await supabase.auth.signUp({
-    email,
-    password,
-  });
-
-  if (signUpError) {
-    throw new Error(signUpError.message);
-  }
-
-  if (!authData.user) {
-    throw new Error('회원가입 중 오류가 발생했습니다');
-  }
-
-  // 3. 자동 로그인 (세션 설정)
-  const { error: signInError } = await supabase.auth.signInWithPassword({
-    email,
-    password,
-  });
-
-  if (signInError) {
-    console.error('자동 로그인 오류:', signInError);
-    // 로그인 실패해도 계속 진행 (프로필은 생성하되, 수동 로그인 필요)
-  }
-
-  // 4. 프로필 생성
-  const { error: profileError } = await supabase.from('profiles').insert({
-    id: authData.user.id,
-    username,
-  });
-
-  if (profileError) {
-    console.error('프로필 생성 오류:', profileError);
-    throw new Error(`프로필 생성 중 오류: ${profileError.message}`);
-  }
-
-  redirect('/');
 }
 
 export async function logout() {
@@ -124,7 +138,7 @@ export async function checkUsernameExists(username: string): Promise<boolean> {
     .from('profiles')
     .select('username')
     .eq('username', username)
-    .single();
+    .maybeSingle(); // .single() 대신 .maybeSingle() 사용
 
   return !!data;
 }
