@@ -249,23 +249,307 @@
 | #12 | Task 3-2: 토론 게시판 | 종목별 토론, 핫 토픽, 전문가 구분 | 2-3일 | Phase 2 완료 | ⏳ 대기 |
 | #13 | Task 3-3: 포트폴리오 공유 | 공개/비공개, 벤치마킹, 팔로우 | 2일 | Phase 2 완료 | ⏳ 대기 |
 
+---
+
+### 📊 Phase 3 데이터베이스 스키마 설계
+
+#### 필수 테이블 구조
+
+**1. profiles (사용자 프로필 확장)**
+```sql
+-- Supabase Auth의 users 테이블 확장
+CREATE TABLE profiles (
+  id UUID PRIMARY KEY REFERENCES auth.users(id),
+  username TEXT UNIQUE NOT NULL,
+  bio TEXT,
+  avatar_url TEXT,
+  is_expert BOOLEAN DEFAULT FALSE,
+  expertise TEXT[], -- 전문 분야
+  followers_count INT DEFAULT 0,
+  created_at TIMESTAMP DEFAULT NOW(),
+  updated_at TIMESTAMP DEFAULT NOW()
+);
+```
+
+**2. posts (커뮤니티 포스트)**
+```sql
+CREATE TABLE posts (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id UUID NOT NULL REFERENCES profiles(id) ON DELETE CASCADE,
+  content TEXT NOT NULL,
+  image_url TEXT,
+  likes_count INT DEFAULT 0,
+  comments_count INT DEFAULT 0,
+  created_at TIMESTAMP DEFAULT NOW(),
+  updated_at TIMESTAMP DEFAULT NOW(),
+  
+  -- 인덱스
+  CONSTRAINT posts_content_not_empty CHECK (LENGTH(content) > 0)
+);
+CREATE INDEX idx_posts_user_id ON posts(user_id);
+CREATE INDEX idx_posts_created_at ON posts(created_at DESC);
+```
+
+**3. comments (포스트 댓글)**
+```sql
+CREATE TABLE comments (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  post_id UUID NOT NULL REFERENCES posts(id) ON DELETE CASCADE,
+  user_id UUID NOT NULL REFERENCES profiles(id) ON DELETE CASCADE,
+  content TEXT NOT NULL,
+  parent_comment_id UUID REFERENCES comments(id) ON DELETE CASCADE,
+  likes_count INT DEFAULT 0,
+  created_at TIMESTAMP DEFAULT NOW(),
+  updated_at TIMESTAMP DEFAULT NOW(),
+  
+  CONSTRAINT comments_content_not_empty CHECK (LENGTH(content) > 0)
+);
+CREATE INDEX idx_comments_post_id ON comments(post_id);
+CREATE INDEX idx_comments_user_id ON comments(user_id);
+CREATE INDEX idx_comments_parent_id ON comments(parent_comment_id);
+```
+
+**4. post_likes (포스트 좋아요)**
+```sql
+CREATE TABLE post_likes (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  post_id UUID NOT NULL REFERENCES posts(id) ON DELETE CASCADE,
+  user_id UUID NOT NULL REFERENCES profiles(id) ON DELETE CASCADE,
+  created_at TIMESTAMP DEFAULT NOW(),
+  
+  UNIQUE(post_id, user_id)
+);
+CREATE INDEX idx_post_likes_user_id ON post_likes(user_id);
+```
+
+**5. discussions (토론 게시판)**
+```sql
+CREATE TABLE discussions (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id UUID NOT NULL REFERENCES profiles(id) ON DELETE CASCADE,
+  symbol TEXT NOT NULL, -- 종목 코드 (AAPL, BTC 등)
+  title TEXT NOT NULL,
+  content TEXT NOT NULL,
+  is_pinned BOOLEAN DEFAULT FALSE,
+  views_count INT DEFAULT 0,
+  comments_count INT DEFAULT 0,
+  is_hot BOOLEAN DEFAULT FALSE, -- 핫 토픽 여부
+  created_at TIMESTAMP DEFAULT NOW(),
+  updated_at TIMESTAMP DEFAULT NOW()
+);
+CREATE INDEX idx_discussions_symbol ON discussions(symbol);
+CREATE INDEX idx_discussions_created_at ON discussions(created_at DESC);
+CREATE INDEX idx_discussions_is_hot ON discussions(is_hot);
+```
+
+**6. discussion_comments (토론 댓글)**
+```sql
+CREATE TABLE discussion_comments (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  discussion_id UUID NOT NULL REFERENCES discussions(id) ON DELETE CASCADE,
+  user_id UUID NOT NULL REFERENCES profiles(id) ON DELETE CASCADE,
+  content TEXT NOT NULL,
+  parent_comment_id UUID REFERENCES discussion_comments(id) ON DELETE CASCADE,
+  likes_count INT DEFAULT 0,
+  created_at TIMESTAMP DEFAULT NOW(),
+  updated_at TIMESTAMP DEFAULT NOW()
+);
+CREATE INDEX idx_discussion_comments_discussion_id ON discussion_comments(discussion_id);
+CREATE INDEX idx_discussion_comments_user_id ON discussion_comments(user_id);
+```
+
+**7. portfolio_shares (포트폴리오 공유)**
+```sql
+CREATE TABLE portfolio_shares (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id UUID NOT NULL REFERENCES profiles(id) ON DELETE CASCADE,
+  title TEXT NOT NULL,
+  description TEXT,
+  is_public BOOLEAN DEFAULT FALSE,
+  share_link TEXT UNIQUE,
+  views_count INT DEFAULT 0,
+  followers_count INT DEFAULT 0,
+  created_at TIMESTAMP DEFAULT NOW(),
+  updated_at TIMESTAMP DEFAULT NOW()
+);
+CREATE INDEX idx_portfolio_shares_user_id ON portfolio_shares(user_id);
+CREATE INDEX idx_portfolio_shares_is_public ON portfolio_shares(is_public);
+```
+
+**8. follows (사용자 팔로우)**
+```sql
+CREATE TABLE follows (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  follower_id UUID NOT NULL REFERENCES profiles(id) ON DELETE CASCADE,
+  following_id UUID NOT NULL REFERENCES profiles(id) ON DELETE CASCADE,
+  created_at TIMESTAMP DEFAULT NOW(),
+  
+  UNIQUE(follower_id, following_id),
+  CONSTRAINT no_self_follow CHECK (follower_id != following_id)
+);
+CREATE INDEX idx_follows_follower_id ON follows(follower_id);
+CREATE INDEX idx_follows_following_id ON follows(following_id);
+```
+
+**9. portfolio_benchmarks (포트폴리오 벤치마킹)**
+```sql
+CREATE TABLE portfolio_benchmarks (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  portfolio_id_1 UUID NOT NULL REFERENCES portfolio_shares(id) ON DELETE CASCADE,
+  portfolio_id_2 UUID NOT NULL REFERENCES portfolio_shares(id) ON DELETE CASCADE,
+  similarity_score NUMERIC DEFAULT 0, -- 0-100
+  created_at TIMESTAMP DEFAULT NOW(),
+  
+  UNIQUE(portfolio_id_1, portfolio_id_2)
+);
+```
+
+#### RLS (Row Level Security) 정책
+
+```sql
+-- 1. posts 테이블 RLS
+ALTER TABLE posts ENABLE ROW LEVEL SECURITY;
+
+-- 모든 사용자는 읽기 가능
+CREATE POLICY "posts_read_all" ON posts
+  FOR SELECT USING (true);
+
+-- 자신의 포스트만 수정/삭제 가능
+CREATE POLICY "posts_write_own" ON posts
+  FOR INSERT WITH CHECK (auth.uid() = user_id);
+
+CREATE POLICY "posts_update_own" ON posts
+  FOR UPDATE USING (auth.uid() = user_id);
+
+CREATE POLICY "posts_delete_own" ON posts
+  FOR DELETE USING (auth.uid() = user_id);
+
+-- 2. comments 테이블 RLS
+ALTER TABLE comments ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "comments_read_all" ON comments
+  FOR SELECT USING (true);
+
+CREATE POLICY "comments_write" ON comments
+  FOR INSERT WITH CHECK (auth.uid() = user_id);
+
+CREATE POLICY "comments_delete_own" ON comments
+  FOR DELETE USING (auth.uid() = user_id);
+
+-- 3. discussions 테이블 RLS
+ALTER TABLE discussions ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "discussions_read_all" ON discussions
+  FOR SELECT USING (true);
+
+CREATE POLICY "discussions_write" ON discussions
+  FOR INSERT WITH CHECK (auth.uid() = user_id);
+
+CREATE POLICY "discussions_delete_own" ON discussions
+  FOR DELETE USING (auth.uid() = user_id);
+
+-- 4. portfolio_shares 테이블 RLS
+ALTER TABLE portfolio_shares ENABLE ROW LEVEL SECURITY;
+
+-- 공개 포트폴리오는 모두 읽기 가능
+CREATE POLICY "portfolio_shares_read_public" ON portfolio_shares
+  FOR SELECT USING (is_public = true OR auth.uid() = user_id);
+
+-- 자신의 포트폴리오만 생성/수정/삭제 가능
+CREATE POLICY "portfolio_shares_write_own" ON portfolio_shares
+  FOR INSERT WITH CHECK (auth.uid() = user_id);
+
+CREATE POLICY "portfolio_shares_update_own" ON portfolio_shares
+  FOR UPDATE USING (auth.uid() = user_id);
+
+CREATE POLICY "portfolio_shares_delete_own" ON portfolio_shares
+  FOR DELETE USING (auth.uid() = user_id);
+```
+
+#### 마이그레이션 적용 방법
+
+**작업 전 (검사)**:
+```bash
+# Supabase MCP를 통해 기존 스키마 확인
+mcp__supabase__list_tables({ schemas: ["public"] })
+mcp__supabase__get_advisors({ type: "security" })
+mcp__supabase__get_advisors({ type: "performance" })
+```
+
+**마이그레이션 적용**:
+```bash
+# 마이그레이션 파일 생성 (supabase/migrations/YYYYMMDDHHMMSS_create_phase3_schema.sql)
+# 위의 SQL 스크립트를 파일에 저장
+
+# 마이그레이션 적용
+mcp__supabase__apply_migration({
+  name: "create_phase3_schema",
+  query: "-- 위의 SQL 스크립트 내용"
+})
+```
+
+**마이그레이션 후 (검증)**:
+```bash
+# TypeScript 타입 생성
+mcp__supabase__generate_typescript_types()
+
+# 보안/성능 검증
+mcp__supabase__get_advisors({ type: "security" })
+mcp__supabase__get_advisors({ type: "performance" })
+
+# 로그 확인
+mcp__supabase__get_logs({ service: "postgres" })
+```
+
+---
+
 ### Task 3-1: 커뮤니티 피드
 **기간**: 2-3일 | **상태**: ⏳ 대기 | **의존성**: Phase 2 완료
 
 **목표**: 사용자 포스트, 좋아요, 댓글, 프로필 기능 구현
 
+#### 데이터베이스 요구사항
+**필수 테이블**: `profiles`, `posts`, `comments`, `post_likes`
+- `profiles`: 사용자 프로필 (username, bio, avatar_url, is_expert)
+- `posts`: 포스트 (content, image_url, likes_count, comments_count)
+- `comments`: 댓글 (post_id, content, parent_comment_id - 답글 지원)
+- `post_likes`: 좋아요 (post_id, user_id)
+
+**마이그레이션**: `create_phase3_community_tables` (위의 데이터베이스 스키마 섹션 참고)
+
+#### Next.js 구현 구조
+```
+app/(main)/community/
+├── page.tsx                    # 피드 리스트 (Server Component)
+├── @modal/(.)post/[id]/page.tsx # 포스트 상세 (모달)
+├── components/
+│   ├── CommunityFeed.tsx       # 피드 (Server Component)
+│   ├── PostCard.tsx            # 포스트 카드 (Client)
+│   ├── PostForm.tsx            # 포스트 작성 (Client)
+│   ├── CommentSection.tsx      # 댓글 섹션 (Client)
+│   └── UserProfile.tsx         # 사용자 프로필 (Server)
+└── actions/
+    ├── posts.ts                # Server Actions (CRUD)
+    ├── comments.ts             # 댓글 Server Actions
+    └── likes.ts                # 좋아요 Server Actions
+```
+
 **주요 작업**:
-- [ ] 커뮤니티 페이지 개발
-- [ ] 포스트 작성/삭제 기능
-- [ ] 좋아요 기능
-- [ ] 댓글 기능 (작성, 삭제, 답글)
-- [ ] 피드 필터링 (인기순, 최신순, 팔로우)
-- [ ] 사용자 프로필 페이지
+- [ ] Supabase 테이블 마이그레이션 & RLS 정책 적용
+- [ ] `createClient()` 를 통한 Server Component 데이터 조회
+- [ ] 포스트 작성/삭제 Server Actions 구현
+- [ ] 좋아요 토글 기능 (Client Component 상호작용)
+- [ ] 댓글 작성/삭제 Server Actions
+- [ ] 피드 필터링 (최신순, 인기순, 팔로우) - `useQuery` + 정렬
+- [ ] 사용자 프로필 페이지 (`/community/users/[username]`)
+- [ ] Realtime 구독 (실시간 좋아요/댓글 반영 - 선택사항)
 
 **완료 기준**:
-- ✅ 포스트 작성/삭제 기능 동작
-- ✅ 좋아요/댓글 상호작용 가능
+- ✅ 포스트 CRUD 기능 동작
+- ✅ 좋아요/댓글 실시간 상호작용 가능
 - ✅ 피드 필터링 정상 작동
+- ✅ TypeScript 타입 안전성 검증 (`npm run typecheck` 통과)
+- ✅ RLS 정책 보안 검증 (`mcp__supabase__get_advisors`)
 
 ---
 
@@ -274,18 +558,54 @@
 
 **목표**: 종목별 토론방 및 핫 토픽 자동 추출 기능 구현
 
+#### 데이터베이스 요구사항
+**필수 테이블**: `discussions`, `discussion_comments`, `profiles`
+- `discussions`: 토론방 (symbol, title, content, is_pinned, is_hot, views_count)
+- `discussion_comments`: 토론 댓글 (discussion_id, content, parent_comment_id - 답글)
+- `profiles`: 사용자 정보 (is_expert - 전문가 구분)
+
+**마이그레이션**: `create_phase3_discussions_tables` (위의 데이터베이스 스키마 섹션 참고)
+
+**인덱스 최적화**:
+- `symbol` (종목별 조회)
+- `is_hot` (핫 토픽 필터링)
+- `created_at` (시간순 정렬)
+
+#### Next.js 구현 구조
+```
+app/(main)/discussions/
+├── page.tsx                          # 토론 목록 (Server Component)
+├── [symbol]/
+│   └── page.tsx                      # 종목별 토론방 (Server)
+├── [symbol]/[discussionId]/
+│   └── page.tsx                      # 토론 상세 (Server)
+└── components/
+    ├── DiscussionList.tsx            # 토론 목록 (Server)
+    ├── DiscussionCard.tsx            # 토론 카드 (Server)
+    ├── DiscussionForm.tsx            # 토론 작성 (Client)
+    ├── DiscussionDetail.tsx          # 토론 상세 (Server)
+    ├── HotTopics.tsx                 # 핫 토픽 섹션 (Server)
+    └── ExpertBadge.tsx               # 전문가 배지 (Client)
+```
+
 **주요 작업**:
-- [ ] 종목별 토론방 개발
-- [ ] 토론 생성/삭제 기능
-- [ ] 토론 댓글 및 답글
-- [ ] 핫 토픽 자동 추출 (AI 또는 알고리즘)
-- [ ] 전문가/일반 사용자 구분 표시
-- [ ] 토론 인기도 순위
+- [ ] Supabase 테이블 마이그레이션 & RLS 정책
+- [ ] 종목별 토론방 조회 (`symbol` 파라미터 필터링)
+- [ ] 토론 생성/수정/삭제 Server Actions
+- [ ] 댓글 작성/삭제 Server Actions
+- [ ] 핫 토픽 자동 추출 로직:
+  - 최근 24시간 댓글 수 > 10
+  - 또는 좋아요/조회수 기반 알고리즘
+- [ ] 전문가/일반 사용자 구분 UI (`profiles.is_expert`)
+- [ ] 토론 인기도 정렬 (조회수, 댓글 수, 좋아요)
+- [ ] 토론 고정/해제 (관리자 기능)
 
 **완료 기준**:
-- ✅ 종목별 토론 생성/조회 가능
-- ✅ 핫 토픽 리스트 표시
-- ✅ 전문가/일반 사용자 구분 표시
+- ✅ 종목별 토론 생성/조회/수정 가능
+- ✅ 핫 토픽 자동 표시 (알고리즘 구현)
+- ✅ 전문가 배지 표시 및 전문가 댓글 강조
+- ✅ 성능 인덱스 적용 (`npm run build` 통과)
+- ✅ RLS 정책 보안 검증
 
 ---
 
@@ -294,18 +614,78 @@
 
 **목표**: 포트폴리오 공개/비공개 및 벤치마킹 기능 구현
 
+#### 데이터베이스 요구사항
+**필수 테이블**: `portfolio_shares`, `follows`, `portfolio_benchmarks`
+- `portfolio_shares`: 공유 포트폴리오 (user_id, title, is_public, share_link)
+- `follows`: 팔로우 관계 (follower_id, following_id)
+- `portfolio_benchmarks`: 벤치마킹 데이터 (portfolio_id_1, portfolio_id_2, similarity_score)
+
+**마이그레이션**: `create_phase3_portfolio_share_tables` (위의 데이터베이스 스키마 섹션 참고)
+
+**RLS 정책 (중요)**:
+- 공개 포트폴리오(`is_public=true`)는 모든 사용자 조회 가능
+- 비공개 포트폴리오는 본인만 조회 가능
+- 팔로우 기능은 인증된 사용자만 가능
+
+#### Next.js 구현 구조
+```
+app/(main)/portfolios/
+├── page.tsx                        # 공개 포트폴리오 탐색 (Server)
+├── [shareId]/
+│   ├── page.tsx                    # 포트폴리오 상세 (Server)
+│   └── benchmarks/page.tsx         # 벤치마킹 비교 (Server)
+└── components/
+    ├── PortfolioGrid.tsx           # 포트폴리오 그리드 (Server)
+    ├── PortfolioCard.tsx           # 포트폴리오 카드 (Server)
+    ├── ShareSettings.tsx           # 공개/비공개 설정 (Client)
+    ├── BenchmarkChart.tsx          # 벤치마킹 차트 (Client)
+    ├── FollowButton.tsx            # 팔로우 버튼 (Client)
+    └── ShareLink.tsx               # 공유 링크 (Client)
+```
+
 **주요 작업**:
-- [ ] 포트폴리오 공개/비공개 설정
-- [ ] 공개 포트폴리오 조회 기능
-- [ ] 사용자 포트폴리오 프로필 페이지
-- [ ] 포트폴리오 벤치마킹 (비교 분석)
-- [ ] 포트폴리오 팔로우 기능
-- [ ] 포트폴리오 공유 링크 생성
+- [ ] Supabase 테이블 마이그레이션 & RLS 정책 적용
+- [ ] 포트폴리오 공개/비공개 설정 Server Actions
+- [ ] 공개 포트폴리오 탐색 페이지 (필터링, 정렬)
+  - 최신순, 인기순 (조회수, 팔로워 수)
+  - 사용자별 포트폴리오 필터
+- [ ] 포트폴리오 상세 페이지 (RLS로 자동 권한 검증)
+  - 보유 종목 목록
+  - 수익률 분석
+  - 자산 분배 차트
+- [ ] 팔로우 기능:
+  - Server Actions (`toggleFollow`)
+  - Realtime 구독 (팔로워 수 실시간 업데이트)
+- [ ] 벤치마킹 기능:
+  - 두 포트폴리오 비교
+  - 유사도 점수 계산 (similarity_score)
+  - 비교 차트 렌더링
+- [ ] 공유 링크 생성 (`share_link` - UUID 기반)
+- [ ] 포트폴리오 소유자 프로필 연동
+
+**벤치마킹 알고리즘**:
+```typescript
+// 유사도 점수 계산 (0-100)
+- 공통 종목 비율
+- 자산 배분 유사도
+- 수익률 근사도
+- 보유 기간 유사도
+
+similarity_score = (
+  (공통_종목_비율 * 30) +
+  (자산배분_유사도 * 40) +
+  (수익률_근사도 * 20) +
+  (보유기간_유사도 * 10)
+) / 100
+```
 
 **완료 기준**:
 - ✅ 포트폴리오 공개/비공개 설정 가능
-- ✅ 다른 사용자 포트폴리오 조회 가능
-- ✅ 벤치마킹 비교 기능 동작
+- ✅ 공개 포트폴리오 탐색 및 필터링 정상 작동
+- ✅ 벤치마킹 유사도 점수 계산 정확성 검증
+- ✅ 팔로우 Realtime 업데이트 동작
+- ✅ RLS 정책으로 권한 자동 검증 (`mcp__supabase__get_advisors`)
+- ✅ 공유 링크 생성 & 접근 권한 검증
 
 ---
 
