@@ -159,6 +159,14 @@ export function RegisterForm() {
           로그인
         </Link>
       </p>
+
+      <div className="text-center">
+        <Link href="/dashboard">
+          <Button variant="outline" className="w-full">
+            대시보드로 이동
+          </Button>
+        </Link>
+      </div>
     </div>
   );
 }
