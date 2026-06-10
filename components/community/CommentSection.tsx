@@ -11,9 +11,10 @@ type Comment = Tables<'comments'> & { profiles: Tables<'profiles'> | null };
 
 interface CommentSectionProps {
   postId: string;
+  onCommentCountChange?: (count: number) => void;
 }
 
-export function CommentSection({ postId }: CommentSectionProps) {
+export function CommentSection({ postId, onCommentCountChange }: CommentSectionProps) {
   const [user, setUser] = useState<{ id: string; username?: string } | null>(null);
   const [comments, setComments] = useState<Comment[]>([]);
   const [newComment, setNewComment] = useState('');
@@ -72,6 +73,10 @@ export function CommentSection({ postId }: CommentSectionProps) {
       setNewComment('');
       const { comments: fetchedComments } = await getPostById(postId);
       setComments(fetchedComments);
+      // 부모에게 댓글 개수 변경 알림
+      if (onCommentCountChange) {
+        onCommentCountChange(fetchedComments.length);
+      }
     } catch (error) {
       console.error('댓글 작성 실패:', error);
     } finally {
@@ -84,7 +89,12 @@ export function CommentSection({ postId }: CommentSectionProps) {
 
     try {
       await deleteComment(commentId);
-      setComments((prev) => prev.filter((comment) => comment.id !== commentId));
+      const newComments = comments.filter((comment) => comment.id !== commentId);
+      setComments(newComments);
+      // 부모에게 댓글 개수 변경 알림
+      if (onCommentCountChange) {
+        onCommentCountChange(newComments.length);
+      }
     } catch (error) {
       console.error('댓글 삭제 실패:', error);
       alert('댓글 삭제에 실패했습니다.');

@@ -22,6 +22,7 @@ export function PostCard({ post, liked, onPostDeleted }: PostCardProps) {
   const [showComments, setShowComments] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
   const [currentUserId, setCurrentUserId] = useState<string | null>(null);
+  const [commentsCount, setCommentsCount] = useState(post.comments_count || 0);
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -131,11 +132,16 @@ export function PostCard({ post, liked, onPostDeleted }: PostCardProps) {
               className="gap-2"
             >
               <MessageCircle className="h-4 w-4" />
-              <span className="text-xs">{post.comments_count || 0}</span>
+              <span className="text-xs">{commentsCount}</span>
             </Button>
           </div>
 
-          {showComments && <CommentSection postId={post.id} />}
+          {showComments && (
+            <CommentSection
+              postId={post.id}
+              onCommentCountChange={setCommentsCount}
+            />
+          )}
         </div>
       </div>
     </Card>
