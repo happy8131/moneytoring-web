@@ -1,0 +1,8 @@
+-- Phase 3 커뮤니티 기능을 위한 profiles 테이블 확장
+
+ALTER TABLE profiles
+  ADD COLUMN IF NOT EXISTS bio TEXT,
+  ADD COLUMN IF NOT EXISTS avatar_url TEXT,
+  ADD COLUMN IF NOT EXISTS is_expert BOOLEAN DEFAULT FALSE,
+  ADD COLUMN IF NOT EXISTS expertise TEXT[] DEFAULT '{}',
+  ADD COLUMN IF NOT EXISTS followers_count INT DEFAULT 0;
