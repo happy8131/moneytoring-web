@@ -23,16 +23,25 @@ export async function getPosts(
 
   if (error) throw new Error(error.message);
 
-  // 각 포스트의 좋아요 수 계산
+  // 각 포스트의 좋아요 수와 댓글 수 계산
   const enrichedData = await Promise.all(
     (allPosts || []).map(async (post) => {
-      const { count } = await supabase
+      // 좋아요 수 계산
+      const { count: likesCount } = await supabase
         .from('post_likes')
         .select('*', { count: 'exact', head: true })
         .eq('post_id', post.id);
+
+      // 댓글 수 계산
+      const { count: commentsCount } = await supabase
+        .from('comments')
+        .select('*', { count: 'exact', head: true })
+        .eq('post_id', post.id);
+
       return {
         ...post,
-        likes_count: count || 0,
+        likes_count: likesCount || 0,
+        comments_count: commentsCount || 0,
       };
     })
   );
