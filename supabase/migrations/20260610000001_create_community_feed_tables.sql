@@ -17,6 +17,7 @@ CREATE TABLE IF NOT EXISTS posts (
 -- 인덱스
 CREATE INDEX IF NOT EXISTS idx_posts_user_id ON posts(user_id);
 CREATE INDEX IF NOT EXISTS idx_posts_created_at ON posts(created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_posts_likes_count ON posts(likes_count DESC);
 
 -- RLS 활성화
 ALTER TABLE posts ENABLE ROW LEVEL SECURITY;
@@ -138,3 +139,33 @@ $$ LANGUAGE plpgsql;
 
 CREATE TRIGGER comments_updated_at BEFORE UPDATE ON comments
   FOR EACH ROW EXECUTE FUNCTION update_comments_updated_at();
+
+-- 트리거: post_likes INSERT 시 posts.likes_count 증가
+DROP TRIGGER IF EXISTS post_likes_increment_count ON post_likes;
+DROP FUNCTION IF EXISTS increment_post_likes_count() CASCADE;
+
+CREATE OR REPLACE FUNCTION increment_post_likes_count()
+RETURNS TRIGGER AS $$
+BEGIN
+  UPDATE posts SET likes_count = likes_count + 1 WHERE id = NEW.post_id;
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER post_likes_increment_count AFTER INSERT ON post_likes
+  FOR EACH ROW EXECUTE FUNCTION increment_post_likes_count();
+
+-- 트리거: post_likes DELETE 시 posts.likes_count 감소
+DROP TRIGGER IF EXISTS post_likes_decrement_count ON post_likes;
+DROP FUNCTION IF EXISTS decrement_post_likes_count() CASCADE;
+
+CREATE OR REPLACE FUNCTION decrement_post_likes_count()
+RETURNS TRIGGER AS $$
+BEGIN
+  UPDATE posts SET likes_count = GREATEST(likes_count - 1, 0) WHERE id = OLD.post_id;
+  RETURN OLD;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER post_likes_decrement_count AFTER DELETE ON post_likes
+  FOR EACH ROW EXECUTE FUNCTION decrement_post_likes_count();

@@ -26,6 +26,7 @@ const navItems = [
   { href: '/dashboard', label: '대시보드' },
   { href: '/portfolio', label: '포트폴리오' },
   { href: '/news', label: '뉴스' },
+  { href: '/community', label: '커뮤니티' },
   { href: '/economic-calendar', label: '경제지표' },
 ] as const;
 
