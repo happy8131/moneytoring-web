@@ -20,6 +20,7 @@ export function DiscussionCard({ discussion, onDiscussionDeleted }: DiscussionCa
   const [currentUserId, setCurrentUserId] = useState<string | null>(null);
   const [isDeleting, setIsDeleting] = useState(false);
   const [commentsCount, setCommentsCount] = useState(discussion.comments_count || 0);
+  const [viewsCount, setViewsCount] = useState(discussion.views_count || 0);
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -38,6 +39,10 @@ export function DiscussionCard({ discussion, onDiscussionDeleted }: DiscussionCa
 
     fetchUser();
   }, []);
+
+  useEffect(() => {
+    setViewsCount(discussion.views_count || 0);
+  }, [discussion.views_count]);
 
   const handleDelete = async () => {
     if (!confirm('정말 삭제하시겠습니까?')) return;
@@ -142,7 +147,7 @@ export function DiscussionCard({ discussion, onDiscussionDeleted }: DiscussionCa
           <div className="flex items-center gap-4 border-t border-border mt-3 pt-2 text-xs text-muted-foreground">
             <div className="flex items-center gap-1">
               <Eye className="h-3.5 w-3.5" />
-              <span>{discussion.views_count || 0}</span>
+              <span>{viewsCount}</span>
             </div>
             <div className="flex items-center gap-1">
               <MessageCircle className="h-3.5 w-3.5" />
