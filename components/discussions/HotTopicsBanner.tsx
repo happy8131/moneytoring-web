@@ -9,13 +9,18 @@ import type { Tables } from '@/types/database';
 
 type Discussion = Tables<'discussions'> & { profiles: Tables<'profiles'> | null };
 
-export function HotTopicsBanner() {
+interface HotTopicsBannerProps {
+  refreshTrigger?: number;
+}
+
+export function HotTopicsBanner({ refreshTrigger = 0 }: HotTopicsBannerProps) {
   const [hotTopics, setHotTopics] = useState<Discussion[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const loadHotTopics = async () => {
       try {
+        setIsLoading(true);
         const topics = await getHotTopics();
         setHotTopics(topics);
       } catch (error) {
@@ -26,7 +31,7 @@ export function HotTopicsBanner() {
     };
 
     loadHotTopics();
-  }, []);
+  }, [refreshTrigger]);
 
   if (isLoading || hotTopics.length === 0) {
     return null;

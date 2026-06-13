@@ -12,9 +12,10 @@ type Discussion = Tables<'discussions'> & { profiles: Tables<'profiles'> | null 
 interface DiscussionFeedProps {
   filter?: 'latest' | 'hot';
   symbol?: string;
+  onDiscussionDeleted?: () => void;
 }
 
-export function DiscussionFeed({ filter = 'latest', symbol }: DiscussionFeedProps) {
+export function DiscussionFeed({ filter = 'latest', symbol, onDiscussionDeleted }: DiscussionFeedProps) {
   const [discussions, setDiscussions] = useState<Discussion[]>([]);
   const [cursor, setCursor] = useState(0);
   const [nextCursor, setNextCursor] = useState(20);
@@ -65,6 +66,9 @@ export function DiscussionFeed({ filter = 'latest', symbol }: DiscussionFeedProp
 
   const handleDiscussionDeleted = (id: string) => {
     setDiscussions(discussions.filter((d) => d.id !== id));
+    if (onDiscussionDeleted) {
+      onDiscussionDeleted();
+    }
   };
 
   return (

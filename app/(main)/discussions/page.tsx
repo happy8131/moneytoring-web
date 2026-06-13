@@ -1,23 +1,47 @@
-import { Suspense } from 'react';
-import { Metadata } from 'next';
+'use client';
+
+import React, { useState, useEffect } from 'react';
 import { DiscussionFeed } from '@/components/discussions/DiscussionFeed';
 import { DiscussionFeedSkeleton } from '@/components/discussions/DiscussionFeedSkeleton';
 import { HotTopicsBanner } from '@/components/discussions/HotTopicsBanner';
 import { Input } from '@/components/ui/input';
 
-export const metadata: Metadata = {
-  title: '토론 게시판 - Moneytoring',
-  description: '투자 종목별 토론과 의견을 나누세요',
-};
-
 interface PageProps {
   searchParams: Promise<{ symbol?: string; filter?: string }>;
 }
 
-export default async function DiscussionsPage({ searchParams }: PageProps) {
-  const params = await searchParams;
-  const symbol = params.symbol?.toString();
-  const filter = (params.filter as 'latest' | 'hot') || 'latest';
+export default function DiscussionsPage({ searchParams }: PageProps) {
+  const [refreshHotTopics, setRefreshHotTopics] = useState(0);
+  const [symbol, setSymbol] = useState<string | undefined>(undefined);
+  const [filter, setFilter] = useState<'latest' | 'hot'>('latest');
+  const [isInitialized, setIsInitialized] = useState(false);
+
+  useEffect(() => {
+    (async () => {
+      const params = await searchParams;
+      setSymbol(params.symbol?.toString());
+      setFilter((params.filter as 'latest' | 'hot') || 'latest');
+      setIsInitialized(true);
+    })();
+  }, [searchParams]);
+
+  const handleDiscussionDeleted = () => {
+    setRefreshHotTopics((prev) => prev + 1);
+  };
+
+  if (!isInitialized) {
+    return (
+      <div className="space-y-6">
+        <div>
+          <h1 className="text-3xl font-bold text-foreground mb-2">토론 게시판</h1>
+          <p className="text-muted-foreground">
+            투자 종목에 대해 다른 사용자와 의견을 나누세요
+          </p>
+        </div>
+        <DiscussionFeedSkeleton />
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6">
@@ -29,7 +53,7 @@ export default async function DiscussionsPage({ searchParams }: PageProps) {
       </div>
 
       {/* 핫 토픽 배너 */}
-      <HotTopicsBanner />
+      <HotTopicsBanner refreshTrigger={refreshHotTopics} />
 
       {/* 필터 탭 */}
       <div className="flex items-center gap-2 border-b border-border">
@@ -73,9 +97,11 @@ export default async function DiscussionsPage({ searchParams }: PageProps) {
       </form>
 
       {/* 토론 피드 */}
-      <Suspense fallback={<DiscussionFeedSkeleton />}>
-        <DiscussionFeed filter={filter} symbol={symbol} />
-      </Suspense>
+      <DiscussionFeed
+        filter={filter}
+        symbol={symbol}
+        onDiscussionDeleted={handleDiscussionDeleted}
+      />
     </div>
   );
 }
