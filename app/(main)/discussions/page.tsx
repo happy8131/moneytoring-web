@@ -12,6 +12,7 @@ interface PageProps {
 
 export default function DiscussionsPage({ searchParams }: PageProps) {
   const [refreshHotTopics, setRefreshHotTopics] = useState(0);
+  const [refreshDiscussions, setRefreshDiscussions] = useState(0);
   const [symbol, setSymbol] = useState<string | undefined>(undefined);
   const [filter, setFilter] = useState<'latest' | 'hot'>('latest');
   const [isInitialized, setIsInitialized] = useState(false);
@@ -24,6 +25,17 @@ export default function DiscussionsPage({ searchParams }: PageProps) {
       setIsInitialized(true);
     })();
   }, [searchParams]);
+
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible') {
+        setRefreshDiscussions((prev) => prev + 1);
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    return () => document.removeEventListener('visibilitychange', handleVisibilityChange);
+  }, []);
 
   const handleDiscussionDeleted = () => {
     setRefreshHotTopics((prev) => prev + 1);
@@ -101,6 +113,7 @@ export default function DiscussionsPage({ searchParams }: PageProps) {
         filter={filter}
         symbol={symbol}
         onDiscussionDeleted={handleDiscussionDeleted}
+        refreshTrigger={refreshDiscussions}
       />
     </div>
   );

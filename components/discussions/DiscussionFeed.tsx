@@ -13,9 +13,10 @@ interface DiscussionFeedProps {
   filter?: 'latest' | 'hot';
   symbol?: string;
   onDiscussionDeleted?: () => void;
+  refreshTrigger?: number;
 }
 
-export function DiscussionFeed({ filter = 'latest', symbol, onDiscussionDeleted }: DiscussionFeedProps) {
+export function DiscussionFeed({ filter = 'latest', symbol, onDiscussionDeleted, refreshTrigger = 0 }: DiscussionFeedProps) {
   const [discussions, setDiscussions] = useState<Discussion[]>([]);
   const [cursor, setCursor] = useState(0);
   const [nextCursor, setNextCursor] = useState(20);
@@ -41,7 +42,7 @@ export function DiscussionFeed({ filter = 'latest', symbol, onDiscussionDeleted 
     };
 
     loadDiscussions();
-  }, [filter, symbol]);
+  }, [filter, symbol, refreshTrigger]);
 
   const handleLoadMore = async () => {
     try {
