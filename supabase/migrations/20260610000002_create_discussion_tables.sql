@@ -44,6 +44,11 @@ CREATE POLICY "discussions_update_own" ON discussions
 CREATE POLICY "discussions_delete_own" ON discussions
   FOR DELETE USING (auth.uid() = user_id);
 
+-- views_count 증가는 모든 사용자가 가능 (인증되지 않은 요청 포함)
+CREATE POLICY "discussions_update_views_count_all" ON discussions
+  FOR UPDATE USING (true)
+  WITH CHECK (true);
+
 -- 토론 댓글 테이블
 CREATE TABLE IF NOT EXISTS discussion_comments (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),

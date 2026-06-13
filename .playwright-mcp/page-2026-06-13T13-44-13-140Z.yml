@@ -1,0 +1,27 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "Moneytoring" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - img [ref=e7]
+          - generic [ref=e10]: Moneytoring
+        - navigation [ref=e12]:
+          - link "대시보드" [ref=e13] [cursor=pointer]:
+            - /url: /dashboard
+          - link "포트폴리오" [ref=e14] [cursor=pointer]:
+            - /url: /portfolio
+          - link "뉴스" [ref=e15] [cursor=pointer]:
+            - /url: /news
+          - link "커뮤니티" [ref=e16] [cursor=pointer]:
+            - /url: /community
+          - link "토론" [ref=e17] [cursor=pointer]:
+            - /url: /discussions
+          - link "경제지표" [ref=e18] [cursor=pointer]:
+            - /url: /economic-calendar
+    - main [ref=e19]:
+      - generic [ref=e22]:
+        - heading "토론 게시판" [level=1] [ref=e23]
+        - paragraph [ref=e24]: 투자 종목에 대해 다른 사용자와 의견을 나누세요
+  - button "Open Next.js Dev Tools" [ref=e111] [cursor=pointer]:
+    - img [ref=e112]
