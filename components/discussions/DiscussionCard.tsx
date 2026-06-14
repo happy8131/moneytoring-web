@@ -33,7 +33,7 @@ export function DiscussionCard({ discussion, onDiscussionDeleted }: DiscussionCa
           setCurrentUserId(user.id);
         }
       } catch (error) {
-        console.error('사용자 정보 로드 실패:', error);
+        // 에러는 무시
       }
     };
 
@@ -54,7 +54,6 @@ export function DiscussionCard({ discussion, onDiscussionDeleted }: DiscussionCa
         onDiscussionDeleted(discussion.id);
       }
     } catch (error) {
-      console.error('토론 삭제 실패:', error);
       alert('토론 삭제에 실패했습니다.');
     } finally {
       setIsDeleting(false);
