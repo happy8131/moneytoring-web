@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { after } from 'next/server';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Eye, MessageCircle, Trash2 } from 'lucide-react';
 import { getDiscussionById, deleteDiscussion } from '@/app/actions/discussions';
 import { DiscussionCommentSection } from '@/components/discussions/DiscussionCommentSection';
+import { DiscussionViewCounter } from '@/components/discussions/DiscussionViewCounter';
 import { createClient } from '@/lib/supabase/server';
 import type { Tables } from '@/types/database';
 
@@ -30,19 +30,6 @@ async function fetchDiscussion(id: string): Promise<{
 export default async function DiscussionDetailPage({ params }: PageProps) {
   const { id } = await params;
   const { discussion, comments } = await fetchDiscussion(id);
-
-  // 조회수 증가 (비블로킹)
-  after(async () => {
-    try {
-      await fetch(`${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/api/discussions/views`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ id }),
-      });
-    } catch (error) {
-      console.error('조회수 증가 실패:', error);
-    }
-  });
 
   // 현재 사용자 확인
   const supabase = await createClient();
@@ -161,6 +148,9 @@ export default async function DiscussionDetailPage({ params }: PageProps) {
 
       {/* 댓글 섹션 */}
       <DiscussionCommentSection discussionId={id} />
+
+      {/* 조회수 증가 */}
+      <DiscussionViewCounter discussionId={id} />
     </div>
   );
 }
