@@ -295,19 +295,28 @@ export async function deleteDiscussionComment(id: string) {
 // 핫 토픽 조회 (상위 3개)
 export async function getHotTopics() {
   const supabase = await createClient();
-  const twentyFourHoursAgo = new Date(Date.now() - 24 * 60 * 60 * 1000);
+
+  // 최근 7일 내 토론 조회 (24시간 → 7일로 확대)
+  const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
 
   const { data: discussions, error } = await supabase
     .from('discussions')
     .select('*, profiles(id, username, avatar_url, is_expert)')
-    .gte('created_at', twentyFourHoursAgo.toISOString())
+    .gte('created_at', sevenDaysAgo.toISOString())
+    .order('created_at', { ascending: false })
     .limit(100);
 
-  if (error) throw new Error(error.message);
+  if (error) {
+    return [];
+  }
+
+  if (!discussions || discussions.length === 0) {
+    return [];
+  }
 
   // 댓글 수 집계
   const enrichedData = await Promise.all(
-    (discussions || []).map(async (discussion) => {
+    discussions.map(async (discussion) => {
       const { count: commentsCount } = await supabase
         .from('discussion_comments')
         .select('*', { count: 'exact', head: true })
@@ -322,6 +331,7 @@ export async function getHotTopics() {
 
   // 댓글 수가 많은 순으로 정렬 후 상위 3개
   return enrichedData
+    .filter((d) => (d.comments_count || 0) > 0)
     .sort((a, b) => (b.comments_count || 0) - (a.comments_count || 0))
     .slice(0, 3) as Discussion[];
 }

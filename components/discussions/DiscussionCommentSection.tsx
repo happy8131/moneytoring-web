@@ -48,7 +48,7 @@ export function DiscussionCommentSection({
           });
         }
       } catch (error) {
-        console.error('사용자 정보 로드 실패:', error);
+        // 에러는 무시
       }
     };
 
@@ -61,7 +61,7 @@ export function DiscussionCommentSection({
         const { comments: fetchedComments } = await getDiscussionById(discussionId);
         setComments(fetchedComments);
       } catch (error) {
-        console.error('댓글 로드 실패:', error);
+        // 에러는 무시
       } finally {
         setIsLoading(false);
       }
@@ -85,7 +85,7 @@ export function DiscussionCommentSection({
         onCommentCountChange(fetchedComments.length);
       }
     } catch (error) {
-      console.error('댓글 작성 실패:', error);
+      // 에러는 무시
     } finally {
       setIsSubmitting(false);
     }
@@ -103,7 +103,6 @@ export function DiscussionCommentSection({
         onCommentCountChange(newComments.length);
       }
     } catch (error) {
-      console.error('댓글 삭제 실패:', error);
       alert('댓글 삭제에 실패했습니다.');
     }
   };

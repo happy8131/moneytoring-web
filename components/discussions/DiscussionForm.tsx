@@ -40,7 +40,7 @@ export function DiscussionForm({ onDiscussionCreated }: DiscussionFormProps) {
           });
         }
       } catch (error) {
-        console.error('사용자 정보 로드 실패:', error);
+        // 에러는 무시
       } finally {
         setIsLoadingUser(false);
       }

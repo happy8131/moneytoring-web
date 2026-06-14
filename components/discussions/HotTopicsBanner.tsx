@@ -24,7 +24,7 @@ export function HotTopicsBanner({ refreshTrigger = 0 }: HotTopicsBannerProps) {
         const topics = await getHotTopics();
         setHotTopics(topics);
       } catch (error) {
-        console.error('핫 토픽 로드 실패:', error);
+        setHotTopics([]);
       } finally {
         setIsLoading(false);
       }

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, use } from 'react';
 import { DiscussionFeed } from '@/components/discussions/DiscussionFeed';
 import { DiscussionFeedSkeleton } from '@/components/discussions/DiscussionFeedSkeleton';
 import { HotTopicsBanner } from '@/components/discussions/HotTopicsBanner';
@@ -11,6 +11,7 @@ interface PageProps {
 }
 
 export default function DiscussionsPage({ searchParams }: PageProps) {
+  const params = use(searchParams);
   const [refreshHotTopics, setRefreshHotTopics] = useState(0);
   const [refreshDiscussions, setRefreshDiscussions] = useState(0);
   const [symbol, setSymbol] = useState<string | undefined>(undefined);
@@ -18,13 +19,10 @@ export default function DiscussionsPage({ searchParams }: PageProps) {
   const [isInitialized, setIsInitialized] = useState(false);
 
   useEffect(() => {
-    (async () => {
-      const params = await searchParams;
-      setSymbol(params.symbol?.toString());
-      setFilter((params.filter as 'latest' | 'hot') || 'latest');
-      setIsInitialized(true);
-    })();
-  }, [searchParams]);
+    setSymbol(params.symbol?.toString());
+    setFilter((params.filter as 'latest' | 'hot') || 'latest');
+    setIsInitialized(true);
+  }, [params.symbol, params.filter]);
 
   useEffect(() => {
     const handleVisibilityChange = () => {

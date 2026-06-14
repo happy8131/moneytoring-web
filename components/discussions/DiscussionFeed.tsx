@@ -35,7 +35,7 @@ export function DiscussionFeed({ filter = 'latest', symbol, onDiscussionDeleted,
         setDiscussions(data);
         setNextCursor(next);
       } catch (error) {
-        console.error('토론 로드 실패:', error);
+        // 에러는 무시
       } finally {
         setIsLoading(false);
       }
@@ -55,7 +55,7 @@ export function DiscussionFeed({ filter = 'latest', symbol, onDiscussionDeleted,
       setNextCursor(next);
       setCursor(nextCursor);
     } catch (error) {
-      console.error('더보기 실패:', error);
+      // 에러는 무시
     }
   };
 
