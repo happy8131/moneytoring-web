@@ -73,7 +73,7 @@ export function DiscussionCard({ discussion, onDiscussionDeleted }: DiscussionCa
 
   return (
     <Link href={`/discussions/${discussion.id}`}>
-      <Card className="p-4 cursor-pointer hover:bg-accent transition-colors">
+      <Card className="p-4 cursor-pointer hover:bg-accent transition-colors mb-4">
         <div className="flex gap-3">
         {/* 작성자 아바타 */}
         <div className="h-8 w-8 rounded-full bg-primary flex items-center justify-center text-xs font-bold text-primary-foreground flex-shrink-0">
