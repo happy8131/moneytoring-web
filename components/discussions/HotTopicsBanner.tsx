@@ -22,9 +22,11 @@ export function HotTopicsBanner({ refreshTrigger = 0 }: HotTopicsBannerProps) {
       try {
         setIsLoading(true);
         const topics = await getHotTopics();
+        console.log('[배너] 핫토픽 로드:', topics);
         setHotTopics(topics);
       } catch (error) {
-        console.error('핫 토픽 로드 실패:', error);
+        console.error('[배너] 핫토픽 로드 실패:', error);
+        setHotTopics([]);
       } finally {
         setIsLoading(false);
       }
@@ -33,7 +35,12 @@ export function HotTopicsBanner({ refreshTrigger = 0 }: HotTopicsBannerProps) {
     loadHotTopics();
   }, [refreshTrigger]);
 
-  if (isLoading || hotTopics.length === 0) {
+  if (isLoading) {
+    return null;
+  }
+
+  if (hotTopics.length === 0) {
+    console.log('[배너] 표시할 핫토픽 없음');
     return null;
   }
 
