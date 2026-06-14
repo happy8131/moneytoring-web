@@ -44,7 +44,8 @@ export function DiscussionCard({ discussion, onDiscussionDeleted }: DiscussionCa
     setViewsCount(discussion.views_count || 0);
   }, [discussion.views_count]);
 
-  const handleDelete = async () => {
+  const handleDelete = async (e: React.MouseEvent) => {
+    e.stopPropagation();
     if (!confirm('정말 삭제하시겠습니까?')) return;
 
     setIsDeleting(true);
@@ -71,8 +72,9 @@ export function DiscussionCard({ discussion, onDiscussionDeleted }: DiscussionCa
   const isAuthor = currentUserId === discussion.user_id;
 
   return (
-    <Card className="p-4">
-      <div className="flex gap-3">
+    <Link href={`/discussions/${discussion.id}`}>
+      <Card className="p-4 cursor-pointer hover:bg-accent transition-colors mb-4">
+        <div className="flex gap-3">
         {/* 작성자 아바타 */}
         <div className="h-8 w-8 rounded-full bg-primary flex items-center justify-center text-xs font-bold text-primary-foreground flex-shrink-0">
           {discussion.profiles?.username?.[0]?.toUpperCase() || 'U'}
@@ -131,11 +133,9 @@ export function DiscussionCard({ discussion, onDiscussionDeleted }: DiscussionCa
           </div>
 
           {/* 제목 */}
-          <Link href={`/discussions/${discussion.id}`}>
-            <h3 className="text-sm font-semibold text-foreground mt-2 hover:text-primary transition-colors line-clamp-2">
-              {discussion.title}
-            </h3>
-          </Link>
+          <h3 className="text-sm font-semibold text-foreground mt-2 hover:text-primary transition-colors line-clamp-2">
+            {discussion.title}
+          </h3>
 
           {/* 내용 미리보기 */}
           <p className="text-xs text-muted-foreground mt-2 line-clamp-2">
@@ -154,7 +154,8 @@ export function DiscussionCard({ discussion, onDiscussionDeleted }: DiscussionCa
             </div>
           </div>
         </div>
-      </div>
-    </Card>
+        </div>
+      </Card>
+    </Link>
   );
 }

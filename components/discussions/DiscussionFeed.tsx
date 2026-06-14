@@ -73,7 +73,7 @@ export function DiscussionFeed({ filter = 'latest', symbol, onDiscussionDeleted,
   };
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-6">
       <DiscussionForm onDiscussionCreated={handleDiscussionCreated} />
 
       {isLoading ? (
