@@ -307,26 +307,20 @@ export async function getHotTopics() {
     .limit(100);
 
   if (error) {
-    console.error('[핫토픽] DB 조회 실패:', error);
     return [];
   }
 
   if (!discussions || discussions.length === 0) {
-    console.log('[핫토픽] 최근 토론 없음');
     return [];
   }
 
   // 댓글 수 집계
   const enrichedData = await Promise.all(
     discussions.map(async (discussion) => {
-      const { count: commentsCount, error: countError } = await supabase
+      const { count: commentsCount } = await supabase
         .from('discussion_comments')
         .select('*', { count: 'exact', head: true })
         .eq('discussion_id', discussion.id);
-
-      if (countError) {
-        console.error(`[핫토픽] ${discussion.id} 댓글 수 조회 실패:`, countError);
-      }
 
       return {
         ...discussion,
@@ -336,12 +330,8 @@ export async function getHotTopics() {
   );
 
   // 댓글 수가 많은 순으로 정렬 후 상위 3개
-  const result = enrichedData
+  return enrichedData
     .filter((d) => (d.comments_count || 0) > 0)
     .sort((a, b) => (b.comments_count || 0) - (a.comments_count || 0))
     .slice(0, 3) as Discussion[];
-
-  console.log(`[핫토픽] 결과: ${result.length}개 (전체 ${enrichedData.length}개 중 댓글 있는 것)`);
-
-  return result;
 }
