@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useEffect } from 'react';
 import { useQuery, useQueryClient, useMutation } from '@tanstack/react-query';
+import { createClient } from '@/lib/supabase/client';
 import {
   getHoldings,
   addHolding as addHoldingAction,
@@ -48,10 +49,31 @@ export function usePortfolio() {
   const queryClient = useQueryClient();
   const [localStore, setLocalStore] = useState(() => loadLocalStore());
   const [isHydrated, setIsHydrated] = useState(false);
+  const [userId, setUserId] = useState<string | null>(null);
 
+  // 현재 사용자 ID 확인 + 사용자 변경 감지
   useEffect(() => {
-    setIsHydrated(true);
-  }, []);
+    const checkUser = async () => {
+      try {
+        const supabase = createClient();
+        const {
+          data: { user },
+        } = await supabase.auth.getUser();
+
+        // 사용자가 변경되었을 때 모든 포트폴리오 캐시 정리
+        if (userId !== user?.id) {
+          queryClient.removeQueries({ queryKey: ['portfolio'] });
+        }
+
+        setUserId(user?.id ?? null);
+        setIsHydrated(true);
+      } catch (error) {
+        setIsHydrated(true);
+      }
+    };
+
+    checkUser();
+  }, [queryClient]);
 
   const saveLocalStore = useCallback(
     (newStore: { favorites: Favorite[]; readNews: string[] }) => {
@@ -65,33 +87,33 @@ export function usePortfolio() {
     []
   );
 
-  // DB 기반: holdings 쿼리
+  // DB 기반: holdings 쿼리 (user_id를 queryKey에 포함)
   const {
     data: holdings = [],
     isLoading: holdingsLoading,
   } = useQuery({
-    queryKey: ['portfolio', 'holdings'],
+    queryKey: ['portfolio', 'holdings', userId],
     queryFn: () => getHoldings(),
-    enabled: isHydrated,
-    retry: 1,
+    enabled: isHydrated && !!userId,
+    staleTime: 1000 * 60 * 5, // 5분
   });
 
-  // DB 기반: transactions 쿼리
+  // DB 기반: transactions 쿼리 (user_id를 queryKey에 포함)
   const {
     data: transactions = [],
     isLoading: transactionsLoading,
   } = useQuery({
-    queryKey: ['portfolio', 'transactions'],
+    queryKey: ['portfolio', 'transactions', userId],
     queryFn: () => getTransactions(),
-    enabled: isHydrated,
-    retry: 1,
+    enabled: isHydrated && !!userId,
+    staleTime: 1000 * 60 * 5, // 5분
   });
 
   // holdings 뮤테이션
   const addHoldingMutation = useMutation({
     mutationFn: (holding: Omit<Holding, 'id'>) => addHoldingAction(holding),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['portfolio', 'holdings'] });
+      queryClient.invalidateQueries({ queryKey: ['portfolio', 'holdings', userId] });
       queryClient.invalidateQueries({ queryKey: ['stocks'] });
       queryClient.invalidateQueries({ queryKey: ['crypto'] });
     },
@@ -100,7 +122,7 @@ export function usePortfolio() {
   const removeHoldingMutation = useMutation({
     mutationFn: (id: string) => removeHoldingAction(id),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['portfolio', 'holdings'] });
+      queryClient.invalidateQueries({ queryKey: ['portfolio', 'holdings', userId] });
       queryClient.invalidateQueries({ queryKey: ['stocks'] });
       queryClient.invalidateQueries({ queryKey: ['crypto'] });
     },
@@ -110,14 +132,14 @@ export function usePortfolio() {
   const addTransactionMutation = useMutation({
     mutationFn: (tx: Omit<Transaction, 'id'>) => addTransactionAction(tx),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['portfolio', 'transactions'] });
+      queryClient.invalidateQueries({ queryKey: ['portfolio', 'transactions', userId] });
     },
   });
 
   const removeTransactionMutation = useMutation({
     mutationFn: (id: string) => removeTransactionAction(id),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['portfolio', 'transactions'] });
+      queryClient.invalidateQueries({ queryKey: ['portfolio', 'transactions', userId] });
     },
   });
 
