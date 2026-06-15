@@ -51,7 +51,7 @@ export function usePortfolio() {
   const [isHydrated, setIsHydrated] = useState(false);
   const [userId, setUserId] = useState<string | null>(null);
 
-  // 현재 사용자 ID 확인 + 사용자 변경 감지
+  // 마운트 시 사용자 ID 확인 (한 번만 실행)
   useEffect(() => {
     const checkUser = async () => {
       try {
@@ -59,11 +59,6 @@ export function usePortfolio() {
         const {
           data: { user },
         } = await supabase.auth.getUser();
-
-        // 사용자가 변경되었을 때 모든 포트폴리오 캐시 정리
-        if (userId !== user?.id) {
-          queryClient.removeQueries({ queryKey: ['portfolio'] });
-        }
 
         setUserId(user?.id ?? null);
         setIsHydrated(true);
@@ -73,7 +68,14 @@ export function usePortfolio() {
     };
 
     checkUser();
-  }, [queryClient]);
+  }, []);
+
+  // 사용자가 변경되었을 때 캐시 정리
+  useEffect(() => {
+    if (userId !== null) {
+      queryClient.removeQueries({ queryKey: ['portfolio'] });
+    }
+  }, [userId, queryClient]);
 
   const saveLocalStore = useCallback(
     (newStore: { favorites: Favorite[]; readNews: string[] }) => {
