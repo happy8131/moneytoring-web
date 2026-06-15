@@ -7,8 +7,6 @@ export type Json =
   | Json[]
 
 export type Database = {
-  // Allows to automatically instantiate createClient with right options
-  // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
     PostgrestVersion: "14.5"
   }
@@ -66,134 +64,7 @@ export type Database = {
             isOneToOne: false
             referencedRelation: "profiles"
             referencedColumns: ["id"]
-          },
-        ]
-      }
-      post_likes: {
-        Row: {
-          created_at: string
-          id: string
-          post_id: string
-          user_id: string
-        }
-        Insert: {
-          created_at?: string
-          id?: string
-          post_id: string
-          user_id: string
-        }
-        Update: {
-          created_at?: string
-          id?: string
-          post_id?: string
-          user_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "post_likes_post_id_fkey"
-            columns: ["post_id"]
-            isOneToOne: false
-            referencedRelation: "posts"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "post_likes_user_id_fkey"
-            columns: ["user_id"]
-            isOneToOne: false
-            referencedRelation: "profiles"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      posts: {
-        Row: {
-          comments_count: number | null
-          content: string
-          created_at: string
-          id: string
-          image_url: string | null
-          likes_count: number | null
-          updated_at: string
-          user_id: string
-        }
-        Insert: {
-          comments_count?: number | null
-          content: string
-          created_at?: string
-          id?: string
-          image_url?: string | null
-          likes_count?: number | null
-          updated_at?: string
-          user_id: string
-        }
-        Update: {
-          comments_count?: number | null
-          content?: string
-          created_at?: string
-          id?: string
-          image_url?: string | null
-          likes_count?: number | null
-          updated_at?: string
-          user_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "posts_user_id_fkey"
-            columns: ["user_id"]
-            isOneToOne: false
-            referencedRelation: "profiles"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      discussions: {
-        Row: {
-          comments_count: number | null
-          content: string
-          created_at: string
-          id: string
-          is_hot: boolean | null
-          is_pinned: boolean | null
-          symbol: string
-          title: string
-          updated_at: string
-          user_id: string
-          views_count: number | null
-        }
-        Insert: {
-          comments_count?: number | null
-          content: string
-          created_at?: string
-          id?: string
-          is_hot?: boolean | null
-          is_pinned?: boolean | null
-          symbol: string
-          title: string
-          updated_at?: string
-          user_id: string
-          views_count?: number | null
-        }
-        Update: {
-          comments_count?: number | null
-          content?: string
-          created_at?: string
-          id?: string
-          is_hot?: boolean | null
-          is_pinned?: boolean | null
-          symbol?: string
-          title?: string
-          updated_at?: string
-          user_id?: string
-          views_count?: number | null
-        }
-        Relationships: [
-          {
-            foreignKeyName: "discussions_user_id_fkey"
-            columns: ["user_id"]
-            isOneToOne: false
-            referencedRelation: "profiles"
-            referencedColumns: ["id"]
-          },
+          }
         ]
       }
       discussion_comments: {
@@ -248,7 +119,300 @@ export type Database = {
             isOneToOne: false
             referencedRelation: "profiles"
             referencedColumns: ["id"]
+          }
+        ]
+      }
+      discussions: {
+        Row: {
+          comments_count: number | null
+          content: string
+          created_at: string
+          id: string
+          is_hot: boolean | null
+          is_pinned: boolean | null
+          symbol: string
+          title: string
+          updated_at: string
+          user_id: string
+          views_count: number | null
+        }
+        Insert: {
+          comments_count?: number | null
+          content: string
+          created_at?: string
+          id?: string
+          is_hot?: boolean | null
+          is_pinned?: boolean | null
+          symbol: string
+          title: string
+          updated_at?: string
+          user_id: string
+          views_count?: number | null
+        }
+        Update: {
+          comments_count?: number | null
+          content?: string
+          created_at?: string
+          id?: string
+          is_hot?: boolean | null
+          is_pinned?: boolean | null
+          symbol?: string
+          title?: string
+          updated_at?: string
+          user_id?: string
+          views_count?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "discussions_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
+      follows: {
+        Row: {
+          created_at: string
+          follower_id: string
+          following_id: string
+          id: string
+        }
+        Insert: {
+          created_at?: string
+          follower_id: string
+          following_id: string
+          id?: string
+        }
+        Update: {
+          created_at?: string
+          follower_id?: string
+          following_id?: string
+          id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "follows_follower_id_fkey"
+            columns: ["follower_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
           },
+          {
+            foreignKeyName: "follows_following_id_fkey"
+            columns: ["following_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
+      holdings: {
+        Row: {
+          buy_date: string
+          buy_price: number
+          created_at: string
+          id: string
+          name: string
+          quantity: number
+          symbol: string
+          type: string
+          user_id: string
+        }
+        Insert: {
+          buy_date: string
+          buy_price: number
+          created_at?: string
+          id?: string
+          name: string
+          quantity: number
+          symbol: string
+          type: string
+          user_id: string
+        }
+        Update: {
+          buy_date?: string
+          buy_price?: number
+          created_at?: string
+          id?: string
+          name?: string
+          quantity?: number
+          symbol?: string
+          type?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "holdings_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
+      portfolio_benchmarks: {
+        Row: {
+          created_at: string
+          id: string
+          portfolio_id_1: string
+          portfolio_id_2: string
+          similarity_score: number | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          portfolio_id_1: string
+          portfolio_id_2: string
+          similarity_score?: number | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          portfolio_id_1?: string
+          portfolio_id_2?: string
+          similarity_score?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "portfolio_benchmarks_portfolio_id_1_fkey"
+            columns: ["portfolio_id_1"]
+            isOneToOne: false
+            referencedRelation: "portfolio_shares"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "portfolio_benchmarks_portfolio_id_2_fkey"
+            columns: ["portfolio_id_2"]
+            isOneToOne: false
+            referencedRelation: "portfolio_shares"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
+      portfolio_shares: {
+        Row: {
+          created_at: string
+          description: string | null
+          followers_count: number | null
+          id: string
+          is_public: boolean | null
+          share_link: string
+          title: string
+          updated_at: string
+          user_id: string
+          views_count: number | null
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          followers_count?: number | null
+          id?: string
+          is_public?: boolean | null
+          share_link: string
+          title: string
+          updated_at?: string
+          user_id: string
+          views_count?: number | null
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          followers_count?: number | null
+          id?: string
+          is_public?: boolean | null
+          share_link?: string
+          title?: string
+          updated_at?: string
+          user_id?: string
+          views_count?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "portfolio_shares_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
+      post_likes: {
+        Row: {
+          created_at: string
+          id: string
+          post_id: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          post_id: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          post_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "post_likes_post_id_fkey"
+            columns: ["post_id"]
+            isOneToOne: false
+            referencedRelation: "posts"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "post_likes_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
+      posts: {
+        Row: {
+          comments_count: number | null
+          content: string
+          created_at: string
+          id: string
+          image_url: string | null
+          likes_count: number | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          comments_count?: number | null
+          content: string
+          created_at?: string
+          id?: string
+          image_url?: string | null
+          likes_count?: number | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          comments_count?: number | null
+          content?: string
+          created_at?: string
+          id?: string
+          image_url?: string | null
+          likes_count?: number | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "posts_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          }
         ]
       }
       profiles: {
@@ -286,6 +450,50 @@ export type Database = {
           username?: string
         }
         Relationships: []
+      }
+      transactions: {
+        Row: {
+          created_at: string
+          date: string
+          id: string
+          memo: string | null
+          price: number
+          quantity: number
+          symbol: string
+          type: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          date: string
+          id?: string
+          memo?: string | null
+          price: number
+          quantity: number
+          symbol: string
+          type: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          date?: string
+          id?: string
+          memo?: string | null
+          price?: number
+          quantity?: number
+          symbol?: string
+          type?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "transactions_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          }
+        ]
       }
     }
     Views: {

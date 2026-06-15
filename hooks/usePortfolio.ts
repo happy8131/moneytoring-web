@@ -1,137 +1,154 @@
 'use client';
 
 import { useState, useCallback, useEffect } from 'react';
-import { useQueryClient } from '@tanstack/react-query';
+import { useQuery, useQueryClient, useMutation } from '@tanstack/react-query';
+import {
+  getHoldings,
+  addHolding as addHoldingAction,
+  removeHolding as removeHoldingAction,
+  getTransactions,
+  addTransaction as addTransactionAction,
+  removeTransaction as removeTransactionAction,
+} from '@/app/actions/portfolio';
 import type { Holding, Favorite, NewsItem, PortfolioStore, Transaction } from '@/types';
 
-const STORAGE_KEY = 'moneytoring_portfolio';
+const STORAGE_KEY = 'moneytoring_portfolio_local';
 
-// 기본 포트폴리오 상태
-const defaultStore: PortfolioStore = {
-  holdings: [],
-  favorites: [],
-  readNews: [],
-  transactions: [],
-  lastUpdated: new Date().toISOString(),
+// localStorage 전용: favorites, readNews
+type LocalStore = {
+  favorites: Favorite[];
+  readNews: string[];
 };
 
-// localStorage에서 데이터 로드 (SSR 안전)
-function loadStore(): PortfolioStore {
+const defaultLocalStore: LocalStore = {
+  favorites: [],
+  readNews: [],
+};
+
+function loadLocalStore(): LocalStore {
   if (typeof window === 'undefined') {
-    return defaultStore;
+    return defaultLocalStore;
   }
 
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return defaultStore;
+    if (!raw) return defaultLocalStore;
 
     const parsed = JSON.parse(raw);
-
-    // 데이터 마이그레이션: 이전 버전의 데이터에 누락된 필드 추가
     return {
-      holdings: parsed.holdings ?? [],
-      favorites: parsed.favorites ?? [],
-      readNews: parsed.readNews ?? [],
-      transactions: parsed.transactions ?? [],
-      lastUpdated: parsed.lastUpdated ?? new Date().toISOString(),
+      favorites: (parsed.favorites as Favorite[]) ?? [],
+      readNews: (parsed.readNews as string[]) ?? [],
     };
   } catch (error) {
-    console.error('Failed to load portfolio:', error);
-    return defaultStore;
+    return defaultLocalStore;
   }
 }
 
 export function usePortfolio() {
-  const [store, setStore] = useState<PortfolioStore>(() => loadStore());
-  const [isHydrated, setIsHydrated] = useState(false);
   const queryClient = useQueryClient();
+  const [localStore, setLocalStore] = useState(() => loadLocalStore());
+  const [isHydrated, setIsHydrated] = useState(false);
 
-  // 클라이언트 마운트 후 hydration 완료
   useEffect(() => {
     setIsHydrated(true);
   }, []);
 
-  // localStorage에 저장하고 React Query 캐시 무효화
-  const saveStore = useCallback((newStore: PortfolioStore) => {
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(newStore));
-      setStore(newStore);
+  const saveLocalStore = useCallback(
+    (newStore: { favorites: Favorite[]; readNews: string[] }) => {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(newStore));
+        setLocalStore(newStore);
+      } catch (error) {
+        console.error('Failed to save local portfolio:', error);
+      }
+    },
+    []
+  );
 
-      // holdings이 변경되면 주식/암호화폐 가격 캐시 무효화 및 즉시 리페칭
-      queryClient.invalidateQueries({
-        queryKey: ['stocks'],
-        refetchType: 'active',
-      });
-      queryClient.invalidateQueries({
-        queryKey: ['crypto'],
-        refetchType: 'active',
-      });
-    } catch (error) {
-      console.error('Failed to save portfolio:', error);
-    }
-  }, [queryClient]);
+  // DB 기반: holdings 쿼리
+  const {
+    data: holdings = [],
+    isLoading: holdingsLoading,
+  } = useQuery({
+    queryKey: ['portfolio', 'holdings'],
+    queryFn: () => getHoldings(),
+    enabled: isHydrated,
+    retry: 1,
+  });
 
-  // 보유 종목 추가
+  // DB 기반: transactions 쿼리
+  const {
+    data: transactions = [],
+    isLoading: transactionsLoading,
+  } = useQuery({
+    queryKey: ['portfolio', 'transactions'],
+    queryFn: () => getTransactions(),
+    enabled: isHydrated,
+    retry: 1,
+  });
+
+  // holdings 뮤테이션
+  const addHoldingMutation = useMutation({
+    mutationFn: (holding: Omit<Holding, 'id'>) => addHoldingAction(holding),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['portfolio', 'holdings'] });
+      queryClient.invalidateQueries({ queryKey: ['stocks'] });
+      queryClient.invalidateQueries({ queryKey: ['crypto'] });
+    },
+  });
+
+  const removeHoldingMutation = useMutation({
+    mutationFn: (id: string) => removeHoldingAction(id),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['portfolio', 'holdings'] });
+      queryClient.invalidateQueries({ queryKey: ['stocks'] });
+      queryClient.invalidateQueries({ queryKey: ['crypto'] });
+    },
+  });
+
+  // transactions 뮤테이션
+  const addTransactionMutation = useMutation({
+    mutationFn: (tx: Omit<Transaction, 'id'>) => addTransactionAction(tx),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['portfolio', 'transactions'] });
+    },
+  });
+
+  const removeTransactionMutation = useMutation({
+    mutationFn: (id: string) => removeTransactionAction(id),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['portfolio', 'transactions'] });
+    },
+  });
+
   const addHolding = useCallback(
     (holding: Omit<Holding, 'id'>) => {
-      const newHolding: Holding = {
-        ...holding,
-        id: `${holding.symbol}-${Date.now()}`,
-      };
-
-      const newStore: PortfolioStore = {
-        ...store,
-        holdings: [...store.holdings, newHolding],
-        lastUpdated: new Date().toISOString(),
-      };
-
-      saveStore(newStore);
-      return newHolding;
+      return addHoldingMutation.mutateAsync(holding);
     },
-    [store, saveStore]
+    [addHoldingMutation]
   );
 
-  // 보유 종목 제거
   const removeHolding = useCallback(
     (id: string) => {
-      const newStore: PortfolioStore = {
-        ...store,
-        holdings: store.holdings.filter((h) => h.id !== id),
-        lastUpdated: new Date().toISOString(),
-      };
-
-      saveStore(newStore);
+      return removeHoldingMutation.mutateAsync(id);
     },
-    [store, saveStore]
+    [removeHoldingMutation]
   );
 
-  // 보유 종목 수정
-  const updateHolding = useCallback(
-    (id: string, updates: Partial<Holding>) => {
-      const newStore: PortfolioStore = {
-        ...store,
-        holdings: store.holdings.map((h) =>
-          h.id === id ? { ...h, ...updates } : h
-        ),
-        lastUpdated: new Date().toISOString(),
-      };
+  const updateHolding = useCallback((id: string, updates: Partial<Holding>) => {
+    // 미사용이지만 인터페이스 유지
+  }, []);
 
-      saveStore(newStore);
-    },
-    [store, saveStore]
-  );
-
-  // 즐겨찾기 토글
   const toggleFavorite = useCallback(
     (symbol: string, name: string, type: 'stock' | 'crypto') => {
-      const isFavorited = store.favorites.some((f) => f.symbol === symbol);
+      const isFavorited = localStore.favorites.some((f) => f.symbol === symbol);
 
-      const newStore: PortfolioStore = {
-        ...store,
+      const newLocalStore = {
+        ...localStore,
         favorites: isFavorited
-          ? store.favorites.filter((f) => f.symbol !== symbol)
+          ? localStore.favorites.filter((f) => f.symbol !== symbol)
           : [
-              ...store.favorites,
+              ...localStore.favorites,
               {
                 symbol,
                 name,
@@ -139,90 +156,63 @@ export function usePortfolio() {
                 addedAt: new Date().toISOString(),
               },
             ],
-        lastUpdated: new Date().toISOString(),
       };
 
-      saveStore(newStore);
+      saveLocalStore(newLocalStore);
       return !isFavorited;
     },
-    [store, saveStore]
+    [localStore, saveLocalStore]
   );
 
-  // 뉴스 읽음 표시
   const markNewsAsRead = useCallback(
     (newsId: string) => {
-      if (store.readNews.includes(newsId)) return;
+      if (localStore.readNews.includes(newsId)) return;
 
-      const newStore: PortfolioStore = {
-        ...store,
-        readNews: [...store.readNews, newsId],
-        lastUpdated: new Date().toISOString(),
+      const newLocalStore = {
+        ...localStore,
+        readNews: [...localStore.readNews, newsId],
       };
 
-      saveStore(newStore);
+      saveLocalStore(newLocalStore);
     },
-    [store, saveStore]
+    [localStore, saveLocalStore]
   );
 
-  // 즐겨찾기 여부 확인
   const isFavorited = useCallback(
-    (symbol: string) => store.favorites.some((f) => f.symbol === symbol),
-    [store.favorites]
+    (symbol: string) => localStore.favorites.some((f) => f.symbol === symbol),
+    [localStore.favorites]
   );
 
-  // 뉴스 읽음 여부 확인
   const isNewsRead = useCallback(
-    (newsId: string) => store.readNews.includes(newsId),
-    [store.readNews]
+    (newsId: string) => localStore.readNews.includes(newsId),
+    [localStore.readNews]
   );
 
-  // 거래 기록 추가
   const addTransaction = useCallback(
     (tx: Omit<Transaction, 'id'>) => {
-      const newTransaction: Transaction = {
-        ...tx,
-        id: `${tx.symbol}-${tx.type}-${Date.now()}`,
-      };
-
-      const newStore: PortfolioStore = {
-        ...store,
-        transactions: [...store.transactions, newTransaction],
-        lastUpdated: new Date().toISOString(),
-      };
-
-      saveStore(newStore);
-      return newTransaction;
+      return addTransactionMutation.mutateAsync(tx);
     },
-    [store, saveStore]
+    [addTransactionMutation]
   );
 
-  // 거래 기록 삭제
   const removeTransaction = useCallback(
     (id: string) => {
-      const newStore: PortfolioStore = {
-        ...store,
-        transactions: store.transactions.filter((t) => t.id !== id),
-        lastUpdated: new Date().toISOString(),
-      };
-
-      saveStore(newStore);
+      return removeTransactionMutation.mutateAsync(id);
     },
-    [store, saveStore]
+    [removeTransactionMutation]
   );
 
-  // 특정 심볼의 거래 기록 조회
   const getTransactionsBySymbol = useCallback(
-    (symbol: string) =>
-      store.transactions.filter((t) => t.symbol === symbol),
-    [store.transactions]
+    (symbol: string) => transactions.filter((t) => t.symbol === symbol),
+    [transactions]
   );
 
   return {
     // 상태
-    holdings: store.holdings,
-    favorites: store.favorites,
-    readNews: store.readNews,
-    transactions: store.transactions,
+    holdings,
+    favorites: localStore.favorites,
+    readNews: localStore.readNews,
+    transactions,
     isHydrated,
 
     // 메서드
