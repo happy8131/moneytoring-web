@@ -29,6 +29,17 @@ const queryClient = new QueryClient({
 });
 
 export function Providers({ children }: { children: ReactNode }) {
+  useEffect(() => {
+    // 기존 localStorage 포트폴리오 데이터 정리 (DB 마이그레이션 이후)
+    if (typeof window !== 'undefined') {
+      try {
+        localStorage.removeItem('moneytoring_portfolio');
+      } catch (error) {
+        // 무시
+      }
+    }
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>{children}</TooltipProvider>

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   Dialog,
   DialogContent,
@@ -28,6 +28,15 @@ interface AddHoldingModalProps {
   onSuccess?: () => void;
 }
 
+const defaultFormData = {
+  symbol: '',
+  name: '',
+  quantity: '',
+  buyPrice: '',
+  buyDate: new Date().toISOString().split('T')[0],
+  type: 'stock' as 'stock' | 'crypto' | 'korean-stock',
+};
+
 export function AddHoldingModal({
   open,
   onOpenChange,
@@ -35,16 +44,17 @@ export function AddHoldingModal({
   onSuccess,
 }: AddHoldingModalProps) {
 
-  const [formData, setFormData] = useState({
-    symbol: '',
-    name: '',
-    quantity: '',
-    buyPrice: '',
-    buyDate: new Date().toISOString().split('T')[0],
-    type: 'stock' as 'stock' | 'crypto' | 'korean-stock',
-  });
+  const [formData, setFormData] = useState(defaultFormData);
 
   const [errors, setErrors] = useState<Record<string, string>>({});
+
+  // 모달이 열릴 때 폼 초기화
+  useEffect(() => {
+    if (open) {
+      setFormData(defaultFormData);
+      setErrors({});
+    }
+  }, [open]);
 
   const handleChange = (
     field: string,
