@@ -1,9 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Plus } from 'lucide-react';
+import { Card } from '@/components/ui/card';
+import { Plus, LogIn } from 'lucide-react';
+import { createClient } from '@/lib/supabase/client';
 import { usePortfolio } from '@/hooks/usePortfolio';
 import { useStockQuotes } from '@/hooks/useStockQuotes';
 import { useCryptoPrices } from '@/hooks/useCryptoPrices';
@@ -27,13 +29,27 @@ import type { QuotesResponse } from '@/app/api/stocks/quotes/route';
 import type { CryptoPricesResponse } from '@/app/api/crypto/prices/route';
 
 export default function PortfolioPage() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isCheckingAuth, setIsCheckingAuth] = useState(true);
+
+  useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        const supabase = createClient();
+        const { data: { user } } = await supabase.auth.getUser();
+        setIsLoggedIn(!!user);
+      } catch (error) {
+        setIsLoggedIn(false);
+      } finally {
+        setIsCheckingAuth(false);
+      }
+    };
+
+    checkAuth();
+  }, []);
+
   const { holdings, isHydrated, removeHolding, addHolding, transactions, addTransaction, removeTransaction } =
     usePortfolio();
-
-  // 디버그 로그
-  if (typeof window !== 'undefined') {
-    console.log('PortfolioPage holdings:', holdings.length, holdings.map(h => h.symbol).join(','));
-  }
 
   const [addHoldingModalOpen, setAddHoldingModalOpen] = useState(false);
   const [addTransactionModalOpen, setAddTransactionModalOpen] = useState(false);
@@ -119,6 +135,54 @@ export default function PortfolioPage() {
       setDeleteTargetSymbol('');
     }
   };
+
+  if (isCheckingAuth) {
+    return (
+      <div className="space-y-6">
+        <div className="flex items-center justify-between">
+          <div>
+            <h1 className="text-3xl font-bold tracking-tight">포트폴리오</h1>
+            <p className="text-muted-foreground mt-1">
+              보유 중인 자산을 관리하고 수익률을 분석하세요.
+            </p>
+          </div>
+        </div>
+        <div className="h-40 bg-muted animate-pulse rounded-lg" />
+      </div>
+    );
+  }
+
+  if (!isLoggedIn) {
+    return (
+      <div className="space-y-6">
+        <div className="flex items-center justify-between">
+          <div>
+            <h1 className="text-3xl font-bold tracking-tight">포트폴리오</h1>
+            <p className="text-muted-foreground mt-1">
+              보유 중인 자산을 관리하고 수익률을 분석하세요.
+            </p>
+          </div>
+        </div>
+
+        <Card className="p-8">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center">
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+              <LogIn className="h-6 w-6 text-primary" />
+            </div>
+            <div>
+              <h2 className="text-xl font-semibold">로그인이 필요합니다</h2>
+              <p className="mt-2 text-sm text-muted-foreground">
+                포트폴리오 기능을 사용하려면 로그인해주세요.
+              </p>
+            </div>
+            <Button asChild className="mt-4">
+              <a href="/login">로그인하기</a>
+            </Button>
+          </div>
+        </Card>
+      </div>
+    );
+  }
 
   if (!isHydrated) {
     return (
