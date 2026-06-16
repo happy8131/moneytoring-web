@@ -123,14 +123,14 @@ export default async function PortfolioDetailPage({
             </div>
           )}
 
-          <div className="flex flex-wrap gap-3 ml-auto">
+          <div className="flex flex-wrap gap-3 ml-auto items-center">
             <div className="flex items-center gap-2 px-3 py-2 bg-muted rounded-lg">
               <Eye className="h-4 w-4" />
-              <span className="text-sm">{portfolio.viewsCount}</span>
+              <span className="text-sm">조회수 {portfolio.viewsCount}</span>
             </div>
             <div className="flex items-center gap-2 px-3 py-2 bg-muted rounded-lg">
               <Heart className="h-4 w-4" />
-              <span className="text-sm">{portfolio.followersCount}</span>
+              <span className="text-sm">팔로워 {portfolio.followersCount}</span>
             </div>
             <FollowButton
               portfolioOwnerUserId={portfolio.userId}
