@@ -7,6 +7,8 @@ export type Json =
   | Json[]
 
 export type Database = {
+  // Allows to automatically instantiate createClient with right options
+  // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
     PostgrestVersion: "14.5"
   }
@@ -64,7 +66,7 @@ export type Database = {
             isOneToOne: false
             referencedRelation: "profiles"
             referencedColumns: ["id"]
-          }
+          },
         ]
       }
       discussion_comments: {
@@ -119,7 +121,7 @@ export type Database = {
             isOneToOne: false
             referencedRelation: "profiles"
             referencedColumns: ["id"]
-          }
+          },
         ]
       }
       discussions: {
@@ -169,7 +171,7 @@ export type Database = {
             isOneToOne: false
             referencedRelation: "profiles"
             referencedColumns: ["id"]
-          }
+          },
         ]
       }
       follows: {
@@ -205,7 +207,7 @@ export type Database = {
             isOneToOne: false
             referencedRelation: "profiles"
             referencedColumns: ["id"]
-          }
+          },
         ]
       }
       holdings: {
@@ -249,7 +251,7 @@ export type Database = {
             isOneToOne: false
             referencedRelation: "profiles"
             referencedColumns: ["id"]
-          }
+          },
         ]
       }
       portfolio_benchmarks: {
@@ -288,7 +290,7 @@ export type Database = {
             isOneToOne: false
             referencedRelation: "portfolio_shares"
             referencedColumns: ["id"]
-          }
+          },
         ]
       }
       portfolio_shares: {
@@ -296,6 +298,7 @@ export type Database = {
           created_at: string
           description: string | null
           followers_count: number | null
+          holdings_snapshot: Json
           id: string
           is_public: boolean | null
           share_link: string
@@ -308,6 +311,7 @@ export type Database = {
           created_at?: string
           description?: string | null
           followers_count?: number | null
+          holdings_snapshot?: Json
           id?: string
           is_public?: boolean | null
           share_link: string
@@ -320,6 +324,7 @@ export type Database = {
           created_at?: string
           description?: string | null
           followers_count?: number | null
+          holdings_snapshot?: Json
           id?: string
           is_public?: boolean | null
           share_link?: string
@@ -335,7 +340,7 @@ export type Database = {
             isOneToOne: false
             referencedRelation: "profiles"
             referencedColumns: ["id"]
-          }
+          },
         ]
       }
       post_likes: {
@@ -371,7 +376,7 @@ export type Database = {
             isOneToOne: false
             referencedRelation: "profiles"
             referencedColumns: ["id"]
-          }
+          },
         ]
       }
       posts: {
@@ -412,7 +417,7 @@ export type Database = {
             isOneToOne: false
             referencedRelation: "profiles"
             referencedColumns: ["id"]
-          }
+          },
         ]
       }
       profiles: {
@@ -492,7 +497,7 @@ export type Database = {
             isOneToOne: false
             referencedRelation: "profiles"
             referencedColumns: ["id"]
-          }
+          },
         ]
       }
     }
@@ -500,7 +505,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      increment_portfolio_share_views: {
+        Args: { share_link_param: string }
+        Returns: undefined
+      }
     }
     Enums: {
       [_ in never]: never

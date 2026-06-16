@@ -10,6 +10,7 @@ import {
   Calendar,
   Menu,
   X,
+  Users,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
@@ -18,6 +19,7 @@ import { cn } from '@/lib/utils';
 const navItems = [
   { href: '/dashboard', label: '대시보드', icon: LayoutDashboard },
   { href: '/portfolio', label: '포트폴리오', icon: Briefcase },
+  { href: '/portfolios', label: '공개 포트폴리오', icon: Users },
   { href: '/news', label: '뉴스', icon: Newspaper },
   { href: '/economic-calendar', label: '경제지표', icon: Calendar },
 ] as const;

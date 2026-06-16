@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card } from '@/components/ui/card';
-import { Plus, LogIn } from 'lucide-react';
+import { Plus, LogIn, Share2, Users } from 'lucide-react';
 import { createClient } from '@/lib/supabase/client';
 import { usePortfolio } from '@/hooks/usePortfolio';
 import { useStockQuotes } from '@/hooks/useStockQuotes';
@@ -24,6 +24,8 @@ import { DeleteConfirmDialog } from '@/components/portfolio/DeleteConfirmDialog'
 import { TransactionTable } from '@/components/portfolio/TransactionTable';
 import { TransactionModal } from '@/components/portfolio/TransactionModal';
 import { PortfolioAnalytics } from '@/components/portfolio/PortfolioAnalytics';
+import { ShareSettings } from '@/components/portfolio/ShareSettings';
+import Link from 'next/link';
 import type { Holding } from '@/types';
 import type { QuotesResponse } from '@/app/api/stocks/quotes/route';
 import type { CryptoPricesResponse } from '@/app/api/crypto/prices/route';
@@ -53,6 +55,7 @@ export default function PortfolioPage() {
 
   const [addHoldingModalOpen, setAddHoldingModalOpen] = useState(false);
   const [addTransactionModalOpen, setAddTransactionModalOpen] = useState(false);
+  const [shareSettingsOpen, setShareSettingsOpen] = useState(false);
   const [deleteConfirmOpen, setDeleteConfirmOpen] = useState(false);
   const [deleteTargetId, setDeleteTargetId] = useState<string | null>(null);
   const [deleteTargetSymbol, setDeleteTargetSymbol] = useState<string>('');
@@ -209,6 +212,12 @@ export default function PortfolioPage() {
             보유 중인 자산을 관리하고 수익률을 분석하세요.
           </p>
         </div>
+        <Link href="/portfolios">
+          <Button variant="outline">
+            <Users className="mr-2 h-4 w-4" />
+            공개 포트폴리오
+          </Button>
+        </Link>
       </div>
 
       <Tabs defaultValue="holdings" className="w-full">
@@ -219,7 +228,11 @@ export default function PortfolioPage() {
         </TabsList>
 
         <TabsContent value="holdings" className="space-y-6">
-          <div className="flex justify-end">
+          <div className="flex justify-end gap-2">
+            <Button variant="outline" onClick={() => setShareSettingsOpen(true)}>
+              <Share2 className="mr-2 h-4 w-4" />
+              공유 설정
+            </Button>
             <Button onClick={() => setAddHoldingModalOpen(true)}>
               <Plus className="mr-2 h-4 w-4" />
               종목 추가
@@ -271,6 +284,12 @@ export default function PortfolioPage() {
           />
         </TabsContent>
       </Tabs>
+
+      <ShareSettings
+        open={shareSettingsOpen}
+        onOpenChange={setShareSettingsOpen}
+        currentHoldings={holdingsWithPrices}
+      />
 
       <AddHoldingModal
         open={addHoldingModalOpen}
