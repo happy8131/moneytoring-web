@@ -4,10 +4,10 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { FollowButton } from '@/components/portfolio/FollowButton';
 import { ShareLink } from '@/components/portfolio/ShareLink';
+import { ViewCounter } from '@/components/portfolio/ViewCounter';
 import {
   getPortfolioShareByLink,
   checkIsFollowing,
-  incrementPortfolioShareViews,
   getFollowersCount,
 } from '@/app/actions/portfolioShares';
 import { Eye, Heart, User } from 'lucide-react';
@@ -78,13 +78,6 @@ export default async function PortfolioDetailPage({
     notFound();
   }
 
-  // 조회수 증가 (비동기, 에러 무시)
-  try {
-    await incrementPortfolioShareViews(shareLink);
-  } catch (error) {
-    // 무시
-  }
-
   // 팔로우 여부 확인
   const isFollowing = await checkIsFollowing(portfolio.userId);
 
@@ -93,6 +86,8 @@ export default async function PortfolioDetailPage({
 
   return (
     <div className="space-y-6">
+      <ViewCounter shareLink={portfolio.shareLink} />
+
       {/* 헤더 */}
       <div className="space-y-4">
         <div className="space-y-2">
