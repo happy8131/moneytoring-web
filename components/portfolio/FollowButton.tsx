@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useTransition } from 'react';
+import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { toggleFollow } from '@/app/actions/portfolioShares';
 import { Heart, Loader2 } from 'lucide-react';
@@ -13,12 +14,15 @@ interface FollowButtonProps {
 export function FollowButton({ portfolioOwnerUserId, isFollowing: initialIsFollowing }: FollowButtonProps) {
   const [isFollowing, setIsFollowing] = useState(initialIsFollowing);
   const [isPending, startTransition] = useTransition();
+  const router = useRouter();
 
   const handleToggleFollow = () => {
     startTransition(async () => {
       try {
         const result = await toggleFollow(portfolioOwnerUserId);
         setIsFollowing(result.following);
+        // 페이지 데이터 갱신 (팔로워 수 표시 업데이트)
+        router.refresh();
       } catch (error) {
         console.error('Failed to toggle follow:', error);
       }

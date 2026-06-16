@@ -2,12 +2,13 @@ import { notFound } from 'next/navigation';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { FollowButton } from '@/components/portfolio/FollowButton';
 import { ShareLink } from '@/components/portfolio/ShareLink';
+import { ViewCounter } from '@/components/portfolio/ViewCounter';
+import { FollowSection } from '@/components/portfolio/FollowSection';
 import {
   getPortfolioShareByLink,
   checkIsFollowing,
-  incrementPortfolioShareViews,
+  getFollowersCount,
 } from '@/app/actions/portfolioShares';
 import { Eye, Heart, User } from 'lucide-react';
 import Link from 'next/link';
@@ -77,18 +78,16 @@ export default async function PortfolioDetailPage({
     notFound();
   }
 
-  // 조회수 증가 (비동기, 에러 무시)
-  try {
-    await incrementPortfolioShareViews(shareLink);
-  } catch (error) {
-    // 무시
-  }
-
   // 팔로우 여부 확인
   const isFollowing = await checkIsFollowing(portfolio.userId);
 
+  // 팔로워 수 조회 (follows 테이블에서 직접 카운트)
+  const followersCount = await getFollowersCount(portfolio.userId);
+
   return (
     <div className="space-y-6">
+      <ViewCounter shareLink={portfolio.shareLink} />
+
       {/* 헤더 */}
       <div className="space-y-4">
         <div className="space-y-2">
@@ -123,18 +122,15 @@ export default async function PortfolioDetailPage({
             </div>
           )}
 
-          <div className="flex flex-wrap gap-3 ml-auto">
+          <div className="flex flex-wrap gap-3 ml-auto items-center">
             <div className="flex items-center gap-2 px-3 py-2 bg-muted rounded-lg">
               <Eye className="h-4 w-4" />
-              <span className="text-sm">{portfolio.viewsCount}</span>
+              <span className="text-sm">조회수 {portfolio.viewsCount}</span>
             </div>
-            <div className="flex items-center gap-2 px-3 py-2 bg-muted rounded-lg">
-              <Heart className="h-4 w-4" />
-              <span className="text-sm">{portfolio.followersCount}</span>
-            </div>
-            <FollowButton
+            <FollowSection
               portfolioOwnerUserId={portfolio.userId}
               isFollowing={isFollowing}
+              initialFollowersCount={followersCount}
             />
           </div>
         </div>
