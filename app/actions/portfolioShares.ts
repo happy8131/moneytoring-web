@@ -285,20 +285,6 @@ export async function toggleFollow(portfolioOwnerUserId: string): Promise<{ foll
       .eq('follower_id', user.id)
       .eq('following_id', portfolioOwnerUserId);
 
-    // 팔로워 수 감소 (portfolio_shares)
-    const { data: portfolioShare } = await supabase
-      .from('portfolio_shares')
-      .select('id, followers_count')
-      .eq('user_id', portfolioOwnerUserId)
-      .single();
-
-    if (portfolioShare) {
-      await supabase
-        .from('portfolio_shares')
-        .update({ followers_count: Math.max(0, (portfolioShare.followers_count || 0) - 1) })
-        .eq('id', portfolioShare.id);
-    }
-
     revalidatePath('/portfolios');
     return { following: false };
   } else {
@@ -307,20 +293,6 @@ export async function toggleFollow(portfolioOwnerUserId: string): Promise<{ foll
       follower_id: user.id,
       following_id: portfolioOwnerUserId,
     });
-
-    // 팔로워 수 증가 (portfolio_shares)
-    const { data: portfolioShare } = await supabase
-      .from('portfolio_shares')
-      .select('id, followers_count')
-      .eq('user_id', portfolioOwnerUserId)
-      .single();
-
-    if (portfolioShare) {
-      await supabase
-        .from('portfolio_shares')
-        .update({ followers_count: (portfolioShare.followers_count || 0) + 1 })
-        .eq('id', portfolioShare.id);
-    }
 
     revalidatePath('/portfolios');
     return { following: true };
@@ -346,6 +318,23 @@ export async function checkIsFollowing(portfolioOwnerUserId: string): Promise<bo
     .single();
 
   return !!data;
+}
+
+// 팔로워 수 조회
+export async function getFollowersCount(portfolioOwnerUserId: string): Promise<number> {
+  const supabase = await createClient();
+
+  const { count, error } = await supabase
+    .from('follows')
+    .select('*', { count: 'exact', head: true })
+    .eq('following_id', portfolioOwnerUserId);
+
+  if (error) {
+    console.error('Failed to get followers count:', error);
+    return 0;
+  }
+
+  return count || 0;
 }
 
 // 조회수 증가

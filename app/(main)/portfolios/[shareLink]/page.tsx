@@ -8,6 +8,7 @@ import {
   getPortfolioShareByLink,
   checkIsFollowing,
   incrementPortfolioShareViews,
+  getFollowersCount,
 } from '@/app/actions/portfolioShares';
 import { Eye, Heart, User } from 'lucide-react';
 import Link from 'next/link';
@@ -87,6 +88,9 @@ export default async function PortfolioDetailPage({
   // 팔로우 여부 확인
   const isFollowing = await checkIsFollowing(portfolio.userId);
 
+  // 팔로워 수 조회 (follows 테이블에서 직접 카운트)
+  const followersCount = await getFollowersCount(portfolio.userId);
+
   return (
     <div className="space-y-6">
       {/* 헤더 */}
@@ -130,7 +134,7 @@ export default async function PortfolioDetailPage({
             </div>
             <div className="flex items-center gap-2 px-3 py-2 bg-muted rounded-lg">
               <Heart className="h-4 w-4" />
-              <span className="text-sm">팔로워 {portfolio.followersCount}</span>
+              <span className="text-sm">팔로워 {followersCount}</span>
             </div>
             <FollowButton
               portfolioOwnerUserId={portfolio.userId}
