@@ -2,9 +2,9 @@ import { notFound } from 'next/navigation';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { FollowButton } from '@/components/portfolio/FollowButton';
 import { ShareLink } from '@/components/portfolio/ShareLink';
 import { ViewCounter } from '@/components/portfolio/ViewCounter';
+import { FollowSection } from '@/components/portfolio/FollowSection';
 import {
   getPortfolioShareByLink,
   checkIsFollowing,
@@ -127,13 +127,10 @@ export default async function PortfolioDetailPage({
               <Eye className="h-4 w-4" />
               <span className="text-sm">조회수 {portfolio.viewsCount}</span>
             </div>
-            <div className="flex items-center gap-2 px-3 py-2 bg-muted rounded-lg">
-              <Heart className="h-4 w-4" />
-              <span className="text-sm">팔로워 {followersCount}</span>
-            </div>
-            <FollowButton
+            <FollowSection
               portfolioOwnerUserId={portfolio.userId}
               isFollowing={isFollowing}
+              initialFollowersCount={followersCount}
             />
           </div>
         </div>
