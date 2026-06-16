@@ -213,7 +213,7 @@ export default function PortfolioPage() {
           </p>
         </div>
         <Link href="/portfolios">
-          <Button variant="outline">
+          <Button variant="outline" className="cursor-pointer">
             <Users className="mr-2 h-4 w-4" />
             공개 포트폴리오
           </Button>
@@ -229,11 +229,11 @@ export default function PortfolioPage() {
 
         <TabsContent value="holdings" className="space-y-6">
           <div className="flex justify-end gap-2">
-            <Button variant="outline" onClick={() => setShareSettingsOpen(true)}>
+            <Button className='cursor-pointer' variant="outline" onClick={() => setShareSettingsOpen(true)}>
               <Share2 className="mr-2 h-4 w-4" />
               공유 설정
             </Button>
-            <Button onClick={() => setAddHoldingModalOpen(true)}>
+            <Button className='cursor-pointer' onClick={() => setAddHoldingModalOpen(true)}>
               <Plus className="mr-2 h-4 w-4" />
               종목 추가
             </Button>
