@@ -285,7 +285,6 @@ export async function toggleFollow(portfolioOwnerUserId: string): Promise<{ foll
       .eq('follower_id', user.id)
       .eq('following_id', portfolioOwnerUserId);
 
-    revalidatePath('/portfolios');
     return { following: false };
   } else {
     // 팔로우
@@ -294,7 +293,6 @@ export async function toggleFollow(portfolioOwnerUserId: string): Promise<{ foll
       following_id: portfolioOwnerUserId,
     });
 
-    revalidatePath('/portfolios');
     return { following: true };
   }
 }
