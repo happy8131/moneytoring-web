@@ -104,3 +104,23 @@ export interface SearchResult {
   stocks: StockQuote[];
   cryptos: CryptoQuote[];
 }
+
+// 공유 포트폴리오
+export interface PortfolioShare {
+  id: string;
+  userId: string;
+  title: string;
+  description?: string;
+  isPublic: boolean;
+  shareLink: string;
+  viewsCount: number;
+  followersCount: number;
+  holdingsSnapshot: Holding[];
+  createdAt: string;
+  updatedAt: string;
+  profile?: {
+    username: string;
+    avatarUrl?: string;
+    isExpert?: boolean;
+  };
+}
