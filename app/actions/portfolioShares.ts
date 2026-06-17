@@ -91,7 +91,17 @@ export async function getMyPortfolioShare(): Promise<PortfolioShare | null> {
   if (error && error.code !== 'PGRST116') throw new Error(error.message);
   if (!data) return null;
 
-  return convertPortfolioShareFromDB(data);
+  const share = convertPortfolioShareFromDB(data);
+
+  // 팔로워 수를 동적으로 조회
+  const { count: followersCount } = await supabase
+    .from('follows')
+    .select('*', { count: 'exact', head: true })
+    .eq('following_id', user.id);
+
+  share.followersCount = followersCount || 0;
+
+  return share;
 }
 
 // share_link로 상세 조회
