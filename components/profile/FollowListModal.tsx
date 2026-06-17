@@ -30,13 +30,11 @@ export function FollowListModal({
 }: FollowListModalProps) {
   const [following, setFollowing] = useState<FollowUser[]>([]);
   const [followers, setFollowers] = useState<FollowUser[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
   const [activeTab, setActiveTab] = useState<'following' | 'followers'>(defaultTab);
 
   useEffect(() => {
     if (!open) return;
 
-    setIsLoading(true);
     Promise.all([getMyFollowing(), getMyFollowers()])
       .then(([followingData, followersData]) => {
         setFollowing(followingData);
@@ -44,9 +42,6 @@ export function FollowListModal({
       })
       .catch((error) => {
         console.error('Failed to load follow list:', error);
-      })
-      .finally(() => {
-        setIsLoading(false);
       });
   }, [open]);
 
@@ -68,9 +63,7 @@ export function FollowListModal({
           </TabsList>
 
           <TabsContent value="following" className="space-y-3">
-            {isLoading ? (
-              <div className="text-center py-8 text-muted-foreground">로드 중...</div>
-            ) : following.length === 0 ? (
+            {following.length === 0 ? (
               <div className="text-center py-8 text-muted-foreground">팔로우하는 사람이 없습니다.</div>
             ) : (
               following.map((user) => (
@@ -102,9 +95,7 @@ export function FollowListModal({
           </TabsContent>
 
           <TabsContent value="followers" className="space-y-3">
-            {isLoading ? (
-              <div className="text-center py-8 text-muted-foreground">로드 중...</div>
-            ) : followers.length === 0 ? (
+            {followers.length === 0 ? (
               <div className="text-center py-8 text-muted-foreground">팔로워가 없습니다.</div>
             ) : (
               followers.map((user) => (
