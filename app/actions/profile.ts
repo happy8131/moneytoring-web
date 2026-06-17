@@ -196,37 +196,38 @@ export async function getMyFollowingPortfolios(): Promise<PortfolioShare[]> {
     return [];
   }
 
-  const { data } = await supabase
+  // 팔로우 관계 조회
+  const { data: follows } = await supabase
     .from('follows')
-    .select(`
-      following_id,
-      portfolio_shares(
-        id,
-        user_id,
-        title,
-        description,
-        is_public,
-        share_link,
-        views_count,
-        followers_count,
-        holdings_snapshot,
-        created_at,
-        updated_at,
-        profiles:user_id (username, avatar_url, is_expert)
-      )
-    `)
+    .select('following_id')
     .eq('follower_id', user.id);
 
-  const portfolios: PortfolioShare[] = [];
-  (data || []).forEach((row: any) => {
-    if (row.portfolio_shares && Array.isArray(row.portfolio_shares)) {
-      row.portfolio_shares.forEach((ps: any) => {
-        portfolios.push(convertPortfolioShareFromDB(ps));
-      });
-    }
-  });
+  if (!follows || follows.length === 0) {
+    return [];
+  }
 
-  return portfolios;
+  // 팔로우하는 사람들의 공개 포트폴리오 조회
+  const followingIds = (follows || []).map((f: any) => f.following_id);
+  const { data: portfolios } = await supabase
+    .from('portfolio_shares')
+    .select(`
+      id,
+      user_id,
+      title,
+      description,
+      is_public,
+      share_link,
+      views_count,
+      followers_count,
+      holdings_snapshot,
+      created_at,
+      updated_at,
+      profiles:user_id (username, avatar_url, is_expert)
+    `)
+    .in('user_id', followingIds)
+    .eq('is_public', true);
+
+  return (portfolios || []).map((p: any) => convertPortfolioShareFromDB(p));
 }
 
 // 내가 쓴 커뮤니티 포스트
