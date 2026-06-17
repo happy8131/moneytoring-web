@@ -94,22 +94,44 @@ export async function getMyFollowing(): Promise<FollowUser[]> {
     return [];
   }
 
-  const { data } = await supabase
+  // 팔로우 목록 조회
+  const { data: follows } = await supabase
     .from('follows')
     .select(`
       following_id,
-      profiles:following_id (id, username, avatar_url),
-      portfolio_shares(share_link, title)
+      profiles:following_id (id, username, avatar_url)
     `)
     .eq('follower_id', user.id);
 
-  return (data || []).map((row: any) => ({
-    userId: row.following_id,
-    username: row.profiles?.username || '알 수 없는 사용자',
-    avatarUrl: row.profiles?.avatar_url || undefined,
-    portfolioShareLink: row.portfolio_shares?.[0]?.share_link || undefined,
-    portfolioTitle: row.portfolio_shares?.[0]?.title || undefined,
-  }));
+  if (!follows || follows.length === 0) {
+    return [];
+  }
+
+  // 각 팔로우 대상자의 포트폴리오 조회
+  const followingIds = (follows || []).map((f: any) => f.following_id);
+  const { data: portfolios } = await supabase
+    .from('portfolio_shares')
+    .select('user_id, share_link, title')
+    .in('user_id', followingIds)
+    .eq('is_public', true);
+
+  const portfolioMap = new Map<string, { share_link: string; title: string }>();
+  (portfolios || []).forEach((p: any) => {
+    if (!portfolioMap.has(p.user_id)) {
+      portfolioMap.set(p.user_id, { share_link: p.share_link, title: p.title });
+    }
+  });
+
+  return (follows || []).map((row: any) => {
+    const portfolio = portfolioMap.get(row.following_id);
+    return {
+      userId: row.following_id,
+      username: row.profiles?.username || '알 수 없는 사용자',
+      avatarUrl: row.profiles?.avatar_url || undefined,
+      portfolioShareLink: portfolio?.share_link || undefined,
+      portfolioTitle: portfolio?.title || undefined,
+    };
+  });
 }
 
 // 나를 팔로우하는 사람들
@@ -123,22 +145,44 @@ export async function getMyFollowers(): Promise<FollowUser[]> {
     return [];
   }
 
-  const { data } = await supabase
+  // 팔로워 목록 조회
+  const { data: follows } = await supabase
     .from('follows')
     .select(`
       follower_id,
-      profiles:follower_id (id, username, avatar_url),
-      portfolio_shares(share_link, title)
+      profiles:follower_id (id, username, avatar_url)
     `)
     .eq('following_id', user.id);
 
-  return (data || []).map((row: any) => ({
-    userId: row.follower_id,
-    username: row.profiles?.username || '알 수 없는 사용자',
-    avatarUrl: row.profiles?.avatar_url || undefined,
-    portfolioShareLink: row.portfolio_shares?.[0]?.share_link || undefined,
-    portfolioTitle: row.portfolio_shares?.[0]?.title || undefined,
-  }));
+  if (!follows || follows.length === 0) {
+    return [];
+  }
+
+  // 각 팔로워의 포트폴리오 조회
+  const followerIds = (follows || []).map((f: any) => f.follower_id);
+  const { data: portfolios } = await supabase
+    .from('portfolio_shares')
+    .select('user_id, share_link, title')
+    .in('user_id', followerIds)
+    .eq('is_public', true);
+
+  const portfolioMap = new Map<string, { share_link: string; title: string }>();
+  (portfolios || []).forEach((p: any) => {
+    if (!portfolioMap.has(p.user_id)) {
+      portfolioMap.set(p.user_id, { share_link: p.share_link, title: p.title });
+    }
+  });
+
+  return (follows || []).map((row: any) => {
+    const portfolio = portfolioMap.get(row.follower_id);
+    return {
+      userId: row.follower_id,
+      username: row.profiles?.username || '알 수 없는 사용자',
+      avatarUrl: row.profiles?.avatar_url || undefined,
+      portfolioShareLink: portfolio?.share_link || undefined,
+      portfolioTitle: portfolio?.title || undefined,
+    };
+  });
 }
 
 // 내가 팔로우한 포트폴리오 목록
