@@ -7,6 +7,7 @@ import { FollowButton } from '@/components/profile/FollowButton';
 import { createClient } from '@/lib/supabase/server';
 import {
   getMyProfile,
+  getMyFollowing,
   getMyFollowingPortfolios,
   getMyPosts,
   getMyDiscussions,
@@ -28,10 +29,11 @@ export default async function ProfilePage() {
     redirect('/login');
   }
 
-  const [profile, portfolioShare, followingPortfolios, myPosts, myDiscussions] =
+  const [profile, portfolioShare, following, followingPortfolios, myPosts, myDiscussions] =
     await Promise.all([
       getMyProfile(),
       getMyPortfolioShare(),
+      getMyFollowing(),
       getMyFollowingPortfolios(),
       getMyPosts(),
       getMyDiscussions(),
@@ -67,7 +69,7 @@ export default async function ProfilePage() {
             defaultTab="followers"
           />
           <FollowButton
-            count={0}
+            count={following.length}
             label="팔로잉"
             defaultTab="following"
           />
