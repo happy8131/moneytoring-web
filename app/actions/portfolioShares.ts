@@ -1,6 +1,6 @@
 'use server';
 
-import { revalidatePath } from 'next/cache';
+import { revalidatePath, unstable_noStore as noStore } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { createClient } from '@/lib/supabase/server';
 import type { PortfolioShare, Holding } from '@/types';
@@ -24,6 +24,9 @@ const convertPortfolioShareFromDB = (row: DBPortfolioShare): PortfolioShare => (
 
 // 공개 포트폴리오 목록 (탐색 페이지용)
 export async function getPublicPortfolioShares(sort: 'latest' | 'popular' = 'latest', limit = 20): Promise<PortfolioShare[]> {
+  // 캐싱 비활성화 - 팔로워 수가 실시간으로 반영되어야 함
+  noStore();
+
   const supabase = await createClient();
 
   const query = supabase
@@ -73,6 +76,9 @@ export async function getPublicPortfolioShares(sort: 'latest' | 'popular' = 'lat
 
 // 내 포트폴리오 공유 설정 조회
 export async function getMyPortfolioShare(): Promise<PortfolioShare | null> {
+  // 캐싱 비활성화 - 팔로워 수가 실시간으로 반영되어야 함
+  noStore();
+
   const supabase = await createClient();
   const {
     data: { user },
