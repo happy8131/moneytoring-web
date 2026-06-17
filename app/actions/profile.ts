@@ -233,7 +233,30 @@ export async function getMyFollowingPortfolios(): Promise<PortfolioShare[]> {
     .in('user_id', followingIds)
     .eq('is_public', true);
 
-  return (portfolios || []).map((p: any) => convertPortfolioShareFromDB(p));
+  // 각 포트폴리오의 팔로워 수를 동적으로 조회
+  const portfoliosWithFollowers = await Promise.all(
+    (portfolios || []).map(async (p: any) => {
+      const { count: followersCount } = await supabase
+        .from('follows')
+        .select('*', { count: 'exact', head: true })
+        .eq('following_id', p.user_id);
+
+      const share = convertPortfolioShareFromDB(p);
+      // DB 값 대신 동적으로 조회한 팔로워 수 사용
+      share.followersCount = followersCount || 0;
+
+      if (p.profiles) {
+        share.profile = {
+          username: p.profiles.username,
+          avatarUrl: p.profiles.avatar_url || undefined,
+          isExpert: p.profiles.is_expert || undefined,
+        };
+      }
+      return share;
+    })
+  );
+
+  return portfoliosWithFollowers;
 }
 
 // 내가 쓴 커뮤니티 포스트
