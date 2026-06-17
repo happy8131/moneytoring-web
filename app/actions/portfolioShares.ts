@@ -1,6 +1,6 @@
 'use server';
 
-import { revalidatePath } from 'next/cache';
+import { revalidatePath, unstable_noStore as noStore } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { createClient } from '@/lib/supabase/server';
 import type { PortfolioShare, Holding } from '@/types';
@@ -24,6 +24,9 @@ const convertPortfolioShareFromDB = (row: DBPortfolioShare): PortfolioShare => (
 
 // 공개 포트폴리오 목록 (탐색 페이지용)
 export async function getPublicPortfolioShares(sort: 'latest' | 'popular' = 'latest', limit = 20): Promise<PortfolioShare[]> {
+  // 캐싱 비활성화 - 팔로워 수가 실시간으로 반영되어야 함
+  noStore();
+
   const supabase = await createClient();
 
   const query = supabase
@@ -45,21 +48,37 @@ export async function getPublicPortfolioShares(sort: 'latest' | 'popular' = 'lat
 
   if (error) throw new Error(error.message);
 
-  return (data || []).map((row: any) => {
-    const share = convertPortfolioShareFromDB(row);
-    if (row.profiles) {
-      share.profile = {
-        username: row.profiles.username,
-        avatarUrl: row.profiles.avatar_url || undefined,
-        isExpert: row.profiles.is_expert || undefined,
-      };
-    }
-    return share;
-  });
+  // 각 포트폴리오의 팔로워 수를 동적으로 조회
+  const portfoliosWithFollowers = await Promise.all(
+    (data || []).map(async (row: any) => {
+      const { count: followersCount } = await supabase
+        .from('follows')
+        .select('*', { count: 'exact', head: true })
+        .eq('following_id', row.user_id);
+
+      const share = convertPortfolioShareFromDB(row);
+      // DB 값 대신 동적으로 조회한 팔로워 수 사용
+      share.followersCount = followersCount || 0;
+
+      if (row.profiles) {
+        share.profile = {
+          username: row.profiles.username,
+          avatarUrl: row.profiles.avatar_url || undefined,
+          isExpert: row.profiles.is_expert || undefined,
+        };
+      }
+      return share;
+    })
+  );
+
+  return portfoliosWithFollowers;
 }
 
 // 내 포트폴리오 공유 설정 조회
 export async function getMyPortfolioShare(): Promise<PortfolioShare | null> {
+  // 캐싱 비활성화 - 팔로워 수가 실시간으로 반영되어야 함
+  noStore();
+
   const supabase = await createClient();
   const {
     data: { user },
@@ -78,7 +97,17 @@ export async function getMyPortfolioShare(): Promise<PortfolioShare | null> {
   if (error && error.code !== 'PGRST116') throw new Error(error.message);
   if (!data) return null;
 
-  return convertPortfolioShareFromDB(data);
+  const share = convertPortfolioShareFromDB(data);
+
+  // 팔로워 수를 동적으로 조회
+  const { count: followersCount } = await supabase
+    .from('follows')
+    .select('*', { count: 'exact', head: true })
+    .eq('following_id', user.id);
+
+  share.followersCount = followersCount || 0;
+
+  return share;
 }
 
 // share_link로 상세 조회

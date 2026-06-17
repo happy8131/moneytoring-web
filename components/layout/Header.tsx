@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { TrendingUp, Moon, Sun, Menu, LogOut } from 'lucide-react';
+import { TrendingUp, Moon, Sun, Menu, LogOut, User } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import {
@@ -184,6 +184,13 @@ export function Header() {
                       <p className="text-sm font-medium">{user.username}</p>
                       <p className="text-xs text-muted-foreground">{user.email}</p>
                     </div>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem asChild>
+                      <Link href="/profile" className="flex items-center gap-2">
+                        <User className="h-4 w-4" />
+                        <span>마이페이지</span>
+                      </Link>
+                    </DropdownMenuItem>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem asChild>
                       <form
