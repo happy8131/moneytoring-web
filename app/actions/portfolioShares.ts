@@ -45,17 +45,30 @@ export async function getPublicPortfolioShares(sort: 'latest' | 'popular' = 'lat
 
   if (error) throw new Error(error.message);
 
-  return (data || []).map((row: any) => {
-    const share = convertPortfolioShareFromDB(row);
-    if (row.profiles) {
-      share.profile = {
-        username: row.profiles.username,
-        avatarUrl: row.profiles.avatar_url || undefined,
-        isExpert: row.profiles.is_expert || undefined,
-      };
-    }
-    return share;
-  });
+  // 각 포트폴리오의 팔로워 수를 동적으로 조회
+  const portfoliosWithFollowers = await Promise.all(
+    (data || []).map(async (row: any) => {
+      const { count: followersCount } = await supabase
+        .from('follows')
+        .select('*', { count: 'exact', head: true })
+        .eq('following_id', row.user_id);
+
+      const share = convertPortfolioShareFromDB(row);
+      // DB 값 대신 동적으로 조회한 팔로워 수 사용
+      share.followersCount = followersCount || 0;
+
+      if (row.profiles) {
+        share.profile = {
+          username: row.profiles.username,
+          avatarUrl: row.profiles.avatar_url || undefined,
+          isExpert: row.profiles.is_expert || undefined,
+        };
+      }
+      return share;
+    })
+  );
+
+  return portfoliosWithFollowers;
 }
 
 // 내 포트폴리오 공유 설정 조회
