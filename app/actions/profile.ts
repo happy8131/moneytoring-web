@@ -1,6 +1,6 @@
 'use server';
 
-import { revalidatePath } from 'next/cache';
+import { revalidatePath, unstable_noStore as noStore } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { createClient } from '@/lib/supabase/server';
 import type { PortfolioShare, Holding } from '@/types';
@@ -85,6 +85,8 @@ export async function getMyProfile(): Promise<Profile> {
 
 // 내가 팔로우하는 사람들
 export async function getMyFollowing(): Promise<FollowUser[]> {
+  noStore();
+
   const supabase = await createClient();
   const {
     data: { user },
@@ -136,6 +138,8 @@ export async function getMyFollowing(): Promise<FollowUser[]> {
 
 // 나를 팔로우하는 사람들
 export async function getMyFollowers(): Promise<FollowUser[]> {
+  noStore();
+
   const supabase = await createClient();
   const {
     data: { user },
@@ -187,6 +191,8 @@ export async function getMyFollowers(): Promise<FollowUser[]> {
 
 // 내가 팔로우한 포트폴리오 목록
 export async function getMyFollowingPortfolios(): Promise<PortfolioShare[]> {
+  noStore();
+
   const supabase = await createClient();
   const {
     data: { user },
@@ -232,6 +238,8 @@ export async function getMyFollowingPortfolios(): Promise<PortfolioShare[]> {
 
 // 내가 쓴 커뮤니티 포스트
 export async function getMyPosts(): Promise<any[]> {
+  noStore();
+
   const supabase = await createClient();
   const {
     data: { user },
@@ -277,6 +285,8 @@ export async function getMyPosts(): Promise<any[]> {
 
 // 내가 쓴 토론
 export async function getMyDiscussions(): Promise<any[]> {
+  noStore();
+
   const supabase = await createClient();
   const {
     data: { user },
