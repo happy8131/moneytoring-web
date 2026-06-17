@@ -117,32 +117,34 @@ export function ProfileTabs({
           </Card>
         ) : (
           myPosts.map((post) => (
-            <Card key={post.id} className="p-4 hover:bg-muted/50 cursor-pointer transition-colors">
-              <div className="space-y-2">
-                <div className="flex items-start justify-between">
-                  <div className="flex-1">
-                    <p className="text-sm text-muted-foreground">
-                      {new Date(post.created_at).toLocaleDateString('ko-KR')}
-                    </p>
-                    <p className="mt-1 line-clamp-2">{post.content}</p>
+            <Link key={post.id} href={`/community/${post.id}`}>
+              <Card className="p-4 hover:bg-muted/50 cursor-pointer transition-colors">
+                <div className="space-y-2">
+                  <div className="flex items-start justify-between">
+                    <div className="flex-1">
+                      <p className="text-sm text-muted-foreground">
+                        {new Date(post.created_at).toLocaleDateString('ko-KR')}
+                      </p>
+                      <p className="mt-1 line-clamp-2">{post.content}</p>
+                    </div>
+                    {post.image_url && (
+                      <img src={post.image_url} alt="" className="w-16 h-16 rounded object-cover ml-2" />
+                    )}
                   </div>
-                  {post.image_url && (
-                    <img src={post.image_url} alt="" className="w-16 h-16 rounded object-cover ml-2" />
-                  )}
-                </div>
 
-                <div className="flex items-center gap-3 pt-2 border-t text-xs text-muted-foreground">
-                  <div className="flex items-center gap-1">
-                    <Heart className="h-3 w-3" />
-                    {post.likesCount || 0}
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <MessageCircle className="h-3 w-3" />
-                    {post.commentsCount || 0}
+                  <div className="flex items-center gap-3 pt-2 border-t text-xs text-muted-foreground">
+                    <div className="flex items-center gap-1">
+                      <Heart className="h-3 w-3" />
+                      {post.likesCount || 0}
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <MessageCircle className="h-3 w-3" />
+                      {post.commentsCount || 0}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Card>
+              </Card>
+            </Link>
           ))
         )}
       </TabsContent>
