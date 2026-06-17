@@ -6,7 +6,8 @@ import { Card } from '@/components/ui/card';
 import { PublicPortfolioCard } from '@/components/portfolio/PublicPortfolioCard';
 import { getPublicPortfolioShares } from '@/app/actions/portfolioShares';
 import type { PortfolioShare } from '@/types';
-import { Loader2 } from 'lucide-react';
+import { Loader2, ArrowLeft } from 'lucide-react';
+import Link from 'next/link';
 
 export default function PortfoliosPage() {
   const [portfolios, setPortfolios] = useState<PortfolioShare[]>([]);
@@ -29,6 +30,13 @@ export default function PortfoliosPage() {
 
   return (
     <div className="space-y-6">
+      <Link href="/portfolio">
+        <Button variant="outline" className="gap-2 cursor-pointer">
+          <ArrowLeft className="h-4 w-4" />
+          뒤로가기
+        </Button>
+      </Link>
+
       <div className="space-y-2">
         <h1 className="text-2xl font-bold">공개 포트폴리오</h1>
         <p className="text-muted-foreground">

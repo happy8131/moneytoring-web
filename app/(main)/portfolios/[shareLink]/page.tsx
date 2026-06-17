@@ -88,6 +88,13 @@ export default async function PortfolioDetailPage({
     <div className="space-y-6">
       <ViewCounter shareLink={portfolio.shareLink} />
 
+       {/* 뒤로가기 */}
+       <div className="pt-4">
+        <Link href="/portfolios">
+          <Button variant="outline" className="cursor-pointer">뒤로가기</Button>
+        </Link>
+      </div>
+
       {/* 헤더 */}
       <div className="space-y-4">
         <div className="space-y-2">
@@ -229,13 +236,6 @@ export default async function PortfolioDetailPage({
             </table>
           </Card>
         )}
-      </div>
-
-      {/* 뒤로가기 */}
-      <div className="pt-4">
-        <Link href="/portfolios">
-          <Button variant="outline">뒤로가기</Button>
-        </Link>
       </div>
     </div>
   );
