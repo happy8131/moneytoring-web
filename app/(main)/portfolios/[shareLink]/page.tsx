@@ -10,6 +10,7 @@ import {
   checkIsFollowing,
   getFollowersCount,
 } from '@/app/actions/portfolioShares';
+import { createClient } from '@/lib/supabase/server';
 import { Eye, Heart, User } from 'lucide-react';
 import Link from 'next/link';
 import type { Holding } from '@/types';
@@ -78,6 +79,15 @@ export default async function PortfolioDetailPage({
     notFound();
   }
 
+  // 현재 로그인한 사용자 확인
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  // 자신의 포트폴리오인지 확인
+  const isOwnPortfolio = user?.id === portfolio.userId;
+
   // 팔로우 여부 확인
   const isFollowing = await checkIsFollowing(portfolio.userId);
 
@@ -134,11 +144,13 @@ export default async function PortfolioDetailPage({
               <Eye className="h-4 w-4" />
               <span className="text-sm">조회수 {portfolio.viewsCount}</span>
             </div>
-            <FollowSection
-              portfolioOwnerUserId={portfolio.userId}
-              isFollowing={isFollowing}
-              initialFollowersCount={followersCount}
-            />
+            {!isOwnPortfolio && (
+              <FollowSection
+                portfolioOwnerUserId={portfolio.userId}
+                isFollowing={isFollowing}
+                initialFollowersCount={followersCount}
+              />
+            )}
           </div>
         </div>
       </div>
