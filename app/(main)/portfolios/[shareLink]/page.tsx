@@ -11,7 +11,7 @@ import {
   getFollowersCount,
 } from '@/app/actions/portfolioShares';
 import { createClient } from '@/lib/supabase/server';
-import { Eye, Heart, User } from 'lucide-react';
+import { ArrowLeft, Eye, Heart, User } from 'lucide-react';
 import Link from 'next/link';
 import type { Holding } from '@/types';
 
@@ -101,7 +101,7 @@ export default async function PortfolioDetailPage({
        {/* 뒤로가기 */}
        <div className="pt-4">
         <Link href="/portfolios">
-          <Button variant="outline" className="cursor-pointer">뒤로가기</Button>
+          <Button variant="outline" className="cursor-pointer"> <ArrowLeft className="h-4 w-4" />뒤로가기</Button>
         </Link>
       </div>
 
