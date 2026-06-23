@@ -52,7 +52,7 @@ export default async function DiscussionDetailPage({ params }: PageProps) {
     <div className="space-y-6">
       {/* 뒤로가기 */}
       <Link href="/discussions">
-        <Button variant="ghost" size="sm" className="gap-1">
+        <Button variant="ghost" size="sm" className="gap-1 cursor-pointer">
           <ArrowLeft className="h-4 w-4" />
           토론 목록으로
         </Button>
