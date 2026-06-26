@@ -44,7 +44,7 @@ export default async function PostDetailPage({ params }: PageProps) {
     <div className="space-y-6">
       {/* 뒤로가기 */}
       <Link href="/community">
-        <Button variant="ghost" size="sm" className="gap-1">
+        <Button variant="ghost" size="sm" className="gap-1 cursor-pointer">
           <ArrowLeft className="h-4 w-4" />
           커뮤니티로
         </Button>
