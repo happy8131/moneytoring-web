@@ -103,7 +103,7 @@ export function LoginForm() {
 
       <div className="text-center">
         <Link href="/dashboard">
-          <Button variant="outline" className="w-full">
+          <Button variant="outline" className="w-full cursor-pointer">
             대시보드로 이동
           </Button>
         </Link>
