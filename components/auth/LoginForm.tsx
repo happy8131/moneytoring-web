@@ -75,7 +75,7 @@ export function LoginForm() {
 
         <Button
           type="submit"
-          className="w-full"
+          className="w-full cursor-pointer"
           disabled={isLoading}
         >
           {isLoading ? '로그인 중...' : '로그인'}
