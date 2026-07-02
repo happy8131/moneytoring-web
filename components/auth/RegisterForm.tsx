@@ -134,7 +134,7 @@ export function RegisterForm() {
 
         <Button
           type="submit"
-          className="w-full"
+          className="w-full cursor-pointer"
           disabled={isLoading}
         >
           {isLoading ? '가입 중...' : '회원가입'}
