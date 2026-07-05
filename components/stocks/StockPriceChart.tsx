@@ -142,7 +142,7 @@ export function StockPriceChart({ symbol, onPeriodChange }: StockPriceChartProps
           <button
             key={period}
             onClick={() => handlePeriodChange(period)}
-            className={`px-3 py-2 rounded-md text-sm font-medium whitespace-nowrap transition-colors ${
+            className={`px-3 py-2 rounded-md text-sm font-medium whitespace-nowrap transition-colors cursor-pointer ${
               selectedPeriod === period
                 ? 'bg-primary text-primary-foreground'
                 : 'bg-muted text-muted-foreground hover:bg-muted/80'
