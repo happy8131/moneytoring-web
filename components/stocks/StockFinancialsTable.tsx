@@ -43,7 +43,7 @@ export function StockFinancialsTable({ symbol }: StockFinancialsTableProps) {
         <div className="flex gap-2">
           <button
             onClick={() => setFreq('annual')}
-            className={`px-3 py-1 rounded-md text-sm font-medium transition-colors ${
+            className={`px-3 py-1 rounded-md text-sm font-medium transition-colors cursor-pointer ${
               freq === 'annual'
                 ? 'bg-primary text-primary-foreground'
                 : 'bg-muted text-muted-foreground hover:bg-muted/80'
@@ -53,7 +53,7 @@ export function StockFinancialsTable({ symbol }: StockFinancialsTableProps) {
           </button>
           <button
             onClick={() => setFreq('quarterly')}
-            className={`px-3 py-1 rounded-md text-sm font-medium transition-colors ${
+            className={`px-3 py-1 rounded-md text-sm font-medium transition-colors cursor-pointer ${
               freq === 'quarterly'
                 ? 'bg-primary text-primary-foreground'
                 : 'bg-muted text-muted-foreground hover:bg-muted/80'
