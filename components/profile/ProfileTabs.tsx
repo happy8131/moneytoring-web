@@ -26,16 +26,16 @@ export function ProfileTabs({
   return (
     <Tabs defaultValue="portfolio" className="w-full">
       <TabsList className="w-full justify-start border-b rounded-none bg-transparent p-0">
-        <TabsTrigger value="portfolio" className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary">
+        <TabsTrigger value="portfolio" className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary cursor-pointer">
           포트폴리오
         </TabsTrigger>
-        <TabsTrigger value="following" className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary">
+        <TabsTrigger value="following" className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary cursor-pointer">
           팔로우한 포트폴리오
         </TabsTrigger>
-        <TabsTrigger value="community" className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary">
+        <TabsTrigger value="community" className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary cursor-pointer">
           커뮤니티
         </TabsTrigger>
-        <TabsTrigger value="discussions" className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary">
+        <TabsTrigger value="discussions" className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary cursor-pointer">
           토론
         </TabsTrigger>
       </TabsList>
