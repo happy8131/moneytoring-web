@@ -85,7 +85,7 @@ export function FollowListModal({
                   {user.portfolioShareLink && (
                     <Link href={`/portfolios/${user.portfolioShareLink}`}>
                       <Button variant="ghost" size="sm" className="gap-1">
-                        <ArrowRight className="h-3 w-3" />
+                        <ArrowRight className="h-3 w-3 cursor-pointer" />
                       </Button>
                     </Link>
                   )}
