@@ -16,7 +16,7 @@ export function FollowButton({ count, label, defaultTab }: FollowButtonProps) {
     <>
       <button
         onClick={() => setModalOpen(true)}
-        className="hover:opacity-70 transition-opacity text-left"
+        className="hover:opacity-70 transition-opacity text-left cursor-pointer"
       >
         <div className="text-2xl font-bold">{count}</div>
         <div className="text-sm text-muted-foreground">{label}</div>
