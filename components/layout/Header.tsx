@@ -170,7 +170,7 @@ export function Header() {
               {user ? (
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button variant="ghost" size="sm" className="gap-2">
+                    <Button variant="ghost" size="sm" className="gap-2 cursor-pointer">
                       <div className="h-8 w-8 rounded-full bg-primary flex items-center justify-center text-xs font-bold text-primary-foreground">
                         {user.username?.[0]?.toUpperCase() || user.email?.[0]?.toUpperCase()}
                       </div>
