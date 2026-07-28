@@ -186,7 +186,7 @@ export function Header() {
                     </div>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem asChild>
-                      <Link href="/profile" className="flex items-center gap-2">
+                      <Link href="/profile" className="flex items-center gap-2 cursor-pointer">
                         <User className="h-4 w-4" />
                         <span>마이페이지</span>
                       </Link>
@@ -199,7 +199,7 @@ export function Header() {
                           await logout();
                         }}
                       >
-                        <button className="flex w-full items-center gap-2 text-red-600 dark:text-red-400">
+                        <button className="flex w-full items-center gap-2 text-red-600 dark:text-red-400 cursor-pointer">
                           <LogOut className="h-4 w-4" />
                           <span>로그아웃</span>
                         </button>
