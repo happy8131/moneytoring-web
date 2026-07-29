@@ -54,10 +54,10 @@ export function FollowListModal({
 
         <Tabs value={activeTab} onValueChange={(val) => setActiveTab(val as 'following' | 'followers')} className="w-full">
           <TabsList className="w-full">
-            <TabsTrigger value="following" className="flex-1">
+            <TabsTrigger value="following" className="flex-1 cursor-pointer">
               팔로잉 ({following.length})
             </TabsTrigger>
-            <TabsTrigger value="followers" className="flex-1">
+            <TabsTrigger value="followers" className="flex-1 cursor-pointer">
               팔로워 ({followers.length})
             </TabsTrigger>
           </TabsList>
