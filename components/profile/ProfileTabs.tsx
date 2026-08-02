@@ -74,7 +74,7 @@ export function ProfileTabs({
 
               <div className="flex gap-2">
                 <Link href={`/portfolios/${portfolioShare.shareLink}`} className="flex-1">
-                  <Button variant="outline" className="w-full">
+                  <Button variant="outline" className="w-full cursor-pointer">
                     공개 포트폴리오 보기
                   </Button>
                 </Link>
