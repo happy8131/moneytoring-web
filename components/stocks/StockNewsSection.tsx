@@ -74,7 +74,7 @@ export function StockNewsSection({ symbol }: StockNewsSectionProps) {
           size="sm"
           onClick={handlePrevPage}
           disabled={currentPage === 1}
-          className="flex items-center gap-2"
+          className="flex items-center gap-2 cursor-pointer"
         >
           <ChevronLeft size={16} />
           이전
@@ -89,7 +89,7 @@ export function StockNewsSection({ symbol }: StockNewsSectionProps) {
           size="sm"
           onClick={handleNextPage}
           disabled={currentPage === totalPages}
-          className="flex items-center gap-2"
+          className="flex items-center gap-2 cursor-pointer"
         >
           다음
           <ChevronRight size={16} />
