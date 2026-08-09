@@ -94,7 +94,7 @@ export function Header() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="h-9 w-9 md:hidden"
+                className="h-9 w-9 md:hidden cursor-pointer"
                 aria-label="메뉴 열기"
               >
                 <Menu className="h-5 w-5" />

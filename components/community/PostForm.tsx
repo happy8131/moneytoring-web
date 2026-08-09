@@ -133,6 +133,7 @@ export function PostForm({ onPostCreated }: PostFormProps) {
               취소
             </Button>
             <Button
+              className="bg-primary text-primary-foreground hover:bg-primary/90 cursor-pointer"
               type="submit"
               size="sm"
               disabled={isLoading || !content.trim()}
