@@ -79,7 +79,7 @@ export function ProfileTabs({
                   </Button>
                 </Link>
                 <Link href="/portfolio" className="flex-1">
-                  <Button className="w-full">공유 설정 변경</Button>
+                  <Button className="w-full cursor-pointer">공유 설정 변경</Button>
                 </Link>
               </div>
             </div>
