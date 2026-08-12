@@ -87,7 +87,7 @@ export function ProfileTabs({
         ) : (
           <Card className="p-8 text-center">
             <p className="text-muted-foreground mb-4">아직 공유한 포트폴리오가 없습니다.</p>
-            <Link href="/portfolio">
+            <Link href="/portfolio cursor-pointer">
               <Button>포트폴리오 공유하기</Button>
             </Link>
           </Card>
