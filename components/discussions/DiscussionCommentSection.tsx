@@ -127,7 +127,7 @@ export function DiscussionCommentSection({
             type="submit"
             size="sm"
             disabled={isSubmitting || !newComment.trim()}
-            className="h-8"
+            className="h-8 cursor-pointer"
           >
             {isSubmitting ? '작성 중...' : '작성'}
           </Button>
