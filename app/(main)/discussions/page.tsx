@@ -100,7 +100,7 @@ export default function DiscussionsPage({ searchParams }: PageProps) {
         />
         <button
           type="submit"
-          className="px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors text-sm font-medium"
+          className="px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors text-sm font-medium cursor-pointer"
         >
           검색
         </button>
